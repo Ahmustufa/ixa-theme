@@ -90,7 +90,7 @@ const HeaderContent = (props) => {
       </Drawer>
 
       <header className="header">
-        <nav ref={navRef} className="navbar-wrapper nav-wrapper-fixed">
+        <nav ref={navRef} className="navbar-wrapper">
           <Row
             align="middle"
             justify="space-between"

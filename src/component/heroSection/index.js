@@ -1,200 +1,226 @@
-import { Row, Col } from "antd";
 import styled from "styled-components";
-import { SwipeButton } from "../buttons";
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import Slider from "react-slick";
 
-const StyledSection = styled.section`
-  height: 100vh;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
+const carouselData = [
+  {
+    title: "Women's week",
+    subtitle: "Take advantage of promotions upto 60%",
+    backgroundImage: ["/images/slide_1.jpg", "/images/slide_1.jpg"],
+  },
+  {
+    text: "NEW TREND",
+    title: "THE.BASICS",
+    subtitle: "An exclusive selction of season's trends.",
+    backgroundImage: ["/images/slide_2.jpg", "/images/slide_2.jpg"],
+  },
+  {
+    text: "NEW COLLECTION",
+    title: "Bellemount '20",
+    subtitle: (
+      <div>
+        Rapidiously redifine dynamic niche markets before plug-and-play collaboration and
+        idea-sharing
+        <br /> Continually utlilize focused convergence via top-line outsourcing
+      </div>
+    ),
+    backgroundImage: ["/images/slide_3.jpg", "/images/slide_3.jpg"],
+  },
+];
 
-  .video-container {
-    height: 100vh;
-    width: -webkit-fill-available;
-    width: -moz-available;
-    position: absolute;
-    z-index: -1;
-
-    :before {
-      content: "";
-      width: inherit;
-      height: inherit;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      background: rgba(0, 0, 0, 0.67);
-    }
-    #bg-video {
-      width: -webkit-fill-available;
-      width: -moz-available;
-      height: 100vh;
-      object-fit: cover;
-    }
-  }
-
-  .hero-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #fff;
-    text-align: center;
-
-    .main-heading {
-      color: #fff;
-      font-weight: 700;
-      // font-family: "Open Sans Condensed", sans-serif;
-      font-size: 48px;
-    }
-
-    .main-heading::after {
-      content: "";
-      display: block;
-      height: 6px;
-      width: 70%;
-      margin: 20px auto;
-      background-color: #ffa234;
-      border-radius: 4px;
-    }
-
-    .sub-heading {
-      color: #fff;
-      font-size: 22px;
-      font-weight: 600;
-      width: 60%;
-      margin: auto;
-    }
-  }
-
-  .brand-logos {
-    border-top: 1px solid gray;
-    color: #fff;
-    padding: 20px 0;
-    width: 84%;
-
-    .brand-images-container {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-  }
-  .slick-track {
-    display: flex;
-    align-items: center;
-  }
-`;
+const carouselSettings = {
+  dots: false,
+  infinite: true,
+  speed: 1500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  autoplay: true,
+  pauseOnHover: false,
+  fade: true,
+};
 
 const HeroSection = (props) => {
-  const { background, type, children } = props;
-  let settings_3 = {
-    autoplay: true,
-    dots: false,
-    infinite: true,
-    speed: 1000,
-    pauseOnHover: false,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    autoplaySpeed: 1500,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  return (
+    <Slider
+      {...carouselSettings}
+      draggable={true}
+      autoplaySpeed={8000}
+      centerPadding={"0"}
+      accessibility={true}
+    >
+      {carouselData.map((item, index) => (
+        <Carousel key={`carousel-${index + 1}`} {...item} />
+      ))}
+    </Slider>
+  );
+};
+
+const Carousel = (props) => {
+  const { text, title, subtitle, backgroundImage } = props;
 
   return (
-    <StyledSection className="hero-section">
-      <div className="video-container">
-        {type === "image" ? (
-          <img id="bg-video" src={background} atl="background_image" />
-        ) : (
-          <video controls={false} autoPlay loop muted id="bg-video">
-            <source src="/images/Banner_Video.mp4" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
-        )}
+    <StyledDiv>
+      <Image
+        // style={{
+        //   backgroundImage: `url(${backgroundImage})`,
+        //   backgroundPosition: "center",
+        //   backgroundSize: "cover",
+        // }}
+        backgroundImage={backgroundImage}
+        className="eaze-animate mask"
+      />
+      <div
+        className="col-11 col-sm-10 col-md-11 col-lg-11 col-xl-8 mx-auto text-white"
+        style={{ zIndex: 200 }}
+      >
+        <p className="text">{text}</p>
+        <p className="text-uppercase my-2 my-md-3 title">{title}</p>
+        <p className="subtitle">{subtitle}</p>
       </div>
 
-      <div className="hero-content">
-        {children ? (
-          children
-        ) : (
-          <div>
-            <h1 className="main-heading">
-              We’re Your One-Stop Solution for Efficient Web Design
-            </h1>
-            <h2 className="my-4 sub-heading">
-              Searching for guaranteed ways to grow your business online? Getting yourself
-              a professional website by the experts at LogiLogos is what you need.
-            </h2>
-
-            {/* <SwipeButton after="LETS GET STARTED">TALK TO OUR EXPERTS</SwipeButton> */}
-          </div>
-        )}
+      <div className="social-icons d-none d-sm-flex text-white">
+        <p>SOCIALS</p>
+        <div
+          style={{
+            height: 1,
+            width: 40,
+            backgroundColor: "#fff",
+            margin: "0 16px",
+          }}
+        />
+        <div className="narrow-social-icons">
+          <a href="https://www.facebook.com/LetsEmergeForward" target="blank">
+            <FaFacebookF className="icon" />
+          </a>
+          <a href="https://twitter.com/EmergeForward" target="blank">
+            <FaTwitter className="icon" />
+          </a>
+          <a href="https://www.instagram.com/emergeforward/" target="blank">
+            <FaInstagram className="icon" />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCFkPtfpMV_z1QVxvpGheNIg/featured"
+            target="blank"
+          >
+            <FaYoutube className="icon" />
+          </a>
+        </div>
       </div>
-
-      <div className="brand-logos">
-        <Row className="col-lg-10 col-12 mx-auto" gutter={[0, 16]}>
-          {/* <Col xl={12} md={12} sm={24} xs={24}>
-            <p
-              style={{
-                // fontFamily: "Open Sans Condensed",
-                fontSize: 20,
-                fontWeight: 600,
-                margin: 0,
-              }}
-            ></p>
-          </Col> */}
-
-          <Col span={24}>
-            <div>
-              {/* <img src="/images/abbot.png" alt="abbott logo" className="brand-images" />
-              <img src="/images/pfizer.png" alt="pfizer logo" className="brand-images" />
-              <img src="/images/cisco.png" alt="cisco logo" className="brand-images" /> */}
-              <Slider {...settings_3}>
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-                  <div>
-                    <img
-                      src={`/images/Trusted_Brands_${item}.png`}
-                      alt={`Trusted_Brands_${item}`}
-                      key={item}
-                      className="brand-image m-auto"
-                      height={item >= 3 && item <= 6 ? 48 : 24}
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </div>
-          </Col>
-        </Row>
-      </div>
-    </StyledSection>
+    </StyledDiv>
   );
 };
 
 export default HeroSection;
+
+const StyledDiv = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .eaze-animate {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    zindex: 140;
+    animation: ease-animation 12s infinite;
+  }
+
+  @keyframes ease-animation {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+  }
+
+  p {
+    margin: 0;
+    line-height: 1;
+  }
+
+  .text {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .title {
+    font-size: 76px;
+    font-weight: 700;
+  }
+  .subtitle {
+    color: #fff;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 48px;
+    right: 100px;
+  }
+  .narrow-social-icons {
+    a {
+      font-size: 20px;
+      color: #fff;
+      margin-right: 16px;
+    }
+    .icon:hover {
+      color: #efa718;
+      fill: #efa718;
+    }
+  }
+
+  .mask {
+    ::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .text {
+      font-size: 18px;
+    }
+    .title {
+      font-size: 60px;
+    }
+    .subtitle {
+      font-size: 25px;
+    }
+    .social-icons {
+      right: 48px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .text {
+      font-size: 13px;
+    }
+    .title {
+      font-size: 38px;
+    }
+    .subtitle {
+      font-size: 15px;
+    }
+  }
+`;
+
+const Image = styled.div`
+  background-image: ${(props) => `url(${props.backgroundImage[0]})`};
+  background-position: center;
+  background-size: cover;
+
+  @media (max-width: 1024px) {
+    background-image: ${(props) => `url(${props.backgroundImage[1]})`};
+  }
+`;

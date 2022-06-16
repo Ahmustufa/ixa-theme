@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Slider from "react-slick";
+import HomeCarousel from "../src/component/heroSection";
 
 const Home = () => {
   return (
@@ -6,40 +8,7 @@ const Home = () => {
       <Head>
         <title>Polkadots | Home</title>
       </Head>
-
-      <div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1>Polkadots Home</h1>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-      </div>
+      <HomeCarousel />
     </>
   );
 };

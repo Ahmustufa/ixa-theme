@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/mie.scss";
 import "../styles/globals.scss";
 import "../src/component/header/header.style.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import Layout from "../src/component/layouts/mainLayout";
 import { Provider } from "react-redux";
