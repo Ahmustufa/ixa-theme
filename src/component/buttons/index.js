@@ -2,44 +2,32 @@ import styled from "styled-components";
 
 import { Button } from "antd";
 
-export const BlueButtonWrapper = styled(Button)`
-  margin: 0;
-  color: ${(props) => props.color ?? "#0025FF"};
-  background-color: ${(props) => props.backgroundColor ?? "#fff"};
-  border: ${(props) => props.border ?? "2px solid #0025FF"};
-  border-radius: ${(props) => props.borderRadius ?? "4px"};
+export const ButtonWrapper = styled.div`
+  cursor: pointer;
+  color: ${(props) => props.color ?? "#fff"};
+  background-color: ${(props) => props.backgroundColor ?? "#0c0c0c"};
+  border: ${(props) => props.border ?? "1px solid #0c0c0c"};
+  border-radius: ${(props) => props.borderRadius ?? "60px"};
+  width: ${(props) => props.width ?? "100%"};
+  padding: ${(props) => props.padding ?? "26px 36px"};
   outline: none;
   box-shadow: none;
   font-weight: 400;
-  width: ${(props) => props.width ?? "100%"};
-  padding: ${(props) => props.padding ?? "26px 36px"};
   font-size: 16px;
-  transition: 0.2s;
+  transition: 0.3s;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 
-  &.ant-btn[disabled],
-  &.ant-btn[disabled]:hover,
-  &.ant-btn[disabled]:focus,
-  &.ant-btn[disabled]:active {
-    background: #acacac;
-    color: #21262c;
+  :after {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background-color: #fff;
   }
 
-  &:focus {
-    color: ${(props) => props.color ?? "#fff"};
-    background-color: ${(props) => props.backgroundColor ?? "#0025FF"};
-    border: ${(props) => props.border ?? "2px solid #0025FF"};
-  }
-
-  &:hover {
-    opacity: 0.8;
-    background-color: ${(props) => props.hoverBackgroundColor ?? "#fff"};
-    border: ${(props) => props.border ?? "2px solid #0025FF"};
-    color: ${(props) => props.hoverColor ?? "#0025FF"};
-    color: ${(props) => (props.hoverColor != "#f4f4f4" ? "#0025FF" : "#21262C")};
-    // font-weight: ${(props) => props.fontWeight ?? "500"};
+  :hover :after {
+    width: 16px;
   }
 `;
 
