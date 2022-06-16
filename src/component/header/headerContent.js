@@ -10,6 +10,8 @@ import { avatar, profile, dashboard, logout } from "../../../images";
 // import { HeaderLink } from "../buttons";
 // import { IoChatbubblesOutline } from "react-icons/io5";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { MdOutlineShoppingBag } from "react-icons/md";
+import { BiSearch } from "react-icons/bi";
 
 const navOptions = [
   { label: "HOME", link: "/" },
@@ -23,10 +25,19 @@ const HeaderContent = (props) => {
 
   const menuList = (
     <ul className="menu-list">
+      <li>
+        <img
+          alt="Polkadotsretail"
+          src="/images/LogiLogos-light.svg"
+          style={{ width: 160 }}
+          className="app-logo"
+        />
+      </li>
+
       {navOptions.map((item, index) => (
         <li
           key={index}
-          className={`menu-item${router.pathname === item.link ? " active" : ""}`}
+          className={`menu-item ${router.pathname === item.link ? "active" : ""}`}
         >
           <Link href={item.link}>
             <a>{item.label}</a>
@@ -97,22 +108,19 @@ const HeaderContent = (props) => {
             gutter={[32, 0]}
             className="nav-container"
           >
-            <Col span={4}>
-              <Link href="/">
-                <a>
-                  <img
-                    alt="logilogos.com"
-                    src="/images/LogiLogos-light.svg"
-                    style={{ width: 150 }}
-                    className="app-logo"
-                  />
-                </a>
-              </Link>
+            <Col>
+              <div className="menu-wrapper">{menuList}</div>
             </Col>
 
-            <Col className="menu-wrapper">{menuList}</Col>
-
-            <Col span={20}>
+            <Col>
+              <div className="icons-wrapper d-flex align-items-center">
+                <BiSearch className="icon" />
+                <MdOutlineShoppingBag className="icon" />
+                <div className="cart-items">2</div>
+                <div className="account">Account</div>
+              </div>
+            </Col>
+            <Col span={0}>
               <div className="hamburger" onClick={() => setDrawer((prev) => !prev)}>
                 <Hamburger open={drawer} />
               </div>

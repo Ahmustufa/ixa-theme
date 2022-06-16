@@ -4,10 +4,10 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: transparent;
 
   .app-logo {
     content: url("/images/LogiLogos-dark.svg");
+    margin-right: 48px;
   }
 }
 
@@ -15,91 +15,17 @@
   width: -webkit-fill-available;
   width: -moz-available;
   margin: auto;
-  padding: 16px 0;
-  transition: 0.3s;
-  padding-inline: 5%;
-  .menu-item a {
-    color: #000;
-  }
+  padding: 40px 5%;
+  transition: 0.6s;
 
   &.nav-wrapper-fixed {
+    padding: 16px 5%;
     background-color: rgb(38, 38, 42);
-    .menu-item a {
-      color: #fff;
-    }
+
     .app-logo {
       content: url("/images/LogiLogos-light.svg");
     }
   }
-
-  .user-info {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    cursor: pointer;
-    border: 1px solid #fff;
-    border-radius: 4px;
-    padding: 4px 6px;
-    min-width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    transition: 0.3s ease;
-    &:hover {
-      transition: 0.3s ease;
-      border: 1px solid #ffa930;
-      color: #ffa930;
-    }
-  }
-
-  .user-info-logged-parent {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    &:hover {
-      .user-info-logged {
-        border: 1px solid #ffa930;
-      }
-      color: #ffa930;
-    }
-    .user-info-logged {
-      color: #fff;
-      cursor: pointer;
-      border: 1px solid #fff;
-      height: 30px;
-      width: 30px;
-      border-radius: 100px;
-      margin-right: 12px;
-      margin-left: 20px;
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
-      user-select: none;
-      // transition: 0.3s ease;
-    }
-  }
-
-  // .user-info-logged {
-  //   color: #fff;
-  //   cursor: pointer;
-  //   border: 1px solid #fff;
-  //   height: 50px;
-  //   width: 50px;
-  //   border-radius: 100px;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   user-select: none;
-  //   transition: 0.3s ease;
-  //   &:hover {
-  //     transition: 0.3s ease;
-  //     border: 1px solid #ffa930;
-  //     color: #ffa930;
-  //   }
-  // }
 }
 
 .menu-list {
@@ -109,65 +35,67 @@
   display: flex;
   align-items: center;
   padding: 0px;
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s ease;
-    border-radius: 4px;
-    padding: 8px 16px;
-    &:hover {
-      transition: 0.3s ease;
-      background-color: #3e3c36;
-      opacity: 0.8;
-    }
-  }
 }
 
 .menu-item {
   a {
+    position: relative;
+    transition: 0.3s ease;
+    padding: 4px 0px;
     text-decoration: none;
     color: #fff;
-    margin: 0 12px;
-    font-size: 13px;
-    font-weight: 600;
+    margin: 0 40px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background-color: #fff;
+      transition: 0.3s;
+    }
+
     &:hover {
-      color: #ffa930;
+      &::after {
+        width: 100%;
+      }
     }
   }
-  &.active {
-    position: relative;
-    height: inherit;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    padding: 0px;
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s ease;
-      border-radius: 4px;
-      padding: 8px 16px;
-      transition: 0.3s ease;
-      background-color: #3e3c36;
-      color: #ffa930;
-    }
+
+  &.active a::after {
+    width: 100%;
   }
-  // &.active::after {
-  //   position: absolute;
-  //   content: "";
-  //   display: block;
-  //   border-bottom: 2px solid #ffa930;
-  //   left: 0;
-  //   right: 0;
-  //   top: 53px;
-  // }
 }
 
-.hamburger {
-  display: none;
+.icons-wrapper {
+  color: #fff;
+  .icon {
+    margin: 12px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .cart-items {
+    margin-right: 16px;
+    font-size: 14px;
+    background-color: #e79c96;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+  }
+  .account {
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+  }
 }
 
 .user-dropdown-overlay {
