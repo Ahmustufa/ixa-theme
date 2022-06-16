@@ -3,15 +3,11 @@ import { Row, Col, Drawer, Dropdown } from "antd";
 import Hamburger from "../hamburger";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { LoadingOutlined, DownOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
-import { ModalConstant } from "../../redux/constants";
-import { avatar, profile, dashboard, logout } from "../../../images";
-// import { HeaderLink } from "../buttons";
-// import { IoChatbubblesOutline } from "react-icons/io5";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { BiSearch } from "react-icons/bi";
+import styled from "styled-components";
 
 const navOptions = [
   { label: "HOME", link: "/" },
@@ -44,6 +40,11 @@ const HeaderContent = (props) => {
           </Link>
         </li>
       ))}
+      <li className={`menu-item ${router.pathname === "discover" ? "active" : ""}`}>
+        <Dropdown overlay={discoverOverlay}>
+          <a>Discover</a>
+        </Dropdown>
+      </li>
     </ul>
   );
 
@@ -88,7 +89,7 @@ const HeaderContent = (props) => {
         placement="left"
         visible={drawer}
         closable={false}
-        drawerStyle={{ backgroundColor: "#565656", padding: 0, margin: 0 }}
+        drawerStyle={{ backgroundColor: "#fff", padding: 0, margin: 0 }}
         bodyStyle={{ padding: 0 }}
         mask={false}
         width={"100%"}
@@ -120,6 +121,7 @@ const HeaderContent = (props) => {
                 <div className="account">Account</div>
               </div>
             </Col>
+
             <Col span={0}>
               <div className="hamburger" onClick={() => setDrawer((prev) => !prev)}>
                 <Hamburger open={drawer} />
@@ -133,3 +135,109 @@ const HeaderContent = (props) => {
 };
 
 export default HeaderContent;
+
+const StyledOverlay = styled(Row)`
+  background-color: #fff;
+  padding: 40px;
+  width: 600px;
+
+  div {
+    margin-bottom: 12px;
+    :last-child {
+      margin: 0;
+    }
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 0%;
+      background-color: #000;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+`;
+
+const discoverOverlay = (
+  <StyledOverlay justify="space-between">
+    <Col xs={24} sm={24} md={7} lg={7}>
+      <div>
+        <Link href="/">
+          <a>New arrivals</a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/">
+          <a>Sales</a>
+        </Link>
+      </div>
+    </Col>
+
+    <Col xs={24} sm={24} md={7} lg={7}>
+      <div>
+        <Link href="/">
+          <a>Accessories</a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/">
+          <a>Dressed</a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/">
+          <a>Jackets</a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/">
+          <a>Jeans</a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/">
+          <a>Jumpsuits</a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/">
+          <a>Outwear</a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/">
+          <a>Pants</a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/">
+          <a>Skirts</a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/">
+          <a>Top</a>
+        </Link>
+      </div>
+    </Col>
+
+    <Col xs={24} sm={24} md={10} lg={10}>
+      <img src="/images/model.jpg" className="img-fluid" />
+    </Col>
+  </StyledOverlay>
+);
