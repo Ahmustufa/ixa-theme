@@ -24,40 +24,6 @@ const HeaderContent = (props) => {
   const dispatch = useDispatch();
   const router = useRouter();
 
-  const { user, handleLogout, logoutLoading } = props;
-
-  const userDropdownOverlay = (
-    <ul className="user-dropdown-overlay">
-      <li onClick={() => router.push("/profile")}>
-        <img
-          src={profile}
-          style={{ marginRight: 8, width: 16, mixBlendMode: "luminosity" }}
-        />
-        <a style={{ textDecoration: "none" }}>Profile</a>
-      </li>
-
-      <li onClick={() => router.push("/dashboard")}>
-        <img
-          src={dashboard}
-          style={{ marginRight: 8, width: 16, mixBlendMode: "luminosity" }}
-        />
-        <a style={{ textDecoration: "none" }}>Dashboard</a>
-      </li>
-
-      <li onClick={handleLogout}>
-        <img
-          src={logout}
-          style={{ marginRight: 8, width: 16, mixBlendMode: "luminosity" }}
-        />
-        Logout
-        {logoutLoading && <LoadingOutlined className="mr-2" />}
-      </li>
-    </ul>
-  );
-
-  let firstInitial = props.isLoggedIn ? user.firstName?.charAt(0) : "";
-  let secondInitial = props.isLoggedIn ? user.lastName?.charAt(0) : "";
-
   const menuList = (
     <ul className="menu-list">
       {/* For Mobile Devices */}
@@ -151,23 +117,23 @@ const HeaderContent = (props) => {
   /**
    * This useEffect function is used to change header background-color
    */
-  // const navRef = useRef(null);
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 1) {
-  //       navRef.current.classList.add("nav-wrapper-fixed");
-  //     }
-  //     if (window.scrollY <= 2) {
-  //       navRef.current.classList.remove("nav-wrapper-fixed");
-  //     }
-  //   };
+  const navRef = useRef(null);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 1) {
+        navRef.current.classList.add("nav-wrapper-fixed");
+      }
+      if (window.scrollY <= 2) {
+        navRef.current.classList.remove("nav-wrapper-fixed");
+      }
+    };
 
-  //   if (typeof window !== "undefined") {
-  //     window.addEventListener("scroll", handleScroll);
-  //   }
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+    }
 
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // });
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
 
   return (
     <>
@@ -202,7 +168,7 @@ const HeaderContent = (props) => {
           </div>
         </div> */}
 
-        <nav /*ref={navRef}*/ className="navbar-wrapper nav-wrapper-fixed">
+        <nav ref={navRef} className="navbar-wrapper nav-wrapper-fixed">
           <Row
             align="middle"
             justify="space-between"

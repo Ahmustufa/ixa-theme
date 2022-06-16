@@ -11,7 +11,6 @@ import { PersistGate } from "redux-persist/integration/react";
 import Router from "next/router";
 import PageChange from "../src/component/PageChange";
 import ReactDOM from "react-dom";
-import SideBar from "../src/component/sidecontactForm/Sidebar";
 import CookieBanner from "../src/component/cookieBanner";
 import { useEffect } from "react";
 import * as ga from "react-ga";
@@ -58,7 +57,6 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Layout>
-          <SideBar />
           <CookieBanner />
           <Component {...pageProps} />
         </Layout>

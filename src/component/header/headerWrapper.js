@@ -1,8 +1,7 @@
 import HeaderContent from "./headerContent";
 import { connect } from "react-redux";
 import { User } from "../../redux/constants";
-import { useMutation } from "react-apollo";
-import { Mutation } from "../../apollo/mutations";
+import { Mutation } from "../../api/mutations";
 import { message } from "antd";
 import { errorHandler } from "../../utils/errorHandler";
 import Cookies from "js-cookie";
@@ -13,15 +12,15 @@ const HeaderWrapper = (props) => {
   const { user, isLoggedIn } = props;
   const dispatch = useDispatch();
 
-  const [logoutMutation, { loading }] = useMutation(Mutation.LOGOUT_USER);
+  // const [logoutMutation, { loading }] = useMutation(Mutation.LOGOUT_USER);
 
   const handleLogout = async () => {
     try {
-      await logoutMutation({
-        variables: {
-          deviceId: user.deviceId,
-        },
-      });
+      // await logoutMutation({
+      //   variables: {
+      //     deviceId: user.deviceId,
+      //   },
+      // });
       dispatch(logoutAction());
     } catch (err) {
       message.error(errorHandler(err));
@@ -32,9 +31,9 @@ const HeaderWrapper = (props) => {
   return (
     <HeaderContent
       user={user}
-      isLoggedIn={isLoggedIn}
+      isLoggedIn={false}
       handleLogout={handleLogout}
-      logoutLoading={loading}
+      logoutLoading={false}
     />
   );
 };
