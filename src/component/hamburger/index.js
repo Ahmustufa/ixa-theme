@@ -5,9 +5,10 @@ const StyledHamburger = styled.div`
   cursor: pointer;
 
   .line {
-    height: 4px;
-    width: 36px;
-    background-color: #fe8819;
+    height: 2px;
+    width: 24px;
+    background-color: #fff;
+    // background-color: #fe8819;
     border-radius: 5px;
     transition: 0.3s ease;
   }

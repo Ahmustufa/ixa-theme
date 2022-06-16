@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Row, Col, Drawer, Dropdown } from "antd";
+import { Row, Col, Dropdown } from "antd";
 import Hamburger from "../hamburger";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { IoCloseCircleOutline } from "react-icons/io5";
+import { BiUser } from "react-icons/bi";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { BiSearch } from "react-icons/bi";
 import styled from "styled-components";
+import SidebarWrapper from "./sidebarWrapper";
 
 const navOptions = [
   { label: "HOME", link: "/" },
@@ -18,48 +19,18 @@ const HeaderContent = (props) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [drawer, setDrawer] = useState(false);
+  // useEffect(() => {
+  //   function setWindowSizeChange() {
+  //     if (window.innerWidth > 1024) {
+  //       setDrawer(false);
+  //     }
+  //   }
 
-  const menuList = (
-    <ul className="menu-list">
-      <li>
-        <img
-          alt="Polkadotsretail"
-          src="/images/LogiLogos-light.svg"
-          style={{ width: 160 }}
-          className="app-logo"
-        />
-      </li>
-
-      {navOptions.map((item, index) => (
-        <li
-          key={index}
-          className={`menu-item ${router.pathname === item.link ? "active" : ""}`}
-        >
-          <Link href={item.link}>
-            <a>{item.label}</a>
-          </Link>
-        </li>
-      ))}
-      <li className={`menu-item ${router.pathname === "discover" ? "active" : ""}`}>
-        <Dropdown overlay={discoverOverlay}>
-          <a>Discover</a>
-        </Dropdown>
-      </li>
-    </ul>
-  );
-
-  useEffect(() => {
-    function setWindowSizeChange() {
-      if (window.innerWidth > 1024) {
-        setDrawer(false);
-      }
-    }
-
-    window.addEventListener("resize", setWindowSizeChange);
-    return () => {
-      window.removeEventListener("resize", setWindowSizeChange);
-    };
-  });
+  //   window.addEventListener("resize", setWindowSizeChange);
+  //   return () => {
+  //     window.removeEventListener("resize", setWindowSizeChange);
+  //   };
+  // });
 
   /**
    * This useEffect function is used to change header background-color
@@ -84,47 +55,59 @@ const HeaderContent = (props) => {
 
   return (
     <>
-      <Drawer
-        title=""
-        placement="left"
-        visible={drawer}
-        closable={false}
-        drawerStyle={{ backgroundColor: "#fff", padding: 0, margin: 0 }}
-        bodyStyle={{ padding: 0 }}
-        mask={false}
-        width={"100%"}
-      >
-        <IoCloseCircleOutline
-          onClick={() => setDrawer(false)}
-          style={{ fontSize: 32, color: "#fff" }}
-        />
-        {menuList}
-      </Drawer>
-
+      <SidebarWrapper visible={drawer} onClose={() => setDrawer(false)} />
       <header className="header">
         <nav ref={navRef} className="navbar-wrapper">
-          <Row
-            align="middle"
-            justify="space-between"
-            gutter={[32, 0]}
-            className="nav-container"
-          >
-            <Col>
-              <div className="menu-wrapper">{menuList}</div>
+          <Row align="middle" justify="space-between" className="nav-container">
+            <Col xs={12} sm={12} md={6} lg={5} xl={4}>
+              <div className="d-flex align-items-center">
+                <img
+                  alt="Polkadotsretail"
+                  src="/images/LogiLogos-light.svg"
+                  className="app-logo"
+                />
+
+                <menu className="menu-list d-none d-lg-flex align-items-center p-0">
+                  <div className={`menu-item ${router.pathname === "/" ? "active" : ""}`}>
+                    <Link href="/">
+                      <a>HOME</a>
+                    </Link>
+                  </div>
+
+                  <div
+                    className={`menu-item ${router.pathname === "/shop" ? "active" : ""}`}
+                  >
+                    <Link href="/">
+                      <a>SHOP</a>
+                    </Link>
+                  </div>
+
+                  <div
+                    className={`menu-item ${
+                      router.pathname === "discover" ? "active" : ""
+                    }`}
+                  >
+                    <Dropdown overlay={discoverOverlay}>
+                      <a>Discover</a>
+                    </Dropdown>
+                  </div>
+                </menu>
+
+                <div
+                  className="d-flex d-sm-flex d-md-flex d-lg-none"
+                  onClick={() => setDrawer((prev) => !prev)}
+                >
+                  <Hamburger open={drawer} />
+                </div>
+              </div>
             </Col>
 
-            <Col>
+            <Col xs={10} sm={10} md={6} lg={5} xl={4}>
               <div className="icons-wrapper d-flex align-items-center">
                 <BiSearch className="icon" />
                 <MdOutlineShoppingBag className="icon" />
                 <div className="cart-items">2</div>
-                <div className="account">Account</div>
-              </div>
-            </Col>
-
-            <Col span={0}>
-              <div className="hamburger" onClick={() => setDrawer((prev) => !prev)}>
-                <Hamburger open={drawer} />
+                <BiUser className="icon" />
               </div>
             </Col>
           </Row>
