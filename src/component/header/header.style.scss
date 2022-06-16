@@ -1,45 +1,35 @@
 .header {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
   right: 0;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.4);
-}
+  background-color: transparent;
 
-// .topbar {
-//   height: 32px;
-//   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-//   padding: 0;
-//   margin: 0;
-//   a {
-//     padding: 10px 12px;
-//   }
-// }
+  .app-logo {
+    content: url("/images/LogiLogos-dark.svg");
+  }
+}
 
 .navbar-wrapper {
   width: -webkit-fill-available;
   width: -moz-available;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  margin: auto;
   padding: 16px 0;
   transition: 0.3s;
-
-  .nav-container {
-    width: 90%;
-    margin: auto;
+  padding-inline: 5%;
+  .menu-item a {
+    color: #000;
   }
 
   &.nav-wrapper-fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     background-color: rgb(38, 38, 42);
-    // .menu-item a {
-    //   color: #000;
-    // }
+    .menu-item a {
+      color: #fff;
+    }
+    .app-logo {
+      content: url("/images/LogiLogos-light.svg");
+    }
   }
 
   .user-info {
@@ -133,19 +123,6 @@
     }
   }
 }
-
-// .menu-item-user {
-//   border: 1px solid #fff;
-//   padding: 4px 6px;
-//   cursor: pointer;
-
-//   &:hover {
-//     p {
-//       color: #ffa930;
-//     }
-//     border: 1px solid #ffa930;
-//   }
-// }
 
 .menu-item {
   a {
