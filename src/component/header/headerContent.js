@@ -88,7 +88,7 @@ const HeaderContent = (props) => {
                     }`}
                   >
                     <Dropdown overlay={discoverOverlay}>
-                      <a>Discover</a>
+                      <a>DISCOVER</a>
                     </Dropdown>
                   </div>
                 </menu>

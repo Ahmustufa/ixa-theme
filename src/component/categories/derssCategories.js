@@ -69,7 +69,7 @@ const StyledContent = styled.div`
       position: absolute;
       bottom: -4px;
       left: 0;
-      height: 2px;
+      height: 1px;
       width: 0%;
       background-color: #54595f;
       transition: 0.3s;
