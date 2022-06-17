@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import Slider from "react-slick";
+import { ButtonWrapper } from "../buttons";
 
 const carouselData = [
   {
@@ -77,6 +78,8 @@ const Carousel = (props) => {
         <p className="text">{text}</p>
         <p className="text-uppercase my-2 my-md-3 title">{title}</p>
         <p className="subtitle">{subtitle}</p>
+
+        <ButtonWrapper style={{ width: 280, marginTop: 32 }}>EXPLORE NOW</ButtonWrapper>
       </div>
 
       <div className="social-icons d-none d-sm-flex text-white">
