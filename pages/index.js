@@ -3,6 +3,8 @@ import { Row, Col } from "antd";
 import ShopCard from "../src/component/cards/shopCard";
 import HomeCarousel from "../src/component/heroSection";
 import DressCategories from "../src/component/categories/derssCategories";
+import ProductListing from "../src/component/productListing";
+import ProductCarousel from "../src/component/productListing/carousel";
 
 const Home = () => {
   return (
@@ -25,8 +27,17 @@ const Home = () => {
         </Row>
       </section>
 
+      <DressCategories />
+      <ProductCarousel />
+
       <section>
-        <DressCategories />
+        <div style={{ fontSize: "3rem", color: "#54595f", textAlign: "center" }}>
+          Reveal your edginess.
+          <br />
+          Make a statement.
+        </div>
+
+        <img src="/images/slide_3.jpg" className="img-fluid mt-4" />
       </section>
     </>
   );

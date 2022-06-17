@@ -344,7 +344,7 @@ export const FooterContent1 = () => {
         <Col xxl={8} xl={8} lg={8} md={24} sm={24} xs={24} className="first-col">
           <Link href="/">
             <a>
-              <img src={whiteLogiLogo} />
+              <img src="/images/app-logo-light.svg" />
             </a>
           </Link>
           <div className="first-col-div">
