@@ -13,7 +13,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import Router from "next/router";
 import PageChange from "../src/component/PageChange";
 import ReactDOM from "react-dom";
-import CookieBanner from "../src/component/cookieBanner";
+// import CookieBanner from "../src/component/cookieBanner";
 import { useEffect } from "react";
 import * as ga from "react-ga";
 import { useRouter } from "next/router";
@@ -59,7 +59,7 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Layout>
-          <CookieBanner />
+          {/* <CookieBanner /> */}
           <Component {...pageProps} />
         </Layout>
       </PersistGate>

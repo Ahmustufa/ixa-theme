@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import { Button } from "antd";
 
 export const ButtonWrapper = styled.div`
@@ -9,7 +8,7 @@ export const ButtonWrapper = styled.div`
   border: ${(props) => props.border ?? "1px solid #0c0c0c"};
   border-radius: ${(props) => props.borderRadius ?? "60px"};
   width: ${(props) => props.width ?? "100%"};
-  padding: ${(props) => props.padding ?? "26px 36px"};
+  padding: 12px 36px;
   outline: none;
   box-shadow: none;
   font-weight: 400;
@@ -24,10 +23,14 @@ export const ButtonWrapper = styled.div`
     width: 24px;
     height: 1px;
     background-color: #fff;
+    transition: 0.3s;
   }
 
-  :hover :after {
-    width: 16px;
+  :hover {
+    padding-right: 40px;
+    :after {
+      width: 16px;
+    }
   }
 `;
 
