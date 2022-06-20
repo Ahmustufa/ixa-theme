@@ -165,12 +165,12 @@ const discoverOverlay = (
   <StyledOverlay justify="space-between">
     <Col xs={24} sm={24} md={7} lg={7}>
       <div>
-        <Link href="/">
+        <Link href="/product/New arrivals">
           <a>New arrivals</a>
         </Link>
       </div>
       <div>
-        <Link href="/">
+        <Link href="/product/Sales">
           <a>Sales</a>
         </Link>
       </div>
@@ -178,47 +178,47 @@ const discoverOverlay = (
 
     <Col xs={24} sm={24} md={7} lg={7}>
       <div>
-        <Link href="/">
+        <Link href="/product/Accessories">
           <a>Accessories</a>
         </Link>
       </div>
       <div>
-        <Link href="/">
+        <Link href="/product/Dressed">
           <a>Dressed</a>
         </Link>
       </div>
       <div>
-        <Link href="/">
+        <Link href="/product/Jackets">
           <a>Jackets</a>
         </Link>
       </div>
       <div>
-        <Link href="/">
+        <Link href="/product/Jeans">
           <a>Jeans</a>
         </Link>
       </div>
       <div>
-        <Link href="/">
+        <Link href="/product/Jumpsuits">
           <a>Jumpsuits</a>
         </Link>
       </div>
       <div>
-        <Link href="/">
+        <Link href="/product/Outwear">
           <a>Outwear</a>
         </Link>
       </div>
       <div>
-        <Link href="/">
+        <Link href="/product/Pants">
           <a>Pants</a>
         </Link>
       </div>
       <div>
-        <Link href="/">
+        <Link href="/product/Skirts">
           <a>Skirts</a>
         </Link>
       </div>
       <div>
-        <Link href="/">
+        <Link href="/product/Top">
           <a>Top</a>
         </Link>
       </div>
