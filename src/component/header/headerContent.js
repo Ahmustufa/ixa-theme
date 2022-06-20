@@ -38,10 +38,10 @@ const HeaderContent = (props) => {
   const navRef = useRef(null);
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
+      if (window.scrollY > 10 && router.pathname === "/") {
         navRef.current.classList.add("nav-wrapper-fixed");
       }
-      if (window.scrollY <= 20) {
+      if (window.scrollY <= 20 && router.pathname === "/") {
         navRef.current.classList.remove("nav-wrapper-fixed");
       }
     };
@@ -57,7 +57,12 @@ const HeaderContent = (props) => {
     <>
       <SidebarWrapper visible={drawer} onClose={() => setDrawer(false)} />
       <header className="header">
-        <nav ref={navRef} className="navbar-wrapper">
+        <nav
+          ref={navRef}
+          className={`navbar-wrapper ${
+            router.pathname === "/" ? "" : "nav-wrapper-fixed"
+          } `}
+        >
           <Row align="middle" justify="space-between" className="nav-container">
             <Col xs={12} sm={12} md={6} lg={5} xl={4}>
               <div className="d-flex align-items-center">
