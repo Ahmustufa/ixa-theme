@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import AccountSidebar from "../../src/component/sidebar/accountSidebar";
 
-const Order = () => {
+const Dashboard = () => {
   return (
     <StyledPage style={{ padding: 80 }}>
       <Row>
@@ -32,7 +32,7 @@ const Order = () => {
   );
 };
 
-export default Order;
+export default Dashboard;
 
 const StyledPage = styled.div`
   .dashboard {
