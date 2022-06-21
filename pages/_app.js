@@ -18,6 +18,7 @@ import { useEffect } from "react";
 import * as ga from "react-ga";
 import { useRouter } from "next/router";
 import AuthModal from "../src/component/modals/authModal";
+import SideCart from "../src/component/sidebar/sideCart";
 
 Router.events.on("routeChangeStart", (url) => {
   document.body.classList.add("body-page-transition");
@@ -62,6 +63,7 @@ function MyApp({ Component, pageProps }) {
         <Layout>
           {/* <CookieBanner /> */}
           <AuthModal />
+          <SideCart />
           <Component {...pageProps} />
         </Layout>
       </PersistGate>

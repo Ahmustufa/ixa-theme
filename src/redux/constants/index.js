@@ -23,3 +23,8 @@ export const ModalConstant = {
   OPEN_LOGIN_MODAL: "OPEN_SIGN_UP_MODAL_FOR_LOGIN",
   CLOSE_SIGN_UP_MODAL: "CLOSE_SIGN_UP_MODAL",
 };
+
+export const Cart = {
+  OPEN: "OPEN_CART",
+  CLOSE: "CLOSE_CART",
+};

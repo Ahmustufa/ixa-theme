@@ -10,6 +10,7 @@ import { BiSearch } from "react-icons/bi";
 import styled from "styled-components";
 import SidebarWrapper from "./sidebarWrapper";
 import { ModalConstant } from "../../redux/constants";
+import { openCart } from "../../redux/actions/cartActions";
 
 const navOptions = [
   { label: "HOME", link: "/" },
@@ -111,7 +112,12 @@ const HeaderContent = (props) => {
             <Col xs={10} sm={10} md={6} lg={5} xl={4}>
               <div className="icons-wrapper d-flex align-items-center">
                 <BiSearch className="icon" />
-                <MdOutlineShoppingBag className="icon" />
+                <MdOutlineShoppingBag
+                  className="icon"
+                  onClick={() => {
+                    dispatch(openCart());
+                  }}
+                />
                 <div className="cart-items">2</div>
                 {false ? (
                   <BiUser
