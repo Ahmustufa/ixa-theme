@@ -267,17 +267,17 @@ const accountOverlay = (
   <AccountOverlay>
     <ul className="account-menu-list">
       <li className="menu-item">
-        <Link href="#">
+        <Link href="/my-account/dashboard">
           <a className="hoverable dark">Dashboard</a>
         </Link>
       </li>
       <li className="menu-item">
-        <Link href="#">
+        <Link href="/my-account/orders">
           <a className="hoverable dark">Orders</a>
         </Link>
       </li>
       <li className="menu-item">
-        <Link href="#">
+        <Link href="/my-account/account">
           <a className="hoverable dark">Account</a>
         </Link>
       </li>
