@@ -58,3 +58,52 @@ a {
     }
   }
 }
+
+.ant-input-affix-wrapper,
+.ant-input-password {
+  outline: none !important;
+  border: 1px solid #d1d1d1 !important;
+  border-radius: 4px;
+  padding: 0px 11px;
+  display: flex;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  height: 42px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  ::placeholder {
+    color: #d0d0d0;
+    font-weight: 500;
+    user-select: none;
+  }
+  input {
+    height: 40px;
+    border-radius: 4px;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    ::placeholder {
+      color: #d0d0d0;
+      font-weight: 500;
+      user-select: none;
+    }
+    &:focus {
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    transition: 0.3s ease;
+    border: 1px solid #727272;
+    box-shadow: none !important;
+  }
+}
+
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+  box-shadow: none !important;
+  border: 1px solid #727272 !important;
+}

@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { User } from "../../redux/constants";
 import { Mutation } from "../../api/mutations";
 import { message } from "antd";
-import { errorHandler } from "../../utils/errorHandler";
-import Cookies from "js-cookie";
+import { errorHandler } from "../../api/config";
+// import Cookies from "js-cookie";
 import { useDispatch } from "react-redux";
 import { logoutAction } from "../../redux/actions";
 

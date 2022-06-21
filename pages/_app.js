@@ -17,6 +17,7 @@ import ReactDOM from "react-dom";
 import { useEffect } from "react";
 import * as ga from "react-ga";
 import { useRouter } from "next/router";
+import AuthModal from "../src/component/modals/authModal";
 
 Router.events.on("routeChangeStart", (url) => {
   document.body.classList.add("body-page-transition");
@@ -60,6 +61,7 @@ function MyApp({ Component, pageProps }) {
       <PersistGate loading={null} persistor={persistor}>
         <Layout>
           {/* <CookieBanner /> */}
+          <AuthModal />
           <Component {...pageProps} />
         </Layout>
       </PersistGate>

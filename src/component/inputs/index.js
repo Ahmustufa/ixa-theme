@@ -35,19 +35,11 @@ export const InputWrapper = styled(Input)`
       box-shadow: none !important;
     }
   }
-  &:hover {
-    transition: 0.3s ease;
-    border: 1px solid #0025ff;
-    box-shadow: none !important;
-  }
+  &:hover,
+  &:focus,
   &:active {
     transition: 0.3s ease;
-    border: 1px solid #0025ff;
-    box-shadow: none !important;
-  }
-  &:focus {
-    transition: 0.3s ease;
-    border: 1px solid #0025ff;
+    border: 1px solid #727272;
     box-shadow: none !important;
   }
 `;

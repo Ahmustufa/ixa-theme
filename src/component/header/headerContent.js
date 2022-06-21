@@ -9,6 +9,7 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 import { BiSearch } from "react-icons/bi";
 import styled from "styled-components";
 import SidebarWrapper from "./sidebarWrapper";
+import { ModalConstant } from "../../redux/constants";
 
 const navOptions = [
   { label: "HOME", link: "/" },
@@ -112,7 +113,12 @@ const HeaderContent = (props) => {
                 <BiSearch className="icon" />
                 <MdOutlineShoppingBag className="icon" />
                 <div className="cart-items">2</div>
-                <BiUser className="icon" />
+                <BiUser
+                  onClick={() => {
+                    dispatch({ type: ModalConstant.OPEN_LOGIN_MODAL });
+                  }}
+                  className="icon"
+                />
               </div>
             </Col>
           </Row>
