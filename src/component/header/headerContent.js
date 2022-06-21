@@ -113,12 +113,18 @@ const HeaderContent = (props) => {
                 <BiSearch className="icon" />
                 <MdOutlineShoppingBag className="icon" />
                 <div className="cart-items">2</div>
-                <BiUser
-                  onClick={() => {
-                    dispatch({ type: ModalConstant.OPEN_LOGIN_MODAL });
-                  }}
-                  className="icon"
-                />
+                {false ? (
+                  <BiUser
+                    onClick={() => {
+                      dispatch({ type: ModalConstant.OPEN_LOGIN_MODAL });
+                    }}
+                    className="icon"
+                  />
+                ) : (
+                  <Dropdown overlay={accountOverlay} trigger="click">
+                    <BiUser className="icon" />
+                  </Dropdown>
+                )}
               </div>
             </Col>
           </Row>
@@ -134,6 +140,7 @@ const StyledOverlay = styled(Row)`
   background-color: #fff;
   padding: 40px;
   width: 600px;
+  box-shadow: 1px 1px 4px #e5e5e5;
 
   div {
     margin-bottom: 12px;
@@ -234,4 +241,51 @@ const discoverOverlay = (
       <img src="/images/model.jpg" className="img-fluid" />
     </Col>
   </StyledOverlay>
+);
+
+const AccountOverlay = styled.div`
+  background-color: #fff;
+  padding: 18px;
+  width: 200px;
+  box-shadow: 1px 1px 4px #e5e5e5;
+
+  .account-menu-list {
+    list-style: none;
+    padding: 0;
+    .menu-item {
+      margin-bottom: 12px;
+    }
+    .menu-item a {
+      text-decoration: none;
+      color: #0c0c0c;
+      font-size: 14px;
+    }
+  }
+`;
+
+const accountOverlay = (
+  <AccountOverlay>
+    <ul className="account-menu-list">
+      <li className="menu-item">
+        <Link href="#">
+          <a className="hoverable dark">Dashboard</a>
+        </Link>
+      </li>
+      <li className="menu-item">
+        <Link href="#">
+          <a className="hoverable dark">Orders</a>
+        </Link>
+      </li>
+      <li className="menu-item">
+        <Link href="#">
+          <a className="hoverable dark">Account</a>
+        </Link>
+      </li>
+      <li className="menu-item">
+        <Link href="#">
+          <a className="hoverable dark">Logout</a>
+        </Link>
+      </li>
+    </ul>
+  </AccountOverlay>
 );
