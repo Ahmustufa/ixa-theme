@@ -1,13 +1,17 @@
 import { Row, Col } from "antd";
 import styled from "styled-components";
+import AccountSidebar from "../../src/component/sidebar/accountSidebar";
 
 const Orders = () => {
   return (
     <StyledPage style={{ padding: 80 }}>
-      <h2 style={{ fontSize: 28, fontWeight: 600, color: "#54595f", marginBottom: 32 }}>
-        My Orders
-      </h2>
-      {/* <Row className="table-header" justify="space-around">
+      <Row>
+        <Col xs={0} sm={0} md={6} lg={6}>
+          <AccountSidebar />
+        </Col>
+
+        <Col xs={24} sm={24} md={18} lg={18}>
+          {/* <Row className="table-header" justify="space-around">
         <Col span={8}>Product</Col>
         <Col span={3}>Price</Col>
         <Col span={3}>Quantity</Col>
@@ -37,41 +41,55 @@ const Orders = () => {
         </div>
       ))} */}
 
-      <Row gutter={[24, 24]}>
-        {[1, 2, 3, 4].map((item, index) => (
-          <Col key={index} span={8}>
-            <div className="box d-flex align-items-center">
-              <div>
-                <img src="/images/demo_image.jpg" style={{ width: 180 }} />
-              </div>
+          <Row gutter={[24, 24]}>
+            {[1, 2, 3, 4].map((item, index) => (
+              <Col key={index} span={8}>
+                <div className="box d-flex align-items-center">
+                  <div>
+                    <img src="/images/demo_image.jpg" style={{ width: 180 }} />
+                  </div>
 
-              <div className="ml-3">
-                <div className="product-name">
-                  Black Lace Trim Tee - M - Some more text
-                </div>
+                  <div className="ml-3">
+                    <div className="product-name">
+                      Black Lace Trim Tee - M - Some more text
+                    </div>
 
-                <div className="">
-                  <div className="d-flex mb-1" style={{ color: "#54595f", fontSize: 14 }}>
-                    <div className="">Price: </div>
-                    <div className="font-weight-light ml-2">Rs. 1000</div>
-                  </div>
-                  <div className="d-flex mb-1" style={{ color: "#54595f", fontSize: 14 }}>
-                    <div className="">Quantity: </div>
-                    <div className="font-weight-light ml-2">3</div>
-                  </div>
-                  <div className="d-flex mb-1" style={{ color: "#54595f", fontSize: 14 }}>
-                    <div className="">Ordered date: </div>
-                    <div className="font-weight-light ml-2">31 Feb 2033</div>
-                  </div>
-                  <div className="d-flex mb-1" style={{ color: "#54595f", fontSize: 14 }}>
-                    <div className="">Subtotal: </div>
-                    <div className="font-weight-light ml-2">Rs. 2000</div>
+                    <div className="">
+                      <div
+                        className="d-flex mb-1"
+                        style={{ color: "#54595f", fontSize: 14 }}
+                      >
+                        <div className="">Price: </div>
+                        <div className="font-weight-light ml-2">Rs. 1000</div>
+                      </div>
+                      <div
+                        className="d-flex mb-1"
+                        style={{ color: "#54595f", fontSize: 14 }}
+                      >
+                        <div className="">Quantity: </div>
+                        <div className="font-weight-light ml-2">3</div>
+                      </div>
+                      <div
+                        className="d-flex mb-1"
+                        style={{ color: "#54595f", fontSize: 14 }}
+                      >
+                        <div className="">Ordered date: </div>
+                        <div className="font-weight-light ml-2">31 Feb 2033</div>
+                      </div>
+                      <div
+                        className="d-flex mb-1"
+                        style={{ color: "#54595f", fontSize: 14 }}
+                      >
+                        <div className="">Subtotal: </div>
+                        <div className="font-weight-light ml-2">Rs. 2000</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </Col>
-        ))}
+              </Col>
+            ))}
+          </Row>
+        </Col>
       </Row>
     </StyledPage>
   );

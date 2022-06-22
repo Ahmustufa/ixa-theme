@@ -1,23 +1,30 @@
 import styled from "styled-components";
 import Link from "next/link";
+import router from "next/router";
+
+const heading = {
+  "/my-account/dashboard": "Dashboard",
+  "/my-account/orders": "Orders",
+  "/my-account/account": "Account details",
+};
 
 const AccountSidebar = (props) => {
   return (
     <StyledSidebar>
-      <h1 className="heading">My account</h1>
+      <h1 className="heading">{heading[router.pathname]}</h1>
       <ul className="sidebar-list">
         <li className="sidebar-item selected">
-          <Link href="#">
+          <Link href="/my-account/dashboard">
             <a className="hoverable dark">Dashboard</a>
           </Link>
         </li>
         <li className="sidebar-item">
-          <Link href="#">
+          <Link href="/my-account/orders">
             <a className="hoverable dark">Orders</a>
           </Link>
         </li>
         <li className="sidebar-item">
-          <Link href="#">
+          <Link href="/my-account/account">
             <a className="hoverable dark">Account</a>
           </Link>
         </li>
