@@ -5,6 +5,7 @@ import HomeCarousel from "../src/component/heroSection";
 import DressCategories from "../src/component/categories/derssCategories";
 import ProductListing from "../src/component/productListing";
 import ProductCarousel from "../src/component/productListing/carousel";
+import styled from "styled-components";
 
 const Home = () => {
   return (
@@ -14,33 +15,46 @@ const Home = () => {
       </Head>
 
       <HomeCarousel />
+      <StyledPage>
+        <section className="section-wrapper">
+          <Row justify="space-between" gutter={[0, 40]}>
+            <Col xs={24} sm={24} md={24} lg={24} xl={11}>
+              <ShopCard />
+            </Col>
 
-      <section style={{ padding: 80 }}>
-        <Row justify="space-between" gutter={[0, 40]}>
-          <Col xs={24} sm={24} md={24} lg={24} xl={11}>
-            <ShopCard />
-          </Col>
+            <Col xs={24} sm={24} md={24} lg={24} xl={11}>
+              <ShopCard />
+            </Col>
+          </Row>
+        </section>
 
-          <Col xs={24} sm={24} md={24} lg={24} xl={11}>
-            <ShopCard />
-          </Col>
-        </Row>
-      </section>
+        <DressCategories />
+        <ProductCarousel />
 
-      <DressCategories />
-      <ProductCarousel />
+        <section>
+          <div style={{ fontSize: "3rem", color: "#54595f", textAlign: "center" }}>
+            Reveal your edginess.
+            <br />
+            Make a statement.
+          </div>
 
-      <section>
-        <div style={{ fontSize: "3rem", color: "#54595f", textAlign: "center" }}>
-          Reveal your edginess.
-          <br />
-          Make a statement.
-        </div>
-
-        <img src="/images/slide_3.jpg" className="img-fluid mt-4" />
-      </section>
+          <img src="/images/slide_3.jpg" className="img-fluid mt-4" />
+        </section>
+      </StyledPage>
     </>
   );
 };
 
 export default Home;
+
+const StyledPage = styled.div`
+  .section-wrapper {
+    padding: 80px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    .section-wrapper {
+      padding: 24px;
+    }
+  }
+`;

@@ -4,6 +4,7 @@ import { ButtonWrapper } from "../buttons";
 const ShopCard = (props) => {
   return (
     <StyledCard>
+      <div className="image-container" />
       <div className="item-details">
         <div className="title">Back in Black</div>
         <div className="description">
@@ -19,18 +20,20 @@ const ShopCard = (props) => {
 export default ShopCard;
 
 const StyledCard = styled.div`
-  background-image: url(/images/shop_card_image.jpg);
-  background-size: cover;
-  backgorund-position: center;
-  height: 500px;
-  width: 480px;
-  position: relative;
-  border-radius: 4px;
+  .image-container {
+    background-image: url(/images/shop_card_image.jpg);
+    background-size: cover;
+    backgorund-position: center;
+    height: 500px;
+    width: 480px;
+    position: relative;
+    border-radius: 4px;
+  }
 
   .item-details {
     position: absolute;
     top: 100px;
-    left: 80%;
+    right: -20px;
     width: 300px;
   }
 
@@ -50,8 +53,36 @@ const StyledCard = styled.div`
   }
 
   @media only screen and (max-width: 1200px) {
+    // .item-details {
+    //   left: 96%;
+    // }
+  }
+
+  @media only screen and (max-width: 786px) {
+    .image-container {
+      width: 100%;
+      margin: 16px auto;
+    }
     .item-details {
-      left: 96%;
+      right: -50px;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    .image-container {
+      width: 100%;
+      margin: 16px auto;
+    }
+
+    .item-details {
+      position: relative;
+      top: 0px;
+      left: 0px;
+    }
+
+    .description {
+      margin: 12px 0;
+      font-weight: 300;
     }
   }
 `;
