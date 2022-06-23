@@ -69,6 +69,9 @@ const StyledCard = styled.div`
   }
 
   @media only screen and (max-width: 576px) {
+    .title {
+      font-size: 38px;
+    }
     .image-container {
       width: 100%;
       margin: 16px auto;

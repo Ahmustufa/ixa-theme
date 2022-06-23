@@ -96,4 +96,8 @@ const StyledCard = styled.div`
       left: 96%;
     }
   }
+
+  @media only screen and (max-width: 576px) {
+    margin: 0 12px;
+  }
 `;

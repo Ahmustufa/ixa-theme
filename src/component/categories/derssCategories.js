@@ -83,6 +83,6 @@ const StyledContent = styled.div`
   }
 
   @media only screen and (max-width: 576px) {
-    padding: 60px 50px 60px 70px;
+    padding: 12px;
   }
 `;

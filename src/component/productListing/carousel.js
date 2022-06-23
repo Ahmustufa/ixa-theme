@@ -10,6 +10,19 @@ const carouselSettings = {
   infinite: true,
   slidesToShow: 4,
   slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        speed: 500,
+        autoplay: true,
+        infinite: true,
+      },
+    },
+  ],
 };
 
 const ProductCarousel = (props) => {
@@ -49,4 +62,9 @@ export default ProductCarousel;
 
 const StyledContent = styled.div`
   padding: 80px;
+
+  @media only screen and (max-width: 576px) {
+    margin: 0;
+    padding: 0 8px;
+  }
 `;
