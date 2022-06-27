@@ -2,8 +2,10 @@ import { Row, Col } from "antd";
 import styled from "styled-components";
 import Link from "next/link";
 import AccountSidebar from "../../src/component/sidebar/accountSidebar";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
+  const { username } = useSelector((state) => state.user.data);
   return (
     <StyledPage style={{ padding: 80 }}>
       <Row>
@@ -13,7 +15,7 @@ const Dashboard = () => {
         <Col xs={24} sm={24} md={18} lg={18}>
           <div className="dashboard">
             <div className="mb-4 fs-5">
-              Hello <b>admin12345</b>
+              Hello <b>{username}</b>
             </div>
             <div>
               From your account dashboard you can view your{" "}

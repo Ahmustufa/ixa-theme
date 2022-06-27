@@ -24,7 +24,7 @@ const AccountSidebar = (props) => {
           </Link>
         </li>
         <li className="sidebar-item">
-          <Link href="/my-account/account">
+          <Link href="/my-account/settings">
             <a className="hoverable dark">Account</a>
           </Link>
         </li>

@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { userModule } from "./config";
 
 export const Mutations = {
@@ -12,5 +13,9 @@ export const Mutations = {
   },
   resetPassowrd: (body) => {
     return userModule.post("/auth/reset-password", body);
+  },
+  updateProfile: (body, params) => {
+    const headers = { Authorization: `Bearer ${Cookies.get("token")}` };
+    return userModule.put(`/users/${params.userId}`, body, { headers });
   },
 };

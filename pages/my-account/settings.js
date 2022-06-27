@@ -1,18 +1,46 @@
-import { Row, Col, Form } from "antd";
+import { Row, Col, Form, message } from "antd";
 import styled from "styled-components";
-import Link from "next/link";
+import { LoadingOutlined } from "@ant-design/icons";
 import AccountSidebar from "../../src/component/sidebar/accountSidebar";
 import { PrimaryButton } from "../../src/component/buttons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { errorHandler, Mutations } from "../../src/api/config";
+import { useFetch } from "../../src/hooks/useFetch";
 
 const MyAccount = () => {
   const [form] = Form.useForm();
   const [state, setState] = useState({});
+  const { data: userData } = useSelector((state) => state.user);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState({ ...state, [name]: value });
   };
+
+  useEffect(() => {
+    if (typeof window != "undefined") {
+      form.setFieldsValue({
+        "First Name": userData.firstName,
+        "Last Name": userData.lastName,
+        "Display Name": userData.username,
+        Email: userData.email,
+      });
+      setState(userData);
+    }
+  }, []);
+
+  const [updateProfile, updateLoading] = useFetch(Mutations.updateProfile);
+
+  const handleUpdate = async () => {
+    try {
+      const { data } = await updateProfile({ ...state }, { userId: userData._id });
+      console.log("Updated user data: ", data);
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
+
   return (
     <StyledPage style={{ padding: 80 }}>
       <Row>
@@ -21,7 +49,7 @@ const MyAccount = () => {
         </Col>
 
         <Col xs={24} sm={24} md={18} lg={18}>
-          <Form form={form} validateTrigger="onFinish">
+          <Form form={form} onFinish={handleUpdate} validateTrigger="onFinish">
             <label>First Name *</label>
             <Form.Item name="First Name" rules={[{ required: true }]}>
               <input
@@ -45,10 +73,10 @@ const MyAccount = () => {
             <label>Display Name *</label>
             <Form.Item name="Display Name" rules={[{ required: true }]}>
               <input
-                name="displayName"
+                name="username"
                 className="input-wrapper"
                 onChange={handleChange}
-                value={state.displayName}
+                value={state.username}
               />
             </Form.Item>
 
@@ -62,7 +90,7 @@ const MyAccount = () => {
               />
             </Form.Item>
 
-            <div
+            {/* <div
               style={{
                 border: "1px solid #ececec",
                 padding: 16,
@@ -83,7 +111,7 @@ const MyAccount = () => {
               </Form.Item>
 
               <label>NEW PASSWORD (LEAVE BLANK TO LEAVE UNCHANGED)</label>
-              <Form.Item name="Email">
+              <Form.Item name="New password">
                 <input
                   name="newPassword"
                   className="input-wrapper"
@@ -93,7 +121,7 @@ const MyAccount = () => {
               </Form.Item>
 
               <label>CONFIRM NEW PASSWORD</label>
-              <Form.Item name="Email">
+              <Form.Item name="Confirm passowrd">
                 <input
                   name="confirmPassword"
                   className="input-wrapper"
@@ -101,10 +129,10 @@ const MyAccount = () => {
                   value={state.confirmPassword}
                 />
               </Form.Item>
-            </div>
+            </div> */}
 
             <PrimaryButton htmlType="submit" className="mt-4">
-              Submit
+              {updateLoading && <LoadingOutlined style={{ marginRight: 16 }} />} Submit
             </PrimaryButton>
           </Form>
         </Col>

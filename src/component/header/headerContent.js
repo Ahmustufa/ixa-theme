@@ -11,15 +11,12 @@ import styled from "styled-components";
 import SidebarWrapper from "./sidebarWrapper";
 import { ModalConstant } from "../../redux/constants";
 import { openCart } from "../../redux/actions/cartActions";
-
-const navOptions = [
-  { label: "HOME", link: "/" },
-  { label: "SHOP", link: "/shop" },
-];
+import { logoutAction } from "../../redux/actions";
 
 const HeaderContent = (props) => {
   const dispatch = useDispatch();
   const { isLoggedIn } = useSelector((state) => state.user);
+  const { items } = useSelector((state) => state.cart);
   const router = useRouter();
   const [drawer, setDrawer] = useState(false);
   // useEffect(() => {
@@ -55,6 +52,38 @@ const HeaderContent = (props) => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   });
+
+  const accountOverlay = (
+    <AccountOverlay>
+      <ul className="account-menu-list">
+        <li className="menu-item">
+          <Link href="/my-account/dashboard">
+            <a className="hoverable dark">Dashboard</a>
+          </Link>
+        </li>
+        <li className="menu-item">
+          <Link href="/my-account/orders">
+            <a className="hoverable dark">Orders</a>
+          </Link>
+        </li>
+        <li className="menu-item">
+          <Link href="/my-account/settings">
+            <a className="hoverable dark">Account</a>
+          </Link>
+        </li>
+        <li className="menu-item">
+          <a
+            onClick={() => {
+              dispatch(logoutAction());
+            }}
+            className="hoverable dark"
+          >
+            Logout
+          </a>
+        </li>
+      </ul>
+    </AccountOverlay>
+  );
 
   return (
     <>
@@ -119,7 +148,7 @@ const HeaderContent = (props) => {
                     dispatch(openCart());
                   }}
                 />
-                <div className="cart-items">2</div>
+                <div className="cart-items">{items.length}</div>
                 {isLoggedIn ? (
                   <Dropdown overlay={accountOverlay} trigger="click">
                     <BiUser className="icon" />
@@ -269,30 +298,3 @@ const AccountOverlay = styled.div`
     }
   }
 `;
-
-const accountOverlay = (
-  <AccountOverlay>
-    <ul className="account-menu-list">
-      <li className="menu-item">
-        <Link href="/my-account/dashboard">
-          <a className="hoverable dark">Dashboard</a>
-        </Link>
-      </li>
-      <li className="menu-item">
-        <Link href="/my-account/orders">
-          <a className="hoverable dark">Orders</a>
-        </Link>
-      </li>
-      <li className="menu-item">
-        <Link href="/my-account/account">
-          <a className="hoverable dark">Account</a>
-        </Link>
-      </li>
-      <li className="menu-item">
-        <Link href="#">
-          <a className="hoverable dark">Logout</a>
-        </Link>
-      </li>
-    </ul>
-  </AccountOverlay>
-);
