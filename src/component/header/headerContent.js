@@ -119,7 +119,7 @@ const HeaderContent = (props) => {
                   }}
                 />
                 <div className="cart-items">2</div>
-                {false ? (
+                {true ? (
                   <BiUser
                     onClick={() => {
                       dispatch({ type: ModalConstant.OPEN_LOGIN_MODAL });

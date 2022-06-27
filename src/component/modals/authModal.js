@@ -5,11 +5,13 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { ModalConstant } from "../../redux/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { PrimaryButton } from "../buttons";
-import { errorHandler } from "../../api/config";
+import { errorHandler, Mutations } from "../../api/config";
 import ProductCard from "../cards/productCard";
+import { useFetch } from "../../hooks/useFetch";
+import axios from "axios";
 // import Router from "next/router";
 // import Link from "next/link";
-// import { signUpWithoutPassword, loginUserAction } from "../../redux/actions";
+import { loginUserAction } from "../../redux/actions";
 
 const initialState = { email: "", password: "" };
 
@@ -60,19 +62,15 @@ const AuthModal = () => {
   /**
    * Login Mutation and handler
    */
-  // const [loginMutation, { loading: loginLoading }] = useMutation(Mutation.LOGIN_USER);
+  const [mutate, loading] = useFetch(Mutations.login);
 
   const handleLogin = async () => {
-    const deviceId = `${Math.random()}`;
     try {
-      // const { data } = await loginMutation({
-      //   variables: {
-      //     email: state.email,
-      //     password: state.password,
-      //     deviceId,
-      //   },
-      // });
-      // dispatch(loginUserAction({ ...data.loginUser, deviceId }));
+      const { data } = await mutate({
+        identifier: state.email,
+        password: state.password,
+      });
+      dispatch(loginUserAction(data));
       closeModal(); // close modal
     } catch (err) {
       message.error(errorHandler(err));
@@ -260,7 +258,7 @@ const AuthModal = () => {
 
               <div className="d-flex justify-content-center align-items-center">
                 <PrimaryButton htmlType="submit" style={{ width: "80%" }}>
-                  {false && <LoadingOutlined style={{ marginRight: 16 }} />} Sign in
+                  {loading && <LoadingOutlined style={{ marginRight: 16 }} />} Sign in
                 </PrimaryButton>
               </div>
             </Form>

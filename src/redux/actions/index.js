@@ -39,12 +39,15 @@ export const signUpWithoutPassword = (data) => (dispatch) => {
 };
 
 export const loginUserAction = (data) => (dispatch) => {
-  // console.log("signUpWithoutPassword payload", data);
-  const token = data.jwtToken?.token;
-  Cookie.set("token", token, { expires: 60 });
-  delete data.jwtToken;
-  Cookie.set("_LL_DATA_CAP", JSON.stringify(data), { expires: 60 });
-  dispatch({ type: User.SIGN_UP_WITHOUT_PASSWORD, payload: data });
+  const userData = {
+    firstName: data.user.first_name,
+    lastName: data.user.last_name,
+    email: data.user.email,
+  };
+  Cookie.set("token", data.jwt, { expires: 60 });
+  Cookie.set("_PD_DATA_CAP", JSON.stringify(userData), { expires: 60 });
+
+  dispatch({ type: User.LOG_IN, payload: { data: userData } });
 };
 
 export const storeLogoDesignOrderData = (payload) => (dispatch) => {
