@@ -3,7 +3,7 @@ import { Row, Col, Dropdown } from "antd";
 import Hamburger from "../hamburger";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BiUser } from "react-icons/bi";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { BiSearch } from "react-icons/bi";
@@ -19,6 +19,7 @@ const navOptions = [
 
 const HeaderContent = (props) => {
   const dispatch = useDispatch();
+  const { isLoggedIn } = useSelector((state) => state.user);
   const router = useRouter();
   const [drawer, setDrawer] = useState(false);
   // useEffect(() => {
@@ -119,17 +120,17 @@ const HeaderContent = (props) => {
                   }}
                 />
                 <div className="cart-items">2</div>
-                {true ? (
+                {isLoggedIn ? (
+                  <Dropdown overlay={accountOverlay} trigger="click">
+                    <BiUser className="icon" />
+                  </Dropdown>
+                ) : (
                   <BiUser
                     onClick={() => {
                       dispatch({ type: ModalConstant.OPEN_LOGIN_MODAL });
                     }}
                     className="icon"
                   />
-                ) : (
-                  <Dropdown overlay={accountOverlay} trigger="click">
-                    <BiUser className="icon" />
-                  </Dropdown>
                 )}
               </div>
             </Col>

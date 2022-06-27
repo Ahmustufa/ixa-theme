@@ -1,5 +1,6 @@
-export const Action = {
-  SAVE_ALL_PACKAGE: "SAVE_ALL_PACKAGE",
+export const Wishlist = {
+  ADD_ITEM: "ADD_ITEM_TO_WISHLIST",
+  REMOVE_ITEM: "REMOVE_ITEM_TO_WISHLIST",
 };
 
 export const User = {
@@ -27,4 +28,6 @@ export const ModalConstant = {
 export const Cart = {
   OPEN: "OPEN_CART",
   CLOSE: "CLOSE_CART",
+  ADD_ITEM: "ADD_ITEM_TO_CART",
+  REMOVE_ITEM: "REMOVE_ITEM_TO_CART",
 };
