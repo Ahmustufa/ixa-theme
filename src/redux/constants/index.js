@@ -31,3 +31,7 @@ export const Cart = {
   ADD_ITEM: "ADD_ITEM_TO_CART",
   REMOVE_ITEM: "REMOVE_ITEM_TO_CART",
 };
+
+export const Product = {
+  STORE: "STORE_ALL_PRODUCTS",
+};

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Row, Col } from "antd";
 import ProductCard from "../cards/productCard";
 import Slider from "react-slick";
+import { useSelector } from "react-redux";
 
 const carouselSettings = {
   dots: true,
@@ -26,6 +27,8 @@ const carouselSettings = {
 };
 
 const ProductCarousel = (props) => {
+  const { items } = useSelector((state) => state.products);
+
   return (
     <StyledContent>
       <div className="text-center">
@@ -48,9 +51,9 @@ const ProductCarousel = (props) => {
       </div>
 
       <Slider {...carouselSettings}>
-        {[1, 2, 3, 4, , 5, 6, 7, 8].map((item, index) => (
+        {items.map((item, index) => (
           <div>
-            <ProductCard />
+            <ProductCard {...item} />
           </div>
         ))}
       </Slider>
