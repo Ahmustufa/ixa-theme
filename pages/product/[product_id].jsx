@@ -5,60 +5,46 @@ import { PrimaryButton } from "../../src/component/buttons";
 import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
 import styled from "styled-components";
 import ReviewListing from "../../src/component/reviews/reviewListing";
+import { useState } from "react";
+import axios from "axios";
 
 const { Panel } = Collapse;
 
-const Order = () => {
+const Order = (props) => {
+  const { productDetails, colors } = props;
+  const [state, setState] = useState({ color: "", size: "" });
+
+  const formatedPrice = new Intl.NumberFormat("en-us", {
+    style: "currency",
+    currency: "PKR",
+  });
+
+  var sizes = [];
+  if (state.color !== "") {
+    productDetails.inventories.forEach((item) => {
+      if (item.color === state.color && item.quantity > 0) {
+        sizes.push(item.size);
+      }
+    });
+  }
+
   return (
     <StyledPage style={{ padding: 80 }}>
-      <div className="mx-auto my-4 fw-bold">Home / Cards / Order</div>
+      {/* <div className="mx-auto my-4 fw-bold">
+        Home / Products / {productDetails.productName}
+      </div> */}
 
       <Row className="mx-auto position-relative" gutter={[24, 24]}>
         <Col span={14}>
           <div style={{ position: "sticky", top: 60, display: "flex", flexWrap: "wrap" }}>
             <Row gutter={[12, 12]}>
-              <Col span={12}>
+              <Col>
                 <img
                   alt="card-image"
-                  src="/images/shop_card_image.jpg"
-                  className="product-image"
-                />
-                <img
-                  alt="card-image"
-                  src="/images/accessory.jpg"
-                  className="product-image"
-                />
-                <img
-                  alt="card-image"
-                  src="/images/shop_card_image.jpg"
-                  className="product-image"
-                />
-                <img
-                  alt="card-image"
-                  src="/images/accessory.jpg"
-                  className="product-image"
-                />
-              </Col>
-
-              <Col span={12}>
-                <img
-                  alt="card-image"
-                  src="/images/accessory.jpg"
-                  className="product-image"
-                />
-                <img
-                  alt="card-image"
-                  src="/images/shop_card_image.jpg"
-                  className="product-image"
-                />
-                <img
-                  alt="card-image"
-                  src="/images/accessory.jpg"
-                  className="product-image"
-                />
-                <img
-                  alt="card-image"
-                  src="/images/shop_card_image.jpg"
+                  src={
+                    productDetails.images &&
+                    process.env.REACT_APP_STRAPI_URL + productDetails.images[0].url
+                  }
                   className="product-image"
                 />
               </Col>
@@ -77,29 +63,47 @@ const Order = () => {
               color: "#54595f",
             }}
           >
-            <div style={{ fontSize: 40 }}>Navy Chino Trousers</div>
-            <div style={{ fontSize: 12, margin: "16px 0" }}>ZENURO</div>
-            <div style={{ fontSize: 20, fontWeight: 600 }}>Rs. 3999</div>
-            <div style={{ fontWeight: 300 }}>
-              Proactively communicate corporate process improvements via corporate
-              scenarios. Progressively aggregate proactive data after diverse users.
-              Rapidiously redefine front-end interfaces before go forward process
-              improvements.
+            <div style={{ fontSize: 40 }}>{productDetails.productName}</div>
+            <div style={{ fontSize: 12, margin: "16px 0" }}>
+              {productDetails.brandName}
             </div>
+            <div style={{ fontSize: 20, fontWeight: 600 }}>
+              {formatedPrice.format(productDetails.price)}
+            </div>
+            <div style={{ fontWeight: 300 }}>{productDetails.description}</div>
 
             <div className="d-flex align-items-center my-4">
-              <div style={{ width: 160 }}>SIZE</div>
-              <div className="size-box">XS</div>
-              <div className="size-box">S</div>
-              <div className="size-box">M</div>
-              <div className="size-box">L</div>
-              <div className="size-box">XL</div>
-              <div className="size-box">XXL</div>
+              <div style={{ width: 160 }}>COLOR</div>
+              {colors.map((color, index) => (
+                <div
+                  key={index}
+                  style={{ backgroundColor: color }}
+                  className={`color-palette ${state.color == color && "selected"}`}
+                  onClick={() => setState({ color, size: "" })}
+                />
+              ))}
             </div>
+
+            {state.color !== "" ? (
+              <div className="d-flex align-items-center my-4">
+                <div style={{ width: 160 }}>SIZE</div>
+                {sizes.map((size, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setState({ ...state, size })}
+                    className={`size-box ${state.size == size && "selected"}`}
+                  >
+                    {size}
+                  </div>
+                ))}
+              </div>
+            ) : null}
 
             <Row align="middle" gutter={[24, 24]} className="pt-4">
               <Col>
-                <PrimaryButton>ADD TO CART</PrimaryButton>
+                <PrimaryButton disabled={state.color == "" || state.size == ""}>
+                  ADD TO CART
+                </PrimaryButton>
               </Col>
 
               <Col>
@@ -141,7 +145,9 @@ const Order = () => {
                     <div>BRAND</div>
                   </Col>
                   <Col span={12}>
-                    <div className="description text-right m-0">Zenuro</div>
+                    <div className="description text-right m-0">
+                      {productDetails.brandName}
+                    </div>
                   </Col>
                   <Col span={24}>
                     <Divider style={{ margin: "16px 0" }} />
@@ -150,7 +156,9 @@ const Order = () => {
                     <div>MATERIAL</div>
                   </Col>
                   <Col span={12}>
-                    <div className="description text-right m-0">Velvet</div>
+                    <div className="description text-right m-0">
+                      {productDetails.material}
+                    </div>
                   </Col>
                   <Col span={24}>
                     <Divider style={{ margin: "16px 0" }} />
@@ -229,6 +237,32 @@ const StyledPage = styled.div`
     cursor: pointer;
     width: 72px;
     text-align: center;
+
+    &.selected {
+      border: 1px solid #727272;
+    }
+  }
+
+  .color-palette {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    margin: 0 12px;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.09), -2px -2px 3px rgba(0, 0, 0, 0.09),
+      -2px 2px 3px rgba(0, 0, 0, 0.09), 2px -2px 3px rgba(0, 0, 0, 0.09);
+
+    &.selected:after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      border: 1px solid #727272;
+      border-radius: 50%;
+    }
   }
 
   .wish-button {
@@ -274,3 +308,42 @@ const StyledPage = styled.div`
     margin-bottom: 12px;
   }
 `;
+
+export async function getServerSideProps(context) {
+  try {
+    var { data } = await axios.get(
+      `http://64.227.31.159:1337/products/${context.params.product_id}`
+    );
+    // var stock = {};
+    // data.inventories.forEach((item) => {
+    //   if (stock.hasOwnProperty(item.color)) {
+    //     stock[item.color][item.size] = item.quantity;
+    //   } else {
+    //     stock[item.color] = {
+    //       [item.size]: item.quantity,
+    //     };
+    //   }
+    // });
+    var colors = [];
+    data.inventories.forEach((item) => {
+      if (!colors.includes(item.color)) {
+        colors.push(item.color);
+      }
+    });
+  } catch (err) {
+    return {
+      notFound: true,
+    };
+  }
+
+  if (data == null) {
+    return {
+      // redirect: { destination: "/" },
+      notFound: true,
+    };
+  } else {
+    return {
+      props: { productDetails: data, colors },
+    };
+  }
+}

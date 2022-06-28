@@ -5,16 +5,16 @@ import { Row, Col } from "antd";
 import { BsSuitHeart } from "react-icons/bs";
 
 const ProductCard = (props) => {
-  console.log("Props", props);
-  const { productName, brandName, price, images } = props;
+  // console.log("Props", props);
+  const { _id, productName, brandName, price, images } = props;
   const cardImage = process.env.REACT_APP_STRAPI_URL + images[0].url;
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
-    currency: "USD",
+    currency: "PKR",
   });
   return (
     <StyledCard>
-      <Link href="/product/123">
+      <Link href={`/product/${_id}`}>
         <div className="product-image" style={{ backgroundImage: `url(${cardImage})` }} />
       </Link>
 

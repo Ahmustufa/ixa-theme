@@ -202,16 +202,9 @@ export const TextAreaWrapper = styled.textarea`
     font-weight: 500;
     user-select: none;
   }
-  &:hover {
-    // transition: 0.3s ease;
-    border: 1px solid #0025ff;
-  }
-  &:active {
-    // transition: 0.3s ease;
-    border: 1px solid #0025ff;
-  }
+  &:hover,
+  &:active,
   &:focus {
-    // transition: 0.3s ease;
     border: 1px solid #0025ff;
   }
 `;

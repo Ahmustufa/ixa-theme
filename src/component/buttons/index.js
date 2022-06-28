@@ -49,6 +49,11 @@ export const PrimaryButton = styled.button`
     color: #212529;
     background-color: transparent;
   }
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.7;
+  }
 `;
 
 const StyledSwipeButton = styled.button`
