@@ -7,11 +7,14 @@ import styled from "styled-components";
 import ReviewListing from "../../src/component/reviews/reviewListing";
 import { useState } from "react";
 import axios from "axios";
+import { addItemToCart } from "../../src/redux/actions/cartActions";
+import { useDispatch } from "react-redux";
 
 const { Panel } = Collapse;
 
 const Order = (props) => {
   const { productDetails, colors } = props;
+  const dispatch = useDispatch();
   const [state, setState] = useState({ color: "", size: "" });
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -101,7 +104,12 @@ const Order = (props) => {
 
             <Row align="middle" gutter={[24, 24]} className="pt-4">
               <Col>
-                <PrimaryButton disabled={state.color == "" || state.size == ""}>
+                <PrimaryButton
+                  disabled={state.color == "" || state.size == ""}
+                  onClick={() => {
+                    dispatch(addItemToCart(productDetails));
+                  }}
+                >
                   ADD TO CART
                 </PrimaryButton>
               </Col>
