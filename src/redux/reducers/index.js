@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
   products: productReducer,
   cart: cartReducer,
   order: orderReducer,
-  wishlis: wishlistReducer,
+  wishlist: wishlistReducer,
   modal: modalReducer,
 });
 

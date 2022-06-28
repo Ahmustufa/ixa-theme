@@ -1,17 +1,19 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { ButtonWrapper } from "../buttons";
-import { Row, Col } from "antd";
-import { BsSuitHeart } from "react-icons/bs";
+import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToWishlist, removeWishlistItem } from "../../redux/actions";
 
 const ProductCard = (props) => {
-  // console.log("Props", props);
   const { _id, productName, brandName, price, images } = props;
   const cardImage = process.env.REACT_APP_STRAPI_URL + images[0].url;
+  const dispatch = useDispatch();
+  const { items: wishlist } = useSelector((state) => state.wishlist);
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
     currency: "PKR",
   });
+
   return (
     <StyledCard>
       <Link href={`/product/${_id}`}>
@@ -30,13 +32,25 @@ const ProductCard = (props) => {
           >
             ADD TO CART
           </div>
-          <div
-            style={{ fontSize: 13, marginLeft: 12, cursor: "pointer", fontWeight: 600 }}
-            className="d-flex align-items-center"
-          >
-            <BsSuitHeart className="mr-1" />
-            <div className="text hoverable dark">ADD TO WISHLIST</div>
-          </div>
+          {wishlist.includes(_id) ? (
+            <div
+              style={{ fontSize: 13, marginLeft: 12, cursor: "pointer", fontWeight: 600 }}
+              className="d-flex align-items-center"
+              onClick={() => dispatch(removeWishlistItem(_id))}
+            >
+              <BsSuitHeartFill className="mr-1" />
+              <div className="text hoverable dark">REMOVE FROM WISHLIST</div>
+            </div>
+          ) : (
+            <div
+              style={{ fontSize: 13, marginLeft: 12, cursor: "pointer", fontWeight: 600 }}
+              className="d-flex align-items-center"
+              onClick={() => dispatch(addItemToWishlist(_id))}
+            >
+              <BsSuitHeart className="mr-1" />
+              <div className="text hoverable dark">ADD TO WISHLIST</div>
+            </div>
+          )}
         </div>
       </div>
     </StyledCard>

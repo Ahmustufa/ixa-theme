@@ -1,4 +1,4 @@
-import { Product, User, Order } from "../constants";
+import { Product, User, Wishlist } from "../constants";
 import Cookie from "js-cookie";
 
 export const loginUserAction = (data) => (dispatch) => {
@@ -24,4 +24,12 @@ export const logoutAction = () => (dispatch) => {
 
 export const storeAllProducts = (payload) => (dispatch) => {
   dispatch({ type: Product.STORE, payload });
+};
+
+export const addItemToWishlist = (payload) => {
+  return { type: Wishlist.ADD_ITEM, payload };
+};
+
+export const removeWishlistItem = (payload) => {
+  return { type: Wishlist.REMOVE_ITEM, payload };
 };

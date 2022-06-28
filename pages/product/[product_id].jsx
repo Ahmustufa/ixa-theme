@@ -8,13 +8,15 @@ import ReviewListing from "../../src/component/reviews/reviewListing";
 import { useState } from "react";
 import axios from "axios";
 import { addItemToCart } from "../../src/redux/actions/cartActions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToWishlist, removeWishlistItem } from "../../src/redux/actions";
 
 const { Panel } = Collapse;
 
 const Order = (props) => {
   const { productDetails, colors } = props;
   const dispatch = useDispatch();
+  const { items: wishlist } = useSelector((state) => state.wishlist);
   const [state, setState] = useState({ color: "", size: "" });
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -102,23 +104,37 @@ const Order = (props) => {
               </div>
             ) : null}
 
-            <Row align="middle" gutter={[24, 24]} className="pt-4">
+            <Row align="middle" className="pt-4">
               <Col>
                 <PrimaryButton
                   disabled={state.color == "" || state.size == ""}
                   onClick={() => {
                     dispatch(addItemToCart(productDetails));
                   }}
+                  className="mr-3"
                 >
                   ADD TO CART
                 </PrimaryButton>
               </Col>
 
               <Col>
-                <div className="wish-button">
-                  <BsSuitHeart className="icon" />
-                  <div className="text">ADD TO WISHLIST</div>
-                </div>
+                {wishlist.includes(productDetails._id) ? (
+                  <div
+                    className="wish-button"
+                    onClick={() => dispatch(removeWishlistItem(productDetails._id))}
+                  >
+                    <BsSuitHeartFill className="icon" />
+                    <div className="text">REMOVE FROM WISHLIST</div>
+                  </div>
+                ) : (
+                  <div
+                    className="wish-button"
+                    onClick={() => dispatch(addItemToWishlist(productDetails._id))}
+                  >
+                    <BsSuitHeart className="icon" />
+                    <div className="text">ADD TO WISHLIST</div>
+                  </div>
+                )}
               </Col>
             </Row>
 
