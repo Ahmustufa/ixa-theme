@@ -68,6 +68,8 @@ const StyledCard = styled.div`
     width: 100%;
     border-radius: 4px;
     cursor: pointer;
+    position: relative;
+    z-index: 99;
   }
 
   .item-details {
@@ -101,7 +103,7 @@ const StyledCard = styled.div`
     background-color: #fff;
     transition: 0.6s;
     position: absolute;
-    bottom: -40%;
+    bottom: 40%;
     // left: 0;
   }
 
