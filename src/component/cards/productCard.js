@@ -101,7 +101,7 @@ const StyledCard = styled.div`
     background-color: #fff;
     transition: 0.6s;
     position: absolute;
-    bottom: -100%;
+    bottom: -40%;
     // left: 0;
   }
 

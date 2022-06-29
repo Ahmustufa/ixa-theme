@@ -13,7 +13,7 @@ import moment from "moment";
 const FooterContent1Div = styled.div`
   background-color: #2c3444;
   padding: 48px 8%;
-
+  position: relative;
   .ant-collapse-borderless {
     background-color: #2c3444;
   }
