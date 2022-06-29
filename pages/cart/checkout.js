@@ -188,7 +188,6 @@ const Checkout = () => {
                   },
                   {
                     required: true,
-                    message: "Enter you firstname",
                   },
                 ]}
               >
