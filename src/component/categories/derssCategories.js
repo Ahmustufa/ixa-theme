@@ -8,23 +8,23 @@ const DressCategories = (props) => {
     <StyledContent>
       <Row justify="space-between" gutter={[32, 32]} align="middle">
         <Col xs={24} sm={24} md={11} lg={12} xl={5}>
-          <CategoryCard />
+          <CategoryCard type="Tops" />
         </Col>
 
         <Col xs={24} sm={24} md={11} lg={12} xl={5}>
-          <CategoryCard />
+          <CategoryCard type="Dresses" />
         </Col>
 
         <Col xs={24} sm={24} md={11} lg={12} xl={5}>
-          <CategoryCard />
+          <CategoryCard type="Jackets" />
         </Col>
 
         <Col xs={24} sm={24} md={11} lg={12} xl={5}>
-          <CategoryCard />
+          <CategoryCard type="Jeans" />
         </Col>
 
         <Col xs={24} sm={24} md={11} lg={12} xl={5}>
-          <CategoryCard img="/images/accessory.jpg" height="200px" />
+          <CategoryCard type="Accessories" img="/images/accessory.jpg" height="200px" />
         </Col>
 
         <Col xs={24} sm={24} md={11} lg={12} xl={18}>

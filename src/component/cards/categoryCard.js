@@ -2,12 +2,12 @@ import styled from "styled-components";
 import Link from "next/link";
 
 const CategoryCard = (props) => {
-  // const {img, height} = props
+  const { type } = props;
   return (
     <StyledCard {...props}>
       <div className="category">
         <Link href="/">
-          <a className="text">Back in Black</a>
+          <a className="text">{type}</a>
         </Link>
       </div>
     </StyledCard>

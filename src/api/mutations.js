@@ -21,4 +21,8 @@ export const Mutations = {
   createAccount: (body) => {
     return userModule.post("/auth/local/register", body);
   },
+  createOrder: (body) => {
+    // const headers = {Authorization: `Bearer ${Cookiesget("token")}`}
+    return userModule.post("/orders", body);
+  },
 };
