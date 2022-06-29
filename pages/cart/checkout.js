@@ -1,27 +1,57 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Row, Col, Form, message } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import CartSteps from "../../src/component/cartSteps";
 import { ButtonWrapper, PrimaryButton } from "../../src/component/buttons";
 import { InputWrapper } from "../../src/component/inputs";
 import { AiOutlineShopping } from "react-icons/ai";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { Mutations, errorHandler, useFetch } from "../../src/api/config";
+import { loginUserAction } from "../../src/redux/actions";
+
+const initialState = {
+  firstName: "",
+  lastName: "",
+  companyName: "",
+  address: "",
+  city: "",
+  county: "",
+  postcode: "",
+  phone: null,
+  email: "",
+};
 
 const Checkout = () => {
-  const [state, setState] = useState({
-    firstName: "",
-    lastName: "",
-    companyName: "",
-    address: "",
-    city: "",
-    county: "",
-    postcode: "",
-    phone: null,
-    email: "",
-  });
+  const dispatch = useDispatch();
+  const [state, setState] = useState({ ...initialState });
+  const { isLoggedIn } = useSelector((state) => state.user);
 
-  const handleLogin = () => {
-    alert("ok");
+  const [createAccountApi, createAccountLoading] = useFetch(Mutations.createAccount);
+  const createAccount = async () => {
+    try {
+      const { data } = createAccountApi({
+        firstName: state.firstName,
+        lastName: state.lastName,
+        email: state.email,
+        phoneNumber: state.phoneNumber,
+        password: "123",
+      });
+      dispatch(loginUserAction(data));
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
+
+  const handleLogin = async () => {
+    try {
+      if (isLoggedIn == false) {
+        await createAccount();
+      }
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
   };
 
   const handleChange = (e) => {
@@ -32,25 +62,31 @@ const Checkout = () => {
   useEffect(() => {
     console.log("satte", state);
   }, [state]);
+
   return (
     <StyledPage style={{ padding: 80 }}>
       <div className="cart-header">
         <h1>Checkout</h1>
       </div>
+
       <CartSteps step={2} />
-      <Row style={{ background: "#f9fafb" }} className="mt-5">
-        <Col span={24} className="p-4">
-          <div className="d-flex justify-content-start align-items-center">
-            <AiOutlineShopping color={"#ced4da"} size={50} />
-            <p className="mb-0 ml-5 title" style={{ color: "#808080" }}>
-              Returning customer?
-              <Link href={"/"}>
-                <a className={"font-weight-light dark"}> Click here to login</a>
-              </Link>
-            </p>
-          </div>
-        </Col>
-      </Row>
+
+      {isLoggedIn == false ? (
+        <Row style={{ background: "#f9fafb" }} className="mt-5">
+          <Col span={24} className="p-4">
+            <div className="d-flex justify-content-start align-items-center">
+              <AiOutlineShopping color={"#ced4da"} size={50} />
+              <p className="mb-0 ml-5 title" style={{ color: "#808080" }}>
+                Returning customer?
+                <Link href={"/"}>
+                  <a className={"font-weight-light dark"}> Click here to login</a>
+                </Link>
+              </p>
+            </div>
+          </Col>
+        </Row>
+      ) : null}
+
       <Form onFinish={handleLogin} validateTrigger="onFinish">
         <Row className="mt-5">
           <Col style={{ padding: "0px 2% 4% 0px" }} xs={24} xl={12}>
@@ -58,36 +94,29 @@ const Checkout = () => {
             <Row gutter={[24, 24]}>
               <Col xs={12} sm={12} xl={12}>
                 <p className="label">FIRST NAME *</p>
-                <Form.Item name="firstName" rules={[{ required: true, type: "string" }]}>
+                <Form.Item name="First Name" rules={[{ required: true, type: "string" }]}>
                   <InputWrapper
                     name="firstName"
                     value={state.firstName}
                     onChange={handleChange}
-                    // placeholder="What exact words should appear in your logo?"
+                    placeholder="First Name"
                   />
                 </Form.Item>
               </Col>
+
               <Col xs={12} sm={12} xl={12}>
-                <Form.Item name="lastName" rules={[{ required: true, type: "string" }]}>
-                  <p className="label">LAST NAME *</p>
+                <p className="label">LAST NAME *</p>
+                <Form.Item name="Last Name" rules={[{ required: true, type: "string" }]}>
                   <InputWrapper
                     name="lastName"
                     value={state.lastName}
                     onChange={handleChange}
-                    // placeholder="What exact words should appear in your logo?"
+                    placeholder="Last Name"
                   />
                 </Form.Item>
               </Col>
             </Row>
-            <Col className="mt-4" sm={24} xl={24}>
-              <p className="label">COMPANY NAME (OPTIONAL)</p>
-              <InputWrapper
-                name="companyName"
-                value={state.companyName}
-                onChange={handleChange}
-                // placeholder="What exact words should appear in your logo?"
-              />
-            </Col>
+
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">STREET ADDRESS *</p>
               <InputWrapper
@@ -97,6 +126,7 @@ const Checkout = () => {
                 placeholder="House number and street name"
               />
             </Col>
+
             <Col className="mt-4" sm={24} xl={24}>
               <InputWrapper
                 name="words"
@@ -105,6 +135,7 @@ const Checkout = () => {
                 placeholder="Appartment, suite, unit, etc. (optional)"
               />
             </Col>
+
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">TOWN / CITY *</p>
               <InputWrapper
@@ -114,15 +145,7 @@ const Checkout = () => {
                 // placeholder="House number and street name"
               />
             </Col>
-            <Col className="mt-4" sm={24} xl={24}>
-              <p className="label">COUNTY (OPTIONAL)</p>
-              <InputWrapper
-                name="words"
-                // value={userInfo.words}
-                // onChange={handleChange}
-                // placeholder="House number and street name"
-              />
-            </Col>
+
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">POSTCODE *</p>
               <InputWrapper
@@ -132,6 +155,7 @@ const Checkout = () => {
                 // placeholder="House number and street name"
               />
             </Col>
+
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">PHONE *</p>
               <InputWrapper
@@ -141,6 +165,7 @@ const Checkout = () => {
                 // placeholder="House number and street name"
               />
             </Col>
+
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">EMAIL ADDRESS *</p>
               <InputWrapper
@@ -151,6 +176,7 @@ const Checkout = () => {
               />
             </Col>
           </Col>
+
           <Col xs={24} xl={12}>
             <h6 className="heading">YOUR ORDER</h6>
             <div>
@@ -213,7 +239,7 @@ const Checkout = () => {
                 </p>
               </div>
               <PrimaryButton htmlType="submit" className="w-100 mt-5">
-                Proceed to checkout
+                {createAccountLoading && <LoadingOutlined />} Proceed to checkout
               </PrimaryButton>
             </div>
           </Col>

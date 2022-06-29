@@ -1,7 +1,8 @@
 import { Drawer, Row, Col, Divider } from "antd";
 import styled from "styled-components";
-import { IoClose, IoTrashOutline } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import { BiTrash } from "react-icons/bi";
+import Link from "next/link";
 import { PrimaryButton } from "../buttons";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -110,8 +111,9 @@ const SideCart = (props) => {
           <div>PKR {calculateTotal(items)}</div>
         </div>
         <Divider style={{ margin: "12px 0" }} />
-
-        <PrimaryButton className="mt-2 w-100">Checkout</PrimaryButton>
+        <Link href="/cart/checkout">
+          <PrimaryButton className="mt-2 w-100">Checkout</PrimaryButton>
+        </Link>
       </section>
     </StyledDrawer>
   );

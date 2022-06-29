@@ -18,4 +18,7 @@ export const Mutations = {
     const headers = { Authorization: `Bearer ${Cookies.get("token")}` };
     return userModule.put(`/users/${params.userId}`, body, { headers });
   },
+  createAccount: (body) => {
+    return userModule.post("/auth/local/register", body);
+  },
 };
