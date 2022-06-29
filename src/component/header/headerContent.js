@@ -227,47 +227,47 @@ const discoverOverlay = (
 
     <Col xs={24} sm={24} md={7} lg={7}>
       <div>
-        <Link href="/product/Accessories">
+        <Link href="/category/Accessories">
           <a>Accessories</a>
         </Link>
       </div>
       <div>
-        <Link href="/product/Dressed">
+        <Link href="/category/Dressed">
           <a>Dressed</a>
         </Link>
       </div>
       <div>
-        <Link href="/product/Jackets">
+        <Link href="/category/Jackets">
           <a>Jackets</a>
         </Link>
       </div>
       <div>
-        <Link href="/product/Jeans">
+        <Link href="/category/Jeans">
           <a>Jeans</a>
         </Link>
       </div>
       <div>
-        <Link href="/product/Jumpsuits">
+        <Link href="/category/Jumpsuits">
           <a>Jumpsuits</a>
         </Link>
       </div>
       <div>
-        <Link href="/product/Outwear">
+        <Link href="/category/Outwear">
           <a>Outwear</a>
         </Link>
       </div>
       <div>
-        <Link href="/product/Pants">
+        <Link href="/category/Pants">
           <a>Pants</a>
         </Link>
       </div>
       <div>
-        <Link href="/product/Skirts">
+        <Link href="/category/Skirts">
           <a>Skirts</a>
         </Link>
       </div>
       <div>
-        <Link href="/product/Top">
+        <Link href="/category/Tops">
           <a>Top</a>
         </Link>
       </div>
