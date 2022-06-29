@@ -48,6 +48,7 @@ export async function getServerSideProps(context) {
   const uri = `http://64.227.31.159:1337/categories/type/${context.params.category}`;
   try {
     const { data } = await axios.get(uri);
+    console.log("Polkadots", data);
     return {
       props: { productList: data.products },
     };

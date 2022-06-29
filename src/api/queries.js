@@ -7,4 +7,7 @@ export const Queries = {
   getProductById: (productId) => {
     return userModule.get(`/products/${productId}`);
   },
+  getAllCategories: () => {
+    return userModule.get("/categories");
+  },
 };
