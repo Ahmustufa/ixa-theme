@@ -116,64 +116,91 @@ const Checkout = () => {
                 </Form.Item>
               </Col>
             </Row>
-
+            <Col className="mt-4" sm={24} xl={24}>
+              <p className="label">COMPANY NAME (OPTIONAL)</p>
+              <InputWrapper
+                name="companyName"
+                value={state.companyName}
+                onChange={handleChange}
+              />
+            </Col>
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">STREET ADDRESS *</p>
-              <InputWrapper
-                name="address"
-                value={state.address}
-                onChange={handleChange}
-                placeholder="House number and street name"
-              />
+              <Form.Item name="address" rules={[{ required: true, type: "string" }]}>
+                <InputWrapper
+                  name="address"
+                  value={state.address}
+                  onChange={handleChange}
+                  placeholder="House number and street name"
+                />
+              </Form.Item>
             </Col>
 
             <Col className="mt-4" sm={24} xl={24}>
               <InputWrapper
-                name="words"
-                // value={userInfo.words}
-                // onChange={handleChange}
+                name="appartment"
+                value={state.appartment}
+                onChange={handleChange}
                 placeholder="Appartment, suite, unit, etc. (optional)"
               />
             </Col>
 
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">TOWN / CITY *</p>
-              <InputWrapper
-                name="words"
-                // value={userInfo.words}
-                // onChange={handleChange}
-                // placeholder="House number and street name"
-              />
+              <Form.Item name="city" rules={[{ required: true, type: "string" }]}>
+                <InputWrapper name="city" value={state.city} onChange={handleChange} />
+              </Form.Item>
             </Col>
-
+            <Col className="mt-4" sm={24} xl={24}>
+              <p className="label">COUNTY (OPTIONAL)</p>
+              <InputWrapper name="county" value={state.county} onChange={handleChange} />
+            </Col>
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">POSTCODE *</p>
-              <InputWrapper
-                name="words"
-                // value={userInfo.words}
-                // onChange={handleChange}
-                // placeholder="House number and street name"
-              />
+              <Form.Item
+                name="postcode"
+                rules={[
+                  {
+                    type: "string",
+                    pattern: new RegExp(/\d+/g),
+                    message: "Format is wrong",
+                  },
+                  { required: true, type: "string" },
+                ]}
+              >
+                <InputWrapper
+                  name="postcode"
+                  value={state.postcode}
+                  onChange={handleChange}
+                />
+              </Form.Item>
             </Col>
 
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">PHONE *</p>
-              <InputWrapper
-                name="words"
-                // value={userInfo.words}
-                // onChange={handleChange}
-                // placeholder="House number and street name"
-              />
+              <Form.Item
+                name="phone"
+                rules={[
+                  {
+                    type: "string",
+                    pattern: new RegExp(/^((\+92)?(0092)?(92)?(0)?)(3)([0-9]{9})$/),
+                    message: "Format is wrong",
+                  },
+                  {
+                    required: true,
+                    message: "Enter you firstname",
+                  },
+                ]}
+              >
+                <InputWrapper name="phone" value={state.phone} onChange={handleChange} />
+              </Form.Item>
             </Col>
 
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">EMAIL ADDRESS *</p>
-              <InputWrapper
-                name="words"
-                // value={userInfo.words}
-                // onChange={handleChange}
-                // placeholder="House number and street name"
-              />
+              <Form.Item name="email" rules={[{ required: true, type: "email" }]}>
+                <InputWrapper name="email" value={state.email} onChange={handleChange} />
+              </Form.Item>
             </Col>
           </Col>
 
