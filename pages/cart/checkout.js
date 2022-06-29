@@ -18,20 +18,21 @@ const initialState = {
   address: "",
   city: "",
   county: "",
-  postcode: "",
-  phone: null,
+  postalCode: "",
+  phoneNumber: null,
   email: "",
 };
 
 const Checkout = () => {
   const dispatch = useDispatch();
   const [state, setState] = useState({ ...initialState });
-  const { isLoggedIn } = useSelector((state) => state.user);
+  const { isLoggedIn, data: userData } = useSelector((state) => state.user);
+  const { items: cartItems } = useSelector((state) => state.cart);
 
   const [createAccountApi, createAccountLoading] = useFetch(Mutations.createAccount);
   const createAccount = async () => {
     try {
-      const { data } = createAccountApi({
+      const { data } = await createAccountApi({
         firstName: state.firstName,
         lastName: state.lastName,
         email: state.email,
@@ -59,9 +60,11 @@ const Checkout = () => {
     setState((prev) => ({ ...prev, [name]: value }));
   };
 
-  useEffect(() => {
-    console.log("satte", state);
-  }, [state]);
+  const calculateTotal = (cart) => {
+    const subTotal = cart.reduce((accu, item) => (accu += item.quantity * item.price), 0);
+    // console.log("Sub total", subTotal);
+    return subTotal.toLocaleString();
+  };
 
   return (
     <StyledPage style={{ padding: 80 }}>
@@ -116,17 +119,10 @@ const Checkout = () => {
                 </Form.Item>
               </Col>
             </Row>
-            <Col className="mt-4" sm={24} xl={24}>
-              <p className="label">COMPANY NAME (OPTIONAL)</p>
-              <InputWrapper
-                name="companyName"
-                value={state.companyName}
-                onChange={handleChange}
-              />
-            </Col>
+
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">STREET ADDRESS *</p>
-              <Form.Item name="address" rules={[{ required: true, type: "string" }]}>
+              <Form.Item name="Address" rules={[{ required: true, type: "string" }]}>
                 <InputWrapper
                   name="address"
                   value={state.address}
@@ -136,42 +132,44 @@ const Checkout = () => {
               </Form.Item>
             </Col>
 
-            <Col className="mt-4" sm={24} xl={24}>
+            {/* <Col className="mt-4" sm={24} xl={24}>
               <InputWrapper
                 name="appartment"
                 value={state.appartment}
                 onChange={handleChange}
                 placeholder="Appartment, suite, unit, etc. (optional)"
               />
-            </Col>
+            </Col> */}
 
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">TOWN / CITY *</p>
-              <Form.Item name="city" rules={[{ required: true, type: "string" }]}>
-                <InputWrapper name="city" value={state.city} onChange={handleChange} />
+              <Form.Item name="City" rules={[{ required: true, type: "string" }]}>
+                <InputWrapper
+                  name="city"
+                  value={state.city}
+                  onChange={handleChange}
+                  placeholder="Your city name"
+                />
               </Form.Item>
             </Col>
+
             <Col className="mt-4" sm={24} xl={24}>
-              <p className="label">COUNTY (OPTIONAL)</p>
-              <InputWrapper name="county" value={state.county} onChange={handleChange} />
-            </Col>
-            <Col className="mt-4" sm={24} xl={24}>
-              <p className="label">POSTCODE *</p>
+              <p className="label">POSTAL CODE</p>
               <Form.Item
-                name="postcode"
+                name="Postal Code"
                 rules={[
                   {
                     type: "string",
                     pattern: new RegExp(/\d+/g),
-                    message: "Format is wrong",
+                    message: "Invalid postal code",
                   },
-                  { required: true, type: "string" },
                 ]}
               >
                 <InputWrapper
-                  name="postcode"
-                  value={state.postcode}
+                  name="postalCode"
+                  value={state.postalCode}
                   onChange={handleChange}
+                  placeholder="xxxxx"
                 />
               </Form.Item>
             </Col>
@@ -179,27 +177,34 @@ const Checkout = () => {
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">PHONE *</p>
               <Form.Item
-                name="phone"
+                name="Phone"
                 rules={[
                   {
                     type: "string",
                     pattern: new RegExp(/^((\+92)?(0092)?(92)?(0)?)(3)([0-9]{9})$/),
-                    message: "Format is wrong",
-                  },
-                  {
+                    message: "Invalid phone number",
                     required: true,
-                    message: "Enter you firstname",
                   },
                 ]}
               >
-                <InputWrapper name="phone" value={state.phone} onChange={handleChange} />
+                <InputWrapper
+                  name="phoneNumber"
+                  value={state.phoneNumber}
+                  onChange={handleChange}
+                  placeholder="0300xxxxxxx"
+                />
               </Form.Item>
             </Col>
 
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">EMAIL ADDRESS *</p>
-              <Form.Item name="email" rules={[{ required: true, type: "email" }]}>
-                <InputWrapper name="email" value={state.email} onChange={handleChange} />
+              <Form.Item name="Email" rules={[{ required: true, type: "email" }]}>
+                <InputWrapper
+                  name="email"
+                  value={state.email}
+                  onChange={handleChange}
+                  placeholder="someone@example.com"
+                />
               </Form.Item>
             </Col>
           </Col>
@@ -215,55 +220,67 @@ const Checkout = () => {
                   <p className="title">SUBTOTAL</p>
                 </Col>
               </Row>
+
               <div style={{ border: "1px solid #eaedf0" }}>
-                {[1, 2, 3, 4].map((item, index) => (
+                {cartItems.map((item, index) => (
                   <Row className="product">
                     <Col key={index} span={16}>
                       <div className="box d-flex">
                         <div>
-                          <img src="/images/demo_image.jpg" style={{ width: 50 }} />
+                          <img
+                            src={process.env.REACT_APP_STRAPI_URL + item.images[0]?.url}
+                            style={{ width: 50 }}
+                          />
                         </div>
 
                         <div className="ml-3">
-                          <p className="font-weight-light">
-                            Black Lace Trim Tee - M - Some more text
-                          </p>
-                          {/* <p># {index + 1}</p> */}
+                          <p className="font-weight-light">{item.productName}</p>
+                          <p>1 x {item.quantity}</p>
                         </div>
                       </div>
                     </Col>
                     <Col className="p-3" span={8}>
-                      <p className="font-weight-light title">£159.00</p>
+                      <p className="font-weight-light title">
+                        PKR {item.price?.toLocaleString()}
+                      </p>
                     </Col>
                   </Row>
                 ))}
               </div>
-              <Row className="" style={{ border: "1px solid #eaedf0" }}>
+
+              {/* <Row className="" style={{ border: "1px solid #eaedf0" }}>
                 <Col className="p-3" span={16}>
                   <p className="title">SUBTOTAL</p>
                 </Col>
                 <Col className="p-3" span={8}>
-                  <p className="font-weight-light title mb-0">£159.00</p>
+                  <p className="font-weight-light title mb-0">{calculateTotal(cartItems)}</p>
                 </Col>
-              </Row>
+              </Row> */}
+
               <Row className="order-card-header">
                 <Col className="p-3" span={16}>
                   <p className="title">TOTAL</p>
                 </Col>
                 <Col className="p-3" span={8}>
-                  <p className="font-weight-bold title">£159.00</p>
+                  <p className="font-weight-bold title">
+                    PKR {calculateTotal(cartItems)}
+                  </p>
                 </Col>
               </Row>
             </div>
 
             <div className="payment-method-card mt-5">
-              <div className="d-flex justify-content-start align-items-center">
+              <div
+                className="d-flex justify-content-start align-items-center"
+                style={{ color: "#808080" }}
+              >
                 <AiOutlineShopping color={"#9d9d9d"} size={100} />
-                <p className="mb-0 ml-5 title" style={{ color: "#808080" }}>
-                  Sorry, it seems that there are no available payment methods for your
-                  state. Please contact us if you require assistance or wish to make
-                  alternate arrangements.
-                </p>
+                <div>
+                  <div className="title p-0">Payment method</div>
+                  <div className="p-0" style={{ fontWeight: 600, fontSize: 24 }}>
+                    Cash on delivery
+                  </div>
+                </div>
               </div>
               <PrimaryButton htmlType="submit" className="w-100 mt-5">
                 {createAccountLoading && <LoadingOutlined />} Proceed to checkout
