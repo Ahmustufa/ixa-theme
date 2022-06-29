@@ -13,6 +13,7 @@ const Checkout = () => {
     lastName: "",
     companyName: "",
     address: "",
+    appartment: "",
     city: "",
     county: "",
     postcode: "",
@@ -63,18 +64,16 @@ const Checkout = () => {
                     name="firstName"
                     value={state.firstName}
                     onChange={handleChange}
-                    // placeholder="What exact words should appear in your logo?"
                   />
                 </Form.Item>
               </Col>
               <Col xs={12} sm={12} xl={12}>
+                <p className="label">LAST NAME *</p>
                 <Form.Item name="lastName" rules={[{ required: true, type: "string" }]}>
-                  <p className="label">LAST NAME *</p>
                   <InputWrapper
                     name="lastName"
                     value={state.lastName}
                     onChange={handleChange}
-                    // placeholder="What exact words should appear in your logo?"
                   />
                 </Form.Item>
               </Col>
@@ -85,70 +84,81 @@ const Checkout = () => {
                 name="companyName"
                 value={state.companyName}
                 onChange={handleChange}
-                // placeholder="What exact words should appear in your logo?"
               />
             </Col>
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">STREET ADDRESS *</p>
-              <InputWrapper
-                name="address"
-                value={state.address}
-                onChange={handleChange}
-                placeholder="House number and street name"
-              />
+              <Form.Item name="address" rules={[{ required: true, type: "string" }]}>
+                <InputWrapper
+                  name="address"
+                  value={state.address}
+                  onChange={handleChange}
+                  placeholder="House number and street name"
+                />
+              </Form.Item>
             </Col>
             <Col className="mt-4" sm={24} xl={24}>
               <InputWrapper
-                name="words"
-                // value={userInfo.words}
-                // onChange={handleChange}
+                name="appartment"
+                value={state.appartment}
+                onChange={handleChange}
                 placeholder="Appartment, suite, unit, etc. (optional)"
               />
             </Col>
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">TOWN / CITY *</p>
-              <InputWrapper
-                name="words"
-                // value={userInfo.words}
-                // onChange={handleChange}
-                // placeholder="House number and street name"
-              />
+              <Form.Item name="city" rules={[{ required: true, type: "string" }]}>
+                <InputWrapper name="city" value={state.city} onChange={handleChange} />
+              </Form.Item>
             </Col>
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">COUNTY (OPTIONAL)</p>
-              <InputWrapper
-                name="words"
-                // value={userInfo.words}
-                // onChange={handleChange}
-                // placeholder="House number and street name"
-              />
+              <InputWrapper name="county" value={state.county} onChange={handleChange} />
             </Col>
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">POSTCODE *</p>
-              <InputWrapper
-                name="words"
-                // value={userInfo.words}
-                // onChange={handleChange}
-                // placeholder="House number and street name"
-              />
+              <Form.Item
+                name="postcode"
+                rules={[
+                  {
+                    type: "string",
+                    pattern: new RegExp(/\d+/g),
+                    message: "Format is wrong",
+                  },
+                  { required: true, type: "string" },
+                ]}
+              >
+                <InputWrapper
+                  name="postcode"
+                  value={state.postcode}
+                  onChange={handleChange}
+                />
+              </Form.Item>
             </Col>
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">PHONE *</p>
-              <InputWrapper
-                name="words"
-                // value={userInfo.words}
-                // onChange={handleChange}
-                // placeholder="House number and street name"
-              />
+              <Form.Item
+                name="phone"
+                rules={[
+                  {
+                    type: "string",
+                    pattern: new RegExp(/^((\+92)?(0092)?(92)?(0)?)(3)([0-9]{9})$/),
+                    message: "Format is wrong",
+                  },
+                  {
+                    required: true,
+                    message: "Enter you firstname",
+                  },
+                ]}
+              >
+                <InputWrapper name="phone" value={state.phone} onChange={handleChange} />
+              </Form.Item>
             </Col>
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">EMAIL ADDRESS *</p>
-              <InputWrapper
-                name="words"
-                // value={userInfo.words}
-                // onChange={handleChange}
-                // placeholder="House number and street name"
-              />
+              <Form.Item name="email" rules={[{ required: true, type: "email" }]}>
+                <InputWrapper name="email" value={state.email} onChange={handleChange} />
+              </Form.Item>
             </Col>
           </Col>
           <Col xs={24} xl={12}>
