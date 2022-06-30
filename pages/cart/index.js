@@ -9,9 +9,11 @@ import Link from "next/link";
 
 const ShoppingBag = () => {
   const { items } = useSelector((state) => state.cart);
-  const subtotal = items?.reduce((accumulator, item) => {
-    return accumulator + item.price * item.quantity;
-  }, 0);
+  const calculateTotal = (cart) => {
+    const subTotal = cart.reduce((accu, item) => (accu += item.quantity * item.price), 0);
+    // console.log("Sub total", subTotal);
+    return subTotal.toLocaleString();
+  };
 
   return (
     <StyledPage style={{ padding: 80 }}>
@@ -54,7 +56,9 @@ const ShoppingBag = () => {
                           style={{ color: "#54595f", fontSize: 14 }}
                         >
                           <div className="">Price: </div>
-                          <div className="font-weight-light ml-2">Rs. {item.price}</div>
+                          <div className="font-weight-light ml-2">
+                            Rs. {item.price.toLocaleString()}
+                          </div>
                         </div>
                         <div
                           className="d-flex mb-1"
@@ -76,7 +80,7 @@ const ShoppingBag = () => {
                         >
                           <div className="">Subtotal: </div>
                           <div className="font-weight-light ml-2">
-                            Rs. {item.price * item.quantity}
+                            Rs. {(item.price * item.quantity).toLocaleString()}
                           </div>
                         </div>
                       </div>
@@ -97,7 +101,7 @@ const ShoppingBag = () => {
                 </tr> */}
                 <tr>
                   <td style={{ background: "#f9fafb" }}>TOTAL</td>
-                  <td className="font-weight-bold">£ {subtotal}</td>
+                  <td className="font-weight-bold">PKR {calculateTotal(items)}</td>
                 </tr>
               </table>
               <PrimaryButton className="w-100 mt-4">Proceed to checkout</PrimaryButton>
