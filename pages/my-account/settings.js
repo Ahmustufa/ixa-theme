@@ -4,11 +4,13 @@ import { LoadingOutlined } from "@ant-design/icons";
 import AccountSidebar from "../../src/component/sidebar/accountSidebar";
 import { PrimaryButton } from "../../src/component/buttons";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { errorHandler, Mutations } from "../../src/api/config";
 import { useFetch } from "../../src/hooks/useFetch";
+import { updateUserData } from "../../src/redux/actions";
 
 const MyAccount = () => {
+  const dispatch = useDispatch();
   const [form] = Form.useForm();
   const [state, setState] = useState({});
   const { data: userData } = useSelector((state) => state.user);
@@ -23,8 +25,12 @@ const MyAccount = () => {
       form.setFieldsValue({
         "First Name": userData.firstName,
         "Last Name": userData.lastName,
-        "Display Name": userData.username,
+        "Phone number": userData.phoneNumber,
         Email: userData.email,
+        Address: userData.address,
+        City: userData.city,
+        "Postal Code": userData.postalCode,
+        "Display Name": userData.username,
       });
       setState(userData);
     }
@@ -35,7 +41,7 @@ const MyAccount = () => {
   const handleUpdate = async () => {
     try {
       const { data } = await updateProfile({ ...state }, { userId: userData._id });
-      console.log("Updated user data: ", data);
+      dispatch(updateUserData(data));
     } catch (err) {
       message.error(errorHandler(err));
     }
@@ -87,6 +93,46 @@ const MyAccount = () => {
                 className="input-wrapper"
                 onChange={handleChange}
                 value={state.email}
+              />
+            </Form.Item>
+
+            <label>Phone number *</label>
+            <Form.Item name="Phone number" rules={[{ required: true }]}>
+              <input
+                name="phoneNumber"
+                className="input-wrapper"
+                onChange={handleChange}
+                value={state.phoneNumber}
+              />
+            </Form.Item>
+
+            <label>Address *</label>
+            <Form.Item name="Address" rules={[{ required: true, type: "string" }]}>
+              <input
+                name="address"
+                className="input-wrapper"
+                onChange={handleChange}
+                value={state.address}
+              />
+            </Form.Item>
+
+            <label>City *</label>
+            <Form.Item name="City" rules={[{ required: true, type: "string" }]}>
+              <input
+                name="city"
+                className="input-wrapper"
+                onChange={handleChange}
+                value={state.city}
+              />
+            </Form.Item>
+
+            <label>Postal code </label>
+            <Form.Item name="Postal Code">
+              <input
+                name="postalCode"
+                className="input-wrapper"
+                onChange={handleChange}
+                value={state.postalCode}
               />
             </Form.Item>
 

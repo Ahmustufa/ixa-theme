@@ -14,6 +14,10 @@ import axios from "axios";
 import { loginUserAction } from "../../redux/actions";
 
 const initialState = { email: "", password: "" };
+const getRandomPassword = () => {
+  const randomPassword = Math.random().toString(36).substr(2, 6);
+  return randomPassword;
+};
 
 const AuthModal = () => {
   const dispatch = useDispatch();
@@ -41,21 +45,28 @@ const AuthModal = () => {
   /**
    * Signup handler and Mutation
    */
-  // const [signUp, { loading }] = useMutation(Mutation.SIGN_UP_USER);
+  const [signUpAPI, signUpLoading] = useFetch(Mutations.createAccount);
 
   const handleSignUp = async () => {
-    const deviceId = Math.random().toString();
-    if (isValidPhoneNumber(state.phoneNo)) {
-      try {
-        // const { data } = await signUp({
-        //   variables: { email: state.email },
-        // });
-        setState({ ...initialState }); // set state to initial state
-        form.resetFields(); // Reset from fields
-        closeModal(); // close modal
-      } catch (err) {
-        message.error(errorHandler(err));
-      }
+    const [username] = state.email.split("@");
+    try {
+      const { data } = await signUpAPI({
+        firstName: state.firstName,
+        lastName: state.lastName,
+        email: state.email,
+        phoneNumber: state.phoneNumber,
+        address: state.address,
+        city: state.city,
+        postalCode: state.postalCode,
+        username,
+        password: getRandomPassword(),
+      });
+      dispatch(loginUserAction(data));
+      setState({ ...initialState }); // set state to initial state
+      form.resetFields(); // Reset from fields
+      closeModal(); // close modal
+    } catch (err) {
+      message.error(errorHandler(err));
     }
   };
 
@@ -111,7 +122,7 @@ const AuthModal = () => {
       onCancel={closeModal}
       footer={null}
     >
-      <Row style={{ height: 400 }}>
+      <Row>
         <Col
           span={12}
           xxl={12}
@@ -129,13 +140,7 @@ const AuthModal = () => {
             borderBottomLeftRadius: 6,
             zIndex: 999,
           }}
-        >
-          {/* <div style={{ height: 400, overflow: "auto" }}>
-            <div style={{ transform: "scale(0.6)" }}>
-              <ProductCard />
-            </div>
-          </div> */}
-        </Col>
+        ></Col>
 
         {authStatus === 0 && (
           <Col
@@ -151,24 +156,91 @@ const AuthModal = () => {
               Create account
             </h2>
             <Form onFinish={handleSignUp} form={form} validateTrigger="onFinish">
-              <label>Email</label>
-              <Form.Item name="Email" rules={[{ required: true, type: "string" }]}>
-                <InputWrapper
-                  name="email"
-                  autoComplete="new-password"
-                  value={state.firstName}
-                  onChange={handleChange}
-                  maxLength="30"
-                  placeholder="John"
-                />
-              </Form.Item>
+              <Row gutter={[24, 0]}>
+                <Col xs={24} sm={24} md={12} lg={12}>
+                  <label>First Name *</label>
+                  <Form.Item name="First Name" rules={[{ required: true }]}>
+                    <InputWrapper
+                      name="firstName"
+                      onChange={handleChange}
+                      value={state.firstName}
+                    />
+                  </Form.Item>
+                </Col>
 
-              <div className="d-flex justify-content-center align-items-center">
-                <PrimaryButton htmlType="submit" style={{ width: "80%", margin: "auto" }}>
-                  {false && <LoadingOutlined style={{ marginRight: 16 }} />} Create
-                  account
-                </PrimaryButton>
-              </div>
+                <Col xs={24} sm={24} md={12} lg={12}>
+                  <label>Last Name *</label>
+                  <Form.Item name="Last Name" rules={[{ required: true }]}>
+                    <InputWrapper
+                      name="lastName"
+                      onChange={handleChange}
+                      value={state.lastName}
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={24}>
+                  <label>Email *</label>
+                  <Form.Item name="Email" rules={[{ required: true, type: "email" }]}>
+                    <InputWrapper
+                      name="email"
+                      onChange={handleChange}
+                      value={state.email}
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={24}>
+                  <label>Phone number *</label>
+                  <Form.Item name="Phone number" rules={[{ required: true }]}>
+                    <InputWrapper
+                      name="phoneNumber"
+                      onChange={handleChange}
+                      value={state.phoneNumber}
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={24}>
+                  <label>Address *</label>
+                  <Form.Item name="Address" rules={[{ required: true, type: "string" }]}>
+                    <InputWrapper
+                      name="address"
+                      onChange={handleChange}
+                      value={state.address}
+                    />
+                  </Form.Item>
+                </Col>
+                <Col xs={24} sm={24} md={12} lg={12}>
+                  <label>City *</label>
+                  <Form.Item name="City" rules={[{ required: true, type: "string" }]}>
+                    <InputWrapper
+                      name="city"
+                      onChange={handleChange}
+                      value={state.city}
+                    />
+                  </Form.Item>
+                </Col>
+                <Col xs={24} sm={24} md={12} lg={12}>
+                  <label>Postal code </label>
+                  <Form.Item name="Postal Code">
+                    <InputWrapper
+                      name="postalCode"
+                      onChange={handleChange}
+                      value={state.postalCode}
+                    />
+                  </Form.Item>
+                </Col>
+
+                <Col span={24}>
+                  <div className="d-flex justify-content-center align-items-center">
+                    <PrimaryButton
+                      htmlType="submit"
+                      style={{ width: "80%", margin: "auto" }}
+                    >
+                      {signUpLoading && <LoadingOutlined style={{ marginRight: 16 }} />}{" "}
+                      Create account
+                    </PrimaryButton>
+                  </div>
+                </Col>
+              </Row>
             </Form>
 
             <Row justify="space-between" className="mt-4">
