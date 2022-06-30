@@ -1,4 +1,4 @@
-import { Drawer, Row, Col, Divider } from "antd";
+import { Drawer, Row, Col, Divider, message } from "antd";
 import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
 import { BiTrash } from "react-icons/bi";
@@ -11,15 +11,33 @@ import {
   decreaseCartItemQuantity,
   increaseCartItemQuantity,
 } from "../../redux/actions/cartActions";
+import { Mutations } from "../../api/mutations";
+import { useFetch } from "../../hooks/useFetch";
+import { errorHandler } from "../../helper/errorHandler";
 
 const SideCart = (props) => {
   const dispatch = useDispatch();
   const { visible, items } = useSelector((state) => state.cart);
 
   const calculateTotal = (cart) => {
-    const subTotal = cart.reduce((accu, item) => (accu += item.quantity * item.price), 0);
+    const subTotal = cart.reduce(
+      (accu, item) => (accu += item.quantity * item.product.price),
+      0
+    );
     // console.log("Sub total", subTotal);
     return subTotal.toLocaleString();
+  };
+
+  const [deleteCart, deleteCartLoading] = useFetch(Mutations.deleteCartItem);
+  const removeCartItemFunc = async (product) => {
+    try {
+      const { data } = await deleteCart({
+        id: product,
+      });
+      console.log("data remove cart", data);
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
   };
 
   return (
@@ -56,13 +74,13 @@ const SideCart = (props) => {
               <Row gutter={[16, 0]}>
                 <Col span={7}>
                   <img
-                    src={process.env.REACT_APP_STRAPI_URL + item.images[0].url}
+                    src={process.env.REACT_APP_STRAPI_URL + item.product.images[0].url}
                     className="w-100"
                   />
                 </Col>
 
                 <Col span={14}>
-                  <div className="product-name mb-2">{item.productName}</div>
+                  <div className="product-name mb-2">{item.product.productName}</div>
 
                   <Row align="middle" gutter={[24, 0]}>
                     <Col>
@@ -87,14 +105,19 @@ const SideCart = (props) => {
                       </div>
                     </Col>
                     <Col>
-                      <div className="price">PKR {item.price?.toLocaleString()}</div>
+                      <div className="price">
+                        PKR {item.product.price?.toLocaleString()}
+                      </div>
                     </Col>
                   </Row>
                 </Col>
 
                 <Col span={3}>
                   <BiTrash
-                    onClick={() => dispatch(removeCartItem(item))}
+                    onClick={
+                      () => removeCartItemFunc(item.product)
+                      // dispatch(removeCartItem(item))
+                    }
                     style={{ cursor: "pointer", color: "#54595f", fontSize: 16 }}
                   />
                 </Col>

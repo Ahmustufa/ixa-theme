@@ -10,6 +10,12 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { Mutations, errorHandler, useFetch } from "../../src/api/config";
 import { loginUserAction } from "../../src/redux/actions";
+import {
+  decreaseCartItemQuantity,
+  increaseCartItemQuantity,
+  removeCartItem,
+} from "../../src/redux/actions/cartActions";
+import { BiTrash } from "react-icons/bi";
 
 const initialState = {
   firstName: "",
@@ -81,7 +87,10 @@ const Checkout = () => {
   };
 
   const calculateTotal = (cart) => {
-    const subTotal = cart.reduce((accu, item) => (accu += item.quantity * item.price), 0);
+    const subTotal = cart.reduce(
+      (accu, item) => (accu += item.quantity * item.product.price),
+      0
+    );
     // console.log("Sub total", subTotal);
     return subTotal.toLocaleString();
   };
@@ -288,21 +297,35 @@ const Checkout = () => {
                       <div className="box d-flex">
                         <div>
                           <img
-                            src={process.env.REACT_APP_STRAPI_URL + item.images[0]?.url}
+                            src={
+                              process.env.REACT_APP_STRAPI_URL +
+                              item.product.images[0]?.url
+                            }
                             style={{ width: 50 }}
                           />
                         </div>
 
                         <div className="ml-3">
-                          <p className="font-weight-light">{item.productName}</p>
+                          <p className="font-weight-light">{item.product.productName}</p>
                           <p>1 x {item.quantity}</p>
                         </div>
                       </div>
                     </Col>
-                    <Col className="p-3" span={8}>
+                    <Col className="p-3 d-flex" span={8}>
                       <p className="font-weight-light title">
-                        PKR {item.price?.toLocaleString()}
+                        PKR {item.product.price?.toLocaleString()}
                       </p>
+                      <BiTrash
+                        onClick={() => dispatch(removeCartItem(item))}
+                        style={{
+                          cursor: "pointer",
+                          color: "#54595f",
+                          fontSize: 16,
+                          position: "absolute",
+                          right: 0,
+                          top: 0,
+                        }}
+                      />
                     </Col>
                   </Row>
                 ))}
@@ -393,6 +416,7 @@ const StyledPage = styled.div`
       padding: 20px;
     }
   }
+
   @media (max-width: 1024px) {
     padding: 20px !important;
   }
