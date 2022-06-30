@@ -40,7 +40,7 @@ const Order = (props) => {
       </div> */}
 
       <Row className="mx-auto position-relative" gutter={[24, 24]}>
-        <Col span={14}>
+        <Col xs={24} sm={24} lg={14}>
           <div style={{ position: "sticky", top: 60, display: "flex", flexWrap: "wrap" }}>
             <Row gutter={[12, 12]}>
               <Col>
@@ -57,7 +57,7 @@ const Order = (props) => {
           </div>
         </Col>
 
-        <Col span={10}>
+        <Col xs={24} sm={24} lg={10} className={"p-0"}>
           <div
             className="order"
             style={{
@@ -227,7 +227,7 @@ const Order = (props) => {
         </Collapse>
       </section>
 
-      <section style={{ padding: 80 }}>
+      <section className="shop-card-section">
         <Row justify="space-between" gutter={[0, 40]}>
           <Col xs={24} sm={24} md={24} lg={24} xl={11}>
             <ShopCard />
@@ -239,8 +239,8 @@ const Order = (props) => {
         </Row>
       </section>
 
-      <section>
-        <ProductCarousel />
+      <section className="my-5">
+        <ProductCarousel padding={"0px"} />
       </section>
     </StyledPage>
   );
@@ -330,6 +330,15 @@ const StyledPage = styled.div`
     color: #3a3d40;
     font-weight: 300;
     margin-bottom: 12px;
+  }
+  .shop-card-section {
+    padding: 80px;
+  }
+  @media (max-width: 1024px) {
+    padding: 20px !important;
+    .shop-card-section {
+      padding: 0px !important;
+    }
   }
 `;
 

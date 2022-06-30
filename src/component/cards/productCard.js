@@ -25,16 +25,16 @@ const ProductCard = (props) => {
         <div className="product">{productName}</div>
         <div className="price">{formatedPrice.format(price)}</div>
 
-        <div className="card-footer d-flex">
+        <div className="card-footer d-flex justify-content-center">
           <div
             className="hoverable dark"
-            style={{ fontSize: 13, marginRight: 12, cursor: "pointer", fontWeight: 600 }}
+            style={{ fontSize: 12, marginRight: 12, cursor: "pointer", fontWeight: 600 }}
           >
             ADD TO CART
           </div>
           {wishlist.includes(_id) ? (
             <div
-              style={{ fontSize: 13, marginLeft: 12, cursor: "pointer", fontWeight: 600 }}
+              style={{ fontSize: 12, marginLeft: 12, cursor: "pointer", fontWeight: 600 }}
               className="d-flex align-items-center"
               onClick={() => dispatch(removeWishlistItem(_id))}
             >
@@ -43,7 +43,7 @@ const ProductCard = (props) => {
             </div>
           ) : (
             <div
-              style={{ fontSize: 13, marginLeft: 12, cursor: "pointer", fontWeight: 600 }}
+              style={{ fontSize: 12, marginLeft: 12, cursor: "pointer", fontWeight: 600 }}
               className="d-flex align-items-center"
               onClick={() => dispatch(addItemToWishlist(_id))}
             >
@@ -99,6 +99,7 @@ const StyledCard = styled.div`
   }
 
   .card-footer {
+    padding: 10px;
     border: none;
     background-color: #fff;
     transition: 0.6s;

@@ -30,7 +30,7 @@ const ProductCarousel = (props) => {
   const { items } = useSelector((state) => state.products);
 
   return (
-    <StyledContent>
+    <StyledContent style={{ padding: props.padding ? props.padding : "80px" }}>
       <div className="text-center">
         <div style={{ fontSize: 40, color: "#54595f", fontWeight: 600 }}>JUST IN</div>
         <br />
@@ -64,7 +64,7 @@ const ProductCarousel = (props) => {
 export default ProductCarousel;
 
 const StyledContent = styled.div`
-  padding: 80px;
+  // padding: 80px;
 
   @media only screen and (max-width: 576px) {
     margin: 0;
