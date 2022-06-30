@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Row, Col, Form, message } from "antd";
+import { Row, Col, Form, message, Checkbox } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import CartSteps from "../../src/component/cartSteps";
@@ -14,30 +14,38 @@ import { loginUserAction } from "../../src/redux/actions";
 const initialState = {
   firstName: "",
   lastName: "",
-  companyName: "",
+  phoneNumber: null,
+  email: "",
   address: "",
   city: "",
   county: "",
   postalCode: "",
-  phoneNumber: null,
-  email: "",
 };
-
+const getRandomPassword = () => {
+  const randomPassword = Math.random().toString(36).substr(2, 6);
+  return randomPassword;
+};
 const Checkout = () => {
   const dispatch = useDispatch();
+  const [form] = Form.useForm();
   const [state, setState] = useState({ ...initialState });
+  const [shippingAddress, setShippingAddress] = useState({ new: false, address: "" });
   const { isLoggedIn, data: userData } = useSelector((state) => state.user);
   const { items: cartItems } = useSelector((state) => state.cart);
 
   const [createAccountApi, createAccountLoading] = useFetch(Mutations.createAccount);
   const createAccount = async () => {
+    const [username] = state.email.split("@");
     try {
       const { data } = await createAccountApi({
         firstName: state.firstName,
         lastName: state.lastName,
-        email: state.email,
         phoneNumber: state.phoneNumber,
-        password: "123",
+        email: state.email,
+        city: state.city,
+        postalCode: state.postalCode,
+        password: getRandomPassword(),
+        username,
       });
       dispatch(loginUserAction(data));
     } catch (err) {
@@ -45,11 +53,23 @@ const Checkout = () => {
     }
   };
 
-  const handleLogin = async () => {
+  const [createOrderApi, createOrderLoading] = useFetch(Mutations.createOrder);
+  const handleOrder = async () => {
     try {
       if (isLoggedIn == false) {
         await createAccount();
       }
+      const { data } = await createOrderApi({
+        quantity: 4,
+        color: "red",
+        size: "M",
+        product: "62bac02b67c2bd1ac991cb09",
+        inventory: "62baec3467c2bd1ac991cb1e",
+        deliveryAddress: shippingAddress.new ? shippingAddress.address : userData.address,
+        users_permissions_user: userData._id,
+      });
+
+      console.log("My order data", data);
     } catch (err) {
       message.error(errorHandler(err));
     }
@@ -66,22 +86,20 @@ const Checkout = () => {
     return subTotal.toLocaleString();
   };
 
-  const [createOrder, createOrderLoading] = useFetch();
-  const handleOrder = async () => {
-    try {
-      const { data } = await createOrder({
-        product: "62bac02b67c2bd1ac991cb09",
-        total: 40000,
-        color: "red",
-        size: "M",
-        quantity: 4,
-        inventory: "62baec3467c2bd1ac991cb1e",
-        deliveryAddress: "Clifton block 2",
+  useEffect(() => {
+    if (typeof window !== undefined && isLoggedIn) {
+      form.setFieldsValue({
+        "First Name": userData.firstName,
+        "Last Name": userData.lastName,
+        Address: userData.address,
+        City: userData.city,
+        "Postal Code": userData.postalCode,
+        Phone: userData.phoneNumber,
+        Email: userData.email,
       });
-    } catch (err) {
-      message.error(errorHandler(err));
+      setState({ ...userData });
     }
-  };
+  }, []);
 
   return (
     <StyledPage style={{ padding: 80 }}>
@@ -107,10 +125,10 @@ const Checkout = () => {
         </Row>
       ) : null}
 
-      <Form onFinish={handleLogin} validateTrigger="onFinish">
+      <Form form={form} onFinish={handleOrder} validateTrigger="onFinish">
         <Row className="mt-5">
           <Col style={{ padding: "0px 2% 4% 0px" }} xs={24} xl={12}>
-            <h6 className="heading">BILLING DETAILS</h6>
+            <h6 className="heading">SHIPPING DETAILS</h6>
             <Row gutter={[24, 24]}>
               <Col xs={12} sm={12} xl={12}>
                 <p className="label">FIRST NAME *</p>
@@ -120,6 +138,7 @@ const Checkout = () => {
                     value={state.firstName}
                     onChange={handleChange}
                     placeholder="First Name"
+                    disabled={isLoggedIn}
                   />
                 </Form.Item>
               </Col>
@@ -132,6 +151,7 @@ const Checkout = () => {
                     value={state.lastName}
                     onChange={handleChange}
                     placeholder="Last Name"
+                    disabled={isLoggedIn}
                   />
                 </Form.Item>
               </Col>
@@ -145,18 +165,37 @@ const Checkout = () => {
                   value={state.address}
                   onChange={handleChange}
                   placeholder="House number and street name"
+                  disabled={isLoggedIn}
                 />
               </Form.Item>
             </Col>
 
-            {/* <Col className="mt-4" sm={24} xl={24}>
-              <InputWrapper
-                name="appartment"
-                value={state.appartment}
-                onChange={handleChange}
-                placeholder="Appartment, suite, unit, etc. (optional)"
-              />
-            </Col> */}
+            <Col className="mt-4" sm={24} xl={24}>
+              <Checkbox
+                checked={shippingAddress.new}
+                onChange={(e) => {
+                  setShippingAddress({ ...shippingAddress, new: e.target.checked });
+                }}
+              >
+                Ship to another address
+              </Checkbox>
+              {shippingAddress.new ? (
+                <div className="mt-4">
+                  <p className="label">SHIPPING ADDRESS *</p>
+                  <Form.Item
+                    name="Shipping Address"
+                    rules={[{ required: true, type: "string" }]}
+                  >
+                    <InputWrapper
+                      name="shippingAddress"
+                      value={state.shippingAddress}
+                      onChange={handleChange}
+                      placeholder="House number and street name"
+                    />
+                  </Form.Item>
+                </div>
+              ) : null}
+            </Col>
 
             <Col className="mt-4" sm={24} xl={24}>
               <p className="label">TOWN / CITY *</p>
@@ -166,6 +205,7 @@ const Checkout = () => {
                   value={state.city}
                   onChange={handleChange}
                   placeholder="Your city name"
+                  disabled={isLoggedIn}
                 />
               </Form.Item>
             </Col>
@@ -187,6 +227,7 @@ const Checkout = () => {
                   value={state.postalCode}
                   onChange={handleChange}
                   placeholder="xxxxx"
+                  disabled={isLoggedIn}
                 />
               </Form.Item>
             </Col>
@@ -209,6 +250,7 @@ const Checkout = () => {
                   value={state.phoneNumber}
                   onChange={handleChange}
                   placeholder="0300xxxxxxx"
+                  disabled={isLoggedIn}
                 />
               </Form.Item>
             </Col>
@@ -221,6 +263,7 @@ const Checkout = () => {
                   value={state.email}
                   onChange={handleChange}
                   placeholder="someone@example.com"
+                  disabled={isLoggedIn}
                 />
               </Form.Item>
             </Col>
@@ -300,7 +343,8 @@ const Checkout = () => {
                 </div>
               </div>
               <PrimaryButton htmlType="submit" className="w-100 mt-5">
-                {createAccountLoading && <LoadingOutlined />} Proceed to checkout
+                {(createAccountLoading || createOrderLoading) && <LoadingOutlined />}{" "}
+                CONFIRM ORDER
               </PrimaryButton>
             </div>
           </Col>
