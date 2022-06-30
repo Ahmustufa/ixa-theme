@@ -3,13 +3,16 @@ import ShopCard from "../../src/component/cards/shopCard";
 import ProductCarousel from "../../src/component/productListing/carousel";
 import { PrimaryButton } from "../../src/component/buttons";
 import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
+import { LoadingOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import ReviewListing from "../../src/component/reviews/reviewListing";
 import { useState } from "react";
 import axios from "axios";
-import { addItemToCart } from "../../src/redux/actions/cartActions";
+import { addItemToCart, openCart } from "../../src/redux/actions/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToWishlist, removeWishlistItem } from "../../src/redux/actions";
+import { useFetch } from "../../src/hooks/useFetch";
+import { Mutations } from "../../src/api/mutations";
 
 const { Panel } = Collapse;
 
@@ -17,6 +20,9 @@ const Order = (props) => {
   const { productDetails, colors } = props;
   const dispatch = useDispatch();
   const { items: wishlist } = useSelector((state) => state.wishlist);
+  const { isLoggedIn, data: userData } = useSelector((state) => state.user);
+  const { visible, items } = useSelector((state) => state.cart);
+
   const [state, setState] = useState({ color: "", size: "" });
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -32,6 +38,44 @@ const Order = (props) => {
       }
     });
   }
+
+  let getInventorId = productDetails.inventories.find((item) => {
+    if (item.color === state.color && item.size === state.size) {
+      return item;
+    }
+  });
+
+  const [addToCart, addToCartLoading] = useFetch(Mutations.addToCart);
+
+  const checkIfExist = () => {
+    const cartItem = items.filter((item) => {
+      if (item.product._id == productDetails._id) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+
+    if (cartItem.length) {
+      // open cart
+      dispatch(openCart());
+    } else {
+      addToCartFunc();
+    }
+  };
+  const addToCartFunc = async () => {
+    try {
+      const { data } = await addToCart({
+        inventory: getInventorId?._id,
+        product: productDetails._id,
+        quantity: 1,
+        users_permissions_user: userData._id,
+      });
+      dispatch(addItemToCart(data));
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
 
   return (
     <StyledPage style={{ padding: 80 }}>
@@ -109,11 +153,12 @@ const Order = (props) => {
                 <PrimaryButton
                   disabled={state.color == "" || state.size == ""}
                   onClick={() => {
-                    dispatch(addItemToCart(productDetails));
+                    checkIfExist();
+                    // dispatch(addItemToCart(productDetails));
                   }}
                   className="mr-3"
                 >
-                  ADD TO CART
+                  {addToCartLoading && <LoadingOutlined />} ADD TO CART
                 </PrimaryButton>
               </Col>
 

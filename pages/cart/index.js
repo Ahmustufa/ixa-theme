@@ -6,11 +6,21 @@ import { ButtonWrapper, PrimaryButton } from "../../src/component/buttons";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineShopping } from "react-icons/ai";
 import Link from "next/link";
+import {
+  decreaseCartItemQuantity,
+  increaseCartItemQuantity,
+  removeCartItem,
+} from "../../src/redux/actions/cartActions";
+import { BiTrash } from "react-icons/bi";
 
 const ShoppingBag = () => {
+  const dispatch = useDispatch();
   const { items } = useSelector((state) => state.cart);
   const calculateTotal = (cart) => {
-    const subTotal = cart.reduce((accu, item) => (accu += item.quantity * item.price), 0);
+    const subTotal = cart.reduce(
+      (accu, item) => (accu += item.quantity * item.product.price),
+      0
+    );
     // console.log("Sub total", subTotal);
     return subTotal.toLocaleString();
   };
@@ -39,15 +49,28 @@ const ShoppingBag = () => {
             <Row gutter={[24, 24]}>
               {items.map((item, index) => (
                 <Col key={index} xl={8} xs={24} sm={24}>
-                  <div className="box d-flex align-items-center">
+                  <div className="box d-flex align-items-center border">
                     <div>
                       <img
-                        src={process.env.REACT_APP_STRAPI_URL + item.images[0].url}
+                        src={
+                          process.env.REACT_APP_STRAPI_URL + item.product.images[0].url
+                        }
                         style={{ width: 180 }}
                       />
                     </div>
 
-                    <div className="ml-3">
+                    <div className="ml-3 ">
+                      <BiTrash
+                        onClick={() => dispatch(removeCartItem(item))}
+                        style={{
+                          cursor: "pointer",
+                          color: "#54595f",
+                          fontSize: 16,
+                          position: "absolute",
+                          right: 20,
+                          top: 10,
+                        }}
+                      />
                       <div className="product-name">{item.productName}</div>
 
                       <div className="">
@@ -57,15 +80,33 @@ const ShoppingBag = () => {
                         >
                           <div className="">Price: </div>
                           <div className="font-weight-light ml-2">
-                            Rs. {item.price.toLocaleString()}
+                            Rs. {item.product.price.toLocaleString()}
                           </div>
                         </div>
                         <div
-                          className="d-flex mb-1"
+                          className="d-flex align-items-center mb-1"
                           style={{ color: "#54595f", fontSize: 14 }}
                         >
                           <div className="">Quantity: </div>
-                          <div className="font-weight-light ml-2">{item.quantity}</div>
+                          <div className="quantity-container ml-2">
+                            <div
+                              onClick={() => {
+                                if (item.quantity > 1) {
+                                  dispatch(decreaseCartItemQuantity(item));
+                                }
+                              }}
+                              className="decrease-button"
+                            >
+                              {`−`}
+                            </div>
+                            <div className="quantity">{item.quantity}</div>
+                            <div
+                              onClick={() => dispatch(increaseCartItemQuantity(item))}
+                              className="increase-button"
+                            >
+                              +
+                            </div>
+                          </div>
                         </div>
                         {/* <div
                           className="d-flex mb-1"
@@ -80,7 +121,7 @@ const ShoppingBag = () => {
                         >
                           <div className="">Subtotal: </div>
                           <div className="font-weight-light ml-2">
-                            Rs. {(item.price * item.quantity).toLocaleString()}
+                            Rs. {(item.product.price * item.quantity).toLocaleString()}
                           </div>
                         </div>
                       </div>
@@ -135,6 +176,25 @@ const StyledPage = styled.div`
   .title {
     font-size: 14px;
     margin-bottom: 0px;
+  }
+
+  .quantity-container {
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+  }
+
+  .increase-button,
+  .decrease-button {
+    height: 100%;
+    width: 28px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
   }
   @media (max-width: 1024px) {
     padding: 20px !important;
