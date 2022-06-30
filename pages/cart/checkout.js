@@ -66,6 +66,23 @@ const Checkout = () => {
     return subTotal.toLocaleString();
   };
 
+  const [createOrder, createOrderLoading] = useFetch();
+  const handleOrder = async () => {
+    try {
+      const { data } = await createOrder({
+        product: "62bac02b67c2bd1ac991cb09",
+        total: 40000,
+        color: "red",
+        size: "M",
+        quantity: 4,
+        inventory: "62baec3467c2bd1ac991cb1e",
+        deliveryAddress: "Clifton block 2",
+      });
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
+
   return (
     <StyledPage style={{ padding: 80 }}>
       <div className="cart-header">

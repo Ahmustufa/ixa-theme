@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Row, Col, Dropdown } from "antd";
+import { Row, Col, Dropdown, message } from "antd";
 import Hamburger from "../hamburger";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -12,25 +12,15 @@ import SidebarWrapper from "./sidebarWrapper";
 import { ModalConstant } from "../../redux/constants";
 import { openCart } from "../../redux/actions/cartActions";
 import { logoutAction } from "../../redux/actions";
+import { errorHandler, Queries, useFetch } from "../../api/config";
 
 const HeaderContent = (props) => {
   const dispatch = useDispatch();
   const { isLoggedIn } = useSelector((state) => state.user);
   const { items } = useSelector((state) => state.cart);
+  const [allCategories, setAllCategories] = useState([]);
   const router = useRouter();
   const [drawer, setDrawer] = useState(false);
-  // useEffect(() => {
-  //   function setWindowSizeChange() {
-  //     if (window.innerWidth > 1024) {
-  //       setDrawer(false);
-  //     }
-  //   }
-
-  //   window.addEventListener("resize", setWindowSizeChange);
-  //   return () => {
-  //     window.removeEventListener("resize", setWindowSizeChange);
-  //   };
-  // });
 
   /**
    * This useEffect function is used to change header background-color
@@ -52,6 +42,21 @@ const HeaderContent = (props) => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   });
+
+  const [getAllCategories] = useFetch(Queries.getAllCategories);
+
+  const getCategories = async () => {
+    try {
+      const { data } = await getAllCategories();
+
+      data.forEach((item) => {
+        allCategories.push(item.type);
+      });
+      setAllCategories([...allCategories]);
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
 
   const accountOverlay = (
     <AccountOverlay>
@@ -84,6 +89,28 @@ const HeaderContent = (props) => {
       </ul>
     </AccountOverlay>
   );
+
+  const discoverOverlay = (
+    <StyledOverlay justify="space-between">
+      <Col xs={24} sm={24} md={7} lg={7}>
+        {allCategories.map((item, index) => (
+          <div key={index}>
+            <Link href={`/category/${item}`}>
+              <a>{item}</a>
+            </Link>
+          </div>
+        ))}
+      </Col>
+
+      <Col xs={24} sm={24} md={10} lg={10}>
+        <img src="/images/model.jpg" className="img-fluid" />
+      </Col>
+    </StyledOverlay>
+  );
+
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   return (
     <>
@@ -209,75 +236,6 @@ const StyledOverlay = styled(Row)`
     }
   }
 `;
-
-const discoverOverlay = (
-  <StyledOverlay justify="space-between">
-    <Col xs={24} sm={24} md={7} lg={7}>
-      <div>
-        <Link href="/product/New arrivals">
-          <a>New arrivals</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/product/Sales">
-          <a>Sales</a>
-        </Link>
-      </div>
-    </Col>
-
-    <Col xs={24} sm={24} md={7} lg={7}>
-      <div>
-        <Link href="/category/Accessories">
-          <a>Accessories</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/category/Dressed">
-          <a>Dressed</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/category/Jackets">
-          <a>Jackets</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/category/Jeans">
-          <a>Jeans</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/category/Jumpsuits">
-          <a>Jumpsuits</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/category/Outwear">
-          <a>Outwear</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/category/Pants">
-          <a>Pants</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/category/Skirts">
-          <a>Skirts</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/category/Tops">
-          <a>Top</a>
-        </Link>
-      </div>
-    </Col>
-
-    <Col xs={24} sm={24} md={10} lg={10}>
-      <img src="/images/model.jpg" className="img-fluid" />
-    </Col>
-  </StyledOverlay>
-);
 
 const AccountOverlay = styled.div`
   background-color: #fff;
