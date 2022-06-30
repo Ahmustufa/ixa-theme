@@ -1,25 +1,24 @@
 import { Product, User, Wishlist } from "../constants";
-import Cookie from "js-cookie";
+import Cookies from "js-cookie";
 
 export const loginUserAction = (data) => (dispatch) => {
-  const userData = {
-    _id: data.user._id,
-    firstName: data.user.firstName,
-    lastName: data.user.lastName,
-    email: data.user.email,
-    username: data.user.username,
-  };
-  Cookie.set("token", data.jwt, { expires: 60 });
-  Cookie.set("_PD_DATA_CAP", JSON.stringify(userData), { expires: 60 });
+  const userData = { ...data.user };
+  Cookies.set("token", data.jwt, { expires: 60 });
+  Cookies.set("_PD_DATA_CAP", JSON.stringify(userData), { expires: 60 });
 
   dispatch({ type: User.LOG_IN, payload: { data: userData } });
 };
 
 export const logoutAction = () => (dispatch) => {
-  Cookie.remove("token");
-  Cookie.remove("_PD_DATA_CAP");
+  Cookies.remove("token");
+  Cookies.remove("_PD_DATA_CAP");
   localStorage.clear();
   dispatch({ type: User.LOG_OUT });
+};
+
+export const updateUserData = (payload) => {
+  Cookies.set("_PD_DATA_CAP", JSON.stringify(payload));
+  return { type: User.UPDATE_INFO, payload };
 };
 
 export const storeAllProducts = (payload) => (dispatch) => {

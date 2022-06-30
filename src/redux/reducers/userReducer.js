@@ -34,7 +34,6 @@ const userReducer = (state = initialState, action) => {
 
     case User.UPDATE_INFO: {
       const { payload } = action;
-      Cookies.set("_PD_DATA_CAP", JSON.stringify(payload));
       return { ...state, data: payload };
     }
 
