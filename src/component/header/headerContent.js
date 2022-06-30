@@ -10,13 +10,13 @@ import { BiSearch } from "react-icons/bi";
 import styled from "styled-components";
 import SidebarWrapper from "./sidebarWrapper";
 import { ModalConstant } from "../../redux/constants";
-import { openCart } from "../../redux/actions/cartActions";
+import { addItemToCart, openCart } from "../../redux/actions/cartActions";
 import { logoutAction } from "../../redux/actions";
 import { errorHandler, Queries, useFetch } from "../../api/config";
 
 const HeaderContent = (props) => {
   const dispatch = useDispatch();
-  const { isLoggedIn } = useSelector((state) => state.user);
+  const { isLoggedIn, data } = useSelector((state) => state.user);
   const { items } = useSelector((state) => state.cart);
   const [allCategories, setAllCategories] = useState([]);
   const router = useRouter();
@@ -53,6 +53,18 @@ const HeaderContent = (props) => {
         allCategories.push(item.type);
       });
       setAllCategories([...allCategories]);
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
+
+  // =============GET MY CART DATA==============
+  const [getMyCart] = useFetch(Queries.getMyCart);
+
+  const getCart = async (id) => {
+    try {
+      const { data } = await getMyCart(id);
+      addItemToCart(data);
     } catch (err) {
       message.error(errorHandler(err));
     }
@@ -110,6 +122,7 @@ const HeaderContent = (props) => {
 
   useEffect(() => {
     getCategories();
+    getCart(data._id);
   }, []);
 
   return (
