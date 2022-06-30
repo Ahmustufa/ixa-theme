@@ -31,11 +31,10 @@ const SideCart = (props) => {
   const [deleteCart, deleteCartLoading] = useFetch(Mutations.deleteCartItem);
   const removeCartItemFunc = async (product) => {
     try {
-      const { data } = await deleteCart({
-        id: product,
-      });
+      const { data } = await deleteCart(product);
       console.log("data remove cart", data);
     } catch (err) {
+      console.log("error remove cart", err);
       message.error(errorHandler(err));
     }
   };
