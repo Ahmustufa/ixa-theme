@@ -24,11 +24,11 @@ const Orders = () => {
   return (
     <StyledPage style={{ padding: 80 }}>
       <Row>
-        <Col xs={0} sm={0} md={6} lg={6}>
+        <Col xs={0} sm={0} md={4} lg={4}>
           <AccountSidebar />
         </Col>
 
-        <Col xs={24} sm={24} md={18} lg={18}>
+        <Col xs={24} sm={24} md={20} lg={20}>
           {/* <Row className="table-header" justify="space-around">
         <Col span={8}>Product</Col>
         <Col span={3}>Price</Col>
@@ -64,7 +64,10 @@ const Orders = () => {
               <Col key={index} span={12}>
                 <div className="box d-flex align-items-center">
                   <div>
-                    <img src="/images/demo_image.jpg" style={{ width: 180 }} />
+                    <img
+                      src={process.env.REACT_APP_STRAPI_URL + item.product.images[0].url}
+                      style={{ width: 180 }}
+                    />
                   </div>
 
                   <div className="ml-3">
