@@ -25,7 +25,7 @@ const ReviewForm = (props) => {
     try {
       await createReview({
         rating: state.rating,
-        review: state.review,
+        review: `${state.review}`,
         product: productId,
         users_permissions_user: userId,
       });
