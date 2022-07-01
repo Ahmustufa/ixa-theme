@@ -109,7 +109,7 @@ const SideCart = (props) => {
                   <div className="product-name mb-2">{item.product.productName}</div>
 
                   <Row align="middle" gutter={[24, 0]}>
-                    <Col>
+                    <Col xs={12} lg={12}>
                       <div className="quantity-container">
                         <div
                           onClick={() => {
@@ -147,8 +147,8 @@ const SideCart = (props) => {
                         </div>
                       </div>
                     </Col>
-                    <Col>
-                      <div className="price">
+                    <Col xs={12} lg={12}>
+                      <div className="price mt-2">
                         PKR {item.product.price?.toLocaleString()}
                       </div>
                     </Col>
