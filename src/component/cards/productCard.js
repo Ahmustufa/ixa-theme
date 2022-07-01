@@ -25,7 +25,7 @@ const ProductCard = (props) => {
         <div className="product">{productName}</div>
         <div className="price">{formatedPrice.format(price)}</div>
 
-        <div className="card-footer d-flex justify-content-center">
+        {/* <div className="card-footer d-flex justify-content-center">
           <div
             className="hoverable dark"
             style={{ fontSize: 12, marginRight: 12, cursor: "pointer", fontWeight: 600 }}
@@ -51,7 +51,7 @@ const ProductCard = (props) => {
               <div className="text hoverable dark">ADD TO WISHLIST</div>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </StyledCard>
   );

@@ -84,7 +84,7 @@ const Order = (props) => {
       </div> */}
 
       <Row className="mx-auto position-relative" gutter={[24, 24]}>
-        <Col xs={24} sm={24} lg={14}>
+        <Col xs={24} sm={24} lg={14} className={"p-0 pr-lg-5"}>
           <div style={{ position: "sticky", top: 60, display: "flex", flexWrap: "wrap" }}>
             <Row gutter={[12, 12]}>
               <Col>
@@ -106,7 +106,7 @@ const Order = (props) => {
             className="order"
             style={{
               width: "-webkit-fill-available",
-              padding: 16,
+              // padding: 16,
               position: "sticky",
               top: 90,
               color: "#54595f",

@@ -185,6 +185,11 @@ const ShoppingBag = () => {
 export default ShoppingBag;
 
 const StyledPage = styled.div`
+  @media (max-width: 1024px) {
+    .box img {
+      width: 150px !important;
+    }
+  }
   .cart-header {
     padding: 30px 0px;
     h1 {
