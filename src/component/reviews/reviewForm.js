@@ -1,16 +1,16 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { Rate, Form } from "antd";
+import { Rate, Form, message } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 import { PrimaryButton } from "../buttons";
+import { useFetch, Mutations, errorHandler } from "../../api/config";
+import { useSelector } from "react-redux";
 
-const initialState = {
-  name: "",
-  email: "",
-  review: "",
-  rating: "",
-};
+const initialState = { review: "", rating: "" };
 
 const ReviewForm = (props) => {
+  const { productId } = props;
+  const { _id: userId } = useSelector((state) => state.user.data);
   const [state, setState] = useState({ ...initialState });
   const [form] = Form.useForm();
 
@@ -19,13 +19,29 @@ const ReviewForm = (props) => {
     setState({ ...state, [name]: value });
   };
 
+  const [createReview, loading] = useFetch(Mutations.createReview);
+
+  const handleCreate = async () => {
+    try {
+      await createReview({
+        rating: state.rating,
+        review: state.review,
+        product: productId,
+        users_permissions_user: userId,
+      });
+    } catch (err) {
+      console.log(err);
+      message.error(errorHandler(err));
+    }
+  };
+
   return (
     <StyledContainer>
       <small>
         Your email address will not be published. Required fields are marked *
       </small>
 
-      <Form form={form} validateTrigger="onFinish">
+      <Form form={form} onFinish={handleCreate} validateTrigger="onFinish">
         <label style={{ margin: "16px 0 -8px 0", display: "block" }}>Your rating *</label>
         <Form.Item
           name="Rating"
@@ -43,13 +59,14 @@ const ReviewForm = (props) => {
         <Form.Item name="Review" rules={[{ required: true }]}>
           <textarea
             rows={5}
+            name="review"
             className="review-input"
             onChange={handleChange}
             value={state.review}
           />
         </Form.Item>
 
-        <label>Name *</label>
+        {/* <label>Name *</label>
         <Form.Item name="Name" rules={[{ required: true }]}>
           <input className="review-input" onChange={handleChange} value={state.name} />
         </Form.Item>
@@ -57,10 +74,10 @@ const ReviewForm = (props) => {
         <label>Email *</label>
         <Form.Item name="Email" rules={[{ required: true, type: "email" }]}>
           <input className="review-input" onChange={handleChange} value={state.email} />
-        </Form.Item>
+        </Form.Item> */}
 
         <PrimaryButton htmlType="submit" className="mt-4">
-          Submit
+          {loading ? <LoadingOutlined /> : null} Submit
         </PrimaryButton>
       </Form>
     </StyledContainer>

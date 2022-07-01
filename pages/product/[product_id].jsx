@@ -17,7 +17,7 @@ import { Mutations } from "../../src/api/mutations";
 const { Panel } = Collapse;
 
 const Order = (props) => {
-  const { productDetails, colors } = props;
+  const { productDetails, colors, reviews } = props;
   const dispatch = useDispatch();
   const { items: wishlist } = useSelector((state) => state.wishlist);
   const { isLoggedIn, data: userData } = useSelector((state) => state.user);
@@ -267,7 +267,7 @@ const Order = (props) => {
             }
             showArrow={false}
           >
-            <ReviewListing />
+            <ReviewListing productId={productDetails._id} reviews={reviews} />
           </Panel>
         </Collapse>
       </section>
@@ -402,6 +402,9 @@ export async function getServerSideProps(context) {
     //     };
     //   }
     // });
+    var { data: reviews } = await axios.get(
+      `http://localhost:1337/reviews/product/62babf046b24f971d590b064`
+    );
     var colors = [];
     data.inventories.forEach((item) => {
       if (!colors.includes(item.color)) {
@@ -421,7 +424,7 @@ export async function getServerSideProps(context) {
     };
   } else {
     return {
-      props: { productDetails: data, colors },
+      props: { productDetails: data, colors, reviews },
     };
   }
 }

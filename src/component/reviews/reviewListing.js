@@ -1,39 +1,54 @@
 import styled from "styled-components";
-import { Row, Col, Rate, Divider } from "antd";
+import { Rate, Divider } from "antd";
 import { PrimaryButton } from "../buttons";
 import ReviewForm from "./reviewForm";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { ModalConstant } from "../../redux/constants";
 
 const ReviewListing = (props) => {
-  const [reviewVisible, toggleReview] = useState(false);
+  const { reviews, productId } = props;
+  const dispatch = useDispatch();
+  const { isLoggedIn } = useSelector((state) => state.user);
+
   const reviewRef = useRef();
 
   const showReview = () => {
     reviewRef.current.classList.toggle("visible");
   };
+
   return (
     <StyledContainer>
-      <Rate disabled defaultValue={5} style={{ color: "#FF3E48", fontSize: 13 }} />{" "}
-      <label>5/5</label>
-      <div className="review">
-        Compellingly grow performance based mindshare through parallel potentialities.
-        Rapidiously underwhelm top-line catalysts for change before best-of-breed
-        materials. Competently brand timely catalysts for change through sustainable
-        systems
-      </div>
-      <Divider style={{ margin: "8px 0" }} />
-      <Rate disabled defaultValue={5} style={{ color: "#FF3E48", fontSize: 13 }} /> 5/5
-      <div className="review">
-        Compellingly grow performance based mindshare through parallel potentialities.
-        Rapidiously underwhelm top-line catalysts for change before best-of-breed
-        materials. Competently brand timely catalysts for change through sustainable
-        systems
-      </div>
-      <PrimaryButton className="mt-5 mb-3" onClick={showReview}>
-        Add review
-      </PrimaryButton>
+      {reviews.map((review) => (
+        <div key={review._id}>
+          <Rate
+            disabled
+            defaultValue={review.rating}
+            style={{ color: "#FF3E48", fontSize: 13 }}
+          />{" "}
+          <label>{Number(review.rating).toFixed(1)}/5</label>
+          <div className="review">{review.review}</div>
+          <Divider style={{ margin: "8px 0" }} />
+        </div>
+      ))}
+
+      {isLoggedIn ? (
+        <PrimaryButton className="mt-5 mb-3" onClick={showReview}>
+          Add review
+        </PrimaryButton>
+      ) : (
+        <PrimaryButton
+          className="mt-5 mb-3"
+          onClick={() => {
+            dispatch({ type: ModalConstant.OPEN_LOGIN_MODAL });
+          }}
+        >
+          Login
+        </PrimaryButton>
+      )}
+
       <div ref={reviewRef} className={`review-container`}>
-        <ReviewForm />
+        <ReviewForm productId={productId} />
       </div>
     </StyledContainer>
   );
@@ -57,7 +72,7 @@ const StyledContainer = styled.div`
     overflow: hidden;
 
     &.visible {
-      height: 550px;
+      height: 350px;
     }
   }
 `;

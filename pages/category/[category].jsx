@@ -13,7 +13,7 @@ const ProductListings = (props) => {
         <div className="dot" />
         <div>{productList.length}</div>
       </div>
-      <Row justify="space-between" gutter={[24, 50]}>
+      <Row gutter={[24, 50]}>
         {productList.map((item, index) => (
           <Col key={index} xs={24} sm={24} md={12} lg={8} xl={6}>
             <ProductCard {...item} />
