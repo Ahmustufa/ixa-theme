@@ -403,7 +403,7 @@ export async function getServerSideProps(context) {
     //   }
     // });
     var { data: reviews } = await axios.get(
-      `http://localhost:1337/reviews/product/62babf046b24f971d590b064`
+      `http://64.227.31.159:1337/reviews/product/${context.params.product_id}`
     );
     var colors = [];
     data.inventories.forEach((item) => {
