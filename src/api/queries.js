@@ -13,4 +13,7 @@ export const Queries = {
   getAllCategories: () => {
     return userModule.get("/categories");
   },
+  getMyOrders: (userId) => {
+    return userModule.get(`/orders/userId/${userId}`);
+  },
 };
