@@ -29,7 +29,9 @@ export const Mutations = {
     return userModule.post("/carts", body);
   },
   deleteCartItem: (params) => {
-    // const headers = { Authorization: `Bearer ${Cookies.get("token")}` };
     return userModule.delete(`/carts/${params._id}`);
+  },
+  updateCartItem: (body, id) => {
+    return userModule.put(`/carts/${id}`, body);
   },
 };

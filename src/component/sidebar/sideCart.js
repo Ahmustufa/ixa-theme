@@ -41,6 +41,28 @@ const SideCart = (props) => {
     }
   };
 
+  // ========Update cart quantity increament============
+  const [updateInCart, updateInCartLoading] = useFetch(Mutations.updateCartItem);
+  const updateCartItemInceamentFunc = async (body, id) => {
+    try {
+      const { data } = await updateInCart(body, id);
+      dispatch(increaseCartItemQuantity(data));
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
+
+  // ========Update cart quantity decreament============
+  const [updateDecCart, updateDecCartLoading] = useFetch(Mutations.updateCartItem);
+  const updateCartItemDecreamentFunc = async (body, id) => {
+    try {
+      const { data } = await updateDecCart(body, id);
+      dispatch(decreaseCartItemQuantity(data));
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
+
   const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
   return (
@@ -92,7 +114,14 @@ const SideCart = (props) => {
                         <div
                           onClick={() => {
                             if (item.quantity > 1) {
-                              dispatch(decreaseCartItemQuantity(item));
+                              updateCartItemDecreamentFunc(
+                                {
+                                  quantity: item.quantity - 1,
+                                  inventory: item.inventory._id,
+                                },
+                                item._id
+                              );
+                              // dispatch(decreaseCartItemQuantity(item));
                             }
                           }}
                           className="decrease-button"
@@ -101,7 +130,17 @@ const SideCart = (props) => {
                         </div>
                         <div className="quantity">{item.quantity}</div>
                         <div
-                          onClick={() => dispatch(increaseCartItemQuantity(item))}
+                          onClick={
+                            () =>
+                              updateCartItemInceamentFunc(
+                                {
+                                  quantity: item.quantity + 1,
+                                  inventory: item.inventory._id,
+                                },
+                                item._id
+                              )
+                            // dispatch(increaseCartItemQuantity(item))
+                          }
                           className="increase-button"
                         >
                           +
