@@ -20,6 +20,7 @@ import { Spin } from "antd";
 const ShoppingBag = () => {
   const dispatch = useDispatch();
   const { items } = useSelector((state) => state.cart);
+  const [loadingState, setLoadingState] = useState("");
   const calculateTotal = (cart) => {
     const subTotal = cart.reduce(
       (accu, item) => (accu += item.quantity * item.product.price),
@@ -32,6 +33,7 @@ const ShoppingBag = () => {
   // ========Remove cart============
   const [deleteCart, deleteCartLoading] = useFetch(Mutations.deleteCartItem);
   const removeCartItemFunc = async (item) => {
+    setLoadingState(item._id);
     try {
       const { data } = await deleteCart(item);
       dispatch(removeCartItem(data));
@@ -77,7 +79,7 @@ const ShoppingBag = () => {
                     </div>
 
                     <div className="ml-3 ">
-                      {deleteCartLoading ? (
+                      {loadingState == item._id ? (
                         <Spin
                           style={{
                             position: "absolute",
