@@ -119,8 +119,8 @@ const ConfrimationOrder = () => {
             </Row>
             <div style={{ border: "1px solid #eaedf0" }}>
               {[1, 2, 3, 4].map((item, index) => (
-                <Row className="product">
-                  <Col key={index} span={16}>
+                <Row key={index} className="product">
+                  <Col span={16}>
                     <div className="box d-flex">
                       <div>
                         <img src="/images/demo_image.jpg" style={{ width: 50 }} />

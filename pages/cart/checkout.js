@@ -326,8 +326,8 @@ const Checkout = () => {
 
               <div style={{ border: "1px solid #eaedf0" }}>
                 {cartItems.map((item, index) => (
-                  <Row className="product">
-                    <Col key={index} span={16}>
+                  <Row key={index} className="product">
+                    <Col span={16}>
                       <div className="box d-flex">
                         <div>
                           <img

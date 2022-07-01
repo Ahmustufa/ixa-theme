@@ -161,7 +161,7 @@ const ShoppingBag = () => {
               ))}
             </Row>
           </div>
-          <div class="dropdown-divider my-5"></div>
+          <div className="dropdown-divider my-5"></div>
           <Row className="d-flex justify-content-end align-items-end">
             <Col xs={24} sm={24} xl={12}>
               <h6 className="heading">CART TOTALS</h6>
