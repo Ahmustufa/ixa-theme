@@ -24,8 +24,8 @@ const ReviewForm = (props) => {
   const handleCreate = async () => {
     try {
       await createReview({
-        rating: state.rating,
-        review: `${state.review}`,
+        rating: `${state.rating}`,
+        review: state.review,
         product: productId,
         users_permissions_user: userId,
       });
