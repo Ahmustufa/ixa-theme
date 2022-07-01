@@ -14,6 +14,8 @@ import {
 import { Mutations } from "../../api/mutations";
 import { useFetch } from "../../hooks/useFetch";
 import { errorHandler } from "../../helper/errorHandler";
+import { LoadingOutlined } from "@ant-design/icons";
+import { Spin } from "antd";
 
 const SideCart = (props) => {
   const dispatch = useDispatch();
@@ -28,22 +30,25 @@ const SideCart = (props) => {
     return subTotal.toLocaleString();
   };
 
+  // ========Remove cart============
   const [deleteCart, deleteCartLoading] = useFetch(Mutations.deleteCartItem);
-  const removeCartItemFunc = async (product) => {
+  const removeCartItemFunc = async (item) => {
     try {
-      const { data } = await deleteCart(product);
-      console.log("data remove cart", data);
+      const { data } = await deleteCart(item);
+      dispatch(removeCartItem(data));
     } catch (err) {
-      console.log("error remove cart", err);
       message.error(errorHandler(err));
     }
   };
+
+  const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
   return (
     <StyledDrawer
       visible={visible}
       closable={false}
-      width={480}
+      // width={480}
+      className="side-drawer-cart"
       onClose={() => dispatch(closeCart())}
     >
       <Row justify="space-between">
@@ -112,13 +117,17 @@ const SideCart = (props) => {
                 </Col>
 
                 <Col span={3}>
-                  <BiTrash
-                    onClick={
-                      () => removeCartItemFunc(item.product)
-                      // dispatch(removeCartItem(item))
-                    }
-                    style={{ cursor: "pointer", color: "#54595f", fontSize: 16 }}
-                  />
+                  {deleteCartLoading ? (
+                    <Spin indicator={antIcon} />
+                  ) : (
+                    <BiTrash
+                      onClick={
+                        () => removeCartItemFunc(item)
+                        // dispatch(removeCartItem(item))
+                      }
+                      style={{ cursor: "pointer", color: "#54595f", fontSize: 16 }}
+                    />
+                  )}
                 </Col>
               </Row>
             </div>
@@ -144,6 +153,9 @@ const SideCart = (props) => {
 export default SideCart;
 
 const StyledDrawer = styled(Drawer)`
+  .side-drawer-cart {
+    width: 480px;
+  }
   .quantity-container {
     border: 1px solid #e5e5e5;
     border-radius: 3px;
@@ -169,5 +181,10 @@ const StyledDrawer = styled(Drawer)`
     left: 24px;
     right: 24px;
     bottom: 24px;
+  }
+  @media (max-width: 800px) {
+    .side-drawer-cart {
+      width: 420px;
+    }
   }
 `;
