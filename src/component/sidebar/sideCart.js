@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Drawer, Row, Col, Divider, message } from "antd";
 import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
@@ -19,6 +20,7 @@ import { Spin } from "antd";
 
 const SideCart = (props) => {
   const dispatch = useDispatch();
+  const [loadingState, setLoadingState] = useState("");
   const { visible, items } = useSelector((state) => state.cart);
 
   const calculateTotal = (cart) => {
@@ -26,13 +28,13 @@ const SideCart = (props) => {
       (accu, item) => (accu += item.quantity * item.product.price),
       0
     );
-    // console.log("Sub total", subTotal);
     return subTotal.toLocaleString();
   };
 
   // ========Remove cart============
   const [deleteCart, deleteCartLoading] = useFetch(Mutations.deleteCartItem);
   const removeCartItemFunc = async (item) => {
+    setLoadingState(item._id);
     try {
       const { data } = await deleteCart(item);
       dispatch(removeCartItem(data));
@@ -156,7 +158,7 @@ const SideCart = (props) => {
                 </Col>
 
                 <Col span={3}>
-                  {deleteCartLoading ? (
+                  {loadingState == item._id ? (
                     <Spin indicator={antIcon} />
                   ) : (
                     <BiTrash

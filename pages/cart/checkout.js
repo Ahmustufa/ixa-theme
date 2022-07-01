@@ -36,6 +36,7 @@ const getRandomPassword = () => {
 const Checkout = () => {
   const dispatch = useDispatch();
   const [form] = Form.useForm();
+  const [loadingState, setLoadingState] = useState("");
   const [state, setState] = useState({ ...initialState });
   const [shippingAddress, setShippingAddress] = useState({ new: false, address: "" });
   const { isLoggedIn, data: userData } = useSelector((state) => state.user);
@@ -128,6 +129,7 @@ const Checkout = () => {
   // ========Remove cart============
   const [deleteCart, deleteCartLoading] = useFetch(Mutations.deleteCartItem);
   const removeCartItemFunc = async (item) => {
+    setLoadingState(item._id);
     try {
       const { data } = await deleteCart(item);
       dispatch(removeCartItem(data));
@@ -347,7 +349,7 @@ const Checkout = () => {
                       <p className="font-weight-light title">
                         PKR {item.product.price?.toLocaleString()}
                       </p>
-                      {deleteCartLoading ? (
+                      {loadingState == item._id ? (
                         <Spin
                           style={{
                             position: "absolute",
