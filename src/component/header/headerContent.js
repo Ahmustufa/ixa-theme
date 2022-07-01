@@ -123,7 +123,9 @@ const HeaderContent = (props) => {
 
   useEffect(() => {
     getCategories();
-    getCart(data._id);
+    if (isLoggedIn) {
+      getCart(data._id);
+    }
   }, []);
 
   return (

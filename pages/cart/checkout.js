@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Form, message, Checkbox } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import CartSteps from "../../src/component/cartSteps";
-import { ButtonWrapper, PrimaryButton } from "../../src/component/buttons";
+import { PrimaryButton } from "../../src/component/buttons";
 import { InputWrapper } from "../../src/component/inputs";
 import { AiOutlineShopping } from "react-icons/ai";
 import Link from "next/link";
@@ -17,6 +17,7 @@ import {
 } from "../../src/redux/actions/cartActions";
 import { BiTrash } from "react-icons/bi";
 import { Spin } from "antd";
+import router from "next/router";
 
 const initialState = {
   firstName: "",
@@ -61,22 +62,35 @@ const Checkout = () => {
   };
 
   const [createOrderApi, createOrderLoading] = useFetch(Mutations.createOrder);
+  const placeOrder = async () => {
+    for (let i = 0; i < cartItems.length; i++) {
+      const cartItem = cartItems[i];
+      try {
+        await createOrderApi({
+          quantity: cartItem.quantity,
+          color: cartItem.inventory.size,
+          size: cartItem.inventory.color,
+          product: cartItem.product._id,
+          inventory: cartItem.inventory._id,
+          deliveryAddress: shippingAddress.new
+            ? shippingAddress.address
+            : userData.address,
+          users_permissions_user: userData._id,
+        });
+        await removeCartItemFunc(cartItem);
+      } catch (err) {
+        message.error(errorHandler(err));
+      }
+    }
+    router.push("/my-account/orders");
+  };
+
   const handleOrder = async () => {
     try {
       if (isLoggedIn == false) {
         await createAccount();
       }
-      const { data } = await createOrderApi({
-        quantity: 4,
-        color: "red",
-        size: "M",
-        product: "62bac02b67c2bd1ac991cb09",
-        inventory: "62baec3467c2bd1ac991cb1e",
-        deliveryAddress: shippingAddress.new ? shippingAddress.address : userData.address,
-        users_permissions_user: userData._id,
-      });
-
-      console.log("My order data", data);
+      placeOrder();
     } catch (err) {
       message.error(errorHandler(err));
     }
@@ -210,9 +224,13 @@ const Checkout = () => {
                     rules={[{ required: true, type: "string" }]}
                   >
                     <InputWrapper
-                      name="shippingAddress"
-                      value={state.shippingAddress}
-                      onChange={handleChange}
+                      value={shippingAddress.address}
+                      onChange={(e) => {
+                        setShippingAddress({
+                          ...shippingAddress,
+                          address: e.target.value,
+                        });
+                      }}
                       placeholder="House number and street name"
                     />
                   </Form.Item>
