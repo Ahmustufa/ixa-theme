@@ -23,7 +23,7 @@ export const Mutations = {
   },
   createOrder: (body) => {
     // const headers = {Authorization: `Bearer ${Cookiesget("token")}`}
-    return userModule.post("/orders", body);
+    return userModule.post("/orders/createOrder", body);
   },
   addToCart: (body) => {
     return userModule.post("/carts", body);
