@@ -60,22 +60,34 @@ const Checkout = () => {
   };
 
   const [createOrderApi, createOrderLoading] = useFetch(Mutations.createOrder);
+  const placeOrder = () => {
+    cartItems.forEach(async (cartItem) => {
+      try {
+        const { data } = await createOrderApi({
+          quantity: cartItem.quantity,
+          color: cartItem.inventory.size,
+          size: cartItem.inventory.color,
+          product: cartItem.product._id,
+          inventory: cartItem.inventory._id,
+          deliveryAddress: shippingAddress.new
+            ? shippingAddress.address
+            : userData.address,
+          users_permissions_user: userData._id,
+        });
+
+        console.log("My order data", data);
+      } catch (err) {
+        message.error(errorHandler(err));
+      }
+    });
+  };
+
   const handleOrder = async () => {
     try {
       if (isLoggedIn == false) {
         await createAccount();
       }
-      const { data } = await createOrderApi({
-        quantity: 4,
-        color: "red",
-        size: "M",
-        product: "62bac02b67c2bd1ac991cb09",
-        inventory: "62baec3467c2bd1ac991cb1e",
-        deliveryAddress: shippingAddress.new ? shippingAddress.address : userData.address,
-        users_permissions_user: userData._id,
-      });
-
-      console.log("My order data", data);
+      placeOrder();
     } catch (err) {
       message.error(errorHandler(err));
     }
@@ -196,9 +208,13 @@ const Checkout = () => {
                     rules={[{ required: true, type: "string" }]}
                   >
                     <InputWrapper
-                      name="shippingAddress"
-                      value={state.shippingAddress}
-                      onChange={handleChange}
+                      value={shippingAddress.address}
+                      onChange={(e) => {
+                        setShippingAddress({
+                          ...shippingAddress,
+                          address: e.target.value,
+                        });
+                      }}
                       placeholder="House number and street name"
                     />
                   </Form.Item>
