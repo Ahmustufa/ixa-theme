@@ -35,6 +35,6 @@ export const Mutations = {
     return userModule.put(`/carts/${id}`, body);
   },
   createReview: (body) => {
-    return userModule.put(`/reviews`, body);
+    return userModule.post(`/reviews`, body);
   },
 };
