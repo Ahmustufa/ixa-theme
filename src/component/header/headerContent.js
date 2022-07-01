@@ -64,6 +64,7 @@ const HeaderContent = (props) => {
   const getCart = async (id) => {
     try {
       const { data } = await getMyCart(id);
+      console.log("carts data", data);
       addItemToCart(data);
     } catch (err) {
       message.error(errorHandler(err));

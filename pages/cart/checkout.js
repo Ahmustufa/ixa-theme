@@ -16,6 +16,7 @@ import {
   removeCartItem,
 } from "../../src/redux/actions/cartActions";
 import { BiTrash } from "react-icons/bi";
+import { Spin } from "antd";
 
 const initialState = {
   firstName: "",
@@ -121,6 +122,19 @@ const Checkout = () => {
       setState({ ...userData });
     }
   }, []);
+
+  // ========Remove cart============
+  const [deleteCart, deleteCartLoading] = useFetch(Mutations.deleteCartItem);
+  const removeCartItemFunc = async (item) => {
+    try {
+      const { data } = await deleteCart(item);
+      dispatch(removeCartItem(data));
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
+
+  const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
   return (
     <StyledPage style={{ padding: 80 }}>
@@ -331,17 +345,28 @@ const Checkout = () => {
                       <p className="font-weight-light title">
                         PKR {item.product.price?.toLocaleString()}
                       </p>
-                      <BiTrash
-                        onClick={() => dispatch(removeCartItem(item))}
-                        style={{
-                          cursor: "pointer",
-                          color: "#54595f",
-                          fontSize: 16,
-                          position: "absolute",
-                          right: 0,
-                          top: 0,
-                        }}
-                      />
+                      {deleteCartLoading ? (
+                        <Spin
+                          style={{
+                            position: "absolute",
+                            right: 0,
+                            top: 0,
+                          }}
+                          indicator={antIcon}
+                        />
+                      ) : (
+                        <BiTrash
+                          onClick={() => removeCartItemFunc(item)}
+                          style={{
+                            cursor: "pointer",
+                            color: "#54595f",
+                            fontSize: 16,
+                            position: "absolute",
+                            right: 0,
+                            top: 0,
+                          }}
+                        />
+                      )}
                     </Col>
                   </Row>
                 ))}

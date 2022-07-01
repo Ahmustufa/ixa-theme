@@ -12,6 +12,10 @@ import {
   removeCartItem,
 } from "../../src/redux/actions/cartActions";
 import { BiTrash } from "react-icons/bi";
+import { useFetch } from "../../src/hooks/useFetch";
+import { errorHandler, Mutations } from "../../src/api/config";
+import { LoadingOutlined } from "@ant-design/icons";
+import { Spin } from "antd";
 
 const ShoppingBag = () => {
   const dispatch = useDispatch();
@@ -24,6 +28,19 @@ const ShoppingBag = () => {
     // console.log("Sub total", subTotal);
     return subTotal.toLocaleString();
   };
+
+  // ========Remove cart============
+  const [deleteCart, deleteCartLoading] = useFetch(Mutations.deleteCartItem);
+  const removeCartItemFunc = async (item) => {
+    try {
+      const { data } = await deleteCart(item);
+      dispatch(removeCartItem(data));
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
+
+  const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
   return (
     <StyledPage style={{ padding: 80 }}>
@@ -60,17 +77,28 @@ const ShoppingBag = () => {
                     </div>
 
                     <div className="ml-3 ">
-                      <BiTrash
-                        onClick={() => dispatch(removeCartItem(item))}
-                        style={{
-                          cursor: "pointer",
-                          color: "#54595f",
-                          fontSize: 16,
-                          position: "absolute",
-                          right: 20,
-                          top: 10,
-                        }}
-                      />
+                      {deleteCartLoading ? (
+                        <Spin
+                          style={{
+                            position: "absolute",
+                            right: 20,
+                            top: 10,
+                          }}
+                          indicator={antIcon}
+                        />
+                      ) : (
+                        <BiTrash
+                          onClick={() => removeCartItemFunc(item)}
+                          style={{
+                            cursor: "pointer",
+                            color: "#54595f",
+                            fontSize: 16,
+                            position: "absolute",
+                            right: 20,
+                            top: 10,
+                          }}
+                        />
+                      )}
                       <div className="product-name">{item.productName}</div>
 
                       <div className="">
