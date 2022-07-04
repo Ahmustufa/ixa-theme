@@ -63,13 +63,14 @@ const Order = (props) => {
     }
   };
   const addToCartFunc = async () => {
+    const body = {
+      inventory: getInventorId?._id,
+      product: productDetails._id,
+      quantity: 1,
+    };
+    userData._id && (body.users_permissions_user = userData._id);
     try {
-      const { data } = await addToCart({
-        inventory: getInventorId?._id,
-        product: productDetails._id,
-        quantity: 1,
-        users_permissions_user: userData._id,
-      });
+      const { data } = await addToCart(body);
       dispatch(addItemToCart(data));
     } catch (err) {
       message.error(errorHandler(err));
