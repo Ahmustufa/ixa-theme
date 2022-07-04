@@ -64,6 +64,9 @@ const Checkout = () => {
 
   const [createOrderApi, createOrderLoading] = useFetch(Mutations.createOrder);
   const placeOrder = async () => {
+    /**
+     * Place order run for every cart item
+     */
     for (let i = 0; i < cartItems.length; i++) {
       const cartItem = cartItems[i];
       try {
@@ -78,12 +81,21 @@ const Checkout = () => {
             : userData.address,
           users_permissions_user: userData._id,
         });
-        await removeCartItemFunc(cartItem);
       } catch (err) {
         message.error(errorHandler(err));
       }
     }
     router.push("/my-account/orders");
+    /**
+     * Clearing cart items
+     */
+    cartItems.forEach(async (cartItem) => {
+      try {
+        await removeCartItemFunc(cartItem);
+      } catch (err) {
+        message.error(errorHandler(err));
+      }
+    });
   };
 
   const handleOrder = async () => {
