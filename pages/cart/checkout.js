@@ -57,13 +57,17 @@ const Checkout = () => {
         username,
       });
       dispatch(loginUserAction(data));
+      placeOrder(data.user);
+      return data;
     } catch (err) {
       message.error(errorHandler(err));
+      throw err;
     }
   };
 
   const [createOrderApi, createOrderLoading] = useFetch(Mutations.createOrder);
-  const placeOrder = async () => {
+  const placeOrder = async (user) => {
+    console.log("User", user);
     /**
      * Place order run for every cart item
      */
@@ -72,14 +76,12 @@ const Checkout = () => {
       try {
         await createOrderApi({
           quantity: cartItem.quantity,
-          color: cartItem.inventory.size,
-          size: cartItem.inventory.color,
+          color: cartItem.inventory.color,
+          size: cartItem.inventory.size,
           product: cartItem.product._id,
           inventory: cartItem.inventory._id,
-          deliveryAddress: shippingAddress.new
-            ? shippingAddress.address
-            : userData.address,
-          users_permissions_user: userData._id,
+          deliveryAddress: shippingAddress.new ? shippingAddress.address : user.address,
+          users_permissions_user: user._id,
         });
       } catch (err) {
         message.error(errorHandler(err));
@@ -101,9 +103,10 @@ const Checkout = () => {
   const handleOrder = async () => {
     try {
       if (isLoggedIn == false) {
-        await createAccount();
+        createAccount();
+      } else {
+        placeOrder(userData);
       }
-      placeOrder();
     } catch (err) {
       message.error(errorHandler(err));
     }
