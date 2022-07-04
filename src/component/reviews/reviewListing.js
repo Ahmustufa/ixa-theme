@@ -26,7 +26,7 @@ const ReviewListing = (props) => {
             defaultValue={review.rating}
             style={{ color: "#FF3E48", fontSize: 13 }}
           />{" "}
-          <label>{Number(review.rating).toFixed(1)}/5</label>
+          <label>{Number(review.rating).toFixed(1)}/5.0</label>
           <div className="review">{review.review}</div>
           <Divider style={{ margin: "8px 0" }} />
         </div>
