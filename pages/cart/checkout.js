@@ -45,6 +45,7 @@ const Checkout = () => {
   const [createAccountApi, createAccountLoading] = useFetch(Mutations.createAccount);
   const createAccount = async () => {
     const [username] = state.email.split("@");
+    const password = getRandomPassword();
     try {
       const { data } = await createAccountApi({
         firstName: state.firstName,
@@ -53,8 +54,9 @@ const Checkout = () => {
         email: state.email,
         city: state.city,
         postalCode: state.postalCode,
-        password: getRandomPassword(),
         username,
+        password,
+        dcryptedPass: password,
       });
       dispatch(loginUserAction(data));
       placeOrder(data.user);

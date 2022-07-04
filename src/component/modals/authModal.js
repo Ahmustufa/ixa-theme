@@ -49,6 +49,7 @@ const AuthModal = () => {
 
   const handleSignUp = async () => {
     const [username] = state.email.split("@");
+    const password = getRandomPassword();
     try {
       const { data } = await signUpAPI({
         firstName: state.firstName,
@@ -59,7 +60,8 @@ const AuthModal = () => {
         city: state.city,
         postalCode: state.postalCode,
         username,
-        password: getRandomPassword(),
+        password,
+        dcryptedPass: password,
       });
       dispatch(loginUserAction(data));
       setState({ ...initialState }); // set state to initial state
