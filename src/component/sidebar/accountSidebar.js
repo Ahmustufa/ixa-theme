@@ -13,27 +13,43 @@ const AccountSidebar = (props) => {
     <StyledSidebar>
       <h1 className="heading">{heading[router.pathname]}</h1>
       <ul className="sidebar-list">
-        <li className="sidebar-item selected">
+        <li
+          className={`sidebar-item ${
+            router.pathname == "/my-account/dashboard" ? "selected" : ""
+          }`}
+        >
           <Link href="/my-account/dashboard">
             <a className="hoverable dark">Dashboard</a>
           </Link>
         </li>
-        <li className="sidebar-item">
+        <li
+          className={`sidebar-item ${
+            router.pathname == "/my-account/orders" ? "selected" : ""
+          }`}
+        >
           <Link href="/my-account/orders">
             <a className="hoverable dark">Orders</a>
           </Link>
         </li>
-        <li className="sidebar-item">
+        <li
+          className={`sidebar-item ${
+            router.pathname == "/my-account/wishlist" ? "selected" : ""
+          }`}
+        >
           <Link href="/my-account/wishlist">
             <a className="hoverable dark">Wishlist</a>
           </Link>
         </li>
-        <li className="sidebar-item">
+        <li
+          className={`sidebar-item ${
+            router.pathname == "/my-account/settings" ? "selected" : ""
+          }`}
+        >
           <Link href="/my-account/settings">
             <a className="hoverable dark">Account</a>
           </Link>
         </li>
-        <li className="sidebar-item">
+        <li className={`sidebar-item`}>
           <Link href="#">
             <a className="hoverable dark">Logout</a>
           </Link>
