@@ -24,6 +24,11 @@ const AccountSidebar = (props) => {
           </Link>
         </li>
         <li className="sidebar-item">
+          <Link href="/my-account/wishlist">
+            <a className="hoverable dark">Wishlist</a>
+          </Link>
+        </li>
+        <li className="sidebar-item">
           <Link href="/my-account/settings">
             <a className="hoverable dark">Account</a>
           </Link>
