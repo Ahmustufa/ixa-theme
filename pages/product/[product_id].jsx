@@ -1,4 +1,4 @@
-import { Row, Col, Collapse, Divider } from "antd";
+import { Row, Col, Collapse, Divider, message } from "antd";
 import ShopCard from "../../src/component/cards/shopCard";
 import ProductCarousel from "../../src/component/productListing/carousel";
 import { PrimaryButton } from "../../src/component/buttons";
@@ -11,8 +11,7 @@ import axios from "axios";
 import { addItemToCart, openCart } from "../../src/redux/actions/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToWishlist, removeWishlistItem } from "../../src/redux/actions";
-import { useFetch } from "../../src/hooks/useFetch";
-import { Mutations } from "../../src/api/mutations";
+import { Mutations, errorHandler, useFetch } from "../../src/api/config";
 
 const { Panel } = Collapse;
 
@@ -64,13 +63,14 @@ const Order = (props) => {
     }
   };
   const addToCartFunc = async () => {
+    const body = {
+      inventory: getInventorId?._id,
+      product: productDetails._id,
+      quantity: 1,
+    };
+    userData._id && (body.users_permissions_user = userData._id);
     try {
-      const { data } = await addToCart({
-        inventory: getInventorId?._id,
-        product: productDetails._id,
-        quantity: 1,
-        users_permissions_user: userData._id,
-      });
+      const { data } = await addToCart(body);
       dispatch(addItemToCart(data));
     } catch (err) {
       message.error(errorHandler(err));

@@ -12,7 +12,7 @@ const CartSteps = (props) => {
       description: "ENTER YOUR DETAILS",
       link: "cart/checkout",
     },
-    { id: 3, title: "CONFIRMATION", description: "REVIEW AND ORDER!" },
+    // { id: 3, title: "CONFIRMATION", description: "REVIEW AND ORDER!" },
   ];
 
   return (

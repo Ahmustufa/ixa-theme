@@ -45,6 +45,7 @@ const Checkout = () => {
   const [createAccountApi, createAccountLoading] = useFetch(Mutations.createAccount);
   const createAccount = async () => {
     const [username] = state.email.split("@");
+    const password = getRandomPassword();
     try {
       const { data } = await createAccountApi({
         firstName: state.firstName,
@@ -53,45 +54,61 @@ const Checkout = () => {
         email: state.email,
         city: state.city,
         postalCode: state.postalCode,
-        password: getRandomPassword(),
         username,
+        password,
+        dcryptedPass: password,
       });
       dispatch(loginUserAction(data));
+      placeOrder(data.user);
+      return data;
     } catch (err) {
       message.error(errorHandler(err));
+      throw err;
     }
   };
 
   const [createOrderApi, createOrderLoading] = useFetch(Mutations.createOrder);
-  const placeOrder = async () => {
+  const placeOrder = async (user) => {
+    console.log("User", user);
+    /**
+     * Place order run for every cart item
+     */
     for (let i = 0; i < cartItems.length; i++) {
       const cartItem = cartItems[i];
       try {
         await createOrderApi({
           quantity: cartItem.quantity,
-          color: cartItem.inventory.size,
-          size: cartItem.inventory.color,
+          color: cartItem.inventory.color,
+          size: cartItem.inventory.size,
           product: cartItem.product._id,
           inventory: cartItem.inventory._id,
-          deliveryAddress: shippingAddress.new
-            ? shippingAddress.address
-            : userData.address,
-          users_permissions_user: userData._id,
+          deliveryAddress: shippingAddress.new ? shippingAddress.address : user.address,
+          users_permissions_user: user._id,
         });
-        await removeCartItemFunc(cartItem);
       } catch (err) {
         message.error(errorHandler(err));
       }
     }
     router.push("/my-account/orders");
+    /**
+     * Clearing cart items
+     */
+    cartItems.forEach(async (cartItem) => {
+      try {
+        await removeCartItemFunc(cartItem);
+      } catch (err) {
+        message.error(errorHandler(err));
+      }
+    });
   };
 
   const handleOrder = async () => {
     try {
       if (isLoggedIn == false) {
-        await createAccount();
+        createAccount();
+      } else {
+        placeOrder(userData);
       }
-      placeOrder();
     } catch (err) {
       message.error(errorHandler(err));
     }
