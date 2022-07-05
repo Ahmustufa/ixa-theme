@@ -25,6 +25,10 @@ export const storeAllProducts = (payload) => (dispatch) => {
   dispatch({ type: Product.STORE, payload });
 };
 
+export const addAllItemToWishlist = (payload) => {
+  return { type: Wishlist.ADD_ALL_ITEM, payload };
+};
+
 export const addItemToWishlist = (payload) => {
   return { type: Wishlist.ADD_ITEM, payload };
 };

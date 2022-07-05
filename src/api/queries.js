@@ -16,4 +16,7 @@ export const Queries = {
   getMyOrders: (userId) => {
     return userModule.get(`/orders/userId/${userId}`);
   },
+  getMyWishlists: (userId) => {
+    return userModule.get(`/wishlists/user/${userId}`);
+  },
 };
