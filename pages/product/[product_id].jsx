@@ -87,6 +87,7 @@ const Order = (props) => {
     try {
       const { data } = await addToWishlist(body);
       dispatch(addItemToWishlist(data));
+      setState({ color: "", size: "" });
     } catch (err) {
       message.error(errorHandler(err));
     }
