@@ -11,7 +11,11 @@ import styled from "styled-components";
 import SidebarWrapper from "./sidebarWrapper";
 import { ModalConstant } from "../../redux/constants";
 import { addItemToCart, openCart } from "../../redux/actions/cartActions";
-import { logoutAction } from "../../redux/actions";
+import {
+  addAllItemToWishlist,
+  addItemToWishlist,
+  logoutAction,
+} from "../../redux/actions";
 import { errorHandler, Queries, useFetch } from "../../api/config";
 
 const HeaderContent = (props) => {
@@ -64,8 +68,19 @@ const HeaderContent = (props) => {
   const getCart = async (id) => {
     try {
       const { data } = await getMyCart(id);
-      console.log("carts data", data);
       addItemToCart(data);
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
+
+  // =============GET MY WISHLISTS DATA==============
+  const [getMyWishlist] = useFetch(Queries.getMyWishlists);
+
+  const getWishlist = async (id) => {
+    try {
+      const { data } = await getMyWishlist(id);
+      dispatch(addAllItemToWishlist(data));
     } catch (err) {
       message.error(errorHandler(err));
     }
@@ -125,6 +140,7 @@ const HeaderContent = (props) => {
     getCategories();
     if (isLoggedIn) {
       getCart(data._id);
+      getWishlist(data._id);
     }
   }, []);
 

@@ -37,4 +37,10 @@ export const Mutations = {
   createReview: (body) => {
     return userModule.post(`/reviews`, body);
   },
+  addToWishlist: (body) => {
+    return userModule.post("/wishlists", body);
+  },
+  removeFromWishlist: (id) => {
+    return userModule.delete(`/wishlists/${id}`);
+  },
 };

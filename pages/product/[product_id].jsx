@@ -77,6 +77,37 @@ const Order = (props) => {
     }
   };
 
+  // --------------ADD TO WISHLIST-------------
+  const [addToWishlist, addToWishlistLoading] = useFetch(Mutations.addToWishlist);
+  const addItemToWishlistFunc = async (item) => {
+    const body = {
+      product: productDetails._id,
+      users_permissions_user: userData?._id,
+    };
+    try {
+      const { data } = await addToWishlist(body);
+      dispatch(addItemToWishlist(data));
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
+
+  // --------------REMOVE FROM WISHLIST-------------
+  const [removeFromWishlist, removeFromWishlistLoading] = useFetch(
+    Mutations.removeFromWishlist
+  );
+  const removeItemFromWishlistFunc = async (item) => {
+    const getWishlistId = wishlist.find((item) => item.product._id == productDetails._id);
+    try {
+      const { data } = await removeFromWishlist(getWishlistId._id);
+      dispatch(removeWishlistItem(data));
+      message.success("Remove from wishlist successfully");
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
+
+  let wishlistItem = wishlist.map((item) => item.product._id);
   return (
     <StyledPage style={{ padding: 80 }}>
       {/* <div className="mx-auto my-4 fw-bold">
@@ -163,10 +194,13 @@ const Order = (props) => {
               </Col>
 
               <Col>
-                {wishlist.includes(productDetails._id) ? (
+                {wishlistItem.includes(productDetails._id) ? (
                   <div
                     className="wish-button"
-                    onClick={() => dispatch(removeWishlistItem(productDetails._id))}
+                    onClick={() => {
+                      removeItemFromWishlistFunc();
+                      // dispatch(removeWishlistItem(productDetails._id));
+                    }}
                   >
                     <BsSuitHeartFill className="icon" />
                     <div className="text">REMOVE FROM WISHLIST</div>
@@ -174,7 +208,10 @@ const Order = (props) => {
                 ) : (
                   <div
                     className="wish-button"
-                    onClick={() => dispatch(addItemToWishlist(productDetails._id))}
+                    onClick={() => {
+                      addItemToWishlistFunc(productDetails);
+                      // dispatch(addItemToWishlist(productDetails._id))
+                    }}
                   >
                     <BsSuitHeart className="icon" />
                     <div className="text">ADD TO WISHLIST</div>

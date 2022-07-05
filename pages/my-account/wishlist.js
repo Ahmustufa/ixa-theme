@@ -1,26 +1,33 @@
 import { Row, Col, message } from "antd";
 import styled from "styled-components";
 import AccountSidebar from "../../src/component/sidebar/accountSidebar";
-import { Queries, useFetch, errorHandler } from "../../src/api/config";
+import { Queries, useFetch, errorHandler, Mutations } from "../../src/api/config";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
+import { PrimaryButton } from "../../src/component/buttons";
+import { AiOutlineShopping } from "react-icons/ai";
+import Link from "next/link";
+import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
+import { removeWishlistItem } from "../../src/redux/actions";
 
 const Wishlist = () => {
+  const dispatch = useDispatch();
   const { items } = useSelector((state) => state.wishlist);
-  const [myOrders, setMyOrders] = useState([]);
-  const [getOrdersApi, getOrderLoading] = useFetch(Queries.getMyOrders);
 
-  console.log("items", items);
-  // useEffect(() => {
-  //   if (typeof window != undefined) {
-  //     getOrdersApi(userData._id)
-  //       .then(({ data }) => {
-  //         setMyOrders(data);
-  //       })
-  //       .catch((err) => message.error(errorHandler(err)));
-  //   }
-  // }, []);
+  // --------------REMOVE FROM WISHLIST-------------
+  const [removeFromWishlist, removeFromWishlistLoading] = useFetch(
+    Mutations.removeFromWishlist
+  );
+  const removeItemFromWishlistFunc = async (productDetails) => {
+    try {
+      const { data } = await removeFromWishlist(productDetails._id);
+      dispatch(removeWishlistItem(data));
+      message.success("Remove from wishlist successfully");
+    } catch (err) {
+      message.error(errorHandler(err));
+    }
+  };
 
   return (
     <StyledPage style={{ padding: 80 }}>
@@ -30,111 +37,54 @@ const Wishlist = () => {
         </Col>
 
         <Col xs={24} sm={24} md={20} lg={20}>
-          {/* <Row className="table-header" justify="space-around">
-        <Col span={8}>Product</Col>
-        <Col span={3}>Price</Col>
-        <Col span={3}>Quantity</Col>
-        <Col span={3}>Ordered date</Col>
-        <Col span={3}>Subtotal</Col>
-      </Row>
-
-      {[1, 2, 3].map((item, index) => (
-        <div className="table-row">
-          <Row justify="space-around">
-            <Col span={8}>
-              <div className="d-flex">
-                <img
-                  src="/images/demo_image.jpg"
-                  style={{ width: 100, marginRight: 12 }}
-                />
-                <div>
-                  <p>Black Lace Trim Tee - M</p>
+          {items.length == 0 ? (
+            <Row className="mt-3">
+              <Col style={{ background: "#f9fafb" }} span={24} className="p-4">
+                <div className="d-flex justify-content-start align-items-center">
+                  <AiOutlineShopping color={"#ced4da"} size={50} />
+                  <p className="mb-0 ml-5 title" style={{ color: "#808080" }}>
+                    Your wishlist is currently empty.
+                  </p>
                 </div>
-              </div>
-            </Col>
-            <Col span={3}>Rs. 1000</Col>
-            <Col span={3}>2</Col>
-            <Col span={3}>31 Feb 2023</Col>
-            <Col span={3}>2000</Col>
-          </Row>
-        </div>
-      ))} */}
-
-          <Row gutter={[24, 24]}>
-            {items.map((item, index) => (
-              <Col key={index} span={12}>
-                <p>asdf</p>
-                {/* <div className="box d-flex align-items-center">
-                  <div>
-                    <img
-                      src={
-                        process.env.REACT_APP_STRAPI_URL +
-                        item.inventry.product.images[0].url
-                      }
-                      style={{ width: 180 }}
-                    />
-                  </div>
-
-                  <div className="ml-3">
-                    <div className="product-name">
-                      {item.inventry.product.productName}
-                    </div>
-
-                    <div className="">
-                      <div
-                        className="d-flex mb-1"
-                        style={{ color: "#54595f", fontSize: 14 }}
-                      >
-                        <div className="">Price: </div>
-                        <div className="font-weight-light ml-2">
-                          PKR {item.inventry.product?.price?.toLocaleString()}
-                        </div>
-                      </div>
-                      <div
-                        className="d-flex mb-1"
-                        style={{ color: "#54595f", fontSize: 14 }}
-                      >
-                        <div className="">Quantity: </div>
-                        <div className="font-weight-light ml-2">{item.quantity}</div>
-                      </div>
-                      <div
-                        className="d-flex mb-1"
-                        style={{ color: "#54595f", fontSize: 14 }}
-                      >
-                        <div className="">Size: </div>
-                        <div className="font-weight-light ml-2">{item.size}</div>
-                      </div>
-                      <div
-                        className="d-flex mb-1"
-                        style={{ color: "#54595f", fontSize: 14 }}
-                      >
-                        <div className="">Color: </div>
-                        <div className="font-weight-light ml-2">{item.color}</div>
-                      </div>
-                      <div
-                        className="d-flex mb-1"
-                        style={{ color: "#54595f", fontSize: 14 }}
-                      >
-                        <div className="">Ordered date: </div>
-                        <div className="font-weight-light ml-2">
-                          {moment(item.createdAt).format("ddd DD/MM/YYYY")}
-                        </div>
-                      </div>
-                      <div
-                        className="d-flex mb-1"
-                        style={{ color: "#54595f", fontSize: 14 }}
-                      >
-                        <div className="">Subtotal: </div>
-                        <div className="font-weight-light ml-2">
-                          PKR {(item.product?.price * item.quantity).toLocaleString()}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
               </Col>
-            ))}
-          </Row>
+              <Link href={"/"}>
+                <PrimaryButton className="mt-5">RETURN TO SHOP</PrimaryButton>
+              </Link>
+            </Row>
+          ) : (
+            <Row gutter={[24, 24]}>
+              {items.map((item, index) => (
+                <Col key={index} xs={24} sm={24} lg={6}>
+                  <div className="box">
+                    <div>
+                      <img
+                        src={
+                          process.env.REACT_APP_STRAPI_URL + item.product.images[0].url
+                        }
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                    <div className="item-details">
+                      <div className="company">{item.product.productName}</div>
+                      <div className="product">{item.product.productName}</div>
+                      <div className="d-flex justify-content-between align-items-center">
+                        <div className="price">PKR {item.product.price}</div>
+                        <div
+                          title="Remove form wishlist"
+                          style={{ cursor: "pointer" }}
+                          onClick={() => {
+                            removeItemFromWishlistFunc(item);
+                          }}
+                        >
+                          <BsSuitHeartFill className="icon" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          )}
         </Col>
       </Row>
     </StyledPage>
@@ -170,6 +120,27 @@ const StyledPage = styled.div`
     font-size: 21px;
     font-weight: 600;
     margin-bottom: 16px;
+  }
+
+  .company {
+    font-size: 14px;
+    color: #abb8c3;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+
+  .product {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.3em;
+    color: #000;
+    margin: 12px 0;
+  }
+
+  .price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #54595f;
   }
 `;
 

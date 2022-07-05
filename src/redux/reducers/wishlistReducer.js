@@ -2,6 +2,10 @@ import { Wishlist } from "../constants";
 
 const wishlistReducer = (state = { items: [] }, action) => {
   switch (action.type) {
+    case Wishlist.ADD_ALL_ITEM: {
+      const { payload } = action;
+      return { items: [...payload] };
+    }
     case Wishlist.ADD_ITEM: {
       const { payload } = action;
       return { ...state, items: [...state.items, payload] };
