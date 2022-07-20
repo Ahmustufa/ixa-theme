@@ -6,6 +6,9 @@ import DressCategories from "../src/component/categories/derssCategories";
 import ProductListing from "../src/component/productListing";
 import ProductCarousel from "../src/component/productListing/carousel";
 import styled from "styled-components";
+import FullBgImageSection from "../src/component/heroSection/FullBgImageSection";
+import { brownHair } from "../images";
+import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
 
 const Home = () => {
   return (
@@ -30,6 +33,17 @@ const Home = () => {
 
         <DressCategories />
         <ProductCarousel />
+
+        <FullBgImageSection bgImage={brownHair} />
+
+        <div className="" style={{ padding: 80 }}>
+          <Row>
+            <Col lg={6}>
+              <SidebarFiltration />
+            </Col>
+            <Col lg={18}></Col>
+          </Row>
+        </div>
 
         <section>
           <div style={{ fontSize: "3rem", color: "#54595f", textAlign: "center" }}>

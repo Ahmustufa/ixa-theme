@@ -70,3 +70,5 @@ export const process3 = "../images/Process-3.svg";
 export const process4 = "../images/Process-4.svg";
 export const process5 = "../images/Process-5.svg";
 export const process6 = "../images/Process-6.svg";
+
+export const brownHair = "../images/bg.jpg";
