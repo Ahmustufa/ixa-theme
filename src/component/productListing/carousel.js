@@ -3,6 +3,7 @@ import { Row, Col } from "antd";
 import ProductCard from "../cards/productCard";
 import Slider from "react-slick";
 import { useSelector } from "react-redux";
+import ProductCardWithIcons from "../cards/productCardWithIcons";
 
 const carouselSettings = {
   dots: true,
@@ -63,7 +64,8 @@ const ProductCarousel = (props) => {
       <Slider {...carouselSettings}>
         {items.map((item, index) => (
           <div>
-            <ProductCard {...item} />
+            <ProductCardWithIcons {...item} />
+            {/* <ProductCard {...item} /> */}
           </div>
         ))}
       </Slider>
