@@ -84,6 +84,21 @@
   }
 }
 
+.sub-menu,
+.sub-menu-child-wrapper {
+  padding: 12px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #ececec;
+}
+
+.sub-menu-child {
+  padding: 8px 0;
+  :hover {
+    background-color: #747474;
+  }
+}
+
 @media only screen and (max-width: 576px) {
   .navbar-wrapper {
     padding: 24px 12px;
