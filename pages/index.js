@@ -9,6 +9,7 @@ import styled from "styled-components";
 import FullBgImageSection from "../src/component/heroSection/FullBgImageSection";
 import { brownHair } from "../images";
 import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
+import SubscriptionModal from "../src/component/subscriptionModal";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <title>Polkadots | Home</title>
       </Head>
 
+      <SubscriptionModal />
       <HomeCarousel />
       <StyledPage>
         <section className="section-wrapper">
