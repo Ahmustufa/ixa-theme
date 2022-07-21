@@ -24,10 +24,7 @@ const SideCart = (props) => {
   const { visible, items } = useSelector((state) => state.cart);
 
   const calculateTotal = (cart) => {
-    const subTotal = cart.reduce(
-      (accu, item) => (accu += item.quantity * item.product.price),
-      0
-    );
+    const subTotal = cart.reduce((accu, item) => (accu += item.quantity * item.price), 0);
     return subTotal.toLocaleString();
   };
 
@@ -101,14 +98,11 @@ const SideCart = (props) => {
             <div ksy={index} className="my-3">
               <Row gutter={[16, 0]}>
                 <Col span={7}>
-                  <img
-                    src={process.env.REACT_APP_STRAPI_URL + item.product.images[0].url}
-                    className="w-100"
-                  />
+                  <img src={item.image} className="w-100" />
                 </Col>
 
                 <Col span={14}>
-                  <div className="product-name mb-2">{item.product.productName}</div>
+                  <div className="product-name mb-2">{item.title}</div>
 
                   <Row align="middle" gutter={[24, 0]}>
                     <Col xs={12} lg={12}>
@@ -150,9 +144,7 @@ const SideCart = (props) => {
                       </div>
                     </Col>
                     <Col xs={12} lg={12}>
-                      <div className="price mt-2">
-                        PKR {item.product.price?.toLocaleString()}
-                      </div>
+                      <div className="price mt-2">PKR {item.price.toLocaleString()}</div>
                     </Col>
                   </Row>
                 </Col>
