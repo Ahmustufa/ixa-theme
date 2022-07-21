@@ -18,72 +18,7 @@ import ProductDetails from "../../src/component/products/productDetails";
 const { Panel } = Collapse;
 
 const Order = (props) => {
-  const { productDetails, colors, reviews } = props;
-  const dispatch = useDispatch();
-  const { items: wishlist } = useSelector((state) => state.wishlist);
-  const { isLoggedIn, data: userData } = useSelector((state) => state.user);
-  const { visible, items } = useSelector((state) => state.cart);
-
-  const [state, setState] = useState({ color: "", size: "" });
-
-  const [addToCart, addToCartLoading] = useFetch(Mutations.addToCart);
-
-  const checkIfExist = () => {
-    const cartItem = items.filter((item) => {
-      if (item.product._id == productDetails._id) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-
-    if (cartItem.length) {
-      // open cart
-      dispatch(openCart());
-    } else {
-      addToCartFunc();
-    }
-  };
-  const addToCartFunc = async () => {
-    const body = {
-      product: productDetails._id,
-      quantity: 1,
-    };
-    userData._id && (body.users_permissions_user = userData._id);
-    try {
-      const { data } = await addToCart(body);
-      dispatch(addItemToCart(data));
-      setState({ color: "", size: "" });
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
-
-  // --------------ADD TO WISHLIST-------------
-  const [addToWishlist, addToWishlistLoading] = useFetch(Mutations.addToWishlist);
-  const addItemToWishlistFunc = async (item) => {
-    const body = {
-      product: productDetails._id,
-      users_permissions_user: userData?._id,
-    };
-    try {
-      const { data } = await addToWishlist(body);
-      dispatch(addItemToWishlist(data));
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
-
-  const removeItemFromWishlistFunc = async (item) => {
-    const getWishlistId = wishlist.find((item) => item.product._id == productDetails._id);
-    try {
-      const { data } = await removeFromWishlist(getWishlistId._id);
-      dispatch(removeWishlistItem(data));
-      message.success("Remove from wishlist successfully");
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
+  const { productDetails } = props;
 
   return (
     <StyledPage style={{ padding: 80 }}>
