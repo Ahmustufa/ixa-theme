@@ -336,6 +336,14 @@ const header = [
       { title: "4-image", link: "/product/4-image" },
       { title: "Sticky", link: "/product/sticky" },
       { title: "Carousel", link: "/product/carousel" },
+      {
+        title: "Thumbnails",
+        submenu: [
+          { title: "Right thumbnail", link: "/product/right-thumbnail" },
+          { title: "Left thumbnail", link: "/product/left-thumbnail" },
+          { title: "Bottom thumbnail", link: "/product/bottom-thumbnail" },
+        ],
+      },
     ],
   },
   { title: "feature", link: "/feature" },
