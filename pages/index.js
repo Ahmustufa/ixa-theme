@@ -10,6 +10,8 @@ import FullBgImageSection from "../src/component/heroSection/FullBgImageSection"
 import { brownHair } from "../images";
 import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
 import SubscriptionModal from "../src/component/subscriptionModal";
+import Heading from "../src/component/headings";
+import BlogCarousel from "../src/component/productListing/blogCarousel";
 
 const Home = () => {
   return (
@@ -46,6 +48,8 @@ const Home = () => {
             <Col lg={18}></Col>
           </Row>
         </div>
+
+        <BlogCarousel />
 
         <section>
           <div style={{ fontSize: "3rem", color: "#54595f", textAlign: "center" }}>

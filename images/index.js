@@ -72,3 +72,7 @@ export const process5 = "../images/Process-5.svg";
 export const process6 = "../images/Process-6.svg";
 
 export const brownHair = "../images/bg.jpg";
+export const image1 = "../images/blog_images/image1.jpg";
+export const image2 = "../images/blog_images/image2.jpg";
+export const image3 = "../images/blog_images/image3.jpg";
+export const blogBanner = "../images/blog_images/blog-detail.jpg";

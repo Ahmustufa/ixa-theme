@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Row, Col, Dropdown, message } from "antd";
+import { Row, Col, Dropdown, message, Menu, Popover } from "antd";
 import Hamburger from "../hamburger";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -17,6 +17,7 @@ import {
   logoutAction,
 } from "../../redux/actions";
 import { errorHandler, Queries, useFetch } from "../../api/config";
+import { BsChevronRight } from "react-icons/bs";
 
 const HeaderContent = (props) => {
   const dispatch = useDispatch();
@@ -46,45 +47,6 @@ const HeaderContent = (props) => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   });
-
-  const [getAllCategories] = useFetch(Queries.getAllCategories);
-
-  const getCategories = async () => {
-    try {
-      const { data } = await getAllCategories();
-
-      data.forEach((item) => {
-        allCategories.push(item.type);
-      });
-      setAllCategories([...allCategories]);
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
-
-  // =============GET MY CART DATA==============
-  const [getMyCart] = useFetch(Queries.getMyCart);
-
-  const getCart = async (id) => {
-    try {
-      const { data } = await getMyCart(id);
-      addItemToCart(data);
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
-
-  // =============GET MY WISHLISTS DATA==============
-  const [getMyWishlist] = useFetch(Queries.getMyWishlists);
-
-  const getWishlist = async (id) => {
-    try {
-      const { data } = await getMyWishlist(id);
-      dispatch(addAllItemToWishlist(data));
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
 
   const accountOverlay = (
     <AccountOverlay>
@@ -121,10 +83,10 @@ const HeaderContent = (props) => {
   const discoverOverlay = (
     <StyledOverlay justify="space-between">
       <Col xs={24} sm={24} md={7} lg={7}>
-        {allCategories.map((item, index) => (
+        {[1, 2, 3].map((item, index) => (
           <div key={index}>
             <Link href={`/category/${item}`}>
-              <a>{item}</a>
+              <a>Product {item}</a>
             </Link>
           </div>
         ))}
@@ -135,15 +97,15 @@ const HeaderContent = (props) => {
       </Col>
     </StyledOverlay>
   );
-
-  useEffect(() => {
-    getCategories();
-    if (isLoggedIn) {
-      getCart(data._id);
-      getWishlist(data._id);
-    }
-  }, []);
-
+  function getItem(label, key, icon, children, type) {
+    return {
+      key,
+      icon,
+      children,
+      label,
+      type,
+    };
+  }
   return (
     <>
       <SidebarWrapper visible={drawer} onClose={() => setDrawer(false)} />
@@ -164,19 +126,65 @@ const HeaderContent = (props) => {
                 />
 
                 <menu className="menu-list d-none d-lg-flex align-items-center p-0">
-                  <div className={`menu-item ${router.pathname === "/" ? "active" : ""}`}>
-                    <Link href="/">
-                      <a>HOME</a>
-                    </Link>
-                  </div>
-
-                  <div
-                    className={`menu-item ${router.pathname === "/shop" ? "active" : ""}`}
-                  >
-                    <Link href="/">
-                      <a>SHOP</a>
-                    </Link>
-                  </div>
+                  {header.map((menu) => {
+                    if (menu.submenu) {
+                      return (
+                        <Dropdown
+                          overlay={
+                            <Menu style={{ minWidth: 200 }}>
+                              {menu.submenu.map((subMenuItem, index) => {
+                                if (subMenuItem.submenu) {
+                                  return (
+                                    <Menu.SubMenu key={index} title={subMenuItem.title}>
+                                      {subMenuItem.submenu.map((item, index) => (
+                                        <Menu.Item
+                                          role="button"
+                                          key={`sub-menu-${index}`}
+                                          style={{ minWidth: 200 }}
+                                        >
+                                          <Link href={item.link || ""}>{item.title}</Link>
+                                        </Menu.Item>
+                                      ))}
+                                    </Menu.SubMenu>
+                                  );
+                                } else {
+                                  return (
+                                    <Menu.Item key={index}>
+                                      <Link href={subMenuItem.link || ""}>
+                                        {subMenuItem.title}
+                                      </Link>
+                                    </Menu.Item>
+                                  );
+                                }
+                              })}
+                            </Menu>
+                          }
+                        >
+                          <div
+                            className={`menu-item ${
+                              router.pathname === menu.link ? "active" : ""
+                            }`}
+                          >
+                            <Link href="/">
+                              <a style={{ textTransform: "uppercase" }}>{menu.title}</a>
+                            </Link>
+                          </div>
+                        </Dropdown>
+                      );
+                    } else {
+                      return (
+                        <div
+                          className={`menu-item ${
+                            router.pathname === menu.link ? "active" : ""
+                          }`}
+                        >
+                          <Link href="/">
+                            <a style={{ textTransform: "uppercase" }}>{menu.title}</a>
+                          </Link>
+                        </div>
+                      );
+                    }
+                  })}
 
                   <div
                     className={`menu-item ${
@@ -288,3 +296,37 @@ const AccountOverlay = styled.div`
     }
   }
 `;
+
+const header = [
+  {
+    title: "home",
+    submenu: [
+      {
+        title: "Clothing",
+        submenu: [
+          { title: "Fashion 1", link: "/fashion-1" },
+          { title: "Fashion 2", link: "/fashion-2" },
+          { title: "Fashion 3", link: "/fashion-3" },
+          { title: "Fashion 4", link: "/fashion-4" },
+        ],
+      },
+      {
+        title: "Fashion",
+        submenu: [
+          { title: "Fashion 1", link: "/fashion-1" },
+          { title: "Fashion 2", link: "/fashion-2" },
+          { title: "Fashion 3", link: "/fashion-3" },
+          { title: "Fashion 4", link: "/fashion-4" },
+        ],
+      },
+      { title: "Grocery", link: "/" },
+      { title: "Electronics", link: "/" },
+    ],
+    link: "/",
+  },
+  { title: "shop", link: "/shop" },
+  { title: "products", link: "/products" },
+  { title: "feature", link: "/feature" },
+  { title: "pages", link: "/pages" },
+  { title: "blog", link: "/blog" },
+];
