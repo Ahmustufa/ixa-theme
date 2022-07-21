@@ -1,6 +1,7 @@
 import { Product } from "../constants";
+import { products } from "../../mock/products";
 
-const initialState = { items: [] };
+const initialState = { items: products };
 
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
