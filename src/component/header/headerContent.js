@@ -328,7 +328,17 @@ const header = [
     ],
     link: "/",
   },
-  { title: "shop", link: "/shop" },
+  {
+    title: "shop",
+    submenu: [
+      { title: "Left Sidebar", link: "/shop/left-sidebar" },
+      { title: "Right Sidebar", link: "/shop/right-sidebar" },
+      { title: "No Sidebar", link: "/shop/no-sidebar" },
+      { title: "Thee Grid", link: "/shop/three-grid" },
+      { title: "Six Grid", link: "/shop/six-grid" },
+      { title: "List View", link: "/shop/list-view" },
+    ],
+  },
   {
     title: "products",
     link: "/products",
