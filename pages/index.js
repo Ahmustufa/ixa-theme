@@ -12,6 +12,7 @@ import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
 import Heading from "../src/component/headings";
 import BlogCarousel from "../src/component/productListing/blogCarousel";
 import ProductVerticalCarousel from "../src/component/productListing/productVerticalCarousel";
+import SubscriptionModal from "../src/component/subscriptionModal";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
         <title>Polkadots | Home</title>
       </Head>
 
+      <SubscriptionModal />
       <HomeCarousel />
       <StyledPage>
         <section className="section-wrapper">
