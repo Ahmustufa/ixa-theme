@@ -11,6 +11,7 @@ import { brownHair } from "../images";
 import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
 import Heading from "../src/component/headings";
 import BlogCarousel from "../src/component/productListing/blogCarousel";
+import ProductVerticalCarousel from "../src/component/productListing/productVerticalCarousel";
 
 const Home = () => {
   return (
@@ -43,7 +44,10 @@ const Home = () => {
             <Col lg={6}>
               <SidebarFiltration />
             </Col>
-            <Col lg={18}></Col>
+            <Col lg={6}>
+              <ProductVerticalCarousel />
+            </Col>
+            <Col lg={12}></Col>
           </Row>
         </div>
 
