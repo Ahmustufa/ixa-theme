@@ -7,14 +7,13 @@ import {
   AiOutlineSearch,
   AiOutlineSync,
 } from "react-icons/ai";
-
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToWishlist, removeWishlistItem } from "../../redux/actions";
 import { cardBackground1 } from "../../../images";
 import { Slide } from "react-awesome-reveal";
 
 const ProductCardWithIcons = (props) => {
-  const { _id, productName, brandName, price, images } = props;
+  const { _id, title, brandName, price, image } = props;
   const dispatch = useDispatch();
   const { items: wishlist } = useSelector((state) => state.wishlist);
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -25,10 +24,7 @@ const ProductCardWithIcons = (props) => {
   return (
     <StyledCard>
       <Link href={`/product/${_id}`}>
-        <div
-          className="product-image"
-          style={{ backgroundImage: `url(/images/shop_card_image.jpg)` }}
-        >
+        <div className="product-image" style={{ backgroundImage: `url(${image})` }}>
           <div className="new_item_tag rounded-circle m-2 d-flex justify-content-center align-items-center">
             <p>NEW</p>
           </div>
@@ -51,7 +47,7 @@ const ProductCardWithIcons = (props) => {
 
       <div className="item-details">
         <div className="company">{brandName}</div>
-        <div className="product">{productName}</div>
+        <div className="product">{title}</div>
         <div className="price">{formatedPrice.format(price)}</div>
       </div>
     </StyledCard>
@@ -72,6 +68,8 @@ const StyledCard = styled.div`
     position: relative;
     z-index: 999;
     overflow: hidden;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1), -2px -2px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ececec;
   }
 
   .icon-section {
