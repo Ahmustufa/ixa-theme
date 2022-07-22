@@ -97,9 +97,7 @@ const SideCart = (props) => {
           <>
             <div ksy={index} className="my-3">
               <Row gutter={[16, 0]}>
-                <Col span={7}>
-                  <img src={item.images[0]} className="w-100" />
-                </Col>
+                <Col span={7}>{/* <img src={item.images[0]} className="w-100" /> */}</Col>
 
                 <Col span={14}>
                   <div className="product-name mb-2">{item.title}</div>
