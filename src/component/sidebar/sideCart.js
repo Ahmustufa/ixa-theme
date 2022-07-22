@@ -144,7 +144,7 @@ const SideCart = (props) => {
                       </div>
                     </Col>
                     <Col xs={12} lg={12}>
-                      <div className="price mt-2">PKR {item.price.toLocaleString()}</div>
+                      <div className="price mt-2">PKR {item.price?.toLocaleString()}</div>
                     </Col>
                   </Row>
                 </Col>
