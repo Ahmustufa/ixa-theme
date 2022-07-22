@@ -23,7 +23,6 @@ const HeaderContent = (props) => {
   const dispatch = useDispatch();
   const { isLoggedIn, data } = useSelector((state) => state.user);
   const { items } = useSelector((state) => state.cart);
-  const [allCategories, setAllCategories] = useState([]);
   const router = useRouter();
   const [drawer, setDrawer] = useState(false);
 
@@ -97,15 +96,7 @@ const HeaderContent = (props) => {
       </Col>
     </StyledOverlay>
   );
-  function getItem(label, key, icon, children, type) {
-    return {
-      key,
-      icon,
-      children,
-      label,
-      type,
-    };
-  }
+
   return (
     <>
       <SidebarWrapper visible={drawer} onClose={() => setDrawer(false)} />
@@ -131,18 +122,29 @@ const HeaderContent = (props) => {
                       return (
                         <Dropdown
                           overlay={
-                            <Menu style={{ minWidth: 200 }}>
+                            <Menu style={{ minWidth: 200, marginTop: 14 }}>
                               {menu.submenu.map((subMenuItem, index) => {
                                 if (subMenuItem.submenu) {
                                   return (
-                                    <Menu.SubMenu key={index} title={subMenuItem.title}>
+                                    <Menu.SubMenu
+                                      key={index}
+                                      title={
+                                        <a className="navigation-link">
+                                          {subMenuItem.title}
+                                        </a>
+                                      }
+                                    >
                                       {subMenuItem.submenu.map((item, index) => (
                                         <Menu.Item
                                           role="button"
                                           key={`sub-menu-${index}`}
                                           style={{ minWidth: 200 }}
                                         >
-                                          <Link href={item.link || ""}>{item.title}</Link>
+                                          <Link href={item.link || ""}>
+                                            <a className="navigation-link">
+                                              {item.title}
+                                            </a>
+                                          </Link>
                                         </Menu.Item>
                                       ))}
                                     </Menu.SubMenu>
@@ -151,7 +153,9 @@ const HeaderContent = (props) => {
                                   return (
                                     <Menu.Item key={index}>
                                       <Link href={subMenuItem.link || ""}>
-                                        {subMenuItem.title}
+                                        <a className="navigation-link">
+                                          {subMenuItem.title}
+                                        </a>
                                       </Link>
                                     </Menu.Item>
                                   );
@@ -324,8 +328,34 @@ const header = [
     ],
     link: "/",
   },
-  { title: "shop", link: "/shop" },
-  { title: "products", link: "/products" },
+  {
+    title: "shop",
+    submenu: [
+      { title: "Left Sidebar", link: "/shop/left-sidebar" },
+      { title: "Right Sidebar", link: "/shop/right-sidebar" },
+      { title: "No Sidebar", link: "/shop/no-sidebar" },
+      { title: "Thee Grid", link: "/shop/three-grid" },
+      { title: "Six Grid", link: "/shop/six-grid" },
+      { title: "List View", link: "/shop/list-view" },
+    ],
+  },
+  {
+    title: "products",
+    link: "/products",
+    submenu: [
+      { title: "4-image", link: "/product/4-image" },
+      { title: "Sticky", link: "/product/sticky" },
+      { title: "Carousel", link: "/product/carousel" },
+      {
+        title: "Thumbnails",
+        submenu: [
+          { title: "Right thumbnail", link: "/product/right-thumbnail" },
+          { title: "Left thumbnail", link: "/product/left-thumbnail" },
+          { title: "Bottom thumbnail", link: "/product/bottom-thumbnail" },
+        ],
+      },
+    ],
+  },
   { title: "feature", link: "/feature" },
   { title: "pages", link: "/pages" },
   { title: "blog", link: "/blog" },

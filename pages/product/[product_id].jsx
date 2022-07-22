@@ -103,7 +103,7 @@ const Order = (props) => {
               <Col>
                 <img
                   alt="card-image"
-                  src={productDetails.image}
+                  src={productDetails.images[0]}
                   className="product-image"
                 />
               </Col>

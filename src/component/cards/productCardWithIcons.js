@@ -13,7 +13,7 @@ import { cardBackground1 } from "../../../images";
 import { Slide } from "react-awesome-reveal";
 
 const ProductCardWithIcons = (props) => {
-  const { _id, title, brandName, price, image } = props;
+  const { _id, title, brandName, price, images } = props;
   const dispatch = useDispatch();
   const { items: wishlist } = useSelector((state) => state.wishlist);
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -24,7 +24,7 @@ const ProductCardWithIcons = (props) => {
   return (
     <StyledCard>
       <Link href={`/product/${_id}`}>
-        <div className="product-image" style={{ backgroundImage: `url(${image})` }}>
+        <div className="product-image" style={{ backgroundImage: `url(${images[0]})` }}>
           <div className="new_item_tag rounded-circle m-2 d-flex justify-content-center align-items-center">
             <p>NEW</p>
           </div>
