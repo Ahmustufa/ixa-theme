@@ -7,6 +7,46 @@ import { SettingOutlined } from "@ant-design/icons";
 import { useState } from "react";
 
 const { Panel } = Collapse;
+const sidebarFilterData = {
+  category: [
+    { categoryName: "Fashion" },
+    { categoryName: "Shoes" },
+    { categoryName: "Bags" },
+    { categoryName: "Watch" },
+    { categoryName: "Flower" },
+    { categoryName: "Pets" },
+    { categoryName: "Electronics" },
+    { categoryName: "Vegetables" },
+    { categoryName: "Furniture" },
+    { categoryName: "Beauty" },
+    { categoryName: "Tools" },
+    { categoryName: "Gym" },
+  ],
+  brands: [
+    { brandName: "nike" },
+    { brandName: "zara" },
+    { brandName: "denim" },
+    { brandName: "madame" },
+    { brandName: "biba" },
+    { brandName: "max" },
+  ],
+  colors: [
+    { colorName: "yellow" },
+    { colorName: "white" },
+    { colorName: "pink" },
+    { colorName: "olive" },
+    { colorName: "navy" },
+    { colorName: "red" },
+    { colorName: "black" },
+    { colorName: "skyblue" },
+    { colorName: "green" },
+    { colorName: "gray" },
+    { colorName: "maroon" },
+    { colorName: "blue" },
+  ],
+  size: [{ sizeName: "s" }, { sizeName: "m" }, { sizeName: "l" }, { sizeName: "xl" }],
+};
+
 const SidebarFiltration = (props) => {
   const [priceValue, setPriceValue] = useState([500, 5000]);
 
@@ -15,50 +55,10 @@ const SidebarFiltration = (props) => {
     setPriceValue([value[0], value[1]]);
   };
 
-  const sidebarFilterData = {
-    category: [
-      { categoryName: "Fashion" },
-      { categoryName: "Shoes" },
-      { categoryName: "Bags" },
-      { categoryName: "Watch" },
-      { categoryName: "Flower" },
-      { categoryName: "Pets" },
-      { categoryName: "Electronics" },
-      { categoryName: "Vegetables" },
-      { categoryName: "Furniture" },
-      { categoryName: "Beauty" },
-      { categoryName: "Tools" },
-      { categoryName: "Gym" },
-    ],
-    brands: [
-      { brandName: "nike" },
-      { brandName: "zara" },
-      { brandName: "denim" },
-      { brandName: "madame" },
-      { brandName: "biba" },
-      { brandName: "max" },
-    ],
-    colors: [
-      { colorName: "yellow" },
-      { colorName: "white" },
-      { colorName: "pink" },
-      { colorName: "olive" },
-      { colorName: "navy" },
-      { colorName: "red" },
-      { colorName: "black" },
-      { colorName: "skyblue" },
-      { colorName: "green" },
-      { colorName: "gray" },
-      { colorName: "maroon" },
-      { colorName: "blue" },
-    ],
-    size: [{ sizeName: "s" }, { sizeName: "m" }, { sizeName: "l" }, { sizeName: "xl" }],
-  };
-
   return (
     <StyledSidebar>
-      <Collapse className="mt-5" defaultActiveKey={["0"]} expandIconPosition={"end"}>
-        <Panel className="site-collapse-custom-panel" header="CATEGORY" key="0">
+      <Collapse defaultActiveKey={["0"]} expandIconPosition={"end"}>
+        <Panel header="CATEGORY" key="0">
           <div className="category-section">
             {sidebarFilterData.category.map((item, index) => {
               return (

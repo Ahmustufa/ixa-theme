@@ -7,43 +7,52 @@ import {
   AiOutlineSearch,
   AiOutlineSync,
 } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
-import { addItemToWishlist, removeWishlistItem } from "../../redux/actions";
-import { cardBackground1 } from "../../../images";
-import { Slide } from "react-awesome-reveal";
-
+import { useEffect, useRef } from "react";
 const ProductCardWithIcons = (props) => {
   const { _id, title, brandName, price, images } = props;
-  const dispatch = useDispatch();
-  const { items: wishlist } = useSelector((state) => state.wishlist);
+  const cardRef = useRef();
+
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
     currency: "PKR",
   });
 
+  // console.log("REf", cardRef);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (cardRef.current.childrenNodes) {
+        const height = Math.ceil(cardRef.current.clientHeight / 100) * 100;
+        console.log("Height", height);
+        cardRef.current.childrenNodes[0].style.height = height;
+      }
+    }
+  });
+
   return (
-    <StyledCard>
-      <Link href={`/product/${_id}`}>
-        <div className="product-image" style={{ backgroundImage: `url(${images[0]})` }}>
-          <div className="new_item_tag rounded-circle m-2 d-flex justify-content-center align-items-center">
-            <p>NEW</p>
-          </div>
-          <div className="d-flex flex-column icon-section">
-            <div className="add_to_cart">
-              <AiOutlineShoppingCart size={20} title={"Add to cart"} />
-            </div>
-            <div className="add_to_wishlist">
-              <AiOutlineHeart size={20} title={"Add to wishlist"} />
-            </div>
-            <div className="quick_view">
-              <AiOutlineSearch size={20} title={"Quick view"} />
-            </div>
-            <div className="compare">
-              <AiOutlineSync size={20} title={"Compare"} />
-            </div>
-          </div>
+    <StyledCard ref={cardRef} height={Math.ceil(354 / 100) * 100}>
+      {/* <Link href={`/product/${_id}`}>
+      </Link> */}
+      <div className="image-container">
+        <img src={images[0]} alt={title} className="img-fluid product-image" />
+      </div>
+
+      <div className="new-item">NEW</div>
+
+      <div className="icon-section">
+        <div className="icon icon-1">
+          <AiOutlineShoppingCart size={20} title={"Add to cart"} />
         </div>
-      </Link>
+        <div className="icon icon-2">
+          <AiOutlineHeart size={20} title={"Add to wishlist"} />
+        </div>
+        <div className="icon icon-3">
+          <AiOutlineSearch size={20} title={"Quick view"} />
+        </div>
+        <div className="icon icon-4">
+          <AiOutlineSync size={20} title={"Compare"} />
+        </div>
+      </div>
 
       <div className="item-details">
         <div className="company">{brandName}</div>
@@ -57,86 +66,74 @@ const ProductCardWithIcons = (props) => {
 export default ProductCardWithIcons;
 
 const StyledCard = styled.div`
-  margin: 0 24px;
+  position: relative;
+  overflow: hidden;
+
+  .image-container {
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    text-align: center;
+  }
+
   .product-image {
-    background-size: cover;
-    background-position: center;
-    height: 500px;
-    width: 100%;
     border-radius: 4px;
     cursor: pointer;
-    position: relative;
-    z-index: 999;
-    overflow: hidden;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1), -2px -2px 3px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ececec;
+    // height: 400px;
+    object-fit: contain;
+    padding: 18px;
   }
 
   .icon-section {
     position: absolute;
-    z-index: 1000;
+    z-index: 100;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: 8px;
   }
 
-  .icon-section .add_to_cart {
+  .icon {
     position: absolute;
-    padding-right: 10px;
-    top: 70%;
-    right: -75%;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -ms-transition: all 0.2s;
-    transition: all 0.2s;
-  }
-  .icon-section .add_to_wishlist {
-    position: absolute;
-    padding-right: 10px;
-    top: 77%;
-    right: -75%;
-    -webkit-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -ms-transition: all 0.4s;
-    transition: all 0.4s;
-  }
-
-  .icon-section .quick_view {
-    position: absolute;
-    padding-right: 10px;
-    top: 83%;
-    right: -75%;
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -ms-transition: all 0.6s;
+    left: -48px;
+    cursor: pointer;
+    background-color: #fde4e4;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #f2f2f2;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.09);
     transition: all 0.6s;
+    :hover {
+      background-color: #ff0000a8;
+      color: #fff;
+    }
   }
 
-  .icon-section .compare {
-    position: absolute;
-    padding-right: 10px;
-    top: 89%;
-    right: -75%;
-    -webkit-transition: all 0.8s;
-    -moz-transition: all 0.8s;
-    -ms-transition: all 0.8s;
-    transition: all 0.8s;
+  .icon-1 {
+    top: 8px;
+    transition-delay: 0.1s;
   }
-  .add_to_cart:hover {
-    color: #f54c3b;
+  .icon-2 {
+    top: 48px;
+    transition-delay: 0.2s;
   }
-  .add_to_wishlist:hover {
-    color: #f54c3b;
+  .icon-3 {
+    top: 88px;
+    transition-delay: 0.3s;
   }
-  .quick_view:hover {
-    color: #f54c3b;
+  .icon-4 {
+    top: 128px;
+    transition-delay: 0.4s;
   }
-  .compare:hover {
-    color: #f54c3b;
-  }
-  .product-image:hover div {
-    right: 0px;
+
+  :hover {
+    .icon-1,
+    .icon-2,
+    .icon-3,
+    .icon-4 {
+      left: 0px;
+    }
   }
 
   .item-details {
@@ -165,15 +162,18 @@ const StyledCard = styled.div`
     color: #54595f;
   }
 
-  .new_item_tag {
-    width: 40px;
-    height: 40px;
-    background: #f54c3b;
-    p {
-      font-size: 10px;
-      margin-bottom: 0;
-      color: #fff;
-    }
+  .new-item {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #f54c3b;
+    color: #fff;
+    line-height: 36px;
+    text-align: center;
+    font-size: 10px;
   }
 
   @media only screen and (max-width: 1200px) {
