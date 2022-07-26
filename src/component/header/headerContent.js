@@ -358,5 +358,13 @@ const header = [
   },
   { title: "feature", link: "/feature" },
   { title: "pages", link: "/pages" },
-  { title: "blog", link: "/blog" },
+  {
+    title: "blog",
+    link: "/blog",
+    submenu: [
+      { title: "Blog left sidebar", link: "/blog/blog-left-sidebar" },
+      { title: "Blog right sidebar", link: "/blog/blog-right-sidebar" },
+      { title: "No sidebar", link: "/blog/no-sidebar" },
+    ],
+  },
 ];

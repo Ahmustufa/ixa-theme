@@ -139,22 +139,22 @@ const Collection = (props) => {
         <Row gutter={[30, 30]}>
           <Col lg={6} md={12} sm={24} xs={24}>
             {gridData.slice(0, 5).map((item, index) => {
-              return <CollectionCard {...item} />;
+              return <CollectionCard key={index} {...item} />;
             })}
           </Col>
           <Col lg={6} md={12} sm={24} xs={24}>
             {gridData.slice(5, 10).map((item, index) => {
-              return <CollectionCard {...item} />;
+              return <CollectionCard key={index} {...item} />;
             })}
           </Col>
           <Col lg={6} md={12} sm={24} xs={24}>
             {gridData.slice(10, 15).map((item, index) => {
-              return <CollectionCard {...item} />;
+              return <CollectionCard key={index} {...item} />;
             })}
           </Col>
           <Col lg={6} md={12} sm={24} xs={24}>
             {gridData.slice(15, 20).map((item, index) => {
-              return <CollectionCard {...item} />;
+              return <CollectionCard key={index} {...item} />;
             })}
           </Col>
         </Row>
