@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Polkadots | Home</title>
+        <title>E-commerce Store | Home</title>
       </Head>
 
       <SubscriptionModal />
