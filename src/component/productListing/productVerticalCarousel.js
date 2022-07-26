@@ -94,9 +94,15 @@ export default ProductVerticalCarousel;
 
 const StyledContent = styled.div`
   .content {
-    h6 {
+    ul li {
       font-size: 14px;
+    }
+    h6 {
+      font-size: 12px;
       color: #777;
+    }
+    h4 {
+      font-size: 18px;
     }
   }
   .icons-group {
