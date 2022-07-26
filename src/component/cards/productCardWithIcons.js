@@ -13,7 +13,7 @@ import { cardBackground1 } from "../../../images";
 import { Slide } from "react-awesome-reveal";
 
 const ProductCardWithIcons = (props) => {
-  const { _id, title, brandName, price, image } = props;
+  const { _id, title, brandName, price, images } = props;
   const dispatch = useDispatch();
   const { items: wishlist } = useSelector((state) => state.wishlist);
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -24,7 +24,7 @@ const ProductCardWithIcons = (props) => {
   return (
     <StyledCard>
       <Link href={`/product/${_id}`}>
-        <div className="product-image" style={{ backgroundImage: `url(${image})` }}>
+        <div className="product-image" style={{ backgroundImage: `url(${images[0]})` }}>
           <div className="new_item_tag rounded-circle m-2 d-flex justify-content-center align-items-center">
             <p>NEW</p>
           </div>
@@ -83,8 +83,8 @@ const StyledCard = styled.div`
 
   .icon-section .add_to_cart {
     position: absolute;
-    padding-right: 10px;
-    top: 70%;
+    margin-right: 8px;
+    top: 65%;
     right: -75%;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
@@ -93,8 +93,8 @@ const StyledCard = styled.div`
   }
   .icon-section .add_to_wishlist {
     position: absolute;
-    padding-right: 10px;
-    top: 77%;
+    margin-right: 8px;
+    top: 73%;
     right: -75%;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
@@ -104,8 +104,8 @@ const StyledCard = styled.div`
 
   .icon-section .quick_view {
     position: absolute;
-    padding-right: 10px;
-    top: 83%;
+    margin-right: 8px;
+    top: 81%;
     right: -75%;
     -webkit-transition: all 0.6s;
     -moz-transition: all 0.6s;
@@ -115,7 +115,7 @@ const StyledCard = styled.div`
 
   .icon-section .compare {
     position: absolute;
-    padding-right: 10px;
+    margin-right: 8px;
     top: 89%;
     right: -75%;
     -webkit-transition: all 0.8s;
@@ -137,6 +137,23 @@ const StyledCard = styled.div`
   }
   .product-image:hover div {
     right: 0px;
+  }
+
+  .add_to_cart,
+  .add_to_wishlist,
+  .quick_view,
+  .compare {
+    border-radius: 100%;
+    border: 1px solid #fff;
+    margin: 5px 0;
+    background-color: hsla(0, 0%, 100%, 0.8);
+    padding: 7px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0px);
+    transition: all 0.3s ease;
   }
 
   .item-details {

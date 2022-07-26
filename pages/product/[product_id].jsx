@@ -12,6 +12,7 @@ import { addItemToCart, openCart } from "../../src/redux/actions/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToWishlist, removeWishlistItem } from "../../src/redux/actions";
 import { Mutations, errorHandler, useFetch } from "../../src/api/config";
+import { products } from "../../src/mock/products";
 
 const { Panel } = Collapse;
 
@@ -27,21 +28,6 @@ const Order = (props) => {
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
     currency: "PKR",
-  });
-
-  var sizes = [];
-  if (state.color !== "") {
-    productDetails.inventories.forEach((item) => {
-      if (item.color === state.color && item.quantity > 0) {
-        sizes.push(item.size);
-      }
-    });
-  }
-
-  let getInventorId = productDetails.inventories.find((item) => {
-    if (item.color === state.color && item.size === state.size) {
-      return item;
-    }
   });
 
   const [addToCart, addToCartLoading] = useFetch(Mutations.addToCart);
@@ -64,7 +50,6 @@ const Order = (props) => {
   };
   const addToCartFunc = async () => {
     const body = {
-      inventory: getInventorId?._id,
       product: productDetails._id,
       quantity: 1,
     };
@@ -111,10 +96,6 @@ const Order = (props) => {
   let wishlistItem = wishlist.map((item) => item.product._id);
   return (
     <StyledPage style={{ padding: 80 }}>
-      {/* <div className="mx-auto my-4 fw-bold">
-        Home / Products / {productDetails.productName}
-      </div> */}
-
       <Row className="mx-auto position-relative" gutter={[24, 24]}>
         <Col xs={24} sm={24} lg={14} className={"p-0 pr-lg-5"}>
           <div style={{ position: "sticky", top: 60, display: "flex", flexWrap: "wrap" }}>
@@ -122,10 +103,7 @@ const Order = (props) => {
               <Col>
                 <img
                   alt="card-image"
-                  src={
-                    productDetails.images &&
-                    process.env.REACT_APP_STRAPI_URL + productDetails.images[0].url
-                  }
+                  src={productDetails.images[0]}
                   className="product-image"
                 />
               </Col>
@@ -137,14 +115,13 @@ const Order = (props) => {
           <div
             className="order"
             style={{
-              width: "-webkit-fill-available",
-              // padding: 16,
-              position: "sticky",
               top: 90,
+              position: "sticky",
               color: "#54595f",
+              width: "-webkit-fill-available",
             }}
           >
-            <div style={{ fontSize: 40 }}>{productDetails.productName}</div>
+            <div style={{ fontSize: 40 }}>{productDetails.title}</div>
             <div style={{ fontSize: 12, margin: "16px 0" }}>
               {productDetails.brandName}
             </div>
@@ -155,7 +132,7 @@ const Order = (props) => {
 
             <div className="d-flex align-items-center my-4">
               <div style={{ width: 160 }}>COLOR</div>
-              {colors.map((color, index) => (
+              {["red", "#402f2f", "#936b23", "maroon"].map((color, index) => (
                 <div
                   key={index}
                   style={{ backgroundColor: color }}
@@ -165,20 +142,18 @@ const Order = (props) => {
               ))}
             </div>
 
-            {state.color !== "" ? (
-              <div className="d-flex align-items-center my-4">
-                <div style={{ width: 160 }}>SIZE</div>
-                {sizes.map((size, index) => (
-                  <div
-                    key={index}
-                    onClick={() => setState({ ...state, size })}
-                    className={`size-box ${state.size == size && "selected"}`}
-                  >
-                    {size}
-                  </div>
-                ))}
-              </div>
-            ) : null}
+            <div className="d-flex align-items-center my-4">
+              <div style={{ width: 160 }}>SIZE</div>
+              {["SM", "M", "L", "XL"].map((size, index) => (
+                <div
+                  key={index}
+                  onClick={() => setState({ ...state, size })}
+                  className={`size-box ${state.size == size && "selected"}`}
+                >
+                  {size}
+                </div>
+              ))}
+            </div>
 
             <Row align="middle" className="pt-4">
               <Col>
@@ -426,43 +401,10 @@ const StyledPage = styled.div`
 `;
 
 export async function getServerSideProps(context) {
-  try {
-    var { data } = await axios.get(
-      `http://64.227.31.159:1337/products/${context.params.product_id}`
-    );
-    // var stock = {};
-    // data.inventories.forEach((item) => {
-    //   if (stock.hasOwnProperty(item.color)) {
-    //     stock[item.color][item.size] = item.quantity;
-    //   } else {
-    //     stock[item.color] = {
-    //       [item.size]: item.quantity,
-    //     };
-    //   }
-    // });
-    var { data: reviews } = await axios.get(
-      `http://64.227.31.159:1337/reviews/product/${context.params.product_id}`
-    );
-    var colors = [];
-    data.inventories.forEach((item) => {
-      if (!colors.includes(item.color)) {
-        colors.push(item.color);
-      }
-    });
-  } catch (err) {
-    return {
-      notFound: true,
-    };
-  }
+  const productDetails = products.find((item) => item._id == context.params.product_id);
+  console.log("productDetails", productDetails);
 
-  if (data == null) {
-    return {
-      // redirect: { destination: "/" },
-      notFound: true,
-    };
-  } else {
-    return {
-      props: { productDetails: data, colors, reviews },
-    };
-  }
+  return {
+    props: { productDetails },
+  };
 }
