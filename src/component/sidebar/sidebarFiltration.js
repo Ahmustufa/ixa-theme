@@ -57,7 +57,7 @@ const SidebarFiltration = (props) => {
 
   return (
     <StyledSidebar>
-      <Collapse defaultActiveKey={["0"]} expandIconPosition={"end"}>
+      <Collapse defaultActiveKey={["0", "1", "2", "3", "4"]} expandIconPosition={"end"}>
         <Panel header="CATEGORY" key="0">
           <div className="category-section">
             {sidebarFilterData.category.map((item, index) => {
