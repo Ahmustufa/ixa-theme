@@ -19,10 +19,10 @@ const BlogListingCard = (props) => {
   return (
     <StyledCard>
       <Row gutter={[30, 30]}>
-        <Col lg={12} sm={24} xs={24}>
-          <Link href={`/blog/${id}`}>
+        <Col lg={12} sm={24} xs={24} className="w-100">
+          <Link href={`/blog/${id}`} className="w-100">
             <div
-              className="product-image"
+              className="product-image img-fluid"
               style={{
                 backgroundImage: `url(${image})`,
               }}
@@ -70,6 +70,7 @@ const StyledCard = styled.div`
   margin-bottom: 30px;
   .product-image {
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
     height: 280px;
     width: 100%;
