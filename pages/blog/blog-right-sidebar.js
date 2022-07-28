@@ -75,7 +75,7 @@ const BlogRightSidebar = (props) => {
       <div className="pagination-sec mt-5">
         <Row className="d-flex justify-content-end align-items-center">
           <Col lg={6} sm={24} xs={24}>
-            <h5 className="m-0 text-dark">BLOG LEFT SIDEBAR</h5>
+            <h5 className="m-0 text-dark">BLOG RIGHT SIDEBAR</h5>
           </Col>
           <Col
             lg={18}
@@ -86,7 +86,7 @@ const BlogRightSidebar = (props) => {
             <Link href="">
               <p className="m-0 mx-1"> BLOG / </p>
             </Link>{" "}
-            <span> BLOG LEFT SIDEBAR</span>
+            <span> BLOG RIGHT SIDEBAR</span>
           </Col>
         </Row>
       </div>
