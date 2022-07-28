@@ -1,5 +1,3 @@
-import DressCategories from "../categories/derssCategories";
-import ProductCarousel from "../productListing/carousel";
 import ProductVerticalCarousel from "../productListing/productVerticalCarousel";
 import SidebarFiltration from "./sidebarFiltration";
 
