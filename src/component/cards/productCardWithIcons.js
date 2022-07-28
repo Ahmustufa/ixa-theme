@@ -1,42 +1,29 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
+import { Rate } from "antd";
 import {
   AiOutlineShoppingCart,
   AiOutlineHeart,
   AiOutlineSearch,
   AiOutlineSync,
 } from "react-icons/ai";
-import { useEffect, useRef } from "react";
+
 const ProductCardWithIcons = (props) => {
   const { _id, title, brandName, price, images } = props;
-  const cardRef = useRef();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
     currency: "PKR",
   });
 
-  // console.log("REf", cardRef);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (cardRef.current.childrenNodes) {
-        const height = Math.ceil(cardRef.current.clientHeight / 100) * 100;
-        console.log("Height", height);
-        cardRef.current.childrenNodes[0].style.height = height;
-      }
-    }
-  });
-
   return (
-    <StyledCard ref={cardRef} height={Math.ceil(354 / 100) * 100}>
-      {/* <Link href={`/product/${_id}`}>
-      </Link> */}
-      <div className="image-container">
-        <img src={images[0]} alt={title} className="img-fluid product-image" />
-      </div>
-
+    <StyledCard>
+      <Link href={`/product/${_id}`}>
+        <div className="image-container">
+          <img src={images[0]} alt={title} className="img-fluid product-image" />
+        </div>
+      </Link>
       <div className="new-item">NEW</div>
 
       <div className="icon-section">
@@ -55,12 +42,23 @@ const ProductCardWithIcons = (props) => {
       </div>
 
       <div className="item-details">
-        <div className="company">{brandName}</div>
-        <div className="product">{title}</div>
-        <div className="price">{formatedPrice.format(price)}</div>
+        <div className="product mt-2">{title}</div>
+        <div className="company mt-2">{brandName}</div>
+        <Rate defaultValue={4} disabled style={{ color: "#ffa200", fontSize: 13 }} />
+
+        <div className="price">
+          {formatedPrice.format(price)}{" "}
+          <small style={{ color: "#858585", textDecoration: "line-through" }}>
+            PKR {price + 100}
+          </small>
+        </div>
       </div>
     </StyledCard>
   );
+};
+
+ProductCardWithIcons.defaultProps = {
+  brandName: "Spotlight on Style",
 };
 
 export default ProductCardWithIcons;
@@ -78,7 +76,7 @@ const StyledCard = styled.div`
   .product-image {
     border-radius: 4px;
     cursor: pointer;
-    // height: 400px;
+    height: 400px;
     object-fit: contain;
     padding: 18px;
   }
@@ -162,15 +160,12 @@ const StyledCard = styled.div`
     font-size: 14px;
     color: #abb8c3;
     font-weight: 600;
-    margin-top: 20px;
   }
 
   .product {
     font-size: 18px;
     font-weight: 400;
-    line-height: 1.3em;
     color: #000;
-    margin: 12px 0;
   }
 
   .price {
