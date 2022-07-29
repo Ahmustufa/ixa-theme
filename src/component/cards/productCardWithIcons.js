@@ -139,23 +139,6 @@ const StyledCard = styled.div`
     }
   }
 
-  .add_to_cart,
-  .add_to_wishlist,
-  .quick_view,
-  .compare {
-    border-radius: 100%;
-    border: 1px solid #fff;
-    margin: 5px 0;
-    background-color: hsla(0, 0%, 100%, 0.8);
-    padding: 7px;
-    color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(0px);
-    transition: all 0.3s ease;
-  }
-
   .item-details {
     overflow: hidden;
     psotion: relative;
