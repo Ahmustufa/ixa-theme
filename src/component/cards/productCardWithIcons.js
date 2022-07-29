@@ -72,7 +72,7 @@ const StyledCard = styled.div`
     border-radius: 4px;
     text-align: center;
     width: 100%;
-    padding-top: 150%;
+    padding-top: 130%;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

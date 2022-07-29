@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import Breadcrumb from "../../src/component/breadcrumb";
 import ProductListing from "../../src/component/productListing";
 import ShopSidebar from "../../src/component/sidebar/shopSidebar";
+import SortBar from "../../src/component/sortItems";
 
-const ShopLeftSidebar = (props) => {
+const ShopNoSidebar = (props) => {
   const { items } = useSelector((state) => state.products);
   return (
     <div className="col-11 mx-auto mb-5">
@@ -29,9 +30,12 @@ const ShopLeftSidebar = (props) => {
         with desktop publishing software like Aldus PageMaker including versions of Lorem
         Ipsum.
       </p>
+
+      <SortBar className="my-5" />
+
       <ProductListing products={items} />
     </div>
   );
 };
 
-export default ShopLeftSidebar;
+export default ShopNoSidebar;
