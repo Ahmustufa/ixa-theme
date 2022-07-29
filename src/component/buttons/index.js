@@ -102,6 +102,41 @@ const StyledSwipeButton = styled.button`
   }
 `;
 
+const StyledVictoriaButton = styled.button`
+  padding: 5px 10px;
+  color: #fff !important;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--theme-deafult);
+  background-image: -webkit-linear-gradient(
+    30deg,
+    var(--theme-deafult) 50%,
+    transparent 50%
+  );
+  background-image: -webkit-linear-gradient(
+    60deg,
+    var(--theme-deafult) 50%,
+    transparent 50%
+  );
+  background-image: linear-gradient(30deg, var(--theme-deafult) 50%, transparent 50%);
+  background-size: 540px;
+  background-repeat: no-repeat;
+  background-position: 0;
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+
+  :hover {
+    background-position: 100%;
+    color: #000 !important;
+    background-color: #fff;
+    transition: 0.3s ease-in-out;
+  }
+`;
+
+export const VictoriaButton = (props) => {
+  const { text } = props;
+  return <StyledVictoriaButton {...props}>{text}</StyledVictoriaButton>;
+};
+
 export const SwipeButton = (props) => {
   const { children, after } = props;
   return (

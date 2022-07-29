@@ -357,7 +357,19 @@ const header = [
     ],
   },
   { title: "feature", link: "/feature" },
-  { title: "pages", link: "/pages" },
+  {
+    title: "pages",
+    link: "/pages",
+    submenu: [
+      {
+        title: "Compare",
+        submenu: [
+          { title: "Compare", link: "/page/compare" },
+          { title: "Compare 2", link: "/page/compare-2" },
+        ],
+      },
+    ],
+  },
   {
     title: "blog",
     link: "/blog",
