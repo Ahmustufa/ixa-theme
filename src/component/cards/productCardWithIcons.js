@@ -20,8 +20,8 @@ const ProductCardWithIcons = (props) => {
   return (
     <StyledCard>
       <Link href={`/product/${_id}`}>
-        <div className="image-container">
-          <img src={images[0]} alt={title} className="img-fluid product-image" />
+        <div className="image-container" style={{ backgroundImage: `url(${images[0]})` }}>
+          {/* <img src={images[0]} alt={title} className="img-fluid product-image" /> */}
         </div>
       </Link>
       <div className="new-item">NEW</div>
@@ -71,12 +71,17 @@ const StyledCard = styled.div`
     border: 1px solid #f2f2f2;
     border-radius: 4px;
     text-align: center;
+    width: 100%;
+    padding-top: 130%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .product-image {
     border-radius: 4px;
     cursor: pointer;
-    height: 400px;
+    // height: 300px;
     object-fit: contain;
     padding: 18px;
   }
