@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import Breadcrumb from "../../src/component/breadcrumb";
 import ProductListing from "../../src/component/productListing";
 import ShopSidebar from "../../src/component/sidebar/shopSidebar";
+import SortBar from "../../src/component/sortItems";
 
-const ShopLeftSidebar = (props) => {
+const ShopSixGrid = (props) => {
   const { items } = useSelector((state) => state.products);
   return (
     <div className="col-11 mx-auto mb-5">
@@ -30,9 +31,11 @@ const ShopLeftSidebar = (props) => {
         Ipsum.
       </p>
 
+      <SortBar className="my-5" />
+
       <ProductListing products={items} grid={6} />
     </div>
   );
 };
 
-export default ShopLeftSidebar;
+export default ShopSixGrid;

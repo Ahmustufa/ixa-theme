@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import Breadcrumb from "../../src/component/breadcrumb";
 import ProductListing from "../../src/component/productListing";
 import ShopSidebar from "../../src/component/sidebar/shopSidebar";
+import SortBar from "../../src/component/sortItems";
 
 const ShopLeftSidebar = (props) => {
   const { items } = useSelector((state) => state.products);
@@ -10,11 +11,11 @@ const ShopLeftSidebar = (props) => {
     <div className="col-11 mx-auto mb-5">
       <Breadcrumb title="SHOP" link="HOME / SHOP" className="my-5" />
       <Row gutter={[32, 0]}>
-        <Col span={6}>
+        <Col xs={0} sm={0} md={0} lg={6}>
           <ShopSidebar />
         </Col>
 
-        <Col span={18}>
+        <Col xs={24} sm={24} md={24} lg={18}>
           <img
             src="https://multikart-react.vercel.app/_next/static/images/2-beb8795ec9decb581e91c6b47f6882ec.jpg"
             width="100%"
@@ -34,6 +35,9 @@ const ShopLeftSidebar = (props) => {
             and more recently with desktop publishing software like Aldus PageMaker
             including versions of Lorem Ipsum.
           </p>
+
+          <SortBar className="my-5" />
+
           <ProductListing products={items} />
         </Col>
       </Row>
