@@ -42,78 +42,6 @@ const Checkout = () => {
   const { isLoggedIn, data: userData } = useSelector((state) => state.user);
   const { items: cartItems } = useSelector((state) => state.cart);
 
-  const [createAccountApi, createAccountLoading] = useFetch(Mutations.createAccount);
-  const createAccount = async () => {
-    const [username] = state.email.split("@");
-    const password = getRandomPassword();
-    try {
-      const { data } = await createAccountApi({
-        firstName: state.firstName,
-        lastName: state.lastName,
-        phoneNumber: state.phoneNumber,
-        email: state.email,
-        city: state.city,
-        postalCode: state.postalCode,
-        username,
-        password,
-        dcryptedPass: password,
-      });
-      dispatch(loginUserAction(data));
-      placeOrder(data.user);
-      return data;
-    } catch (err) {
-      message.error(errorHandler(err));
-      throw err;
-    }
-  };
-
-  const [createOrderApi, createOrderLoading] = useFetch(Mutations.createOrder);
-  const placeOrder = async (user) => {
-    console.log("User", user);
-    /**
-     * Place order run for every cart item
-     */
-    for (let i = 0; i < cartItems.length; i++) {
-      const cartItem = cartItems[i];
-      try {
-        await createOrderApi({
-          quantity: cartItem.quantity,
-          color: cartItem.inventory.color,
-          size: cartItem.inventory.size,
-          product: cartItem.product._id,
-          inventory: cartItem.inventory._id,
-          deliveryAddress: shippingAddress.new ? shippingAddress.address : user.address,
-          users_permissions_user: user._id,
-        });
-      } catch (err) {
-        message.error(errorHandler(err));
-      }
-    }
-    router.push("/my-account/orders");
-    /**
-     * Clearing cart items
-     */
-    cartItems.forEach(async (cartItem) => {
-      try {
-        await removeCartItemFunc(cartItem);
-      } catch (err) {
-        message.error(errorHandler(err));
-      }
-    });
-  };
-
-  const handleOrder = async () => {
-    try {
-      if (isLoggedIn == false) {
-        createAccount();
-      } else {
-        placeOrder(userData);
-      }
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((prev) => ({ ...prev, [name]: value }));
@@ -126,33 +54,6 @@ const Checkout = () => {
     );
     // console.log("Sub total", subTotal);
     return subTotal.toLocaleString();
-  };
-
-  useEffect(() => {
-    if (typeof window !== undefined && isLoggedIn) {
-      form.setFieldsValue({
-        "First Name": userData.firstName,
-        "Last Name": userData.lastName,
-        Address: userData.address,
-        City: userData.city,
-        "Postal Code": userData.postalCode,
-        Phone: userData.phoneNumber,
-        Email: userData.email,
-      });
-      setState({ ...userData });
-    }
-  }, []);
-
-  // ========Remove cart============
-  const [deleteCart, deleteCartLoading] = useFetch(Mutations.deleteCartItem);
-  const removeCartItemFunc = async (item) => {
-    setLoadingState(item._id);
-    try {
-      const { data } = await deleteCart(item);
-      dispatch(removeCartItem(data));
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
   };
 
   const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
@@ -181,7 +82,7 @@ const Checkout = () => {
         </Row>
       ) : null}
 
-      <Form form={form} onFinish={handleOrder} validateTrigger="onFinish">
+      <Form form={form} validateTrigger="onFinish">
         <Row className="mt-5">
           <Col style={{ padding: "0px 2% 4% 0px" }} xs={24} xl={12}>
             <h6 className="heading">SHIPPING DETAILS</h6>
@@ -348,10 +249,7 @@ const Checkout = () => {
                       <div className="box d-flex">
                         <div>
                           <img
-                            src={
-                              process.env.REACT_APP_STRAPI_URL +
-                              item.product.images[0]?.url
-                            }
+                            src={process.env.REACT_APP_STRAPI_URL + item.images[0]?.url}
                             style={{ width: 50 }}
                           />
                         </div>
@@ -393,15 +291,6 @@ const Checkout = () => {
                 ))}
               </div>
 
-              {/* <Row className="" style={{ border: "1px solid #eaedf0" }}>
-                <Col className="p-3" span={16}>
-                  <p className="title">SUBTOTAL</p>
-                </Col>
-                <Col className="p-3" span={8}>
-                  <p className="font-weight-light title mb-0">{calculateTotal(cartItems)}</p>
-                </Col>
-              </Row> */}
-
               <Row className="order-card-header">
                 <Col className="p-3" span={16}>
                   <p className="title">TOTAL</p>
@@ -428,7 +317,6 @@ const Checkout = () => {
                 </div>
               </div>
               <PrimaryButton htmlType="submit" className="w-100 mt-5">
-                {(createAccountLoading || createOrderLoading) && <LoadingOutlined />}{" "}
                 CONFIRM ORDER
               </PrimaryButton>
             </div>
