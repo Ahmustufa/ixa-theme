@@ -719,7 +719,7 @@ export const FooterContent2 = () => {
           <a
             href="//www.dmca.com/Protection/Status.aspx?ID=6244df18-9499-4810-aca9-fad933a24c48"
             title="DMCA.com Protection Status"
-            class="dmca-badge"
+            className="dmca-badge"
             target="_blank"
           >
             {" "}

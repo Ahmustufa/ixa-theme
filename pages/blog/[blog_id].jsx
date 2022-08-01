@@ -98,9 +98,9 @@ const BlogDetail = (props) => {
           <Col lg={12} sm={24} xs={24}>
             <img src={image2} width="100%" className="mb-3" />
             <ul className="list-style">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => {
-                return <li>Aenean in mi eu elit mollis tincidunt.</li>;
-              })}
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+                <li key={item}>Aenean in mi eu elit mollis tincidunt.</li>
+              ))}
             </ul>
           </Col>
           <Col lg={12} sm={24} xs={24}>
@@ -144,7 +144,7 @@ const BlogDetail = (props) => {
         <div className="review-section">
           {[1, 2, 3, 4, 5, 6].map((item) => {
             return (
-              <Row className="review">
+              <Row key={item} className="review">
                 <Col
                   lg={2}
                   sm={24}

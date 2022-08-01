@@ -26,8 +26,8 @@ const Order = (props) => {
         <Col xs={24} sm={24} lg={14} className="p-0 pr-lg-5">
           <div style={{ position: "sticky", top: 60, display: "flex", flexWrap: "wrap" }}>
             <Row gutter={[12, 12]}>
-              {productDetails.images.map((image) => (
-                <Col span={24}>
+              {productDetails.images.map((image, index) => (
+                <Col key={index} span={24}>
                   <img alt="card-image" src={image} className="product-image" />
                 </Col>
               ))}
