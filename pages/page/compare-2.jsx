@@ -121,7 +121,7 @@ const Compare2 = (props) => {
           <Col lg={24} sm={24} xs={24}>
             <Slider {...carouselSettings}>
               {blogData.map((item, index) => (
-                <div>
+                <div key={index}>
                   <CompareCard {...item} />
                 </div>
               ))}
