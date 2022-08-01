@@ -5,11 +5,22 @@ import Router from "next/router";
 const Layout = ({ children }) => {
   return (
     <div>
-      <div style={{ height: Router.pathname === "/" ? 0 : 88 }}>
+      <div
+        style={{
+          height: Router.pathname === "/" ? 0 : 88,
+          display: Router.pathname.includes("/email-template") ? "none" : "initial",
+        }}
+      >
         <Header />
       </div>
       {children}
-      <Footer />
+      <div
+        style={{
+          display: Router.pathname.includes("/email-template") ? "none" : "initial",
+        }}
+      >
+        <Footer />
+      </div>
     </div>
   );
 };
