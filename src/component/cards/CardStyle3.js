@@ -87,15 +87,16 @@ const StyledCard = styled.div`
   }
 
   .icon-section {
-    position: absolute;
+    position: relative;
     z-index: 100;
     top: 0;
     bottom: 8px;
+    display: flex;
   }
 
   .icon {
     position: absolute;
-    right: -48px;
+    bottom: -48px;
     cursor: pointer;
     background-color: #fde4e4;
     width: 32px;
@@ -114,19 +115,19 @@ const StyledCard = styled.div`
   }
 
   .icon-1 {
-    top: 8px;
+    bottom: 8px;
     transition-delay: 0.1s;
   }
   .icon-2 {
-    top: 48px;
+    bottom: 48px;
     transition-delay: 0.2s;
   }
   .icon-3 {
-    top: 88px;
+    bottom: 88px;
     transition-delay: 0.3s;
   }
   .icon-4 {
-    top: 128px;
+    bottom: 128px;
     transition-delay: 0.4s;
   }
 

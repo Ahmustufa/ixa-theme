@@ -1,6 +1,6 @@
 import { Row, Col, Collapse, Divider, message } from "antd";
 import styled from "styled-components";
-import ReviewListing from "../../src/component/reviews/reviewListing";
+import ReviewListing from "../../../src/component/reviews/reviewListing";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
@@ -11,12 +11,12 @@ import {
   AiOutlineSync,
 } from "react-icons/ai";
 import Slider from "react-slick";
-import BlogCard from "../../src/component/cards/blogCard";
-import CompareCard from "../../src/component/cards/compareCard";
-import ProductCardWithIcons from "../../src/component/cards/productCardWithIcons";
-import CardStyle1 from "../../src/component/cards/CardStyle1";
-import CardStyle2 from "../../src/component/cards/CardStyle2";
-import CardStyle3 from "../../src/component/cards/CardStyle3";
+import BlogCard from "../../../src/component/cards/blogCard";
+import CompareCard from "../../../src/component/cards/compareCard";
+import ProductCardWithIcons from "../../../src/component/cards/productCardWithIcons";
+import CardStyle1 from "../../../src/component/cards/CardStyle1";
+import CardStyle2 from "../../../src/component/cards/CardStyle2";
+import CardStyle3 from "../../../src/component/cards/CardStyle3";
 
 const { Panel } = Collapse;
 

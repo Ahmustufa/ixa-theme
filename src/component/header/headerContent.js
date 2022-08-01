@@ -359,7 +359,7 @@ const header = [
   {
     title: "feature",
     link: "/feature",
-    submenu: [{ title: "Product Box", link: "/feature/product-box" }],
+    submenu: [{ title: "Product Box", link: "/feature/product-element/product-box" }],
   },
   {
     title: "pages",
