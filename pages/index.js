@@ -14,6 +14,7 @@ import SortItems from "../src/component/sortItems";
 import Heading from "../src/component/headings";
 import BlogCarousel from "../src/component/productListing/blogCarousel";
 import ProductVerticalCarousel from "../src/component/productListing/productVerticalCarousel";
+import { productStyle5, productStyle8 } from "./feature/mockupData";
 
 const Home = () => {
   return (
@@ -49,7 +50,7 @@ const Home = () => {
               <SidebarFiltration />
             </Col>
             <Col lg={6}>
-              <ProductVerticalCarousel />
+              <ProductVerticalCarousel headerTitle="NEW PRODUCTS" data={productStyle5} />
             </Col>
             <Col lg={12}></Col>
           </Row>

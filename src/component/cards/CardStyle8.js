@@ -10,8 +10,9 @@ import {
   AiOutlineSearch,
   AiOutlineSync,
 } from "react-icons/ai";
+import { Rate } from "antd";
 
-const CollectionCard = (props) => {
+const CardStyle8 = (props) => {
   const { image, title, price } = props;
   const dispatch = useDispatch();
 
@@ -22,11 +23,14 @@ const CollectionCard = (props) => {
 
   return (
     <StyledCard>
-      <img src={image} width="100%" />
+      {/* <img src={image} width="100%" /> */}
+      <Link href={`/product}`}>
+        <div
+          className="image-container"
+          style={{ backgroundImage: `url(${image})` }}
+        ></div>
+      </Link>
       <div className="cart-actions">
-        <div className="add_to_cart" style={{ opacity: 1 }}>
-          <AiOutlineShoppingCart size={20} title={"Add to cart"} />
-        </div>
         <div className="add_to_wishlist">
           <AiOutlineHeart size={20} title={"Add to wishlist"} />
         </div>
@@ -37,36 +41,32 @@ const CollectionCard = (props) => {
           <AiOutlineSync size={20} title={"Compare"} />
         </div>
       </div>
-      <div className="product-detail">
-        <h6>{title}</h6>
 
-        <h4>
+      <div className="add_to_cart" style={{ opacity: 1 }}>
+        Add To Cart
+      </div>
+      <div className="item-details">
+        <Rate defaultValue={4} disabled style={{ color: "#ffa200", fontSize: 13 }} />
+        <div className="product mt-2">{title}</div>
+
+        <div className="price">
           {formatedPrice.format(price)}{" "}
           <small style={{ color: "#858585", textDecoration: "line-through" }}>
             PKR {price + 100}
           </small>
-        </h4>
+        </div>
       </div>
     </StyledCard>
   );
 };
 
-export default CollectionCard;
+export default CardStyle8;
 
 const StyledCard = styled.div`
   position: relative;
   margin: auto;
   overflow: hidden;
   margin-bottom: 30px;
-  img {
-    transition: 0.5s ease;
-    transform: scale(1);
-    display: block;
-  }
-  :hover img {
-    transform: scale(1.2) rotate(2deg);
-    transition: all 0.4s ease;
-  }
   :hover .cart-actions .add_to_wishlist {
     transform: translateY(4px);
     opacity: 1;
@@ -83,6 +83,20 @@ const StyledCard = styled.div`
     transition: all 1s ease;
   }
 
+  .image-container {
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+    padding-top: 120%;
+    background-color: #fff;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.5s ease;
+    transform: scale(1);
+  }
+
   .cart-actions {
     top: 7px;
     right: 7px;
@@ -96,7 +110,6 @@ const StyledCard = styled.div`
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 
-    .add_to_cart,
     .add_to_wishlist,
     .quick_view,
     .compare {
@@ -111,38 +124,42 @@ const StyledCard = styled.div`
       align-items: center;
       justify-content: center;
       transform: translateY(0px);
-      transition: all 0.3s ease;
+      transition: all 0.1s ease;
+      box-shadow: 0px 0px 5px 0px #929292;
+      :hover {
+        color: #f5513c;
+      }
     }
   }
 
-  .product-detail {
+  .item-details {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background: #fff;
+    // z-index: 999;
+  }
+
+  .add_to_cart {
     opacity: 0;
     position: absolute;
-    background-color: #fff;
+    background-color: #f54c3b;
     padding: 10px;
     -webkit-transition: all 0.5s ease;
+    box-shadow: 0px 0px 5px 0px #929292;
     transition: all 0.5s ease;
-    width: 65%;
+    width: 100%;
     left: 0;
     right: 0;
     margin: 0 auto;
     bottom: -10px;
     text-align: center;
-    h6 {
-      color: #525252;
-      font-size: 16px;
-    }
-    h4 {
-      font-size: 18px;
-      font-weight: 400;
-      color: #000;
-      margin-bottom: 0;
-    }
+    color: #fff;
   }
-  :hover .product-detail {
+  :hover .add_to_cart {
     opacity: 1;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    bottom: 15px;
+    bottom: 80px;
   }
 `;

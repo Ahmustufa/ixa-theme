@@ -59,8 +59,8 @@ const StyledLoader = styled.section`
 const Loader = () => {
   return (
     <StyledLoader>
-      <div class="loader-area">
-        <div class="loader"></div>
+      <div className="loader-area">
+        <div className="loader"></div>
       </div>
     </StyledLoader>
   );

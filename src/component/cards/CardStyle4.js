@@ -9,7 +9,7 @@ import {
   AiOutlineSync,
 } from "react-icons/ai";
 
-const CardStyle3 = (props) => {
+const CardStyle4 = (props) => {
   const { _id, title, brandName, price, image } = props;
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -57,11 +57,11 @@ const CardStyle3 = (props) => {
   );
 };
 
-CardStyle3.defaultProps = {
+CardStyle4.defaultProps = {
   brandName: "Spotlight on Style",
 };
 
-export default CardStyle3;
+export default CardStyle4;
 
 const StyledCard = styled.div`
   position: relative;
@@ -69,10 +69,11 @@ const StyledCard = styled.div`
 
   .image-container {
     border: 1px solid #f2f2f2;
+    border-bottom: none;
     border-radius: 4px;
     text-align: center;
     width: 100%;
-    padding-top: 120%;
+    padding-top: 100%;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -89,13 +90,14 @@ const StyledCard = styled.div`
   .icon-section {
     position: relative;
     z-index: 100;
-    bottom: 8px;
+    bottom: 10px;
     left: 8px;
   }
 
   .icon {
     position: absolute;
-    bottom: 8px;
+    // left: 8px;
+    bottom: -180px;
     cursor: pointer;
     background-color: #fde4e4;
     width: 32px;
@@ -115,24 +117,43 @@ const StyledCard = styled.div`
 
   :hover .icon-1 {
     bottom: 8px;
-    transition-delay: 0.4s;
+    transition-delay: 0.1s;
   }
   :hover .icon-2 {
-    bottom: 48px;
-    transition-delay: 0.3s;
-  }
-  :hover .icon-3 {
-    bottom: 88px;
+    bottom: 8px;
     transition-delay: 0.2s;
   }
+  :hover .icon-3 {
+    bottom: 8px;
+    transition-delay: 0.3s;
+  }
   :hover .icon-4 {
-    bottom: 128px;
+    bottom: 8px;
+    transition-delay: 0.4s;
+  }
+
+  .icon-1 {
+    left: 20%;
     transition-delay: 0.1s;
+  }
+  .icon-2 {
+    left: 35%;
+    transition-delay: 0.2s;
+  }
+  .icon-3 {
+    left: 50%;
+    transition-delay: 0.3s;
+  }
+  .icon-4 {
+    left: 65%;
+    transition-delay: 0.4s;
   }
 
   .item-details {
     overflow: hidden;
-    psotion: relative;
+    position: relative;
+    background: #fff;
+    z-index: 999;
   }
 
   .company {
@@ -169,7 +190,6 @@ const StyledCard = styled.div`
 
   @media only screen and (max-width: 1200px) {
     .item-details {
-      left: 96%;
     }
   }
 

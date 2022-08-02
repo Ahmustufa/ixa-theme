@@ -1,5 +1,5 @@
-import Header from "../header/headerWrapper.js";
-import Footer from "../footer/footerWrapper.js";
+import Header from "../header/headerWrapper2.js";
+import Footer from "../footer/footerWrapper2.js";
 import Router from "next/router";
 
 const Layout = ({ children }) => {
@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
     <div>
       <div
         style={{
-          height: Router.pathname === "/" ? 0 : 88,
+          // height: Router.pathname === "/" ? 0 : 88,
           display: Router.pathname.includes("/email-template") ? "none" : "initial",
         }}
       >

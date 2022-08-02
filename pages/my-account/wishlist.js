@@ -1,33 +1,14 @@
-import { Row, Col, message } from "antd";
+import { Row, Col } from "antd";
+import { products } from "src/mock/products";
 import styled from "styled-components";
 import AccountSidebar from "../../src/component/sidebar/accountSidebar";
-import { Queries, useFetch, errorHandler, Mutations } from "../../src/api/config";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import moment from "moment";
 import { PrimaryButton } from "../../src/component/buttons";
 import { AiOutlineShopping } from "react-icons/ai";
 import Link from "next/link";
-import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
-import { removeWishlistItem } from "../../src/redux/actions";
+import ProductCardWithIcons from "src/component/cards/productCardWithIcons";
 
-const Wishlist = () => {
-  const dispatch = useDispatch();
-  const { items } = useSelector((state) => state.wishlist);
-
-  // --------------REMOVE FROM WISHLIST-------------
-  const [removeFromWishlist, removeFromWishlistLoading] = useFetch(
-    Mutations.removeFromWishlist
-  );
-  const removeItemFromWishlistFunc = async (productDetails) => {
-    try {
-      const { data } = await removeFromWishlist(productDetails._id);
-      dispatch(removeWishlistItem(data));
-      message.success("Remove from wishlist successfully");
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
+const Wishlist = (props) => {
+  const { products } = props;
 
   return (
     <StyledPage style={{ padding: 80 }}>
@@ -37,7 +18,8 @@ const Wishlist = () => {
         </Col>
 
         <Col xs={24} sm={24} md={20} lg={20}>
-          {items.length == 0 ? (
+          <h1 style={{ fontWeight: 700, marginBottom: 12 }}>My Wishlist</h1>
+          {products.length == 0 ? (
             <Row className="mt-3">
               <Col style={{ background: "#f9fafb" }} span={24} className="p-4">
                 <div className="d-flex justify-content-start align-items-center">
@@ -53,34 +35,9 @@ const Wishlist = () => {
             </Row>
           ) : (
             <Row gutter={[24, 24]}>
-              {items.map((item, index) => (
+              {products.map((item, index) => (
                 <Col key={index} xs={24} sm={24} lg={6}>
-                  <div className="box">
-                    <div>
-                      <img
-                        src={
-                          process.env.REACT_APP_STRAPI_URL + item.product.images[0].url
-                        }
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                    <div className="item-details">
-                      <div className="company">{item.product.productName}</div>
-                      <div className="product">{item.product.productName}</div>
-                      <div className="d-flex justify-content-between align-items-center">
-                        <div className="price">PKR {item.product.price}</div>
-                        <div
-                          title="Remove form wishlist"
-                          style={{ cursor: "pointer" }}
-                          onClick={() => {
-                            removeItemFromWishlistFunc(item);
-                          }}
-                        >
-                          <BsSuitHeartFill className="icon" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <ProductCardWithIcons {...item} />
                 </Col>
               ))}
             </Row>
@@ -144,17 +101,10 @@ const StyledPage = styled.div`
   }
 `;
 
-// export async function getServerSideProps(context) {
-//   try {
-//     var { data } = await axios.get(
-//       `http://64.227.31.159:1337/orders/userId/${userId}`
-//     );
-//     return {
-//       props: { data },
-//     };
-//   } catch (err) {
-//     return {
-//       notFound: true,
-//     };
-//   }
-// }
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      products: [products[0], products[3], products[6]],
+    },
+  };
+}
