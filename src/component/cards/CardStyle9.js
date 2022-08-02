@@ -12,7 +12,7 @@ import {
 } from "react-icons/ai";
 import { Rate } from "antd";
 
-const CardStyle7 = (props) => {
+const CardStyle9 = (props) => {
   const { image, title, price } = props;
   const dispatch = useDispatch();
 
@@ -31,17 +31,20 @@ const CardStyle7 = (props) => {
         ></div>
       </Link>
       <div className="cart-actions">
+        <div className="add_to_cart" style={{ opacity: 1 }}>
+          <AiOutlineShoppingCart size={20} title={"Add to cart"} />
+        </div>
         <div className="add_to_wishlist">
           <AiOutlineHeart size={20} title={"Add to wishlist"} />
         </div>
-        <div className="add_to_cart" style={{ opacity: 1 }}>
-          Add to cart
+        <div className="quick_view">
+          <AiOutlineSearch size={20} title={"Quick view"} />
         </div>
-
         <div className="compare">
           <AiOutlineSync size={20} title={"Compare"} />
         </div>
       </div>
+
       <div className="item-details">
         <Rate defaultValue={4} disabled style={{ color: "#ffa200", fontSize: 13 }} />
         <div className="product mt-2">{title}</div>
@@ -57,102 +60,104 @@ const CardStyle7 = (props) => {
   );
 };
 
-export default CardStyle7;
+export default CardStyle9;
 
 const StyledCard = styled.div`
   position: relative;
   margin: auto;
   overflow: hidden;
   margin-bottom: 30px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  // :hover .cart-actions .add_to_wishlist {
+  //   transform: translateY(4px);
+  //   opacity: 1;
+  //   transition: all 0.5s ease;
+  // }
+  // :hover .cart-actions .quick_view {
+  //   transform: translateY(6px);
+  //   opacity: 1;
+  //   transition: all 0.8s ease;
+  // }
+  // :hover .cart-actions .compare {
+  //   transform: translateY(8px);
+  //   opacity: 1;
+  //   transition: all 1s ease;
+  // }
 
   .image-container {
-    border: 1px solid #f2f2f2;
-    background-color: #fff;
-    border-bottom: none;
-    border-radius: 4px;
     text-align: center;
     width: 100%;
-    padding-top: 100%;
+    padding-top: 105%;
+    background-color: #fff;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    transition: 0.5s ease;
+    transform: scale(1);
   }
 
   .cart-actions {
+    .add_to_cart,
     .add_to_wishlist,
+    .quick_view,
     .compare {
-      color: #333;
-      align-items: center;
+      background-color: hsla(0, 0%, 100%, 0.8);
+      padding: 10px;
+      color: #dddddd;
       display: flex;
+      align-items: center;
       justify-content: center;
-      background-color: #dddddd;
-      padding: 8px;
       transform: translateY(0px);
-      transition: all 0.3s ease;
-      border-radius: 6px;
       :hover {
-        background-color: #f54c3b;
-        color: white;
-        transition: all 0.3s ease;
+        color: #f5513c;
       }
     }
-    .add_to_cart {
-      background-color: #dddddd;
-      padding: 8px 12px;
-      border-radius: 6px;
-      width: 185px;
-      :hover {
-        background-color: #f54c3b;
-        color: white;
-        transition: all 0.3s ease;
-      }
-    }
-  }
 
-  .cart-actions {
-    opacity: 0;
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    width: 80%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    bottom: -5px;
-    text-align: center;
-  }
-  :hover .cart-actions {
-    opacity: 1;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    bottom: 100px;
+    .add_to_cart,
+    .add_to_wishlist,
+    .quick_view {
+      border-right: 1px solid #ddd;
+      color: #dddddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(0px);
+      :hover {
+        color: #f5513c;
+      }
+    }
   }
 
   .item-details {
     overflow: hidden;
     position: relative;
-    text-align: center;
     background: #fff;
-    // z-index: 999;
+    padding: 0 10px;
   }
 
-  .company {
-    font-size: 14px;
-    color: #abb8c3;
-    font-weight: 600;
+  .cart-actions {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -10px;
+    text-align: center;
+    color: #fff;
   }
-
-  .product {
-    font-size: 18px;
-    font-weight: 400;
-    color: #000;
-  }
-
-  .price {
-    font-size: 16px;
-    font-weight: 600;
-    color: #54595f;
+  :hover .cart-actions {
+    opacity: 1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    bottom: 80px;
   }
 `;
