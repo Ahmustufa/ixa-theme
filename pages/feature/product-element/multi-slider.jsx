@@ -23,7 +23,7 @@ import {
   productStyle7,
   productStyle8,
   productStyle9,
-} from "../mockupData";
+} from "src/mock/mockupData";
 import ProductVerticalCarousel from "src/component/productListing/productVerticalCarousel";
 
 const { Panel } = Collapse;

@@ -23,7 +23,7 @@ import {
   productStyle7,
   productStyle8,
   productStyle9,
-} from "../mockupData";
+} from "src/mock/mockupData";
 
 const { Panel } = Collapse;
 
