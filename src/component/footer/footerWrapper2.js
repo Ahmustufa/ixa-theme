@@ -2,7 +2,6 @@ import React from "react";
 import { Row, Col, Input, Divider } from "antd";
 import styled from "styled-components";
 import Link from "next/link";
-import { footerBeforeImage } from "public/images/footerBeforeImage.png";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { MailOutlined } from "@ant-design/icons";
 
