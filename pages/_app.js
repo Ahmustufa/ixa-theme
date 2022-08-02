@@ -1,8 +1,9 @@
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/mie.scss";
-import "../styles/globals.scss";
-import "../src/component/header/header.style.scss";
+import "styles/mie.scss";
+import "styles/globals.scss";
+import "src/component/header/header.style.scss";
+import "src/component/header/header2.style.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

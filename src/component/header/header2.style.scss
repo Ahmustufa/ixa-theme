@@ -1,0 +1,33 @@
+.top-bar {
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 5%;
+  width: 100%;
+}
+.top-bar-icons svg {
+  color: #fa869b;
+  margin: 0 16px;
+  cursor: pointer;
+}
+
+.header-wrapper-2 {
+  padding-top: 12px;
+  .icon-box {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    font-size: 32px;
+    margin-right: 12px;
+  }
+  .title {
+    font-size: 14px;
+    margin: 0;
+  }
+  .sub-title {
+    color: grey;
+    margin: 0;
+  }
+}
