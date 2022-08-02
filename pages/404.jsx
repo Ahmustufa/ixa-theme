@@ -17,7 +17,7 @@ const PageNotFound = () => {
         <defs>
           <path d="M0 .387h251.772v251.772H0z"></path>
         </defs>
-        <g fill="none" fill-rule="evenodd">
+        <g fill="none" fillRule="evenodd">
           <g transform="translate(0 .012)">
             <mask fill="#fff"></mask>
             <path
