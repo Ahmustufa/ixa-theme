@@ -192,16 +192,7 @@ const header = [
       {
         title: "Clothing",
         submenu: [
-          { title: "Fashion 1", link: "/fashion-1" },
-          { title: "Fashion 2", link: "/fashion-2" },
-          { title: "Fashion 3", link: "/fashion-3" },
-          { title: "Fashion 4", link: "/fashion-4" },
-        ],
-      },
-      {
-        title: "Fashion",
-        submenu: [
-          { title: "Fashion 1", link: "/fashion-1" },
+          { title: "Fashion 1", link: "/layout/fashion-1" },
           { title: "Fashion 2", link: "/fashion-2" },
           { title: "Fashion 3", link: "/fashion-3" },
           { title: "Fashion 4", link: "/fashion-4" },
