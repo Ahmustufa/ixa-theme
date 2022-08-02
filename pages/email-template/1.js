@@ -77,6 +77,7 @@ const EmailTemplate1 = () => {
                 >
                   <a
                     target="_blank"
+                    rel="noreferrer"
                     style={{ textDecoration: "none" }}
                     href="https://polkadotsretail.com/"
                   >
@@ -231,6 +232,7 @@ const EmailTemplate1 = () => {
                   <a
                     href="https://polkadotsretail.com/"
                     target="_blank"
+                    rel="noreferrer"
                     style={{ textDecoration: "none" }}
                   >
                     <table
@@ -262,6 +264,7 @@ const EmailTemplate1 = () => {
                         >
                           <a
                             target="_blank"
+                            rel="noreferrer"
                             style={{
                               textDecoration: "none",
                               color: "#fff",
