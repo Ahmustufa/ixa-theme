@@ -1,6 +1,6 @@
 import React from "react";
-import Breadcrumb from "../../../src/component/Breadcrumb";
-import HomeSliderComponent from "../../../src/component/slider";
+import Breadcrumb from "src/component/Breadcrumb";
+import HomeSliderComponent from "src/component/slider";
 
 const HomeSlider = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import Breadcrumb from "../../../src/component/Breadcrumb";
-import Banner from "../../../src/component/collectionBanner/banner";
+import Breadcrumb from "src/component/Breadcrumb";
+import Banner from "src/component/collectionBanner/banner";
 
 const CollectionBanner = () => {
   return (
