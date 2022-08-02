@@ -16,15 +16,18 @@
   .icon-box {
     display: flex;
     align-items: center;
+
+    .icon {
+      font-size: 32px;
+      margin-right: 12px;
+      color: #727272;
+    }
   }
 
-  .icon {
-    font-size: 32px;
-    margin-right: 12px;
-  }
   .title {
     font-size: 14px;
     margin: 0;
+    color: #727272;
   }
   .sub-title {
     color: grey;

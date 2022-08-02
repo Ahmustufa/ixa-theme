@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import router from "next/router";
 import { Row, Col, Input, Dropdown, Menu } from "antd";
-import styled from "styled-components";
+/**
+ * Icons
+ */
 import { SearchOutlined } from "@ant-design/icons";
 import { BiHeadphone } from "react-icons/bi";
 import { AiOutlineShoppingCart, AiOutlineUser, AiFillHome } from "react-icons/ai";
-import Link from "next/link";
-import router from "next/router";
 import { BsTelephoneFill, BsSuitHeartFill } from "react-icons/bs";
 import { RiUser3Fill } from "react-icons/ri";
+import { FiChevronDown } from "react-icons/fi";
 import {
   FaFacebookF,
   FaTwitter,
@@ -18,24 +21,14 @@ import {
 } from "react-icons/fa";
 
 const HeaderWrapper2 = () => {
-  const [scroll, setScroll] = useState();
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", () => {
-        // using this condition to avoid state update frequently
-        if (window.scrollY > 50 && window.scrollY < 150) {
-          setScroll(window.scrollY);
-        }
-      });
-    }
-  });
-
   return (
     <>
       <div className="top-bar">
-        <div className="d-flex align-items-center" style={{ color: "#727272" }}>
-          <div>Welcome to Our store</div>
+        <div
+          className="d-flex align-items-center"
+          style={{ color: "#727272", fontSize: 13 }}
+        >
+          <div>Welcome to our store</div>
           <BsTelephoneFill style={{ color: "#fa869b" }} className="ml-4 mr-2" />
           <div>Call Us: 123 - 456 - 7890</div>
         </div>
@@ -79,16 +72,14 @@ const HeaderWrapper2 = () => {
               <BiHeadphone className="icon" />
 
               <div>
-                <p className="title">
-                  <b>Help is here</b>
-                </p>
+                <p className="title">Help is here</p>
                 <sub className="sub-title">123456789</sub>
               </div>
             </div>
           </Col>
 
           <Col>
-            <div className="icon-box">
+            <div className="icon-box" role="button">
               <AiOutlineUser className="icon" />
 
               <div>
@@ -99,7 +90,7 @@ const HeaderWrapper2 = () => {
           </Col>
 
           <Col>
-            <div className="icon-box">
+            <div className="icon-box" role="button">
               <AiOutlineShoppingCart className="icon" />
               <p className="title">Cart</p>
             </div>
@@ -115,6 +106,9 @@ const HeaderWrapper2 = () => {
           lineHeight: "64px",
           border: "1px solid #f8f8f8",
           boxShadow: "2px 2px 4px #f8f8f8, -2px -2px 4px #f8f8f8",
+          position: "sticky",
+          top: 0,
+          zIndex: 399,
         }}
       >
         {header.map((menu) => {
@@ -162,6 +156,7 @@ const HeaderWrapper2 = () => {
                   <Link href="/">
                     <a style={{ textTransform: "uppercase" }}>{menu.title}</a>
                   </Link>
+                  <FiChevronDown className="ml-3" />
                 </div>
               </Dropdown>
             );
