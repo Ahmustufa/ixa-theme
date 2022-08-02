@@ -1,5 +1,5 @@
 import React from "react";
-import Breadcrumb from "src/component/Breadcrumb";
+import Breadcrumb from "src/component/breadcrumb";
 import HomeSliderComponent from "src/component/slider";
 
 const HomeSlider = () => {

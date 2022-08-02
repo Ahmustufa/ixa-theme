@@ -1,6 +1,6 @@
 import React from "react";
 import Title1 from "src/component/titles/title1";
-import Breadcrumb from "src/component/Breadcrumb";
+import Breadcrumb from "src/component/breadcrumb";
 import Title2 from "src/component/titles/title2";
 import Title3 from "src/component/titles/title3";
 import Title4 from "src/component/titles/title4";
