@@ -63,10 +63,15 @@ const ProductVerticalCarousel = (props) => {
     sliderRef.current.slickPrev();
   };
 
+  const formatedPrice = new Intl.NumberFormat("en-us", {
+    style: "currency",
+    currency: "PKR",
+  });
+
   return (
-    <StyledContent style={{ padding: props.padding ? props.padding : "5%" }}>
+    <StyledContent style={{ padding: props.padding ? props.padding : "5%" }} {...props}>
       <div className="d-flex justify-content-between align-items-center">
-        <h6 className="mb-0">NEW PRODUCT</h6>
+        <h6 className="mb-0">{props.headerTitle}</h6>
         <div className="icons-group">
           <FiChevronLeft size={30} onClick={() => previous()} />
           <FiChevronRight size={30} onClick={() => next()} />
@@ -75,13 +80,21 @@ const ProductVerticalCarousel = (props) => {
       <Divider />
 
       <Slider ref={sliderRef} {...carouselSettings}>
-        {blogData.map((item, index) => (
-          <div className="d-flex justify-content-start align-items-center w-100">
-            <img src={image4} width="30%" height={"160px"} />
+        {props.data?.map((item, index) => (
+          <div
+            key={index}
+            className="d-flex justify-content-start align-items-center w-100"
+          >
+            <img src={item.image} width="30%" height={"160px"} />
             <div className="content ml-4">
               <Rate className="mb-2" disabled defaultValue={2} />
-              <h6>TRIM DRESS</h6>
-              <h4>$266</h4>
+              <h6>{item.title}</h6>
+              <h4>
+                {formatedPrice.format(item.price)}{" "}
+                <small style={{ color: "#858585", textDecoration: "line-through" }}>
+                  PKR {item.price + 100}
+                </small>
+              </h4>
             </div>
           </div>
         ))}
@@ -102,7 +115,7 @@ const StyledContent = styled.div`
       color: #777;
     }
     h4 {
-      font-size: 18px;
+      font-size: 14px;
     }
   }
   .icons-group {
