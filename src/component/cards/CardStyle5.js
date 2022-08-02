@@ -11,7 +11,7 @@ import {
   AiOutlineSync,
 } from "react-icons/ai";
 
-const CollectionCard = (props) => {
+const CardStyle5 = (props) => {
   const { image, title, price } = props;
   const dispatch = useDispatch();
 
@@ -22,7 +22,13 @@ const CollectionCard = (props) => {
 
   return (
     <StyledCard>
-      <img src={image} width="100%" />
+      {/* <img src={image} width="100%" /> */}
+      <Link href={`/product}`}>
+        <div
+          className="image-container"
+          style={{ backgroundImage: `url(${image})` }}
+        ></div>
+      </Link>
       <div className="cart-actions">
         <div className="add_to_cart" style={{ opacity: 1 }}>
           <AiOutlineShoppingCart size={20} title={"Add to cart"} />
@@ -51,22 +57,13 @@ const CollectionCard = (props) => {
   );
 };
 
-export default CollectionCard;
+export default CardStyle5;
 
 const StyledCard = styled.div`
   position: relative;
   margin: auto;
   overflow: hidden;
   margin-bottom: 30px;
-  img {
-    transition: 0.5s ease;
-    transform: scale(1);
-    display: block;
-  }
-  :hover img {
-    transform: scale(1.2) rotate(2deg);
-    transition: all 0.4s ease;
-  }
   :hover .cart-actions .add_to_wishlist {
     transform: translateY(4px);
     opacity: 1;
@@ -81,6 +78,23 @@ const StyledCard = styled.div`
     transform: translateY(8px);
     opacity: 1;
     transition: all 1s ease;
+  }
+
+  .image-container {
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+    padding-top: 120%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.5s ease;
+    transform: scale(1);
+    :hover {
+      transform: scale(1.2) rotate(2deg);
+      transition: all 0.4s ease;
+    }
   }
 
   .cart-actions {
@@ -111,7 +125,11 @@ const StyledCard = styled.div`
       align-items: center;
       justify-content: center;
       transform: translateY(0px);
-      transition: all 0.3s ease;
+      transition: all 0.1s ease;
+      box-shadow: 0px 0px 5px 0px #929292;
+      :hover {
+        color: #f5513c;
+      }
     }
   }
 
@@ -121,6 +139,7 @@ const StyledCard = styled.div`
     background-color: #fff;
     padding: 10px;
     -webkit-transition: all 0.5s ease;
+    box-shadow: 0px 0px 5px 0px #929292;
     transition: all 0.5s ease;
     width: 65%;
     left: 0;
