@@ -3,7 +3,7 @@ import Carousel1 from "src/component/carousel/carousel1";
 import styled from "styled-components";
 import Banner from "src/component/collectionBanner/banner";
 import Title2 from "src/component/titles/title2";
-import CardStyle1 from "src/component/cards/CardStyle1";
+import CardStyle4 from "src/component/cards/CardStyle4";
 import {
   productStyle1,
   productStyle2,
@@ -18,63 +18,49 @@ const Fashion2 = () => {
   return (
     <>
       <Carousel1 data={data} />
+
       <div className="my-4">
         <Banner
-          colSize={12}
+          colSize={8}
           insideData={[
             {
               image:
-                "https://multikart-react.vercel.app/_next/static/images/sub-banner1-d89099e9c448c84a71f131fd01d931ec.jpg",
-              title1: "SAVE 30%",
-              title2: "MEN",
+                "https://multikart-react.vercel.app/_next/static/images/5-10b7de6113f434b468e642b0aefdd75c.jpg",
+              title1: "10% OFF",
+              title2: "SPEAKER",
             },
             {
               image:
-                "https://multikart-react.vercel.app/_next/static/images/sub-banner2-8eaf597c5af59e6bda754e95b855d860.jpg",
-              title1: "SAVE 60%",
-              title2: "WOMEN",
+                "https://multikart-react.vercel.app/_next/static/images/6-beb254897edd39e33d5c23dee7ecec7b.jpg",
+              title1: "10% OFF",
+              title2: "EARPLUG",
+            },
+            {
+              image:
+                "https://multikart-react.vercel.app/_next/static/images/7-b16b82e48bde03cafa1e3d8421633125.jpg",
+              title1: "60% OFF",
+              title2: "BEST DEAL",
             },
           ]}
-          cardHeight={315}
+          cardHeight={218}
           textAlign="end"
           title2Color="#222"
         />
-
-        <Banner
-          colSize={12}
-          insideData={[
-            {
-              image:
-                "https://multikart-react.vercel.app/_next/static/images/3-fc01b574690976aa7fe54dde2a11586d.jpg",
-              title1: "SAVE 30%",
-              title2: "SANDLE",
-            },
-            {
-              image:
-                "https://multikart-react.vercel.app/_next/static/images/4-6a057d09491278d90ade1d433a34abfa.jpg",
-              title1: "SAVE 60%",
-              title2: "KIDS",
-            },
-          ]}
-          cardHeight={315}
-          textAlign="start"
-          title2Color="#222"
-        />
-
-        <Title2 subtitle="Recent Story" maintitle="TRENDING PRODUCTS" />
-
-        <div className="col-11 m-auto">
-          <Row gutter={[32, 32]}>
-            {productStyle1.map((item, index) => (
-              <Col key={index} lg={6} sm={24} xs={24} className="">
-                <CardStyle1 {...item} />
-              </Col>
-            ))}
-          </Row>
-        </div>
       </div>
 
-      <FullBgImageSection bgImage="/images/bg.jpg" data={productStyle2} />
+      <Title2 subtitle="Recent Story" maintitle="TRENDING PRODUCTS" />
+
+      <div className="col-11 m-auto">
+        <Row gutter={[32, 32]}>
+          {productStyle4.map((item, index) => (
+            <Col key={index} lg={6} sm={24} xs={24} className="">
+              <CardStyle4 {...item} />
+            </Col>
+          ))}
+        </Row>
+      </div>
+
+      <FullBgImageSection bgImage="/images/headphone.avif" />
 
       <div className="col-11 m-auto">
         <Row gutter={[32, 0]}>

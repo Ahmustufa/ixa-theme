@@ -190,17 +190,9 @@ const header = [
   {
     title: "home",
     submenu: [
-      {
-        title: "Clothing",
-        submenu: [
-          { title: "Fashion 1", link: "/layout/fashion-1" },
-          { title: "Fashion 2", link: "/fashion-2" },
-          { title: "Fashion 3", link: "/fashion-3" },
-          { title: "Fashion 4", link: "/fashion-4" },
-        ],
-      },
+      { title: "Clothing", link: "/layout/clothing" },
       { title: "Grocery", link: "/" },
-      { title: "Electronics", link: "/" },
+      { title: "Electronics", link: "/layout/electronics" },
     ],
     link: "/",
   },
