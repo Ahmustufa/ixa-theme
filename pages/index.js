@@ -9,7 +9,7 @@ import styled from "styled-components";
 import FullBgImageSection from "../src/component/heroSection/FullBgImageSection";
 import { brownHair } from "../images";
 import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
-import SubscriptionModal from "../src/component/subscriptionModal";
+import SubscriptionModal from "../src/component/modals/subscriptionModal";
 import SortItems from "../src/component/sortItems";
 import Heading from "../src/component/headings";
 import BlogCarousel from "../src/component/productListing/blogCarousel";

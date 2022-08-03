@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Input, Divider } from "antd";
+import { Row, Col, Input, Divider, Button } from "antd";
 import styled from "styled-components";
 import Link from "next/link";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
@@ -62,7 +62,20 @@ const FooterContent = () => {
 
         <Col span={12}>
           <p className="section-title">Sign up for savings</p>
-          <Input size="large" addonAfter={<MailOutlined />} className="search-box" />
+          {/* <Input size="large" addonAfter={<MailOutlined />} className="search-box" /> */}
+          <Input.Group style={{ height: 40, marginTop: 24 }} compact>
+            <Input
+              style={{
+                width: "calc(100% - 120px)",
+                height: "100%",
+                textAlign: "left",
+              }}
+              placeholder="Your email address..."
+            />
+            <Button style={{ height: "100%" }} type="primary">
+              SUBSCRIBE
+            </Button>
+          </Input.Group>
         </Col>
 
         <Col span={6}>
