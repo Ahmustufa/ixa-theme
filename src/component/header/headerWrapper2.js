@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import router from "next/router";
 import { Row, Col, Input, Dropdown, Menu } from "antd";
+import { InputWrapper } from "../inputs";
 /**
  * Icons
  */
@@ -58,7 +59,7 @@ const HeaderWrapper2 = () => {
           </Col>
 
           <Col span={10}>
-            <Input
+            <InputWrapper
               placeholder="Enter keywords to search..."
               size="large"
               addonAfter={<SearchOutlined />}
