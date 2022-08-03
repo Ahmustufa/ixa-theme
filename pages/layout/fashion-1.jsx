@@ -56,7 +56,7 @@ const Fashion1 = () => {
             },
           ]}
           cardHeight={315}
-          textAlign="end"
+          textAlign="start"
           title2Color="#222"
         />
 
