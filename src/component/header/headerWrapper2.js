@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import router from "next/router";
 import { Row, Col, Input, Dropdown, Menu } from "antd";
+import { InputWrapper } from "../inputs";
 /**
  * Icons
  */
@@ -58,7 +59,7 @@ const HeaderWrapper2 = () => {
           </Col>
 
           <Col span={10}>
-            <Input
+            <InputWrapper
               placeholder="Enter keywords to search..."
               size="large"
               addonAfter={<SearchOutlined />}
@@ -105,7 +106,7 @@ const HeaderWrapper2 = () => {
           height: 64,
           lineHeight: "64px",
           border: "1px solid #f8f8f8",
-          boxShadow: "2px 2px 4px #f8f8f8, -2px -2px 4px #f8f8f8",
+          boxShadow: "1px 1px 2px #f8f8f8, -1px -1px 2px #f8f8f8",
           position: "sticky",
           top: 0,
           zIndex: 399,
@@ -189,17 +190,9 @@ const header = [
   {
     title: "home",
     submenu: [
-      {
-        title: "Clothing",
-        submenu: [
-          { title: "Fashion 1", link: "/layout/fashion-1" },
-          { title: "Fashion 2", link: "/fashion-2" },
-          { title: "Fashion 3", link: "/fashion-3" },
-          { title: "Fashion 4", link: "/fashion-4" },
-        ],
-      },
+      { title: "Clothing", link: "/layout/clothing" },
       { title: "Grocery", link: "/" },
-      { title: "Electronics", link: "/" },
+      { title: "Electronics", link: "/layout/electronics" },
     ],
     link: "/",
   },

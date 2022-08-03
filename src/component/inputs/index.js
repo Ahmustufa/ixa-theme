@@ -5,7 +5,7 @@ export const InputWrapper = styled(Input)`
   // background-image: ${(props) => (props.backgroundImage ? props.backgroundImage : "")};
   outline: none;
   // padding: 8px 12px;
-  border: ${(props) => (props.border ? props.border : "1px solid #d1d1d1")};
+  border: ${(props) => (props.border ? props.border : "1px solid #000")};
   border-radius: 4px;
   display: block;
   width: ${(props) => (props.width ? props.width : "-webkit-fill-available")};
@@ -20,7 +20,7 @@ export const InputWrapper = styled(Input)`
   }
   input {
     height: 40px;
-    border-radius: 4px;
+    border-radius: 40px;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
@@ -35,6 +35,17 @@ export const InputWrapper = styled(Input)`
       box-shadow: none !important;
     }
   }
+
+  .ant-input-group-addon {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: none;
+    width: 48px;
+    color: #727272;
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }
+
   &:hover,
   &:focus,
   &:active {
