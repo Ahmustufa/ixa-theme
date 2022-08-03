@@ -4,13 +4,13 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { ButtonWrapper } from "src/component/buttons";
 
 const Carousel1 = (props) => {
-  const { images } = props;
+  const { data } = props;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const intervalRef = useRef(null);
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
-      const index = (currentImageIndex + 1) % images.length;
+      const index = (currentImageIndex + 1) % data.length;
       setCurrentImageIndex(index);
     }, 5000);
     return () => clearInterval(intervalRef.current);
@@ -21,14 +21,14 @@ const Carousel1 = (props) => {
       <div
         className="btn previous"
         onClick={() => {
-          const index = Math.abs(currentImageIndex - 1) % 4;
+          const index = Math.abs(currentImageIndex - 1) % data.length;
           setCurrentImageIndex(index);
         }}
       >
         <FiChevronLeft className="icon" />
       </div>
 
-      {images.map((item, index) => (
+      {data.map((item, index) => (
         <div
           className="carousel"
           style={{
@@ -47,7 +47,7 @@ const Carousel1 = (props) => {
       <div
         className="btn next"
         onClick={() => {
-          const index = (currentImageIndex + 1) % 4;
+          const index = (currentImageIndex + 1) % data.length;
           setCurrentImageIndex(index);
         }}
       >
@@ -58,7 +58,7 @@ const Carousel1 = (props) => {
 };
 
 Carousel1.defaultProps = {
-  images: [
+  data: [
     {
       image: "https://multikart-react.vercel.app/assets/images/home-banner/6.jpg",
       subHeading: "Welcome To Fashion",

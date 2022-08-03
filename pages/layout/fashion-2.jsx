@@ -14,10 +14,10 @@ import FullBgImageSection from "src/component/heroSection/FullBgImageSection";
 import ProductVerticalCarousel from "src/component/productListing/productVerticalCarousel";
 import BlogCarousel from "src/component/productListing/blogCarousel";
 
-const Fashion1 = () => {
+const Fashion2 = () => {
   return (
     <>
-      <Carousel1 />
+      <Carousel1 data={data} />
       <div className="my-4">
         <Banner
           colSize={12}
@@ -101,6 +101,28 @@ const Fashion1 = () => {
   );
 };
 
-export default Fashion1;
+export default Fashion2;
 
-const StyledPage = styled.div``;
+const data = [
+  {
+    image: "https://multikart-react.vercel.app/assets/images/home-banner/16.jpg",
+    subHeading: "Welcome To Fashion",
+    heading: "Home accessories",
+    link: "#",
+    placement: "start",
+  },
+  {
+    image: "https://multikart-react.vercel.app/assets/images/home-banner/32.jpg",
+    subHeading: "Welcome To Fashion",
+    heading: "decorations",
+    link: "#",
+    placement: "end",
+  },
+  {
+    image: "https://multikart-react.vercel.app/assets/images/home-banner/15.jpg",
+    subHeading: "Welcome To Fashion",
+    heading: "men fashion",
+    link: "#",
+    placement: "start",
+  },
+];
