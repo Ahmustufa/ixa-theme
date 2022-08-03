@@ -17,7 +17,7 @@ const Fashion1 = () => {
   return (
     <>
       <Carousel1 />
-      <div>
+      <div className="my-4">
         <Banner
           colSize={12}
           insideData={[
@@ -72,7 +72,9 @@ const Fashion1 = () => {
           </Row>
         </div>
       </div>
+
       <FullBgImageSection bgImage="/images/bg.jpg" data={productStyle2} />
+
       <div className="col-11 m-auto">
         <Row gutter={[32, 0]}>
           <Col xs={24} sm={24} md={12} lg={8} xl={6}>

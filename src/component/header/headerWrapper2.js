@@ -105,7 +105,7 @@ const HeaderWrapper2 = () => {
           height: 64,
           lineHeight: "64px",
           border: "1px solid #f8f8f8",
-          boxShadow: "2px 2px 4px #f8f8f8, -2px -2px 4px #f8f8f8",
+          boxShadow: "1px 1px 2px #f8f8f8, -1px -1px 2px #f8f8f8",
           position: "sticky",
           top: 0,
           zIndex: 399,
