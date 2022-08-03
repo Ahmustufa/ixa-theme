@@ -64,7 +64,13 @@ const Banner = (props) => {
             >
               <img src={data.image} width="100%" />
 
-              <div style={{ textAlign: props.textAlign }} className="text-div">
+              <div
+                style={{
+                  textAlign: props.textAlign,
+                  height: props.textHeight ? props.textHeight : "initial",
+                }}
+                className="text-div"
+              >
                 <h4>{data.title1}</h4>
                 <h2 style={{ color: props.title2Color }}>{data.title2}</h2>
               </div>
