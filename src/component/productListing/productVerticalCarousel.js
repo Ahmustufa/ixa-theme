@@ -6,7 +6,13 @@ import { useSelector } from "react-redux";
 import ProductCardWithIcons from "../cards/productCardWithIcons";
 import { image1, image2, image3, image4 } from "../../../images";
 import { Rate } from "antd";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import {
+  FiChevronDown,
+  FiChevronLeft,
+  FiChevronRight,
+  FiChevronsUp,
+  FiChevronUp,
+} from "react-icons/fi";
 import { useRef } from "react";
 const carouselSettings = {
   // dots: true,
@@ -73,8 +79,8 @@ const ProductVerticalCarousel = (props) => {
       <div className="d-flex justify-content-between align-items-center">
         <h6 className="mb-0">{props.headerTitle}</h6>
         <div className="icons-group">
-          <FiChevronLeft size={30} onClick={() => previous()} />
-          <FiChevronRight size={30} onClick={() => next()} />
+          <FiChevronUp size={30} onClick={() => previous()} />
+          <FiChevronDown size={30} onClick={() => next()} />
         </div>
       </div>
       <Divider />
@@ -120,6 +126,8 @@ const StyledContent = styled.div`
   }
   .icons-group {
     color: #838383;
+    display: flex;
+    flex-direction: column;
   }
   .icons-group svg:nth-child(1):hover,
   svg:nth-child(2):hover {

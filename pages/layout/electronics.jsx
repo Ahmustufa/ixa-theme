@@ -65,19 +65,19 @@ const Fashion2 = () => {
       <div className="col-11 m-auto">
         <Row gutter={[32, 0]}>
           <Col xs={24} sm={24} md={12} lg={8} xl={6}>
-            <ProductVerticalCarousel data={productStyle1} />
+            <ProductVerticalCarousel headerTitle="NEW PRODUCTS" data={productStyle1} />
           </Col>
 
           <Col xs={24} sm={24} md={12} lg={8} xl={6}>
-            <ProductVerticalCarousel data={productStyle2} />
+            <ProductVerticalCarousel headerTitle="FEATURE PRODUCT" data={productStyle2} />
           </Col>
 
           <Col xs={24} sm={24} md={12} lg={8} xl={6}>
-            <ProductVerticalCarousel data={productStyle3} />
+            <ProductVerticalCarousel headerTitle="BEST SELLER" data={productStyle3} />
           </Col>
 
           <Col xs={24} sm={24} md={12} lg={8} xl={6}>
-            <ProductVerticalCarousel data={productStyle4} />
+            <ProductVerticalCarousel headerTitle="ON SELL" data={productStyle4} />
           </Col>
         </Row>
       </div>

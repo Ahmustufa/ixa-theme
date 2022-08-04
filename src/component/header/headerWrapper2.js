@@ -3,6 +3,7 @@ import Link from "next/link";
 import router from "next/router";
 import { Row, Col, Input, Dropdown, Menu } from "antd";
 import { InputWrapper } from "../inputs";
+import { menuItems } from "./menuItems";
 /**
  * Icons
  */
@@ -112,7 +113,7 @@ const HeaderWrapper2 = () => {
           zIndex: 399,
         }}
       >
-        {header.map((menu) => {
+        {menuItems.map((menu) => {
           if (menu.submenu) {
             return (
               <Dropdown
@@ -185,74 +186,3 @@ const HeaderWrapper2 = () => {
 };
 
 export default HeaderWrapper2;
-
-const header = [
-  {
-    title: "home",
-    submenu: [
-      { title: "Clothing", link: "/layout/clothing" },
-      { title: "Grocery", link: "/" },
-      { title: "Electronics", link: "/layout/electronics" },
-    ],
-    link: "/",
-  },
-  {
-    title: "shop",
-    submenu: [
-      { title: "Left Sidebar", link: "/shop/left-sidebar" },
-      { title: "Right Sidebar", link: "/shop/right-sidebar" },
-      { title: "No Sidebar", link: "/shop/no-sidebar" },
-      { title: "Thee Grid", link: "/shop/three-grid" },
-      { title: "Six Grid", link: "/shop/six-grid" },
-      { title: "List View", link: "/shop/list-view" },
-    ],
-  },
-  {
-    title: "products",
-    link: "/products",
-    submenu: [
-      { title: "4-image", link: "/product/4-image" },
-      { title: "Sticky", link: "/product/sticky" },
-      { title: "Carousel", link: "/product/carousel" },
-      {
-        title: "Thumbnails",
-        submenu: [
-          { title: "Right thumbnail", link: "/product/right-thumbnail" },
-          { title: "Left thumbnail", link: "/product/left-thumbnail" },
-          { title: "Bottom thumbnail", link: "/product/bottom-thumbnail" },
-        ],
-      },
-    ],
-  },
-  {
-    title: "feature",
-    link: "/feature",
-    submenu: [
-      { title: "Product Box", link: "/feature/product-element/product-box" },
-      { title: "Multi slider", link: "/feature/product-element/multi-slider" },
-      { title: "Tab", link: "/feature/product-element/tab" },
-    ],
-  },
-  {
-    title: "pages",
-    link: "/pages",
-    submenu: [
-      {
-        title: "Compare",
-        submenu: [
-          { title: "Compare", link: "/page/compare" },
-          { title: "Compare 2", link: "/page/compare-2" },
-        ],
-      },
-    ],
-  },
-  {
-    title: "blog",
-    link: "/blog",
-    submenu: [
-      { title: "Blog left sidebar", link: "/blog/blog-left-sidebar" },
-      { title: "Blog right sidebar", link: "/blog/blog-right-sidebar" },
-      { title: "No sidebar", link: "/blog/no-sidebar" },
-    ],
-  },
-];
