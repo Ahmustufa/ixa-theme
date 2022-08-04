@@ -10,7 +10,7 @@ const Title = () => {
   return (
     <>
       <Breadcrumb
-        style={{ marginTop: 100 }}
+        style={{ margin: "20px 0px" }}
         title="ELEMENTS"
         link="HOME / ELEMENTS / TITLE"
       />
