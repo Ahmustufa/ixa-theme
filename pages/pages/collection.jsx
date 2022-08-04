@@ -113,7 +113,7 @@ const CollectionPage = () => {
       />
       <Row gutter={[40, 80]} className="main-div">
         {cardData.map((data, index) => (
-          <Col span={6}>
+          <Col key={index} span={6}>
             <div className="card-div">
               <div className="image-container">
                 <img width="100%" src={data.image} />

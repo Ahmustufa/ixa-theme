@@ -25,7 +25,7 @@ export const menuItems = [
     submenu: [
       { title: "4-image", link: "/product/4-image" },
       { title: "Sticky", link: "/product/sticky" },
-      { title: "Carousel", link: "/product/carousel" },
+      // { title: "Carousel", link: "/product/carousel" },
       {
         title: "Thumbnails",
         submenu: [
