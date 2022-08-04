@@ -8,6 +8,10 @@
     "start": "next start -p 3100",
     "lint": "next lint"
   },
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=14.0.0"
+  },
   "dependencies": {
     "antd": "^4.16.12",
     "axios": "^0.21.4",
