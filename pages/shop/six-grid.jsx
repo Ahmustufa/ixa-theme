@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Row, Col } from "antd";
 import { useSelector } from "react-redux";
 import Breadcrumb from "../../src/component/breadcrumb";
@@ -7,6 +8,7 @@ import SortBar from "../../src/component/sortItems";
 
 const ShopSixGrid = (props) => {
   const { items } = useSelector((state) => state.products);
+  const [gridColumn, setGridColumn] = useState(6);
   return (
     <>
       <Breadcrumb title="SHOP" link="HOME / SHOP" className="my-5" />
@@ -27,9 +29,9 @@ const ShopSixGrid = (props) => {
           versions of Lorem Ipsum.`}
         </p>
 
-        <SortBar className="my-5" />
+        <SortBar className="my-5" setGridColumn={setGridColumn} />
 
-        <ProductListing products={items} grid={6} />
+        <ProductListing products={items} grid={gridColumn} />
       </div>
     </>
   );

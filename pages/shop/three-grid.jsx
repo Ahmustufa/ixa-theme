@@ -1,4 +1,5 @@
 import { Row, Col } from "antd";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import Breadcrumb from "src/component/breadcrumb";
 import ProductListing from "src/component/productListing";
@@ -6,6 +7,8 @@ import SortBar from "src/component/sortItems";
 
 const ShopThreeGrid = (props) => {
   const { items } = useSelector((state) => state.products);
+  const [gridColumn, setGridColumn] = useState(3);
+
   return (
     <>
       <Breadcrumb title="SHOP" link="HOME / SHOP" className="my-5" />
@@ -26,8 +29,8 @@ const ShopThreeGrid = (props) => {
           recently with desktop publishing software like Aldus PageMaker including
           versions of Lorem Ipsum.`}
         </p>
-        <SortBar className="my-5" />
-        <ProductListing products={items} />
+        <SortBar className="my-5" setGridColumn={setGridColumn} />
+        <ProductListing products={items} grid={gridColumn} />
       </div>
     </>
   );

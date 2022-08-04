@@ -14,7 +14,7 @@ import { CgMenuGridR, CgLoadbar } from "react-icons/cg";
 import { AiOutlineBars } from "react-icons/ai";
 
 const SortBar = (props) => {
-  const { className, style } = props;
+  const { className, style, setGridColumn } = props;
   return (
     <StyledDiv className={className} style={style}>
       <Row className="main-div">
@@ -32,25 +32,25 @@ const SortBar = (props) => {
             </div>
 
             <div className="d-flex">
-              <div className="d-flex mx-1" role="button">
+              <div className="d-flex mx-1" role="button" onClick={() => setGridColumn(2)}>
                 {[1, 2].map((index) => (
                   <div key={index} className="grid-count"></div>
                 ))}
               </div>
 
-              <div className="d-flex mx-1" role="button">
+              <div className="d-flex mx-1" role="button" onClick={() => setGridColumn(3)}>
                 {[1, 2, 3].map((index) => (
                   <div key={index} className="grid-count"></div>
                 ))}
               </div>
 
-              <div className="d-flex mx-1" role="button">
+              <div className="d-flex mx-1" role="button" onClick={() => setGridColumn(4)}>
                 {[1, 2, 3, 4].map((index) => (
                   <div key={index} className="grid-count"></div>
                 ))}
               </div>
 
-              <div className="d-flex mx-1" role="button">
+              <div className="d-flex mx-1" role="button" onClick={() => setGridColumn(6)}>
                 {[1, 2, 3, 4, 5, 6].map((index) => (
                   <div key={index} className="grid-count"></div>
                 ))}
@@ -82,6 +82,11 @@ const SortBar = (props) => {
     </StyledDiv>
   );
 };
+
+SortBar.defaultProps = {
+  setGridColumn: () => {},
+};
+
 export default SortBar;
 
 const StyledDiv = styled.div`
