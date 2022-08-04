@@ -401,16 +401,14 @@ const StyledPage = styled.div`
 `;
 
 export async function getServerSideProps(context) {
-  // try{
-
-  // }catch(err){
-  //   return{
-
-  //   }
-  // }
   const productDetails = products.find((item) => item._id == context.params.product_id);
-
-  return {
-    props: { productDetails },
-  };
+  if (productDetails) {
+    return {
+      props: { productDetails },
+    };
+  } else {
+    return {
+      notFound: true,
+    };
+  }
 }
