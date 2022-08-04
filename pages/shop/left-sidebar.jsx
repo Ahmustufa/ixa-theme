@@ -18,11 +18,7 @@ const ShopLeftSidebar = (props) => {
           </Col>
 
           <Col xs={24} sm={24} md={24} lg={18}>
-            <img
-              src="https://multikart-react.vercel.app/_next/static/images/2-beb8795ec9decb581e91c6b47f6882ec.jpg"
-              width="100%"
-              className="mb-3"
-            />
+            <img src="/images/shop_card_1.png" width="100%" className="mb-3" />
             <div style={{ fontSize: 20 }}>Fashion</div>
             <div style={{ fontWeight: 600 }}>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
