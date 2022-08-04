@@ -49,7 +49,7 @@ const Category1 = (props) => {
     slidesToScroll: 1,
   };
   return (
-    <StyledDiv style={{ width: "100%", padding: "5% 0" }}>
+    <StyledDiv className="container-fluid" style={{ width: "100%", padding: "5% 0" }}>
       <Slider {...settings}>
         {props.insideData.map((data, index) => (
           <div className="main-div">

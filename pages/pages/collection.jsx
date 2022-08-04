@@ -8,6 +8,7 @@ const StyledDiv = styled.div`
     padding: 5%;
     .card-div {
       text-align: center;
+      margin: 18px;
 
       .image-container {
         position: relative;
@@ -17,7 +18,6 @@ const StyledDiv = styled.div`
           transition: 0.5s ease;
           transform: scale(1);
           display: block;
-          /* position: absolute; */
         }
       }
       h3 {
@@ -111,24 +111,26 @@ const CollectionPage = () => {
         title="ELEMENTS"
         link="HOME / ELEMENTS / COLLECTION"
       />
-      <Row gutter={[40, 80]} className="main-div">
-        {cardData.map((data, index) => (
-          <Col span={6}>
-            <div className="card-div">
-              <div className="image-container">
-                <img width="100%" src={data.image} />
-              </div>
-              <p style={{ marginTop: 12 }}>({data.stock})</p>
-              <h3>{data.title}</h3>
-              <p>{data.description}</p>
+      <div className="w-100">
+        <Row className="main-div">
+          {cardData.map((data, index) => (
+            <Col span={6}>
+              <div className="card-div">
+                <div className="image-container">
+                  <img width="100%" src={data.image} />
+                </div>
+                <p style={{ marginTop: 12 }}>({data.stock})</p>
+                <h3>{data.title}</h3>
+                <p>{data.description}</p>
 
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <ButtonWrapper style={{ width: 180 }}>Shop Now</ButtonWrapper>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <ButtonWrapper style={{ width: 180 }}>Shop Now</ButtonWrapper>
+                </div>
               </div>
-            </div>
-          </Col>
-        ))}
-      </Row>
+            </Col>
+          ))}
+        </Row>
+      </div>
     </StyledDiv>
   );
 };

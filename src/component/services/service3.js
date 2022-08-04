@@ -19,7 +19,7 @@ const StyledDiv = styled.div`
       justify-content: center;
       .icons {
         font-size: 50px;
-        color: #fa869b;
+        color: #6859a6;
         margin-right: 16px;
         transition: all 0.3s ease;
       }
@@ -39,7 +39,7 @@ const StyledDiv = styled.div`
       &:hover {
         .text {
           h5 {
-            color: #fa869b;
+            color: #6859a6;
             transition: 0.2s ease;
           }
         }
