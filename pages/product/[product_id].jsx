@@ -402,9 +402,13 @@ const StyledPage = styled.div`
 
 export async function getServerSideProps(context) {
   const productDetails = products.find((item) => item._id == context.params.product_id);
-  console.log("productDetails", productDetails);
-
-  return {
-    props: { productDetails },
-  };
+  if (productDetails) {
+    return {
+      props: { productDetails },
+    };
+  } else {
+    return {
+      notFound: true,
+    };
+  }
 }

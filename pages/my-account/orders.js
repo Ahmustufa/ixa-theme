@@ -1,25 +1,11 @@
-import { Row, Col, message } from "antd";
+import { Row, Col } from "antd";
 import styled from "styled-components";
 import AccountSidebar from "../../src/component/sidebar/accountSidebar";
-import { Queries, useFetch, errorHandler } from "../../src/api/config";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useState } from "react";
 import moment from "moment";
 
 const Orders = () => {
-  const { data: userData } = useSelector((state) => state.user);
   const [myOrders, setMyOrders] = useState([]);
-  const [getOrdersApi, getOrderLoading] = useFetch(Queries.getMyOrders);
-
-  useEffect(() => {
-    if (typeof window != undefined) {
-      getOrdersApi(userData._id)
-        .then(({ data }) => {
-          setMyOrders(data);
-        })
-        .catch((err) => message.error(errorHandler(err)));
-    }
-  }, []);
 
   return (
     <StyledPage style={{ padding: 80 }}>
@@ -165,18 +151,3 @@ const StyledPage = styled.div`
     margin-bottom: 16px;
   }
 `;
-
-// export async function getServerSideProps(context) {
-//   try {
-//     var { data } = await axios.get(
-//       `http://64.227.31.159:1337/orders/userId/${userId}`
-//     );
-//     return {
-//       props: { data },
-//     };
-//   } catch (err) {
-//     return {
-//       notFound: true,
-//     };
-//   }
-// }
