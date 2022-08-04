@@ -12,7 +12,6 @@ import { Provider } from "react-redux";
 import { store, persistor } from "../src/redux/ConfigStore";
 import { PersistGate } from "redux-persist/integration/react";
 import Router from "next/router";
-import PageChange from "../src/component/PageChange";
 import ReactDOM from "react-dom";
 // import CookieBanner from "../src/component/cookieBanner";
 import { useEffect } from "react";
@@ -20,10 +19,12 @@ import * as ga from "react-ga";
 import { useRouter } from "next/router";
 import AuthModal from "../src/component/modals/authModal";
 import SideCart from "../src/component/sidebar/sideCart";
+// import PageChange from "../src/component/PageChange";
+import PageLoad2 from "src/component/loader/pageLoad2";
 
 Router.events.on("routeChangeStart", (url) => {
   document.body.classList.add("body-page-transition");
-  ReactDOM.render(<PageChange path={url} />, document.getElementById("page-transition"));
+  ReactDOM.render(<PageLoad2 path={url} />, document.getElementById("page-transition"));
 });
 
 Router.events.on("routeChangeComplete", () => {
