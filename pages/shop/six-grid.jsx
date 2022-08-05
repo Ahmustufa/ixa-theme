@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Row, Col } from "antd";
 import { useSelector } from "react-redux";
 import Breadcrumb from "../../src/component/breadcrumb";
@@ -7,15 +8,12 @@ import SortBar from "../../src/component/sortItems";
 
 const ShopSixGrid = (props) => {
   const { items } = useSelector((state) => state.products);
+  const [gridColumn, setGridColumn] = useState(6);
   return (
     <>
       <Breadcrumb title="SHOP" link="HOME / SHOP" className="my-5" />
       <div className="col-11 mx-auto mb-5">
-        <img
-          src="https://multikart-react.vercel.app/_next/static/images/2-beb8795ec9decb581e91c6b47f6882ec.jpg"
-          width="100%"
-          className="mb-3"
-        />
+        <img src="/images/shop_card_4.png" width="100%" className="mb-3" />
         <div style={{ fontSize: 20 }}>Fashion</div>
         <div style={{ fontWeight: 600 }}>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -31,9 +29,9 @@ const ShopSixGrid = (props) => {
           versions of Lorem Ipsum.`}
         </p>
 
-        <SortBar className="my-5" />
+        <SortBar className="my-5" setGridColumn={setGridColumn} />
 
-        <ProductListing products={items} grid={6} />
+        <ProductListing products={items} grid={gridColumn} />
       </div>
     </>
   );

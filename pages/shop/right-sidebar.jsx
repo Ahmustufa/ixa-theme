@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Row, Col } from "antd";
 import { useSelector } from "react-redux";
 import Breadcrumb from "../../src/component/breadcrumb";
@@ -7,6 +8,8 @@ import SortBar from "../../src/component/sortItems";
 
 const ShopRightSidebar = (props) => {
   const { items } = useSelector((state) => state.products);
+  const [gridColumn, setGridColumn] = useState(3);
+
   return (
     <>
       <Breadcrumb title="SHOP" link="HOME / SHOP" className="my-5" />
@@ -14,11 +17,7 @@ const ShopRightSidebar = (props) => {
       <div className="col-11 mx-auto mb-5">
         <Row gutter={[32, 0]}>
           <Col xs={24} sm={24} md={24} lg={18}>
-            <img
-              src="https://multikart-react.vercel.app/_next/static/images/2-beb8795ec9decb581e91c6b47f6882ec.jpg"
-              width="100%"
-              className="mb-3"
-            />
+            <img src="/images/shop_card_3.png" width="100%" className="mb-3" />
             <div style={{ fontSize: 20 }}>Fashion</div>
             <div style={{ fontWeight: 600 }}>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -34,9 +33,9 @@ const ShopRightSidebar = (props) => {
               like Aldus PageMaker including versions of Lorem Ipsum.`}
             </p>
 
-            <SortBar className="my-5" />
+            <SortBar className="my-5" setGridColumn={setGridColumn} />
 
-            <ProductListing products={items} />
+            <ProductListing products={items} grid={gridColumn} />
           </Col>
           <Col xs={0} sm={0} md={0} lg={6}>
             <ShopSidebar />

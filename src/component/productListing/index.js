@@ -3,10 +3,13 @@ import ProductCard from "../cards/productCardWithIcons";
 
 const ProductListing = (props) => {
   const { columns, products, grid } = props;
+  const span = 24 / grid;
+  console.log("GRID", grid);
+  console.log("COLUMN SIZE", span);
   return (
     <Row gutter={[32, 32]}>
       {products.map((item, index) => (
-        <Col key={index} xs={24} sm={24} md={12} lg={11} xl={8} xxl={24 / grid}>
+        <Col key={index} xs={24} sm={24} md={12} lg={11} xl={span} xxl={span}>
           <ProductCard {...item} />
         </Col>
       ))}

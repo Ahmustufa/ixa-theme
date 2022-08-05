@@ -1,20 +1,12 @@
 import React, { useState } from "react";
-import { Drawer, Row, Col, Divider, message } from "antd";
+import { Drawer, Row, Col, Divider } from "antd";
 import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
 import { BiTrash } from "react-icons/bi";
 import Link from "next/link";
 import { PrimaryButton } from "../buttons";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  closeCart,
-  removeCartItem,
-  decreaseCartItemQuantity,
-  increaseCartItemQuantity,
-} from "../../redux/actions/cartActions";
-import { Mutations } from "../../api/mutations";
-import { useFetch } from "../../hooks/useFetch";
-import { errorHandler } from "../../helper/errorHandler";
+import { closeCart } from "../../redux/actions/cartActions";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 
@@ -27,42 +19,6 @@ const SideCart = (props) => {
     const subTotal = cart.reduce((accu, item) => (accu += item.quantity * item.price), 0);
     return subTotal.toLocaleString();
   };
-
-  // ========Remove cart============
-  const [deleteCart, deleteCartLoading] = useFetch(Mutations.deleteCartItem);
-  const removeCartItemFunc = async (item) => {
-    setLoadingState(item._id);
-    try {
-      const { data } = await deleteCart(item);
-      dispatch(removeCartItem(data));
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
-
-  // ========Update cart quantity increament============
-  const [updateInCart, updateInCartLoading] = useFetch(Mutations.updateCartItem);
-  const updateCartItemInceamentFunc = async (body, id) => {
-    try {
-      const { data } = await updateInCart(body, id);
-      dispatch(increaseCartItemQuantity(data));
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
-
-  // ========Update cart quantity decreament============
-  const [updateDecCart, updateDecCartLoading] = useFetch(Mutations.updateCartItem);
-  const updateCartItemDecreamentFunc = async (body, id) => {
-    try {
-      const { data } = await updateDecCart(body, id);
-      dispatch(decreaseCartItemQuantity(data));
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
-
-  const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
   return (
     <StyledDrawer
@@ -106,35 +62,14 @@ const SideCart = (props) => {
                     <Col xs={12} lg={12}>
                       <div className="quantity-container">
                         <div
-                          onClick={() => {
-                            if (item.quantity > 1) {
-                              updateCartItemDecreamentFunc(
-                                {
-                                  quantity: item.quantity - 1,
-                                  inventory: item.inventory._id,
-                                },
-                                item._id
-                              );
-                              // dispatch(decreaseCartItemQuantity(item));
-                            }
-                          }}
+                          // onClick={() => dispatch(decreaseCartItemQuantity(data))}
                           className="decrease-button"
                         >
                           {`−`}
                         </div>
                         <div className="quantity">{item.quantity}</div>
                         <div
-                          onClick={
-                            () =>
-                              updateCartItemInceamentFunc(
-                                {
-                                  quantity: item.quantity + 1,
-                                  inventory: item.inventory._id,
-                                },
-                                item._id
-                              )
-                            // dispatch(increaseCartItemQuantity(item))
-                          }
+                          // onClick={() => dispatch(increaseCartItemQuantity(data))}
                           className="increase-button"
                         >
                           +
@@ -149,13 +84,10 @@ const SideCart = (props) => {
 
                 <Col span={3}>
                   {loadingState == item._id ? (
-                    <Spin indicator={antIcon} />
+                    <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} />} />
                   ) : (
                     <BiTrash
-                      onClick={
-                        () => removeCartItemFunc(item)
-                        // dispatch(removeCartItem(item))
-                      }
+                      // onClick={() => dispatch(removeCartItem(data))}
                       style={{ cursor: "pointer", color: "#54595f", fontSize: 16 }}
                     />
                   )}
