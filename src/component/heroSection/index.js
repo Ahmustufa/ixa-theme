@@ -11,7 +11,7 @@ const carouselData = [
   },
   {
     text: "NEW TREND",
-    title: "THE.BASICS",
+    title: "THE BASICS",
     subtitle: "An exclusive selction of season's trends.",
     backgroundImage: ["/images/slide_2.jpg", "/images/slide_2.jpg"],
   },
@@ -20,9 +20,11 @@ const carouselData = [
     title: "Bellemount '20",
     subtitle: (
       <div>
-        Rapidiously redifine dynamic niche markets before plug-and-play collaboration and
-        idea-sharing
-        <br /> Continually utlilize focused convergence via top-line outsourcing
+        Rapidiously redifine dynamic niche markets before
+        <br />
+        plug-and-play collaboration and idea-sharing Continually
+        <br />
+        utlilize focused convergence via top-line outsourcing
       </div>
     ),
     backgroundImage: ["/images/slide_3.jpg", "/images/slide_3.jpg"],
@@ -128,7 +130,7 @@ const StyledDiv = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    zindex: 140;
+    z-index: 140;
     animation: ease-animation 12s infinite;
   }
 
@@ -152,14 +154,19 @@ const StyledDiv = styled.div`
     font-weight: 600;
   }
   .title {
-    font-size: 76px;
+    font-size: 100px;
     font-weight: 700;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: currentColor;
+    -webkit-text-stroke-width: 2px;
+    color: #fff;
+    line-height: 0.9em;
+    letter-spacing: -2.7px;
   }
   .subtitle {
     color: #fff;
     font-size: 18px;
-    line-height: 24px;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   .social-icons {
