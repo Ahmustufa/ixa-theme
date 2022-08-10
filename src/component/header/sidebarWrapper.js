@@ -3,7 +3,8 @@ import { Drawer, Collapse, Row, Col } from "antd";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { BiChevronDown } from "react-icons/bi";
+import { FiChevronDown } from "react-icons/fi";
+import { menuItems } from "./menuItems";
 
 const { Panel } = Collapse;
 
@@ -17,11 +18,11 @@ const SidebarWrapper = (props) => {
       visible={visible}
       closable={false}
       drawerStyle={{ backgroundColor: "#fff", padding: 0, margin: 0 }}
-      bodyStyle={{ padding: 40 }}
-      width={"100%"}
+      bodyStyle={{ padding: 0 }}
+      width={300}
     >
       <StyledContent>
-        <div className="d-flex align-items-center justify-content-between">
+        <div className="d-flex align-items-center justify-content-between px-4 pt-5">
           <img
             alt="Polkadotsretail"
             src="/images/app-logo-dark.svg"
@@ -35,79 +36,66 @@ const SidebarWrapper = (props) => {
         </div>
 
         <div className="side-menu">
-          <div className="side-menu-item">
-            <Link href="/">HOME</Link>
-          </div>
-
-          <Collapse ghost>
-            <Panel showArrow={false} header={<div className="side-menu-item">SHOP</div>}>
-              <Row justify="space-between">
-                <Col xs={24} sm={24} md={7} lg={7}>
-                  <div className="sub-menu-item">
-                    <Link href="/">
-                      <a>New arrivals</a>
-                    </Link>
+          <Collapse ghost className="main-menu">
+            {menuItems.map((menu, i) => {
+              return (
+                <Panel
+                  key={i}
+                  showArrow={false}
+                  className="sidebar-item-wrapper"
+                  header={
+                    <div className={`sidebar-item`}>
+                      {menu.title}
+                      <FiChevronDown className="ml-3" style={{ fontSize: 20 }} />
+                    </div>
+                  }
+                >
+                  <div>
+                    {menu.submenu.map((subMenuItem, index) => {
+                      if (subMenuItem.submenu) {
+                        return (
+                          <Collapse ghost>
+                            <Panel
+                              key={index}
+                              showArrow={false}
+                              header={
+                                <div className={`navigation-link`}>
+                                  {subMenuItem.title}
+                                  <FiChevronDown
+                                    className="ml-3"
+                                    style={{ fontSize: 16 }}
+                                  />
+                                </div>
+                              }
+                            >
+                              {subMenuItem.submenu.map((item, index) => (
+                                <div
+                                  role="button"
+                                  key={`sub-menu-${index}`}
+                                  style={{ minWidth: 240 }}
+                                >
+                                  <Link href={item.link || ""}>
+                                    <a className="navigation-link">{item.title}</a>
+                                  </Link>
+                                </div>
+                              ))}
+                            </Panel>
+                          </Collapse>
+                        );
+                      } else {
+                        return (
+                          <div key={index}>
+                            <Link href={subMenuItem.link || ""}>
+                              <a className="navigation-link">{subMenuItem.title}</a>
+                            </Link>
+                          </div>
+                        );
+                      }
+                    })}
                   </div>
-                  <div className="sub-menu-item">
-                    <Link href="/">
-                      <a>Sales</a>
-                    </Link>
-                  </div>
-                </Col>
-
-                <Col xs={24} sm={24} md={7} lg={7}>
-                  <div className="sub-menu-item">
-                    <Link href="/">
-                      <a>Accessories</a>
-                    </Link>
-                  </div>
-                  <div className="sub-menu-item">
-                    <Link href="/">
-                      <a>Dressed</a>
-                    </Link>
-                  </div>
-                  <div className="sub-menu-item">
-                    <Link href="/">
-                      <a>Jackets</a>
-                    </Link>
-                  </div>
-                  <div className="sub-menu-item">
-                    <Link href="/">
-                      <a>Jeans</a>
-                    </Link>
-                  </div>
-                  <div className="sub-menu-item">
-                    <Link href="/">
-                      <a>Jumpsuits</a>
-                    </Link>
-                  </div>
-                  <div className="sub-menu-item">
-                    <Link href="/">
-                      <a>Outwear</a>
-                    </Link>
-                  </div>
-                  <div className="sub-menu-item">
-                    <Link href="/">
-                      <a>Pants</a>
-                    </Link>
-                  </div>
-                  <div className="sub-menu-item">
-                    <Link href="/">
-                      <a>Skirts</a>
-                    </Link>
-                  </div>
-                  <div className="sub-menu-item">
-                    <Link href="/">
-                      <a>Top</a>
-                    </Link>
-                  </div>
-                </Col>
-
-                <Col xs={24} sm={24} md={10} lg={10}>
-                  <img src="/images/model.jpg" className="img-fluid" />
-                </Col>
-              </Row>
-            </Panel>
+                </Panel>
+              );
+            })}
           </Collapse>
         </div>
       </StyledContent>
@@ -122,42 +110,31 @@ const StyledContent = styled.div`
     padding: 0;
     margin-top: 48px;
   }
+  .ant-collapse-header,
+  .ant-collapse-header-text {
+    display: block;
+    width: 100%;
+    padding: 0 !important;
+  }
 
-  .side-menu-item {
-    padding: 24px 0;
-    border-bottom: 1px solid #e9e9e9;
+  .sidebar-item {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 24px;
+  }
+
+  .navigation-link {
+    margin-left: 24px;
+  }
+
+  .sub-menu-1 {
+  }
+
+  .sidebar-item-wrapper {
+    border-top: 1px solid #ececec;
     :last-child {
-      border: none;
+      border-bottom: 1px solid #ececec;
     }
-  }
-  .sub-menu-item {
-    margin-bottom: 12px;
-
-    a {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-      position: relative;
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 1px;
-        width: 0%;
-        background-color: #000;
-        transition: 0.3s;
-      }
-
-      &:hover {
-        &::after {
-          width: 100%;
-        }
-      }
-    }
-  }
-  .ant-collapse-header {
-    padding: 0;
   }
 `;

@@ -21,10 +21,14 @@ import {
   FaYoutube,
   FaInstagram,
 } from "react-icons/fa";
+import { IoMenuOutline } from "react-icons/io5";
+import SidebarWrapper from "./sidebarWrapper";
 
 const HeaderWrapper2 = () => {
+  const [sidebar, toggleSidebar] = useState(false);
   return (
     <>
+      <SidebarWrapper visible={sidebar} onClose={() => toggleSidebar(false)} />
       <div className="top-bar">
         <div
           className="d-flex align-items-center"
@@ -53,8 +57,14 @@ const HeaderWrapper2 = () => {
         </div>
       </div>
 
-      <div className="container header-wrapper-2">
+      <div className="col-11 m-auto header-wrapper-2">
         <Row justify="space-between" align="middle">
+          <Col xs={4} sm={4} md={3} lg={1} xl={1}>
+            <IoMenuOutline
+              style={{ fontSize: 32, cursor: "pointer" }}
+              onClick={() => toggleSidebar(true)}
+            />
+          </Col>
           <Col span={3}>
             <img src="/images/app-logo-dark.svg" className="img-fluid site-logo" />
           </Col>
