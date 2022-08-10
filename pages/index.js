@@ -9,7 +9,7 @@ import styled from "styled-components";
 import FullBgImageSection from "../src/component/heroSection/FullBgImageSection";
 import { brownHair } from "../images";
 import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
-import SubscriptionModal from "../src/component/modals/subscriptionModal";
+import SubscriptionModal from "../src/component/modals/subscriptionModal1";
 import SortItems from "../src/component/sortItems";
 import Heading from "../src/component/headings";
 import BlogCarousel from "../src/component/productListing/blogCarousel";
@@ -44,12 +44,12 @@ const Home = () => {
 
         <FullBgImageSection bgImage={brownHair} />
 
-        <div className="" style={{ padding: 80 }}>
+        <div className="section-wrapper">
           <Row>
-            <Col lg={6}>
+            <Col lg={6} xs={24} sm={24}>
               <SidebarFiltration />
             </Col>
-            <Col lg={6}>
+            <Col lg={6} xs={24} sm={24}>
               <ProductVerticalCarousel headerTitle="NEW PRODUCTS" data={productStyle5} />
             </Col>
             <Col lg={12}></Col>
