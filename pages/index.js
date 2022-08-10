@@ -44,12 +44,12 @@ const Home = () => {
 
         <FullBgImageSection bgImage={brownHair} />
 
-        <div className="" style={{ padding: 80 }}>
+        <div className="section-wrapper">
           <Row>
-            <Col lg={6}>
+            <Col lg={6} xs={24} sm={24}>
               <SidebarFiltration />
             </Col>
-            <Col lg={6}>
+            <Col lg={6} xs={24} sm={24}>
               <ProductVerticalCarousel headerTitle="NEW PRODUCTS" data={productStyle5} />
             </Col>
             <Col lg={12}></Col>
