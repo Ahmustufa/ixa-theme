@@ -4,14 +4,14 @@ import router from "next/router";
 import { Row, Col, Input, Dropdown, Menu } from "antd";
 import { InputWrapper } from "../inputs";
 import { menuItems } from "./menuItems";
+import SidebarWrapper from "./sidebarWrapper";
 /**
  * Icons
  */
 import { SearchOutlined } from "@ant-design/icons";
 import { BiHeadphone } from "react-icons/bi";
 import { AiOutlineShoppingCart, AiOutlineUser, AiFillHome } from "react-icons/ai";
-import { BsTelephoneFill, BsSuitHeartFill } from "react-icons/bs";
-import { RiUser3Fill } from "react-icons/ri";
+import { BsTelephoneFill, BsSuitHeartFill, BsSearch } from "react-icons/bs";
 import { FiChevronDown } from "react-icons/fi";
 import {
   FaFacebookF,
@@ -22,22 +22,23 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { IoMenuOutline } from "react-icons/io5";
-import SidebarWrapper from "./sidebarWrapper";
 
 const HeaderWrapper2 = () => {
   const [sidebar, toggleSidebar] = useState(false);
   return (
     <>
       <SidebarWrapper visible={sidebar} onClose={() => toggleSidebar(false)} />
-      <div className="top-bar">
-        <div
-          className="d-flex align-items-center"
-          style={{ color: "#727272", fontSize: 13 }}
-        >
-          <div>Welcome to our store</div>
-          <BsTelephoneFill style={{ color: "#6859a6" }} className="ml-4 mr-2" />
-          <div>Call Us: 123 - 456 - 7890</div>
-        </div>
+      <Row className="top-bar">
+        <Col xs={0} sm={0} md={12}>
+          <div
+            className="d-flex align-items-center"
+            style={{ color: "#727272", fontSize: 13 }}
+          >
+            <div>Welcome to our store</div>
+            <BsTelephoneFill style={{ color: "#6859a6" }} className="ml-4 mr-2" />
+            <div>Call Us: 123 - 456 - 7890</div>
+          </div>
+        </Col>
 
         {/* <div className="d-flex align-items-center" style={{ color: "#727272" }}>
           <div className="d-flex align-items-center" role="button">
@@ -47,29 +48,30 @@ const HeaderWrapper2 = () => {
             <RiUser3Fill style={{ color: "#6859a6", marginRight: 6 }} /> My account
           </div>
         </div> */}
-        <div className="top-bar-icons">
+        <Col className="top-bar-icons">
           <FaFacebookF />
           <FaTwitter />
           <FaGooglePlusG />
           <FaPinterestP />
           <FaYoutube />
           <FaInstagram />
-        </div>
-      </div>
+        </Col>
+      </Row>
 
       <div className="col-11 m-auto header-wrapper-2">
-        <Row justify="space-between" align="middle">
-          <Col xs={4} sm={4} md={3} lg={1} xl={1}>
+        <Row justify="space-around" align="middle">
+          <Col xs={3} sm={3} md={1} lg={1} xl={1}>
             <IoMenuOutline
               style={{ fontSize: 32, cursor: "pointer" }}
               onClick={() => toggleSidebar(true)}
             />
           </Col>
-          <Col span={3}>
+
+          <Col xs={14} sm={14} md={10} lg={10} xl={10}>
             <img src="/images/app-logo-dark.svg" className="img-fluid site-logo" />
           </Col>
 
-          <Col span={10}>
+          <Col xs={0} sm={0} md={10} lg={10} xl={10}>
             <InputWrapper
               placeholder="Enter keywords to search..."
               size="large"
@@ -79,7 +81,7 @@ const HeaderWrapper2 = () => {
             />
           </Col>
 
-          <Col>
+          <Col xs={0} sm={0} md={2}>
             <div className="icon-box">
               <BiHeadphone className="icon" />
 
@@ -90,7 +92,7 @@ const HeaderWrapper2 = () => {
             </div>
           </Col>
 
-          <Col>
+          <Col xs={0} sm={0} md={2}>
             <div className="icon-box" role="button">
               <AiOutlineUser className="icon" />
 
@@ -101,17 +103,23 @@ const HeaderWrapper2 = () => {
             </div>
           </Col>
 
-          <Col>
+          <Col xs={0} sm={0} md={2}>
             <div className="icon-box" role="button">
               <AiOutlineShoppingCart className="icon" />
               <p className="title">Cart</p>
+            </div>
+          </Col>
+
+          <Col xs={3} sm={3}>
+            <div className="text-right">
+              <BsSearch style={{ fontSize: 24, cursor: "pointer" }} />
             </div>
           </Col>
         </Row>
       </div>
 
       <menu
-        className="menu-list d-none d-lg-flex justify-content-center align-items-center mb-0"
+        className="menu-list d-none d-lg-flex justify-content-center align-items-center m-0"
         style={{
           backgroundColor: "#fff",
           height: 64,
