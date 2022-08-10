@@ -18,8 +18,7 @@ const SidebarWrapper = (props) => {
     <Drawer
       title=""
       placement="left"
-      visible={true}
-      // visible={visible}
+      visible={visible}
       closable={false}
       drawerStyle={{ backgroundColor: "#fff", padding: 0, margin: 0 }}
       bodyStyle={{ padding: 0 }}
