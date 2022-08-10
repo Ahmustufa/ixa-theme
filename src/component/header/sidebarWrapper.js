@@ -1,10 +1,13 @@
 import styled from "styled-components";
-import { Drawer, Collapse, Row, Col } from "antd";
+import { Drawer, Collapse, Row, Col, Divider } from "antd";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { FiChevronDown } from "react-icons/fi";
 import { menuItems } from "./menuItems";
+import { InputWrapper } from "../inputs";
+import { BsSearch, BsSuitHeart } from "react-icons/bs";
+import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 
 const { Panel } = Collapse;
 
@@ -15,7 +18,8 @@ const SidebarWrapper = (props) => {
     <Drawer
       title=""
       placement="left"
-      visible={visible}
+      visible={true}
+      // visible={visible}
       closable={false}
       drawerStyle={{ backgroundColor: "#fff", padding: 0, margin: 0 }}
       bodyStyle={{ padding: 0 }}
@@ -33,6 +37,40 @@ const SidebarWrapper = (props) => {
             onClick={onClose}
             style={{ fontSize: 32, color: "#000" }}
           />
+        </div>
+
+        <div className="col-11 mx-auto mt-4">
+          <InputWrapper
+            placeholder="Enter keywords to search..."
+            size="large"
+            addonAfter={<BsSearch />}
+            className="search-box"
+            style={{ outline: "none", borderRadius: 40 }}
+          />
+        </div>
+
+        <div className="d-flex justify-content-around  mt-3 py-2">
+          <div className="text-center" style={{ flex: "33%", color: "#727272" }}>
+            <BsSuitHeart style={{ fontSize: 20 }} />
+            <div>Wishlist</div>
+          </div>
+
+          <div
+            className="text-center"
+            style={{
+              flex: "33%",
+              borderRight: "1px solid #ececec",
+              borderLeft: "1px solid #ececec",
+            }}
+          >
+            <AiOutlineShoppingCart style={{ fontSize: 20, color: "#727272" }} />
+            <div>Cart</div>
+          </div>
+
+          <div className="text-center" style={{ flex: "33%" }}>
+            <AiOutlineUser style={{ fontSize: 20, color: "#727272" }} />
+            <div>Account</div>
+          </div>
         </div>
 
         <div className="side-menu">
