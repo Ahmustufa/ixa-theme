@@ -4,7 +4,7 @@ import router from "next/router";
 import { Row, Col, Input, Dropdown, Menu } from "antd";
 import { InputWrapper } from "../inputs";
 import { menuItems } from "./menuItems";
-import SidebarWrapper from "./sidebarWrapper";
+import MobileDrawer from "./mobileDrawer";
 /**
  * Icons
  */
@@ -27,7 +27,7 @@ const HeaderWrapper2 = () => {
   const [sidebar, toggleSidebar] = useState(false);
   return (
     <>
-      <SidebarWrapper visible={sidebar} onClose={() => toggleSidebar(false)} />
+      <MobileDrawer visible={sidebar} onClose={() => toggleSidebar(false)} />
       <Row className="top-bar">
         <Col xs={0} sm={0} md={12}>
           <div

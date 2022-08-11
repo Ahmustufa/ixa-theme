@@ -11,7 +11,7 @@ import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 
 const { Panel } = Collapse;
 
-const SidebarWrapper = (props) => {
+const MobileDrawer = (props) => {
   const { visible, onClose } = props;
   const router = useRouter();
 
@@ -156,7 +156,7 @@ const SidebarWrapper = (props) => {
   );
 };
 
-export default SidebarWrapper;
+export default MobileDrawer;
 
 const StyledContent = styled.div`
   .side-menu {
