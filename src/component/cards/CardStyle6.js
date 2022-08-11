@@ -51,7 +51,7 @@ const CardStyle6 = (props) => {
         <div className="price">
           {formatedPrice.format(price)}{" "}
           <small style={{ color: "#858585", textDecoration: "line-through" }}>
-            PKR {price + 100}
+            {price * 1.5}
           </small>
         </div>
       </div>
@@ -66,6 +66,8 @@ const StyledCard = styled.div`
   margin: auto;
   overflow: hidden;
   margin-bottom: 30px;
+  margin-left: 12px;
+  margin-right: 12px;
 
   .image-container {
     border: 1px solid #f2f2f2;
@@ -75,9 +77,10 @@ const StyledCard = styled.div`
     text-align: center;
     width: 100%;
     padding-top: 100%;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height: 320px;
   }
 
   .cart-actions {
@@ -90,6 +93,7 @@ const StyledCard = styled.div`
       justify-content: center;
       transform: translateY(0px);
       transition: all 0.3s ease;
+      cursor: pointer;
       :hover {
         color: #f5513c;
       }

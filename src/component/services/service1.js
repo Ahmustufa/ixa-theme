@@ -5,9 +5,9 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
 
 const StyledDiv = styled.div`
+  border-top: 2px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
   .main-row {
-    border-top: 2px solid #e4e4e4;
-    border-bottom: 1px solid #e4e4e4;
     padding: 5% 0px;
     min-height: 170px;
     align-items: center;
@@ -52,9 +52,9 @@ const StyledDiv = styled.div`
   }
 `;
 
-const Service1 = () => {
+const Service1 = (props) => {
   return (
-    <StyledDiv>
+    <StyledDiv style={props.style}>
       <Row className="main-row">
         <Col span={8} style={{ borderRight: "2px solid #e4e4e4" }}>
           <div className="main-div">

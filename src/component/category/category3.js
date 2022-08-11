@@ -137,8 +137,17 @@ const Category3 = (props) => {
           <div className="contain-block-1 even">
             <div>
               <h6>New Products</h6>
-              <h2>zipper bag</h2>
-              <ButtonWrapper>-80% off</ButtonWrapper>
+              <h2>Flamming Sneakers</h2>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: 8,
+                }}
+              >
+                <ButtonWrapper style={{ maxWidth: 170 }}>-80% off</ButtonWrapper>
+              </div>
               <h6>
                 <span>Shop now</span>
               </h6>
@@ -157,12 +166,21 @@ const Category3 = (props) => {
           </div>
         </Col>
 
-        <Col span={8}>
+        <Col span={8} style={{ borderTop: "1px solid #ffb9b3" }}>
           <div className="contain-block-2 even">
             <div>
               <h6>On sale</h6>
-              <h2>Tucker bag</h2>
-              <ButtonWrapper>-70% off</ButtonWrapper>
+              <h2>Purple Nike Sneakers</h2>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: 8,
+                }}
+              >
+                <ButtonWrapper style={{ maxWidth: 170 }}>-70% off</ButtonWrapper>
+              </div>
               <h6>
                 <span>Shop now</span>
               </h6>
@@ -185,8 +203,17 @@ const Category3 = (props) => {
           <div className="contain-block-2 even">
             <div>
               <h6>On sale</h6>
-              <h2>Gate bag</h2>
-              <ButtonWrapper>-60% off</ButtonWrapper>
+              <h2>Multi Color Sneakers</h2>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: 8,
+                }}
+              >
+                <ButtonWrapper style={{ maxWidth: 170 }}>-60% off</ButtonWrapper>
+              </div>
               <h6>
                 <span>Shop now</span>
               </h6>
