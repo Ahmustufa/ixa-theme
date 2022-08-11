@@ -67,7 +67,7 @@ const HeaderWrapper2 = () => {
             />
           </Col>
 
-          <Col xs={14} sm={14} md={10} lg={10} xl={10}>
+          <Col xs={14} sm={14} md={10} lg={3} xl={3}>
             <img src="/images/app-logo-dark.svg" className="img-fluid site-logo" />
           </Col>
 
@@ -110,7 +110,7 @@ const HeaderWrapper2 = () => {
             </div>
           </Col>
 
-          <Col xs={3} sm={3}>
+          <Col xs={3} sm={3} md={0}>
             <div className="text-right">
               <BsSearch style={{ fontSize: 24, cursor: "pointer" }} />
             </div>

@@ -14,22 +14,30 @@ const { Panel } = Collapse;
 const SidebarWrapper = (props) => {
   const { visible, onClose } = props;
   const router = useRouter();
+
+  const closeSidebar = () => {
+    setTimeout(() => {
+      onClose();
+    }, 200);
+  };
+
   return (
     <Drawer
       title=""
       placement="left"
       visible={visible}
       closable={false}
-      drawerStyle={{ backgroundColor: "#fff", padding: 0, margin: 0 }}
-      bodyStyle={{ padding: 0 }}
-      width={300}
+      drawerStyle={{ backgroundColor: "#fff", padding: 0, margin: 0, maxWidth: 576 }}
+      bodyStyle={{ padding: 0, maxWidth: 576 }}
+      style={{ maxWidth: 576 }}
+      width={"100%"}
     >
       <StyledContent>
-        <div className="d-flex align-items-center justify-content-between px-4 pt-5">
+        <div className="d-flex align-items-center justify-content-between p-4">
           <img
             alt="Polkadotsretail"
             src="/images/app-logo-dark.svg"
-            style={{ width: 160 }}
+            style={{ height: 32 }}
             className="app-logo"
           />
           <IoCloseCircleOutline
@@ -38,7 +46,7 @@ const SidebarWrapper = (props) => {
           />
         </div>
 
-        <div className="col-11 mx-auto mt-4">
+        <div className="col-11 mx-auto mb-4">
           <InputWrapper
             placeholder="Enter keywords to search..."
             size="large"
@@ -48,7 +56,10 @@ const SidebarWrapper = (props) => {
           />
         </div>
 
-        <div className="d-flex justify-content-around  mt-3 py-2">
+        <div
+          className="d-flex justify-content-around  mt-3 py-2"
+          style={{ borderTop: "1px solid #ececec" }}
+        >
           <div className="text-center" style={{ flex: "33%", color: "#727272" }}>
             <BsSuitHeart style={{ fontSize: 20 }} />
             <div>Wishlist</div>
@@ -60,14 +71,15 @@ const SidebarWrapper = (props) => {
               flex: "33%",
               borderRight: "1px solid #ececec",
               borderLeft: "1px solid #ececec",
+              color: "#727272",
             }}
           >
-            <AiOutlineShoppingCart style={{ fontSize: 20, color: "#727272" }} />
+            <AiOutlineShoppingCart style={{ fontSize: 20 }} />
             <div>Cart</div>
           </div>
 
-          <div className="text-center" style={{ flex: "33%" }}>
-            <AiOutlineUser style={{ fontSize: 20, color: "#727272" }} />
+          <div className="text-center" style={{ flex: "33%", color: "#727272" }}>
+            <AiOutlineUser style={{ fontSize: 20 }} />
             <div>Account</div>
           </div>
         </div>
@@ -96,7 +108,7 @@ const SidebarWrapper = (props) => {
                               key={index}
                               showArrow={false}
                               header={
-                                <div className={`navigation-link`}>
+                                <div className={`navigation-link`} onClick={closeSidebar}>
                                   {subMenuItem.title}
                                   <FiChevronDown
                                     className="ml-3"
@@ -112,7 +124,9 @@ const SidebarWrapper = (props) => {
                                   style={{ minWidth: 240 }}
                                 >
                                   <Link href={item.link || ""}>
-                                    <a className="navigation-link">{item.title}</a>
+                                    <a className="navigation-link" onClick={closeSidebar}>
+                                      {item.title}
+                                    </a>
                                   </Link>
                                 </div>
                               ))}
@@ -123,7 +137,9 @@ const SidebarWrapper = (props) => {
                         return (
                           <div key={index}>
                             <Link href={subMenuItem.link || ""}>
-                              <a className="navigation-link">{subMenuItem.title}</a>
+                              <a className="navigation-link" onClick={closeSidebar}>
+                                {subMenuItem.title}
+                              </a>
                             </Link>
                           </div>
                         );
@@ -145,7 +161,7 @@ export default SidebarWrapper;
 const StyledContent = styled.div`
   .side-menu {
     padding: 0;
-    margin-top: 48px;
+    /* margin-top: 48px; */
   }
   .ant-collapse-header,
   .ant-collapse-header-text {
