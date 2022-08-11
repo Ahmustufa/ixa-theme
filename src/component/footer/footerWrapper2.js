@@ -49,40 +49,55 @@ const StyledFooter = styled.footer`
     margin: 12px 0;
     font-weight: 600;
   }
+
+  @media only screen and (max-width: 576px) {
+    .footer-item-container {
+      text-align: center;
+    }
+  }
 `;
 
 const FooterContent = () => {
   return (
     <StyledFooter>
-      <Row className="narrow-footer col-9 m-auto" justify="center" gutter={[32, 32]}>
-        <Col span={6}>
-          <p className="section-title">Connect with us</p>
-          <FaFacebookF /> <FaInstagram /> <FaTwitter />
+      <Row
+        className="narrow-footer col-11 col-md-9 m-auto"
+        justify="center"
+        gutter={[32, 32]}
+      >
+        <Col md={{ span: 12, order: 2 }} xs={24} sm={24} lg={6} xl={6}>
+          <div className="text-center text-lg-left">
+            <p className="section-title">Connect with us</p>
+            <FaFacebookF /> <FaInstagram /> <FaTwitter />
+          </div>
         </Col>
 
-        <Col span={12}>
-          <p className="section-title">Sign up for savings</p>
-          {/* <Input size="large" addonAfter={<MailOutlined />} className="search-box" /> */}
-          <Input.Group style={{ height: 40, marginTop: 24 }} compact>
-            <Input
-              style={{
-                width: "calc(100% - 120px)",
-                height: "100%",
-                textAlign: "left",
-              }}
-              placeholder="Your email address..."
-            />
-            <Button style={{ height: "100%" }} type="primary">
-              SUBSCRIBE
-            </Button>
-          </Input.Group>
+        <Col xs={24} sm={24} md={{ span: 24, order: 1 }} lg={12} xl={12}>
+          <div className="text-center text-lg-left">
+            <p className="section-title">Sign up for savings</p>
+            <Input.Group style={{ height: 40, marginTop: 24 }} compact>
+              <Input
+                style={{
+                  width: "calc(100% - 120px)",
+                  height: "100%",
+                  textAlign: "left",
+                }}
+                placeholder="Your email address..."
+              />
+              <Button style={{ height: "100%" }} type="primary">
+                SUBSCRIBE
+              </Button>
+            </Input.Group>
+          </div>
         </Col>
 
-        <Col span={6}>
-          <p className="section-title">Absolutely guaranteed</p>
-          <p className="footer-item m-0">
-            Every time. Any reason. Or we’ll make it right.
-          </p>
+        <Col xs={24} sm={24} md={{ span: 12, order: 3 }} lg={6} xl={6}>
+          <div className="text-center text-lg-left">
+            <p className="section-title">Absolutely guaranteed</p>
+            <p className="footer-item m-0">
+              Every time. Any reason. Or we’ll make it right.
+            </p>
+          </div>
         </Col>
       </Row>
 
@@ -90,8 +105,8 @@ const FooterContent = () => {
         <Divider />
       </div>
 
-      <Row className="main-footer col-7 m-auto" justify="center">
-        <Col span={6} className="footer-item-wrapper">
+      <Row className="col-7 col-md-11 col-lg-9 col-xl-7 m-auto" justify="center">
+        <Col xs={24} sm={24} md={6} lg={6} xl={6} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">Let us help</div>
             <div className="footer-item">My Account</div>
@@ -100,7 +115,7 @@ const FooterContent = () => {
           </div>
         </Col>
 
-        <Col span={6} className="footer-item-wrapper">
+        <Col xs={24} sm={24} md={6} lg={6} xl={6} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">What we offer</div>
             <div className="footer-item">
@@ -110,7 +125,7 @@ const FooterContent = () => {
           </div>
         </Col>
 
-        <Col span={6} className="footer-item-wrapper">
+        <Col xs={24} sm={24} md={6} lg={6} xl={6} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">Our company</div>
             <div className="footer-item">About us</div>
@@ -118,7 +133,7 @@ const FooterContent = () => {
           </div>
         </Col>
 
-        <Col span={6} className="footer-item-wrapper">
+        <Col xs={24} sm={24} md={6} lg={6} xl={6} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">Our policies</div>
             <div className="footer-item">Term of user</div>
@@ -127,16 +142,16 @@ const FooterContent = () => {
         </Col>
       </Row>
 
-      <div style={{ padding: "8px 0", backgroundColor: "#263238" }}>
-        <Row align="middle" justify="center" gutter={[24, 24]} className="w-100">
+      <section style={{ padding: "8px 0", backgroundColor: "#263238" }}>
+        <Row align="middle" justify="space-around">
           <Col>
-            <div className="text-white">
+            <div className="text-white py-3">
               © Polkadotsretail 2016 - {new Date().getFullYear()}. All rights reserved.
             </div>
           </Col>
 
           <Col>
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center my-3">
               <img src="/images/credit_card/visa.png" alt="visa" />
               <img
                 src="/images/credit_card/master_card.png"
@@ -147,7 +162,7 @@ const FooterContent = () => {
             </div>
           </Col>
         </Row>
-      </div>
+      </section>
     </StyledFooter>
   );
 };
