@@ -8,7 +8,7 @@ import { BiUser } from "react-icons/bi";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { BiSearch } from "react-icons/bi";
 import styled from "styled-components";
-import SidebarWrapper from "./sidebarWrapper";
+import MobileDrawer from "./mobileDrawer";
 import { ModalConstant } from "../../redux/constants";
 import { addItemToCart, openCart } from "../../redux/actions/cartActions";
 import {
@@ -99,7 +99,7 @@ const HeaderContent = (props) => {
 
   return (
     <>
-      <SidebarWrapper visible={drawer} onClose={() => setDrawer(false)} />
+      <MobileDrawer visible={drawer} onClose={() => setDrawer(false)} />
       <header className="header">
         <nav
           ref={navRef}
