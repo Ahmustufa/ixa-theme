@@ -10,8 +10,8 @@ const StyledBanner = styled.div`
     width: 100%;
     background-position: center;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     cursor: pointer;
     position: relative;
     margin: auto;
@@ -29,15 +29,15 @@ const StyledBanner = styled.div`
     .text-div {
       z-index: 1;
       width: 100%;
-      padding: 0px 50px;
+      padding: 50px;
 
       h4 {
-        color: #ff1500;
+        color: #fff;
         font-size: 16px;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.1em;
-        margin-bottom: 0;
+        margin-bottom: 8px;
       }
       h2 {
         font-size: 30px;
