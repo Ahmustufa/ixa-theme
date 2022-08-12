@@ -5,61 +5,11 @@ import Breadcrumb from "../../src/component/breadcrumb";
 import ProductListing from "../../src/component/productListing";
 import ShopSidebar from "../../src/component/sidebar/shopSidebar";
 import SortBar from "../../src/component/sortItems";
+import { shoesProducts } from "src/mock/shoesProducts";
 
 const ShopSixGrid = (props) => {
   const { items } = useSelector((state) => state.products);
   const [gridColumn, setGridColumn] = useState(6);
-
-  const productCarouselData = [
-    {
-      _id: 1,
-      image: "/images/shoes/featured/1.webp",
-      title: "Metal Decor Combat Boots",
-      brandName: "Caperion",
-      price: 599,
-      link: "#",
-    },
-    {
-      _id: 2,
-      image: "/images/shoes/featured/2.webp",
-      title: "Knit Chunky Sock Boots",
-      brandName: "CUCCOO",
-      price: 1199,
-      link: "#",
-    },
-    {
-      _id: 3,
-      image: "/images/shoes/featured/3.webp",
-      title: "Knit Chunky Heel",
-      brandName: "Vutte wixo",
-      price: 1099,
-      link: "#",
-    },
-    {
-      _id: 4,
-      image: "/images/shoes/featured/4.webp",
-      title: "Minimalist Flatform Pumps",
-      brandName: "Caperion",
-      price: 599,
-      link: "#",
-    },
-    {
-      _id: 5,
-      image: "/images/shoes/featured/5.webp",
-      title: "Point Toe Stiletto Heeled",
-      brandName: "Caperion",
-      price: 599,
-      link: "#",
-    },
-    {
-      _id: 6,
-      image: "/images/shoes/featured/6.webp",
-      title: "Mesh Panel Lace Up Trainers",
-      brandName: "CUCCOO",
-      price: 1199,
-      link: "#",
-    },
-  ];
 
   return (
     <>
@@ -83,7 +33,7 @@ const ShopSixGrid = (props) => {
 
         <SortBar className="my-5" setGridColumn={setGridColumn} />
 
-        <ProductListing products={productCarouselData} grid={gridColumn} />
+        <ProductListing products={shoesProducts} grid={gridColumn} />
       </div>
     </>
   );

@@ -75,7 +75,6 @@ const ProductCarousel = (props) => {
         {props.data.map((item, index) => (
           <div>
             <CardStyle {...item} />
-            {/* <ProductCard {...item} /> */}
           </div>
         ))}
       </Slider>

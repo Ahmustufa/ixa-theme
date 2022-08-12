@@ -6,7 +6,6 @@ import { image1 } from "../../../images";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToWishlist, removeWishlistItem } from "../../redux/actions";
 import { cardBackground1 } from "../../../images";
-import { Slide } from "react-awesome-reveal";
 
 const BlogCard = (props) => {
   const { id, title, images } = props;

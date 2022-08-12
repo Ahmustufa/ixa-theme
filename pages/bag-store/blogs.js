@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
-import RecentBlogs from "../../../src/component/blogListing/recentBlogs";
-import PopularBlogs from "../../../src/component/blogListing/popularBlogs";
-import BlogListingCard from "../../../src/component/blogListing/blogListingCard";
+import RecentBlogs from "src/component/blogListing/recentBlogs";
+import PopularBlogs from "src/component/blogListing/popularBlogs";
+import BlogListingCard from "src/component/blogListing/blogListingCard";
 const { Panel } = Collapse;
 
 const BagBlogs = (props) => {

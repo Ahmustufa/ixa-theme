@@ -5,7 +5,6 @@ import SelectWrapper from "../inputs/selectWrapper";
 import { InputWrapper, TextAreaWrapper } from "../inputs";
 import { SwipeButton } from "../buttons";
 import PhoneInputWrapper from "../inputs/phoneInputWrapper";
-import { Reveal } from "react-awesome-reveal";
 
 const StyledForm = styled.div`
   width: -webkit-fill-available;
@@ -60,7 +59,7 @@ export default OrderForm;
 const Step1 = (props) => {
   const { userInfo, handleChange } = props;
   return (
-    <Reveal>
+    <>
       <Row gutter={[24, 24]}>
         <Col span={24}>
           <h4>STEP 1 - LOGO DESIGN</h4>
@@ -110,14 +109,14 @@ const Step1 = (props) => {
           />
         </Col>
       </Row>
-    </Reveal>
+    </>
   );
 };
 
 const Step2 = (props) => {
   const { userInfo, handleChange } = props;
   return (
-    <Reveal>
+    <>
       <Row gutter={[24, 24]}>
         <Col span={24}>
           <h4>STEP 2 - LOGO DESIGN</h4>
@@ -164,6 +163,6 @@ const Step2 = (props) => {
           <TextAreaWrapper rows={4} />
         </Col>
       </Row>
-    </Reveal>
+    </>
   );
 };

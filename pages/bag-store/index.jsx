@@ -15,7 +15,7 @@ import {
 import FullBgImageSection from "src/component/heroSection/FullBgImageSection";
 import ProductVerticalCarousel from "src/component/productListing/productVerticalCarousel";
 import BlogCarousel from "src/component/productListing/blogCarousel";
-import { bagsBlogs, bagsProducts } from "../../../src/mock/bagsProducts";
+import { bagsBlogs, bagsProducts } from "src/mock/bagsProducts";
 import Service1 from "src/component/services/service3";
 import SubscriptionModal from "src/component/modals/subscriptionModal2";
 

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Row, Col } from "antd";
 import { useSelector } from "react-redux";
-import Breadcrumb from "../../../src/component/breadcrumb";
-import ProductListing from "../../../src/component/productListing";
-import ShopSidebar from "../../../src/component/sidebar/shopSidebar";
-import SortBar from "../../../src/component/sortItems";
+import Breadcrumb from "src/component/breadcrumb";
+import ProductListing from "src/component/productListing";
+import ShopSidebar from "src/component/sidebar/shopSidebar";
+import SortBar from "src/component/sortItems";
 import { bagsProducts } from "src/mock/bagsProducts";
 
 const ShopLeftSidebar = (props) => {

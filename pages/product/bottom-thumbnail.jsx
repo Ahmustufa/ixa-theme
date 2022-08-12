@@ -6,59 +6,9 @@ import ReviewListing from "../../src/component/reviews/reviewListing";
 import ProductDetails from "../../src/component/products/productDetails";
 import ImageCarousel from "../../src/component/carousel";
 import CardStyle1 from "src/component/cards/CardStyle1";
+import { shoesProducts } from "src/mock/shoesProducts";
 
 const { Panel } = Collapse;
-
-const productCarouselData = [
-  {
-    _id: 1,
-    image: "/images/shoes/featured/1.webp",
-    title: "Metal Decor Combat Boots",
-    brandName: "Caperion",
-    price: 599,
-    link: "#",
-  },
-  {
-    _id: 2,
-    image: "/images/shoes/featured/2.webp",
-    title: "Knit Chunky Sock Boots",
-    brandName: "CUCCOO",
-    price: 1199,
-    link: "#",
-  },
-  {
-    _id: 3,
-    image: "/images/shoes/featured/3.webp",
-    title: "Knit Chunky Heel",
-    brandName: "Vutte wixo",
-    price: 1099,
-    link: "#",
-  },
-  {
-    _id: 4,
-    image: "/images/shoes/featured/4.webp",
-    title: "Minimalist Flatform Pumps",
-    brandName: "Caperion",
-    price: 599,
-    link: "#",
-  },
-  {
-    _id: 5,
-    image: "/images/shoes/featured/5.webp",
-    title: "Point Toe Stiletto Heeled",
-    brandName: "Caperion",
-    price: 599,
-    link: "#",
-  },
-  {
-    _id: 6,
-    image: "/images/shoes/featured/6.webp",
-    title: "Mesh Panel Lace Up Trainers",
-    brandName: "CUCCOO",
-    price: 1199,
-    link: "#",
-  },
-];
 
 const Order = (props) => {
   const { productDetails } = props;
@@ -88,11 +38,7 @@ const Order = (props) => {
       </section>
 
       <section className="my-5">
-        <ProductCarousel
-          CardStyle={CardStyle1}
-          data={productCarouselData}
-          padding={"0px"}
-        />
+        <ProductCarousel CardStyle={CardStyle1} data={shoesProducts} padding={"0px"} />
       </section>
     </StyledPage>
   );

@@ -22,6 +22,7 @@ import Title4 from "src/component/titles/title4";
 import Service2 from "src/component/services/service3";
 import Banner from "src/component/collectionBanner/banner";
 import CardStyle6 from "src/component/cards/CardStyle6";
+import { shoesProducts } from "src/mock/shoesProducts";
 
 const BagStore = () => {
   const carousel1Data = [
@@ -53,57 +54,6 @@ const BagStore = () => {
       heading: "AZADI SALE",
       link: "#",
       placement: "end",
-    },
-  ];
-
-  const productCarouselData = [
-    {
-      _id: 1,
-      image: "/images/shoes/featured/1.webp",
-      title: "Metal Decor Combat Boots",
-      brandName: "Caperion",
-      price: 599,
-      link: "#",
-    },
-    {
-      _id: 2,
-      image: "/images/shoes/featured/2.webp",
-      title: "Knit Chunky Sock Boots",
-      brandName: "CUCCOO",
-      price: 1199,
-      link: "#",
-    },
-    {
-      _id: 3,
-      image: "/images/shoes/featured/3.webp",
-      title: "Knit Chunky Heel",
-      brandName: "Vutte wixo",
-      price: 1099,
-      link: "#",
-    },
-    {
-      _id: 4,
-      image: "/images/shoes/featured/4.webp",
-      title: "Minimalist Flatform Pumps",
-      brandName: "Caperion",
-      price: 599,
-      link: "#",
-    },
-    {
-      _id: 5,
-      image: "/images/shoes/featured/5.webp",
-      title: "Point Toe Stiletto Heeled",
-      brandName: "Caperion",
-      price: 599,
-      link: "#",
-    },
-    {
-      _id: 6,
-      image: "/images/shoes/featured/6.webp",
-      title: "Mesh Panel Lace Up Trainers",
-      brandName: "CUCCOO",
-      price: 1199,
-      link: "#",
     },
   ];
 
@@ -181,7 +131,7 @@ const BagStore = () => {
           title2Color="#fff"
         />
 
-        <ProductCarousel CardStyle={CardStyle6} data={productCarouselData} />
+        <ProductCarousel CardStyle={CardStyle6} data={shoesProducts} />
 
         <FullBgImageSection
           h1="Trending"
