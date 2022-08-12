@@ -13,7 +13,7 @@ import {
 import { Rate } from "antd";
 
 const CardStyle8 = (props) => {
-  const { image, title, price } = props;
+  const { images, title, price } = props;
   const dispatch = useDispatch();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -27,7 +27,7 @@ const CardStyle8 = (props) => {
       <Link href={`/product}`}>
         <div
           className="image-container"
-          style={{ backgroundImage: `url(${image})` }}
+          style={{ backgroundImage: `url(${images[0]})` }}
         ></div>
       </Link>
       <div className="cart-actions">

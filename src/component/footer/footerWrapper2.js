@@ -145,13 +145,13 @@ const FooterContent = () => {
       <section style={{ padding: "8px 0", backgroundColor: "#263238" }}>
         <Row align="middle" justify="space-around">
           <Col>
-            <div className="text-white py-3">
+            <div className="text-white py-2">
               © Polkadotsretail 2016 - {new Date().getFullYear()}. All rights reserved.
             </div>
           </Col>
 
           <Col>
-            <div className="d-flex align-items-center my-3">
+            <div className="d-flex align-items-center my-2">
               <img src="/images/credit_card/visa.png" alt="visa" />
               <img
                 src="/images/credit_card/master_card.png"
