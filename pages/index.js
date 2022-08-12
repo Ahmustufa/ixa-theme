@@ -44,7 +44,12 @@ const Home = () => {
         <DressCategories />
         <ProductCarousel CardStyle={CardStyle5} data={shoesProducts} />
 
-        <FullBgImageSection bgImage={brownHair} />
+        <FullBgImageSection
+          h1="Trending"
+          h3="Men | Women"
+          h5="Fashion"
+          bgImage={brownHair}
+        />
 
         <BlogCarousel />
 

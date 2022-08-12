@@ -5,7 +5,6 @@ const ShopSidebar = (props) => {
   return (
     <div>
       <SidebarFiltration />
-      <ProductVerticalCarousel />
     </div>
   );
 };

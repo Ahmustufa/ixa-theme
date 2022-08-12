@@ -10,7 +10,7 @@ import {
 } from "react-icons/ai";
 
 const ProductCardWithIcons = (props) => {
-  const { _id, title, brandName, price, image, link } = props;
+  const { _id, title, brandName, price, images, link } = props;
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
@@ -19,8 +19,8 @@ const ProductCardWithIcons = (props) => {
 
   return (
     <StyledCard>
-      <Link href={link ? link : "#"}>
-        <div className="image-container" style={{ backgroundImage: `url(${image})` }}>
+      <Link href={`/product/${_id}`}>
+        <div className="image-container" style={{ backgroundImage: `url(${images[0]})` }}>
           {/* <img src={images[0]} alt={title} className="img-fluid product-image" /> */}
         </div>
       </Link>
