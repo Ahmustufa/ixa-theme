@@ -9,7 +9,7 @@ import { cardBackground1 } from "../../../images";
 import { Slide } from "react-awesome-reveal";
 
 const BlogCard = (props) => {
-  const { id, title, image } = props;
+  const { id, title, images } = props;
   const dispatch = useDispatch();
   const { items: wishlist } = useSelector((state) => state.wishlist);
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -20,7 +20,7 @@ const BlogCard = (props) => {
   return (
     <StyledCard>
       <Link href={`/blog/${id}`}>
-        <div className="product-image" style={{ backgroundImage: `url(${image})` }}>
+        <div className="product-image" style={{ backgroundImage: `url(${images[0]})` }}>
           <span></span>
         </div>
       </Link>
@@ -61,11 +61,11 @@ const StyledCard = styled.div`
     position: relative;
     z-index: 999;
     overflow: hidden;
-    :hover{
+    :hover {
       transition: 0.5s ease;
     }
-  
-    ::before{
+
+    ::before {
       background: #ff4c3b;
       width: 25%;
       position: absolute;
@@ -76,30 +76,7 @@ const StyledCard = styled.div`
       bottom: 100%;
       top: 0;
     }
-    ::after{
-      background: #ff4c3b;
-      width: 25%;
-      position: absolute;
-      content: "";
-      opacity: 0;
-      transition: all 0.3s steps(4);
-      z-index: 1;
-      bottom: 100%;
-      top: 0;
-    }
-  
-     span::before{
-      background: #ff4c3b;
-      width: 25%;
-      position: absolute;
-      content: "";
-      opacity: 0;
-      transition: all 0.3s steps(4);
-      z-index: 1;
-      bottom: 100%;
-      top: 0;
-    }
-     span::after{
+    ::after {
       background: #ff4c3b;
       width: 25%;
       position: absolute;
@@ -111,49 +88,70 @@ const StyledCard = styled.div`
       top: 0;
     }
 
-  ::before{
-    left: 0;
-    transition-delay: 0.0s;
-  }
-  :hover::before{
-    bottom: 0;
-    opacity: 0.5;
-  }
-  ::after{
-    left: 25%;
-    transition-delay: 0.025s;
-  }
-  :hover::after{
-    bottom: 0;
-    opacity: 0.5;
-  }
+    span::before {
+      background: #ff4c3b;
+      width: 25%;
+      position: absolute;
+      content: "";
+      opacity: 0;
+      transition: all 0.3s steps(4);
+      z-index: 1;
+      bottom: 100%;
+      top: 0;
+    }
+    span::after {
+      background: #ff4c3b;
+      width: 25%;
+      position: absolute;
+      content: "";
+      opacity: 0;
+      transition: all 0.3s steps(4);
+      z-index: 1;
+      bottom: 100%;
+      top: 0;
+    }
 
+    ::before {
+      left: 0;
+      transition-delay: 0s;
+    }
+    :hover::before {
+      bottom: 0;
+      opacity: 0.5;
+    }
+    ::after {
+      left: 25%;
+      transition-delay: 0.025s;
+    }
+    :hover::after {
+      bottom: 0;
+      opacity: 0.5;
+    }
 
-   span::before{
-    left: 50%;
-    transition-delay: 0.05s; 
+    span::before {
+      left: 50%;
+      transition-delay: 0.05s;
+    }
+    :hover span::before {
+      bottom: 0;
+      opacity: 0.5;
+    }
+    span::after {
+      left: 75%;
+      transition-delay: 0.15s;
+    }
+    :hover span::after {
+      bottom: 0;
+      opacity: 0.5;
+    }
   }
-  :hover span::before{
-    bottom: 0;
-    opacity: 0.5;
-  }
-   span::after{
-    left: 75%;
-    transition-delay: 0.15s; 
-  }
-  :hover span::after{
-    bottom: 0;
-    opacity: 0.5;
-  }
-}
-  .createdAt{
+  .createdAt {
     color: #ff4c3b;
     margin-top: 25px;
     line-height: 1;
-    margin-bott 
   }
 
-  .product a{
+  .product a {
     color: #222222;
     font-size: 18px;
     text-transform: uppercase;
@@ -163,7 +161,7 @@ const StyledCard = styled.div`
     margin-top: 10px;
     margin-bottom: 0;
     transition: all 0.5s ease;
-    :hover{
+    :hover {
       color: #ff4c3b;
       transition: all 0.5s ease;
       text-decoration: none;

@@ -40,13 +40,8 @@ const carouselSettings = {
   ],
 };
 
-const blogData = [
-  { id: 1, image: image1, title: "Pink Tutu with Headband" },
-  { id: 2, image: image2, title: "Pink Tutu with Headband" },
-  { id: 3, image: image3, title: "Pink Tutu with Headband" },
-];
-
 const BlogCarousel = (props) => {
+  const { data } = props;
   const { items } = useSelector((state) => state.products);
 
   return (
@@ -59,7 +54,7 @@ const BlogCarousel = (props) => {
       </div>
 
       <Slider {...carouselSettings}>
-        {blogData.map((item, index) => (
+        {data.map((item, index) => (
           <div>
             <BlogCard {...item} />
           </div>
@@ -67,6 +62,14 @@ const BlogCarousel = (props) => {
       </Slider>
     </StyledContent>
   );
+};
+
+BlogCarousel.defaultProps = {
+  data: [
+    { id: 1, images: [image1], title: "Pink Tutu with Headband" },
+    { id: 2, images: [image2], title: "Pink Tutu with Headband" },
+    { id: 3, images: [image3], title: "Pink Tutu with Headband" },
+  ],
 };
 
 export default BlogCarousel;

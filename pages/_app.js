@@ -1,9 +1,9 @@
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "styles/mie.scss";
-import "styles/globals.scss";
-import "src/component/header/header.style.scss";
-import "src/component/header/header2.style.scss";
+import "../styles/mie.scss";
+import "../styles/globals.scss";
+import "../src/component/header/header.style.scss";
+import "../src/component/header/header2.style.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -20,7 +20,7 @@ import { useRouter } from "next/router";
 import AuthModal from "../src/component/modals/authModal";
 import SideCart from "../src/component/sidebar/sideCart";
 // import PageChange from "../src/component/PageChange";
-import PageLoad2 from "src/component/loader/pageLoad2";
+import PageLoad2 from "../src/component/loader/pageLoad2";
 
 Router.events.on("routeChangeStart", (url) => {
   document.body.classList.add("body-page-transition");
