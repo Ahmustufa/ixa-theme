@@ -109,21 +109,19 @@ const BagStore = () => {
           colSize={8}
           insideData={[
             {
-              image: "/images/Shoes/featured/Righ-banner.jpg",
+              image: "/images/Shoes/featured/left-banner.jpg",
               title1: "40% OFF",
               title2: "Men Shoes",
             },
             {
-              image:
-                "https://multikart-react.vercel.app/_next/static/images/banner2-6270a4161a1b6425cd2bb2a6e8b1813d.jpg",
+              image: "/images/Shoes/featured/center-banner.jpg",
               title1: "",
               title2: "",
             },
             {
-              image:
-                "https://multikart-react.vercel.app/_next/static/images/banner-c8a3b404055b43880ccda054576441e2.jpg",
+              image: "/images/Shoes/featured/right-banner.jpg",
               title1: "50% OFF",
-              title2: "GOLD WATCH",
+              title2: "Women Shoes",
             },
           ]}
           cardHeight={200}

@@ -59,6 +59,7 @@ export default OrderForm;
 const Step1 = (props) => {
   const { userInfo, handleChange } = props;
   return (
+<<<<<<< HEAD
     <>
       <Row gutter={[24, 24]}>
         <Col span={24}>
@@ -110,12 +111,64 @@ const Step1 = (props) => {
         </Col>
       </Row>
     </>
+=======
+    <Row gutter={[24, 24]}>
+      <Col span={24}>
+        <h4>STEP 1 - LOGO DESIGN</h4>
+        <h4>REQUIREMENTS</h4>
+        <h6>
+          Form below is for us to know your Logo design requirements. The form seems long
+          but most of it requires one click selection.
+        </h6>
+      </Col>
+
+      <Col sm={24} xxl={12}>
+        <p className="label">First Name</p>
+        <InputWrapper
+          name="firstName"
+          placeholder="First Name"
+          value={userInfo.firstName}
+          onChange={handleChange}
+        />
+      </Col>
+
+      <Col sm={24} xxl={12}>
+        <p className="label">Last Name</p>
+        <InputWrapper
+          name="lastName"
+          value={userInfo.lastName}
+          onChange={handleChange}
+          placeholder="Last Name"
+        />
+      </Col>
+
+      <Col sm={24} xxl={12}>
+        <p className="label">Email</p>
+        <InputWrapper
+          name="email"
+          placeholder="someone@anywhere.com"
+          value={userInfo.email}
+          onChange={handleChange}
+        />
+      </Col>
+
+      <Col sm={24} xxl={12}>
+        <p className="label">Phone</p>
+        <PhoneInputWrapper
+          value={userInfo.phone}
+          placeholder="Phone"
+          onChange={handleChange}
+        />
+      </Col>
+    </Row>
+>>>>>>> 99ca66ad69a3e8d4b8e2329404c87e10cb1947ea
   );
 };
 
 const Step2 = (props) => {
   const { userInfo, handleChange } = props;
   return (
+<<<<<<< HEAD
     <>
       <Row gutter={[24, 24]}>
         <Col span={24}>
@@ -164,5 +217,53 @@ const Step2 = (props) => {
         </Col>
       </Row>
     </>
+=======
+    <Row gutter={[24, 24]}>
+      <Col span={24}>
+        <h4>STEP 2 - LOGO DESIGN</h4>
+        <h4>REQUIREMENTS</h4>
+        <h6>
+          Form below is for us to know your Logo design requirements. The form seems long
+          but most of it requires one click selection.
+        </h6>
+      </Col>
+
+      <Col sm={24} xxl={12}>
+        <p className="label">Select logo type </p>
+        <SelectWrapper
+          name="logoType"
+          value={userInfo.logoType}
+          // onChange={handleChange}
+          placeholder="New Logo Design"
+          options={[]}
+        />
+      </Col>
+
+      <Col sm={24} xxl={12}>
+        <p className="label">What exact words should appear in your logo?</p>
+        <InputWrapper
+          name="words"
+          value={userInfo.words}
+          onChange={handleChange}
+          placeholder="What exact words should appear in your logo?"
+        />
+      </Col>
+
+      <Col sm={24} xxl={12}>
+        <p className="label">Tag line</p>
+        <InputWrapper
+          name="tagline"
+          value={userInfo.tagline}
+          onChange={handleChange}
+          placeholder="Please mention the tagline if any?"
+        />
+      </Col>
+
+      <Col sm={24} xxl={12}>
+        <p className="label">Description</p>
+        <TextAreaWrapper rows={4} />
+      </Col>
+    </Row>
+>>>>>>> 99ca66ad69a3e8d4b8e2329404c87e10cb1947ea
   );
 };
