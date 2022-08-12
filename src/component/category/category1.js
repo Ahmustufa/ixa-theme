@@ -8,16 +8,31 @@ const StyledDiv = styled.div`
     justify-content: center !important;
     text-align: center;
     h6 {
-      margin-top: 14px;
+      margin-top: 16px;
+    }
+    h6 > span {
       text-transform: capitalize;
+      position: relative;
+      width: max-content;
+      ::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background-color: #001719;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+      }
     }
     .circle {
       margin: 0 auto;
       text-align: center;
-      border: 1px solid #ddd;
+      border: 2px solid #ddd;
       border-radius: 100%;
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -26,13 +41,25 @@ const StyledDiv = styled.div`
       cursor: pointer;
       img {
         transition: 0.5s ease;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 100px;
       }
-      &:hover {
+
+      /* &:hover {
         background-color: #fa869b;
         transition: 0.5s ease;
         img {
           transition: 0.5s ease;
           filter: brightness(0) invert(1);
+        }
+      } */
+    }
+    &:hover {
+      h6 > span {
+        ::after {
+          width: 100%;
         }
       }
     }
@@ -49,7 +76,10 @@ const Category1 = (props) => {
     slidesToScroll: 1,
   };
   return (
-    <StyledDiv style={{ padding: "5% 0" }} className="col-11 m-auto">
+    <StyledDiv
+      style={{ padding: props.padding ? props.padding : "5% 0px" }}
+      className="col-11 m-auto"
+    >
       <Slider {...settings}>
         {props.insideData.map((data, index) => (
           <div className="main-div">
@@ -57,7 +87,9 @@ const Category1 = (props) => {
               <div className="circle">
                 <img src={data.image} />
               </div>
-              <h6>{data.title}</h6>
+              <h6>
+                <span>{data.title}</span>
+              </h6>
             </div>
           </div>
         ))}

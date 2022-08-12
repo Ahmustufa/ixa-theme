@@ -8,11 +8,15 @@ const ProductListing = (props) => {
   console.log("COLUMN SIZE", span);
   return (
     <Row gutter={[32, 32]}>
-      {products.map((item, index) => (
-        <Col key={index} xs={24} sm={24} md={12} lg={11} xl={span} xxl={span}>
-          <ProductCard {...item} />
-        </Col>
-      ))}
+      {products.map((item, index) => {
+        console.log("item", item);
+
+        return (
+          <Col key={index} xs={24} sm={24} md={12} lg={11} xl={span} xxl={span}>
+            <ProductCard {...item} />
+          </Col>
+        );
+      })}
     </Row>
   );
 };

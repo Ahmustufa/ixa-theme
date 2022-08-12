@@ -6,12 +6,13 @@ import { useSelector } from "react-redux";
 import ProductCardWithIcons from "../cards/productCardWithIcons";
 
 const carouselSettings = {
-  dots: true,
+  dots: false,
   speed: 500,
   autoplay: true,
   infinite: true,
-  slidesToShow: 4,
-  slidesToScroll: 4,
+  easing: true,
+  slidesToShow: 5,
+  slidesToScroll: 1,
   responsive: [
     {
       breakpoint: 576,
@@ -38,12 +39,21 @@ const carouselSettings = {
 };
 
 const ProductCarousel = (props) => {
-  const { items } = useSelector((state) => state.products);
-
+  const { CardStyle } = props;
   return (
     <StyledContent style={{ padding: props.padding ? props.padding : "5%" }}>
       <div className="text-center">
-        <div style={{ fontSize: 40, color: "#54595f", fontWeight: 600 }}>JUST IN</div>
+        <div
+          className="heading"
+          style={{
+            fontSize: 40,
+            color: "#54595f",
+            fontWeight: 600,
+            position: "relative",
+          }}
+        >
+          Featured Collection
+        </div>
         <br />
         <span
           style={{
@@ -62,9 +72,9 @@ const ProductCarousel = (props) => {
       </div>
 
       <Slider {...carouselSettings}>
-        {items.map((item, index) => (
+        {props.data.map((item, index) => (
           <div>
-            <ProductCardWithIcons {...item} />
+            <CardStyle {...item} />
             {/* <ProductCard {...item} /> */}
           </div>
         ))}
@@ -77,6 +87,24 @@ export default ProductCarousel;
 
 const StyledContent = styled.div`
   // padding: 80px;
+
+  .heading {
+    ::before {
+      content: "#Featured";
+      opacity: 0.05;
+      font-family: Poppins, sans-serif;
+      font-size: calc(40px + 215 * ((100vw - 320px) / 1600));
+      font-weight: 700;
+      color: #000;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -100px;
+      text-align: center;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
 
   @media only screen and (max-width: 576px) {
     margin: 0;

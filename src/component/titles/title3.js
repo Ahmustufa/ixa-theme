@@ -62,7 +62,7 @@ const Title3 = (props) => {
         style={{
           display: props.display == "none" ? "none" : "flex",
           justifyContent: "center",
-          margin: "24px 0px",
+          margin: "8px 0px",
         }}
       >
         <div>

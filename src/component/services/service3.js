@@ -6,9 +6,9 @@ import { HiOutlineSpeakerphone } from "react-icons/hi";
 import { RiSecurePaymentLine } from "react-icons/ri";
 
 const StyledDiv = styled.div`
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 2px solid #e4e4e4;
   .main-row {
-    border-top: 1px solid #e4e4e4;
-    border-bottom: 2px solid #e4e4e4;
     padding: 5% 0px;
     min-height: 170px;
     align-items: center;
@@ -53,9 +53,9 @@ const StyledDiv = styled.div`
   }
 `;
 
-const Service1 = () => {
+const Service1 = (props) => {
   return (
-    <StyledDiv>
+    <StyledDiv style={props.style}>
       <Row className="main-row">
         <Col span={6} style={{ borderRight: "2px solid #e4e4e4" }}>
           <div className="main-div">

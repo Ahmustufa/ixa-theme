@@ -10,7 +10,7 @@ import {
 } from "react-icons/ai";
 
 const ProductCardWithIcons = (props) => {
-  const { _id, title, brandName, price, images } = props;
+  const { _id, title, brandName, price, image, link } = props;
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
@@ -19,8 +19,8 @@ const ProductCardWithIcons = (props) => {
 
   return (
     <StyledCard>
-      <Link href={`/product/${_id}`}>
-        <div className="image-container" style={{ backgroundImage: `url(${images[0]})` }}>
+      <Link href={link ? link : "#"}>
+        <div className="image-container" style={{ backgroundImage: `url(${image})` }}>
           {/* <img src={images[0]} alt={title} className="img-fluid product-image" /> */}
         </div>
       </Link>
@@ -49,7 +49,7 @@ const ProductCardWithIcons = (props) => {
         <div className="price">
           {formatedPrice.format(price)}{" "}
           <small style={{ color: "#858585", textDecoration: "line-through" }}>
-            PKR {price + 100}
+            PKR {price * 1.5}
           </small>
         </div>
       </div>
@@ -66,14 +66,16 @@ export default ProductCardWithIcons;
 const StyledCard = styled.div`
   position: relative;
   overflow: hidden;
+  margin-left: 5%;
+  margin-right: 5%;
 
   .image-container {
-    border: 1px solid #f2f2f2;
+    /* border: 1px solid #f2f2f2; */
     border-radius: 4px;
     text-align: center;
     width: 100%;
     padding-top: 130%;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -141,7 +143,7 @@ const StyledCard = styled.div`
 
   .item-details {
     overflow: hidden;
-    psotion: relative;
+    position: relative;
   }
 
   .company {

@@ -62,30 +62,31 @@ Carousel1.defaultProps = {
     {
       image: "https://multikart-react.vercel.app/assets/images/home-banner/6.jpg",
       subHeading: "Welcome To Fashion",
-      heading: "Wrist watch",
+      heading: "Leather Bags",
       link: "#",
       placement: "center",
     },
     {
       image: "https://multikart-react.vercel.app/assets/images/home-banner/7.jpg",
       subHeading: "Welcome To Fashion",
-      heading: "women fashion",
+      heading: "Women Bags",
       link: "#",
       placement: "center",
     },
     {
       image: "https://multikart-react.vercel.app/assets/images/home-banner/8.jpg",
       subHeading: "Welcome To Fashion",
-      heading: "men fashion",
+      heading: "Men Bags",
       link: "#",
       placement: "center",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/home-banner/9.jpg",
-      subHeading: "Welcome To Fashion",
-      heading: "Wrist watch",
+      image:
+        "https://cdn.shopify.com/s/files/1/0555/1000/7999/files/rtw-creation-14-august-azadi-sale-desktop.jpg",
+      subHeading: "Get FREE shipping when you buy any two!",
+      heading: "AZADI SALE",
       link: "#",
-      placement: "start",
+      placement: "end",
     },
   ],
 };
@@ -168,9 +169,10 @@ const StyledCarousel = styled.div`
     color: #727272;
   }
   .heading {
-    font-size: 48px;
+    font-size: 64px;
     color: #222;
     text-transform: uppercase;
     margin: 12px 0;
+    font-weight: 700;
   }
 `;
