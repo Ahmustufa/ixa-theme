@@ -209,7 +209,7 @@ const HeaderWrapper2 = () => {
               <div
                 className={`menu-item ${router.pathname === menu.link ? "active" : ""}`}
               >
-                <Link href="/">
+                <Link href={menu.link}>
                   <a style={{ textTransform: "uppercase" }}>{menu.title}</a>
                 </Link>
               </div>

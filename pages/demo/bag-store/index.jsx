@@ -23,34 +23,34 @@ import Title5 from "src/component/titles/title5";
 
 let data = [
   {
-    image:
-      "https://cdn.shopify.com/s/files/1/0555/1000/7999/files/rtw-creation-14-august-azadi-sale-desktop.jpg",
+    image: "/images/Bags/banner/headBanner4.jpg",
     subHeading: "Welcome To Fashion",
     heading: "WOMEN BAGS",
     link: "#",
-    placement: "end",
+    placement: "start",
   },
   {
-    image: "https://multikart-react.vercel.app/assets/images/home-banner/6.jpg",
+    image: "/images/Bags/banner/headBanner5.jpg",
     subHeading: "Welcome To Fashion",
     heading: "WOMEN BAGS",
     link: "#",
-    placement: "center",
+    placement: "start",
   },
   {
-    image: "https://shopdemo.hasthemes.com/payne/p2/img/payne/hero-bg.jpg",
+    image: "/images/Bags/banner/headBanner3.png",
     subHeading: "Welcome To Fashion",
     heading: "SCHOOL BAGPACK",
     link: "#",
     placement: "start",
   },
-  {
-    image: "https://multikart-react.vercel.app/assets/images/home-banner/8.jpg",
-    subHeading: "Welcome To Fashion",
-    heading: "MEN BAGS",
-    link: "#",
-    placement: "center",
-  },
+  // {
+  //   image: "images/Bags/banner/headBanner1.png",
+
+  //   subHeading: "Welcome To Fashion",
+  //   heading: "MEN BAGS",
+  //   link: "#",
+  //   placement: "center",
+  // },
 ];
 
 const Bags = () => {
@@ -66,14 +66,12 @@ const Bags = () => {
           colSize={12}
           insideData={[
             {
-              image:
-                "https://cdn.shopify.com/s/files/1/0251/0520/3255/files/slider-image-02.png?v=1572514289",
+              image: "/images/Bags/banner/samllBanner1.png",
               title1: "SAVE 30%",
               title2: "MEN",
             },
             {
-              image:
-                "https://www.gulahmedshop.com/media/catalog/product/2/9/291071_2_.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=420&width=280",
+              image: "/images/Bags/banner/samllBanner2.png",
               title1: "SAVE 60%",
               title2: "WOMEN",
             },
@@ -109,7 +107,8 @@ const Bags = () => {
       </div>
 
       <FullBgImageSection
-        bgImage="https://shopdemo.hasthemes.com/payne/p2/img/payne/hero-bg.jpg"
+        color="#fff"
+        bgImage="/images/Bags/banner/stickyBanner.png"
         h1="Trending"
         h3="Men | Women"
         h5="Fashion"

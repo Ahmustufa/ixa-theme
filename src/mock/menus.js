@@ -28,23 +28,24 @@ export const shoesMenu = [
 export const bagsMenu = [
   {
     title: "home",
-    link: "/demo/bags",
+    link: "/demo/bag-store",
   },
   {
-    title: "BACKPACKS",
-    link: "/demo/bags/backpack",
+    title: "Products",
+    link: "/demo/bag-store/products",
   },
   {
-    title: "TERRABASE",
+    title: "Shop",
     link: "/demo/bags/terrabase",
+    submenu: [
+      { title: "Women", link: `/demo/bag-store/women` },
+      { title: "Travel", link: `/demo/bag-store/travel` },
+      { title: "Kids", link: `/demo/bag-store/kids` },
+    ],
   },
   {
-    title: "DISCOVER US",
-    link: "/demo/bags/discover-us",
-  },
-  {
-    title: "OUTLET",
-    link: "/demo/bags/outlet",
+    title: "Blogs",
+    link: "/demo/bag-store/blogs",
   },
   {
     title: "CONTACT",
@@ -66,7 +67,7 @@ export const mainMenu = [
     title: "demos",
     submenu: [
       { title: "Shoes", link: "/demo/shoes" },
-      { title: "Bags", link: "/demo/bags" },
+      { title: "Bags", link: "/demo/bag-store" },
       { title: "Clothing", link: "/demo/clothing" },
     ],
     link: "",
