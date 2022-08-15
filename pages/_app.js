@@ -64,7 +64,7 @@ function MyApp({ Component, pageProps }) {
    * Updating menus for different demos
    */
   useEffect(() => {
-    if (router.pathname.includes("/demo/bags")) {
+    if (router.pathname.includes("/demo/bag-store")) {
       store.dispatch({ type: Menu.UPDATE, payload: bagsMenu });
     } else if (router.pathname.includes("/demo/shoes")) {
       store.dispatch({ type: Menu.UPDATE, payload: shoesMenu });

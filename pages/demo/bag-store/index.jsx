@@ -23,21 +23,21 @@ import Title5 from "src/component/titles/title5";
 
 let data = [
   {
-    image: "images/Bags/banner/headBanner1.png",
+    image: "/images/Bags/banner/headBanner1.png",
     subHeading: "Welcome To Fashion",
     heading: "WOMEN BAGS",
     link: "#",
     placement: "start",
   },
   {
-    image: "images/Bags/banner/headBanner2.png",
+    image: "/images/Bags/banner/headBanner2.png",
     subHeading: "Welcome To Fashion",
     heading: "WOMEN BAGS",
     link: "#",
     placement: "start",
   },
   {
-    image: "images/Bags/banner/headBanner3.png",
+    image: "/images/Bags/banner/headBanner3.png",
     subHeading: "Welcome To Fashion",
     heading: "SCHOOL BAGPACK",
     link: "#",
@@ -66,12 +66,12 @@ const Bags = () => {
           colSize={12}
           insideData={[
             {
-              image: "images/Bags/banner/samllBanner1.png",
+              image: "/images/Bags/banner/samllBanner1.png",
               title1: "SAVE 30%",
               title2: "MEN",
             },
             {
-              image: "images/Bags/banner/samllBanner2.png",
+              image: "/images/Bags/banner/samllBanner2.png",
               title1: "SAVE 60%",
               title2: "WOMEN",
             },
@@ -107,7 +107,8 @@ const Bags = () => {
       </div>
 
       <FullBgImageSection
-        bgImage="images/Bags/banner/stickyBanner.png"
+        color="#fff"
+        bgImage="/images/Bags/banner/stickyBanner.png"
         h1="Trending"
         h3="Men | Women"
         h5="Fashion"
