@@ -403,14 +403,10 @@ const StyledPage = styled.div`
 `;
 
 export async function getServerSideProps(context) {
-  const productDetails = products.find((item) => item._id == context.params.product_id);
-  if (productDetails) {
-    return {
-      props: { productDetails },
-    };
-  } else {
-    return {
-      notFound: true,
-    };
-  }
+  const index = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
+  const productDetails = products[index];
+
+  return {
+    props: { productDetails },
+  };
 }
