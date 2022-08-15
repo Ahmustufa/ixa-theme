@@ -53,4 +53,19 @@ const StyledSection = styled.div`
       line-height: 1.3;
     }
   }
+  @media (max-width: 1024px) {
+    .content-section {
+      margin-left: 0%;
+      padding: 30px;
+      h1 {
+        font-size: 70px;
+      }
+      h3 {
+        font-size: 50px;
+      }
+      h5 {
+        font-size: 24px;
+      }
+    }
+  }
 `;

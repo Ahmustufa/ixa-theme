@@ -57,7 +57,7 @@ const Service1 = (props) => {
   return (
     <StyledDiv style={props.style}>
       <Row className="main-row">
-        <Col span={6} style={{ borderRight: "2px solid #e4e4e4" }}>
+        <Col lg={6} md={12} sm={24} xs={24} style={{ borderRight: "2px solid #e4e4e4" }}>
           <div className="main-div">
             <FiTruck className="icons" />
             <div className="text">
@@ -67,7 +67,7 @@ const Service1 = (props) => {
           </div>
         </Col>
 
-        <Col span={6} style={{ borderRight: "2px solid #e4e4e4" }}>
+        <Col lg={6} md={12} sm={24} xs={24} style={{ borderRight: "2px solid #e4e4e4" }}>
           <div className="main-div">
             <AiOutlineFieldTime className="icons" />
             <div className="text">
@@ -77,7 +77,7 @@ const Service1 = (props) => {
           </div>
         </Col>
 
-        <Col span={6} style={{ borderRight: "2px solid #e4e4e4" }}>
+        <Col lg={6} md={12} sm={24} xs={24} style={{ borderRight: "2px solid #e4e4e4" }}>
           <div className="main-div">
             <HiOutlineSpeakerphone className="icons" />
             <div className="text">
@@ -87,7 +87,7 @@ const Service1 = (props) => {
           </div>
         </Col>
 
-        <Col span={6}>
+        <Col lg={6} md={12} sm={24} xs={24}>
           <div className="main-div">
             <RiSecurePaymentLine className="icons" />
             <div className="text">

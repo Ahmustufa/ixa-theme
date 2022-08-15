@@ -9,16 +9,6 @@ import { Rate } from "antd";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRef } from "react";
 
-const blogData = [
-  { id: 1, image: image1, title: "Pink Tutu with Headband" },
-  { id: 2, image: image2, title: "Pink Tutu with Headband" },
-  { id: 3, image: image3, title: "Pink Tutu with Headband" },
-  { id: 4, image: image3, title: "Pink Tutu with Headband" },
-  { id: 5, image: image3, title: "Pink Tutu with Headband" },
-  { id: 6, image: image3, title: "Pink Tutu with Headband" },
-  { id: 7, image: image3, title: "Pink Tutu with Headband" },
-];
-
 const RecentBlogs = (props) => {
   return (
     <StyledContent>
@@ -27,16 +17,12 @@ const RecentBlogs = (props) => {
       </div>
 
       <div>
-        {blogData?.slice(0, 6)?.map((item, index) => (
+        {props.data?.slice(0, 6)?.map((item, index) => (
           <div
             key={index}
             className="d-flex justify-content-start align-items-center mt-4 w-100"
           >
-            <img
-              src={"https://multikart-react.vercel.app/assets/images/blog/2.jpg"}
-              width="35%"
-              height={"60px"}
-            />
+            <img src={item.images[0]} width="35%" height={"60px"} />
             <div className="content ml-3">
               <h6>25 January 2018</h6>
               <p>0 hits</p>
@@ -48,6 +34,17 @@ const RecentBlogs = (props) => {
   );
 };
 
+RecentBlogs.defaultProps = {
+  data: [
+    { id: 1, images: [image1], title: "Pink Tutu with Headband" },
+    { id: 2, images: [image2], title: "Pink Tutu with Headband" },
+    { id: 3, images: [image3], title: "Pink Tutu with Headband" },
+    { id: 4, images: [image3], title: "Pink Tutu with Headband" },
+    { id: 5, images: [image3], title: "Pink Tutu with Headband" },
+    { id: 6, images: [image3], title: "Pink Tutu with Headband" },
+    { id: 7, images: [image3], title: "Pink Tutu with Headband" },
+  ],
+};
 export default RecentBlogs;
 
 const StyledContent = styled.div`
