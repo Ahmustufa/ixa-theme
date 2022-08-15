@@ -131,7 +131,12 @@ const HeaderWrapper2 = () => {
 
           <Col xs={3} sm={3} md={0}>
             <div className="text-right">
-              <BsSearch style={{ fontSize: 24, cursor: "pointer" }} />
+              <AiOutlineUser
+                style={{ fontSize: 24, cursor: "pointer" }}
+                onClick={() => {
+                  dispatch({ type: ModalConstant.OPEN_LOGIN_MODAL });
+                }}
+              />
             </div>
           </Col>
         </Row>
