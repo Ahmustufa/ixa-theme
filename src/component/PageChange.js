@@ -128,8 +128,8 @@ const PageChange = (props) => {
                   cy="50"
                   r="20"
                   fill="none"
-                  stroke-width="2"
-                  stroke-miterLimit="10"
+                  strokeWidth="2"
+                  strokeMiterlimit="10"
                 />
               </svg>
             </div>

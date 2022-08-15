@@ -27,18 +27,13 @@ const ImageCarousel = (props) => {
         >
           {images.map((image, index) => (
             <div
+              key={index}
               onClick={() => {
-                console.log("Image", image);
                 setState({ image });
               }}
               role="button"
             >
-              <img
-                key={index}
-                src={image}
-                alt={`image-${index}`}
-                className="carousel-image"
-              />
+              <img src={image} alt={`image-${index}`} className="carousel-image" />
             </div>
           ))}
         </Col>
