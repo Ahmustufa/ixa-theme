@@ -36,11 +36,11 @@ export const bagsMenu = [
   },
   {
     title: "Shop",
-    link: "/demo/bags/terrabase",
+    link: "/demo/bag-store/women",
     submenu: [
-      { title: "Women", link: `/demo/bag-store/women` },
-      { title: "Travel", link: `/demo/bag-store/travel` },
-      { title: "Kids", link: `/demo/bag-store/kids` },
+      { title: "Women fashion bags", link: `/demo/bag-store/women` },
+      { title: "Travel bags", link: `/demo/bag-store/travel` },
+      { title: "Others bags", link: `/demo/bag-store/others` },
     ],
   },
   {
