@@ -6,11 +6,19 @@ import ProductListing from "src/component/productListing";
 import ShopSidebar from "src/component/sidebar/shopSidebar";
 import SortBar from "src/component/sortItems";
 import { bagsProducts } from "src/mock/bagsProducts";
+import { useRouter } from "next/router";
 
 const ProductListin = (props) => {
   const { items } = useSelector((state) => state.products);
+  const router = useRouter();
   const { products } = props;
-  const [gridColumn, setGridColumn] = useState(3);
+  const [gridColumn, setGridColumn] = useState(4);
+
+  const categoryBanners = [
+    { category: "women", image: "/images/Bags/banner/pbanner1.png" },
+    { category: "travel", image: "/images/Bags/banner/pbanner2.png" },
+    { category: "others", image: "/images/Bags/banner/pbanner3.png" },
+  ];
   return (
     <>
       <Breadcrumb title="SHOP" link="HOME / SHOP" className="my-5" />
@@ -22,7 +30,11 @@ const ProductListin = (props) => {
           </Col> */}
 
           <Col xs={24} sm={24} md={24} lg={24}>
-            <img src="/images/shop_card_1.png" width="100%" className="mb-3" />
+            {categoryBanners.map((item) => {
+              if (item.category == router.query.category) {
+                return <img src={item.image} width="100%" className="mb-3" />;
+              }
+            })}
 
             <SortBar className="my-5" setGridColumn={setGridColumn} />
 

@@ -7,7 +7,7 @@ export const bagsProducts = [
     price: 109.95,
     description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    category: "women",
+    category: "travel",
     images: [
       "/images/Bags/AlloverLetterGraphicZipBackpack/AlloverLetterGraphicZipBackpack-1.webp",
       "/images/Bags/AlloverLetterGraphicZipBackpack/AlloverLetterGraphicZipBackpack-2.webp",
@@ -43,7 +43,7 @@ export const bagsProducts = [
     price: 55.99,
     description:
       "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-    category: "women",
+    category: "travel",
     images: [
       "/images/Bags/ButterflyPrintPatch/Case-1.webp",
       "/images/Bags/ButterflyPrintPatch/Case-2.webp",
@@ -114,7 +114,7 @@ export const bagsProducts = [
     title: "Mini Neon Lime Clear Trolley Design Box Bag",
     price: 39.99,
     description: "",
-    category: "women",
+    category: "travel",
     images: [
       "/images/Bags/MiniNeon/MIniBag-1.webp",
       "/images/Bags/MiniNeon/MIniBag-2.webp",
@@ -135,7 +135,7 @@ export const bagsProducts = [
     price: 9.85,
     description:
       "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
-    category: "women",
+    category: "travel",
     images: [
       "/images/Bags/NoveltyBag/NoveltyBag-1.webp",
       "/images/Bags/NoveltyBag/NoveltyBag-2.webp",
@@ -196,7 +196,7 @@ export const bagsProducts = [
     price: 12.99,
     description:
       "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
-    category: "women",
+    category: "others",
     images: [
       "/images/Bags/printPurse/Purse-1.webp",
       "/images/Bags/printPurse/Purse-2.webp",
@@ -218,7 +218,7 @@ export const bagsProducts = [
     price: 12.99,
     description:
       "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
-    category: "women",
+    category: "others",
     images: [
       "/images/Bags/ShopperBag/Bag-1.webp",
       "/images/Bags/ShopperBag/Bag-2.webp",
@@ -240,7 +240,7 @@ export const bagsProducts = [
     price: 12.99,
     description:
       "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
-    category: "women",
+    category: "travel",
     images: [
       "/images/Bags/Backpack/Backpack-1.webp",
       "/images/Bags/Backpack/Backpack-2.webp",
