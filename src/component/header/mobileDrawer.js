@@ -1,19 +1,20 @@
 import styled from "styled-components";
-import { Drawer, Collapse, Row, Col, Divider } from "antd";
+import { Drawer, Collapse } from "antd";
 import { IoCloseCircleOutline } from "react-icons/io5";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import { FiChevronDown } from "react-icons/fi";
-import { menuItems } from "./menuItems";
 import { InputWrapper } from "../inputs";
 import { BsSearch, BsSuitHeart } from "react-icons/bs";
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 const { Panel } = Collapse;
 
 const MobileDrawer = (props) => {
   const { visible, onClose } = props;
-  const router = useRouter();
+
+  const menu = useSelector((state) => state.menu);
+  const menuItems = menu.template || [];
 
   const closeSidebar = () => {
     setTimeout(() => {
@@ -87,67 +88,85 @@ const MobileDrawer = (props) => {
         <div className="side-menu">
           <Collapse ghost className="main-menu">
             {menuItems.map((menu, i) => {
-              return (
-                <Panel
-                  key={i}
-                  showArrow={false}
-                  className="sidebar-item-wrapper"
-                  header={
-                    <div className={`sidebar-item`}>
-                      {menu.title}
-                      <FiChevronDown className="ml-3" style={{ fontSize: 20 }} />
-                    </div>
-                  }
-                >
-                  <div>
-                    {menu.submenu.map((subMenuItem, index) => {
-                      if (subMenuItem.submenu) {
-                        return (
-                          <Collapse ghost>
-                            <Panel
-                              key={index}
-                              showArrow={false}
-                              header={
-                                <div className={`navigation-link`} onClick={closeSidebar}>
+              if (menu.submenu) {
+                return (
+                  <Panel
+                    key={i}
+                    showArrow={false}
+                    className="sidebar-item-wrapper"
+                    header={
+                      <div className={`sidebar-item`}>
+                        {menu.title}
+                        <FiChevronDown className="ml-3" style={{ fontSize: 20 }} />
+                      </div>
+                    }
+                  >
+                    <div>
+                      {menu.submenu.map((subMenuItem, index) => {
+                        if (subMenuItem.submenu) {
+                          return (
+                            <Collapse ghost>
+                              <Panel
+                                key={index}
+                                showArrow={false}
+                                header={
+                                  <div
+                                    className={`navigation-link`}
+                                    onClick={closeSidebar}
+                                  >
+                                    {subMenuItem.title}
+                                    <FiChevronDown
+                                      className="ml-3"
+                                      style={{ fontSize: 16 }}
+                                    />
+                                  </div>
+                                }
+                              >
+                                {subMenuItem.submenu.map((item, index) => (
+                                  <div
+                                    role="button"
+                                    key={`sub-menu-${index}`}
+                                    style={{ minWidth: 240 }}
+                                  >
+                                    <Link href={item.link || ""}>
+                                      <a
+                                        className="navigation-link"
+                                        onClick={closeSidebar}
+                                      >
+                                        {item.title}
+                                      </a>
+                                    </Link>
+                                  </div>
+                                ))}
+                              </Panel>
+                            </Collapse>
+                          );
+                        } else {
+                          return (
+                            <div key={index}>
+                              <Link href={subMenuItem.link || ""}>
+                                <a className="navigation-link" onClick={closeSidebar}>
                                   {subMenuItem.title}
-                                  <FiChevronDown
-                                    className="ml-3"
-                                    style={{ fontSize: 16 }}
-                                  />
-                                </div>
-                              }
-                            >
-                              {subMenuItem.submenu.map((item, index) => (
-                                <div
-                                  role="button"
-                                  key={`sub-menu-${index}`}
-                                  style={{ minWidth: 240 }}
-                                >
-                                  <Link href={item.link || ""}>
-                                    <a className="navigation-link" onClick={closeSidebar}>
-                                      {item.title}
-                                    </a>
-                                  </Link>
-                                </div>
-                              ))}
-                            </Panel>
-                          </Collapse>
-                        );
-                      } else {
-                        return (
-                          <div key={index}>
-                            <Link href={subMenuItem.link || ""}>
-                              <a className="navigation-link" onClick={closeSidebar}>
-                                {subMenuItem.title}
-                              </a>
-                            </Link>
-                          </div>
-                        );
-                      }
-                    })}
+                                </a>
+                              </Link>
+                            </div>
+                          );
+                        }
+                      })}
+                    </div>
+                  </Panel>
+                );
+              } else {
+                return (
+                  <div key={i} className={`sidebar-item`}>
+                    <Link href={menu.link || ""}>
+                      <a className="hoverable dark" style={{ textDecoration: "none" }}>
+                        {menu.title}
+                      </a>
+                    </Link>
                   </div>
-                </Panel>
-              );
+                );
+              }
             })}
           </Collapse>
         </div>

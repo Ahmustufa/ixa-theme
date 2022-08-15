@@ -38,3 +38,7 @@ export const Cart = {
 export const Product = {
   STORE: "STORE_ALL_PRODUCTS",
 };
+
+export const Menu = {
+  UPDATE: "UPDATE_MENU",
+};

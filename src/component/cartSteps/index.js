@@ -18,22 +18,19 @@ const CartSteps = (props) => {
   return (
     <StyledPage>
       <Row className="step-container" gutter={[24, 24]}>
-        {stepsData.map((item, index) => {
-          return (
-            <Link href={`${item.link}`}>
-              <Col
-                xs={24}
-                sm={24}
-                xl={8}
-                key={index}
-                className={props.step == item.id ? `main-step-selected` : `main-step`}
-              >
-                <h6>{item.title}</h6>
-                <p className="step-para">{item.description}</p>
-              </Col>
-            </Link>
-          );
-        })}
+        {stepsData.map((item, index) => (
+          <Link key={index} href={`${item.link}`}>
+            <Col
+              xs={24}
+              sm={24}
+              xl={8}
+              className={props.step == item.id ? `main-step-selected` : `main-step`}
+            >
+              <h6>{item.title}</h6>
+              <p className="step-para">{item.description}</p>
+            </Col>
+          </Link>
+        ))}
       </Row>
     </StyledPage>
   );

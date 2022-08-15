@@ -121,7 +121,7 @@ const TestimonyWithRating = () => {
       <Heading>Our customers can help you know us better!</Heading>
       <Slider autoplay={true} {...settings}>
         {logoTestimoniData.map((item, index) => (
-          <div>
+          <div key={index}>
             <Row
               className="container mx-auto"
               justify="center"

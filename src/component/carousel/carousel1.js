@@ -30,6 +30,7 @@ const Carousel1 = (props) => {
 
       {data.map((item, index) => (
         <div
+          key={index}
           className="carousel"
           style={{
             right: currentImageIndex === index ? "0" : "100%",

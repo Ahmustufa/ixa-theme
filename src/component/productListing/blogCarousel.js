@@ -55,7 +55,7 @@ const BlogCarousel = (props) => {
 
       <Slider {...carouselSettings}>
         {data.map((item, index) => (
-          <div>
+          <div key={index}>
             <BlogCard {...item} />
           </div>
         ))}

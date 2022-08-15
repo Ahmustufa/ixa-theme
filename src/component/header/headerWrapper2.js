@@ -3,7 +3,6 @@ import Link from "next/link";
 import router from "next/router";
 import { Row, Col, Input, Dropdown, Menu } from "antd";
 import { InputWrapper } from "../inputs";
-import { menuItems } from "./menuItems";
 import MobileDrawer from "./mobileDrawer";
 /**
  * Icons
@@ -22,9 +21,14 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { IoMenuOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 const HeaderWrapper2 = () => {
   const [sidebar, toggleSidebar] = useState(false);
+
+  const menu = useSelector((state) => state.menu);
+  const menuItems = menu.template || [];
+
   return (
     <>
       <MobileDrawer visible={sidebar} onClose={() => toggleSidebar(false)} />
