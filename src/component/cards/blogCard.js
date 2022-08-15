@@ -8,7 +8,7 @@ import { addItemToWishlist, removeWishlistItem } from "../../redux/actions";
 import { cardBackground1 } from "../../../images";
 
 const BlogCard = (props) => {
-  const { id, title, images } = props;
+  const { id, title, images, description } = props;
   const dispatch = useDispatch();
   const { items: wishlist } = useSelector((state) => state.wishlist);
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -24,23 +24,24 @@ const BlogCard = (props) => {
         </div>
       </Link>
 
-      <div className="d-flex justify-content-center align-items-center flex-column">
-        <div className="createdAt">{moment(new Date()).format("ddd DD/MM/YYYY")}</div>
-        <div className="product">
+      <div className="d-flex justify-content-center flex-column">
+        <div className="createdAt">{moment(new Date()).format("DD-MMM-YYYY")}</div>
+        <div title={title} className="product">
           <Link href={`/blog/${id}`}>{title}</Link>
         </div>
+        <p className="para">{description}</p>
         <div
           style={{
-            margin: "5px 25%",
+            marginTop: 8,
             height: 3,
             width: "20%",
             backgroundColor: "#ff4c3b",
             borderRadius: 50,
           }}
         ></div>
-        <p style={{ color: "#777777", marginTop: 10 }}>
+        {/* <p style={{ color: "#777777", marginTop: 10 }}>
           by:<span>John Dio, 2 Comment</span>
-        </p>
+        </p> */}
       </div>
     </StyledCard>
   );
@@ -50,6 +51,18 @@ export default BlogCard;
 
 const StyledCard = styled.div`
   margin: 0 24px;
+
+  .para {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0px;
+    font-size: 11px;
+    color: rgb(124, 124, 124);
+  }
+
   .product-image {
     background-size: cover;
     background-position: center;
@@ -173,6 +186,12 @@ const StyledCard = styled.div`
     line-height: 1.3em;
     color: #000;
     margin: 12px 0;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .price {

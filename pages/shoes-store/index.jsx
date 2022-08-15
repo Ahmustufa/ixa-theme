@@ -22,7 +22,7 @@ import Title4 from "src/component/titles/title4";
 import Service2 from "src/component/services/service3";
 import Banner from "src/component/collectionBanner/banner";
 import CardStyle6 from "src/component/cards/CardStyle6";
-import { shoesProducts } from "src/mock/shoesProducts";
+import { shoesProducts, shoesBlogs } from "src/mock/shoesProducts";
 
 const BagStore = () => {
   const carousel1Data = [
@@ -70,33 +70,27 @@ const BagStore = () => {
           padding="0px 0px 5% 0px"
           insideData={[
             {
-              image:
-                "https://cdn.shopify.com/s/files/1/0490/2443/4341/products/I35127_SILVER_1024x1024.jpg",
+              image: "/images/Shoes/category/women-shoes.png",
               title: "Women Shoes",
             },
             {
-              image:
-                "https://cdn.shopify.com/s/files/1/0490/2443/4341/products/M26051_NAVY_300x.jpg",
+              image: "images/Shoes/category/men-shoes.webp",
               title: "Men Shoes",
             },
             {
-              image:
-                "https://cdn.shopify.com/s/files/1/0490/2443/4341/products/M34054_BROWNb_300x.jpg",
+              image: "images/Shoes/category/formal.webp",
               title: "Formal",
             },
             {
-              image:
-                "https://cdn.shopify.com/s/files/1/0490/2443/4341/products/M18023_MAROON_300x.jpg",
+              image: "/images/Shoes/category/slippers.webp",
               title: "Slippers",
             },
             {
-              image:
-                "https://cdn.shopify.com/s/files/1/0490/2443/4341/products/I47203_MAROON_300x.jpg",
+              image: "/images/Shoes/category/heels.webp",
               title: "Heels",
             },
             {
-              image:
-                "https://www.ebhshop.com/wp-content/uploads/2022/03/0660-10D0001_Black-510x510.jpg",
+              image: "/images/Shoes/category/boots.png",
               title: "Boots",
             },
           ]}
@@ -109,38 +103,34 @@ const BagStore = () => {
           colSize={8}
           insideData={[
             {
-              image: "/images/Shoes/featured/left-banner.jpg",
+              image: "/images/Shoes/banner/left-banner.jpg",
               title1: "40% OFF",
               title2: "Men Shoes",
             },
             {
-              image: "/images/Shoes/featured/center-banner.jpg",
+              image: "/images/Shoes/banner/center-banner.jpg",
               title1: "",
               title2: "",
             },
             {
-              image: "/images/Shoes/featured/right-banner.jpg",
+              image: "/images/Shoes/banner/right-banner.jpg",
               title1: "50% OFF",
               title2: "Women Shoes",
             },
           ]}
-          cardHeight={200}
+          cardHeight={300}
           textAlign="start"
           title2Color="#fff"
         />
 
         <ProductCarousel CardStyle={CardStyle6} data={shoesProducts} />
 
-        <FullBgImageSection
-          h1="Trending"
-          h3="Men | Women"
-          h5="Fashion"
-          bgImage="https://www.smartertravel.com/wp-content/uploads/2017/08/All-Birds-hero.jpg"
-        />
+        <FullBgImageSection h1="" h3="" h5="" bgImage="/images/Shoes/banner/banner.png" />
 
-        <BlogCarousel />
+        <Title4 subtitle="Recent Story" maintitle="From the Blog" />
+        <BlogCarousel data={shoesBlogs} padding="0px 5% 5% 5%" />
 
-        <section>
+        {/* <section>
           <div style={{ fontSize: "3rem", color: "#54595f", textAlign: "center" }}>
             Reveal your edginess.
             <br />
@@ -148,7 +138,7 @@ const BagStore = () => {
           </div>
 
           <img src="/images/slide_3.jpg" className="img-fluid mt-4" />
-        </section>
+        </section> */}
       </StyledPage>
     </>
   );

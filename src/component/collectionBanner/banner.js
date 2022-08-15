@@ -16,13 +16,18 @@ const StyledBanner = styled.div`
     position: relative;
     margin: auto;
     overflow: hidden;
-    img {
+    .img-div {
       transition: 0.5s ease;
       transform: scale(1);
       display: block;
       position: absolute;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 250px;
+      width: 100%;
     }
-    &:hover img {
+    &:hover .img-div {
       transform: scale(1.03);
       transition: all 0.4s ease;
     }
@@ -62,7 +67,10 @@ const Banner = (props) => {
                 height: props.cardHeight,
               }}
             >
-              <img src={data.image} width="100%" />
+              <div
+                className="img-div"
+                style={{ backgroundImage: `url(${data.image})` }}
+              />
 
               <div
                 style={{
