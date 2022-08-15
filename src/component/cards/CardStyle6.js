@@ -13,7 +13,7 @@ import {
 import { Rate } from "antd";
 
 const CardStyle6 = (props) => {
-  const { images, title, price } = props;
+  const { images, title, price, brandName } = props;
   const dispatch = useDispatch();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -22,12 +22,12 @@ const CardStyle6 = (props) => {
   });
 
   return (
-    <StyledCard>
+    <StyledCard images={images}>
       {/* <img src={image} width="100%" /> */}
       <Link href={`/product}`}>
         <div
           className="image-container"
-          style={{ backgroundImage: `url(${images[0]})` }}
+          // style={{ backgroundImage: `url(${images[0]})` }}
         ></div>
       </Link>
       <div className="cart-actions">
@@ -45,14 +45,22 @@ const CardStyle6 = (props) => {
         </div>
       </div>
       <div className="item-details">
-        <Rate defaultValue={4} disabled style={{ color: "#ffa200", fontSize: 13 }} />
-        <div className="product mt-2">{title}</div>
+        <Rate
+          defaultValue={5}
+          disabled
+          style={{ color: "#ffa200", fontSize: 14, marginTop: 8 }}
+        />
+        <div title={title} className="product mt-2">
+          {title}
+        </div>
+
+        <div style={{ fontSize: 12, color: "brown" }}>({brandName})</div>
 
         <div className="price">
           {formatedPrice.format(price)}{" "}
-          <small style={{ color: "#858585", textDecoration: "line-through" }}>
+          {/* <small style={{ color: "#858585", textDecoration: "line-through" }}>
             {price * 1.5}
-          </small>
+          </small> */}
         </div>
       </div>
     </StyledCard>
@@ -76,11 +84,17 @@ const StyledCard = styled.div`
     border-radius: 4px;
     text-align: center;
     width: 100%;
-    padding-top: 100%;
+    padding-top: 130%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 320px;
+    background-image: url(${(props) => props.images[0]});
+    transition: 0.2s ease;
+    /* min-height: 320px; */
+
+    &:hover {
+      background-image: url(${(props) => props.images[1]});
+    }
   }
 
   .cart-actions {
@@ -103,15 +117,16 @@ const StyledCard = styled.div`
   .cart-actions {
     opacity: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     position: absolute;
     border-radius: 30px;
     background-color: #fff;
-    padding: 10px;
+    padding: 10px 4% 10px 4%;
     -webkit-transition: all 0.5s ease;
     box-shadow: 0px 0px 5px 0px #929292;
     transition: all 0.5s ease;
-    width: 50%;
+    min-width: 100px;
+    max-width: 200px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -122,7 +137,10 @@ const StyledCard = styled.div`
     opacity: 1;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    bottom: 30%;
+    bottom: 150px;
+  }
+  :hover .image-container {
+    background-image: url(${(props) => props.images[1]});
   }
 
   .item-details {
@@ -139,14 +157,23 @@ const StyledCard = styled.div`
   }
 
   .product {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 18px;
     font-weight: 400;
     color: #000;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .price {
-    font-size: 16px;
-    font-weight: 600;
-    color: #54595f;
+    font-size: 14px;
+    font-weight: 500;
+    color: #696969;
+    margin-top: 10px;
   }
 `;

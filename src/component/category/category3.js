@@ -126,7 +126,7 @@ const Category3 = (props) => {
           <div className="p-0">
             <a className="image-block-1">
               <img
-                src="https://multikart-react.vercel.app/_next/static/images/cat1-947e31f2645fbb4eb9817bb272606f67.jpg"
+                src="/images/Shoes/category3-1.jpg"
                 className="img-fluid blur-up lazyload bg-img media"
               />
             </a>
@@ -159,7 +159,7 @@ const Category3 = (props) => {
           <div className="p-0">
             <a className="image-block-1">
               <img
-                src="https://multikart-react.vercel.app/_next/static/images/cat2-1228cf0bba01bae4640e0abff8ce6c75.jpg"
+                src="/images/Shoes/category3-3.jpg"
                 className="img-fluid blur-up lazyload bg-img media"
               />
             </a>
@@ -192,7 +192,7 @@ const Category3 = (props) => {
           <div className="p-0">
             <a className="image-block-2">
               <img
-                src="https://multikart-react.vercel.app/_next/static/images/cat3-02f58218a31d0d2024577b3f86a47f33.jpg"
+                src="/images/Shoes/category3-2.jpg"
                 className="img-fluid blur-up lazyload bg-img media"
               />
             </a>

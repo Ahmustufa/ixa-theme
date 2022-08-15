@@ -24,11 +24,17 @@ const SortBar = (props) => {
           </div>
         </Col>
 
-        <Col xs={0} sm={0} md={8} lg={8} xl={8}>
+        <Col xs={24} sm={24} md={7} lg={7} xl={7}>
           <div className="filter-div">
             <div>
-              <CgMenuGridR style={{ fontSize: 22, cursor: "pointer", marginRight: 8 }} />
-              <AiOutlineBars style={{ fontSize: 22, cursor: "pointer" }} />
+              <CgMenuGridR
+                style={{ fontSize: 22, cursor: "pointer", marginRight: 8 }}
+                onClick={() => setGridColumn(3)}
+              />
+              <AiOutlineBars
+                style={{ fontSize: 22, cursor: "pointer" }}
+                onClick={() => setGridColumn(1)}
+              />
             </div>
 
             <div className="d-flex">
@@ -59,7 +65,7 @@ const SortBar = (props) => {
           </div>
         </Col>
 
-        <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+        <Col xs={24} sm={24} md={5} lg={5} xl={5}>
           <div style={{ borderRight: "1px solid #ddd" }} className="select-wrapper">
             <select className="dropdown">
               <option value="1">24 Products Per Page</option>

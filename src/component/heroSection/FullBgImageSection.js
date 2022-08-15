@@ -17,10 +17,11 @@ export default FullBgImageSection;
 const StyledSection = styled.div`
   margin: 3% 0;
   height: 70vh;
-  background-size: cover;
+  background-size: contain;
   background-image: ${(props) => `url(${props.bgImage})`};
-  background-position: center center;
+  background-position: center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-start;

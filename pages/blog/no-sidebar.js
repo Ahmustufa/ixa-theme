@@ -32,38 +32,38 @@ const NoSidebar = (props) => {
 
   const blogData = [
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/2.jpg",
+      images: ["https://multikart-react.vercel.app/assets/images/portfolio/metro/2.jpg"],
       price: "$40",
       title:
         "you how all this mistaken idea of denouncing pleasure and praising pain was born",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/6.jpg",
+      images: ["https://multikart-react.vercel.app/assets/images/portfolio/metro/6.jpg"],
       price: "$40",
       title:
         "you how all this mistaken idea of denouncing pleasure and praising pain was born",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/10.jpg",
+      images: ["https://multikart-react.vercel.app/assets/images/portfolio/metro/10.jpg"],
       price: "$40",
       title:
         "you how all this mistaken idea of denouncing pleasure and praising pain was born",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/14.jpg",
+      images: ["https://multikart-react.vercel.app/assets/images/portfolio/metro/14.jpg"],
       price: "$40",
       title:
         "you how all this mistaken idea of denouncing pleasure and praising pain was born",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/18.jpg",
+      images: ["https://multikart-react.vercel.app/assets/images/portfolio/metro/18.jpg"],
       price: "$40",
       title:
         "you how all this mistaken idea of denouncing pleasure and praising pain was born",
     },
 
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/3.jpg",
+      images: ["https://multikart-react.vercel.app/assets/images/portfolio/metro/3.jpg"],
       price: "$40",
       title:
         "you how all this mistaken idea of denouncing pleasure and praising pain was born",

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
-import { Rate } from "antd";
+import { Rate, Row, Col } from "antd";
 import {
   AiOutlineShoppingCart,
   AiOutlineHeart,
@@ -10,7 +10,7 @@ import {
 } from "react-icons/ai";
 
 const ProductCardWithIcons = (props) => {
-  const { _id, title, brandName, price, images, link } = props;
+  const { _id, title, brandName, price, images, listView } = props;
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
@@ -19,40 +19,71 @@ const ProductCardWithIcons = (props) => {
 
   return (
     <StyledCard>
-      <Link href={`/product/${_id}`}>
-        <div className="image-container" style={{ backgroundImage: `url(${images[0]})` }}>
-          {/* <img src={images[0]} alt={title} className="img-fluid product-image" /> */}
-        </div>
-      </Link>
-      <div className="new-item">NEW</div>
+      <Row justify="space-between">
+        <Col
+          xs={24}
+          sm={24}
+          md={listView ? 8 : 24}
+          lg={listView ? 6 : 24}
+          xl={listView ? 4 : 24}
+        >
+          <Link href={`/product/${_id}`}>
+            <div
+              className="image-container"
+              style={{ backgroundImage: `url(${images[0]})` }}
+            ></div>
+          </Link>
+          <div className="new-item">NEW</div>
 
-      <div className="icon-section">
-        <div className="icon icon-1">
-          <AiOutlineShoppingCart size={20} title={"Add to cart"} />
-        </div>
-        <div className="icon icon-2">
-          <AiOutlineHeart size={20} title={"Add to wishlist"} />
-        </div>
-        <div className="icon icon-3">
-          <AiOutlineSearch size={20} title={"Quick view"} />
-        </div>
-        <div className="icon icon-4">
-          <AiOutlineSync size={20} title={"Compare"} />
-        </div>
-      </div>
+          <div className="icon-section">
+            <div className="icon icon-1">
+              <AiOutlineShoppingCart size={20} title={"Add to cart"} />
+            </div>
+            <div className="icon icon-2">
+              <AiOutlineHeart size={20} title={"Add to wishlist"} />
+            </div>
+            <div className="icon icon-3">
+              <AiOutlineSearch size={20} title={"Quick view"} />
+            </div>
+            <div className="icon icon-4">
+              <AiOutlineSync size={20} title={"Compare"} />
+            </div>
+          </div>
+        </Col>
 
-      <div className="item-details">
-        <div className="product mt-2">{title}</div>
-        <div className="company mt-2">{brandName}</div>
-        <Rate defaultValue={4} disabled style={{ color: "#ffa200", fontSize: 13 }} />
+        <Col
+          xs={24}
+          sm={24}
+          md={listView ? 15 : 24}
+          lg={listView ? 17 : 24}
+          xl={listView ? 19 : 24}
+        >
+          <div className="item-details">
+            <div className="product mt-2">{title}</div>
+            <div className="company mt-2">{brandName}</div>
+            <Rate defaultValue={4} disabled style={{ color: "#ffa200", fontSize: 13 }} />
 
-        <div className="price">
-          {formatedPrice.format(price)}{" "}
-          <small style={{ color: "#858585", textDecoration: "line-through" }}>
-            PKR {price * 1.5}
-          </small>
-        </div>
-      </div>
+            <div className="price">
+              {formatedPrice.format(price)}{" "}
+              <small style={{ color: "#858585", textDecoration: "line-through" }}>
+                PKR {price * 1.5}
+              </small>
+            </div>
+
+            {listView ? (
+              <div className="description">
+                It is a long established fact that a reader will be distracted by the
+                readable content of a page when looking at its layout. The point of using
+                Lorem Ipsum is that it has a more-or-less normal distribution of
+                letters,It is a long established fact that a reader will be distracted by
+                the readable content of a page when looking at its layout. The point of
+                using Lorem Ipsum is that it has a more-or-less normal distribution of
+                letters.
+              </div>
+            ) : null}
+          </div>
+        </Col>
+      </Row>
     </StyledCard>
   );
 };
@@ -70,7 +101,6 @@ const StyledCard = styled.div`
   margin-right: 5%;
 
   .image-container {
-    /* border: 1px solid #f2f2f2; */
     border-radius: 4px;
     text-align: center;
     width: 100%;
@@ -78,14 +108,6 @@ const StyledCard = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
-
-  .product-image {
-    border-radius: 4px;
-    cursor: pointer;
-    // height: 300px;
-    object-fit: contain;
-    padding: 18px;
   }
 
   .icon-section {
@@ -176,6 +198,12 @@ const StyledCard = styled.div`
     line-height: 36px;
     text-align: center;
     font-size: 10px;
+  }
+
+  .description {
+    color: #727272;
+    font-size: 13px;
+    margin-top: 12px;
   }
 
   @media only screen and (max-width: 1200px) {

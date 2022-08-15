@@ -74,7 +74,7 @@ const StyledCard = styled.div`
 
   .item-details {
     overflow: hidden;
-    psotion: relative;
+    position: relative;
   }
 
   .company {

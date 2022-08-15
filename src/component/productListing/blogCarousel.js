@@ -46,13 +46,6 @@ const BlogCarousel = (props) => {
 
   return (
     <StyledContent style={{ padding: props.padding ? props.padding : "5%" }}>
-      <div className="text-center">
-        <Heading backgroundColor={"#f54c3b"}>
-          <h6 style={{ color: "#f54c3b" }}>Recent Story</h6>
-          FROM THE BLOG
-        </Heading>
-      </div>
-
       <Slider {...carouselSettings}>
         {data.map((item, index) => (
           <div key={index}>
