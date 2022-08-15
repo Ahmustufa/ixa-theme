@@ -48,7 +48,7 @@ const BlogCarousel = (props) => {
     <StyledContent style={{ padding: props.padding ? props.padding : "5%" }}>
       <Slider {...carouselSettings}>
         {data.map((item, index) => (
-          <div>
+          <div key={index}>
             <BlogCard {...item} />
           </div>
         ))}

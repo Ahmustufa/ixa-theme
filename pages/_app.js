@@ -7,20 +7,20 @@ import "../src/component/header/header2.style.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Layout from "../src/component/layouts/mainLayout";
+import { useEffect } from "react";
 import { Provider } from "react-redux";
-import { store, persistor } from "../src/redux/ConfigStore";
 import { PersistGate } from "redux-persist/integration/react";
 import Router from "next/router";
 import ReactDOM from "react-dom";
-// import CookieBanner from "../src/component/cookieBanner";
-import { useEffect } from "react";
 import * as ga from "react-ga";
 import { useRouter } from "next/router";
+import Layout from "../src/component/layouts/mainLayout";
+import { store, persistor } from "../src/redux/ConfigStore";
 import AuthModal from "../src/component/modals/authModal";
 import SideCart from "../src/component/sidebar/sideCart";
-// import PageChange from "../src/component/PageChange";
 import PageLoad2 from "../src/component/loader/pageLoad2";
+import { shoesMenu, bagsMenu, mainMenu } from "src/mock/menus";
+import { Menu } from "src/redux/constants";
 
 Router.events.on("routeChangeStart", (url) => {
   document.body.classList.add("body-page-transition");
@@ -39,6 +39,7 @@ Router.events.on("routeChangeError", () => {
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
+
   /**
    * Addng a div element with id page transition to show loading screen when switching between pages
    */
@@ -58,6 +59,19 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, []);
+
+  /**
+   * Updating menus for different demos
+   */
+  useEffect(() => {
+    if (router.pathname.includes("/demo/bags")) {
+      store.dispatch({ type: Menu.UPDATE, payload: bagsMenu });
+    } else if (router.pathname.includes("/demo/shoes")) {
+      store.dispatch({ type: Menu.UPDATE, payload: shoesMenu });
+    } else {
+      store.dispatch({ type: Menu.UPDATE, payload: mainMenu });
+    }
+  }, [router.pathname]);
 
   return (
     <Provider store={store}>

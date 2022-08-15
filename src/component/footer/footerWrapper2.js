@@ -65,14 +65,26 @@ const FooterContent = () => {
         justify="center"
         gutter={[32, 32]}
       >
-        <Col md={{ span: 12, order: 2 }} xs={24} sm={24} lg={6} xl={6}>
+        <Col
+          md={{ span: 12, order: 2 }}
+          xs={24}
+          sm={24}
+          lg={{ span: 6, order: 1 }}
+          xl={6}
+        >
           <div className="text-center text-lg-left">
             <p className="section-title">Connect with us</p>
             <FaFacebookF /> <FaInstagram /> <FaTwitter />
           </div>
         </Col>
 
-        <Col xs={24} sm={24} md={{ span: 24, order: 1 }} lg={12} xl={12}>
+        <Col
+          xs={24}
+          sm={24}
+          md={{ span: 24, order: 1 }}
+          lg={{ span: 1, order: 2 }}
+          xl={12}
+        >
           <div className="text-center text-lg-left">
             <p className="section-title">Sign up for savings</p>
             <Input.Group style={{ height: 40, marginTop: 24 }} compact>
@@ -91,7 +103,13 @@ const FooterContent = () => {
           </div>
         </Col>
 
-        <Col xs={24} sm={24} md={{ span: 12, order: 3 }} lg={6} xl={6}>
+        <Col
+          xs={24}
+          sm={24}
+          md={{ span: 12, order: 3 }}
+          lg={{ span: 6, order: 3 }}
+          xl={6}
+        >
           <div className="text-center text-lg-left">
             <p className="section-title">Absolutely guaranteed</p>
             <p className="footer-item m-0">

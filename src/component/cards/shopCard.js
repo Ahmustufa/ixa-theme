@@ -8,8 +8,8 @@ const ShopCard = (props) => {
       <div className="item-details">
         <div className="title">Back in Black</div>
         <div className="description">
-          Sharp, chic and glamorous—own the room in the power pairing that's always in
-          style.
+          {`Sharp, chic and glamorous—own the room in the power pairing that's always in
+          style.`}
         </div>
         <ButtonWrapper style={{ width: 200 }}>SHOP NOW</ButtonWrapper>
       </div>
@@ -23,7 +23,7 @@ const StyledCard = styled.div`
   .image-container {
     background-image: url(/images/shop_card_image.jpg);
     background-size: cover;
-    backgorund-position: center;
+    background-position: center;
     height: 500px;
     width: 480px;
     position: relative;

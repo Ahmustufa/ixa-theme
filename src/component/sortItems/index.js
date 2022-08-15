@@ -27,8 +27,14 @@ const SortBar = (props) => {
         <Col xs={24} sm={24} md={7} lg={7} xl={7}>
           <div className="filter-div">
             <div>
-              <CgMenuGridR style={{ fontSize: 22, cursor: "pointer", marginRight: 8 }} />
-              <AiOutlineBars style={{ fontSize: 22, cursor: "pointer" }} />
+              <CgMenuGridR
+                style={{ fontSize: 22, cursor: "pointer", marginRight: 8 }}
+                onClick={() => setGridColumn(3)}
+              />
+              <AiOutlineBars
+                style={{ fontSize: 22, cursor: "pointer" }}
+                onClick={() => setGridColumn(1)}
+              />
             </div>
 
             <div className="d-flex">

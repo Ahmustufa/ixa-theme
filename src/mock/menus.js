@@ -1,4 +1,58 @@
-export const menuItems = [
+export const shoesMenu = [
+  {
+    title: "home",
+    link: "/demo/shoes",
+  },
+  {
+    title: "BACKPACKS",
+    link: "/demo/shoes/backpack",
+  },
+  {
+    title: "TERRABASE",
+    link: "/demo/shoes/terrabase",
+  },
+  {
+    title: "DISCOVER US",
+    link: "/demo/shoes/discover-us",
+  },
+  {
+    title: "OUTLET",
+    link: "/demo/shoes/outlet",
+  },
+  {
+    title: "CONTACT",
+    link: "/demo/shoes/contact",
+  },
+];
+
+export const bagsMenu = [
+  {
+    title: "home",
+    link: "/demo/bags",
+  },
+  {
+    title: "BACKPACKS",
+    link: "/demo/bags/backpack",
+  },
+  {
+    title: "TERRABASE",
+    link: "/demo/bags/terrabase",
+  },
+  {
+    title: "DISCOVER US",
+    link: "/demo/bags/discover-us",
+  },
+  {
+    title: "OUTLET",
+    link: "/demo/bags/outlet",
+  },
+  {
+    title: "CONTACT",
+    link: "/demo/bags/contact",
+  },
+];
+
+export const mainMenu = [
   {
     title: "home",
     submenu: [
@@ -9,23 +63,20 @@ export const menuItems = [
     link: "/",
   },
   {
-    title: "shop",
+    title: "demos",
     submenu: [
-      { title: "Left Sidebar", link: "/shop/left-sidebar" },
-      { title: "Right Sidebar", link: "/shop/right-sidebar" },
-      { title: "No Sidebar", link: "/shop/no-sidebar" },
-      { title: "Thee Grid", link: "/shop/three-grid" },
-      { title: "Six Grid", link: "/shop/six-grid" },
-      { title: "List View", link: "/shop/list-view" },
+      { title: "Shoes", link: "/demo/shoes" },
+      { title: "Bags", link: "/demo/bags" },
+      { title: "Clothing", link: "/demo/clothing" },
     ],
+    link: "",
   },
   {
     title: "products",
-    link: "/products",
+    link: "#",
     submenu: [
       { title: "4-image", link: "/product/4-image" },
       { title: "Sticky", link: "/product/sticky" },
-      // { title: "Carousel", link: "/product/carousel" },
       {
         title: "Thumbnails",
         submenu: [
@@ -38,7 +89,7 @@ export const menuItems = [
   },
   {
     title: "feature",
-    link: "/feature",
+    link: "#",
     submenu: [
       { title: "Product Box", link: "/feature/product-element/product-box" },
       { title: "Multi slider", link: "/feature/product-element/multi-slider" },
@@ -60,11 +111,22 @@ export const menuItems = [
           { title: "Title", link: "/feature/theme-element/title" },
         ],
       },
+      {
+        title: "shop",
+        submenu: [
+          { title: "Left Sidebar", link: "/shop/left-sidebar" },
+          { title: "Right Sidebar", link: "/shop/right-sidebar" },
+          { title: "No Sidebar", link: "/shop/no-sidebar" },
+          { title: "Thee Grid", link: "/shop/three-grid" },
+          { title: "Six Grid", link: "/shop/six-grid" },
+          { title: "List View", link: "/shop/list-view" },
+        ],
+      },
     ],
   },
   {
     title: "pages",
-    link: "/pages",
+    link: "#",
     submenu: [
       { title: "Compare", link: "/pages/compare" },
       {
@@ -83,7 +145,7 @@ export const menuItems = [
   },
   {
     title: "blog",
-    link: "/blog",
+    link: "#",
     submenu: [
       { title: "Blog left sidebar", link: "/blog/blog-left-sidebar" },
       { title: "Blog right sidebar", link: "/blog/blog-right-sidebar" },

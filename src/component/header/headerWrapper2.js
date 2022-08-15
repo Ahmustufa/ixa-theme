@@ -3,7 +3,6 @@ import Link from "next/link";
 import router from "next/router";
 import { Row, Col, Input, Dropdown, Menu } from "antd";
 import { InputWrapper } from "../inputs";
-import { menuItems } from "./menuItems";
 import MobileDrawer from "./mobileDrawer";
 /**
  * Icons
@@ -22,9 +21,17 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { IoMenuOutline } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
+import { openCart } from "src/redux/actions/cartActions";
+import { ModalConstant } from "src/redux/constants";
 
 const HeaderWrapper2 = () => {
+  const dispatch = useDispatch();
   const [sidebar, toggleSidebar] = useState(false);
+
+  const menu = useSelector((state) => state.menu);
+  const menuItems = menu.template || [];
+
   return (
     <>
       <MobileDrawer visible={sidebar} onClose={() => toggleSidebar(false)} />
@@ -93,7 +100,13 @@ const HeaderWrapper2 = () => {
           </Col>
 
           <Col xs={0} sm={0} md={2}>
-            <div className="icon-box" role="button">
+            <div
+              className="icon-box"
+              role="button"
+              onClick={() => {
+                dispatch({ type: ModalConstant.OPEN_LOGIN_MODAL });
+              }}
+            >
               <AiOutlineUser className="icon" />
 
               <div>
@@ -104,7 +117,13 @@ const HeaderWrapper2 = () => {
           </Col>
 
           <Col xs={0} sm={0} md={2}>
-            <div className="icon-box" role="button">
+            <div
+              className="icon-box"
+              role="button"
+              onClick={() => {
+                dispatch(openCart());
+              }}
+            >
               <AiOutlineShoppingCart className="icon" />
               <p className="title">Cart</p>
             </div>
@@ -112,7 +131,12 @@ const HeaderWrapper2 = () => {
 
           <Col xs={3} sm={3} md={0}>
             <div className="text-right">
-              <BsSearch style={{ fontSize: 24, cursor: "pointer" }} />
+              <AiOutlineUser
+                style={{ fontSize: 24, cursor: "pointer" }}
+                onClick={() => {
+                  dispatch({ type: ModalConstant.OPEN_LOGIN_MODAL });
+                }}
+              />
             </div>
           </Col>
         </Row>

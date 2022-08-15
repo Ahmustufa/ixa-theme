@@ -82,8 +82,8 @@ const Category1 = (props) => {
     >
       <Slider {...settings}>
         {props.insideData.map((data, index) => (
-          <div className="main-div">
-            <div key={index}>
+          <div key={index} className="main-div">
+            <div>
               <div className="circle">
                 <img src={data.image} />
               </div>

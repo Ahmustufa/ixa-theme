@@ -4,14 +4,13 @@ import ProductCard from "../cards/productCardWithIcons";
 const ProductListing = (props) => {
   const { columns, products, grid, CardStyle } = props;
   const span = 24 / grid;
-  console.log("GRID", grid);
-  console.log("COLUMN SIZE", span);
+
   return (
     <Row gutter={[32, 32]}>
       {products.map((item, index) => {
         return (
           <Col key={index} xs={24} sm={24} md={12} lg={11} xl={span} xxl={span}>
-            <CardStyle {...item} />
+            <CardStyle listView={grid == 1 ? true : false} {...item} />
           </Col>
         );
       })}
