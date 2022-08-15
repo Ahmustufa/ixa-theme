@@ -15,7 +15,6 @@ import { Rate } from "antd";
 const CardStyle6 = (props) => {
   const { images, title, price, brandName } = props;
   const dispatch = useDispatch();
-
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
     currency: "PKR",
@@ -23,12 +22,8 @@ const CardStyle6 = (props) => {
 
   return (
     <StyledCard images={images}>
-      {/* <img src={image} width="100%" /> */}
-      <Link href={`/product}`}>
-        <div
-          className="image-container"
-          // style={{ backgroundImage: `url(${images[0]})` }}
-        ></div>
+      <Link href={`/product/${props._id}`}>
+        <div className="image-container" />
       </Link>
       <div className="cart-actions">
         <div className="add_to_cart" style={{ opacity: 1 }}>
