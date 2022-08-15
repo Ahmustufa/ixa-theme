@@ -42,9 +42,505 @@ export const shoesProducts = [
   {
     _id: 6,
     images: ["/images/Shoes/featured/6.webp"],
-    title: "Mesh Panel Lace Up Trainers",
+    title: "Mesh Panel Trainers",
     brandName: "CUCCOO",
     price: 1199,
+    link: "#",
+  },
+];
+
+export const womenShoesListing = [
+  {
+    _id: 1,
+    images: [
+      "/images/Shoes/Women/1/1.webp",
+      "/images/Shoes/Women/1/2.webp",
+      "/images/Shoes/Women/1/3.webp",
+      "/images/Shoes/Women/1/4.webp",
+      "/images/Shoes/Women/1/5.webp",
+      "/images/Shoes/Women/1/6.webp",
+      "/images/Shoes/Women/1/7.webp",
+      "/images/Shoes/Women/1/8.webp",
+      "/images/Shoes/Women/1/9.webp",
+      "/images/Shoes/Women/1/10.webp",
+    ],
+    title: "Knit Chunky Sock Boots",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Caperion",
+    price: 599,
+    link: "#",
+  },
+
+  {
+    _id: 2,
+    images: [
+      "/images/Shoes/Women/2/1.webp",
+      "/images/Shoes/Women/2/2.webp",
+      "/images/Shoes/Women/2/3.webp",
+      "/images/Shoes/Women/2/4.webp",
+      "/images/Shoes/Women/2/5.webp",
+    ],
+    title: "Lace Decor Buckle Boots",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Lace",
+    price: 899,
+    link: "#",
+  },
+
+  {
+    _id: 3,
+    images: [
+      "/images/Shoes/Women/3/1.webp",
+      "/images/Shoes/Women/3/2.webp",
+      "/images/Shoes/Women/3/3.webp",
+      "/images/Shoes/Women/3/4.webp",
+    ],
+    title: "Metal Decor Combat Boots",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Metal",
+    price: 899,
+    link: "#",
+  },
+
+  {
+    _id: 4,
+    images: [
+      "/images/Shoes/Women/4/1.webp",
+      "/images/Shoes/Women/4/2.webp",
+      "/images/Shoes/Women/4/3.webp",
+      "/images/Shoes/Women/4/4.webp",
+      "/images/Shoes/Women/4/5.webp",
+      "/images/Shoes/Women/4/6.webp",
+    ],
+    title: "Chunky Heeled Classic Boots",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Minimalist ",
+    price: 799,
+    link: "#",
+  },
+
+  {
+    _id: 5,
+    images: [
+      "/images/Shoes/Women/5/1.webp",
+      "/images/Shoes/Women/5/2.webp",
+      "/images/Shoes/Women/5/3.webp",
+      "/images/Shoes/Women/5/4.webp",
+      "/images/Shoes/Women/5/5.webp",
+    ],
+    title: "Side Zipped Combat Boots",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Minimalist",
+    price: 799,
+    link: "#",
+  },
+
+  {
+    _id: 6,
+    images: [
+      "/images/Shoes/Women/6/1.webp",
+      "/images/Shoes/Women/6/2.webp",
+      "/images/Shoes/Women/6/3.webp",
+      "/images/Shoes/Women/6/4.webp",
+      "/images/Shoes/Women/6/5.webp",
+      "/images/Shoes/Women/6/6.webp",
+    ],
+    title: "Dark Academia Eyelet Boots",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "ROMWE",
+    price: 499,
+    link: "#",
+  },
+
+  {
+    _id: 7,
+    images: [
+      "/images/Shoes/Women/7/1.webp",
+      "/images/Shoes/Women/7/2.webp",
+      "/images/Shoes/Women/7/3.webp",
+      "/images/Shoes/Women/7/4.webp",
+      "/images/Shoes/Women/7/5.webp",
+    ],
+    title: "Side Zipper Platform Boots",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Kinnie",
+    price: 499,
+    link: "#",
+  },
+
+  {
+    _id: 8,
+    images: [
+      "/images/Shoes/Women/8/1.webp",
+      "/images/Shoes/Women/8/2.webp",
+      "/images/Shoes/Women/8/3.webp",
+      "/images/Shoes/Women/8/4.webp",
+      "/images/Shoes/Women/8/5.webp",
+      "/images/Shoes/Women/8/6.webp",
+    ],
+    title: "Square Toe Heeled Boots",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "NEIT",
+    price: 1099,
+    link: "#",
+  },
+
+  {
+    _id: 9,
+    images: [
+      "/images/Shoes/Women/9/1.webp",
+      "/images/Shoes/Women/9/2.webp",
+      "/images/Shoes/Women/9/3.webp",
+      "/images/Shoes/Women/9/4.webp",
+      "/images/Shoes/Women/9/5.webp",
+      "/images/Shoes/Women/9/6.webp",
+    ],
+    title: "Patent Heeled Court Pumps",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Onix",
+    price: 1099,
+    link: "#",
+  },
+
+  {
+    _id: 10,
+    images: [
+      "/images/Shoes/Women/10/1.webp",
+      "/images/Shoes/Women/10/2.webp",
+      "/images/Shoes/Women/10/3.webp",
+      "/images/Shoes/Women/10/4.webp",
+    ],
+    title: "Platform Chunky Heeled Pumps",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Buckle",
+    price: 1099,
+    link: "#",
+  },
+
+  {
+    _id: 11,
+    images: [
+      "/images/Shoes/Women/11/1.webp",
+      "/images/Shoes/Women/11/2.webp",
+      "/images/Shoes/Women/11/3.webp",
+      "/images/Shoes/Women/11/4.webp",
+      "/images/Shoes/Women/11/5.webp",
+      "/images/Shoes/Women/11/6.webp",
+    ],
+    title: "Chunky Heeled Suede Pumps",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Suede",
+    price: 1199,
+    link: "#",
+  },
+
+  {
+    _id: 12,
+    images: [
+      "/images/Shoes/Women/12/1.webp",
+      "/images/Shoes/Women/12/2.webp",
+      "/images/Shoes/Women/12/3.webp",
+      "/images/Shoes/Women/12/4.webp",
+      "/images/Shoes/Women/12/5.webp",
+      "/images/Shoes/Women/12/6.webp",
+    ],
+    title: "Knit Chunky Heeled Pumps",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "CUCCOO",
+    price: 1199,
+    link: "#",
+  },
+
+  {
+    _id: 13,
+    images: [
+      "/images/Shoes/Women/13/1.webp",
+      "/images/Shoes/Women/13/2.webp",
+      "/images/Shoes/Women/13/3.webp",
+      "/images/Shoes/Women/13/4.webp",
+      "/images/Shoes/Women/13/5.webp",
+    ],
+    title: "Glitter Bow Chunky Pumps",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "CUCCOO",
+    price: 1199,
+    link: "#",
+  },
+
+  {
+    _id: 14,
+    images: [
+      "/images/Shoes/Women/14/1.webp",
+      "/images/Shoes/Women/14/2.webp",
+      "/images/Shoes/Women/14/3.webp",
+      "/images/Shoes/Women/14/4.webp",
+      "/images/Shoes/Women/14/5.webp",
+    ],
+    title: "Hollow Flower Heeled Pumps",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Mule",
+    price: 1199,
+    link: "#",
+  },
+
+  {
+    _id: 15,
+    images: [
+      "/images/Shoes/Women/15/1.webp",
+      "/images/Shoes/Women/15/2.webp",
+      "/images/Shoes/Women/15/3.webp",
+    ],
+    title: "Lace-up Chunky Pumps",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Oxford",
+    price: 1599,
+    link: "#",
+  },
+
+  {
+    _id: 16,
+    images: [
+      "/images/Shoes/Women/16/1.webp",
+      "/images/Shoes/Women/16/2.webp",
+      "/images/Shoes/Women/16/3.webp",
+    ],
+    title: "Lace-up front Chunky Pumps",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Oxford",
+    price: 1599,
+    link: "#",
+  },
+
+  {
+    _id: 17,
+    images: [
+      "/images/Shoes/Women/17/1.webp",
+      "/images/Shoes/Women/17/2.webp",
+      "/images/Shoes/Women/17/3.webp",
+      "/images/Shoes/Women/17/4.webp",
+      "/images/Shoes/Women/17/5.webp",
+    ],
+    title: "Point Toe Stiletto Heeled",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Metallic",
+    price: 999,
+    link: "#",
+  },
+
+  {
+    _id: 18,
+    images: [
+      "/images/Shoes/Women/18/1.webp",
+      "/images/Shoes/Women/18/2.webp",
+      "/images/Shoes/Women/18/3.webp",
+      "/images/Shoes/Women/18/4.webp",
+      "/images/Shoes/Women/18/5.webp",
+    ],
+    title: "Chunky Heeled Penny Loafers",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Minimalist",
+    price: 999,
+    link: "#",
+  },
+
+  {
+    _id: 19,
+    images: [
+      "/images/Shoes/Women/19/1.webp",
+      "/images/Shoes/Women/19/2.webp",
+      "/images/Shoes/Women/19/3.webp",
+      "/images/Shoes/Women/19/4.webp",
+      "/images/Shoes/Women/19/5.webp",
+    ],
+    title: "Minimalist Flatform Pumps",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Minimalist",
+    price: 999,
+    link: "#",
+  },
+
+  {
+    _id: 20,
+    images: [
+      "/images/Shoes/Women/20/1.webp",
+      "/images/Shoes/Women/20/2.webp",
+      "/images/Shoes/Women/20/3.webp",
+      "/images/Shoes/Women/20/4.webp",
+    ],
+    title: "Lace-up Front Oxford Pumps",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Minimalist",
+    price: 999,
+    link: "#",
+  },
+
+  {
+    _id: 21,
+    images: [
+      "/images/Shoes/Women/21/1.webp",
+      "/images/Shoes/Women/21/2.webp",
+      "/images/Shoes/Women/21/3.webp",
+      "/images/Shoes/Women/21/4.webp",
+      "/images/Shoes/Women/21/5.webp",
+    ],
+    title: "Point Toe Chunky Heeled",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Rhinestone",
+    price: 1399,
+    link: "#",
+  },
+
+  {
+    _id: 22,
+    images: [
+      "/images/Shoes/Women/22/1.webp",
+      "/images/Shoes/Women/22/2.webp",
+      "/images/Shoes/Women/22/3.webp",
+      "/images/Shoes/Women/22/4.webp",
+      "/images/Shoes/Women/22/5.webp",
+      "/images/Shoes/Women/22/6.webp",
+      "/images/Shoes/Women/22/7.webp",
+      "/images/Shoes/Women/22/8.webp",
+    ],
+    title: "Point Toe Chunky Heeled",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Rhinestone",
+    price: 1399,
+    link: "#",
+  },
+
+  {
+    _id: 23,
+    images: [
+      "/images/Shoes/Women/23/1.webp",
+      "/images/Shoes/Women/23/2.webp",
+      "/images/Shoes/Women/23/3.webp",
+    ],
+    title: "Lace-up Front Sneakers",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Colorblock",
+    price: 2499,
+    link: "#",
+  },
+
+  {
+    _id: 24,
+    images: [
+      "/images/Shoes/Women/24/1.webp",
+      "/images/Shoes/Women/24/2.webp",
+      "/images/Shoes/Women/24/3.webp",
+      "/images/Shoes/Women/24/4.webp",
+      "/images/Shoes/Women/24/5.webp",
+    ],
+    title: "Lace-up Front High Shoes",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Colorblock",
+    price: 1799,
+    link: "#",
+  },
+
+  {
+    _id: 25,
+    images: [
+      "/images/Shoes/Women/25/1.webp",
+      "/images/Shoes/Women/25/2.webp",
+      "/images/Shoes/Women/25/3.webp",
+      "/images/Shoes/Women/25/4.webp",
+    ],
+    title: "Lace-up Front Sneakers",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Wedge",
+    price: 1799,
+    link: "#",
+  },
+
+  {
+    _id: 26,
+    images: [
+      "/images/Shoes/Women/26/1.webp",
+      "/images/Shoes/Women/26/2.webp",
+      "/images/Shoes/Women/26/3.webp",
+      "/images/Shoes/Women/26/4.webp",
+      "/images/Shoes/Women/26/5.webp",
+    ],
+    title: "Letter Graphic Skate Shoes",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Wedge",
+    price: 1799,
+    link: "#",
+  },
+
+  {
+    _id: 27,
+    images: [
+      "/images/Shoes/Women/27/1.webp",
+      "/images/Shoes/Women/27/2.webp",
+      "/images/Shoes/Women/27/3.webp",
+      "/images/Shoes/Women/27/4.webp",
+      "/images/Shoes/Women/27/5.webp",
+    ],
+    title: "Letter Graphic Wedge Sneakers",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Wedge",
+    price: 1499,
+    link: "#",
+  },
+
+  {
+    _id: 28,
+    images: [
+      "/images/Shoes/Women/28/1.webp",
+      "/images/Shoes/Women/28/2.webp",
+      "/images/Shoes/Women/28/3.webp",
+    ],
+    title: "Mesh Panel Chunky",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Trainers",
+    price: 1299,
+    link: "#",
+  },
+
+  {
+    _id: 29,
+    images: [
+      "/images/Shoes/Women/29/1.webp",
+      "/images/Shoes/Women/29/2.webp",
+      "/images/Shoes/Women/29/3.webp",
+      "/images/Shoes/Women/29/4.webp",
+    ],
+    title: "Two Tone High Shoes",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+    brandName: "Trainers",
+    price: 1299,
     link: "#",
   },
 ];

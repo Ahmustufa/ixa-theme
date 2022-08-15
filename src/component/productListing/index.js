@@ -2,7 +2,7 @@ import { Row, Col } from "antd";
 import ProductCard from "../cards/productCardWithIcons";
 
 const ProductListing = (props) => {
-  const { columns, products, grid } = props;
+  const { columns, products, grid, CardStyle } = props;
   const span = 24 / grid;
   console.log("GRID", grid);
   console.log("COLUMN SIZE", span);
@@ -11,7 +11,7 @@ const ProductListing = (props) => {
       {products.map((item, index) => {
         return (
           <Col key={index} xs={24} sm={24} md={12} lg={11} xl={span} xxl={span}>
-            <ProductCard {...item} />
+            <CardStyle {...item} />
           </Col>
         );
       })}
