@@ -38,9 +38,9 @@ export const bagsMenu = [
     title: "Shop",
     link: "/demo/bags/terrabase",
     submenu: [
-      { title: "Blog left sidebar", link: "/blog/blog-left-sidebar" },
-      { title: "Blog right sidebar", link: "/blog/blog-right-sidebar" },
-      { title: "No sidebar", link: "/blog/no-sidebar" },
+      { title: "Women", link: `/demo/bag-store/women` },
+      { title: "Travel", link: `/demo/bag-store/travel` },
+      { title: "Kids", link: `/demo/bag-store/kids` },
     ],
   },
   {

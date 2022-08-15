@@ -23,14 +23,14 @@ import Title5 from "src/component/titles/title5";
 
 let data = [
   {
-    image: "/images/Bags/banner/headBanner1.png",
+    image: "/images/Bags/banner/headBanner4.jpg",
     subHeading: "Welcome To Fashion",
     heading: "WOMEN BAGS",
     link: "#",
     placement: "start",
   },
   {
-    image: "/images/Bags/banner/headBanner2.png",
+    image: "/images/Bags/banner/headBanner5.jpg",
     subHeading: "Welcome To Fashion",
     heading: "WOMEN BAGS",
     link: "#",
