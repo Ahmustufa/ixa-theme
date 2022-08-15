@@ -131,25 +131,37 @@ const productStyle5 = [
 
 const productStyle6 = [
   {
-    images: ["https://multikart-react.vercel.app/assets/images/nursery/pro/5.jpg"],
+    images: [
+      "https://multikart-react.vercel.app/assets/images/nursery/pro/5.jpg",
+      "https://multikart-react.vercel.app/assets/images/nursery/pro/5.jpg",
+    ],
     price: 250,
     title: "Product 1",
     category: "plants",
   },
   {
-    images: ["https://multikart-react.vercel.app/assets/images/nursery/pro/7.jpg"],
+    images: [
+      "https://multikart-react.vercel.app/assets/images/nursery/pro/7.jpg",
+      "https://multikart-react.vercel.app/assets/images/nursery/pro/7.jpg",
+    ],
     price: 450,
     title: "Product 2",
     category: "plants",
   },
   {
-    images: ["https://multikart-react.vercel.app/assets/images/nursery/pro/3.jpg"],
+    images: [
+      "https://multikart-react.vercel.app/assets/images/nursery/pro/3.jpg",
+      "https://multikart-react.vercel.app/assets/images/nursery/pro/3.jpg",
+    ],
     price: 710,
     title: "Product 3",
     category: "plants",
   },
   {
-    images: ["https://multikart-react.vercel.app/assets/images/nursery/pro/2.jpg"],
+    images: [
+      "https://multikart-react.vercel.app/assets/images/nursery/pro/2.jpg",
+      "https://multikart-react.vercel.app/assets/images/nursery/pro/2.jpg",
+    ],
     price: 400,
     title: "Product 4",
     category: "plants",

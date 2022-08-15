@@ -1,27 +1,41 @@
 export const shoesMenu = [
   {
-    title: "home",
-    link: "/demo/shoes",
+    title: "HOME",
+    link: "/demo/shoes-store",
   },
   {
-    title: "BACKPACKS",
-    link: "/demo/shoes/backpack",
+    title: "MEN",
+    submenu: [
+      { title: "Slippers", link: `/demo/shoes-store/men-shoes` },
+      { title: "Formal", link: `/demo/shoes-store/men-shoes` },
+      { title: "Comfort", link: `/demo/shoes-store/men-shoes` },
+      { title: "Sandals", link: `/demo/shoes-store/men-shoes` },
+      { title: "Sports", link: `/demo/shoes-store/men-shoes` },
+    ],
   },
   {
-    title: "TERRABASE",
-    link: "/demo/shoes/terrabase",
+    title: "WOMEN",
+    submenu: [
+      { title: "Flat", link: `/demo/shoes-store/women-shoes` },
+      { title: "Heels", link: `/demo/shoes-store/women-shoes` },
+      { title: "Party Wear", link: `/demo/shoes-store/women-shoes` },
+      { title: "Pumps", link: `/demo/shoes-store/women-shoes` },
+      { title: "Mule", link: `/demo/shoes-store/women-shoes` },
+      { title: "Court", link: `/demo/shoes-store/women-shoes` },
+      { title: "Sports", link: `/demo/shoes-store/women-shoes` },
+    ],
   },
   {
-    title: "DISCOVER US",
-    link: "/demo/shoes/discover-us",
-  },
-  {
-    title: "OUTLET",
-    link: "/demo/shoes/outlet",
+    title: "NEW ARRIVALS",
+    link: "/demo/shoes-store/new-arrivals",
   },
   {
     title: "CONTACT",
-    link: "/demo/shoes/contact",
+    link: "/demo/shoes-store/contact-us",
+  },
+  {
+    title: "BLOG",
+    link: "/demo/shoes-store/blogs",
   },
 ];
 
@@ -66,7 +80,7 @@ export const mainMenu = [
   {
     title: "demos",
     submenu: [
-      { title: "Shoes", link: "/demo/shoes" },
+      { title: "Shoes", link: "/demo/shoes-store" },
       { title: "Bags", link: "/demo/bag-store" },
       { title: "Clothing", link: "/demo/clothing" },
     ],

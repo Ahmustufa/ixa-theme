@@ -74,11 +74,11 @@ const BagStore = () => {
               title: "Women Shoes",
             },
             {
-              image: "images/Shoes/category/men-shoes.webp",
+              image: "/images/Shoes/category/men-shoes.webp",
               title: "Men Shoes",
             },
             {
-              image: "images/Shoes/category/formal.webp",
+              image: "/images/Shoes/category/formal.webp",
               title: "Formal",
             },
             {

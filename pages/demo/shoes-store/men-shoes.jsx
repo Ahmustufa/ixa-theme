@@ -14,7 +14,7 @@ const MenShoesListing = (props) => {
 
   return (
     <>
-      <Breadcrumb title="SHOP" link="HOME / WOMEN" className="my-5" />
+      <Breadcrumb title="SHOP" link="HOME / MEN" className="my-5" />
 
       <div className="col-11 mx-auto mb-5">
         <Row gutter={[32, 0]}>
@@ -35,7 +35,7 @@ const MenShoesListing = (props) => {
               {`Shop a wide range of women shoes, women heels, women court shoes, women peep toes, women boots, women sport shoes and many more online. Polkadots provides high quality shoes for women at your door step.`}
             </p> */}
             <img
-              src="/images/Shoes/banner/Women-banner.jpg"
+              src="/images/Shoes/banner/Men-banner.jpg"
               width="100%"
               className="mb-3"
             />
