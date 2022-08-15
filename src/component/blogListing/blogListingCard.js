@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItemToWishlist, removeWishlistItem } from "../../redux/actions";
 
 const BlogListingCard = (props) => {
-  const { id, title, image } = props;
+  const { id, title, images } = props;
   const dispatch = useDispatch();
   const { items: wishlist } = useSelector((state) => state.wishlist);
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -24,7 +24,7 @@ const BlogListingCard = (props) => {
             <div
               className="product-image img-fluid"
               style={{
-                backgroundImage: `url(${image})`,
+                backgroundImage: `url(${images[0]})`,
               }}
             ></div>
           </Link>

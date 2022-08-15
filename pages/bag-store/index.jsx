@@ -18,6 +18,8 @@ import BlogCarousel from "src/component/productListing/blogCarousel";
 import { bagsBlogs, bagsProducts } from "src/mock/bagsProducts";
 import Service1 from "src/component/services/service3";
 import SubscriptionModal from "src/component/modals/subscriptionModal2";
+import Head from "next/head";
+import Title5 from "src/component/titles/title5";
 
 let data = [
   {
@@ -54,6 +56,9 @@ let data = [
 const Bags = () => {
   return (
     <>
+      <Head>
+        <title>Bag Store</title>
+      </Head>
       <SubscriptionModal />
       <Carousel1 data={data} />
       <div className="my-4">
@@ -78,7 +83,7 @@ const Bags = () => {
           title2Color="#222"
         />
 
-        <Title2 subtitle="Recent Story" maintitle="TRENDING PRODUCTS" />
+        <Title5 subtitle="Recent Story" maintitle="TRENDING PRODUCTS" />
 
         <div className="col-11 m-auto">
           <Row gutter={[32, 32]}>
@@ -91,7 +96,7 @@ const Bags = () => {
         </div>
       </div>
 
-      <Title2 subtitle="Recent Story" maintitle="NEW ARRIVALS" />
+      <Title5 subtitle="Recent Story" maintitle="NEW ARRIVALS" />
 
       <div className="col-11 m-auto">
         <Row gutter={[32, 32]}>
@@ -105,7 +110,9 @@ const Bags = () => {
 
       <FullBgImageSection
         bgImage="https://shopdemo.hasthemes.com/payne/p2/img/payne/hero-bg.jpg"
-        data={productStyle2}
+        h1="Trending"
+        h3="Men | Women"
+        h5="Fashion"
       />
       {/* <div className="col-11 m-auto">
         <Row gutter={[32, 0]}>

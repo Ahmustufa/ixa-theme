@@ -19,7 +19,7 @@ const ProductCardWithIcons = (props) => {
 
   return (
     <StyledCard>
-      <Link href={link ? link : "#"}>
+      <Link href={`/product/${_id}`}>
         <div className="image-container" style={{ backgroundImage: `url(${images[0]})` }}>
           {/* <img src={images[0]} alt={title} className="img-fluid product-image" /> */}
         </div>

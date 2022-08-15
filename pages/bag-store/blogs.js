@@ -7,6 +7,7 @@ import Link from "next/link";
 import RecentBlogs from "src/component/blogListing/recentBlogs";
 import PopularBlogs from "src/component/blogListing/popularBlogs";
 import BlogListingCard from "src/component/blogListing/blogListingCard";
+import { bagsBlogs } from "src/mock/bagsProducts";
 const { Panel } = Collapse;
 
 const BagBlogs = (props) => {
@@ -81,11 +82,11 @@ const BagBlogs = (props) => {
       <div style={{ padding: 80 }} className="detail-section">
         <Row gutter={[30, 30]} className="flex-column-reverse flex-lg-row">
           <Col lg={6} sm={24} xs={24}>
-            <RecentBlogs />
+            <RecentBlogs data={bagsBlogs} />
             <PopularBlogs className="mt-5" />
           </Col>
           <Col lg={18} sm={24} xs={24}>
-            {blogData.map((item, index) => {
+            {bagsBlogs.map((item, index) => {
               return <BlogListingCard key={index} {...item} />;
             })}
           </Col>
