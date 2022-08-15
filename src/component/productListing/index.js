@@ -1,5 +1,6 @@
 import { Row, Col } from "antd";
 import ProductCard from "../cards/productCardWithIcons";
+import CardStyle1 from "../cards/CardStyle1";
 
 const ProductListing = (props) => {
   const { columns, products, grid, CardStyle } = props;
@@ -20,6 +21,7 @@ const ProductListing = (props) => {
 
 ProductListing.defaultProps = {
   grid: 3,
+  CardStyle: CardStyle1,
 };
 
 export default ProductListing;
