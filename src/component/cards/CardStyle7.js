@@ -83,7 +83,8 @@ const StyledCard = styled.div`
     /* min-height: 320px; */
 
     &:hover {
-      background-image: url(${(props) => props.images[1]});
+      background-image: url(${(props) =>
+        props.images.length > 1 ? props.images[1] : props.images[0]});
     }
   }
 

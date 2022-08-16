@@ -5,6 +5,7 @@ export const shoesMenu = [
   },
   {
     title: "MEN",
+    link: "/demo/shoes-store/men-shoes",
     submenu: [
       { title: "Slippers", link: `/demo/shoes-store/men-shoes` },
       { title: "Formal", link: `/demo/shoes-store/men-shoes` },
@@ -15,6 +16,7 @@ export const shoesMenu = [
   },
   {
     title: "WOMEN",
+    link: "/demo/shoes-store/women-shoes",
     submenu: [
       { title: "Flat", link: `/demo/shoes-store/women-shoes` },
       { title: "Heels", link: `/demo/shoes-store/women-shoes` },
@@ -67,6 +69,30 @@ export const bagsMenu = [
   },
 ];
 
+export const clothingMenu = [
+  {
+    title: "home",
+    link: "/demo/clothing-store",
+  },
+  {
+    title: "Products",
+    link: "/demo/clothing-store/products",
+  },
+  {
+    title: "Shop",
+    link: "/demo/clothing-store/women",
+    submenu: [{ title: "Women fashion", link: `/demo/clothing-store/women` }],
+  },
+  {
+    title: "Blogs",
+    link: "/demo/clothing-store/blogs",
+  },
+  {
+    title: "CONTACT",
+    link: "/demo/clothing/contact",
+  },
+];
+
 export const mainMenu = [
   {
     title: "home",
@@ -78,7 +104,7 @@ export const mainMenu = [
     link: "/",
   },
   {
-    title: "demos",
+    title: "demo",
     submenu: [
       { title: "Shoes", link: "/demo/shoes-store" },
       { title: "Bags", link: "/demo/bag-store" },

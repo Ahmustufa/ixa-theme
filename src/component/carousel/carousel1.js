@@ -39,7 +39,9 @@ const Carousel1 = (props) => {
           <div className="content" style={{ alignItems: item.placement }}>
             <h4 className="sub-heading">{item.subHeading}</h4>
             <h2 className="heading">{item.heading}</h2>
-            <ButtonWrapper style={{ width: 250 }}>SHOP NOW</ButtonWrapper>
+            {!item.buttonShow ? null : (
+              <ButtonWrapper style={{ width: 250 }}>SHOP NOW</ButtonWrapper>
+            )}
           </div>
           <img key={index} src={item.image} alt={`imag`} className="image" />
         </div>
