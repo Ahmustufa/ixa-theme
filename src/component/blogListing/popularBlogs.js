@@ -10,13 +10,13 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRef } from "react";
 
 const blogData = [
-  { id: 1, image: image1, title: "Pink Tutu with Headband" },
-  { id: 2, image: image2, title: "Pink Tutu with Headband" },
-  { id: 3, image: image3, title: "Pink Tutu with Headband" },
-  { id: 4, image: image3, title: "Pink Tutu with Headband" },
-  { id: 5, image: image3, title: "Pink Tutu with Headband" },
-  { id: 6, image: image3, title: "Pink Tutu with Headband" },
-  { id: 7, image: image3, title: "Pink Tutu with Headband" },
+  { _id: 1, image: image1, title: "Pink Tutu with Headband" },
+  { _id: 2, image: image2, title: "Pink Tutu with Headband" },
+  { _id: 3, image: image3, title: "Pink Tutu with Headband" },
+  { _id: 4, image: image3, title: "Pink Tutu with Headband" },
+  { _id: 5, image: image3, title: "Pink Tutu with Headband" },
+  { _id: 6, image: image3, title: "Pink Tutu with Headband" },
+  { _id: 7, image: image3, title: "Pink Tutu with Headband" },
 ];
 
 const PopularBlogs = (props) => {

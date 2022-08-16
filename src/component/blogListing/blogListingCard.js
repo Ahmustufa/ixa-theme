@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItemToWishlist, removeWishlistItem } from "../../redux/actions";
 
 const BlogListingCard = (props) => {
-  const { id, title, images } = props;
+  const { _id, title, images } = props;
   const dispatch = useDispatch();
   const { items: wishlist } = useSelector((state) => state.wishlist);
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -20,7 +20,7 @@ const BlogListingCard = (props) => {
     <StyledCard>
       <Row gutter={[30, 30]}>
         <Col lg={12} sm={24} xs={24} className="w-100">
-          <Link href={`/blog/${id}`} className="w-100">
+          <Link href={`/blog/${_id}`} className="w-100">
             <div
               className="product-image img-fluid"
               style={{
@@ -38,7 +38,7 @@ const BlogListingCard = (props) => {
         >
           <div className="createdAt">{moment(new Date()).format("ddd DD/MM/YYYY")}</div>
           <div className="product">
-            <Link href={`/blog/${id}`}>{title}</Link>
+            <Link href={`/blog/${_id}`}>{title}</Link>
           </div>
 
           <ul className="blog-created-date ">

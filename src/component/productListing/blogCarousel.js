@@ -59,9 +59,9 @@ const BlogCarousel = (props) => {
 
 BlogCarousel.defaultProps = {
   data: [
-    { id: 1, images: [image1], title: "Pink Tutu with Headband" },
-    { id: 2, images: [image2], title: "Pink Tutu with Headband" },
-    { id: 3, images: [image3], title: "Pink Tutu with Headband" },
+    { _id: 1, images: [image1], title: "Pink Tutu with Headband" },
+    { _id: 2, images: [image2], title: "Pink Tutu with Headband" },
+    { _id: 3, images: [image3], title: "Pink Tutu with Headband" },
   ],
 };
 

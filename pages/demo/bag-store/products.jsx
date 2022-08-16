@@ -6,6 +6,7 @@ import ProductListing from "src/component/productListing";
 import ShopSidebar from "src/component/sidebar/shopSidebar";
 import SortBar from "src/component/sortItems";
 import { bagsProducts } from "src/mock/bagsProducts";
+import CardStyle7 from "src/component/cards/CardStyle7";
 
 const ShopLeftSidebar = (props) => {
   const { items } = useSelector((state) => state.products);
@@ -40,7 +41,11 @@ const ShopLeftSidebar = (props) => {
 
             <SortBar className="my-5" setGridColumn={setGridColumn} />
 
-            <ProductListing products={bagsProducts} grid={gridColumn} />
+            <ProductListing
+              CardStyle={CardStyle7}
+              products={bagsProducts}
+              grid={gridColumn}
+            />
           </Col>
         </Row>
       </div>

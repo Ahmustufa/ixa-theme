@@ -7,6 +7,7 @@ import ShopSidebar from "src/component/sidebar/shopSidebar";
 import SortBar from "src/component/sortItems";
 import { bagsProducts } from "src/mock/bagsProducts";
 import { useRouter } from "next/router";
+import CardStyle7 from "src/component/cards/CardStyle7";
 
 const ProductListin = (props) => {
   const { items } = useSelector((state) => state.products);
@@ -38,7 +39,11 @@ const ProductListin = (props) => {
 
             <SortBar className="my-5" setGridColumn={setGridColumn} />
 
-            <ProductListing products={products} grid={gridColumn} />
+            <ProductListing
+              CardStyle={CardStyle7}
+              products={products}
+              grid={gridColumn}
+            />
           </Col>
         </Row>
       </div>

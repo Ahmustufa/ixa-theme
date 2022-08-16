@@ -8,7 +8,7 @@ import { addItemToWishlist, removeWishlistItem } from "../../redux/actions";
 import { cardBackground1 } from "../../../images";
 
 const BlogCard = (props) => {
-  const { id, title, images, description } = props;
+  const { _id, title, images, description } = props;
   const dispatch = useDispatch();
   const { items: wishlist } = useSelector((state) => state.wishlist);
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -18,7 +18,7 @@ const BlogCard = (props) => {
   console.log("props blog card", props);
   return (
     <StyledCard>
-      <Link href={`/blog/${id}`}>
+      <Link href={`/blog/${_id}`}>
         <div className="product-image" style={{ backgroundImage: `url(${images[0]})` }}>
           <span></span>
         </div>
@@ -27,7 +27,7 @@ const BlogCard = (props) => {
       <div className="d-flex justify-content-center flex-column">
         <div className="createdAt">{moment(new Date()).format("DD-MMM-YYYY")}</div>
         <div title={title} className="product">
-          <Link href={`/blog/${id}`}>{title}</Link>
+          <Link href={`/blog/${_id}`}>{title}</Link>
         </div>
         <p className="para">{description}</p>
         <div
