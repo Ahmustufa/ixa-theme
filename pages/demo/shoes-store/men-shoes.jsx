@@ -6,7 +6,7 @@ import ProductListing from "src/component/productListing";
 import ShopSidebar from "src/component/sidebar/shopSidebar";
 import SortBar from "src/component/sortItems";
 import CardStyle6 from "src/component/cards/CardStyle6";
-import { womenShoesListing } from "src/mock/shoesProducts";
+import { menShoesListing } from "src/mock/shoesProducts";
 
 const MenShoesListing = (props) => {
   const { items } = useSelector((state) => state.products);
@@ -14,7 +14,7 @@ const MenShoesListing = (props) => {
 
   return (
     <>
-      <Breadcrumb title="SHOP" link="HOME / MEN" className="my-5" />
+      <Breadcrumb title="SHOP" link="HOME / SHOES STORE / MEN" className="my-5" />
 
       <div className="col-11 mx-auto mb-5">
         <Row gutter={[32, 0]}>
@@ -40,11 +40,15 @@ const MenShoesListing = (props) => {
               className="mb-3"
             />
 
-            <SortBar className="my-5" setGridColumn={setGridColumn} />
+            <SortBar
+              count={menShoesListing.length}
+              className="my-5"
+              setGridColumn={setGridColumn}
+            />
 
             <ProductListing
               CardStyle={CardStyle6}
-              products={womenShoesListing}
+              products={menShoesListing}
               grid={gridColumn}
             />
           </Col>
