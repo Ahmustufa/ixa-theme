@@ -29,11 +29,12 @@ const SortBar = (props) => {
 
         <Col xs={24} sm={24} md={7} lg={7} xl={7}>
           <div className="filter-div">
-            <div>
+            <div style={{ display: "flex" }}>
               <CgMenuGridR
                 style={{ fontSize: 22, cursor: "pointer", marginRight: 8 }}
                 onClick={() => setGridColumn(3)}
               />
+
               <AiOutlineBars
                 style={{ fontSize: 22, cursor: "pointer" }}
                 onClick={() => setGridColumn(1)}
@@ -41,25 +42,41 @@ const SortBar = (props) => {
             </div>
 
             <div className="d-flex">
-              <div className="d-flex mx-1" role="button" onClick={() => setGridColumn(2)}>
+              <div
+                className="bars d-flex mx-1"
+                role="button"
+                onClick={() => setGridColumn(2)}
+              >
                 {[1, 2].map((index) => (
                   <div key={index} className="grid-count"></div>
                 ))}
               </div>
 
-              <div className="d-flex mx-1" role="button" onClick={() => setGridColumn(3)}>
+              <div
+                className="bars d-flex mx-1"
+                role="button"
+                onClick={() => setGridColumn(3)}
+              >
                 {[1, 2, 3].map((index) => (
                   <div key={index} className="grid-count"></div>
                 ))}
               </div>
 
-              <div className="d-flex mx-1" role="button" onClick={() => setGridColumn(4)}>
+              <div
+                className="bars d-flex mx-1"
+                role="button"
+                onClick={() => setGridColumn(4)}
+              >
                 {[1, 2, 3, 4].map((index) => (
                   <div key={index} className="grid-count"></div>
                 ))}
               </div>
 
-              <div className="d-flex mx-1" role="button" onClick={() => setGridColumn(6)}>
+              <div
+                className="bars d-flex mx-1"
+                role="button"
+                onClick={() => setGridColumn(6)}
+              >
                 {[1, 2, 3, 4, 5, 6].map((index) => (
                   <div key={index} className="grid-count"></div>
                 ))}
@@ -120,6 +137,11 @@ const StyledDiv = styled.div`
       letter-spacing: 0.05em;
       margin: 0px;
     }
+  }
+  .bars {
+    padding: 1px;
+    border: 1px solid red;
+    border-radius: 2px;
   }
 
   .grid-count {
