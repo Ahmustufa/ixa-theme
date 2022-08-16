@@ -10,10 +10,10 @@ import {
   AiOutlineSearch,
   AiOutlineSync,
 } from "react-icons/ai";
-import { Rate } from "antd";
+import { Rate, Row, Col } from "antd";
 
 const CardStyle6 = (props) => {
-  const { images, title, price, brandName } = props;
+  const { images, title, price, brandName, listView } = props;
   const dispatch = useDispatch();
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
@@ -22,42 +22,73 @@ const CardStyle6 = (props) => {
 
   return (
     <StyledCard images={images}>
-      <Link href={`/product/${props._id}`}>
-        <div className="image-container" />
-      </Link>
-      <div className="cart-actions">
-        <div className="add_to_cart" style={{ opacity: 1 }}>
-          <AiOutlineShoppingCart size={20} title={"Add to cart"} />
-        </div>
-        <div className="add_to_wishlist">
-          <AiOutlineHeart size={20} title={"Add to wishlist"} />
-        </div>
-        <div className="quick_view">
-          <AiOutlineSearch size={20} title={"Quick view"} />
-        </div>
-        <div className="compare">
-          <AiOutlineSync size={20} title={"Compare"} />
-        </div>
-      </div>
-      <div className="item-details">
-        <Rate
-          defaultValue={5}
-          disabled
-          style={{ color: "#ffa200", fontSize: 14, marginTop: 8 }}
-        />
-        <div title={title} className="product mt-2">
-          {title}
-        </div>
+      <Row justify="space-between">
+        <Col
+          xs={24}
+          sm={24}
+          md={listView ? 8 : 24}
+          lg={listView ? 6 : 24}
+          xl={listView ? 4 : 24}
+        >
+          <Link href={`/product/${props._id}`}>
+            <div className="image-container" />
+          </Link>
+          <div className="cart-actions">
+            <div className="add_to_cart" style={{ opacity: 1 }}>
+              <AiOutlineShoppingCart size={20} title={"Add to cart"} />
+            </div>
+            <div className="add_to_wishlist">
+              <AiOutlineHeart size={20} title={"Add to wishlist"} />
+            </div>
+            <div className="quick_view">
+              <AiOutlineSearch size={20} title={"Quick view"} />
+            </div>
+            <div className="compare">
+              <AiOutlineSync size={20} title={"Compare"} />
+            </div>
+          </div>
+        </Col>
 
-        <div style={{ fontSize: 12, color: "brown" }}>({brandName})</div>
+        <Col
+          xs={24}
+          sm={24}
+          md={listView ? 15 : 24}
+          lg={listView ? 17 : 24}
+          xl={listView ? 19 : 24}
+        >
+          <div className="item-details">
+            <Rate
+              defaultValue={5}
+              disabled
+              style={{ color: "#ffa200", fontSize: 14, marginTop: 8 }}
+            />
+            <div title={title} className="product mt-2">
+              {title}
+            </div>
 
-        <div className="price">
-          {formatedPrice.format(price)}{" "}
-          {/* <small style={{ color: "#858585", textDecoration: "line-through" }}>
-            {price * 1.5}
-          </small> */}
-        </div>
-      </div>
+            <div style={{ fontSize: 12, color: "brown" }}>({brandName})</div>
+
+            <div className="price">
+              {formatedPrice.format(price)}{" "}
+              <small style={{ color: "#858585", textDecoration: "line-through" }}>
+                {price * 1.5}
+              </small>
+            </div>
+
+            {listView ? (
+              <div className="description">
+                It is a long established fact that a reader will be distracted by the
+                readable content of a page when looking at its layout. The point of using
+                Lorem Ipsum is that it has a more-or-less normal distribution of
+                letters,It is a long established fact that a reader will be distracted by
+                the readable content of a page when looking at its layout. The point of
+                using Lorem Ipsum is that it has a more-or-less normal distribution of
+                letters.
+              </div>
+            ) : null}
+          </div>
+        </Col>
+      </Row>
     </StyledCard>
   );
 };
