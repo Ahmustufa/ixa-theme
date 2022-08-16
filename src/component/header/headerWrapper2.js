@@ -197,9 +197,7 @@ const HeaderWrapper2 = () => {
                 <div
                   className={`menu-item ${router.pathname === menu.link ? "active" : ""}`}
                 >
-                  <Link href="/">
-                    <a style={{ textTransform: "uppercase" }}>{menu.title}</a>
-                  </Link>
+                  <a style={{ textTransform: "uppercase" }}>{menu.title}</a>
                   <GoChevronDown style={{ marginBottom: 4 }} className="ml-2" />
                 </div>
               </Dropdown>

@@ -57,7 +57,8 @@
       }
     }
   }
-  &.active a {
+  &.active a,
+  &.active svg {
     color: #6859a6;
   }
 }
