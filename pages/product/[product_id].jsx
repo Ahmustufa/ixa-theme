@@ -282,7 +282,44 @@ const Order = (props) => {
             }
             showArrow={false}
           >
-            <ReviewListing productId={productDetails._id} reviews={reviews} />
+            {/* <ReviewListing productId={productDetails._id} reviews={reviews} /> */}
+            <div className="review-section">
+              {[1, 2, 3, 4, 5, 6].map((item) => {
+                return (
+                  <Row key={item} className="review">
+                    <Col
+                      lg={2}
+                      sm={24}
+                      xs={24}
+                      className="d-flex justify-content-sm-center justify-content-lg-start align-items-sm-end  align-items-lg-start"
+                    >
+                      <img
+                        src="https://angular.pixelstrap.com/multikart/assets/images/review/2.jpg"
+                        width={"60%"}
+                        className="rounded-circle"
+                      />
+                    </Col>
+                    <Col lg={22} sm={24} xs={24} className="d-flex flex-column">
+                      <div className="d-flex align-items-center">
+                        <h6 className="mb-0">MARK JECNO </h6>
+                        <p className="mb-0 ml-4">( 12 Jannuary 2018 At 1:30AM )</p>
+                      </div>
+                      <p className="mb-0 mt-3">
+                        Donec rhoncus massa quis nibh imperdiet dictum. Vestibulum id est
+                        sit amet felis fringilla bibendum at at leo. Proin molestie ac
+                        nisi eu laoreet. Integer faucibus enim nec ullamcorper tempor.
+                        Aenean nec felis dui. Integer tristique odio mi, in volutpat metus
+                        posuere eu. Aenean suscipit ipsum nunc, id volutpat lorem
+                        hendrerit ac. Sed id elit quam. In ac mauris arcu. Praesent eget
+                        lectus sit amet diam vestibulum varius. Suspendisse dignissim
+                        mattis leo, nec facilisis erat tempor quis. Vestibulum eu
+                        vestibulum ex.
+                      </p>
+                    </Col>
+                  </Row>
+                );
+              })}
+            </div>
           </Panel>
         </Collapse>
       </section>
@@ -314,6 +351,15 @@ const StyledPage = styled.div`
     vertical-align: middle;
     width: 100%;
   }
+
+  .review {
+    border-bottom: 1px solid #dddddd;
+    padding: 60px 0px;
+    :last-child {
+      border-bottom: 0px;
+    }
+  }
+
   .size-box {
     border: 1px solid #ececec;
     padding: 4px 0;

@@ -11,7 +11,7 @@ import { SearchOutlined } from "@ant-design/icons";
 import { BiHeadphone } from "react-icons/bi";
 import { AiOutlineShoppingCart, AiOutlineUser, AiFillHome } from "react-icons/ai";
 import { BsTelephoneFill, BsSuitHeartFill, BsSearch } from "react-icons/bs";
-import { FiChevronDown } from "react-icons/fi";
+import { GoChevronDown } from "react-icons/go";
 import {
   FaFacebookF,
   FaTwitter,
@@ -160,7 +160,7 @@ const HeaderWrapper2 = () => {
             return (
               <Dropdown
                 overlay={
-                  <Menu style={{ minWidth: 240, marginTop: -4 }}>
+                  <Menu style={{ minWidth: 200, marginTop: -4 }}>
                     {menu.submenu.map((subMenuItem, index) => {
                       if (subMenuItem.submenu) {
                         return (
@@ -200,7 +200,7 @@ const HeaderWrapper2 = () => {
                   <Link href="/">
                     <a style={{ textTransform: "uppercase" }}>{menu.title}</a>
                   </Link>
-                  <FiChevronDown className="ml-3" />
+                  <GoChevronDown style={{ marginBottom: 4 }} className="ml-2" />
                 </div>
               </Dropdown>
             );

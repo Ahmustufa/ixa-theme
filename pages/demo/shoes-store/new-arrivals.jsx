@@ -6,10 +6,10 @@ import ProductListing from "src/component/productListing";
 import ShopSidebar from "src/component/sidebar/shopSidebar";
 import SortBar from "src/component/sortItems";
 import CardStyle6 from "src/component/cards/CardStyle6";
-import { womenShoesListing } from "src/mock/shoesProducts";
-import { Pagination } from "antd";
+import { newArrivalShoes } from "src/mock/shoesProducts";
+import ProductCardWithIcons from "src/component/cards/productCardWithIcons";
 
-const WomenShoesListing = (props) => {
+const NewArrivals = (props) => {
   const { items } = useSelector((state) => state.products);
   const [gridColumn, setGridColumn] = useState(3);
 
@@ -25,20 +25,21 @@ const WomenShoesListing = (props) => {
 
           <Col xs={24} sm={24} md={24} lg={24}>
             <img
-              src="/images/Shoes/banner/Women-banner.jpg"
+              //   src="/images/Shoes/banner/Women-banner.jpg"
+              src="https://www.berleigh.com/wp-content/uploads/2019/09/banner-new-arrivals.jpg"
               width="100%"
               className="mb-3"
             />
 
             <SortBar
-              count={womenShoesListing.length}
+              count={newArrivalShoes.length}
               className="my-5"
               setGridColumn={setGridColumn}
             ></SortBar>
 
             <ProductListing
-              CardStyle={CardStyle6}
-              products={womenShoesListing}
+              CardStyle={ProductCardWithIcons}
+              products={newArrivalShoes}
               grid={gridColumn}
             />
           </Col>
@@ -48,4 +49,4 @@ const WomenShoesListing = (props) => {
   );
 };
 
-export default WomenShoesListing;
+export default NewArrivals;

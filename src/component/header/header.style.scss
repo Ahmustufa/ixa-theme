@@ -37,7 +37,7 @@
     text-decoration: none;
     color: #001719;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 1px;
 
     &::after {
@@ -53,14 +53,18 @@
 
     &:hover {
       &::after {
-        width: 100%;
+        width: 90%;
       }
     }
   }
-  &.active a::after {
-    width: 100%;
+  &.active a {
+    color: #6859a6;
   }
 }
+
+// .ant-dropdown-menu {
+//   box-shadow: unset;
+// }
 
 .icons-wrapper {
   color: #fff;
@@ -99,12 +103,14 @@
   }
 }
 
+.ant-dropdown-menu-submenu-title .ant-dropdown-menu-submenu-expand-icon {
+  bottom: 8px;
+}
+
 .navigation-link {
-  line-height: 32px;
-  font-size: 13px;
-  height: 32px;
+  font-size: 14px;
+  font-weight: 500;
   text-decoration: none !important;
-  font-family: "sans-serif";
 }
 
 @media only screen and (max-width: 576px) {
