@@ -72,26 +72,32 @@ const BagStore = () => {
             {
               image: "/images/Shoes/category/women-shoes.png",
               title: "Women Shoes",
+              link: "/demo/shoes-store/women-shoes",
             },
             {
               image: "/images/Shoes/category/men-shoes.webp",
               title: "Men Shoes",
+              link: "/demo/shoes-store/men-shoes",
             },
             {
               image: "/images/Shoes/category/formal.webp",
               title: "Formal",
+              link: "/demo/shoes-store/men-shoes",
             },
             {
               image: "/images/Shoes/category/slippers.webp",
               title: "Slippers",
+              link: "/demo/shoes-store/men-shoes",
             },
             {
               image: "/images/Shoes/category/heels.webp",
               title: "Heels",
+              link: "/demo/shoes-store/women-shoes",
             },
             {
               image: "/images/Shoes/category/boots.png",
               title: "Boots",
+              link: "/demo/shoes-store/men-shoes",
             },
           ]}
         />
@@ -123,7 +129,11 @@ const BagStore = () => {
           title2Color="#fff"
         />
 
-        <ProductCarousel CardStyle={CardStyle6} data={shoesProducts} />
+        <ProductCarousel
+          link="/demo/shoes-store/new-arrivals"
+          CardStyle={CardStyle6}
+          data={shoesProducts}
+        />
 
         <FullBgImageSection h1="" h3="" h5="" bgImage="/images/Shoes/banner/banner.png" />
 

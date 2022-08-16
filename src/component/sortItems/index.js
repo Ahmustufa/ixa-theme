@@ -14,13 +14,16 @@ import { CgMenuGridR, CgLoadbar } from "react-icons/cg";
 import { AiOutlineBars } from "react-icons/ai";
 
 const SortBar = (props) => {
-  const { className, style, setGridColumn } = props;
+  const { className, style, setGridColumn, count } = props;
+  const [showTotalProducts, setShowTotalProducts] = useState(24);
   return (
     <StyledDiv className={className} style={style}>
       <Row className="main-div">
         <Col xs={24} sm={24} md={8} lg={8} xl={8}>
           <div className="search-count">
-            <h5>Showing Products 1-24 Of 30 Result</h5>
+            <h5>
+              Showing Products 1-{showTotalProducts} Of {count} Result
+            </h5>
           </div>
         </Col>
 
@@ -67,10 +70,15 @@ const SortBar = (props) => {
 
         <Col xs={24} sm={24} md={5} lg={5} xl={5}>
           <div style={{ borderRight: "1px solid #ddd" }} className="select-wrapper">
-            <select className="dropdown">
-              <option value="1">24 Products Per Page</option>
-              <option value="2">50 Products Per Page</option>
-              <option value="3">100 Products Per Page</option>
+            <select
+              onChange={(e) => {
+                setShowTotalProducts(e.target.value);
+              }}
+              className="dropdown"
+            >
+              <option value="24">24 Products Per Page</option>
+              <option value="50">50 Products Per Page</option>
+              <option value="100">100 Products Per Page</option>
             </select>
           </div>
         </Col>

@@ -4,6 +4,7 @@ import ProductCard from "../cards/productCard";
 import Slider from "react-slick";
 import { useSelector } from "react-redux";
 import ProductCardWithIcons from "../cards/productCardWithIcons";
+import Link from "next/link";
 
 const carouselSettings = {
   dots: false,
@@ -55,17 +56,21 @@ const ProductCarousel = (props) => {
           Featured Collection
         </div>
         <br />
-        <span
-          style={{
-            fontSize: 15,
-            color: "#54595f",
-            borderBottom: "2px solid #54595f",
-            fontWeight: 600,
-            paddingBottom: 4,
-          }}
-        >
-          SHOP NOW
-        </span>
+        <Link href={props.link ? props.link : "/shop/list-view"}>
+          <a style={{ textDecoration: "none" }}>
+            <span
+              style={{
+                fontSize: 15,
+                color: "#54595f",
+                borderBottom: "2px solid #54595f",
+                fontWeight: 600,
+                paddingBottom: 4,
+              }}
+            >
+              SHOP NOW
+            </span>
+          </a>
+        </Link>
         <br />
         <br />
         <br />

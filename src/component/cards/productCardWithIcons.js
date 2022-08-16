@@ -198,6 +198,7 @@ const StyledCard = styled.div`
     line-height: 36px;
     text-align: center;
     font-size: 10px;
+    cursor: context-menu;
   }
 
   .description {

@@ -37,7 +37,11 @@ const ProductListin = (props) => {
               }
             })}
 
-            <SortBar className="my-5" setGridColumn={setGridColumn} />
+            <SortBar
+              count={bagsProducts.length}
+              className="my-5"
+              setGridColumn={setGridColumn}
+            />
 
             <ProductListing
               CardStyle={CardStyle7}

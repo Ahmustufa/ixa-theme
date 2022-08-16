@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import styled from "styled-components";
+import Link from "next/link";
 
 const StyledDiv = styled.div`
   .main-div {
@@ -83,14 +84,18 @@ const Category1 = (props) => {
       <Slider {...settings}>
         {props.insideData.map((data, index) => (
           <div key={index} className="main-div">
-            <div>
-              <div className="circle">
-                <img src={data.image} />
-              </div>
-              <h6>
-                <span>{data.title}</span>
-              </h6>
-            </div>
+            <Link href={data.link ? data.link : "#"}>
+              <a style={{ textDecoration: "none" }}>
+                <div>
+                  <div className="circle">
+                    <img src={data.image} />
+                  </div>
+                  <h6 style={{ fontWeight: 600 }}>
+                    <span>{data.title}</span>
+                  </h6>
+                </div>
+              </a>
+            </Link>
           </div>
         ))}
       </Slider>

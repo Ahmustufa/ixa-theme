@@ -1,18 +1,19 @@
 import { Row, Col, Collapse, Divider, message } from "antd";
 import styled from "styled-components";
-import ReviewListing from "../../../src/component/reviews/reviewListing";
+import ReviewListing from "src/component/reviews/reviewListing";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
-import CardStyle1 from "../../../src/component/cards/CardStyle1";
-import CardStyle2 from "../../../src/component/cards/CardStyle2";
-import CardStyle3 from "../../../src/component/cards/CardStyle3";
-import CardStyle4 from "../../../src/component/cards/CardStyle4";
-import CardStyle5 from "../../../src/component/cards/CardStyle5";
-import CardStyle6 from "../../../src/component/cards/CardStyle6";
-import CardStyle7 from "../../../src/component/cards/CardStyle7";
-import CardStyle8 from "../../../src/component/cards/CardStyle8";
-import CardStyle9 from "../../../src/component/cards/CardStyle9";
+import CardStyle1 from "src/component/cards/CardStyle1";
+import CardStyle2 from "src/component/cards/CardStyle2";
+import CardStyle3 from "src/component/cards/CardStyle3";
+import CardStyle4 from "src/component/cards/CardStyle4";
+import CardStyle5 from "src/component/cards/CardStyle5";
+import CardStyle6 from "src/component/cards/CardStyle6";
+import CardStyle7 from "src/component/cards/CardStyle7";
+import CardStyle8 from "src/component/cards/CardStyle8";
+import CardStyle9 from "src/component/cards/CardStyle9";
+import ProductCardWithIcons from "src/component/cards/productCardWithIcons";
 import {
   productStyle1,
   productStyle2,
@@ -23,6 +24,7 @@ import {
   productStyle7,
   productStyle8,
   productStyle9,
+  productStyle10,
 } from "src/mock/mockupData";
 
 const { Panel } = Collapse;
@@ -219,6 +221,23 @@ const ProductBox = (props) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
                   <CardStyle9 {...item} />
+                </Col>
+              );
+            })}
+          </Row>
+        </div>
+      </div>
+
+      <div className="detail-section" style={{ padding: 80 }}>
+        <div className="d-flex flex-column justify-content-center">
+          <div className="title2">
+            <h2 className="title-inner2">Product style 10</h2>
+          </div>
+          <Row gutter={[30, 30]} className="d-flex ">
+            {productStyle10.map((item, index) => {
+              return (
+                <Col key={index} lg={6} sm={24} xs={24} className="">
+                  <ProductCardWithIcons {...item} />
                 </Col>
               );
             })}

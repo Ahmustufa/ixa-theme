@@ -151,12 +151,12 @@ export const mainMenu = [
         ],
       },
       {
-        title: "shop",
+        title: "Shop",
         submenu: [
           { title: "Left Sidebar", link: "/shop/left-sidebar" },
           { title: "Right Sidebar", link: "/shop/right-sidebar" },
           { title: "No Sidebar", link: "/shop/no-sidebar" },
-          { title: "Thee Grid", link: "/shop/three-grid" },
+          { title: "Three Grid", link: "/shop/three-grid" },
           { title: "Six Grid", link: "/shop/six-grid" },
           { title: "List View", link: "/shop/list-view" },
         ],
@@ -178,7 +178,7 @@ export const mainMenu = [
         ],
       },
       { title: "Order Success", link: "/pages/order-success" },
-      { title: "404 page", link: "/404" },
+      { title: "404 Page", link: "/404" },
       { title: "Collection", link: "/pages/collection" },
     ],
   },

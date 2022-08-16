@@ -7,6 +7,7 @@ import ShopSidebar from "src/component/sidebar/shopSidebar";
 import SortBar from "src/component/sortItems";
 import CardStyle6 from "src/component/cards/CardStyle6";
 import { womenShoesListing } from "src/mock/shoesProducts";
+import { Pagination } from "antd";
 
 const WomenShoesListing = (props) => {
   const { items } = useSelector((state) => state.products);
@@ -14,7 +15,7 @@ const WomenShoesListing = (props) => {
 
   return (
     <>
-      <Breadcrumb title="SHOP" link="HOME / WOMEN" className="my-5" />
+      <Breadcrumb title="SHOP" link="HOME / SHOES STORE / WOMEN" className="my-5" />
 
       <div className="col-11 mx-auto mb-5">
         <Row gutter={[32, 0]}>
@@ -23,24 +24,17 @@ const WomenShoesListing = (props) => {
           </Col> */}
 
           <Col xs={24} sm={24} md={24} lg={24}>
-            {/* <div style={{ fontSize: 34, textAlign: "center", marginTop: 18 }}>Women</div>
-            <p
-              style={{
-                fontSize: 24,
-                color: "#858585",
-                padding: "24px 5%",
-                textAlign: "center",
-              }}
-            >
-              {`Shop a wide range of women shoes, women heels, women court shoes, women peep toes, women boots, women sport shoes and many more online. Polkadots provides high quality shoes for women at your door step.`}
-            </p> */}
             <img
               src="/images/Shoes/banner/Women-banner.jpg"
               width="100%"
               className="mb-3"
             />
 
-            <SortBar className="my-5" setGridColumn={setGridColumn} />
+            <SortBar
+              count={womenShoesListing.length}
+              className="my-5"
+              setGridColumn={setGridColumn}
+            ></SortBar>
 
             <ProductListing
               CardStyle={CardStyle6}
