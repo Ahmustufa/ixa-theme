@@ -8,6 +8,7 @@ import styled from "styled-components";
 import ReviewListing from "../../src/component/reviews/reviewListing";
 import { useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
 import { addItemToCart, openCart } from "../../src/redux/actions/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToWishlist, removeWishlistItem } from "../../src/redux/actions";
@@ -20,11 +21,7 @@ const { Panel } = Collapse;
 const BlogDetail = (props) => {
   const { title, colors, reviews } = props;
   const dispatch = useDispatch();
-  const { items: wishlist } = useSelector((state) => state.wishlist);
-  const { isLoggedIn, data: userData } = useSelector((state) => state.user);
-  const { visible, items } = useSelector((state) => state.cart);
-
-  const [state, setState] = useState({ color: "", size: "" });
+  const router = useRouter();
 
   return (
     <StyledPage>

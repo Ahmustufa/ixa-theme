@@ -22,12 +22,12 @@ const CardStyle7 = (props) => {
   });
 
   return (
-    <StyledCard>
+    <StyledCard images={images}>
       {/* <img src={image} width="100%" /> */}
       <Link href={`/product}`}>
         <div
           className="image-container"
-          style={{ backgroundImage: `url(${images[0]})` }}
+          // style={{ backgroundImage: `url(${images[0]})` }}
         ></div>
       </Link>
       <div className="cart-actions">
@@ -44,7 +44,9 @@ const CardStyle7 = (props) => {
       </div>
       <div className="item-details">
         <Rate defaultValue={4} disabled style={{ color: "#ffa200", fontSize: 13 }} />
-        <div className="product mt-2">{title}</div>
+        <div className="product mt-2" title={title}>
+          {title.length > 40 ? `${title.slice(0, 30)}...` : title}
+        </div>
 
         <div className="price">
           {formatedPrice.format(price)}{" "}
@@ -66,16 +68,23 @@ const StyledCard = styled.div`
   margin-bottom: 30px;
 
   .image-container {
-    border: 1px solid #f2f2f2;
+    /* border: 1px solid #f2f2f2; */
     background-color: #fff;
     border-bottom: none;
     border-radius: 4px;
     text-align: center;
     width: 100%;
-    padding-top: 100%;
+    padding-top: 132%;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: url(${(props) => props.images[0]});
+    transition: 0.2s ease;
+    /* min-height: 320px; */
+
+    &:hover {
+      background-image: url(${(props) => props.images[1]});
+    }
   }
 
   .cart-actions {

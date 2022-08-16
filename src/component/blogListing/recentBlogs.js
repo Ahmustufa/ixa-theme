@@ -36,13 +36,13 @@ const RecentBlogs = (props) => {
 
 RecentBlogs.defaultProps = {
   data: [
-    { id: 1, images: [image1], title: "Pink Tutu with Headband" },
-    { id: 2, images: [image2], title: "Pink Tutu with Headband" },
-    { id: 3, images: [image3], title: "Pink Tutu with Headband" },
-    { id: 4, images: [image3], title: "Pink Tutu with Headband" },
-    { id: 5, images: [image3], title: "Pink Tutu with Headband" },
-    { id: 6, images: [image3], title: "Pink Tutu with Headband" },
-    { id: 7, images: [image3], title: "Pink Tutu with Headband" },
+    { _id: 1, images: [image1], title: "Pink Tutu with Headband" },
+    { _id: 2, images: [image2], title: "Pink Tutu with Headband" },
+    { _id: 3, images: [image3], title: "Pink Tutu with Headband" },
+    { _id: 4, images: [image3], title: "Pink Tutu with Headband" },
+    { _id: 5, images: [image3], title: "Pink Tutu with Headband" },
+    { _id: 6, images: [image3], title: "Pink Tutu with Headband" },
+    { _id: 7, images: [image3], title: "Pink Tutu with Headband" },
   ],
 };
 export default RecentBlogs;
