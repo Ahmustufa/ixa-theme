@@ -19,7 +19,7 @@ import { store, persistor } from "../src/redux/ConfigStore";
 import AuthModal from "../src/component/modals/authModal";
 import SideCart from "../src/component/sidebar/sideCart";
 import PageLoad2 from "../src/component/loader/pageLoad2";
-import { shoesMenu, bagsMenu, mainMenu } from "src/mock/menus";
+import { shoesMenu, bagsMenu, mainMenu, clothingMenu } from "src/mock/menus";
 import { Menu } from "src/redux/constants";
 
 Router.events.on("routeChangeStart", (url) => {
@@ -68,6 +68,8 @@ function MyApp({ Component, pageProps }) {
       store.dispatch({ type: Menu.UPDATE, payload: bagsMenu });
     } else if (router.pathname.includes("/demo/shoes-store")) {
       store.dispatch({ type: Menu.UPDATE, payload: shoesMenu });
+    } else if (router.pathname.includes("/demo/clothing-store")) {
+      store.dispatch({ type: Menu.UPDATE, payload: clothingMenu });
     } else {
       store.dispatch({ type: Menu.UPDATE, payload: mainMenu });
     }

@@ -67,6 +67,30 @@ export const bagsMenu = [
   },
 ];
 
+export const clothingMenu = [
+  {
+    title: "home",
+    link: "/demo/clothing-store",
+  },
+  {
+    title: "Products",
+    link: "/demo/clothing-store/products",
+  },
+  {
+    title: "Shop",
+    link: "/demo/clothing-store/women",
+    submenu: [{ title: "Women fashion", link: `/demo/clothing-store/women` }],
+  },
+  {
+    title: "Blogs",
+    link: "/demo/clothing-store/blogs",
+  },
+  {
+    title: "CONTACT",
+    link: "/demo/clothing/contact",
+  },
+];
+
 export const mainMenu = [
   {
     title: "home",
