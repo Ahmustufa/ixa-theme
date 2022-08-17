@@ -53,6 +53,9 @@ const StyledBanner = styled.div`
       }
     }
   }
+
+  @media (max-width: 991px) {
+  }
 `;
 
 const Banner = (props) => {
@@ -60,7 +63,7 @@ const Banner = (props) => {
     <StyledBanner>
       <Row gutter={[40]} style={{ padding: 20 }}>
         {props.insideData.map((data, index) => (
-          <Col key={index} span={props.colSize}>
+          <Col key={index} xxl={8} xl={8} lg={8} md={8} sm={24} xs={24}>
             <div
               className="card-banner"
               style={{
