@@ -17,7 +17,7 @@ import ProductVerticalCarousel from "src/component/productListing/productVertica
 import BlogCarousel from "src/component/productListing/blogCarousel";
 import { bagsBlogs, bagsProducts } from "src/mock/bagsProducts";
 import Service1 from "src/component/services/service3";
-import SubscriptionModal from "src/component/modals/subscriptionModal2";
+import SubscriptionModal from "src/component/modals/subscriptionModal3";
 import Head from "next/head";
 import Title5 from "src/component/titles/title5";
 import { clothProducts } from "src/mock/clothProducts";

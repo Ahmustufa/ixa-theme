@@ -25,7 +25,7 @@ let data = [
   {
     image: "/images/Bags/banner/headBanner4.jpg",
     subHeading: "Welcome To Fashion",
-    heading: "WOMEN BAGS",
+    heading: "TRAVEL BAGPACK",
     link: "#",
     placement: "start",
   },
@@ -39,7 +39,7 @@ let data = [
   {
     image: "/images/Bags/banner/headBanner3.png",
     subHeading: "Welcome To Fashion",
-    heading: "SCHOOL BAGPACK",
+    heading: "WOMEN CLUTCH BAGS",
     link: "#",
     placement: "start",
   },

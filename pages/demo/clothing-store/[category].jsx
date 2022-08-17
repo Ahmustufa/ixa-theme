@@ -17,9 +17,9 @@ const ProductListin = (props) => {
   const [gridColumn, setGridColumn] = useState(4);
 
   const categoryBanners = [
-    { category: "women", image: "/images/Bags/banner/pbanner1.png" },
-    { category: "travel", image: "/images/Bags/banner/pbanner2.png" },
-    { category: "others", image: "/images/Bags/banner/pbanner3.png" },
+    { category: "dress", image: "/images/clothing/banner/Small-banner-1.jpg" },
+    { category: "jacket", image: "/images/clothing/banner/Small-banner-2.jpg" },
+    { category: "sweater", image: "/images/clothing/banner/Small-banner-3.jpg" },
   ];
   return (
     <>
