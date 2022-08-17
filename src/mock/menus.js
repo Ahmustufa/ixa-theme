@@ -81,7 +81,16 @@ export const clothingMenu = [
   {
     title: "Shop",
     link: "/demo/clothing-store/women",
-    submenu: [{ title: "Women fashion", link: `/demo/clothing-store/women` }],
+    submenu: [
+      {
+        title: "Women fashion",
+        submenu: [
+          { title: "Dresses", link: "/demo/clothing-store/dress" },
+          { title: "Jackets", link: "/demo/clothing-store/jacket" },
+          { title: "Sweaters", link: "/demo/clothing-store/sweater" },
+        ],
+      },
+    ],
   },
   {
     title: "Blogs",
@@ -108,7 +117,7 @@ export const mainMenu = [
     submenu: [
       { title: "Shoes", link: "/demo/shoes-store" },
       { title: "Bags", link: "/demo/bag-store" },
-      { title: "Clothing", link: "/demo/clothing" },
+      { title: "Clothing", link: "/demo/clothing-store" },
     ],
     link: "",
   },

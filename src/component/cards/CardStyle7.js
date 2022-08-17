@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
-import moment from "moment";
 import { image1 } from "../../../images";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -10,10 +9,10 @@ import {
   AiOutlineSearch,
   AiOutlineSync,
 } from "react-icons/ai";
-import { Rate } from "antd";
+import { Rate, Row, Col } from "antd";
 
 const CardStyle7 = (props) => {
-  const { images, title, price } = props;
+  const { images, title, price, listView } = props;
   const dispatch = useDispatch();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -23,38 +22,67 @@ const CardStyle7 = (props) => {
 
   return (
     <StyledCard images={images}>
-      {/* <img src={image} width="100%" /> */}
-      <Link href={`/product}`}>
-        <div
-          className="image-container"
-          // style={{ backgroundImage: `url(${images[0]})` }}
-        ></div>
-      </Link>
-      <div className="cart-actions">
-        <div className="add_to_wishlist">
-          <AiOutlineHeart size={20} title={"Add to wishlist"} />
-        </div>
-        <div className="add_to_cart" style={{ opacity: 1 }}>
-          Add to cart
-        </div>
+      <Row justify="space-between">
+        <Col
+          xs={24}
+          sm={24}
+          md={listView ? 8 : 24}
+          lg={listView ? 6 : 24}
+          xl={listView ? 4 : 24}
+        >
+          <Link href={`/product}`}>
+            <div className="image-container"></div>
+          </Link>
+          <div className="cart-actions">
+            <div className="add_to_wishlist">
+              <AiOutlineHeart size={20} title={"Add to wishlist"} />
+            </div>
+            <div className="add_to_cart" style={{ opacity: 1 }}>
+              Add to cart
+            </div>
 
-        <div className="compare">
-          <AiOutlineSync size={20} title={"Compare"} />
-        </div>
-      </div>
-      <div className="item-details">
-        <Rate defaultValue={4} disabled style={{ color: "#ffa200", fontSize: 13 }} />
-        <div className="product mt-2" title={title}>
-          {title.length > 40 ? `${title.slice(0, 30)}...` : title}
-        </div>
+            <div className="compare">
+              <AiOutlineSync size={20} title={"Compare"} />
+            </div>
+          </div>
+        </Col>
 
-        <div className="price">
-          {formatedPrice.format(price)}{" "}
-          <small style={{ color: "#858585", textDecoration: "line-through" }}>
-            PKR {price + 100}
-          </small>
-        </div>
-      </div>
+        <Col
+          xs={24}
+          sm={24}
+          md={listView ? 15 : 24}
+          lg={listView ? 17 : 24}
+          xl={listView ? 19 : 24}
+        >
+          <div
+            className="item-details"
+            style={{ textAlign: listView ? "left" : "center" }}
+          >
+            <Rate defaultValue={4} disabled style={{ color: "#ffa200", fontSize: 13 }} />
+            <div className="product mt-2" title={title}>
+              {title.length > 40 ? `${title.slice(0, 30)}...` : title}
+            </div>
+
+            <div className="price">
+              {formatedPrice.format(price)}{" "}
+              <small style={{ color: "#858585", textDecoration: "line-through" }}>
+                PKR {price + 100}
+              </small>
+            </div>
+            {listView ? (
+              <div className="description">
+                It is a long established fact that a reader will be distracted by the
+                readable content of a page when looking at its layout. The point of using
+                Lorem Ipsum is that it has a more-or-less normal distribution of
+                letters,It is a long established fact that a reader will be distracted by
+                the readable content of a page when looking at its layout. The point of
+                using Lorem Ipsum is that it has a more-or-less normal distribution of
+                letters.
+              </div>
+            ) : null}
+          </div>
+        </Col>
+      </Row>
     </StyledCard>
   );
 };
@@ -143,7 +171,7 @@ const StyledCard = styled.div`
   .item-details {
     overflow: hidden;
     position: relative;
-    text-align: center;
+    /* text-align: center; */
     background: #fff;
     // z-index: 999;
   }
