@@ -215,5 +215,8 @@ const StyledCard = styled.div`
 
   @media only screen and (max-width: 576px) {
     margin: 0 12px;
+    .item-details {
+      left: 0px;
+    }
   }
 `;

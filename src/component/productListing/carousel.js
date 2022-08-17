@@ -108,5 +108,12 @@ const StyledContent = styled.div`
   @media only screen and (max-width: 576px) {
     margin: 0;
     padding: 0 8px;
+
+    .heading {
+      font-size: 32px;
+      ::before {
+        top: 20px;
+      }
+    }
   }
 `;

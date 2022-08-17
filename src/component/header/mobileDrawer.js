@@ -35,12 +35,16 @@ const MobileDrawer = (props) => {
     >
       <StyledContent>
         <div className="d-flex align-items-center justify-content-between p-4">
-          <img
-            alt="Polkadotsretail"
-            src="/images/app-logo-dark.svg"
-            style={{ height: 32 }}
-            className="app-logo"
-          />
+          <Link href="/">
+            <a onClick={closeSidebar} style={{ textDecoration: "none" }}>
+              <img
+                alt="Polkadotsretail"
+                src="/images/app-logo-dark.svg"
+                style={{ height: 32 }}
+                className="app-logo"
+              />
+            </a>
+          </Link>
           <IoCloseCircleOutline
             onClick={onClose}
             style={{ fontSize: 32, color: "#000" }}
@@ -110,10 +114,7 @@ const MobileDrawer = (props) => {
                                 key={index}
                                 showArrow={false}
                                 header={
-                                  <div
-                                    className={`navigation-link`}
-                                    onClick={closeSidebar}
-                                  >
+                                  <div className={`navigation-link`}>
                                     {subMenuItem.title}
                                     <FiChevronDown
                                       className="ml-3"
@@ -160,7 +161,11 @@ const MobileDrawer = (props) => {
                 return (
                   <div key={i} className={`sidebar-item`}>
                     <Link href={menu.link || ""}>
-                      <a className="hoverable dark" style={{ textDecoration: "none" }}>
+                      <a
+                        onClick={closeSidebar}
+                        className="hoverable dark"
+                        style={{ textDecoration: "none" }}
+                      >
                         {menu.title}
                       </a>
                     </Link>
@@ -198,6 +203,9 @@ const StyledContent = styled.div`
 
   .navigation-link {
     margin-left: 24px;
+  }
+  a {
+    color: #000;
   }
 
   .sub-menu-1 {

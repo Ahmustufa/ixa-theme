@@ -19,7 +19,7 @@ const SortBar = (props) => {
   return (
     <StyledDiv className={className} style={style}>
       <Row className="main-div">
-        <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+        <Col xs={24} sm={12} md={12} lg={8} xl={8}>
           <div className="search-count">
             <h5>
               Showing Products 1-{showTotalProducts} Of {count} Result
@@ -27,9 +27,9 @@ const SortBar = (props) => {
           </div>
         </Col>
 
-        <Col xs={24} sm={24} md={7} lg={7} xl={7}>
+        <Col xs={24} sm={12} md={12} lg={7} xl={7}>
           <div className="filter-div">
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", marginRight: 34 }}>
               <CgMenuGridR
                 style={{ fontSize: 22, cursor: "pointer", marginRight: 8 }}
                 onClick={() => setGridColumn(3)}
@@ -85,8 +85,8 @@ const SortBar = (props) => {
           </div>
         </Col>
 
-        <Col xs={24} sm={24} md={5} lg={5} xl={5}>
-          <div style={{ borderRight: "1px solid #ddd" }} className="select-wrapper">
+        <Col xs={24} sm={12} md={12} lg={5} xl={5}>
+          <div className="select-wrapper">
             <select
               onChange={(e) => {
                 setShowTotalProducts(e.target.value);
@@ -100,7 +100,7 @@ const SortBar = (props) => {
           </div>
         </Col>
 
-        <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+        <Col xs={24} sm={12} md={12} lg={4} xl={4}>
           <div className="select-wrapper">
             <select className="dropdown" placeholder="Sorting items">
               <option value="1">Low to high</option>
@@ -173,6 +173,43 @@ const StyledDiv = styled.div`
       cursor: pointer;
       background: url(https://themes.pixelstrap.com/multikart/assets/images/dropdown.png)
         no-repeat 91%;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .search-count {
+      border-bottom: 1px solid #ddd;
+      border-right: 0px;
+    }
+
+    .filter-div {
+      border-bottom: 1px solid #ddd;
+      border-right: 0px;
+    }
+
+    .select-wrapper {
+      border-bottom: 1px solid #ddd;
+      border-right: 0px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .search-count {
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+    }
+
+    .filter-div {
+      justify-content: center;
+      border-bottom: 1px solid #ddd;
+      display: none;
+    }
+
+    .select-wrapper {
+      border-bottom: 1px solid #ddd;
+      text-align: center;
     }
   }
 `;

@@ -75,7 +75,11 @@ const HeaderWrapper2 = () => {
           </Col>
 
           <Col xs={14} sm={14} md={10} lg={3} xl={3}>
-            <img src="/images/app-logo-dark.svg" className="img-fluid site-logo" />
+            <Link href="/">
+              <a style={{ textDecoration: "none" }}>
+                <img src="/images/app-logo-dark.svg" className="img-fluid site-logo" />
+              </a>
+            </Link>
           </Col>
 
           <Col xs={0} sm={0} md={10} lg={10} xl={10}>
@@ -93,8 +97,8 @@ const HeaderWrapper2 = () => {
               <BiHeadphone className="icon" />
 
               <div>
-                <p className="title">Help is here</p>
-                <sub className="sub-title">123456789</sub>
+                <p className="title">Help</p>
+                <sub className="sub-title">123 456 789</sub>
               </div>
             </div>
           </Col>
@@ -111,7 +115,7 @@ const HeaderWrapper2 = () => {
 
               <div>
                 <p className="title">Sign in</p>
-                <sub className="sub-title">My Account</sub>
+                <sub className="sub-title">Account</sub>
               </div>
             </div>
           </Col>
