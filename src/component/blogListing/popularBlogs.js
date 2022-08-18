@@ -1,13 +1,5 @@
 import styled from "styled-components";
-import { Row, Col, Divider } from "antd";
-import ProductCard from "../cards/productCard";
-import Slider from "react-slick";
-import { useSelector } from "react-redux";
-import ProductCardWithIcons from "../cards/productCardWithIcons";
 import { image1, image2, image3, image4 } from "../../../images";
-import { Rate } from "antd";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { useRef } from "react";
 
 const blogData = [
   { _id: 1, image: image1, title: "Pink Tutu with Headband" },
@@ -56,7 +48,7 @@ const PopularBlogs = (props) => {
 export default PopularBlogs;
 
 const StyledContent = styled.div`
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   padding: 25px;
   margin-top: 30px;
   .title-header h4 {

@@ -98,7 +98,7 @@ const HeaderWrapper2 = () => {
 
               <div>
                 <p className="title">Help</p>
-                <sub className="sub-title">123 456 789</sub>
+                <p className="sub-title">123 456 789</p>
               </div>
             </div>
           </Col>
@@ -115,7 +115,7 @@ const HeaderWrapper2 = () => {
 
               <div>
                 <p className="title">Sign in</p>
-                <sub className="sub-title">Account</sub>
+                <p className="sub-title">Account</p>
               </div>
             </div>
           </Col>

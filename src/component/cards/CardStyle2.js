@@ -5,7 +5,7 @@ import { Rate } from "antd";
 import {
   AiOutlineShoppingCart,
   AiOutlineHeart,
-  AiOutlineSearch,
+  AiOutlineEye,
   AiOutlineSync,
 } from "react-icons/ai";
 
@@ -34,7 +34,7 @@ const CardStyle2 = (props) => {
           <AiOutlineHeart size={20} title={"Add to wishlist"} />
         </div>
         <div className="icon icon-3">
-          <AiOutlineSearch size={20} title={"Quick view"} />
+          <AiOutlineEye size={20} title={"Quick view"} />
         </div>
         <div className="icon icon-4">
           <AiOutlineSync size={20} title={"Compare"} />

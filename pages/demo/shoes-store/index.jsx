@@ -124,8 +124,9 @@ const BagStore = () => {
               title2: "Women Shoes",
             },
           ]}
-          cardHeight={300}
+          cardHeight={250}
           textAlign="start"
+          title1Color="#fff"
           title2Color="#fff"
         />
 

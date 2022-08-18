@@ -5,10 +5,7 @@ import { Row, Col } from "antd";
 const StyledBanner = styled.div`
   padding: 0 5%;
   .card-banner {
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
-    background-position: center;
     display: flex;
     /* align-items: center; */
     /* justify-content: center; */
@@ -24,7 +21,6 @@ const StyledBanner = styled.div`
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 250px;
       width: 100%;
     }
     &:hover .img-div {
@@ -37,7 +33,6 @@ const StyledBanner = styled.div`
       padding: 50px;
 
       h4 {
-        color: #fff;
         font-size: 16px;
         font-weight: 700;
         text-transform: uppercase;
@@ -61,7 +56,7 @@ const StyledBanner = styled.div`
 const Banner = (props) => {
   return (
     <StyledBanner>
-      <Row gutter={[40]} style={{ padding: 20 }}>
+      <Row gutter={[40]} style={{ padding: 20, justifyContent: "center" }}>
         {props.insideData.map((data, index) => (
           <Col key={index} xxl={8} xl={8} lg={8} md={8} sm={24} xs={24}>
             <div
@@ -72,7 +67,10 @@ const Banner = (props) => {
             >
               <div
                 className="img-div"
-                style={{ backgroundImage: `url(${data.image})` }}
+                style={{
+                  height: props.cardHeight,
+                  backgroundImage: `url(${data.image})`,
+                }}
               />
 
               <div
@@ -82,7 +80,7 @@ const Banner = (props) => {
                 }}
                 className="text-div"
               >
-                <h4>{data.title1}</h4>
+                <h4 style={{ color: props.title1Color }}>{data.title1}</h4>
                 <h2 style={{ color: props.title2Color }}>{data.title2}</h2>
               </div>
             </div>

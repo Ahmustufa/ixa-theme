@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   AiOutlineShoppingCart,
   AiOutlineHeart,
-  AiOutlineSearch,
+  AiOutlineEye,
   AiOutlineSync,
 } from "react-icons/ai";
 import { Rate } from "antd";
@@ -38,7 +38,7 @@ const CardStyle9 = (props) => {
           <AiOutlineHeart size={20} title={"Add to wishlist"} />
         </div>
         <div className="quick_view">
-          <AiOutlineSearch size={20} title={"Quick view"} />
+          <AiOutlineEye size={20} title={"Quick view"} />
         </div>
         <div className="compare">
           <AiOutlineSync size={20} title={"Compare"} />
@@ -104,11 +104,12 @@ const StyledCard = styled.div`
     .compare {
       background-color: hsla(0, 0%, 100%, 0.8);
       padding: 10px;
-      color: #dddddd;
+      color: #000;
       display: flex;
       align-items: center;
       justify-content: center;
       transform: translateY(0px);
+      cursor: pointer;
       :hover {
         color: #f5513c;
       }
@@ -118,7 +119,7 @@ const StyledCard = styled.div`
     .add_to_wishlist,
     .quick_view {
       border-right: 1px solid #ddd;
-      color: #dddddd;
+      color: #000;
       display: flex;
       align-items: center;
       justify-content: center;

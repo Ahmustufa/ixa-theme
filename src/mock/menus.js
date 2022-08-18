@@ -60,12 +60,12 @@ export const bagsMenu = [
     ],
   },
   {
-    title: "Blogs",
-    link: "/demo/bag-store/blogs",
+    title: "CONTACT",
+    link: "/demo/bag-store/contact-us",
   },
   {
-    title: "CONTACT",
-    link: "/demo/bags/contact",
+    title: "Blog",
+    link: "/demo/bag-store/blogs",
   },
 ];
 
@@ -93,25 +93,25 @@ export const clothingMenu = [
     ],
   },
   {
-    title: "Blogs",
-    link: "/demo/clothing-store/blogs",
+    title: "CONTACT",
+    link: "/demo/clothing-store/contact-us",
   },
   {
-    title: "CONTACT",
-    link: "/demo/clothing/contact",
+    title: "Blog",
+    link: "/demo/clothing-store/blogs",
   },
 ];
 
 export const mainMenu = [
-  {
-    title: "home",
-    submenu: [
-      { title: "Clothing", link: "/layout/clothing" },
-      { title: "Grocery", link: "/" },
-      { title: "Electronics", link: "/layout/electronics" },
-    ],
-    link: "/",
-  },
+  // {
+  //   title: "home",
+  //   submenu: [
+  //     { title: "Clothing", link: "/layout/clothing" },
+  //     { title: "Grocery", link: "/" },
+  //     { title: "Electronics", link: "/layout/electronics" },
+  //   ],
+  //   link: "/",
+  // },
   {
     title: "demo",
     submenu: [
@@ -197,9 +197,9 @@ export const mainMenu = [
     title: "blog",
     link: "#",
     submenu: [
-      { title: "Blog left sidebar", link: "/blog/blog-left-sidebar" },
-      { title: "Blog right sidebar", link: "/blog/blog-right-sidebar" },
-      { title: "No sidebar", link: "/blog/no-sidebar" },
+      { title: "With left sidebar", link: "/blog/blog-left-sidebar" },
+      { title: "With right sidebar", link: "/blog/blog-right-sidebar" },
+      { title: "Without sidebar", link: "/blog/no-sidebar" },
     ],
   },
 ];
