@@ -58,7 +58,7 @@ const Banner = (props) => {
     <StyledBanner>
       <Row gutter={[40]} style={{ padding: 20, justifyContent: "center" }}>
         {props.insideData.map((data, index) => (
-          <Col key={index} xxl={8} xl={8} lg={8} md={8} sm={24} xs={24}>
+          <Col key={index} xxl={12} xl={12} lg={12} md={8} sm={24} xs={24}>
             <div
               className="card-banner"
               style={{

@@ -6,7 +6,7 @@ import { useFetch } from "../hooks/useFetch";
 
 const userModule = axios.create({
   // baseURL: "http://localhost:1337",
-  baseURL: `${process.env.REACT_APP_STRAPI_URL}`,
+  baseURL: `${process.env.NEXT_PUBLIC_STRAPI_URL}`,
 });
 
 export { Mutations, Queries, errorHandler, userModule, useFetch };

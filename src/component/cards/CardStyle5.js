@@ -12,7 +12,7 @@ import {
 } from "react-icons/ai";
 
 const CardStyle5 = (props) => {
-  const { images, title, price } = props;
+  const { _id, images, title, price } = props;
   const dispatch = useDispatch();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -23,7 +23,7 @@ const CardStyle5 = (props) => {
   return (
     <StyledCard>
       {/* <img src={image} width="100%" /> */}
-      <Link href={`/product}`}>
+      <Link href={`/product/${_id}`}>
         <div
           className="image-container"
           style={{ backgroundImage: `url(${images[0]})` }}

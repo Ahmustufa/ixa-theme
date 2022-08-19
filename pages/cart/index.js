@@ -72,7 +72,7 @@ const ShoppingBag = () => {
                     <div>
                       <img
                         src={
-                          process.env.REACT_APP_STRAPI_URL + item.product.images[0].url
+                          process.env.NEXT_PUBLIC_STRAPI_URL + item.product.images[0].url
                         }
                         style={{ width: 180 }}
                       />
