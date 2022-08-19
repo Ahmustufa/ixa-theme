@@ -3,20 +3,20 @@ import { Row, Col } from "antd";
 import ShopCard from "../src/component/cards/shopCard";
 import HomeCarousel from "../src/component/heroSection";
 import DressCategories from "../src/component/categories/derssCategories";
-import ProductListing from "../src/component/productListing";
 import ProductCarousel from "../src/component/productListing/carousel";
 import styled from "styled-components";
 import FullBgImageSection from "../src/component/heroSection/FullBgImageSection";
 import { brownHair } from "../images";
-import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
 import SubscriptionModal from "../src/component/modals/subscriptionModal1";
 import SortItems from "../src/component/sortItems";
-import Heading from "../src/component/headings";
 import BlogCarousel from "../src/component/productListing/blogCarousel";
-import ProductVerticalCarousel from "../src/component/productListing/productVerticalCarousel";
-import { productStyle5, productStyle8 } from "src/mock/mockupData";
 import CardStyle5 from "src/component/cards/CardStyle5";
 import { shoesProducts } from "src/mock/shoesProducts";
+import ProductListing from "../src/component/productListing";
+import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
+import ProductVerticalCarousel from "../src/component/productListing/productVerticalCarousel";
+import { productStyle5, productStyle8 } from "src/mock/mockupData";
+import Heading from "../src/component/headings";
 
 const Home = () => {
   return (
@@ -24,8 +24,8 @@ const Home = () => {
       <Head>
         <title>E-commerce Store | Home</title>
       </Head>
-
       <SubscriptionModal />
+
       <HomeCarousel />
       <StyledPage>
         <section className="section-wrapper">
@@ -40,9 +40,9 @@ const Home = () => {
           </Row>
         </section>
 
-        <SortItems />
-        <DressCategories />
-        <ProductCarousel CardStyle={CardStyle5} data={shoesProducts} />
+        {/* <SortItems /> */}
+        {/* <DressCategories /> */}
+        {/* <ProductCarousel CardStyle={CardStyle5} data={shoesProducts} /> */}
 
         <FullBgImageSection
           h1="Trending"

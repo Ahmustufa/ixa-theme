@@ -11,7 +11,7 @@ const ShopCard = (props) => {
           {`Sharp, chic and glamorous—own the room in the power pairing that's always in
           style.`}
         </div>
-        <ButtonWrapper style={{ width: 200 }}>SHOP NOW</ButtonWrapper>
+        <ButtonWrapper style={{ width: 200 }}>SEE DEMO</ButtonWrapper>
       </div>
     </StyledCard>
   );
