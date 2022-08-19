@@ -6,11 +6,15 @@ import { FiChevronDown } from "react-icons/fi";
 import { InputWrapper } from "../inputs";
 import { BsSearch, BsSuitHeart } from "react-icons/bs";
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { ModalConstant } from "src/redux/constants";
+import { openCart } from "src/redux/actions/cartActions";
 
 const { Panel } = Collapse;
 
 const MobileDrawer = (props) => {
+  const dispatch = useDispatch();
+
   const { visible, onClose } = props;
 
   const menu = useSelector((state) => state.menu);
@@ -30,8 +34,11 @@ const MobileDrawer = (props) => {
       closable={false}
       drawerStyle={{ backgroundColor: "#fff", padding: 0, margin: 0, maxWidth: 576 }}
       bodyStyle={{ padding: 0, maxWidth: 576 }}
-      style={{ maxWidth: 576 }}
-      width={"100%"}
+      // style={{ maxWidth: 576 }}
+      // width={"100%"}
+      onClose={() => {
+        closeSidebar();
+      }}
     >
       <StyledContent>
         <div className="d-flex align-items-center justify-content-between p-4">
@@ -65,9 +72,37 @@ const MobileDrawer = (props) => {
           className="d-flex justify-content-around  mt-3 py-2"
           style={{ borderTop: "1px solid #ececec" }}
         >
-          <div className="text-center" style={{ flex: "33%", color: "#727272" }}>
-            <BsSuitHeart style={{ fontSize: 20 }} />
+          <div
+            className="text-center"
+            style={{
+              flex: "33%",
+              color: "#727272",
+              fontWeight: 600,
+              borderRight: "1px solid #ececec",
+              borderLeft: "1px solid #ececec",
+            }}
+          >
+            <BsSuitHeart style={{ fontSize: 17 }} />
             <div>Wishlist</div>
+          </div>
+
+          <div
+            className="text-center"
+            style={{
+              flex: "33%",
+              color: "#727272",
+              borderRight: "1px solid #ececec",
+              borderLeft: "1px solid #ececec",
+              cursor: "pointer",
+              fontWeight: 600,
+            }}
+            onClick={() => {
+              closeSidebar();
+              dispatch({ type: ModalConstant.OPEN_LOGIN_MODAL });
+            }}
+          >
+            <AiOutlineUser style={{ fontSize: 20 }} />
+            <div>Account</div>
           </div>
 
           <div
@@ -77,15 +112,16 @@ const MobileDrawer = (props) => {
               borderRight: "1px solid #ececec",
               borderLeft: "1px solid #ececec",
               color: "#727272",
+              cursor: "pointer",
+              fontWeight: 600,
+            }}
+            onClick={() => {
+              dispatch(openCart());
+              closeSidebar();
             }}
           >
             <AiOutlineShoppingCart style={{ fontSize: 20 }} />
             <div>Cart</div>
-          </div>
-
-          <div className="text-center" style={{ flex: "33%", color: "#727272" }}>
-            <AiOutlineUser style={{ fontSize: 20 }} />
-            <div>Account</div>
           </div>
         </div>
 
@@ -128,14 +164,10 @@ const MobileDrawer = (props) => {
                                     role="button"
                                     key={`sub-menu-${index}`}
                                     style={{ minWidth: 240 }}
+                                    className="navigation-link-sub"
                                   >
                                     <Link href={item.link || ""}>
-                                      <a
-                                        className="navigation-link"
-                                        onClick={closeSidebar}
-                                      >
-                                        {item.title}
-                                      </a>
+                                      <a onClick={closeSidebar}>{item.title}</a>
                                     </Link>
                                   </div>
                                 ))}
@@ -144,11 +176,9 @@ const MobileDrawer = (props) => {
                           );
                         } else {
                           return (
-                            <div key={index}>
+                            <div className="navigation-link-main" key={index}>
                               <Link href={subMenuItem.link || ""}>
-                                <a className="navigation-link" onClick={closeSidebar}>
-                                  {subMenuItem.title}
-                                </a>
+                                <a onClick={closeSidebar}>{subMenuItem.title}</a>
                               </Link>
                             </div>
                           );
@@ -194,18 +224,94 @@ const StyledContent = styled.div`
     padding: 0 !important;
   }
 
+  .ant-collapse-ghost
+    > .ant-collapse-item
+    > .ant-collapse-content
+    > .ant-collapse-content-box {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .ant-collapse-content > .ant-collapse-content-box {
+    padding: 4px 14px;
+  }
+
   .sidebar-item {
     text-transform: uppercase;
     display: flex;
     justify-content: space-between;
     padding: 12px 24px;
+    font-weight: 600;
+  }
+
+  .navigation-link-main {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: 24px;
+
+    a {
+      position: relative;
+      font-size: 15px;
+      text-decoration: none;
+      :after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background-color: #212529;
+        transition: 0.3s;
+      }
+    }
+
+    &:hover a {
+      :after {
+        width: 90%;
+      }
+    }
+  }
+
+  .navigation-link-sub {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: 24px;
+
+    a {
+      position: relative;
+      text-decoration: none;
+      font-size: 13px;
+      :after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background-color: #212529;
+        transition: 0.3s;
+      }
+    }
+
+    &:hover a {
+      :after {
+        width: 90%;
+      }
+    }
   }
 
   .navigation-link {
     margin-left: 24px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 32px;
   }
   a {
     color: #000;
+    font-size: 15px;
   }
 
   .sub-menu-1 {

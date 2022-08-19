@@ -1353,4 +1353,34 @@ export const shoesBlogs = [
       count: 430,
     },
   },
+
+  {
+    _id: 5,
+    title: "Easy Way To Keep Your Shoes In Order",
+    price: 15.99,
+    description:
+      "After surviving the long hectic day of your work routine, you finally get in to your easiest clothes, turn off the lights and take a smooth flight to your bed, and you are about to get indulge into the peaceful dark. Then suddenly your peace shatters in different pieces by the loud knock, you are still unable to comprehend from where did it come? You move towards the cupboard, all confused, open its door and all of a sudden pile of shoes jumps over your feet.",
+    category: "Women's Shoes",
+    images: [
+      "https://cdn.shopify.com/s/files/1/0490/2443/4341/articles/main_copy_ff6db403-f91b-4a09-bf8e-b15fb345cb33_x370.jpg",
+    ],
+    rating: {
+      rate: 2.1,
+      count: 430,
+    },
+  },
+
+  {
+    _id: 6,
+    title: "Shoes To Wear With Denim Outfits",
+    price: 15.99,
+    description:
+      "This could be a big question that whether this denim style is currently in fashion or not and also are these classy enough to carry? A straight away answer to this question is big Yes! The denim outfits are quite classy, particularly the shirts and this kind of stuff perfectly goes with high end-fashion shoes by Insignia. Stay up to date with latest fashion by following Insignia Blogs and the style guide to make the statement every season.",
+    category: "Women's Shoes",
+    images: ["https://cdn.shopify.com/s/files/1/0490/2443/4341/files/maiin_copy.jpg"],
+    rating: {
+      rate: 2.1,
+      count: 430,
+    },
+  },
 ];

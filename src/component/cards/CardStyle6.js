@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   AiOutlineShoppingCart,
   AiOutlineHeart,
-  AiOutlineSearch,
+  AiOutlineEye,
   AiOutlineSync,
 } from "react-icons/ai";
 import { Rate, Row, Col } from "antd";
@@ -41,7 +41,7 @@ const CardStyle6 = (props) => {
               <AiOutlineHeart size={20} title={"Add to wishlist"} />
             </div>
             <div className="quick_view">
-              <AiOutlineSearch size={20} title={"Quick view"} />
+              <AiOutlineEye size={22} title={"Quick view"} />
             </div>
             <div className="compare">
               <AiOutlineSync size={20} title={"Compare"} />
@@ -119,7 +119,8 @@ const StyledCard = styled.div`
     /* min-height: 320px; */
 
     &:hover {
-      background-image: url(${(props) => props.images[1]});
+      background-image: url(${(props) =>
+        props.images.length > 1 ? props.images[1] : props.images[0]});
     }
   }
 
@@ -151,8 +152,8 @@ const StyledCard = styled.div`
     -webkit-transition: all 0.5s ease;
     box-shadow: 0px 0px 5px 0px #929292;
     transition: all 0.5s ease;
-    min-width: 100px;
-    max-width: 200px;
+    min-width: 150px;
+    max-width: 180px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -163,7 +164,7 @@ const StyledCard = styled.div`
     opacity: 1;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    bottom: 150px;
+    bottom: 20px;
   }
   :hover .image-container {
     background-image: url(${(props) => props.images[1]});

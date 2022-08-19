@@ -25,7 +25,31 @@ const BlogCard = (props) => {
       </Link>
 
       <div className="d-flex justify-content-center flex-column">
-        <div className="createdAt">{moment(new Date()).format("DD-MMM-YYYY")}</div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginTop: 24,
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <p style={{ fontSize: 12, margin: 0 }}>Posted By:</p>
+            <p
+              style={{
+                margin: 0,
+                fontWeight: 600,
+                marginLeft: 8,
+                fontStyle: "italic",
+                fontSize: 13,
+              }}
+            >
+              Admin
+            </p>
+          </div>
+
+          <div className="createdAt">{moment(new Date()).format("DD-MMM-YYYY")}</div>
+        </div>
         <div title={title} className="product">
           <Link href={`/blog/${_id}`}>{title}</Link>
         </div>
@@ -159,8 +183,7 @@ const StyledCard = styled.div`
   }
   .createdAt {
     color: #ff4c3b;
-    margin-top: 25px;
-    line-height: 1;
+    font-size: 12px;
   }
 
   .product a {

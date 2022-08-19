@@ -272,7 +272,7 @@ const EmailTemplate1 = () => {
                               fontWeight: 400,
                               lineHeight: "120%",
                             }}
-                            href="https://polkadotsretail.com/"
+                            href="/"
                           >
                             Verify Email
                           </a>

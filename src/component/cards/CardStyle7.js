@@ -3,12 +3,7 @@ import styled from "styled-components";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
 import { image1 } from "../../../images";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  AiOutlineShoppingCart,
-  AiOutlineHeart,
-  AiOutlineSearch,
-  AiOutlineSync,
-} from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
 import { Rate, Row, Col } from "antd";
 
 const CardStyle7 = (props) => {
@@ -42,7 +37,7 @@ const CardStyle7 = (props) => {
             </div>
 
             <div className="compare">
-              <AiOutlineSync size={20} title={"Compare"} />
+              <AiOutlineEye size={20} title={"Quick View"} />
             </div>
           </div>
         </Col>
@@ -128,6 +123,7 @@ const StyledCard = styled.div`
       transform: translateY(0px);
       transition: all 0.3s ease;
       border-radius: 6px;
+      cursor: pointer;
       :hover {
         background-color: #f54c3b;
         color: white;
@@ -139,6 +135,7 @@ const StyledCard = styled.div`
       padding: 8px 12px;
       border-radius: 6px;
       width: 185px;
+      cursor: pointer;
       :hover {
         background-color: #f54c3b;
         color: white;
@@ -165,7 +162,10 @@ const StyledCard = styled.div`
     opacity: 1;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    bottom: 30%;
+    bottom: 30px;
+  }
+  :hover .image-container {
+    background-image: url(${(props) => props.images[1]});
   }
 
   .item-details {

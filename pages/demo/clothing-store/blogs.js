@@ -83,7 +83,7 @@ const BagBlogs = (props) => {
         <Row gutter={[30, 30]} className="flex-column-reverse flex-lg-row">
           <Col lg={6} sm={24} xs={24}>
             <RecentBlogs data={bagsBlogs} />
-            <PopularBlogs className="mt-5" />
+            {/* <PopularBlogs className="mt-5" /> */}
           </Col>
           <Col lg={18} sm={24} xs={24}>
             {bagsBlogs.map((item, index) => {
