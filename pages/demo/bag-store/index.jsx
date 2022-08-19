@@ -133,6 +133,7 @@ const Bags = () => {
           </Col>
         </Row>
       </div> */}
+      <Title5 subtitle="Recent Story" maintitle="NEW BLOGS" />
 
       <BlogCarousel data={bagsBlogs} />
       <Service1 />

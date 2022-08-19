@@ -18,7 +18,7 @@ const ProductListin = (props) => {
   const categoryBanners = [
     { category: "women", image: "/images/Bags/banner/pbanner1.png" },
     { category: "travel", image: "/images/Bags/banner/pbanner2.png" },
-    { category: "others", image: "/images/Bags/banner/pbanner3.png" },
+    { category: "others", image: "/images/Bags/banner/Others-banner.jpg" },
   ];
   return (
     <>
