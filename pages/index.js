@@ -24,8 +24,8 @@ const Home = () => {
       <Head>
         <title>E-commerce Store | Home</title>
       </Head>
-      <SubscriptionModal />
 
+      <SubscriptionModal image="/images/subscriptionModalBg.png" />
       <HomeCarousel />
       <StyledPage>
         <section className="section-wrapper">

@@ -23,19 +23,19 @@ const carouselSettings = {
   verticalSwiping: false,
   // adaptiveHeight: true,
   slidesToShow: 3,
-  slidesToScroll: 3,
+  slidesToScroll: 1,
   responsive: [
     {
       breakpoint: 576,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
     {
       breakpoint: 768,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
       },
     },
@@ -91,7 +91,10 @@ const ProductVerticalCarousel = (props) => {
             key={index}
             className="d-flex justify-content-start align-items-center w-100"
           >
-            <img src={item.image} width="30%" height={"160px"} />
+            <img
+              src={item.images[0]}
+              style={{ maxHeight: 100, width: "30%", margin: "24px 0px" }}
+            />
             <div className="content ml-4">
               <Rate className="mb-2" disabled defaultValue={2} />
               <h6>{item.title}</h6>

@@ -242,12 +242,15 @@ const StyledContent = styled.div`
     justify-content: space-between;
     padding: 12px 24px;
     font-weight: 600;
+    font-size: 15px;
+    color: #000;
   }
 
   .navigation-link-main {
     margin-top: 6px;
     margin-bottom: 6px;
     margin-left: 24px;
+    color: #000;
 
     a {
       position: relative;
@@ -276,6 +279,7 @@ const StyledContent = styled.div`
     margin-top: 6px;
     margin-bottom: 6px;
     margin-left: 24px;
+    color: #000;
 
     a {
       position: relative;
@@ -308,6 +312,7 @@ const StyledContent = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-right: 32px;
+    color: #000;
   }
   a {
     color: #000;

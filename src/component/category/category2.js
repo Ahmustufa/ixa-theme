@@ -29,7 +29,7 @@ const Category2 = (props) => {
             title2: "KIDS",
           },
         ]}
-        cardHeight={350}
+        cardHeight={250}
         textAlign="end"
         textHeight="50%"
         title2Color="#222"

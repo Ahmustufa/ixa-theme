@@ -13,7 +13,27 @@ const StyledDiv = styled.div`
       text-align: center;
       margin-left: 24px;
       margin-right: 24px;
-      padding: 40px 0px;
+      /* padding: 24px 24px; */
+      img {
+        width: 100%;
+        margin-bottom: 34px;
+        max-height: 370px;
+      }
+      h5 {
+        padding: 0px 12px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: #54595f;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      p {
+        font-size: 12px;
+        color: #858585;
+      }
     }
   }
 
@@ -24,7 +44,7 @@ const StyledDiv = styled.div`
 
 const Category4 = (props) => {
   const settings = {
-    autoplay: true,
+    // autoplay: true,
     dots: false,
     infinite: true,
     speed: 2000,
@@ -37,13 +57,13 @@ const Category4 = (props) => {
         {props.insideData.map((data, index) => (
           <div key={index} className="main-div">
             <div className="inside-main">
-              <img src={data.image} />
-              <h4>{data.title}</h4>
-              {data?.para?.map((data2, index) => (
-                <p key={index} style={{ marginBottom: 0 }}>
-                  {data2}
-                </p>
-              ))}
+              <img style={{ width: "100%", marginBottom: 24 }} src={data.images[0]} />
+              <h5 title={data.title}>{data.title}</h5>
+
+              <p key={index} style={{ marginBottom: 0 }}>
+                {data.para}
+              </p>
+
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <ButtonWrapper style={{ margin: "24px 0px", maxWidth: 200 }}>
                   Read More

@@ -92,7 +92,10 @@ const MultiSlider = (props) => {
               <h2 className="title-inner2">Product style</h2>
             </div>
             <CardStyle7
-              image="https://multikart-react.vercel.app/assets/images/pro2/4.jpg"
+              images={[
+                "https://multikart-react.vercel.app/assets/images/pro2/4.jpg",
+                "https://multikart-react.vercel.app/assets/images/pro2/4.jpg",
+              ]}
               price={400}
               title="Product 4"
             />

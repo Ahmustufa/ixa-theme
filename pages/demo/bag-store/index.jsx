@@ -20,6 +20,7 @@ import Service1 from "src/component/services/service3";
 import SubscriptionModal from "src/component/modals/subscriptionModal2";
 import Head from "next/head";
 import Title5 from "src/component/titles/title5";
+import Category4 from "src/component/category/category4";
 
 let data = [
   {
@@ -83,8 +84,9 @@ const Bags = () => {
         />
 
         <Title5 subtitle="Recent Story" maintitle="TRENDING PRODUCTS" />
+        <Category4 insideData={bagsProducts} />
 
-        <div className="col-11 m-auto">
+        {/* <div className="col-11 m-auto">
           <Row gutter={[32, 32]}>
             {bagsProducts.slice(0, 4).map((item, index) => (
               <Col key={index} lg={6} sm={24} xs={24} className="">
@@ -92,7 +94,7 @@ const Bags = () => {
               </Col>
             ))}
           </Row>
-        </div>
+        </div> */}
       </div>
 
       <Title5 subtitle="Recent Story" maintitle="NEW ARRIVALS" />

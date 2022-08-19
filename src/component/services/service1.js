@@ -11,6 +11,9 @@ const StyledDiv = styled.div`
     padding: 5% 0px;
     min-height: 170px;
     align-items: center;
+    .main-col {
+      border-right: 2px solid #e4e4e4;
+    }
 
     .main-div {
       display: flex;
@@ -50,13 +53,36 @@ const StyledDiv = styled.div`
       }
     }
   }
+
+  @media (max-width: 1200px) {
+    .main-row {
+      .main-col {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        .main-div {
+          width: 315px;
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
 `;
 
 const Service1 = (props) => {
   return (
     <StyledDiv style={props.style}>
       <Row className="main-row">
-        <Col span={8} style={{ borderRight: "2px solid #e4e4e4" }}>
+        <Col
+          xl={8}
+          lg={12}
+          md={12}
+          sm={24}
+          xs={24}
+          className="main-col"
+          style={{ borderRight: "2px solid #e4e4e4" }}
+        >
           <div className="main-div">
             <FiTruck className="icons" />
             <div className="text">
@@ -66,7 +92,15 @@ const Service1 = (props) => {
           </div>
         </Col>
 
-        <Col span={8} style={{ borderRight: "2px solid #e4e4e4" }}>
+        <Col
+          xl={8}
+          lg={12}
+          md={12}
+          sm={24}
+          xs={24}
+          className="main-col"
+          style={{ borderRight: "2px solid #e4e4e4" }}
+        >
           <div className="main-div">
             <AiOutlineFieldTime className="icons" />
             <div className="text">
@@ -76,7 +110,15 @@ const Service1 = (props) => {
           </div>
         </Col>
 
-        <Col span={8}>
+        <Col
+          xl={8}
+          lg={12}
+          md={12}
+          sm={24}
+          xs={24}
+          className="main-col"
+          style={{ borderRight: "2px solid #e4e4e4" }}
+        >
           <div className="main-div">
             <HiOutlineSpeakerphone className="icons" />
             <div className="text">
