@@ -15,6 +15,7 @@ import { Mutations, errorHandler, useFetch } from "../../src/api/config";
 import CardStyle6 from "src/component/cards/CardStyle6";
 import { shoesProducts } from "src/mock/shoesProducts";
 import allProducts, { products } from "../../src/mock/products";
+import ImageCarousel from "../../src/component/carousel";
 
 const { Panel } = Collapse;
 
@@ -103,11 +104,12 @@ const Order = (props) => {
           <div style={{ position: "sticky", top: 60, display: "flex", flexWrap: "wrap" }}>
             <Row gutter={[12, 12]}>
               <Col>
-                <img
+                {/* <img
                   alt="card-image"
                   src={productDetails.images[0]}
                   className="product-image"
-                />
+                /> */}
+                <ImageCarousel direction="right" images={productDetails.images} />
               </Col>
             </Row>
           </div>

@@ -150,6 +150,8 @@ const allProducts = [
   ...bagsProducts,
   // Clothes
   ...clothProducts,
+  // ajsdlashd
+  ...products,
 ];
 
 export default allProducts;

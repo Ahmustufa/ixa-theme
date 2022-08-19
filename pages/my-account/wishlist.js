@@ -1,11 +1,12 @@
 import { Row, Col } from "antd";
-import { products } from "src/mock/products";
+import allProducts from "src/mock/products";
 import styled from "styled-components";
 import AccountSidebar from "../../src/component/sidebar/accountSidebar";
 import { PrimaryButton } from "../../src/component/buttons";
 import { AiOutlineShopping } from "react-icons/ai";
 import Link from "next/link";
 import ProductCardWithIcons from "src/component/cards/productCardWithIcons";
+import CardStyle6 from "src/component/cards/CardStyle6";
 
 const Wishlist = (props) => {
   const { products } = props;
@@ -37,7 +38,7 @@ const Wishlist = (props) => {
             <Row gutter={[24, 24]}>
               {products.map((item, index) => (
                 <Col key={index} xs={24} sm={24} lg={6}>
-                  <ProductCardWithIcons {...item} />
+                  <CardStyle6 {...item} />
                 </Col>
               ))}
             </Row>
@@ -104,7 +105,7 @@ const StyledPage = styled.div`
 export async function getServerSideProps(context) {
   return {
     props: {
-      products: [products[0], products[3], products[6]],
+      products: [allProducts[0], allProducts[3], allProducts[6]],
     },
   };
 }
