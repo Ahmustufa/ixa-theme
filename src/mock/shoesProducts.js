@@ -1,6 +1,8 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const shoesProducts = [
   {
-    _id: 1,
+    _id: uuidv4(),
     images: ["/images/Shoes/featured/1.webp", "/images/Shoes/featured/1.webp"],
     title: "Metal Decor Combat Boots",
     brandName: "Caperion",
@@ -8,7 +10,7 @@ export const shoesProducts = [
     link: "#",
   },
   {
-    _id: 2,
+    _id: uuidv4(),
     images: ["/images/Shoes/featured/2.webp", "/images/Shoes/featured/2.webp"],
     title: "Brown Leather Formal Shoes",
     brandName: "CUCCOO",
@@ -16,7 +18,7 @@ export const shoesProducts = [
     link: "#",
   },
   {
-    _id: 3,
+    _id: uuidv4(),
     images: ["/images/Shoes/featured/3.webp", "/images/Shoes/featured/3.webp"],
     title: "Knit Chunky Heel",
     brandName: "Vutte wixo",
@@ -24,7 +26,7 @@ export const shoesProducts = [
     link: "#",
   },
   {
-    _id: 4,
+    _id: uuidv4(),
     images: ["/images/Shoes/featured/4.webp", "/images/Shoes/featured/4.webp"],
     title: "Men Formal Dual Tone",
     brandName: "Caperion",
@@ -32,7 +34,7 @@ export const shoesProducts = [
     link: "#",
   },
   {
-    _id: 5,
+    _id: uuidv4(),
     images: ["/images/Shoes/featured/5.webp", "/images/Shoes/featured/5.webp"],
     title: "Point Toe Stiletto Heeled",
     brandName: "Caperion",
@@ -40,7 +42,7 @@ export const shoesProducts = [
     link: "#",
   },
   {
-    _id: 6,
+    _id: uuidv4(),
     images: ["/images/Shoes/featured/6.webp", "/images/Shoes/featured/6.webp"],
     title: "Mesh Panel Trainers",
     brandName: "CUCCOO",
@@ -51,7 +53,7 @@ export const shoesProducts = [
 
 export const womenShoesListing = [
   {
-    _id: 1,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/1/1.webp",
       "/images/Shoes/Women/1/2.webp",
@@ -73,7 +75,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 2,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/2/1.webp",
       "/images/Shoes/Women/2/2.webp",
@@ -90,7 +92,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 3,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/3/1.webp",
       "/images/Shoes/Women/3/2.webp",
@@ -106,7 +108,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 4,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/4/1.webp",
       "/images/Shoes/Women/4/2.webp",
@@ -124,7 +126,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 5,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/5/1.webp",
       "/images/Shoes/Women/5/2.webp",
@@ -141,7 +143,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 6,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/6/1.webp",
       "/images/Shoes/Women/6/2.webp",
@@ -159,7 +161,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 7,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/7/1.webp",
       "/images/Shoes/Women/7/2.webp",
@@ -176,7 +178,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 8,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/8/1.webp",
       "/images/Shoes/Women/8/2.webp",
@@ -194,7 +196,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 9,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/9/1.webp",
       "/images/Shoes/Women/9/2.webp",
@@ -212,7 +214,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 10,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/10/1.webp",
       "/images/Shoes/Women/10/2.webp",
@@ -228,7 +230,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 11,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/11/1.webp",
       "/images/Shoes/Women/11/2.webp",
@@ -246,7 +248,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 12,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/12/1.webp",
       "/images/Shoes/Women/12/2.webp",
@@ -264,7 +266,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 13,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/13/1.webp",
       "/images/Shoes/Women/13/2.webp",
@@ -281,7 +283,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 14,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/14/1.webp",
       "/images/Shoes/Women/14/2.webp",
@@ -298,7 +300,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 15,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/15/1.webp",
       "/images/Shoes/Women/15/2.webp",
@@ -313,7 +315,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 16,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/16/1.webp",
       "/images/Shoes/Women/16/2.webp",
@@ -328,7 +330,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 17,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/17/1.webp",
       "/images/Shoes/Women/17/2.webp",
@@ -345,7 +347,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 18,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/18/1.webp",
       "/images/Shoes/Women/18/2.webp",
@@ -362,7 +364,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 19,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/19/1.webp",
       "/images/Shoes/Women/19/2.webp",
@@ -379,7 +381,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 20,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/20/1.webp",
       "/images/Shoes/Women/20/2.webp",
@@ -395,7 +397,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 21,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/21/1.webp",
       "/images/Shoes/Women/21/2.webp",
@@ -412,7 +414,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 22,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/22/1.webp",
       "/images/Shoes/Women/22/2.webp",
@@ -432,7 +434,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 23,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/23/1.webp",
       "/images/Shoes/Women/23/2.webp",
@@ -447,7 +449,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 24,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/24/1.webp",
       "/images/Shoes/Women/24/2.webp",
@@ -464,7 +466,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 25,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/25/1.webp",
       "/images/Shoes/Women/25/2.webp",
@@ -480,7 +482,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 26,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/26/1.webp",
       "/images/Shoes/Women/26/2.webp",
@@ -497,7 +499,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 27,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/27/1.webp",
       "/images/Shoes/Women/27/2.webp",
@@ -514,7 +516,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 28,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/28/1.webp",
       "/images/Shoes/Women/28/2.webp",
@@ -529,7 +531,7 @@ export const womenShoesListing = [
   },
 
   {
-    _id: 29,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/29/1.webp",
       "/images/Shoes/Women/29/2.webp",
@@ -547,7 +549,7 @@ export const womenShoesListing = [
 
 export const menShoesListing = [
   {
-    _id: 1,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/1/1.webp",
       "/images/Shoes/Men/1/2.webp",
@@ -563,7 +565,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 2,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/2/1.webp",
       "/images/Shoes/Men/2/2.webp",
@@ -579,7 +581,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 3,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/3/1.webp",
       "/images/Shoes/Men/3/2.webp",
@@ -595,7 +597,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 4,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/4/1.webp",
       "/images/Shoes/Men/4/2.webp",
@@ -612,7 +614,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 5,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/5/1.webp",
       "/images/Shoes/Men/5/2.webp",
@@ -629,7 +631,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 6,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/6/1.webp",
       "/images/Shoes/Men/6/2.webp",
@@ -645,7 +647,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 7,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/7/1.webp",
       "/images/Shoes/Men/7/2.webp",
@@ -662,7 +664,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 8,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/8/1.webp",
       "/images/Shoes/Men/8/2.webp",
@@ -678,7 +680,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 9,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/9/1.webp",
       "/images/Shoes/Men/9/2.webp",
@@ -694,7 +696,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 10,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/10/1.webp",
       "/images/Shoes/Men/10/2.webp",
@@ -710,7 +712,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 11,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/11/1.webp",
       "/images/Shoes/Men/11/2.webp",
@@ -726,7 +728,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 12,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/12/1.webp",
       "/images/Shoes/Men/12/2.webp",
@@ -742,7 +744,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 13,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/13/1.webp",
       "/images/Shoes/Men/13/2.webp",
@@ -757,7 +759,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 14,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/14/1.webp",
       "/images/Shoes/Men/14/2.webp",
@@ -772,7 +774,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 15,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/15/1.webp",
       "/images/Shoes/Men/15/2.webp",
@@ -787,7 +789,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 16,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/16/1.webp",
       "/images/Shoes/Men/16/2.webp",
@@ -803,7 +805,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 17,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/17/1.webp",
       "/images/Shoes/Men/17/2.webp",
@@ -819,7 +821,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 18,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/18/1.webp",
       "/images/Shoes/Men/18/2.webp",
@@ -836,7 +838,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 19,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/19/1.webp",
       "/images/Shoes/Men/19/2.webp",
@@ -851,7 +853,7 @@ export const menShoesListing = [
   },
 
   {
-    _id: 20,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/20/1.webp",
       "/images/Shoes/Men/20/2.webp",
@@ -870,7 +872,7 @@ export const menShoesListing = [
 
 export const newArrivalShoes = [
   {
-    _id: 1,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/1/1.webp",
       "/images/Shoes/Men/1/2.webp",
@@ -886,7 +888,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 2,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/27/1.webp",
       "/images/Shoes/Women/27/2.webp",
@@ -903,7 +905,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 3,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/2/1.webp",
       "/images/Shoes/Men/2/2.webp",
@@ -919,7 +921,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 4,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/3/1.webp",
       "/images/Shoes/Men/3/2.webp",
@@ -935,7 +937,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 5,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/23/1.webp",
       "/images/Shoes/Women/23/2.webp",
@@ -950,7 +952,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 6,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/4/1.webp",
       "/images/Shoes/Men/4/2.webp",
@@ -967,7 +969,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 7,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/5/1.webp",
       "/images/Shoes/Men/5/2.webp",
@@ -984,7 +986,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 8,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/7/1.webp",
       "/images/Shoes/Women/7/2.webp",
@@ -1001,7 +1003,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 9,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/8/1.webp",
       "/images/Shoes/Women/8/2.webp",
@@ -1019,7 +1021,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 10,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/9/1.webp",
       "/images/Shoes/Women/9/2.webp",
@@ -1037,7 +1039,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 11,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Women/10/1.webp",
       "/images/Shoes/Women/10/2.webp",
@@ -1053,7 +1055,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 12,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/6/1.webp",
       "/images/Shoes/Men/6/2.webp",
@@ -1069,7 +1071,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 13,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/7/1.webp",
       "/images/Shoes/Men/7/2.webp",
@@ -1086,7 +1088,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 14,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/8/1.webp",
       "/images/Shoes/Men/8/2.webp",
@@ -1102,7 +1104,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 15,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/9/1.webp",
       "/images/Shoes/Men/9/2.webp",
@@ -1118,7 +1120,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 16,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/10/1.webp",
       "/images/Shoes/Men/10/2.webp",
@@ -1134,7 +1136,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 11,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/11/1.webp",
       "/images/Shoes/Men/11/2.webp",
@@ -1150,7 +1152,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 17,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/12/1.webp",
       "/images/Shoes/Men/12/2.webp",
@@ -1166,7 +1168,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 18,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/13/1.webp",
       "/images/Shoes/Men/13/2.webp",
@@ -1181,7 +1183,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 19,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/14/1.webp",
       "/images/Shoes/Men/14/2.webp",
@@ -1196,7 +1198,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 20,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/15/1.webp",
       "/images/Shoes/Men/15/2.webp",
@@ -1211,7 +1213,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 21,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/16/1.webp",
       "/images/Shoes/Men/16/2.webp",
@@ -1227,7 +1229,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 22,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/17/1.webp",
       "/images/Shoes/Men/17/2.webp",
@@ -1243,7 +1245,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 23,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/18/1.webp",
       "/images/Shoes/Men/18/2.webp",
@@ -1260,7 +1262,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 24,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/19/1.webp",
       "/images/Shoes/Men/19/2.webp",
@@ -1275,7 +1277,7 @@ export const newArrivalShoes = [
   },
 
   {
-    _id: 25,
+    _id: uuidv4(),
     images: [
       "/images/Shoes/Men/20/1.webp",
       "/images/Shoes/Men/20/2.webp",
@@ -1294,7 +1296,7 @@ export const newArrivalShoes = [
 
 export const shoesBlogs = [
   {
-    _id: 1,
+    _id: uuidv4(),
     title: "Men's Best Shoe Choice For All The Occasions",
     price: 109.95,
     description:
@@ -1309,7 +1311,7 @@ export const shoesBlogs = [
     },
   },
   {
-    _id: 2,
+    _id: uuidv4(),
     title: "Get The Right Shoes For Your Feet",
     price: 22.3,
     description:
@@ -1324,7 +1326,7 @@ export const shoesBlogs = [
     },
   },
   {
-    _id: 3,
+    _id: uuidv4(),
     title: "Best Shoes Options To Wear With Straight Legged Jeans",
     price: 55.99,
     description:
@@ -1339,7 +1341,7 @@ export const shoesBlogs = [
     },
   },
   {
-    _id: 4,
+    _id: uuidv4(),
     title: "5 Things To Remember If You Want To Buy Comfortable High Heels",
     price: 15.99,
     description:
@@ -1355,7 +1357,7 @@ export const shoesBlogs = [
   },
 
   {
-    _id: 5,
+    _id: uuidv4(),
     title: "Easy Way To Keep Your Shoes In Order",
     price: 15.99,
     description:
@@ -1371,7 +1373,7 @@ export const shoesBlogs = [
   },
 
   {
-    _id: 6,
+    _id: uuidv4(),
     title: "Shoes To Wear With Denim Outfits",
     price: 15.99,
     description:

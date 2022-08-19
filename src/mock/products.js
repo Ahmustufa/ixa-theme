@@ -1,6 +1,15 @@
+import {
+  shoesProducts,
+  womenShoesListing,
+  menShoesListing,
+  newArrivalShoes,
+} from "./shoesProducts";
+import { bagsProducts } from "./bagsProducts";
+import { clothProducts } from "./clothProducts";
+
 export const products = [
   {
-    _id: 1,
+    _id: "62fa8ab724b2b7289cb0b574",
     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     price: 109.95,
     description:
@@ -13,7 +22,7 @@ export const products = [
     },
   },
   {
-    _id: 2,
+    _id: "62fcf3ac0d62507bd80c2fcb",
     title: "Mens Casual Premium Slim Fit T-Shirts ",
     price: 22.3,
     description:
@@ -26,7 +35,7 @@ export const products = [
     },
   },
   {
-    _id: 3,
+    _id: "62fcf4110d62507bd80c2fd9",
     title: "Mens Cotton Jacket",
     price: 55.99,
     description:
@@ -39,7 +48,7 @@ export const products = [
     },
   },
   {
-    _id: 4,
+    _id: "62fcf50c0d62507bd80c2fe7",
     title: "Mens Casual Slim Fit",
     price: 15.99,
     description:
@@ -52,7 +61,7 @@ export const products = [
     },
   },
   {
-    _id: 15,
+    _id: "62fcfd430d62507bd80c3073",
     title: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
     price: 56.99,
     description:
@@ -65,7 +74,7 @@ export const products = [
     },
   },
   {
-    _id: 16,
+    _id: "62fcfd5d0d62507bd80c307a",
     title: "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
     price: 29.95,
     description:
@@ -78,7 +87,7 @@ export const products = [
     },
   },
   {
-    _id: 17,
+    _id: "62fcfd740d62507bd80c3082",
     title: "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
     price: 39.99,
     description:
@@ -91,7 +100,7 @@ export const products = [
     },
   },
   {
-    _id: 18,
+    _id: "62fcfde40d62507bd80c30a8",
     title: "MBJ Women's Solid Short Sleeve Boat Neck V ",
     price: 9.85,
     description:
@@ -104,7 +113,7 @@ export const products = [
     },
   },
   {
-    _id: 19,
+    _id: "62fcfe000d62507bd80c30b2",
     title: "Opna Women's Short Sleeve Moisture",
     price: 7.95,
     description:
@@ -117,7 +126,7 @@ export const products = [
     },
   },
   {
-    _id: 20,
+    _id: "62fcfe190d62507bd80c30bd",
     title: "DANVOUY Womens T Shirt Casual Cotton Short",
     price: 12.99,
     description:
@@ -130,3 +139,17 @@ export const products = [
     },
   },
 ];
+
+const allProducts = [
+  // Shoes
+  ...shoesProducts,
+  ...womenShoesListing,
+  ...menShoesListing,
+  ...newArrivalShoes,
+  // Bags
+  ...bagsProducts,
+  // Clothes
+  ...clothProducts,
+];
+
+export default allProducts;

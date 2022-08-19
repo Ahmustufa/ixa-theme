@@ -1,8 +1,9 @@
 import { loverLetter1, loverLetter2, loverLetter3, loverLetter4 } from "images";
+import { v4 as uuidv4 } from "uuid";
 
 export const bagsProducts = [
   {
-    _id: 1,
+    _id: uuidv4(),
     title: "Allover Print Purse",
     price: 109.95,
     description:
@@ -20,7 +21,7 @@ export const bagsProducts = [
     },
   },
   {
-    _id: 2,
+    _id: uuidv4(),
     title: "Argyle Quilted Double Handle Square Bag With Coin Purse",
     price: 22.3,
     description:
@@ -38,7 +39,7 @@ export const bagsProducts = [
     },
   },
   {
-    _id: 3,
+    _id: uuidv4(),
     title: "Butterfly Print Patch Detail Functional Backpack With Pencil Case",
     price: 55.99,
     description:
@@ -55,7 +56,7 @@ export const bagsProducts = [
     },
   },
   {
-    _id: 4,
+    _id: uuidv4(),
     title: "Letter Graphic Shoulder Tote Bag With Small Pouch & Bag Charm",
     price: 15.99,
     description:
@@ -73,7 +74,7 @@ export const bagsProducts = [
     },
   },
   {
-    _id: 15,
+    _id: uuidv4(),
     title: "Mini Letter Graphic Studded Decor Flap Square Bag",
     price: 56.99,
     description:
@@ -91,7 +92,7 @@ export const bagsProducts = [
     },
   },
   {
-    _id: 16,
+    _id: uuidv4(),
     title: "Letter Graphic Two Tone Shoulder Tote Bag",
     price: 29.95,
     description:
@@ -110,7 +111,7 @@ export const bagsProducts = [
     },
   },
   {
-    _id: 17,
+    _id: uuidv4(),
     title: "Mini Neon Lime Clear Trolley Design Box Bag",
     price: 39.99,
     description: "",
@@ -130,7 +131,7 @@ export const bagsProducts = [
     },
   },
   {
-    _id: 18,
+    _id: uuidv4(),
     title: "Mini Pom Pom Decor Fuzzy Novelty Bag",
     price: 9.85,
     description:
@@ -151,7 +152,7 @@ export const bagsProducts = [
     },
   },
   {
-    _id: 19,
+    _id: uuidv4(),
     title: "Minimalist Large Capacity Duffel Bag",
     price: 7.95,
     description:
@@ -173,7 +174,7 @@ export const bagsProducts = [
     },
   },
   {
-    _id: 20,
+    _id: uuidv4(),
     title: "Minimalist Shoulder Tote Bag",
     price: 12.99,
     description:
@@ -191,7 +192,7 @@ export const bagsProducts = [
     },
   },
   {
-    _id: 20,
+    _id: uuidv4(),
     title: "Allover Print Purse",
     price: 12.99,
     description:
@@ -213,7 +214,7 @@ export const bagsProducts = [
     },
   },
   {
-    _id: 20,
+    _id: uuidv4(),
     title: "Plants Graphic Shopper Bag",
     price: 12.99,
     description:
@@ -235,7 +236,7 @@ export const bagsProducts = [
     },
   },
   {
-    _id: 20,
+    _id: uuidv4(),
     title: "Pocket Front Functional Backpack",
     price: 12.99,
     description:
@@ -260,7 +261,7 @@ export const bagsProducts = [
 
 export const bagsBlogs = [
   {
-    _id: 1,
+    _id: uuidv4(),
     title: "Temporibus autem quibusdam",
     price: 109.95,
     description:
@@ -275,7 +276,7 @@ export const bagsBlogs = [
     },
   },
   {
-    _id: 2,
+    _id: uuidv4(),
     title: "The Standard Chunk Of Lorem Ipsum Used Since",
     price: 22.3,
     description:
@@ -290,7 +291,7 @@ export const bagsBlogs = [
     },
   },
   {
-    _id: 3,
+    _id: uuidv4(),
     title: "It is a long established fact that a reader will",
     price: 55.99,
     description:
@@ -305,7 +306,7 @@ export const bagsBlogs = [
     },
   },
   {
-    _id: 4,
+    _id: uuidv4(),
     title: "Mens Casual Slim Fit",
     price: 15.99,
     description:
@@ -320,7 +321,7 @@ export const bagsBlogs = [
     },
   },
   {
-    _id: 15,
+    _id: uuidv4(),
     title: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
     price: 56.99,
     description:
@@ -335,7 +336,7 @@ export const bagsBlogs = [
     },
   },
   {
-    _id: 16,
+    _id: uuidv4(),
     title: "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
     price: 29.95,
     description:

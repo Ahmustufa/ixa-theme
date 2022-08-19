@@ -103,15 +103,15 @@ export const clothingMenu = [
 ];
 
 export const mainMenu = [
-  // {
-  //   title: "home",
-  //   submenu: [
-  //     { title: "Clothing", link: "/layout/clothing" },
-  //     { title: "Grocery", link: "/" },
-  //     { title: "Electronics", link: "/layout/electronics" },
-  //   ],
-  //   link: "/",
-  // },
+  {
+    title: "home",
+    // submenu: [
+    //   { title: "Clothing", link: "/layout/clothing" },
+    //   { title: "Grocery", link: "/" },
+    //   { title: "Electronics", link: "/layout/electronics" },
+    // ],
+    link: "/",
+  },
   {
     title: "demo",
     submenu: [

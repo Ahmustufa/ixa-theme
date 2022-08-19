@@ -1,6 +1,8 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const clothProducts = [
   {
-    _id: 1,
+    _id: uuidv4(),
     title: "Comfort Stretch Sheath",
     price: 109.95,
     description:
@@ -18,7 +20,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 2,
+    _id: uuidv4(),
     title: "Contrast Trim Godet",
     price: 22.3,
     description:
@@ -35,7 +37,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 3,
+    _id: uuidv4(),
     title: "Floral Godet Pleat Dress-2",
     price: 55.99,
     description:
@@ -53,7 +55,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 4,
+    _id: uuidv4(),
     title: "Scuba-Knit Fit & Flare",
     price: 15.99,
     description:
@@ -70,7 +72,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 15,
+    _id: uuidv4(),
     title: "Smocked Blouson Dress- White",
     price: 56.99,
     description:
@@ -83,7 +85,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 16,
+    _id: uuidv4(),
     title: "Smocked Blouson Dress- Blue",
     price: 29.95,
     description:
@@ -97,7 +99,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 17,
+    _id: uuidv4(),
     title: "Tweed Sheath Dress-1",
     price: 39.99,
     description: "",
@@ -114,7 +116,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 18,
+    _id: uuidv4(),
     title: "Denim Peplum Motorcycle Jacket-1",
     price: 9.85,
     description:
@@ -131,7 +133,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 19,
+    _id: uuidv4(),
     title: "Editor Blazer",
     price: 7.95,
     description:
@@ -144,7 +146,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 20,
+    _id: uuidv4(),
     title: "Studio Blazer-1",
     price: 12.99,
     description:
@@ -161,7 +163,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 20,
+    _id: uuidv4(),
     title: "The Relaxed Blazer-1",
     price: 12.99,
     description:
@@ -178,7 +180,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 20,
+    _id: uuidv4(),
     title: "Braided Trim Sweater Tank-1",
     price: 12.99,
     description:
@@ -196,7 +198,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 20,
+    _id: uuidv4(),
     title: "Cashmere-Blend Button Polo-1",
     price: 12.99,
     description:
@@ -213,7 +215,7 @@ export const clothProducts = [
     },
   },
   {
-    _id: 21,
+    _id: uuidv4(),
     title: "Ultimate Ribbed Cardigan-1",
     price: 12.99,
     description:
@@ -233,7 +235,7 @@ export const clothProducts = [
 
 export const clothBlogs = [
   {
-    _id: 1,
+    _id: uuidv4(),
     title: "Temporibus autem quibusdam",
     price: 109.95,
     description:
@@ -248,7 +250,7 @@ export const clothBlogs = [
     },
   },
   {
-    _id: 2,
+    _id: uuidv4(),
     title: "The Standard Chunk Of Lorem Ipsum Used Since",
     price: 22.3,
     description:
@@ -263,7 +265,7 @@ export const clothBlogs = [
     },
   },
   {
-    _id: 3,
+    _id: uuidv4(),
     title: "It is a long established fact that a reader will",
     price: 55.99,
     description:
@@ -278,7 +280,7 @@ export const clothBlogs = [
     },
   },
   {
-    _id: 4,
+    _id: uuidv4(),
     title: "Mens Casual Slim Fit",
     price: 15.99,
     description:
@@ -293,7 +295,7 @@ export const clothBlogs = [
     },
   },
   {
-    _id: 15,
+    _id: uuidv4(),
     title: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
     price: 56.99,
     description:
@@ -308,7 +310,7 @@ export const clothBlogs = [
     },
   },
   {
-    _id: 16,
+    _id: uuidv4(),
     title: "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
     price: 29.95,
     description:
