@@ -1,19 +1,17 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { shoesProducts } from "src/mock/shoesProducts";
+import { newArrivalShoes } from "src/mock/shoesProducts";
 import Breadcrumb from "../../src/component/breadcrumb";
 import ProductListing from "../../src/component/productListing";
 import SortBar from "../../src/component/sortItems";
 
 const ShopNoSidebar = (props) => {
-  const { items } = useSelector((state) => state.products);
   const [gridColumn, setGridColumn] = useState(3);
 
   return (
     <>
       <Breadcrumb title="SHOP" link="HOME / SHOP" className="my-5" />
       <div className="col-11 mx-auto mb-5">
-        <img src="/images/shop_card_2.png" width="100%" className="mb-3" />
+        <img src="/images/shop_card_1.png" width="100%" className="mb-3" />
         <div style={{ fontSize: 20 }}>Fashion</div>
         <div style={{ fontWeight: 600 }}>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -31,7 +29,7 @@ const ShopNoSidebar = (props) => {
 
         <SortBar className="my-5" setGridColumn={setGridColumn} />
 
-        <ProductListing products={shoesProducts} grid={gridColumn} />
+        <ProductListing products={newArrivalShoes} grid={gridColumn} />
       </div>
     </>
   );
