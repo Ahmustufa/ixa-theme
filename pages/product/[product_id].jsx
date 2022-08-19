@@ -12,9 +12,9 @@ import { addItemToCart, openCart } from "../../src/redux/actions/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToWishlist, removeWishlistItem } from "../../src/redux/actions";
 import { Mutations, errorHandler, useFetch } from "../../src/api/config";
-import { products } from "../../src/mock/products";
 import CardStyle6 from "src/component/cards/CardStyle6";
 import { shoesProducts } from "src/mock/shoesProducts";
+import allProducts from "../../src/mock/products";
 
 const { Panel } = Collapse;
 
@@ -451,6 +451,10 @@ const StyledPage = styled.div`
 export async function getServerSideProps(context) {
   const index = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
   const productDetails = products[index];
+
+  // const productDetails = allProducts.find()
+
+  console.log("Context", context);
 
   return {
     props: { productDetails },
