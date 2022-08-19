@@ -49,16 +49,23 @@ const StyledBanner = styled.div`
     }
   }
 
-  @media (max-width: 991px) {
+  @media (max-width: 1024) {
+    padding: 0 !important;
   }
 `;
 
 const Banner = (props) => {
   return (
     <StyledBanner>
-      <Row gutter={[40]} style={{ padding: 20, justifyContent: "center" }}>
+      <Row gutter={[40]} style={{ justifyContent: "center" }}>
         {props.insideData.map((data, index) => (
-          <Col key={index} xxl={12} xl={12} lg={12} md={8} sm={24} xs={24}>
+          <Col
+            key={index}
+            lg={props.insideData.length == 2 ? 12 : props.insideData.length > 3 ? 6 : 8}
+            sm={24}
+            xs={24}
+            className={"mt-2 mb-5"}
+          >
             <div
               className="card-banner"
               style={{
