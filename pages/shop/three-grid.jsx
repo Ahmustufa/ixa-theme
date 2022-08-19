@@ -1,13 +1,10 @@
-import { Row, Col } from "antd";
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import Breadcrumb from "src/component/breadcrumb";
 import ProductListing from "src/component/productListing";
 import SortBar from "src/component/sortItems";
-import { shoesProducts } from "src/mock/shoesProducts";
+import { womenShoesListing } from "src/mock/shoesProducts";
 
 const ShopThreeGrid = (props) => {
-  const { items } = useSelector((state) => state.products);
   const [gridColumn, setGridColumn] = useState(3);
 
   return (
@@ -31,7 +28,7 @@ const ShopThreeGrid = (props) => {
           versions of Lorem Ipsum.`}
         </p>
         <SortBar className="my-5" setGridColumn={setGridColumn} />
-        <ProductListing products={shoesProducts} grid={gridColumn} />
+        <ProductListing products={womenShoesListing} grid={gridColumn} />
       </div>
     </>
   );

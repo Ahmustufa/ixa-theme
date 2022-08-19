@@ -66,7 +66,10 @@ export const clothProducts = [
     description:
       "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
     category: "dress",
-    images: ["/images/clothing/Dresses/SmockedWhite.jpg"],
+    images: [
+      "/images/clothing/Dresses/SmockedWhite.jpg",
+      "/images/clothing/Dresses/SmockedWhite.jpg",
+    ],
     rating: { rate: 2.6, count: 235 },
   },
   {
@@ -76,7 +79,10 @@ export const clothProducts = [
     description:
       "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
     category: "women",
-    images: ["/images/clothing/Dresses/Smockedblue.jpg"],
+    images: [
+      "/images/clothing/Dresses/Smockedblue.jpg",
+      "/images/clothing/Dresses/Smockedblue.jpg",
+    ],
     rating: { rate: 2.9, count: 340 },
   },
   {
@@ -114,7 +120,10 @@ export const clothProducts = [
     description:
       "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
     category: "jacket",
-    images: ["/images/clothing/Jackets/EditorBlazer.jpg"],
+    images: [
+      "/images/clothing/Jackets/EditorBlazer.jpg",
+      "/images/clothing/Jackets/EditorBlazer.jpg",
+    ],
     rating: { rate: 4.5, count: 146 },
   },
   {

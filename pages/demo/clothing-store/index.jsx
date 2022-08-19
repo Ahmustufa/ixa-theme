@@ -18,7 +18,7 @@ import FullBgImageSection from "src/component/heroSection/FullBgImageSection";
 import ProductVerticalCarousel from "src/component/productListing/productVerticalCarousel";
 import BlogCarousel from "src/component/productListing/blogCarousel";
 import { bagsBlogs, bagsProducts } from "src/mock/bagsProducts";
-import Service1 from "src/component/services/service3";
+import Service1 from "src/component/services/service1";
 import SubscriptionModal from "src/component/modals/subscriptionModal1";
 import Head from "next/head";
 import Title5 from "src/component/titles/title5";
@@ -59,7 +59,6 @@ const Clothing = () => {
       </Head>
       <SubscriptionModal />
 
-      <Carousel1 data={data} />
       <div className="my-4">
         <Banner
           colSize={8}
@@ -86,15 +85,38 @@ const Clothing = () => {
           title2Color="#222"
         />
 
+        <div>
+          <Carousel1 data={data} />
+        </div>
+        <div
+          style={{
+            position: "relative",
+            bottom: 100,
+            zIndex: 100,
+            backgroundColor: "#fff",
+            boxShadow: "0px 0px 15px -10px #000",
+            margin: "0px 2%",
+          }}
+        >
+          <Service1 />
+        </div>
+
         <Title3 subtitle="Recent Story" maintitle="TRENDING PRODUCTS" />
 
         <div className="col-11 m-auto">
-          <Row gutter={[32, 32]}>
-            {clothProducts.slice(0, 4).map((item, index) => (
-              <Col key={index} lg={6} sm={24} xs={24} className="">
-                <CardStyle2 {...item} />
-              </Col>
-            ))}
+          <Row>
+            <Col lg={6} sm={24} xs={24} className="">
+              <ProductVerticalCarousel headerTitle="BEST SELLER" data={clothProducts} />
+            </Col>
+            <Col lg={18} sm={24} xs={24}>
+              <Row gutter={[32, 32]}>
+                {clothProducts.slice(0, 8).map((item, index) => (
+                  <Col key={index} lg={6} sm={24} xs={24} className="">
+                    <CardStyle2 {...item} />
+                  </Col>
+                ))}
+              </Row>
+            </Col>
           </Row>
         </div>
       </div>
@@ -121,7 +143,6 @@ const Clothing = () => {
 
       <Title3 subtitle="Recent Story" maintitle="OUR BLOGS" />
       <BlogCarousel data={clothProducts} />
-      <Service1 />
     </>
   );
 };
