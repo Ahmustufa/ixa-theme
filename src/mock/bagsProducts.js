@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export const bagsProducts = [
   {
-    _id: uuidv4(),
+    _id: "fa0a561a-a40c-4249-94db-9c98098c0b7d",
     title: "Allover Print Purse",
     price: 109.95,
     description:
@@ -15,13 +15,10 @@ export const bagsProducts = [
       "/images/Bags/AlloverLetterGraphicZipBackpack/AlloverLetterGraphicZipBackpack-3.webp",
       "/images/Bags/AlloverLetterGraphicZipBackpack/AlloverLetterGraphicZipBackpack-4.webp",
     ],
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
+    rating: { rate: 3.9, count: 120 },
   },
   {
-    _id: uuidv4(),
+    _id: "a0437f77-a40e-4fef-b76c-40e514058564",
     title: "Argyle Quilted Double Handle Square Bag With Coin Purse",
     price: 22.3,
     description:
@@ -33,13 +30,10 @@ export const bagsProducts = [
       "/images/Bags/ArgyleQuilted/Purse-3.webp",
       "/images/Bags/ArgyleQuilted/Purse-4.webp",
     ],
-    rating: {
-      rate: 4.1,
-      count: 259,
-    },
+    rating: { rate: 4.1, count: 259 },
   },
   {
-    _id: uuidv4(),
+    _id: "a0718a29-7f0c-44d7-a7c1-e6a1156e7514",
     title: "Butterfly Print Patch Detail Functional Backpack With Pencil Case",
     price: 55.99,
     description:
@@ -50,13 +44,10 @@ export const bagsProducts = [
       "/images/Bags/ButterflyPrintPatch/Case-2.webp",
       "/images/Bags/ButterflyPrintPatch/Case-3.webp",
     ],
-    rating: {
-      rate: 4.7,
-      count: 500,
-    },
+    rating: { rate: 4.7, count: 500 },
   },
   {
-    _id: uuidv4(),
+    _id: "0638178a-0b16-4faa-b061-2b930c68a5a4",
     title: "Letter Graphic Shoulder Tote Bag With Small Pouch & Bag Charm",
     price: 15.99,
     description:
@@ -68,13 +59,10 @@ export const bagsProducts = [
       "/images/Bags/LetterGraphicShoulder/Charm-3.webp",
       "/images/Bags/LetterGraphicShoulder/Charm-4.webp",
     ],
-    rating: {
-      rate: 2.1,
-      count: 430,
-    },
+    rating: { rate: 2.1, count: 430 },
   },
   {
-    _id: uuidv4(),
+    _id: "1a3b5c7f-d245-4c88-bc95-a6401133c98a",
     title: "Mini Letter Graphic Studded Decor Flap Square Bag",
     price: 56.99,
     description:
@@ -86,13 +74,10 @@ export const bagsProducts = [
       "/images/Bags/MiniLetterGraphic/Bag-3.webp",
       "/images/Bags/MiniLetterGraphic/Bag-4.webp",
     ],
-    rating: {
-      rate: 2.6,
-      count: 235,
-    },
+    rating: { rate: 2.6, count: 235 },
   },
   {
-    _id: uuidv4(),
+    _id: "fd3b475c-fc88-4d12-a443-59d33f08915c",
     title: "Letter Graphic Two Tone Shoulder Tote Bag",
     price: 29.95,
     description:
@@ -105,13 +90,10 @@ export const bagsProducts = [
       "/images/Bags/ToteBag/ToteBag-4.webp",
       "/images/Bags/ToteBag/ToteBag-5.webp",
     ],
-    rating: {
-      rate: 2.9,
-      count: 340,
-    },
+    rating: { rate: 2.9, count: 340 },
   },
   {
-    _id: uuidv4(),
+    _id: "b5e65e22-316c-4254-aab6-6fd2e1cb7bd0",
     title: "Mini Neon Lime Clear Trolley Design Box Bag",
     price: 39.99,
     description: "",
@@ -125,13 +107,10 @@ export const bagsProducts = [
       "/images/Bags/MiniNeon/MIniBag-6.webp",
       "/images/Bags/MiniNeon/MIniBag-7.webp",
     ],
-    rating: {
-      rate: 3.8,
-      count: 679,
-    },
+    rating: { rate: 3.8, count: 679 },
   },
   {
-    _id: uuidv4(),
+    _id: "02e31cb7-c57d-4142-8607-020862968677",
     title: "Mini Pom Pom Decor Fuzzy Novelty Bag",
     price: 9.85,
     description:
@@ -146,13 +125,10 @@ export const bagsProducts = [
       "/images/Bags/NoveltyBag/NoveltyBag-6.webp",
       "/images/Bags/NoveltyBag/NoveltyBag-7.webp",
     ],
-    rating: {
-      rate: 4.7,
-      count: 130,
-    },
+    rating: { rate: 4.7, count: 130 },
   },
   {
-    _id: uuidv4(),
+    _id: "f956fc32-18df-482a-a8e6-149abadc95b1",
     title: "Minimalist Large Capacity Duffel Bag",
     price: 7.95,
     description:
@@ -168,13 +144,10 @@ export const bagsProducts = [
       "/images/Bags/DuffelBag/DuffelBag-7.webp",
       "/images/Bags/DuffelBag/DuffelBag-8.webp",
     ],
-    rating: {
-      rate: 4.5,
-      count: 146,
-    },
+    rating: { rate: 4.5, count: 146 },
   },
   {
-    _id: uuidv4(),
+    _id: "ce88bbe5-f074-4806-a38c-770ee58f6de3",
     title: "Minimalist Shoulder Tote Bag",
     price: 12.99,
     description:
@@ -186,13 +159,10 @@ export const bagsProducts = [
       "/images/Bags/ShoulderToteBag/ToteBag-3.webp",
       "/images/Bags/ShoulderToteBag/ToteBag-4.webp",
     ],
-    rating: {
-      rate: 3.6,
-      count: 145,
-    },
+    rating: { rate: 3.6, count: 145 },
   },
   {
-    _id: uuidv4(),
+    _id: "5ca05669-4355-49fa-b665-5dde8d67c443",
     title: "Allover Print Purse",
     price: 12.99,
     description:
@@ -208,13 +178,10 @@ export const bagsProducts = [
       "/images/Bags/printPurse/Purse-7.webp",
       "/images/Bags/printPurse/Purse-8.webp",
     ],
-    rating: {
-      rate: 3.6,
-      count: 145,
-    },
+    rating: { rate: 3.6, count: 145 },
   },
   {
-    _id: uuidv4(),
+    _id: "927d3117-24cf-4488-be0c-03d2ef502cc2",
     title: "Plants Graphic Shopper Bag",
     price: 12.99,
     description:
@@ -230,13 +197,10 @@ export const bagsProducts = [
       "/images/Bags/ShopperBag/Bag-7.webp",
       "/images/Bags/ShopperBag/Bag-8.webp",
     ],
-    rating: {
-      rate: 3.6,
-      count: 145,
-    },
+    rating: { rate: 3.6, count: 145 },
   },
   {
-    _id: uuidv4(),
+    _id: "768de678-39c1-41bf-b667-e788a997e648",
     title: "Pocket Front Functional Backpack",
     price: 12.99,
     description:
@@ -252,10 +216,7 @@ export const bagsProducts = [
       "/images/Bags/Backpack/Backpack-7.webp",
       "/images/Bags/Backpack/Backpack-8.webp",
     ],
-    rating: {
-      rate: 3.6,
-      count: 145,
-    },
+    rating: { rate: 3.6, count: 145 },
   },
 ];
 

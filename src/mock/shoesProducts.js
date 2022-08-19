@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export const shoesProducts = [
   {
-    _id: uuidv4(),
+    _id: "4da1741d-7ee8-410a-b27d-c5a9964119ac",
     images: ["/images/Shoes/featured/1.webp", "/images/Shoes/featured/1.webp"],
     title: "Metal Decor Combat Boots",
     brandName: "Caperion",
@@ -10,7 +10,7 @@ export const shoesProducts = [
     link: "#",
   },
   {
-    _id: uuidv4(),
+    _id: "e629f53a-f9f1-4bf1-823f-63c444af3995",
     images: ["/images/Shoes/featured/2.webp", "/images/Shoes/featured/2.webp"],
     title: "Brown Leather Formal Shoes",
     brandName: "CUCCOO",
@@ -18,7 +18,7 @@ export const shoesProducts = [
     link: "#",
   },
   {
-    _id: uuidv4(),
+    _id: "3742914c-50c2-4a53-af98-e4e425bbae9b",
     images: ["/images/Shoes/featured/3.webp", "/images/Shoes/featured/3.webp"],
     title: "Knit Chunky Heel",
     brandName: "Vutte wixo",
@@ -26,7 +26,7 @@ export const shoesProducts = [
     link: "#",
   },
   {
-    _id: uuidv4(),
+    _id: "dd58e3bc-f9c4-49f7-a632-94acf13e8603",
     images: ["/images/Shoes/featured/4.webp", "/images/Shoes/featured/4.webp"],
     title: "Men Formal Dual Tone",
     brandName: "Caperion",
@@ -34,7 +34,7 @@ export const shoesProducts = [
     link: "#",
   },
   {
-    _id: uuidv4(),
+    _id: "600ea36b-25c6-4e03-b6b4-e820a4c55fd4",
     images: ["/images/Shoes/featured/5.webp", "/images/Shoes/featured/5.webp"],
     title: "Point Toe Stiletto Heeled",
     brandName: "Caperion",
@@ -42,7 +42,7 @@ export const shoesProducts = [
     link: "#",
   },
   {
-    _id: uuidv4(),
+    _id: "6d744d99-0bb1-4a25-8a78-e06cd51259fa",
     images: ["/images/Shoes/featured/6.webp", "/images/Shoes/featured/6.webp"],
     title: "Mesh Panel Trainers",
     brandName: "CUCCOO",
@@ -53,7 +53,7 @@ export const shoesProducts = [
 
 export const womenShoesListing = [
   {
-    _id: uuidv4(),
+    _id: "2d03d939-39bc-4cd5-81f7-e64e157eef9a",
     images: [
       "/images/Shoes/Women/1/1.webp",
       "/images/Shoes/Women/1/2.webp",
@@ -73,9 +73,8 @@ export const womenShoesListing = [
     price: 599,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "a8603747-aeaf-4894-9504-086a54283622",
     images: [
       "/images/Shoes/Women/2/1.webp",
       "/images/Shoes/Women/2/2.webp",
@@ -90,9 +89,8 @@ export const womenShoesListing = [
     price: 899,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "2899669d-3064-4e1f-8812-7f6780938e93",
     images: [
       "/images/Shoes/Women/3/1.webp",
       "/images/Shoes/Women/3/2.webp",
@@ -106,9 +104,8 @@ export const womenShoesListing = [
     price: 899,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "7ed4f2b8-adae-4897-be50-22b3a85fcce0",
     images: [
       "/images/Shoes/Women/4/1.webp",
       "/images/Shoes/Women/4/2.webp",
@@ -124,9 +121,8 @@ export const womenShoesListing = [
     price: 799,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "52c6fc38-ab38-4090-9aed-eb9fdf117b35",
     images: [
       "/images/Shoes/Women/5/1.webp",
       "/images/Shoes/Women/5/2.webp",
@@ -141,9 +137,8 @@ export const womenShoesListing = [
     price: 799,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "1038167f-6d9f-4625-aa58-3d8c1a3dd490",
     images: [
       "/images/Shoes/Women/6/1.webp",
       "/images/Shoes/Women/6/2.webp",
@@ -159,9 +154,8 @@ export const womenShoesListing = [
     price: 499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "22b1d636-cc4e-42c9-8a4c-fcfade522b52",
     images: [
       "/images/Shoes/Women/7/1.webp",
       "/images/Shoes/Women/7/2.webp",
@@ -176,9 +170,8 @@ export const womenShoesListing = [
     price: 499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "de57724e-19a4-4115-91c7-7e9f52223cf1",
     images: [
       "/images/Shoes/Women/8/1.webp",
       "/images/Shoes/Women/8/2.webp",
@@ -194,9 +187,8 @@ export const womenShoesListing = [
     price: 1099,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "ea3c620b-80f8-4b2c-9562-c2f126a016f7",
     images: [
       "/images/Shoes/Women/9/1.webp",
       "/images/Shoes/Women/9/2.webp",
@@ -212,9 +204,8 @@ export const womenShoesListing = [
     price: 1099,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "bd9d181b-f50c-4f33-9bfd-0726cc825150",
     images: [
       "/images/Shoes/Women/10/1.webp",
       "/images/Shoes/Women/10/2.webp",
@@ -228,9 +219,8 @@ export const womenShoesListing = [
     price: 1099,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "423062e3-72d1-4292-89a9-d4d05d16e60b",
     images: [
       "/images/Shoes/Women/11/1.webp",
       "/images/Shoes/Women/11/2.webp",
@@ -246,9 +236,8 @@ export const womenShoesListing = [
     price: 1199,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "4152cb71-0e05-4520-a3cb-9c1d44577ac9",
     images: [
       "/images/Shoes/Women/12/1.webp",
       "/images/Shoes/Women/12/2.webp",
@@ -264,9 +253,8 @@ export const womenShoesListing = [
     price: 1199,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "3431cee5-8634-44dc-be32-b6be7e5f7b6e",
     images: [
       "/images/Shoes/Women/13/1.webp",
       "/images/Shoes/Women/13/2.webp",
@@ -281,9 +269,8 @@ export const womenShoesListing = [
     price: 1199,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "51d146dc-1168-4edc-a9dc-25cd516655b5",
     images: [
       "/images/Shoes/Women/14/1.webp",
       "/images/Shoes/Women/14/2.webp",
@@ -298,9 +285,8 @@ export const womenShoesListing = [
     price: 1199,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "9f1f6f24-a962-4bd9-8aa1-ec1a3eda78b3",
     images: [
       "/images/Shoes/Women/15/1.webp",
       "/images/Shoes/Women/15/2.webp",
@@ -313,9 +299,8 @@ export const womenShoesListing = [
     price: 1599,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "aeb71d17-6a02-493c-87da-ff85a9da5c56",
     images: [
       "/images/Shoes/Women/16/1.webp",
       "/images/Shoes/Women/16/2.webp",
@@ -328,9 +313,8 @@ export const womenShoesListing = [
     price: 1599,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "b76b2c93-b980-4a43-8535-fa34e6c38774",
     images: [
       "/images/Shoes/Women/17/1.webp",
       "/images/Shoes/Women/17/2.webp",
@@ -345,9 +329,8 @@ export const womenShoesListing = [
     price: 999,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "606dd1ed-70e3-4588-acdf-0b14009ca9e8",
     images: [
       "/images/Shoes/Women/18/1.webp",
       "/images/Shoes/Women/18/2.webp",
@@ -362,9 +345,8 @@ export const womenShoesListing = [
     price: 999,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "61391694-c104-4bb9-a57f-32433959cb38",
     images: [
       "/images/Shoes/Women/19/1.webp",
       "/images/Shoes/Women/19/2.webp",
@@ -379,9 +361,8 @@ export const womenShoesListing = [
     price: 999,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "9521ae5a-0a27-4a1a-9695-cd9396cdb485",
     images: [
       "/images/Shoes/Women/20/1.webp",
       "/images/Shoes/Women/20/2.webp",
@@ -395,9 +376,8 @@ export const womenShoesListing = [
     price: 999,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "c237b47a-7fca-427f-959f-14b34927191c",
     images: [
       "/images/Shoes/Women/21/1.webp",
       "/images/Shoes/Women/21/2.webp",
@@ -412,9 +392,8 @@ export const womenShoesListing = [
     price: 1399,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "6777395e-21a3-401a-b7d7-a06497df84dc",
     images: [
       "/images/Shoes/Women/22/1.webp",
       "/images/Shoes/Women/22/2.webp",
@@ -432,9 +411,8 @@ export const womenShoesListing = [
     price: 1399,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "ae2e6379-e7d5-4963-bd35-e1db5fa151e6",
     images: [
       "/images/Shoes/Women/23/1.webp",
       "/images/Shoes/Women/23/2.webp",
@@ -447,9 +425,8 @@ export const womenShoesListing = [
     price: 2499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "1bd0c1b1-b289-443b-93e6-8845cc66452f",
     images: [
       "/images/Shoes/Women/24/1.webp",
       "/images/Shoes/Women/24/2.webp",
@@ -464,9 +441,8 @@ export const womenShoesListing = [
     price: 1799,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "31ede59b-feae-48f0-80c6-1c6d2cb8f8b2",
     images: [
       "/images/Shoes/Women/25/1.webp",
       "/images/Shoes/Women/25/2.webp",
@@ -480,9 +456,8 @@ export const womenShoesListing = [
     price: 1799,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "516c239e-7fd9-47b7-b22f-9dca56fd00de",
     images: [
       "/images/Shoes/Women/26/1.webp",
       "/images/Shoes/Women/26/2.webp",
@@ -497,9 +472,8 @@ export const womenShoesListing = [
     price: 1799,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "1c1014db-8196-4ad7-bcaf-871ca5e91997",
     images: [
       "/images/Shoes/Women/27/1.webp",
       "/images/Shoes/Women/27/2.webp",
@@ -514,9 +488,8 @@ export const womenShoesListing = [
     price: 1499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "c95decab-0bb7-4bfb-8fb6-ca74fdcd543f",
     images: [
       "/images/Shoes/Women/28/1.webp",
       "/images/Shoes/Women/28/2.webp",
@@ -529,9 +502,8 @@ export const womenShoesListing = [
     price: 1299,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "063acb71-34d0-4432-930c-1b306201d431",
     images: [
       "/images/Shoes/Women/29/1.webp",
       "/images/Shoes/Women/29/2.webp",
@@ -549,7 +521,7 @@ export const womenShoesListing = [
 
 export const menShoesListing = [
   {
-    _id: uuidv4(),
+    _id: "b9e8677b-f714-413b-861a-1e233b114760",
     images: [
       "/images/Shoes/Men/1/1.webp",
       "/images/Shoes/Men/1/2.webp",
@@ -563,9 +535,8 @@ export const menShoesListing = [
     price: 599,
     link: "1",
   },
-
   {
-    _id: uuidv4(),
+    _id: "eb0acfc4-1eaa-4de1-acb6-e514580426f8",
     images: [
       "/images/Shoes/Men/2/1.webp",
       "/images/Shoes/Men/2/2.webp",
@@ -579,9 +550,8 @@ export const menShoesListing = [
     price: 899,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "71ac423a-b9d1-4e72-88f4-3fd0f5b8a1f3",
     images: [
       "/images/Shoes/Men/3/1.webp",
       "/images/Shoes/Men/3/2.webp",
@@ -595,9 +565,8 @@ export const menShoesListing = [
     price: 899,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "a3fa1acd-c48c-4310-83e7-1430c7173eec",
     images: [
       "/images/Shoes/Men/4/1.webp",
       "/images/Shoes/Men/4/2.webp",
@@ -612,9 +581,8 @@ export const menShoesListing = [
     price: 799,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "2fb49a3b-efea-40fd-8618-3fe848d9642a",
     images: [
       "/images/Shoes/Men/5/1.webp",
       "/images/Shoes/Men/5/2.webp",
@@ -629,9 +597,8 @@ export const menShoesListing = [
     price: 799,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "ba07873e-321d-40d1-9651-42f2fee45a01",
     images: [
       "/images/Shoes/Men/6/1.webp",
       "/images/Shoes/Men/6/2.webp",
@@ -645,9 +612,8 @@ export const menShoesListing = [
     price: 499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "592ff41c-0c2b-40d9-8ddb-c68d61761bf9",
     images: [
       "/images/Shoes/Men/7/1.webp",
       "/images/Shoes/Men/7/2.webp",
@@ -662,9 +628,8 @@ export const menShoesListing = [
     price: 499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "df867b87-d978-450d-b4a3-fbbba28ed20d",
     images: [
       "/images/Shoes/Men/8/1.webp",
       "/images/Shoes/Men/8/2.webp",
@@ -678,9 +643,8 @@ export const menShoesListing = [
     price: 1099,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "b8e952fc-796b-4fe3-afde-202287236332",
     images: [
       "/images/Shoes/Men/9/1.webp",
       "/images/Shoes/Men/9/2.webp",
@@ -694,9 +658,8 @@ export const menShoesListing = [
     price: 1099,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "827a803b-0948-4db0-bb88-9a40dcfcd0f6",
     images: [
       "/images/Shoes/Men/10/1.webp",
       "/images/Shoes/Men/10/2.webp",
@@ -710,9 +673,8 @@ export const menShoesListing = [
     price: 1099,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "d58515ad-1baf-4db1-b173-f4800b48fbaa",
     images: [
       "/images/Shoes/Men/11/1.webp",
       "/images/Shoes/Men/11/2.webp",
@@ -726,9 +688,8 @@ export const menShoesListing = [
     price: 1199,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "483fcf83-fe8d-4c97-9f95-456c759d23f1",
     images: [
       "/images/Shoes/Men/12/1.webp",
       "/images/Shoes/Men/12/2.webp",
@@ -742,9 +703,8 @@ export const menShoesListing = [
     price: 1199,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "a1ad0fd6-991a-4aea-84c1-2e64db15099e",
     images: [
       "/images/Shoes/Men/13/1.webp",
       "/images/Shoes/Men/13/2.webp",
@@ -757,9 +717,8 @@ export const menShoesListing = [
     price: 1199,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "bb5f5492-b2ac-4110-a50d-eaf7ead01659",
     images: [
       "/images/Shoes/Men/14/1.webp",
       "/images/Shoes/Men/14/2.webp",
@@ -772,9 +731,8 @@ export const menShoesListing = [
     price: 1199,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "2366a59e-a243-4ae3-ba58-f7aa8616f84e",
     images: [
       "/images/Shoes/Men/15/1.webp",
       "/images/Shoes/Men/15/2.webp",
@@ -787,9 +745,8 @@ export const menShoesListing = [
     price: 1599,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "255b5d00-28b9-4008-959f-c5b7bfb42d00",
     images: [
       "/images/Shoes/Men/16/1.webp",
       "/images/Shoes/Men/16/2.webp",
@@ -803,9 +760,8 @@ export const menShoesListing = [
     price: 1599,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "89194201-9aec-4d7b-bcf2-43880af6ee4c",
     images: [
       "/images/Shoes/Men/17/1.webp",
       "/images/Shoes/Men/17/2.webp",
@@ -819,9 +775,8 @@ export const menShoesListing = [
     price: 2699,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "3b5da851-ba0c-473d-8849-fac950e46fa3",
     images: [
       "/images/Shoes/Men/18/1.webp",
       "/images/Shoes/Men/18/2.webp",
@@ -836,9 +791,8 @@ export const menShoesListing = [
     price: 2499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "5dba334e-797b-4bdc-9ab9-8d56bf7ff332",
     images: [
       "/images/Shoes/Men/19/1.webp",
       "/images/Shoes/Men/19/2.webp",
@@ -851,9 +805,8 @@ export const menShoesListing = [
     price: 1499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "6512e77b-4b41-4d61-95ba-59f61303469d",
     images: [
       "/images/Shoes/Men/20/1.webp",
       "/images/Shoes/Men/20/2.webp",
@@ -872,7 +825,7 @@ export const menShoesListing = [
 
 export const newArrivalShoes = [
   {
-    _id: uuidv4(),
+    _id: "42bbedfe-7970-4627-a19f-4ec957b4ab55",
     images: [
       "/images/Shoes/Men/1/1.webp",
       "/images/Shoes/Men/1/2.webp",
@@ -886,9 +839,8 @@ export const newArrivalShoes = [
     price: 599,
     link: "1",
   },
-
   {
-    _id: uuidv4(),
+    _id: "3fcd1f73-6d19-4b69-9faf-24fe4bc22d88",
     images: [
       "/images/Shoes/Women/27/1.webp",
       "/images/Shoes/Women/27/2.webp",
@@ -903,9 +855,8 @@ export const newArrivalShoes = [
     price: 1499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "470213e6-308b-44e3-88e7-915b35df7f86",
     images: [
       "/images/Shoes/Men/2/1.webp",
       "/images/Shoes/Men/2/2.webp",
@@ -919,9 +870,8 @@ export const newArrivalShoes = [
     price: 899,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "8e229218-1e4e-4833-8c1f-b5f0c5b04676",
     images: [
       "/images/Shoes/Men/3/1.webp",
       "/images/Shoes/Men/3/2.webp",
@@ -935,9 +885,8 @@ export const newArrivalShoes = [
     price: 899,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "977bd2b0-1932-4dcf-894d-19a18a404de8",
     images: [
       "/images/Shoes/Women/23/1.webp",
       "/images/Shoes/Women/23/2.webp",
@@ -950,9 +899,8 @@ export const newArrivalShoes = [
     price: 2499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "88b5d3b6-21ae-4d89-8c73-951ba3975bce",
     images: [
       "/images/Shoes/Men/4/1.webp",
       "/images/Shoes/Men/4/2.webp",
@@ -967,9 +915,8 @@ export const newArrivalShoes = [
     price: 799,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "43a43d92-1a63-4bc4-a4f7-d1e60d7d40f1",
     images: [
       "/images/Shoes/Men/5/1.webp",
       "/images/Shoes/Men/5/2.webp",
@@ -984,9 +931,8 @@ export const newArrivalShoes = [
     price: 799,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "b4be0d71-5b2f-4b95-ac15-c8b4fe5e9e67",
     images: [
       "/images/Shoes/Women/7/1.webp",
       "/images/Shoes/Women/7/2.webp",
@@ -1001,9 +947,8 @@ export const newArrivalShoes = [
     price: 499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "fbed841e-0b01-4b6c-b15d-ee86976f5c43",
     images: [
       "/images/Shoes/Women/8/1.webp",
       "/images/Shoes/Women/8/2.webp",
@@ -1019,9 +964,8 @@ export const newArrivalShoes = [
     price: 1099,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "24fc2fa7-8c4a-48e1-a479-91377918dcec",
     images: [
       "/images/Shoes/Women/9/1.webp",
       "/images/Shoes/Women/9/2.webp",
@@ -1037,9 +981,8 @@ export const newArrivalShoes = [
     price: 1099,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "f8765c9d-8e3e-422b-a699-9fd9c84d00fa",
     images: [
       "/images/Shoes/Women/10/1.webp",
       "/images/Shoes/Women/10/2.webp",
@@ -1053,9 +996,8 @@ export const newArrivalShoes = [
     price: 1099,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "78c7496c-db57-4045-8931-25c5346a0aa9",
     images: [
       "/images/Shoes/Men/6/1.webp",
       "/images/Shoes/Men/6/2.webp",
@@ -1069,9 +1011,8 @@ export const newArrivalShoes = [
     price: 499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "9e1d7611-6053-420e-9f9f-0738e9485656",
     images: [
       "/images/Shoes/Men/7/1.webp",
       "/images/Shoes/Men/7/2.webp",
@@ -1086,9 +1027,8 @@ export const newArrivalShoes = [
     price: 499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "5a3c6d8f-81d6-4ebf-95bb-fd24fbfb7ac2",
     images: [
       "/images/Shoes/Men/8/1.webp",
       "/images/Shoes/Men/8/2.webp",
@@ -1102,9 +1042,8 @@ export const newArrivalShoes = [
     price: 1099,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "10af1fc7-9f4f-4a59-b20a-e18af58a71b5",
     images: [
       "/images/Shoes/Men/9/1.webp",
       "/images/Shoes/Men/9/2.webp",
@@ -1118,9 +1057,8 @@ export const newArrivalShoes = [
     price: 1099,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "f372b0de-266f-4d3b-8cac-b143c7d379d3",
     images: [
       "/images/Shoes/Men/10/1.webp",
       "/images/Shoes/Men/10/2.webp",
@@ -1134,9 +1072,8 @@ export const newArrivalShoes = [
     price: 1099,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "3dda13a4-b672-4b97-b855-c82f71099b73",
     images: [
       "/images/Shoes/Men/11/1.webp",
       "/images/Shoes/Men/11/2.webp",
@@ -1150,9 +1087,8 @@ export const newArrivalShoes = [
     price: 1199,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "a2357fec-7cc5-42eb-9a90-ce784988cae6",
     images: [
       "/images/Shoes/Men/12/1.webp",
       "/images/Shoes/Men/12/2.webp",
@@ -1166,9 +1102,8 @@ export const newArrivalShoes = [
     price: 1199,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "1e8a0e4e-9266-4020-8113-56b41f6ee619",
     images: [
       "/images/Shoes/Men/13/1.webp",
       "/images/Shoes/Men/13/2.webp",
@@ -1181,9 +1116,8 @@ export const newArrivalShoes = [
     price: 1199,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "f29e528b-bd1a-4b46-a6af-50c0d59c514f",
     images: [
       "/images/Shoes/Men/14/1.webp",
       "/images/Shoes/Men/14/2.webp",
@@ -1196,9 +1130,8 @@ export const newArrivalShoes = [
     price: 1199,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "44297d53-ad53-4b77-ba40-751070b81eaa",
     images: [
       "/images/Shoes/Men/15/1.webp",
       "/images/Shoes/Men/15/2.webp",
@@ -1211,9 +1144,8 @@ export const newArrivalShoes = [
     price: 1599,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "4f0520c9-5a24-44b9-b107-f13560bcb61d",
     images: [
       "/images/Shoes/Men/16/1.webp",
       "/images/Shoes/Men/16/2.webp",
@@ -1227,9 +1159,8 @@ export const newArrivalShoes = [
     price: 1599,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "93447f0b-304e-43df-8420-d6fef12a21e5",
     images: [
       "/images/Shoes/Men/17/1.webp",
       "/images/Shoes/Men/17/2.webp",
@@ -1243,9 +1174,8 @@ export const newArrivalShoes = [
     price: 2699,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "7a755a35-8a0a-465d-bc85-c2c3cb931b5a",
     images: [
       "/images/Shoes/Men/18/1.webp",
       "/images/Shoes/Men/18/2.webp",
@@ -1260,9 +1190,8 @@ export const newArrivalShoes = [
     price: 2499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "f0613964-5bb1-495e-9797-c7f4c4685c1b",
     images: [
       "/images/Shoes/Men/19/1.webp",
       "/images/Shoes/Men/19/2.webp",
@@ -1275,9 +1204,8 @@ export const newArrivalShoes = [
     price: 1499,
     link: "#",
   },
-
   {
-    _id: uuidv4(),
+    _id: "bfccd56e-7773-4cc7-a93d-25d4836e6b97",
     images: [
       "/images/Shoes/Men/20/1.webp",
       "/images/Shoes/Men/20/2.webp",
