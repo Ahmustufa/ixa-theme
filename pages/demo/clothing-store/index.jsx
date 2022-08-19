@@ -60,6 +60,22 @@ const Clothing = () => {
       <SubscriptionModal />
 
       <div className="my-4">
+        <div>
+          <Carousel1 data={data} />
+        </div>
+        <div
+          style={{
+            position: "relative",
+            bottom: 100,
+            zIndex: 100,
+            backgroundColor: "#fff",
+            boxShadow: "0px 0px 15px -10px #000",
+            margin: "0px 2%",
+          }}
+        >
+          <Service1 />
+        </div>
+
         <Banner
           colSize={8}
           insideData={[
@@ -84,22 +100,6 @@ const Clothing = () => {
           title1Color="red"
           title2Color="#222"
         />
-
-        <div>
-          <Carousel1 data={data} />
-        </div>
-        <div
-          style={{
-            position: "relative",
-            bottom: 100,
-            zIndex: 100,
-            backgroundColor: "#fff",
-            boxShadow: "0px 0px 15px -10px #000",
-            margin: "0px 2%",
-          }}
-        >
-          <Service1 />
-        </div>
 
         <Title3 subtitle="Recent Story" maintitle="TRENDING PRODUCTS" />
 

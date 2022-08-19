@@ -119,15 +119,14 @@ const SideCart = (props) => {
             <div>
               <TiShoppingCart style={{ fontSize: 64, marginBottom: 24 }} />
               <h5>Your cart is currently empty.</h5>
-              <Link href="/feature/product-element/product-box">
-                <PrimaryButton
-                  style={{ borderRadius: 100 }}
-                  className="mt-2 w-100"
-                  onClick={() => dispatch(closeCart())}
-                >
-                  Continue Shopping
-                </PrimaryButton>
-              </Link>
+
+              <PrimaryButton
+                style={{ borderRadius: 100 }}
+                className="mt-2 w-100"
+                onClick={() => dispatch(closeCart())}
+              >
+                Continue Shopping
+              </PrimaryButton>
             </div>
           </div>
         )}
