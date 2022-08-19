@@ -14,7 +14,7 @@ import { addItemToWishlist, removeWishlistItem } from "../../src/redux/actions";
 import { Mutations, errorHandler, useFetch } from "../../src/api/config";
 import CardStyle6 from "src/component/cards/CardStyle6";
 import { shoesProducts } from "src/mock/shoesProducts";
-import allProducts from "../../src/mock/products";
+import allProducts, { products } from "../../src/mock/products";
 
 const { Panel } = Collapse;
 
@@ -449,14 +449,16 @@ const StyledPage = styled.div`
 `;
 
 export async function getServerSideProps(context) {
-  const index = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
-  const productDetails = products[index];
+  const productId = context.params.product_id;
+  const productDetails = allProducts.find((item) => item._id == productId);
 
-  // const productDetails = allProducts.find()
-
-  console.log("Context", context);
-
-  return {
-    props: { productDetails },
-  };
+  if (productDetails) {
+    return {
+      props: { productDetails },
+    };
+  } else {
+    return {
+      notFound: true,
+    };
+  }
 }
