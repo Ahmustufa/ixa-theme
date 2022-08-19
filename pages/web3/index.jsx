@@ -6,21 +6,26 @@ import Web3Modal from "web3modal";
 import { providers } from "ethers";
 import { AiFillCheckCircle, AiFillExclamationCircle } from "react-icons/ai";
 
-const Web3Page = () => {
-  const [data, setData] = useState("");
-
-  const providerOptions = {
-    pakage: WalletConnectProvider,
+const providerOptions = {
+  walletconnect: {
+    package: WalletConnectProvider, // required
     options: {
       infuraId: process.env.NEXT_PUBLIC_INFURA_ID,
     },
-  };
+  },
+};
 
-  let web3modal = new Web3Modal({
+let web3modal;
+if (typeof window !== "undefined") {
+  web3modal = new Web3Modal({
     network: "mainnet",
     cacheProvider: true,
     providerOptions,
   });
+}
+
+const Web3Page = () => {
+  const [data, setData] = useState("");
 
   const walletConnection = async () => {
     const provider = await web3modal.connect();
@@ -37,7 +42,8 @@ const Web3Page = () => {
 
   // Disconnect to the metamask
   const disconnect = async () => {
-    await web3modal.clearCachedProvider();
+    const clear = await web3modal.clearCachedProvider();
+    console.log(clear);
     setData("");
   };
 

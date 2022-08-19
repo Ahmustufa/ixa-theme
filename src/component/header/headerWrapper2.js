@@ -156,7 +156,7 @@ const HeaderWrapper2 = () => {
           boxShadow: "1px 1px 2px #f8f8f8, -1px -1px 2px #f8f8f8",
           position: "sticky",
           top: 0,
-          zIndex: 399,
+          zIndex: 1,
         }}
       >
         {menuItems.map((menu) => {
