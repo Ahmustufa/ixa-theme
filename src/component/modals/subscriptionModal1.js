@@ -71,7 +71,7 @@ const StyledModal = styled(Modal)`
   }
 `;
 
-const SubscriptionModal = () => {
+const SubscriptionModal = (props) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleCancel = () => {
@@ -99,7 +99,7 @@ const SubscriptionModal = () => {
         <Col xxl={11} xl={11} lg={11} md={11} sm={0}>
           <div
             style={{
-              backgroundImage: `url("/images/subscriptionModalBg.png")`,
+              backgroundImage: `url( ${props.image})`,
               minHeight: 380,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",

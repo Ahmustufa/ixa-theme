@@ -57,7 +57,7 @@ const Clothing = () => {
       <Head>
         <title>Clothing Store</title>
       </Head>
-      <SubscriptionModal />
+      <SubscriptionModal image="/images/clothingSubscriptionModal.png" />
 
       <div className="my-4">
         <div>
