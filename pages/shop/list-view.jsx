@@ -1,15 +1,12 @@
 import { useState } from "react";
 import { Row, Col } from "antd";
-import { useSelector } from "react-redux";
 import Breadcrumb from "../../src/component/breadcrumb";
 import ProductListing from "../../src/component/productListing";
-import ShopSidebar from "../../src/component/sidebar/shopSidebar";
 import SortBar from "../../src/component/sortItems";
-import { shoesProducts } from "src/mock/shoesProducts";
+import { bagsProducts } from "src/mock/bagsProducts";
 
 const ListView = (props) => {
-  const { items } = useSelector((state) => state.products);
-  const [gridColumn, setGridColumn] = useState(3);
+  const [gridColumn, setGridColumn] = useState(1);
 
   return (
     <>
@@ -36,7 +33,7 @@ const ListView = (props) => {
 
             <SortBar className="my-5" setGridColumn={setGridColumn} />
 
-            <ProductListing grid={gridColumn} products={shoesProducts} />
+            <ProductListing grid={gridColumn} products={bagsProducts} />
           </Col>
         </Row>
       </div>
