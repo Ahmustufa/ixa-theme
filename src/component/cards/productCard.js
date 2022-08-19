@@ -6,7 +6,7 @@ import { addItemToWishlist, removeWishlistItem } from "../../redux/actions";
 
 const ProductCard = (props) => {
   const { _id, productName, brandName, price, images } = props;
-  const cardImage = process.env.REACT_APP_STRAPI_URL + images[0].url;
+  const cardImage = process.env.NEXT_PUBLIC_STRAPI_URL + images[0].url;
   const dispatch = useDispatch();
   const { items: wishlist } = useSelector((state) => state.wishlist);
   const formatedPrice = new Intl.NumberFormat("en-us", {

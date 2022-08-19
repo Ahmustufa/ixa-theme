@@ -249,7 +249,7 @@ const Checkout = () => {
                       <div className="box d-flex">
                         <div>
                           <img
-                            src={process.env.REACT_APP_STRAPI_URL + item.images[0]?.url}
+                            src={process.env.NEXT_PUBLIC_STRAPI_URL + item.images[0]?.url}
                             style={{ width: 50 }}
                           />
                         </div>

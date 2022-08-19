@@ -53,7 +53,7 @@ const Clothing = () => {
   return (
     <>
       <Head>
-        <title>Bag Store</title>
+        <title>Clothing Store</title>
       </Head>
       <SubscriptionModal />
 
