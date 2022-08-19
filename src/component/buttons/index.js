@@ -39,7 +39,7 @@ export const PrimaryButton = styled.button`
   padding: 8px 20px;
   color: #fff;
   border: 1px solid #212529;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 14px;
   outline: none;
   box-shadow: none;

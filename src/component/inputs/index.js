@@ -5,7 +5,7 @@ export const InputWrapper = styled(Input)`
   // background-image: ${(props) => (props.backgroundImage ? props.backgroundImage : "")};
   outline: none;
   // padding: 8px 12px;
-  border: ${(props) => (props.border ? props.border : "1px solid #000")};
+  border: ${(props) => (props.border ? props.border : "1px solid #d1d1d1")};
   border-radius: 4px;
   display: block;
   width: ${(props) => (props.width ? props.width : "-webkit-fill-available")};
@@ -206,6 +206,7 @@ export const TextAreaWrapper = styled.textarea`
   border: 1px solid #d1d1d1;
   font-size: 15px;
   font-weight: 500;
+  transition: 0.3s ease;
   width: -webkit-fill-available;
   width: -moz-available;
   ::placeholder {
@@ -216,6 +217,6 @@ export const TextAreaWrapper = styled.textarea`
   &:hover,
   &:active,
   &:focus {
-    border: 1px solid #0025ff;
+    border: 1px solid #727272;
   }
 `;

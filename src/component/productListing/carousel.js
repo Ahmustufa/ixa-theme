@@ -44,17 +44,7 @@ const ProductCarousel = (props) => {
   return (
     <StyledContent style={{ padding: props.padding ? props.padding : "5%" }}>
       <div className="text-center">
-        <div
-          className="heading"
-          style={{
-            fontSize: 40,
-            color: "#54595f",
-            fontWeight: 600,
-            position: "relative",
-          }}
-        >
-          Featured Collection
-        </div>
+        <div className="heading">Featured Collection</div>
         <br />
         <Link href={props.link ? props.link : "/shop/list-view"}>
           <a style={{ textDecoration: "none" }}>
@@ -93,6 +83,11 @@ const StyledContent = styled.div`
   // padding: 80px;
 
   .heading {
+    font-size: 40px;
+    color: #54595f;
+    font-weight: 600;
+    position: relative;
+
     ::before {
       content: "#Featured";
       opacity: 0.05;
@@ -113,5 +108,12 @@ const StyledContent = styled.div`
   @media only screen and (max-width: 576px) {
     margin: 0;
     padding: 0 8px;
+
+    .heading {
+      font-size: 32px;
+      ::before {
+        top: 20px;
+      }
+    }
   }
 `;

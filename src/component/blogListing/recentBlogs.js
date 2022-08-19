@@ -1,19 +1,14 @@
 import styled from "styled-components";
-import { Row, Col, Divider } from "antd";
-import ProductCard from "../cards/productCard";
-import Slider from "react-slick";
-import { useSelector } from "react-redux";
-import ProductCardWithIcons from "../cards/productCardWithIcons";
 import { image1, image2, image3, image4 } from "../../../images";
-import { Rate } from "antd";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { useRef } from "react";
+import moment from "moment";
+import Link from "next/link";
+import { AiFillHeart } from "react-icons/ai";
 
 const RecentBlogs = (props) => {
   return (
-    <StyledContent>
+    <StyledContent style={{ position: "sticky", backgroundColor: "#fff", top: 75 }}>
       <div className="title-header">
-        <h4 className="">RECENT BLOG</h4>
+        <h4 className="text-center">RECENT BLOG</h4>
       </div>
 
       <div>
@@ -24,8 +19,22 @@ const RecentBlogs = (props) => {
           >
             <img src={item.images[0]} width="35%" height={"60px"} />
             <div className="content ml-3">
-              <h6>25 January 2018</h6>
-              <p>0 hits</p>
+              <Link href={`/blog/${item._id}`}>
+                <h6 title={item.title} className="heading">
+                  {item.title}
+                </h6>
+              </Link>
+
+              <p style={{ fontSize: 12 }}>
+                {Math.floor(Math.random() * (31 - 10 + 1)) + 10}
+                {"-"}
+                {moment().subtract("years", 1).format("MMM-YYYY")}
+              </p>
+
+              <p style={{ fontSize: 12, margin: 0 }}>
+                <AiFillHeart className="mr-1" size={12} style={{ marginBottom: 3 }} />
+                {Math.floor(Math.random() * 10) + 1} hits
+              </p>
             </div>
           </div>
         ))}
@@ -48,7 +57,7 @@ RecentBlogs.defaultProps = {
 export default RecentBlogs;
 
 const StyledContent = styled.div`
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   padding: 25px;
   .title-header h4 {
     color: #333;
@@ -59,6 +68,19 @@ const StyledContent = styled.div`
     font-size: 18px;
   }
   .content {
+    .heading {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-decoration: none;
+      transition: 0.1s ease;
+      cursor: pointer;
+      &:hover {
+        color: red;
+      }
+    }
     p {
       line-height: 20px;
       margin-bottom: 0;

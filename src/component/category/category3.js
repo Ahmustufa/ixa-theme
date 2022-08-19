@@ -6,7 +6,7 @@ import { productStyle2 } from "../../mock/mockupData";
 const StyledDiv = styled.div`
   width: 100%;
   background-color: #ffb9b3;
-  padding: 3%;
+  padding: 34px;
 
   .image-block-1 {
     ::after {
@@ -116,13 +116,26 @@ const StyledDiv = styled.div`
       }
     }
   }
+
+  @media (max-width: 625px) {
+    h2 {
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
 `;
 
 const Category3 = (props) => {
   return (
     <StyledDiv>
       <Row>
-        <Col span={8}>
+        <Col
+          xl={8}
+          md={12}
+          sm={24}
+          xs={24}
+          style={{ backgroundColor: "#fff", display: "flex" }}
+        >
           <div className="p-0">
             <a className="image-block-1">
               <img
@@ -133,11 +146,11 @@ const Category3 = (props) => {
           </div>
         </Col>
 
-        <Col span={8}>
+        <Col xl={8} md={12} sm={24} xs={24} style={{ backgroundColor: "#fff" }}>
           <div className="contain-block-1 even">
             <div>
               <h6>New Products</h6>
-              <h2>Flamming Sneakers</h2>
+              <h2>Nike Runway Sneakers</h2>
               <div
                 style={{
                   display: "flex",
@@ -155,7 +168,7 @@ const Category3 = (props) => {
           </div>
         </Col>
 
-        <Col span={8}>
+        <Col xl={8} md={12} sm={24} xs={24} style={{ backgroundColor: "#fff" }}>
           <div className="p-0">
             <a className="image-block-1">
               <img
@@ -166,11 +179,11 @@ const Category3 = (props) => {
           </div>
         </Col>
 
-        <Col span={8} style={{ borderTop: "1px solid #ffb9b3" }}>
+        <Col xl={8} md={12} sm={24} xs={24} style={{ backgroundColor: "#fff" }}>
           <div className="contain-block-2 even">
             <div>
               <h6>On sale</h6>
-              <h2>Purple Nike Sneakers</h2>
+              <h2>Gripper Nike Sneakers</h2>
               <div
                 style={{
                   display: "flex",
@@ -188,7 +201,7 @@ const Category3 = (props) => {
           </div>
         </Col>
 
-        <Col span={8}>
+        <Col xl={8} md={12} sm={24} xs={24} style={{ backgroundColor: "#fff" }}>
           <div className="p-0">
             <a className="image-block-2">
               <img
@@ -199,7 +212,7 @@ const Category3 = (props) => {
           </div>
         </Col>
 
-        <Col span={8}>
+        <Col xl={8} md={12} sm={24} xs={24} style={{ backgroundColor: "#fff" }}>
           <div className="contain-block-2 even">
             <div>
               <h6>On sale</h6>

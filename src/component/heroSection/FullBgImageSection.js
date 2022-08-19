@@ -15,9 +15,8 @@ const FullBgImageSection = (props) => {
 export default FullBgImageSection;
 
 const StyledSection = styled.div`
-  margin: 3% 0;
-  height: 70vh;
-  background-size: contain;
+  height: 50vh;
+  background-size: auto;
   background-image: ${(props) => `url(${props.bgImage})`};
   background-position: center;
   background-attachment: fixed;
@@ -68,5 +67,9 @@ const StyledSection = styled.div`
         font-size: 24px;
       }
     }
+  }
+
+  @media (max-width: 551px) {
+    display: none;
   }
 `;

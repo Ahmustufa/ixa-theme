@@ -36,19 +36,41 @@ const BlogListingCard = (props) => {
           xs={24}
           className="d-flex flex-column justify-content-center"
         >
-          <div className="createdAt">{moment(new Date()).format("ddd DD/MM/YYYY")}</div>
           <div className="product">
             <Link href={`/blog/${_id}`}>{title}</Link>
           </div>
 
-          <ul className="blog-created-date ">
-            <li>Posted By : Admin Admin</li>
-            <li>
-              {" "}
-              <AiFillHeart className="mr-1" size={16} />5 Hits
+          <ul className="blog-created-date">
+            <li
+              style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+            >
+              Posted By:{" "}
+              <p
+                style={{ margin: 0, fontWeight: 600, marginLeft: 8, fontStyle: "italic" }}
+              >
+                Admin
+              </p>
             </li>
-            <li>
-              <AiFillWechat className="mr-1" size={18} /> 10 Comment
+
+            <li
+              style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+            >
+              <p style={{ margin: 0, fontWeight: 500, marginLeft: 8 }}>
+                {moment(new Date()).format("DD-MMM-YYYY")}
+              </p>
+            </li>
+
+            <li
+              style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+            >
+              <AiFillHeart className="mr-1" size={16} style={{ marginBottom: 3 }} />
+              {Math.floor(Math.random() * 10) + 1} Hits
+            </li>
+            <li
+              style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+            >
+              <AiFillWechat className="mr-1" size={18} />
+              {Math.floor(Math.random() * 10) + 1} Comment
             </li>
           </ul>
 
@@ -85,6 +107,7 @@ const StyledCard = styled.div`
     line-height: 1;
     margin-bottom: 10px;
     font-weight: 400;
+    font-size: 12px;
   }
 
   .card-text {
@@ -104,6 +127,7 @@ const StyledCard = styled.div`
     margin-top: 10px;
     margin-bottom: 0;
     transition: all 0.5s ease;
+
     :hover {
       color: #ff4c3b;
       transition: all 0.5s ease;

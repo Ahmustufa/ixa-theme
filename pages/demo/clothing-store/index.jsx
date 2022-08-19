@@ -6,6 +6,8 @@ import Title2 from "src/component/titles/title2";
 import CardStyle1 from "src/component/cards/CardStyle1";
 import CardStyle7 from "src/component/cards/CardStyle7";
 import CardStyle6 from "src/component/cards/CardStyle6";
+import CardStyle2 from "src/component/cards/CardStyle2";
+
 import {
   productStyle1,
   productStyle2,
@@ -17,7 +19,7 @@ import ProductVerticalCarousel from "src/component/productListing/productVertica
 import BlogCarousel from "src/component/productListing/blogCarousel";
 import { bagsBlogs, bagsProducts } from "src/mock/bagsProducts";
 import Service1 from "src/component/services/service3";
-import SubscriptionModal from "src/component/modals/subscriptionModal3";
+import SubscriptionModal from "src/component/modals/subscriptionModal1";
 import Head from "next/head";
 import Title5 from "src/component/titles/title5";
 import { clothProducts } from "src/mock/clothProducts";
@@ -60,21 +62,27 @@ const Clothing = () => {
       <Carousel1 data={data} />
       <div className="my-4">
         <Banner
-          colSize={12}
+          colSize={8}
           insideData={[
             {
-              image: "/images/Bags/banner/samllBanner1.png",
-              title1: "SAVE 30%",
-              title2: "MEN",
+              image: "/images/clothing/banner/Small-banner-1.jpg",
+              title1: "",
+              title2: "",
             },
             {
-              image: "/images/Bags/banner/samllBanner2.png",
-              title1: "SAVE 60%",
-              title2: "WOMEN",
+              image: "/images/clothing/banner/Small-banner-2.jpg",
+              title1: "",
+              title2: "",
+            },
+            {
+              image: "/images/clothing/banner/Small-banner-3.jpg",
+              title1: "",
+              title2: "",
             },
           ]}
-          cardHeight={315}
+          cardHeight={200}
           textAlign="end"
+          title1Color="red"
           title2Color="#222"
         />
 
@@ -84,7 +92,7 @@ const Clothing = () => {
           <Row gutter={[32, 32]}>
             {clothProducts.slice(0, 4).map((item, index) => (
               <Col key={index} lg={6} sm={24} xs={24} className="">
-                <CardStyle6 {...item} />
+                <CardStyle2 {...item} />
               </Col>
             ))}
           </Row>

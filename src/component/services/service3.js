@@ -12,6 +12,9 @@ const StyledDiv = styled.div`
     padding: 5% 0px;
     min-height: 170px;
     align-items: center;
+    .main-col {
+      border-right: 2px solid #e4e4e4;
+    }
 
     .main-div {
       display: flex;
@@ -51,13 +54,36 @@ const StyledDiv = styled.div`
       }
     }
   }
+
+  @media (max-width: 1200px) {
+    .main-row {
+      .main-col {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        .main-div {
+          width: 315px;
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
 `;
 
-const Service1 = (props) => {
+const Service3 = (props) => {
   return (
     <StyledDiv style={props.style}>
       <Row className="main-row">
-        <Col lg={6} md={12} sm={24} xs={24} style={{ borderRight: "2px solid #e4e4e4" }}>
+        <Col
+          xl={6}
+          lg={12}
+          md={12}
+          sm={24}
+          xs={24}
+          className="main-col"
+          style={{ borderRight: "2px solid #e4e4e4" }}
+        >
           <div className="main-div">
             <FiTruck className="icons" />
             <div className="text">
@@ -67,7 +93,15 @@ const Service1 = (props) => {
           </div>
         </Col>
 
-        <Col lg={6} md={12} sm={24} xs={24} style={{ borderRight: "2px solid #e4e4e4" }}>
+        <Col
+          xl={6}
+          lg={12}
+          md={12}
+          sm={24}
+          xs={24}
+          className="main-col"
+          style={{ borderRight: "2px solid #e4e4e4" }}
+        >
           <div className="main-div">
             <AiOutlineFieldTime className="icons" />
             <div className="text">
@@ -77,7 +111,15 @@ const Service1 = (props) => {
           </div>
         </Col>
 
-        <Col lg={6} md={12} sm={24} xs={24} style={{ borderRight: "2px solid #e4e4e4" }}>
+        <Col
+          xl={6}
+          lg={12}
+          md={12}
+          sm={24}
+          xs={24}
+          className="main-col"
+          style={{ borderRight: "2px solid #e4e4e4" }}
+        >
           <div className="main-div">
             <HiOutlineSpeakerphone className="icons" />
             <div className="text">
@@ -87,7 +129,7 @@ const Service1 = (props) => {
           </div>
         </Col>
 
-        <Col lg={6} md={12} sm={24} xs={24}>
+        <Col className="main-col" xl={6} lg={12} md={12} sm={24} xs={24}>
           <div className="main-div">
             <RiSecurePaymentLine className="icons" />
             <div className="text">
@@ -101,4 +143,4 @@ const Service1 = (props) => {
   );
 };
 
-export default Service1;
+export default Service3;

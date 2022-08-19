@@ -3,6 +3,7 @@ import { Drawer, Row, Col, Divider } from "antd";
 import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
 import { BiTrash } from "react-icons/bi";
+import { TiShoppingCart } from "react-icons/ti";
 import Link from "next/link";
 import { PrimaryButton } from "../buttons";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,7 +32,7 @@ const SideCart = (props) => {
       <Row justify="space-between">
         <Col>
           <div style={{ color: "#54595f", fontSize: 20, fontWeight: 600 }}>
-            SHOPPING BAG <sup>1</sup>
+            SHOPPING CART <sup>{items.length}</sup>
           </div>
         </Col>
         <Col>
@@ -49,54 +50,87 @@ const SideCart = (props) => {
           overflowX: "hidden",
         }}
       >
-        {items.map((item, index) => (
+        {items.length > 0 ? (
           <>
-            <div ksy={index} className="my-3">
-              <Row gutter={[16, 0]}>
-                <Col span={7}>{/* <img src={item.images[0]} className="w-100" /> */}</Col>
-
-                <Col span={14}>
-                  <div className="product-name mb-2">{item.title}</div>
-
-                  <Row align="middle" gutter={[24, 0]}>
-                    <Col xs={12} lg={12}>
-                      <div className="quantity-container">
-                        <div
-                          // onClick={() => dispatch(decreaseCartItemQuantity(data))}
-                          className="decrease-button"
-                        >
-                          {`−`}
-                        </div>
-                        <div className="quantity">{item.quantity}</div>
-                        <div
-                          // onClick={() => dispatch(increaseCartItemQuantity(data))}
-                          className="increase-button"
-                        >
-                          +
-                        </div>
-                      </div>
+            {items.map((item, index) => (
+              <>
+                <div ksy={index} className="my-3">
+                  <Row gutter={[16, 0]}>
+                    <Col span={7}>
+                      {/* <img src={item.images[0]} className="w-100" /> */}
                     </Col>
-                    <Col xs={12} lg={12}>
-                      <div className="price mt-2">PKR {item.price?.toLocaleString()}</div>
+
+                    <Col span={14}>
+                      <div className="product-name mb-2">{item.title}</div>
+
+                      <Row align="middle" gutter={[24, 0]}>
+                        <Col xs={12} lg={12}>
+                          <div className="quantity-container">
+                            <div
+                              // onClick={() => dispatch(decreaseCartItemQuantity(data))}
+                              className="decrease-button"
+                            >
+                              {`−`}
+                            </div>
+                            <div className="quantity">{item.quantity}</div>
+                            <div
+                              // onClick={() => dispatch(increaseCartItemQuantity(data))}
+                              className="increase-button"
+                            >
+                              +
+                            </div>
+                          </div>
+                        </Col>
+                        <Col xs={12} lg={12}>
+                          <div className="price mt-2">
+                            PKR {item.price?.toLocaleString()}
+                          </div>
+                        </Col>
+                      </Row>
+                    </Col>
+
+                    <Col span={3}>
+                      {loadingState == item._id ? (
+                        <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} />} />
+                      ) : (
+                        <BiTrash
+                          // onClick={() => dispatch(removeCartItem(data))}
+                          style={{ cursor: "pointer", color: "#54595f", fontSize: 16 }}
+                        />
+                      )}
                     </Col>
                   </Row>
-                </Col>
-
-                <Col span={3}>
-                  {loadingState == item._id ? (
-                    <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} />} />
-                  ) : (
-                    <BiTrash
-                      // onClick={() => dispatch(removeCartItem(data))}
-                      style={{ cursor: "pointer", color: "#54595f", fontSize: 16 }}
-                    />
-                  )}
-                </Col>
-              </Row>
-            </div>
-            {index + 1 <= items.length ? <Divider style={{ margin: 0 }} /> : null}
+                </div>
+                {index + 1 <= items.length ? <Divider style={{ margin: 0 }} /> : null}
+              </>
+            ))}
           </>
-        ))}
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "60%",
+              width: "100%",
+              textAlign: "center",
+            }}
+          >
+            <div>
+              <TiShoppingCart style={{ fontSize: 64, marginBottom: 24 }} />
+              <h5>Your cart is currently empty.</h5>
+              <Link href="/feature/product-element/product-box">
+                <PrimaryButton
+                  style={{ borderRadius: 100 }}
+                  className="mt-2 w-100"
+                  onClick={() => dispatch(closeCart())}
+                >
+                  Continue Shopping
+                </PrimaryButton>
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
       <section className="cart-footer">
         <Divider style={{ margin: "16px 0" }} />
