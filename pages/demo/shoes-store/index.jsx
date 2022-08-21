@@ -1,21 +1,9 @@
 import Head from "next/head";
-import { Row, Col } from "antd";
-import ShopCard from "src/component/cards/shopCard";
-// import HomeCarousel from "src/component/heroSection";
-import Carousel1 from "src/component/carousel/carousel1";
-import DressCategories from "src/component/categories/derssCategories";
-import ProductListing from "src/component/productListing";
 import ProductCarousel from "src/component/productListing/carousel";
 import styled from "styled-components";
 import FullBgImageSection from "src/component/heroSection/FullBgImageSection";
-import { brownHair } from "images";
-import SidebarFiltration from "src/component/sidebar/sidebarFiltration";
 import SubscriptionModal from "src/component/modals/subscriptionModal3";
-import SortItems from "src/component/sortItems";
-import Heading from "src/component/headings";
 import BlogCarousel from "src/component/productListing/blogCarousel";
-import ProductVerticalCarousel from "src/component/productListing/productVerticalCarousel";
-import { productStyle5, productStyle8 } from "src/mock/mockupData";
 import Category1 from "src/component/category/category1";
 import Category3 from "src/component/category/category3";
 import Title4 from "src/component/titles/title4";
@@ -25,38 +13,6 @@ import CardStyle6 from "src/component/cards/CardStyle6";
 import { shoesProducts, shoesBlogs } from "src/mock/shoesProducts";
 
 const BagStore = () => {
-  const carousel1Data = [
-    {
-      image: "https://multikart-react.vercel.app/assets/images/home-banner/6.jpg",
-      subHeading: "Welcome To Fashion",
-      heading: "Leather Bags",
-      link: "#",
-      placement: "center",
-    },
-    {
-      image: "https://multikart-react.vercel.app/assets/images/home-banner/7.jpg",
-      subHeading: "Welcome To Fashion",
-      heading: "Women Bags",
-      link: "#",
-      placement: "center",
-    },
-    {
-      image: "https://multikart-react.vercel.app/assets/images/home-banner/8.jpg",
-      subHeading: "Welcome To Fashion",
-      heading: "Men Bags",
-      link: "#",
-      placement: "center",
-    },
-    {
-      image:
-        "https://cdn.shopify.com/s/files/1/0555/1000/7999/files/rtw-creation-14-august-azadi-sale-desktop.jpg",
-      subHeading: "Get FREE shipping when you buy any two!",
-      heading: "AZADI SALE",
-      link: "#",
-      placement: "end",
-    },
-  ];
-
   return (
     <>
       <Head>

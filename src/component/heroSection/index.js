@@ -3,33 +3,33 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import Slider from "react-slick";
 import { ButtonWrapper } from "../buttons";
 
-const carouselData = [
-  {
-    title: "Women's week",
-    subtitle: "Take advantage of promotions upto 60%",
-    backgroundImage: ["/images/slide_1.jpg", "/images/slide_1.jpg"],
-  },
-  {
-    text: "NEW TREND",
-    title: "THE BASICS",
-    subtitle: "An exclusive selction of season's trends.",
-    backgroundImage: ["/images/slide_2.jpg", "/images/slide_2.jpg"],
-  },
-  {
-    text: "NEW COLLECTION",
-    title: "Bellemount '20",
-    subtitle: (
-      <div>
-        Rapidiously redifine dynamic niche markets before
-        <br />
-        plug-and-play collaboration and idea-sharing Continually
-        <br />
-        utlilize focused convergence via top-line outsourcing
-      </div>
-    ),
-    backgroundImage: ["/images/slide_3.jpg", "/images/slide_3.jpg"],
-  },
-];
+// const carouselData = [
+//   {
+//     title: "Women's week",
+//     subtitle: "Take advantage of promotions upto 60%",
+//     backgroundImage: ["/images/slide_1.jpg", "/images/slide_1.jpg"],
+//   },
+//   {
+//     text: "NEW TREND",
+//     title: "THE BASICS",
+//     subtitle: "An exclusive selction of season's trends.",
+//     backgroundImage: ["/images/slide_2.jpg", "/images/slide_2.jpg"],
+//   },
+//   {
+//     text: "NEW COLLECTION",
+//     title: "Bellemount '20",
+//     subtitle: (
+//       <div>
+//         Rapidiously redifine dynamic niche markets before
+//         <br />
+//         plug-and-play collaboration and idea-sharing Continually
+//         <br />
+//         utlilize focused convergence via top-line outsourcing
+//       </div>
+//     ),
+//     backgroundImage: ["/images/slide_3.jpg", "/images/slide_3.jpg"],
+//   },
+// ];
 
 const carouselSettings = {
   dots: false,
@@ -46,13 +46,14 @@ const carouselSettings = {
 const HeroSection = (props) => {
   return (
     <Slider
+      autoplay={true}
       {...carouselSettings}
       draggable={true}
       autoplaySpeed={8000}
       centerPadding={"0"}
       accessibility={true}
     >
-      {carouselData.map((item, index) => (
+      {props.carouselData.map((item, index) => (
         <Carousel key={`carousel-${index + 1}`} {...item} />
       ))}
     </Slider>
@@ -81,7 +82,15 @@ const Carousel = (props) => {
         <p className="text-uppercase my-2 my-md-3 title">{title}</p>
         <p className="subtitle">{subtitle}</p>
 
-        <ButtonWrapper style={{ width: 280, marginTop: 32 }}>EXPLORE NOW</ButtonWrapper>
+        <ButtonWrapper
+          style={{
+            width: 280,
+            marginTop: 32,
+            display: props.btnDisplay ? "flex" : "none",
+          }}
+        >
+          EXPLORE NOW
+        </ButtonWrapper>
       </div>
 
       <div className="social-icons d-none d-sm-flex text-white">
@@ -119,14 +128,14 @@ const Carousel = (props) => {
 export default HeroSection;
 
 const StyledDiv = styled.div`
-  height: 100vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
 
   .eaze-animate {
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -229,6 +238,7 @@ const Image = styled.div`
   background-image: ${(props) => `url(${props.backgroundImage[0]})`};
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 
   @media (max-width: 1024px) {
     background-image: ${(props) => `url(${props.backgroundImage[1]})`};

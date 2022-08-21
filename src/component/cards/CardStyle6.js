@@ -15,13 +15,12 @@ import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
 import { addItemToCart } from "src/redux/actions/cartActions";
 
 const CardStyle6 = (props) => {
-  const {productDetails, _id, images, title, price, brandName, listView } = props;
+  const { productDetails, _id, images, title, price, brandName, listView } = props;
   const dispatch = useDispatch();
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
     currency: "PKR",
   });
-
 
   const { items: wishlist } = useSelector((state) => state.wishlist);
   let wishlistItem = wishlist?.map((item) => item._id);
@@ -40,30 +39,34 @@ const CardStyle6 = (props) => {
           </Link>
           <div className="cart-actions">
             <div className="add_to_cart" style={{ opacity: 1 }}>
-              <AiOutlineShoppingCart onClick={() => {
-                    dispatch(addItemToCart(productDetails));
-                  }}  size={20} title={"Add to cart"} />
+              <AiOutlineShoppingCart
+                onClick={() => {
+                  dispatch(addItemToCart(productDetails));
+                }}
+                size={20}
+                title={"Add to cart"}
+              />
             </div>
             <div className="add_to_wishlist">
-            {wishlistItem.includes(_id) ? (
-                  <div
-                    className="wish-button"
-                    onClick={() => {
-                      dispatch(removeWishlistItem(productDetails));
-                    }}
-                  >
-                    <BsSuitHeartFill className="icon" title="Remove from wishlist" />
-                  </div>
-                ) : (
-                  <div
-                    className="wish-button"
-                    onClick={() => {
-                      dispatch(addItemToWishlist(productDetails))
-                    }}
-                  >
-                    <BsSuitHeart className="icon" title="Add to wishlist" />
-                  </div>
-                )}
+              {wishlistItem.includes(_id) ? (
+                <div
+                  className="wish-button"
+                  onClick={() => {
+                    dispatch(removeWishlistItem(productDetails));
+                  }}
+                >
+                  <BsSuitHeartFill className="icon" title="Remove from wishlist" />
+                </div>
+              ) : (
+                <div
+                  className="wish-button"
+                  onClick={() => {
+                    dispatch(addItemToWishlist(productDetails));
+                  }}
+                >
+                  <BsSuitHeart className="icon" title="Add to wishlist" />
+                </div>
+              )}
               {/* <AiOutlineHeart size={20} title={"Add to wishlist"} /> */}
             </div>
             <div className="quick_view">
@@ -97,7 +100,7 @@ const CardStyle6 = (props) => {
             <div className="price">
               {formatedPrice.format(price)}{" "}
               <small style={{ color: "#858585", textDecoration: "line-through" }}>
-                {price * 1.5}
+                PKR {price * 1.5}
               </small>
             </div>
 

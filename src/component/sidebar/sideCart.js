@@ -7,7 +7,12 @@ import { TiShoppingCart } from "react-icons/ti";
 import Link from "next/link";
 import { PrimaryButton } from "../buttons";
 import { useDispatch, useSelector } from "react-redux";
-import { closeCart, decreaseCartItemQuantity, increaseCartItemQuantity, removeCartItem } from "../../redux/actions/cartActions";
+import {
+  closeCart,
+  decreaseCartItemQuantity,
+  increaseCartItemQuantity,
+  removeCartItem,
+} from "../../redux/actions/cartActions";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 
@@ -60,16 +65,28 @@ const SideCart = (props) => {
                       <img src={item.images[0]} className="w-100" />
                     </Col>
 
-                    <Col span={14}>
-                      <div className="product-name mb-2">{item.title}</div>
+                    <Col
+                      span={14}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-evenly",
+                      }}
+                    >
+                      <div className="product-name" title={item.title}>
+                        {item.title}
+                      </div>
+                      <p style={{ color: "gray", fontSize: 12 }}>
+                        PKR {item.price?.toLocaleString()}
+                      </p>
 
                       <Row align="middle" gutter={[24, 0]}>
-                        <Col xs={12} lg={12}>
+                        <Col xs={10} lg={10}>
                           <div className="quantity-container">
                             <div
                               onClick={() => {
-                                if(item.quantity > 1){
-                                  dispatch(decreaseCartItemQuantity(item))
+                                if (item.quantity > 1) {
+                                  dispatch(decreaseCartItemQuantity(item));
                                 }
                               }}
                               className="decrease-button"
@@ -85,9 +102,9 @@ const SideCart = (props) => {
                             </div>
                           </div>
                         </Col>
-                        <Col xs={12} lg={12}>
-                          <div className="price mt-2">
-                            PKR {item.price?.toLocaleString()}
+                        <Col xs={14} lg={14}>
+                          <div className="price">
+                            PKR {(item.price * item.quantity).toLocaleString()}
                           </div>
                         </Col>
                       </Row>
@@ -162,7 +179,17 @@ const StyledDrawer = styled(Drawer)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100px;
+    width: 85px;
+  }
+
+  .product-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   .increase-button,
@@ -173,6 +200,8 @@ const StyledDrawer = styled(Drawer)`
     text-align: center;
     cursor: pointer;
     user-select: none;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
   }
 
   .cart-footer {

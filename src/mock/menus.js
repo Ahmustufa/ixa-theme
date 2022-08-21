@@ -118,6 +118,7 @@ export const mainMenu = [
       { title: "Shoes", link: "/demo/shoes-store" },
       { title: "Bags", link: "/demo/bag-store" },
       { title: "Clothing", link: "/demo/clothing-store" },
+      { title: "Electronics", link: "/demo/electronics-store" },
     ],
     link: "",
   },

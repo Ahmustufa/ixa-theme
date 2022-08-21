@@ -26,7 +26,36 @@ const Home = () => {
       </Head>
 
       <SubscriptionModal image="/images/subscriptionModalBg.png" />
-      <HomeCarousel />
+      <HomeCarousel
+        btnDisplay={true}
+        carouselData={[
+          {
+            title: "Women's week",
+            subtitle: "Take advantage of promotions upto 60%",
+            backgroundImage: ["/images/slide_1.jpg", "/images/slide_1.jpg"],
+          },
+          {
+            text: "NEW TREND",
+            title: "THE BASICS",
+            subtitle: "An exclusive selction of season's trends.",
+            backgroundImage: ["/images/slide_2.jpg", "/images/slide_2.jpg"],
+          },
+          {
+            text: "NEW COLLECTION",
+            title: "Bellemount '20",
+            subtitle: (
+              <div>
+                Rapidiously redifine dynamic niche markets before
+                <br />
+                plug-and-play collaboration and idea-sharing Continually
+                <br />
+                utlilize focused convergence via top-line outsourcing
+              </div>
+            ),
+            backgroundImage: ["/images/slide_3.jpg", "/images/slide_3.jpg"],
+          },
+        ]}
+      />
       <StyledPage>
         <section className="section-wrapper">
           <Row justify="space-between" gutter={[0, 40]}>
@@ -60,7 +89,7 @@ const Home = () => {
             Make a statement.
           </div>
 
-          <img src="/images/slide_3.jpg" className="img-fluid mt-4" />
+          <img src="/images/slide_3.jpg" width="100%" />
         </section>
       </StyledPage>
     </>
