@@ -49,7 +49,7 @@ const Checkout = () => {
 
   const calculateTotal = (cart) => {
     const subTotal = cart.reduce(
-      (accu, item) => (accu += item.quantity * item.product.price),
+      (accu, item) => (accu += item.quantity * item.price),
       0
     );
     // console.log("Sub total", subTotal);
@@ -249,20 +249,20 @@ const Checkout = () => {
                       <div className="box d-flex">
                         <div>
                           <img
-                            src={process.env.NEXT_PUBLIC_STRAPI_URL + item.images[0]?.url}
+                            src={item.images[0]}
                             style={{ width: 50 }}
                           />
                         </div>
 
                         <div className="ml-3">
-                          <p className="font-weight-light">{item.product.productName}</p>
+                          <p className="font-weight-light">{item.title}</p>
                           <p>1 x {item.quantity}</p>
                         </div>
                       </div>
                     </Col>
                     <Col className="p-3 d-flex" span={8}>
                       <p className="font-weight-light title">
-                        PKR {item.product.price?.toLocaleString()}
+                        PKR {item.price?.toLocaleString()}
                       </p>
                       {loadingState == item._id ? (
                         <Spin
@@ -275,7 +275,7 @@ const Checkout = () => {
                         />
                       ) : (
                         <BiTrash
-                          onClick={() => removeCartItemFunc(item)}
+                          onClick={() => removeCartItem(item)}
                           style={{
                             cursor: "pointer",
                             color: "#54595f",

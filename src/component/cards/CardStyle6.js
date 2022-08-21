@@ -11,15 +11,20 @@ import {
   AiOutlineSync,
 } from "react-icons/ai";
 import { Rate, Row, Col } from "antd";
+import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
+import { addItemToCart } from "src/redux/actions/cartActions";
 
 const CardStyle6 = (props) => {
-  const { images, title, price, brandName, listView } = props;
+  const {productDetails, _id, images, title, price, brandName, listView } = props;
   const dispatch = useDispatch();
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
     currency: "PKR",
   });
 
+
+  const { items: wishlist } = useSelector((state) => state.wishlist);
+  let wishlistItem = wishlist?.map((item) => item._id);
   return (
     <StyledCard images={images}>
       <Row justify="space-between">
@@ -30,15 +35,36 @@ const CardStyle6 = (props) => {
           lg={listView ? 6 : 24}
           xl={listView ? 4 : 24}
         >
-          <Link href={`/product/${props._id}`}>
+          <Link href={`/product/${_id}`}>
             <div className="image-container" />
           </Link>
           <div className="cart-actions">
             <div className="add_to_cart" style={{ opacity: 1 }}>
-              <AiOutlineShoppingCart size={20} title={"Add to cart"} />
+              <AiOutlineShoppingCart onClick={() => {
+                    dispatch(addItemToCart(productDetails));
+                  }}  size={20} title={"Add to cart"} />
             </div>
             <div className="add_to_wishlist">
-              <AiOutlineHeart size={20} title={"Add to wishlist"} />
+            {wishlistItem.includes(_id) ? (
+                  <div
+                    className="wish-button"
+                    onClick={() => {
+                      dispatch(removeWishlistItem(productDetails));
+                    }}
+                  >
+                    <BsSuitHeartFill className="icon" title="Remove from wishlist" />
+                  </div>
+                ) : (
+                  <div
+                    className="wish-button"
+                    onClick={() => {
+                      dispatch(addItemToWishlist(productDetails))
+                    }}
+                  >
+                    <BsSuitHeart className="icon" title="Add to wishlist" />
+                  </div>
+                )}
+              {/* <AiOutlineHeart size={20} title={"Add to wishlist"} /> */}
             </div>
             <div className="quick_view">
               <AiOutlineEye size={22} title={"Quick view"} />

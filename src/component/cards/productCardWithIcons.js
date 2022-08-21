@@ -8,15 +8,21 @@ import {
   AiOutlineEye,
   AiOutlineSync,
 } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToCart, removeCartItem } from "src/redux/actions/cartActions";
+import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
 
 const ProductCardWithIcons = (props) => {
-  const { _id, title, brandName, price, images, listView } = props;
+  const {productDetails, _id, title, brandName, price, images, listView } = props;
+  const dispatch = useDispatch();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
     currency: "PKR",
   });
 
+  const { items: wishlist } = useSelector((state) => state.wishlist);
+  let wishlistItem = wishlist?.map((item) => item._id);
   return (
     <StyledCard>
       <Row justify="space-between">
@@ -37,11 +43,29 @@ const ProductCardWithIcons = (props) => {
 
           <div className="icon-section">
             <div className="icon icon-1">
-              <AiOutlineShoppingCart size={20} title={"Add to cart"} />
+            <AiOutlineShoppingCart onClick={() => {
+                    dispatch(addItemToCart(productDetails));
+                  }}  size={20} title={"Add to cart"} />
             </div>
-            <div className="icon icon-2">
-              <AiOutlineHeart size={20} title={"Add to wishlist"} />
-            </div>
+            {wishlistItem.includes(_id) ? (
+                  <div
+                    className="icon icon-2"
+                    onClick={() => {
+                      dispatch(removeWishlistItem(productDetails));
+                    }}
+                  >
+                    <BsSuitHeartFill className="icon" />
+                  </div>
+                ) : (
+                  <div
+                    className="icon icon-2"
+                    onClick={() => {
+                      dispatch(addItemToWishlist(productDetails))
+                    }}
+                  >
+                    <BsSuitHeart className="icon" />
+                  </div>
+                )}
             <div className="icon icon-3">
               <AiOutlineEye size={20} title={"Quick view"} />
             </div>

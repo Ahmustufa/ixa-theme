@@ -5,6 +5,7 @@ export const bagsProducts = [
   {
     _id: "fa0a561a-a40c-4249-94db-9c98098c0b7d",
     title: "Allover Print Backpack With Pencil Case",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality
@@ -31,6 +32,7 @@ export const bagsProducts = [
   {
     _id: "a0437f77-a40e-4fef-b76c-40e514058564",
     title: "Argyle Quilted Double Handle Square Bag With Coin Purse",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality
@@ -57,6 +59,7 @@ export const bagsProducts = [
   {
     _id: "a0718a29-7f0c-44d7-a7c1-e6a1156e7514",
     title: "Butterfly Print Patch Detail Functional Backpack With Pencil Case",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality
@@ -82,6 +85,7 @@ export const bagsProducts = [
   {
     _id: "0638178a-0b16-4faa-b061-2b930c68a5a4",
     title: "Letter Graphic Shoulder Tote Bag With Small Pouch & Bag Charm",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality
@@ -108,6 +112,7 @@ export const bagsProducts = [
   {
     _id: "1a3b5c7f-d245-4c88-bc95-a6401133c98a",
     title: "Mini Letter Graphic Studded Decor Flap Square Bag",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality
@@ -134,6 +139,7 @@ export const bagsProducts = [
   {
     _id: "fd3b475c-fc88-4d12-a443-59d33f08915c",
     title: "Letter Graphic Two Tone Shoulder Tote Bag",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality
@@ -161,6 +167,7 @@ export const bagsProducts = [
   {
     _id: "b5e65e22-316c-4254-aab6-6fd2e1cb7bd0",
     title: "Mini Neon Lime Clear Trolley Design Box Bag",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality
@@ -189,6 +196,7 @@ export const bagsProducts = [
   {
     _id: "02e31cb7-c57d-4142-8607-020862968677",
     title: "Mini Pom Pom Decor Fuzzy Novelty Bag",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality
@@ -218,6 +226,7 @@ export const bagsProducts = [
   {
     _id: "f956fc32-18df-482a-a8e6-149abadc95b1",
     title: "Minimalist Large Capacity Duffel Bag",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality
@@ -248,6 +257,7 @@ export const bagsProducts = [
   {
     _id: "ce88bbe5-f074-4806-a38c-770ee58f6de3",
     title: "Minimalist Shoulder Tote Bag",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality
@@ -274,6 +284,7 @@ export const bagsProducts = [
   {
     _id: "5ca05669-4355-49fa-b665-5dde8d67c443",
     title: "Allover Print Purse",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality
@@ -304,6 +315,7 @@ export const bagsProducts = [
   {
     _id: "927d3117-24cf-4488-be0c-03d2ef502cc2",
     title: "Plants Graphic Shopper Bag",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality
@@ -334,6 +346,7 @@ export const bagsProducts = [
   {
     _id: "768de678-39c1-41bf-b667-e788a997e648",
     title: "Pocket Front Functional Backpack",
+    quantity: 1,
     para: (
       <>
         Best Leather Quality

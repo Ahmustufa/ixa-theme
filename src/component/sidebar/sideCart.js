@@ -7,7 +7,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import Link from "next/link";
 import { PrimaryButton } from "../buttons";
 import { useDispatch, useSelector } from "react-redux";
-import { closeCart } from "../../redux/actions/cartActions";
+import { closeCart, decreaseCartItemQuantity, increaseCartItemQuantity, removeCartItem } from "../../redux/actions/cartActions";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 
@@ -57,7 +57,7 @@ const SideCart = (props) => {
                 <div ksy={index} className="my-3">
                   <Row gutter={[16, 0]}>
                     <Col span={7}>
-                      {/* <img src={item.images[0]} className="w-100" /> */}
+                      <img src={item.images[0]} className="w-100" />
                     </Col>
 
                     <Col span={14}>
@@ -67,14 +67,18 @@ const SideCart = (props) => {
                         <Col xs={12} lg={12}>
                           <div className="quantity-container">
                             <div
-                              // onClick={() => dispatch(decreaseCartItemQuantity(data))}
+                              onClick={() => {
+                                if(item.quantity > 1){
+                                  dispatch(decreaseCartItemQuantity(item))
+                                }
+                              }}
                               className="decrease-button"
                             >
                               {`−`}
                             </div>
                             <div className="quantity">{item.quantity}</div>
                             <div
-                              // onClick={() => dispatch(increaseCartItemQuantity(data))}
+                              onClick={() => dispatch(increaseCartItemQuantity(item))}
                               className="increase-button"
                             >
                               +
@@ -94,7 +98,7 @@ const SideCart = (props) => {
                         <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} />} />
                       ) : (
                         <BiTrash
-                          // onClick={() => dispatch(removeCartItem(data))}
+                          onClick={() => dispatch(removeCartItem(item))}
                           style={{ cursor: "pointer", color: "#54595f", fontSize: 16 }}
                         />
                       )}

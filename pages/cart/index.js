@@ -23,24 +23,13 @@ const ShoppingBag = () => {
   const [loadingState, setLoadingState] = useState("");
   const calculateTotal = (cart) => {
     const subTotal = cart.reduce(
-      (accu, item) => (accu += item.quantity * item.product.price),
+      (accu, item) => (accu += item.quantity * item.price),
       0
     );
     // console.log("Sub total", subTotal);
     return subTotal.toLocaleString();
   };
 
-  // ========Remove cart============
-  const [deleteCart, deleteCartLoading] = useFetch(Mutations.deleteCartItem);
-  const removeCartItemFunc = async (item) => {
-    setLoadingState(item._id);
-    try {
-      const { data } = await deleteCart(item);
-      dispatch(removeCartItem(data));
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
 
   const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
@@ -72,7 +61,7 @@ const ShoppingBag = () => {
                     <div>
                       <img
                         src={
-                          process.env.NEXT_PUBLIC_STRAPI_URL + item.product.images[0].url
+                          item.images[0]
                         }
                         style={{ width: 180 }}
                       />
@@ -90,7 +79,7 @@ const ShoppingBag = () => {
                         />
                       ) : (
                         <BiTrash
-                          onClick={() => removeCartItemFunc(item)}
+                          onClick={() => dispatch(removeCartItem(item))}
                           style={{
                             cursor: "pointer",
                             color: "#54595f",
@@ -101,7 +90,7 @@ const ShoppingBag = () => {
                           }}
                         />
                       )}
-                      <div className="product-name">{item.productName}</div>
+                      <div className="product-name">{item.title}</div>
 
                       <div className="">
                         <div
@@ -110,7 +99,7 @@ const ShoppingBag = () => {
                         >
                           <div className="">Price: </div>
                           <div className="font-weight-light ml-2">
-                            Rs. {item.product.price.toLocaleString()}
+                            Rs. {item.price.toLocaleString()}
                           </div>
                         </div>
                         <div
@@ -151,7 +140,7 @@ const ShoppingBag = () => {
                         >
                           <div className="">Subtotal: </div>
                           <div className="font-weight-light ml-2">
-                            Rs. {(item.product.price * item.quantity).toLocaleString()}
+                            Rs. {(item.price * item.quantity).toLocaleString()}
                           </div>
                         </div>
                       </div>

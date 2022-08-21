@@ -69,7 +69,7 @@ const ProductCarousel = (props) => {
       <Slider {...carouselSettings}>
         {props.data.map((item, index) => (
           <div key={index}>
-            <CardStyle {...item} />
+            <CardStyle {...item} productDetails={item}/>
           </div>
         ))}
       </Slider>

@@ -11,9 +11,11 @@ import {
   AiOutlineSync,
 } from "react-icons/ai";
 import { Rate } from "antd";
+import { addItemToCart } from "src/redux/actions/cartActions";
+import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
 
 const CardStyle8 = (props) => {
-  const { images, title, price } = props;
+  const {productDetails, _id, images, title, price } = props;
   const dispatch = useDispatch();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -21,10 +23,12 @@ const CardStyle8 = (props) => {
     currency: "PKR",
   });
 
+  const { items: wishlist } = useSelector((state) => state.wishlist);
+  let wishlistItem = wishlist?.map((item) => item._id);
   return (
     <StyledCard>
       {/* <img src={image} width="100%" /> */}
-      <Link href={`/product}`}>
+      <Link href={`/product/${_id}`}>
         <div
           className="image-container"
           style={{ backgroundImage: `url(${images[0]})` }}
@@ -32,7 +36,25 @@ const CardStyle8 = (props) => {
       </Link>
       <div className="cart-actions">
         <div className="add_to_wishlist">
-          <AiOutlineHeart size={20} title={"Add to wishlist"} />
+          {wishlistItem.includes(_id) ? (
+            <div
+              className="wish-button"
+              onClick={() => {
+                dispatch(removeWishlistItem(productDetails));
+              }}
+            >
+              <BsSuitHeartFill className="icon" title="Remove from wishlist" />
+            </div>
+          ) : (
+            <div
+              className="wish-button"
+              onClick={() => {
+                dispatch(addItemToWishlist(productDetails))
+              }}
+            >
+              <BsSuitHeart className="icon" title="Add to wishlist" />
+            </div>
+          )}
         </div>
         <div className="quick_view">
           <AiOutlineEye size={20} title={"Quick view"} />
@@ -42,7 +64,11 @@ const CardStyle8 = (props) => {
         </div>
       </div>
 
-      <div className="add_to_cart" style={{ opacity: 1 }}>
+      <div className="add_to_cart" 
+      onClick={() => {
+        dispatch(addItemToCart(productDetails));
+      }}
+      style={{ opacity: 1 }}>
         Add To Cart
       </div>
       <div className="item-details">

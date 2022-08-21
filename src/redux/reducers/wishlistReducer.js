@@ -13,7 +13,7 @@ const wishlistReducer = (state = { items: [] }, action) => {
 
     case Wishlist.REMOVE_ITEM: {
       const { payload } = action;
-      const index = state.items.findIndex((item) => item === payload);
+      const index = state.items.findIndex((item) => item._id === payload._id);
       state.items.splice(index, 1);
       return { ...state };
     }

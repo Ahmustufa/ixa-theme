@@ -10,9 +10,11 @@ import {
   AiOutlineEye,
   AiOutlineSync,
 } from "react-icons/ai";
+import { addItemToCart } from "src/redux/actions/cartActions";
+import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
 
 const CardStyle5 = (props) => {
-  const { _id, images, title, price } = props;
+  const { productDetails, _id, images, title, price } = props;
   const dispatch = useDispatch();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -20,6 +22,8 @@ const CardStyle5 = (props) => {
     currency: "PKR",
   });
 
+  const { items: wishlist } = useSelector((state) => state.wishlist);
+  let wishlistItem = wishlist?.map((item) => item._id);
   return (
     <StyledCard>
       {/* <img src={image} width="100%" /> */}
@@ -31,10 +35,32 @@ const CardStyle5 = (props) => {
       </Link>
       <div className="cart-actions">
         <div className="add_to_cart" style={{ opacity: 1 }}>
-          <AiOutlineShoppingCart size={20} title={"Add to cart"} />
+          <AiOutlineShoppingCart 
+          onClick={() => {
+            dispatch(addItemToCart(productDetails));
+          }}
+          size={20} title={"Add to cart"} />
         </div>
         <div className="add_to_wishlist">
-          <AiOutlineHeart size={20} title={"Add to wishlist"} />
+        {wishlistItem.includes(_id) ? (
+            <div
+              className="wish-button"
+              onClick={() => {
+                dispatch(removeWishlistItem(productDetails));
+              }}
+            >
+              <BsSuitHeartFill className="icon" title="Remove from wishlist" />
+            </div>
+          ) : (
+            <div
+              className="wish-button"
+              onClick={() => {
+                dispatch(addItemToWishlist(productDetails))
+              }}
+            >
+              <BsSuitHeart className="icon" title="Add to wishlist" />
+            </div>
+          )}
         </div>
         <div className="quick_view">
           <AiOutlineEye size={20} title={"Quick view"} />

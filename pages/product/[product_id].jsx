@@ -96,7 +96,7 @@ const Order = (props) => {
     }
   };
 
-  let wishlistItem = wishlist.map((item) => item.product._id);
+  let wishlistItem = wishlist?.map((item) => item._id);
   return (
     <StyledPage style={{ padding: 80 }}>
       <Row className="mx-auto position-relative" gutter={[24, 24]}>
@@ -164,8 +164,8 @@ const Order = (props) => {
                 <PrimaryButton
                   disabled={state.color == "" || state.size == ""}
                   onClick={() => {
-                    checkIfExist();
-                    // dispatch(addItemToCart(productDetails));
+                    // checkIfExist();
+                    dispatch(addItemToCart(productDetails));
                   }}
                   className="mr-3"
                 >
@@ -178,8 +178,8 @@ const Order = (props) => {
                   <div
                     className="wish-button"
                     onClick={() => {
-                      removeItemFromWishlistFunc();
-                      // dispatch(removeWishlistItem(productDetails._id));
+                      // removeItemFromWishlistFunc();
+                      dispatch(removeWishlistItem(productDetails));
                     }}
                   >
                     <BsSuitHeartFill className="icon" />
@@ -189,8 +189,8 @@ const Order = (props) => {
                   <div
                     className="wish-button"
                     onClick={() => {
-                      addItemToWishlistFunc(productDetails);
-                      // dispatch(addItemToWishlist(productDetails._id))
+                      // addItemToWishlistFunc(productDetails);
+                      dispatch(addItemToWishlist(productDetails))
                     }}
                   >
                     <BsSuitHeart className="icon" />
