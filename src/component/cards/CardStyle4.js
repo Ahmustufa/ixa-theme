@@ -13,7 +13,7 @@ import { addItemToCart } from "src/redux/actions/cartActions";
 import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
 
 const CardStyle4 = (props) => {
-  const {productDetails, _id, title, brandName, price, images } = props;
+  const { productDetails, _id, title, brandName, price, images } = props;
   const dispatch = useDispatch();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -34,32 +34,34 @@ const CardStyle4 = (props) => {
 
       <div className="icon-section">
         <div className="icon icon-1">
-          <AiOutlineShoppingCart 
-          onClick={() => {
-            dispatch(addItemToCart(productDetails));
-          }}
-          size={20} title={"Add to cart"} />
+          <AiOutlineShoppingCart
+            onClick={() => {
+              dispatch(addItemToCart(productDetails));
+            }}
+            size={20}
+            title={"Add to cart"}
+          />
         </div>
         <div className="icon icon-2">
-        {wishlistItem.includes(_id) ? (
-          <div
-            className="wish-button"
-            onClick={() => {
-              dispatch(removeWishlistItem(productDetails));
-            }}
-          >
-            <BsSuitHeartFill className="icon" title="Remove from wishlist" />
-          </div>
-        ) : (
-          <div
-            className="wish-button"
-            onClick={() => {
-              dispatch(addItemToWishlist(productDetails))
-            }}
-          >
-            <BsSuitHeart className="icon" title="Add to wishlist" />
-          </div>
-        )}
+          {wishlistItem.includes(_id) ? (
+            <div
+              className="wish-button"
+              onClick={() => {
+                dispatch(removeWishlistItem(productDetails));
+              }}
+            >
+              <BsSuitHeartFill title="Remove from wishlist" />
+            </div>
+          ) : (
+            <div
+              className="wish-button"
+              onClick={() => {
+                dispatch(addItemToWishlist(productDetails));
+              }}
+            >
+              <BsSuitHeart title="Add to wishlist" />
+            </div>
+          )}
         </div>
         <div className="icon icon-3">
           <AiOutlineEye size={20} title={"Quick view"} />
