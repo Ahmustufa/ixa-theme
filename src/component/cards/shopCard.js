@@ -1,20 +1,25 @@
 import styled from "styled-components";
 import { ButtonWrapper } from "../buttons";
+import Link from "next/link";
 
 const ShopCard = (props) => {
+  const { title, description, link } = props;
   return (
     <StyledCard>
       <div className="image-container" />
       <div className="item-details">
-        <div className="title">Back in Black</div>
-        <div className="description">
-          {`Sharp, chic and glamorous—own the room in the power pairing that's always in
-          style.`}
-        </div>
-        <ButtonWrapper style={{ width: 200 }}>SEE DEMO</ButtonWrapper>
+        <div className="title">{title}</div>
+        <div className="description">{description}</div>
+        <Link href={link}>
+          <ButtonWrapper style={{ width: 200 }}>SEE DEMO</ButtonWrapper>
+        </Link>
       </div>
     </StyledCard>
   );
+};
+
+ShopCard.defaultProps = {
+  link: "#",
 };
 
 export default ShopCard;
