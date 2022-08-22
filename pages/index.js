@@ -84,6 +84,78 @@ const Home = () => {
           bgImage={brownHair}
         />
 
+        <section
+          style={{
+            backgroundImage: "url(/images/bg-features.png)",
+            backgroundAttachment: "fixed",
+            padding: "48px 0",
+          }}
+        >
+          <div className="col-11 m-auto">
+            <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
+              HOME PAGES
+            </h3>
+            <div className="d-flex align-items-start">
+              {[1, 2, 3, 4].map((item) => (
+                <img
+                  key={item}
+                  src={`/images/home_pages/image-${item}.png`}
+                  alt={`home-image-${item}`}
+                  style={{ width: 300, objectFit: "contain", margin: "0 24px" }}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="col-11 m-auto pt-5">
+            <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
+              PRODUCT PAGES
+            </h3>
+            <div className="d-flex align-items-start">
+              {[1, 2, 3, 4].map((item) => (
+                <img
+                  key={item}
+                  src={`/images/product_pages/image-${item}.png`}
+                  alt={`product-image-${item}`}
+                  style={{ width: 300, objectFit: "contain", margin: "0 24px" }}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="col-11 mx-auto pt-5">
+            <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
+              SHOP PAGES
+            </h3>
+            <div className="d-flex align-items-start">
+              {[1, 2, 3, 4].map((item) => (
+                <img
+                  key={item}
+                  src={`/images/shop_pages/image-${item}.png`}
+                  alt={`shop-image-${item}`}
+                  style={{ width: 300, objectFit: "contain", margin: "0 24px" }}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="col-11 mx-auto pt-5">
+            <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
+              SHOP PAGES
+            </h3>
+            <div className="d-flex align-items-start">
+              {[1, 2, 3, 5].map((item) => (
+                <img
+                  key={item}
+                  src={`/images/general_pages/image-${item}.png`}
+                  alt={`shop-image-${item}`}
+                  style={{ width: 300, objectFit: "contain", margin: "0 24px" }}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="text-center">
           <div style={{ fontSize: "2rem", color: "#001719" }}>Email Template</div>
           <div style={{ color: "#979797", width: 500, margin: "auto" }}>
@@ -95,7 +167,7 @@ const Home = () => {
         </section>
 
         <section
-          style={{ backgroundImage: "/images/bg-features.png", padding: "48px 0" }}
+          style={{ backgroundImage: "url(/images/bg-features.png)", padding: "48px 0" }}
         >
           <div className="features col-11 col-xl-10 m-auto">
             <h1 style={{ fontWeight: 600 }} className="text-center heading-4 my-5">
