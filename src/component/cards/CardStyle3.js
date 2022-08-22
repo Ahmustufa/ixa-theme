@@ -10,7 +10,11 @@ import {
 } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "src/redux/actions/cartActions";
-import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
+import {
+  addItemToCompareList,
+  addItemToWishlist,
+  removeWishlistItem,
+} from "src/redux/actions";
 
 const CardStyle3 = (props) => {
   const { productDetails, _id, title, brandName, price, images } = props;
@@ -67,7 +71,13 @@ const CardStyle3 = (props) => {
           <AiOutlineEye size={20} title={"Quick view"} />
         </div>
         <div className="icon icon-4">
-          <AiOutlineSync size={20} title={"Compare"} />
+          <AiOutlineSync
+            size={20}
+            title={"Compare"}
+            onClick={() => {
+              dispatch(addItemToCompareList(productDetails));
+            }}
+          />
         </div>
       </div>
 

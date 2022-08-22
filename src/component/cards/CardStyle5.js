@@ -11,7 +11,11 @@ import {
   AiOutlineSync,
 } from "react-icons/ai";
 import { addItemToCart } from "src/redux/actions/cartActions";
-import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
+import {
+  addItemToCompareList,
+  addItemToWishlist,
+  removeWishlistItem,
+} from "src/redux/actions";
 
 const CardStyle5 = (props) => {
   const { productDetails, _id, images, title, price } = props;
@@ -35,14 +39,16 @@ const CardStyle5 = (props) => {
       </Link>
       <div className="cart-actions">
         <div className="add_to_cart" style={{ opacity: 1 }}>
-          <AiOutlineShoppingCart 
-          onClick={() => {
-            dispatch(addItemToCart(productDetails));
-          }}
-          size={20} title={"Add to cart"} />
+          <AiOutlineShoppingCart
+            onClick={() => {
+              dispatch(addItemToCart(productDetails));
+            }}
+            size={20}
+            title={"Add to cart"}
+          />
         </div>
         <div className="add_to_wishlist">
-        {wishlistItem.includes(_id) ? (
+          {wishlistItem.includes(_id) ? (
             <div
               className="wish-button"
               onClick={() => {
@@ -55,7 +61,7 @@ const CardStyle5 = (props) => {
             <div
               className="wish-button"
               onClick={() => {
-                dispatch(addItemToWishlist(productDetails))
+                dispatch(addItemToWishlist(productDetails));
               }}
             >
               <BsSuitHeart className="icon" title="Add to wishlist" />
@@ -66,7 +72,13 @@ const CardStyle5 = (props) => {
           <AiOutlineEye size={20} title={"Quick view"} />
         </div>
         <div className="compare">
-          <AiOutlineSync size={20} title={"Compare"} />
+          <AiOutlineSync
+            size={20}
+            title={"Compare"}
+            onClick={() => {
+              dispatch(addItemToCompareList(productDetails));
+            }}
+          />
         </div>
       </div>
       <div className="product-detail">
