@@ -2,16 +2,18 @@ import styled from "styled-components";
 import Link from "next/link";
 import router from "next/router";
 
-const heading = {
-  "/my-account/dashboard": "Dashboard",
-  "/my-account/orders": "Orders",
-  "/my-account/account": "Account details",
-};
+// const heading = {
+//   "/my-account/dashboard": "Dashboard",
+//   "/my-account/orders": "Orders",
+//   "/my-account/compare": "Compare Products",
+//   "/my-account/wishlist": "My Wishlist",
+//   "/my-account/account": "Account details",
+// };
 
 const AccountSidebar = (props) => {
   return (
     <StyledSidebar>
-      <h1 className="heading">{heading[router.pathname]}</h1>
+      {/* <h1 className="heading">{heading[router.pathname]}</h1> */}
       <ul className="sidebar-list">
         <li
           className={`sidebar-item ${
@@ -31,6 +33,17 @@ const AccountSidebar = (props) => {
             <a className="hoverable dark">Orders</a>
           </Link>
         </li>
+
+        <li
+          className={`sidebar-item ${
+            router.pathname == "/my-account/compare" ? "selected" : ""
+          }`}
+        >
+          <Link href="/my-account/compare">
+            <a className="hoverable dark">Compare Products</a>
+          </Link>
+        </li>
+
         <li
           className={`sidebar-item ${
             router.pathname == "/my-account/wishlist" ? "selected" : ""

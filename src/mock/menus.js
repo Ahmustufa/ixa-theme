@@ -179,7 +179,6 @@ export const mainMenu = [
     title: "pages",
     link: "#",
     submenu: [
-      { title: "Compare", link: "/pages/compare" },
       {
         title: "Account",
         submenu: [
@@ -187,6 +186,7 @@ export const mainMenu = [
           { title: "Orders", link: "/my-account/orders" },
           { title: "Wishlist", link: "/my-account/wishlist" },
           { title: "Settings", link: "/my-account/settings" },
+          { title: "Compare", link: "/my-account/compare" },
         ],
       },
       { title: "Order Success", link: "/pages/order-success" },
