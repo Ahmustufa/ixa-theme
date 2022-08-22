@@ -1,36 +1,16 @@
 import Head from "next/head";
-import ProductCarousel from "src/component/productListing/carousel";
 import HomeCarousel from "src/component/heroSection";
 import styled from "styled-components";
 import FullBgImageSection from "src/component/heroSection/FullBgImageSection";
 import SubscriptionModal from "src/component/modals/subscriptionModal3";
 import BlogCarousel from "src/component/productListing/blogCarousel";
-import Category1 from "src/component/category/category1";
-import Category3 from "src/component/category/category3";
 import Title2 from "src/component/titles/title2";
-import Service2 from "src/component/services/service3";
 import Banner from "src/component/collectionBanner/banner";
-import CardStyle6 from "src/component/cards/CardStyle6";
-import { shoesProducts, shoesBlogs } from "src/mock/shoesProducts";
 import FilterByTab from "src/component/sortItems/filterByTab";
-import {
-  productStyle1,
-  productStyle2,
-  productStyle3,
-  productStyle4,
-  productStyle5,
-  productStyle6,
-} from "src/mock/mockupData";
+import { electronicItems, electronicBlogs } from "src/mock/electronicProducts";
 
 const ElectronicStore = () => {
-  let data = [
-    ...productStyle1,
-    ...productStyle2,
-    ...productStyle3,
-    ...productStyle4,
-    ...productStyle5,
-    ...productStyle6,
-  ];
+  let data = [...electronicItems];
 
   return (
     <>
@@ -39,7 +19,10 @@ const ElectronicStore = () => {
       </Head>
 
       <StyledPage>
-        <SubscriptionModal />
+        <SubscriptionModal
+          backgroundImage="url(/images/Electronics/banner/electronics-modal.jpg)"
+          backgroundSize="contain"
+        />
 
         <HomeCarousel
           btnDisplay={false}
@@ -109,7 +92,7 @@ const ElectronicStore = () => {
               image:
                 "https://multikart-react.vercel.app/_next/static/images/banner1-62b0db6674a8f5ec6258c6d325b99543.jpg",
               title1: "10% OFF",
-              title2: "NEW WATCH",
+              title2: "SMART WATCH",
             },
             {
               image:
@@ -121,12 +104,22 @@ const ElectronicStore = () => {
               image:
                 "https://multikart-react.vercel.app/_next/static/images/banner-c8a3b404055b43880ccda054576441e2.jpg",
               title1: "50% OFF",
-              title2: "GOLD WATCH",
+              title2: "SMART WATCH",
             },
           ]}
           cardHeight={200}
           textAlign="start"
+          title1Color="#fff"
           title2Color="#fff"
+        />
+
+        <FullBgImageSection
+          h1=""
+          h3=""
+          h5=""
+          bgImage="https://www.paklap.pk/pub/media/easyslide/Best_Gaming_Laptops_in_Pakistan.jpg"
+          bgSize="contain"
+          height="70vh"
         />
 
         <div style={{ padding: "0px 5%" }}>
@@ -136,9 +129,10 @@ const ElectronicStore = () => {
             headerTitle=""
             data={data}
             tabBarData={[
-              { title: "New Arrival", id: 1, category: "new_arrival" },
-              { title: "Featured", id: 2, category: "new_arrival" },
-              { title: "Special", id: 3, category: "new_arrival" },
+              { title: "Refrigerators", id: 1, category: "fridge" },
+              { title: "Fans", id: 2, category: "fan" },
+              { title: "Health & Beauty", id: 3, category: "health-and-beauty" },
+              { title: "Others", id: 4, category: "other" },
             ]}
           />
         </div>
@@ -151,7 +145,7 @@ const ElectronicStore = () => {
         />
 
         <Title2 subtitle="Recent Story" maintitle="From the Blog" />
-        <BlogCarousel data={shoesBlogs} padding="0px 5% 5% 5%" />
+        <BlogCarousel data={electronicBlogs} padding="0px 5% 5% 5%" />
       </StyledPage>
     </>
   );

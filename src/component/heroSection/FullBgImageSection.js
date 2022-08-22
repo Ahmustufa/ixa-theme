@@ -15,8 +15,8 @@ const FullBgImageSection = (props) => {
 export default FullBgImageSection;
 
 const StyledSection = styled.div`
-  height: 50vh;
-  background-size: auto;
+  height: ${(props) => (props.height ? props.height : "50vh")};
+  background-size: ${(props) => (props.bgSize ? props.bgSize : "auto")};
   background-image: ${(props) => `url(${props.bgImage})`};
   background-position: center;
   background-attachment: fixed;

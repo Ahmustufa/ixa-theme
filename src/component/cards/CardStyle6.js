@@ -133,14 +133,14 @@ const StyledCard = styled.div`
   margin-right: 12px;
 
   .image-container {
-    border: 1px solid #f2f2f2;
+    /* border: 1px solid #f2f2f2; */
     background-color: #fff;
     border-bottom: none;
     border-radius: 4px;
     text-align: center;
     width: 100%;
     padding-top: 130%;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url(${(props) => props.images[0]});
