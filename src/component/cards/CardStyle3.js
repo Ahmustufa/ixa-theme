@@ -8,7 +8,7 @@ import {
   AiOutlineEye,
   AiOutlineSync,
 } from "react-icons/ai";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "src/redux/actions/cartActions";
 import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
 
