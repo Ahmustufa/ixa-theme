@@ -50,7 +50,7 @@ const FilterByTab = (props) => {
         {filterData.map((item, index) => {
           return (
             <Col key={index} lg={6} sm={24} xs={24} className="">
-              <CardStyle6 {...item} />
+              <CardStyle6 productDetails={item} {...item} />
             </Col>
           );
         })}
