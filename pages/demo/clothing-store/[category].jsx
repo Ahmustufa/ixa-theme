@@ -55,9 +55,13 @@ const ProductListin = (props) => {
 export default ProductListin;
 
 export async function getServerSideProps(context) {
-  const products = clothProducts.filter(
-    (item) => item.category == context?.params?.category
+  let products = clothProducts.filter(
+    // (item) => item.category == context?.params?.category
+    (item) => true
   );
+
+  products = JSON.parse(JSON.stringify(products));
+
   if (products) {
     return {
       props: { products },

@@ -128,7 +128,7 @@ const Home = () => {
               SHOP PAGES
             </h3>
             <div className="d-flex align-items-start">
-              {[1, 2, 3, 4].map((item) => (
+              {[1, 4, 3, 2].map((item) => (
                 <img
                   key={item}
                   src={`/images/shop_pages/image-${item}.png`}
@@ -187,8 +187,6 @@ const Home = () => {
             </Row>
           </div>
         </section>
-
-        <BlogCarousel />
       </StyledPage>
     </>
   );
