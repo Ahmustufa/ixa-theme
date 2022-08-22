@@ -2,14 +2,14 @@ import Head from "next/head";
 import { Row, Col } from "antd";
 import ShopCard from "../src/component/cards/shopCard";
 import HomeCarousel from "../src/component/heroSection";
-import DressCategories from "../src/component/categories/derssCategories";
-import ProductCarousel from "../src/component/productListing/carousel";
 import styled from "styled-components";
 import FullBgImageSection from "../src/component/heroSection/FullBgImageSection";
 import { brownHair } from "../images";
 import SubscriptionModal from "../src/component/modals/subscriptionModal1";
-import SortItems from "../src/component/sortItems";
 import BlogCarousel from "../src/component/productListing/blogCarousel";
+import SortItems from "../src/component/sortItems";
+import DressCategories from "../src/component/categories/derssCategories";
+import ProductCarousel from "../src/component/productListing/carousel";
 import CardStyle5 from "src/component/cards/CardStyle5";
 import { shoesProducts } from "src/mock/shoesProducts";
 import ProductListing from "../src/component/productListing";
@@ -60,18 +60,22 @@ const Home = () => {
         <section className="section-wrapper">
           <Row justify="space-between" gutter={[0, 40]}>
             <Col xs={24} sm={24} md={24} lg={24} xl={11}>
-              <ShopCard />
+              <ShopCard
+                title="London"
+                description="Classy, urban clothing, fashion."
+                link="/demo/clothing"
+              />
             </Col>
 
             <Col xs={24} sm={24} md={24} lg={24} xl={11}>
-              <ShopCard />
+              <ShopCard
+                title="Melbourne"
+                description="Urban, backpacks, travel, camping."
+                link="/demo/bag-store"
+              />
             </Col>
           </Row>
         </section>
-
-        {/* <SortItems /> */}
-        {/* <DressCategories /> */}
-        {/* <ProductCarousel CardStyle={CardStyle5} data={shoesProducts} /> */}
 
         <FullBgImageSection
           h1="Trending"
@@ -80,17 +84,39 @@ const Home = () => {
           bgImage={brownHair}
         />
 
-        <BlogCarousel />
-
-        <section>
-          <div style={{ fontSize: "3rem", color: "#54595f", textAlign: "center" }}>
-            Reveal your edginess.
-            <br />
-            Make a statement.
+        <section className="text-center">
+          <div style={{ fontSize: "2rem", color: "#001719" }}>Email Template</div>
+          <div style={{ color: "#979797", width: 500, margin: "auto" }}>
+            Polkadotsretail comes with tons of email template which include order success,
+            promotion and give away tamplates
           </div>
 
-          <img src="/images/slide_3.jpg" width="100%" />
+          <img src="/images/email_templates.png" className="w-100" />
         </section>
+
+        <section
+          style={{ backgroundImage: "/images/bg-features.png", padding: "48px 0" }}
+        >
+          <div className="features col-11 col-xl-10 m-auto">
+            <h1 style={{ fontWeight: 600 }} className="text-center heading-4 my-5">
+              Clean, <span style={{ fontWeight: 400 }}>lightweight</span> & highly modular
+            </h1>
+
+            <Row gutter={[0, 32]} justify="space-around">
+              {features.map(({ image, heading, description }) => (
+                <Col xs={24} sm={24} md={12} lg={8} l={8}>
+                  <div className="feature-card">
+                    <img src={image} />
+                    <h3 className="heading">{heading}</h3>
+                    <p className="description">{description}</p>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          </div>
+        </section>
+
+        <BlogCarousel />
       </StyledPage>
     </>
   );
@@ -103,9 +129,77 @@ const StyledPage = styled.div`
     padding: 80px;
   }
 
+  .features {
+    background-color: #fff;
+    border-radius: 12px;
+    border: 1px solid #fff4f4;
+    box-shadow: 2px 2px 3px #fff4f4;
+    background-image: url("/images/bg-clean.jpg");
+  }
+
+  .feature-card {
+    max-width: 340px;
+    margin: auto;
+
+    .heading {
+      color: #070707;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 20px 0;
+    }
+
+    .description {
+      color: #070707;
+      line-height: 32px;
+      font-weight: 500;
+    }
+  }
+
   @media only screen and (max-width: 576px) {
     .section-wrapper {
       padding: 24px;
     }
   }
 `;
+
+const features = [
+  {
+    image:
+      "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/font-preloader.svg",
+    heading: "Font Preloader",
+    description:
+      "A single source of truth for your Google and Adobe fonts, avoiding performance hiccups.",
+  },
+  {
+    image:
+      "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/modularity.svg",
+    heading: "Modularity",
+    description:
+      "Load and unload various built-in functionalities with ease. The general principle - only load what’s in use.",
+  },
+  {
+    image:
+      "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/dev-friendly.svg",
+    heading: "Developer friendly",
+    description:
+      "Love coding? Awesome, so do i! Easily extend functionalities with hooks and built-in features.",
+  },
+  {
+    image:
+      "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/future.svg",
+    heading: "Built for the future",
+    description: "Because we need to work and think ahead.",
+  },
+  {
+    image:
+      "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/seo-friendly.svg",
+    heading: "SEO friendly",
+    description: "Clean markup following web standards.",
+  },
+  {
+    image:
+      "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/svg-images.svg",
+    heading: "Built-in SVG support",
+    description: "Insert those lovely crisp and colored vector images.",
+  },
+];
