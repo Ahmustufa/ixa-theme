@@ -10,10 +10,14 @@ import {
 } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, removeCartItem } from "src/redux/actions/cartActions";
-import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
+import {
+  addItemToCompareList,
+  addItemToWishlist,
+  removeWishlistItem,
+} from "src/redux/actions";
 
 const ProductCardWithIcons = (props) => {
-  const {productDetails, _id, title, brandName, price, images, listView } = props;
+  const { productDetails, _id, title, brandName, price, images, listView } = props;
   const dispatch = useDispatch();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -43,34 +47,44 @@ const ProductCardWithIcons = (props) => {
 
           <div className="icon-section">
             <div className="icon icon-1">
-            <AiOutlineShoppingCart onClick={() => {
-                    dispatch(addItemToCart(productDetails));
-                  }}  size={20} title={"Add to cart"} />
+              <AiOutlineShoppingCart
+                onClick={() => {
+                  dispatch(addItemToCart(productDetails));
+                }}
+                size={20}
+                title={"Add to cart"}
+              />
             </div>
             {wishlistItem.includes(_id) ? (
-                  <div
-                    className="icon icon-2"
-                    onClick={() => {
-                      dispatch(removeWishlistItem(productDetails));
-                    }}
-                  >
-                    <BsSuitHeartFill className="icon" />
-                  </div>
-                ) : (
-                  <div
-                    className="icon icon-2"
-                    onClick={() => {
-                      dispatch(addItemToWishlist(productDetails))
-                    }}
-                  >
-                    <BsSuitHeart className="icon" />
-                  </div>
-                )}
+              <div
+                className="icon icon-2"
+                onClick={() => {
+                  dispatch(removeWishlistItem(productDetails));
+                }}
+              >
+                <BsSuitHeartFill className="icon" />
+              </div>
+            ) : (
+              <div
+                className="icon icon-2"
+                onClick={() => {
+                  dispatch(addItemToWishlist(productDetails));
+                }}
+              >
+                <BsSuitHeart className="icon" />
+              </div>
+            )}
             <div className="icon icon-3">
               <AiOutlineEye size={20} title={"Quick view"} />
             </div>
             <div className="icon icon-4">
-              <AiOutlineSync size={20} title={"Compare"} />
+              <AiOutlineSync
+                size={20}
+                title={"Compare"}
+                onClick={() => {
+                  dispatch(addItemToCompareList(productDetails));
+                }}
+              />
             </div>
           </div>
         </Col>

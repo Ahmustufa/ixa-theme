@@ -5,11 +5,15 @@ import { image1 } from "../../../images";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
 import { Rate, Row, Col } from "antd";
-import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
+import {
+  addItemToCompareList,
+  addItemToWishlist,
+  removeWishlistItem,
+} from "src/redux/actions";
 import { addItemToCart } from "src/redux/actions/cartActions";
 
 const CardStyle7 = (props) => {
-  const {productDetails, _id, images, title, price, listView } = props;
+  const { productDetails, _id, images, title, price, listView } = props;
   const dispatch = useDispatch();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -34,34 +38,42 @@ const CardStyle7 = (props) => {
           </Link>
           <div className="cart-actions">
             <div className="add_to_wishlist">
-            {wishlistItem.includes(_id) ? (
-                  <div
-                    className="wish-button"
-                    onClick={() => {
-                      dispatch(removeWishlistItem(productDetails));
-                    }}
-                  >
-                    <BsSuitHeartFill className="icon" title="Remove from wishlist" />
-                  </div>
-                ) : (
-                  <div
-                    className="wish-button"
-                    onClick={() => {
-                      dispatch(addItemToWishlist(productDetails))
-                    }}
-                  >
-                    <BsSuitHeart className="icon" title="Add to wishlist" />
-                  </div>
-                )}
-            </div>
-            <div className="add_to_cart" 
+              {wishlistItem.includes(_id) ? (
+                <div
+                  className="wish-button"
                   onClick={() => {
-                    dispatch(addItemToCart(productDetails));
-                  }} style={{ opacity: 1 }}>
+                    dispatch(removeWishlistItem(productDetails));
+                  }}
+                >
+                  <BsSuitHeartFill className="icon" title="Remove from wishlist" />
+                </div>
+              ) : (
+                <div
+                  className="wish-button"
+                  onClick={() => {
+                    dispatch(addItemToWishlist(productDetails));
+                  }}
+                >
+                  <BsSuitHeart className="icon" title="Add to wishlist" />
+                </div>
+              )}
+            </div>
+            <div
+              className="add_to_cart"
+              onClick={() => {
+                dispatch(addItemToCart(productDetails));
+              }}
+              style={{ opacity: 1 }}
+            >
               Add to cart
             </div>
 
-            <div className="compare">
+            <div
+              className="compare"
+              onClick={() => {
+                dispatch(addItemToCompareList(productDetails));
+              }}
+            >
               <AiOutlineEye size={20} title={"Quick View"} />
             </div>
           </div>

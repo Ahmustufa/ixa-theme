@@ -11,7 +11,11 @@ import {
   AiOutlineSync,
 } from "react-icons/ai";
 import { Rate, Row, Col } from "antd";
-import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
+import {
+  addItemToCompareList,
+  addItemToWishlist,
+  removeWishlistItem,
+} from "src/redux/actions";
 import { addItemToCart } from "src/redux/actions/cartActions";
 
 const CardStyle6 = (props) => {
@@ -73,7 +77,13 @@ const CardStyle6 = (props) => {
               <AiOutlineEye size={22} title={"Quick view"} />
             </div>
             <div className="compare">
-              <AiOutlineSync size={20} title={"Compare"} />
+              <AiOutlineSync
+                size={20}
+                title={"Compare"}
+                onClick={() => {
+                  dispatch(addItemToCompareList(productDetails));
+                }}
+              />
             </div>
           </div>
         </Col>
@@ -133,14 +143,14 @@ const StyledCard = styled.div`
   margin-right: 12px;
 
   .image-container {
-    border: 1px solid #f2f2f2;
+    /* border: 1px solid #f2f2f2; */
     background-color: #fff;
     border-bottom: none;
     border-radius: 4px;
     text-align: center;
     width: 100%;
     padding-top: 130%;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url(${(props) => props.images[0]});

@@ -127,7 +127,7 @@ const Clothing = () => {
         <Row gutter={[32, 32]}>
           {clothProducts.slice(0, 8).map((item, index) => (
             <Col key={index} lg={6} sm={24} xs={24} className="">
-              <CardStyle7 {...item} />
+              <CardStyle7 productDetails={item} {...item} />
             </Col>
           ))}
         </Row>

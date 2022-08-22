@@ -43,7 +43,6 @@ const Web3Page = () => {
   // Disconnect to the metamask
   const disconnect = async () => {
     const clear = await web3modal.clearCachedProvider();
-    console.log(clear);
     setData("");
   };
 

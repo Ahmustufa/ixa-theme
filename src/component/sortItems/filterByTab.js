@@ -14,7 +14,7 @@ import CardStyle6 from "../cards/CardStyle6";
 
 const FilterByTab = (props) => {
   const { tabBarData, data, headerTitle } = props;
-  const [itemCategory, setItemCategory] = useState("new_arrival");
+  const [itemCategory, setItemCategory] = useState(props.tabBarData[0].category);
   const [seletedItem, setSelectedItem] = useState(1);
   const [filterData, setFilterData] = useState([]);
 

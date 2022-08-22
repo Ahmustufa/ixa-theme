@@ -128,14 +128,14 @@ const Carousel = (props) => {
 export default HeroSection;
 
 const StyledDiv = styled.div`
-  height: 60vh;
+  height: 65vh;
   display: flex;
   justify-content: center;
   align-items: center;
 
   .eaze-animate {
     width: 100vw;
-    height: 60vh;
+    height: 65vh;
     position: absolute;
     top: 0;
     left: 0;

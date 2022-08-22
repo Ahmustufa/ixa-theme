@@ -111,7 +111,7 @@ const StyledModal = styled(Modal)`
   }
 `;
 
-const SubscriptionModal = () => {
+const SubscriptionModal = (props) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleCancel = () => {
@@ -139,11 +139,13 @@ const SubscriptionModal = () => {
         <Col xxl={11} xl={11} lg={11} md={11} sm={0}>
           <div
             style={{
-              backgroundImage: `url(https://cdn.shopify.com/s/files/1/0083/8405/3305/files/new-letter_1_4837f8ec-b88c-47f4-9426-393ace3a8ce0_540x.jpg?v=1657863744)`,
+              backgroundImage: props.backgroundImage
+                ? props.backgroundImage
+                : `url(https://cdn.shopify.com/s/files/1/0083/8405/3305/files/new-letter_1_4837f8ec-b88c-47f4-9426-393ace3a8ce0_540x.jpg?v=1657863744)`,
               minHeight: 480,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-              backgroundSize: "cover",
+              backgroundSize: props.backgroundSize ? props.backgroundSize : "cover",
             }}
           ></div>
         </Col>
