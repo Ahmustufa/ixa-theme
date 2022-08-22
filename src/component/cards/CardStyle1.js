@@ -13,8 +13,8 @@ import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
 import { addItemToCart } from "src/redux/actions/cartActions";
 
 const CardStyle1 = (props) => {
-  const {productDetails, _id, title, brandName, price, images } = props;
-  const dispatch = useDispatch()
+  const { productDetails, _id, title, brandName, price, images } = props;
+  const dispatch = useDispatch();
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
     currency: "PKR",
@@ -33,11 +33,13 @@ const CardStyle1 = (props) => {
 
       <div className="icon-section">
         <div className="icon icon-1">
-          <AiOutlineShoppingCart 
+          <AiOutlineShoppingCart
             onClick={() => {
               dispatch(addItemToCart(productDetails));
             }}
-            size={20} title={"Add to cart"} />
+            size={20}
+            title={"Add to cart"}
+          />
         </div>
         <div className="icon icon-2">
           {wishlistItem.includes(_id) ? (
@@ -47,16 +49,16 @@ const CardStyle1 = (props) => {
                 dispatch(removeWishlistItem(productDetails));
               }}
             >
-              <BsSuitHeartFill className="icon" title="Remove from wishlist" />
+              <BsSuitHeartFill title="Remove from wishlist" />
             </div>
           ) : (
             <div
               className="wish-button"
               onClick={() => {
-                dispatch(addItemToWishlist(productDetails))
+                dispatch(addItemToWishlist(productDetails));
               }}
             >
-              <BsSuitHeart className="icon" title="Add to wishlist" />
+              <BsSuitHeart title="Add to wishlist" />
             </div>
           )}
         </div>
