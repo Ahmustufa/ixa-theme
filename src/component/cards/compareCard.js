@@ -1,32 +1,49 @@
 import Link from "next/link";
 import { AiOutlineClose } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { removeItemFromCompareList } from "src/redux/actions";
+import { addItemToCart } from "src/redux/actions/cartActions";
 import styled from "styled-components";
 import { ButtonWrapper, SwipeButton, VictoriaButton } from "../buttons";
 
 const CompareCard = (props) => {
+  const { productDetails, _id, title, description, brandName, price, images } = props;
+  const dispatch = useDispatch();
+
+  const formatedPrice = new Intl.NumberFormat("en-us", {
+    style: "currency",
+    currency: "PKR",
+  });
+
   return (
     <StyledCard>
       <div className="close-btn">
-        <AiOutlineClose size={20} />
+        <AiOutlineClose
+          onClick={() => {
+            dispatch(removeItemFromCompareList(productDetails));
+          }}
+          size={20}
+        />
       </div>
       <div className="img-section">
-        <img
-          className="img-fluid"
-          src="https://multikart-react.vercel.app/assets/images/pro3/1.jpg"
-        />
+        <img className="img-fluid" src={images[0]} />
         <Link href={"#"}>
-          <h5>Slim fit shirt</h5>
+          <h5>{title}</h5>
         </Link>
-        <h5>$555</h5>
+        <h5>
+          {" "}
+          {formatedPrice.format(price)}{" "}
+          <small style={{ color: "#858585", textDecoration: "line-through" }}>
+            PKR {price + 100}
+          </small>
+        </h5>
       </div>
       <div className="detail-part">
         <div className="title-detail">
-          <h5>discription</h5>
+          <h5>description</h5>
         </div>
-        <div className="inner-detail">
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          </p>
+        <div className="inner-detail" style={{ height: 80 }}>
+          <p>{description?.slice(0, 120)}...</p>
         </div>
       </div>
       <div className="detail-part">
@@ -70,7 +87,14 @@ const CompareCard = (props) => {
         </div>
       </div>
       <div className="btn-part">
-        <VictoriaButton text={"ADD TO CART"} />
+        <ButtonWrapper
+          onClick={() => {
+            dispatch(addItemToCart(productDetails));
+          }}
+          style={{ width: 220 }}
+        >
+          ADD TO CART
+        </ButtonWrapper>
       </div>
     </StyledCard>
   );
@@ -80,7 +104,7 @@ export default CompareCard;
 
 const StyledCard = styled.div`
   border: 1px solid #ddd;
-  border-right: none;
+  /* border-right: none; */
   position: relative;
   .close-btn {
     background-color: transparent;
@@ -136,5 +160,7 @@ const StyledCard = styled.div`
     text-align: center;
     padding: 15px;
     border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
   }
 `;

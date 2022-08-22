@@ -35,15 +35,6 @@ const productStyle1 = [
     title: "DANVOUY Womens ",
     category: "women",
   },
-  {
-    images: [
-      "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
-      "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
-    ],
-    price: 40,
-    title: "Belted dress",
-    category: "women",
-  },
 ];
 
 const productStyle2 = [

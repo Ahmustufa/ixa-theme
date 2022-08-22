@@ -7,7 +7,7 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["user", "cart", "wishlist"],
+  whitelist: ["user", "cart", "wishlist", "compareList"],
 };
 
 const thunkMiddleware = [thunk];

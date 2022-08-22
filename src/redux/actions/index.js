@@ -1,5 +1,6 @@
-import { Product, User, Wishlist } from "../constants";
+import { Product, User, Wishlist, CompareList } from "../constants";
 import Cookies from "js-cookie";
+import { message } from "antd";
 
 export const loginUserAction = (data) => (dispatch) => {
   const userData = { ...data.user };
@@ -35,4 +36,12 @@ export const addItemToWishlist = (payload) => {
 
 export const removeWishlistItem = (payload) => {
   return { type: Wishlist.REMOVE_ITEM, payload };
+};
+
+export const addItemToCompareList = (payload) => (dispatch, getState) => {
+  dispatch({ type: CompareList.ADD_ITEM_TO_COMPARE_LIST, payload });
+};
+
+export const removeItemFromCompareList = (payload) => {
+  return { type: CompareList.REMOVE_ITEM_FROM_COMPARE_LIST, payload };
 };

@@ -6,6 +6,7 @@ import modalReducer from "./modalReducer";
 import cartReducer from "./cartReducer";
 import productReducer from "./productReducer";
 import menuReducer from "./menuReducer";
+import comparelistReducer from "./comparelistReducer";
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   order: orderReducer,
   wishlist: wishlistReducer,
+  compareList: comparelistReducer,
   modal: modalReducer,
   menu: menuReducer,
 });

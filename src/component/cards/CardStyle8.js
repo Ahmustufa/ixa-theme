@@ -12,10 +12,14 @@ import {
 } from "react-icons/ai";
 import { Rate } from "antd";
 import { addItemToCart } from "src/redux/actions/cartActions";
-import { addItemToWishlist, removeWishlistItem } from "src/redux/actions";
+import {
+  addItemToCompareList,
+  addItemToWishlist,
+  removeWishlistItem,
+} from "src/redux/actions";
 
 const CardStyle8 = (props) => {
-  const {productDetails, _id, images, title, price } = props;
+  const { productDetails, _id, images, title, price } = props;
   const dispatch = useDispatch();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -49,7 +53,7 @@ const CardStyle8 = (props) => {
             <div
               className="wish-button"
               onClick={() => {
-                dispatch(addItemToWishlist(productDetails))
+                dispatch(addItemToWishlist(productDetails));
               }}
             >
               <BsSuitHeart className="icon" title="Add to wishlist" />
@@ -60,15 +64,23 @@ const CardStyle8 = (props) => {
           <AiOutlineEye size={20} title={"Quick view"} />
         </div>
         <div className="compare">
-          <AiOutlineSync size={20} title={"Compare"} />
+          <AiOutlineSync
+            size={20}
+            title={"Compare"}
+            onClick={() => {
+              dispatch(addItemToCompareList(productDetails));
+            }}
+          />
         </div>
       </div>
 
-      <div className="add_to_cart" 
-      onClick={() => {
-        dispatch(addItemToCart(productDetails));
-      }}
-      style={{ opacity: 1 }}>
+      <div
+        className="add_to_cart"
+        onClick={() => {
+          dispatch(addItemToCart(productDetails));
+        }}
+        style={{ opacity: 1 }}
+      >
         Add To Cart
       </div>
       <div className="item-details">

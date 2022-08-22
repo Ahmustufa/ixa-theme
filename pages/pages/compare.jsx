@@ -51,50 +51,7 @@ const carouselSettings = {
 const Compare2 = (props) => {
   const { title, colors, reviews } = props;
   const dispatch = useDispatch();
-  const { items: wishlist } = useSelector((state) => state.wishlist);
-  const { isLoggedIn, data: userData } = useSelector((state) => state.user);
-
-  const [state, setState] = useState({ color: "", size: "" });
-
-  const blogData = [
-    {
-      image: "https://multikart-react.vercel.app/assets/images/blog/2.jpg",
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      image: "https://multikart-react.vercel.app/assets/images/blog/2.jpg",
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      image: "https://multikart-react.vercel.app/assets/images/blog/2.jpg",
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      image: "https://multikart-react.vercel.app/assets/images/blog/2.jpg",
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      image: "https://multikart-react.vercel.app/assets/images/blog/2.jpg",
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-
-    {
-      image: "https://multikart-react.vercel.app/assets/images/blog/2.jpg",
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-  ];
+  const { items: compareList } = useSelector((state) => state.compareList);
 
   return (
     <StyledPage>
@@ -120,9 +77,9 @@ const Compare2 = (props) => {
         <Row gutter={[30, 30]} className="flex-column-reverse flex-lg-row">
           <Col lg={24} sm={24} xs={24}>
             <Slider {...carouselSettings}>
-              {blogData.map((item, index) => (
+              {compareList.map((item, index) => (
                 <div key={index}>
-                  <CompareCard {...item} />
+                  <CompareCard productDetails={item} {...item} />
                 </div>
               ))}
             </Slider>
