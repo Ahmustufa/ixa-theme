@@ -190,7 +190,7 @@ const Order = (props) => {
                     className="wish-button"
                     onClick={() => {
                       // addItemToWishlistFunc(productDetails);
-                      dispatch(addItemToWishlist(productDetails))
+                      dispatch(addItemToWishlist(productDetails));
                     }}
                   >
                     <BsSuitHeart className="icon" />
@@ -452,7 +452,10 @@ const StyledPage = styled.div`
 
 export async function getServerSideProps(context) {
   const productId = context.params.product_id;
-  const productDetails = allProducts.find((item) => item._id == productId);
+  let productDetails = allProducts.find((item) => item._id == productId);
+
+  // Serializing Object data
+  productDetails = JSON.parse(JSON.stringify(productDetails));
 
   if (productDetails) {
     return {
