@@ -50,16 +50,23 @@ const MyAccount = () => {
   return (
     <StyledPage style={{ padding: 80 }}>
       <Row>
-        <Col xs={0} sm={0} md={6} lg={6}>
+        <Col xs={0} sm={0} md={4} lg={4}>
           <AccountSidebar />
         </Col>
 
-        <Col xs={24} sm={24} md={18} lg={18}>
-          <h1 style={{ fontWeight: 700, marginBottom: 12, textAlign: "center" }}>
+        <Col xs={24} sm={24} md={20} lg={20} style={{ padding: "0 10%" }}>
+          <h1
+            style={{
+              fontWeight: 600,
+              marginBottom: 32,
+              textAlign: "center",
+              color: "#54595f",
+            }}
+          >
             My Account
           </h1>
           <Form form={form} onFinish={handleUpdate} validateTrigger="onFinish">
-            <Row>
+            <Row gutter={[40, 40]}>
               <Col xs={24} sm={24} md={12} lg={12}>
                 <label>First Name *</label>
                 <Form.Item name="First Name" rules={[{ required: true }]}>
@@ -168,8 +175,8 @@ const MyAccount = () => {
               </Col>
             </Row>
 
-            <PrimaryButton htmlType="submit" className="mt-4">
-              {updateLoading && <LoadingOutlined style={{ marginRight: 16 }} />} Submit
+            <PrimaryButton style={{ width: 250 }} htmlType="submit" className="mt-4">
+              {updateLoading && <LoadingOutlined style={{ marginRight: 16 }} />} Save
             </PrimaryButton>
           </Form>
         </Col>
@@ -184,7 +191,7 @@ const StyledPage = styled.div`
   .input-wrapper {
     border: 1px solid #e5e5e5;
     font-weight: 300;
-    width: 90%;
+    width: 100%;
     /* max-width: 400px; */
     outline: none;
     padding: 8px;

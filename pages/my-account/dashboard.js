@@ -13,6 +13,16 @@ const Dashboard = () => {
           <AccountSidebar />
         </Col>
         <Col xs={24} sm={24} md={18} lg={18}>
+          <h1
+            style={{
+              fontWeight: 600,
+              marginBottom: 32,
+              textAlign: "center",
+              color: "#54595f",
+            }}
+          >
+            Dashboard
+          </h1>
           <div className="dashboard">
             <div className="mb-4 fs-5">
               Hello <b>{username}</b>
@@ -41,7 +51,6 @@ const StyledPage = styled.div`
     color: #54595f;
     font-weight: 300;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     height: 100%;
   }

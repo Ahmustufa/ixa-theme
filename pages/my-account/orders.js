@@ -18,6 +18,17 @@ const Orders = () => {
         </Col>
 
         <Col xs={24} sm={24} md={20} lg={20}>
+          <h1
+            style={{
+              fontWeight: 600,
+              marginBottom: 32,
+              textAlign: "center",
+              color: "#54595f",
+            }}
+          >
+            Orders
+          </h1>
+
           <Row gutter={[24, 24]}>
             {myOrders.length == 0 ? (
               <Row className="mt-3">

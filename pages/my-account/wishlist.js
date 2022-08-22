@@ -21,7 +21,14 @@ const Wishlist = (props) => {
         </Col>
 
         <Col xs={24} sm={24} md={20} lg={20}>
-          <h1 style={{ fontWeight: 700, marginBottom: 12, textAlign: "center" }}>
+          <h1
+            style={{
+              fontWeight: 600,
+              marginBottom: 32,
+              textAlign: "center",
+              color: "#54595f",
+            }}
+          >
             My Wishlist
           </h1>
           {wishlist.length == 0 ? (

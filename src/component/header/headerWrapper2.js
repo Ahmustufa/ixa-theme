@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import router from "next/router";
-import { Row, Col, Input, Dropdown, Menu } from "antd";
+import { Row, Col, Input, Dropdown, Menu, Badge } from "antd";
 import { InputWrapper } from "../inputs";
 import MobileDrawer from "./mobileDrawer";
 /**
@@ -28,6 +28,7 @@ import { ModalConstant } from "src/redux/constants";
 const HeaderWrapper2 = () => {
   const dispatch = useDispatch();
   const [sidebar, toggleSidebar] = useState(false);
+  const { visible, items } = useSelector((state) => state.cart);
 
   const menu = useSelector((state) => state.menu);
   const menuItems = menu.template || [];
@@ -128,7 +129,9 @@ const HeaderWrapper2 = () => {
                 dispatch(openCart());
               }}
             >
-              <AiOutlineShoppingCart className="icon" />
+              <Badge size="small" offset={[-10, 5]} count={items.length}>
+                <AiOutlineShoppingCart className="icon" />
+              </Badge>
               <p className="title">Cart</p>
             </div>
           </Col>
