@@ -13,6 +13,9 @@ import {
 import Slider from "react-slick";
 import BlogCard from "../../src/component/cards/blogCard";
 import CompareCard from "../../src/component/cards/compareCard";
+import { TiShoppingCart } from "react-icons/ti";
+import { PrimaryButton } from "src/component/buttons";
+import { closeCart } from "src/redux/actions/cartActions";
 
 const { Panel } = Collapse;
 
@@ -58,7 +61,7 @@ const Compare2 = (props) => {
       <div className="pagination-sec mt-5">
         <Row className="d-flex justify-content-end align-items-center">
           <Col lg={6} sm={24} xs={24}>
-            <h5 className="m-0 text-dark">COMPARE-2</h5>
+            <h5 className="m-0 text-dark">COMPARE</h5>
           </Col>
           <Col
             lg={18}
@@ -69,22 +72,44 @@ const Compare2 = (props) => {
             <Link href="">
               <p className="m-0 mx-1"> HOME / </p>
             </Link>{" "}
-            <span> COMPARE-2</span>
+            <span> COMPARE</span>
           </Col>
         </Row>
       </div>
       <div style={{ padding: 80 }} className="detail-section">
-        <Row gutter={[30, 30]} className="flex-column-reverse flex-lg-row">
-          <Col lg={24} sm={24} xs={24}>
-            <Slider {...carouselSettings}>
-              {compareList.map((item, index) => (
-                <div key={index}>
-                  <CompareCard productDetails={item} {...item} />
-                </div>
-              ))}
-            </Slider>
-          </Col>
-        </Row>
+        {compareList.length > 0 ? (
+          <Row gutter={[30, 30]} className="flex-column-reverse flex-lg-row">
+            <Col lg={24} sm={24} xs={24}>
+              <Slider {...carouselSettings}>
+                {compareList.map((item, index) => (
+                  <div key={index}>
+                    <CompareCard productDetails={item} {...item} />
+                  </div>
+                ))}
+              </Slider>
+            </Col>
+          </Row>
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "60%",
+              width: "100%",
+              textAlign: "center",
+            }}
+          >
+            <div>
+              <TiShoppingCart style={{ fontSize: 64, marginBottom: 24 }} />
+              <h5>Your compare list is currently empty.</h5>
+
+              <PrimaryButton style={{ borderRadius: 100 }} className="mt-2 w-100">
+                <Link href={"/"}>Continue Shopping</Link>
+              </PrimaryButton>
+            </div>
+          </div>
+        )}
       </div>
     </StyledPage>
   );
