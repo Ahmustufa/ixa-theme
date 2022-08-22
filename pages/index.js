@@ -17,6 +17,7 @@ import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
 import ProductVerticalCarousel from "../src/component/productListing/productVerticalCarousel";
 import { productStyle5, productStyle8 } from "src/mock/mockupData";
 import Heading from "../src/component/headings";
+import DragToScroll from "src/component/scroll/dragToScroll";
 
 const Home = () => {
   return (
@@ -95,7 +96,7 @@ const Home = () => {
             <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
               HOME PAGES
             </h3>
-            <div className="d-flex align-items-start">
+            <DragToScroll>
               {[1, 2, 3, 4].map((item) => (
                 <img
                   key={item}
@@ -104,14 +105,14 @@ const Home = () => {
                   style={{ width: 300, objectFit: "contain", margin: "0 24px" }}
                 />
               ))}
-            </div>
+            </DragToScroll>
           </div>
 
           <div className="col-11 m-auto pt-5">
             <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
               PRODUCT PAGES
             </h3>
-            <div className="d-flex align-items-start">
+            <DragToScroll>
               {[1, 2, 3, 4].map((item) => (
                 <img
                   key={item}
@@ -120,14 +121,14 @@ const Home = () => {
                   style={{ width: 300, objectFit: "contain", margin: "0 24px" }}
                 />
               ))}
-            </div>
+            </DragToScroll>
           </div>
 
-          <div className="col-11 mx-auto pt-5">
+          <div className="col-11 m-auto pt-5">
             <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
               SHOP PAGES
             </h3>
-            <div className="d-flex align-items-start">
+            <DragToScroll>
               {[1, 4, 3, 2].map((item) => (
                 <img
                   key={item}
@@ -136,14 +137,14 @@ const Home = () => {
                   style={{ width: 300, objectFit: "contain", margin: "0 24px" }}
                 />
               ))}
-            </div>
+            </DragToScroll>
           </div>
 
-          <div className="col-11 mx-auto pt-5">
+          <div className="col-11 m-auto pt-5">
             <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
-              SHOP PAGES
+              GENERAL PAGES
             </h3>
-            <div className="d-flex align-items-start">
+            <DragToScroll>
               {[1, 2, 3, 5].map((item) => (
                 <img
                   key={item}
@@ -152,7 +153,7 @@ const Home = () => {
                   style={{ width: 300, objectFit: "contain", margin: "0 24px" }}
                 />
               ))}
-            </div>
+            </DragToScroll>
           </div>
         </section>
 
