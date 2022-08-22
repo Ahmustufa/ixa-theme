@@ -23,7 +23,7 @@ const Dashboard = () => {
                 <a className="link">recent orders</a>
               </Link>{" "}
               and{" "}
-              <Link href="/my-account/setings">
+              <Link href="/my-account/#">
                 <a className="link">edit your password and account details.</a>
               </Link>
             </div>

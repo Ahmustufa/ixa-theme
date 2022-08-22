@@ -55,127 +55,118 @@ const MyAccount = () => {
         </Col>
 
         <Col xs={24} sm={24} md={18} lg={18}>
+          <h1 style={{ fontWeight: 700, marginBottom: 12, textAlign: "center" }}>
+            My Account
+          </h1>
           <Form form={form} onFinish={handleUpdate} validateTrigger="onFinish">
-            <label>First Name *</label>
-            <Form.Item name="First Name" rules={[{ required: true }]}>
-              <input
-                name="firstName"
-                className="input-wrapper"
-                onChange={handleChange}
-                value={state.firstName}
-              />
-            </Form.Item>
+            <Row>
+              <Col xs={24} sm={24} md={12} lg={12}>
+                <label>First Name *</label>
+                <Form.Item name="First Name" rules={[{ required: true }]}>
+                  <input
+                    name="firstName"
+                    placeholder="First Name"
+                    className="input-wrapper"
+                    onChange={handleChange}
+                    value={state.firstName}
+                  />
+                </Form.Item>
+              </Col>
 
-            <label>Last Name *</label>
-            <Form.Item name="Last Name" rules={[{ required: true }]}>
-              <input
-                name="lastName"
-                className="input-wrapper"
-                onChange={handleChange}
-                value={state.lastName}
-              />
-            </Form.Item>
+              <Col xs={24} sm={24} md={12} lg={12}>
+                <label>Last Name *</label>
+                <Form.Item name="Last Name" rules={[{ required: true }]}>
+                  <input
+                    name="lastName"
+                    placeholder="Last Name"
+                    className="input-wrapper"
+                    onChange={handleChange}
+                    value={state.lastName}
+                  />
+                </Form.Item>
+              </Col>
 
-            <label>Display Name *</label>
-            <Form.Item name="Display Name" rules={[{ required: true }]}>
-              <input
-                name="username"
-                className="input-wrapper"
-                onChange={handleChange}
-                value={state.username}
-              />
-            </Form.Item>
+              <Col xs={24} sm={24} md={24} lg={24}>
+                <label>Email *</label>
+                <Form.Item name="Email" rules={[{ required: true, type: "email" }]}>
+                  <input
+                    name="email"
+                    placeholder="Email"
+                    className="input-wrapper"
+                    onChange={handleChange}
+                    value={state.email}
+                  />
+                </Form.Item>
+              </Col>
 
-            <label>Email *</label>
-            <Form.Item name="Email" rules={[{ required: true, type: "email" }]}>
-              <input
-                name="email"
-                className="input-wrapper"
-                onChange={handleChange}
-                value={state.email}
-              />
-            </Form.Item>
+              <Col xs={24} sm={24} md={12} lg={12}>
+                <label>Phone number *</label>
+                <Form.Item name="Phone number" rules={[{ required: true }]}>
+                  <input
+                    name="phoneNumber"
+                    placeholder="Phone Number"
+                    className="input-wrapper"
+                    onChange={handleChange}
+                    value={state.phoneNumber}
+                  />
+                </Form.Item>
+              </Col>
 
-            <label>Phone number *</label>
-            <Form.Item name="Phone number" rules={[{ required: true }]}>
-              <input
-                name="phoneNumber"
-                className="input-wrapper"
-                onChange={handleChange}
-                value={state.phoneNumber}
-              />
-            </Form.Item>
+              <Col xs={24} sm={24} md={12} lg={12}>
+                <label>City *</label>
+                <Form.Item name="City" rules={[{ required: true, type: "string" }]}>
+                  <input
+                    name="city"
+                    placeholder="City"
+                    className="input-wrapper"
+                    onChange={handleChange}
+                    value={state.city}
+                  />
+                </Form.Item>
+              </Col>
 
-            <label>Address *</label>
-            <Form.Item name="Address" rules={[{ required: true, type: "string" }]}>
-              <input
-                name="address"
-                className="input-wrapper"
-                onChange={handleChange}
-                value={state.address}
-              />
-            </Form.Item>
+              <Col xs={24} sm={24} md={12} lg={12}>
+                <label>Country *</label>
+                <Form.Item name="Country" rules={[{ required: true, type: "string" }]}>
+                  <input
+                    name="country"
+                    placeholder="Country"
+                    className="input-wrapper"
+                    onChange={handleChange}
+                    value={state.country}
+                  />
+                </Form.Item>
+              </Col>
 
-            <label>City *</label>
-            <Form.Item name="City" rules={[{ required: true, type: "string" }]}>
-              <input
-                name="city"
-                className="input-wrapper"
-                onChange={handleChange}
-                value={state.city}
-              />
-            </Form.Item>
+              <Col xs={24} sm={24} md={12} lg={12}>
+                <label>Postal code *</label>
+                <Form.Item
+                  name="Postal Code"
+                  rules={[{ required: true, type: "number" }]}
+                >
+                  <input
+                    name="postalCode"
+                    placeholder="Postal Code"
+                    className="input-wrapper"
+                    onChange={handleChange}
+                    value={state.postalCode}
+                  />
+                </Form.Item>
+              </Col>
 
-            <label>Postal code </label>
-            <Form.Item name="Postal Code">
-              <input
-                name="postalCode"
-                className="input-wrapper"
-                onChange={handleChange}
-                value={state.postalCode}
-              />
-            </Form.Item>
-
-            {/* <div
-              style={{
-                border: "1px solid #ececec",
-                padding: 16,
-                marginTop: 48,
-                width: "fit-content",
-              }}
-            >
-              <div className="heading">PASSWORD CHANGE</div>
-
-              <label>CURRENT PASSWORD (LEAVE BLANK TO LEAVE UNCHANGED)</label>
-              <Form.Item name="Password">
-                <input
-                  name="currentPassword"
-                  className="input-wrapper"
-                  onChange={handleChange}
-                  value={state.currentPassword}
-                />
-              </Form.Item>
-
-              <label>NEW PASSWORD (LEAVE BLANK TO LEAVE UNCHANGED)</label>
-              <Form.Item name="New password">
-                <input
-                  name="newPassword"
-                  className="input-wrapper"
-                  onChange={handleChange}
-                  value={state.newPassword}
-                />
-              </Form.Item>
-
-              <label>CONFIRM NEW PASSWORD</label>
-              <Form.Item name="Confirm passowrd">
-                <input
-                  name="confirmPassword"
-                  className="input-wrapper"
-                  onChange={handleChange}
-                  value={state.confirmPassword}
-                />
-              </Form.Item>
-            </div> */}
+              <Col xs={24} sm={24} md={24} lg={24}>
+                <label>Full Address *</label>
+                <Form.Item name="Address" rules={[{ required: true, type: "string" }]}>
+                  <input
+                    name="address"
+                    placeholder="Full Address"
+                    className="input-wrapper"
+                    onChange={handleChange}
+                    value={state.address}
+                  />
+                </Form.Item>
+              </Col>
+            </Row>
 
             <PrimaryButton htmlType="submit" className="mt-4">
               {updateLoading && <LoadingOutlined style={{ marginRight: 16 }} />} Submit
@@ -193,8 +184,8 @@ const StyledPage = styled.div`
   .input-wrapper {
     border: 1px solid #e5e5e5;
     font-weight: 300;
-    width: 100%;
-    max-width: 400px;
+    width: 90%;
+    /* max-width: 400px; */
     outline: none;
     padding: 8px;
   }

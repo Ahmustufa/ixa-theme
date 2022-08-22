@@ -3,7 +3,7 @@ import allProducts from "src/mock/products";
 import styled from "styled-components";
 import AccountSidebar from "../../src/component/sidebar/accountSidebar";
 import { PrimaryButton } from "../../src/component/buttons";
-import { AiOutlineShopping } from "react-icons/ai";
+import { FiHeart } from "react-icons/fi";
 import Link from "next/link";
 import ProductCardWithIcons from "src/component/cards/productCardWithIcons";
 import CardStyle6 from "src/component/cards/CardStyle6";
@@ -21,12 +21,14 @@ const Wishlist = (props) => {
         </Col>
 
         <Col xs={24} sm={24} md={20} lg={20}>
-          <h1 style={{ fontWeight: 700, marginBottom: 12 }}>My Wishlist</h1>
+          <h1 style={{ fontWeight: 700, marginBottom: 12, textAlign: "center" }}>
+            My Wishlist
+          </h1>
           {wishlist.length == 0 ? (
             <Row className="mt-3">
               <Col style={{ background: "#f9fafb" }} span={24} className="p-4">
                 <div className="d-flex justify-content-start align-items-center">
-                  <AiOutlineShopping color={"#ced4da"} size={50} />
+                  <FiHeart color={"#ced4da"} size={50} />
                   <p className="mb-0 ml-5 title" style={{ color: "#808080" }}>
                     Your wishlist is currently empty.
                   </p>

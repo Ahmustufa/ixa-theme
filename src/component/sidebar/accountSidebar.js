@@ -31,6 +31,17 @@ const AccountSidebar = (props) => {
             <a className="hoverable dark">Orders</a>
           </Link>
         </li>
+
+        <li
+          className={`sidebar-item ${
+            router.pathname == "/my-account/compare" ? "selected" : ""
+          }`}
+        >
+          <Link href="/my-account/compare">
+            <a className="hoverable dark">Compare Products</a>
+          </Link>
+        </li>
+
         <li
           className={`sidebar-item ${
             router.pathname == "/my-account/wishlist" ? "selected" : ""
