@@ -92,6 +92,20 @@ const Home = () => {
             padding: "48px 0",
           }}
         >
+          {/* <div
+            style={{
+              position: "sticky",
+              top: "50%",
+              transform: "translateY(-50%) rotate(270deg)",
+              width: "fit-content",
+              fontSize: 48,
+              color: "#727272",
+              fontWeight: 600,
+            }}
+          >
+            demos
+          </div> */}
+
           <div className="col-11 m-auto">
             <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
               HOME PAGES
