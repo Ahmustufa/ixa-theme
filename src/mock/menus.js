@@ -192,6 +192,16 @@ export const mainMenu = [
       { title: "Order Success", link: "/pages/order-success" },
       { title: "404 Page", link: "/404" },
       { title: "Collection", link: "/pages/collection" },
+      {
+        title: "Email Templates",
+        submenu: [
+          { title: "Template 1", link: "/email_template_1.html" },
+          { title: "Template 2", link: "/email_template_2.html" },
+          { title: "Template 3", link: "/email_template_3.html" },
+          { title: "Template 4", link: "/email_template_4.html" },
+          { title: "Template 5", link: "/email_template_5.html" },
+        ],
+      },
     ],
   },
   {
