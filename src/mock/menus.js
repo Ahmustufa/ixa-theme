@@ -69,6 +69,34 @@ export const bagsMenu = [
   },
 ];
 
+export const electronicsMenu = [
+  {
+    title: "Home",
+    link: "/demo/electronics-store",
+  },
+  {
+    title: "Products",
+    link: "/demo/electronics-store/products",
+  },
+  {
+    title: "Category",
+    submenu: [
+      { title: "Refrigerators", link: `/demo/electronics-store/fridge` },
+      { title: "Fans", link: `/demo/electronics-store/fan` },
+      { title: "Health & Beauty", link: `/demo/electronics-store/health-and-beauty` },
+      { title: "Others", link: `/demo/electronics-store/other` },
+    ],
+  },
+  {
+    title: "CONTACT",
+    link: "/demo/electronics-store/contact-us",
+  },
+  {
+    title: "Blog",
+    link: "/demo/electronics-store/blogs",
+  },
+];
+
 export const clothingMenu = [
   {
     title: "home",

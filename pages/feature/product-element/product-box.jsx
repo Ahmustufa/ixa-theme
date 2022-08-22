@@ -72,7 +72,7 @@ const ProductBox = (props) => {
             {productStyle1.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle1 {...item} />
+                  <CardStyle1 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -92,7 +92,7 @@ const ProductBox = (props) => {
             {productStyle2.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle2 {...item} />
+                  <CardStyle2 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -109,7 +109,7 @@ const ProductBox = (props) => {
             {productStyle3.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle3 {...item} />
+                  <CardStyle3 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -129,7 +129,7 @@ const ProductBox = (props) => {
             {productStyle4.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle4 {...item} />
+                  <CardStyle4 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -146,7 +146,7 @@ const ProductBox = (props) => {
             {productStyle5.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle5 {...item} />
+                  <CardStyle5 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -166,7 +166,7 @@ const ProductBox = (props) => {
             {productStyle6.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle6 {...item} />
+                  <CardStyle6 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -183,7 +183,7 @@ const ProductBox = (props) => {
             {productStyle7.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle7 {...item} />
+                  <CardStyle7 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -203,7 +203,7 @@ const ProductBox = (props) => {
             {productStyle8.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle8 {...item} />
+                  <CardStyle8 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -220,7 +220,7 @@ const ProductBox = (props) => {
             {productStyle9.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle9 {...item} />
+                  <CardStyle9 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -237,7 +237,7 @@ const ProductBox = (props) => {
             {productStyle10.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <ProductCardWithIcons {...item} />
+                  <ProductCardWithIcons productDetails={item} {...item} />
                 </Col>
               );
             })}

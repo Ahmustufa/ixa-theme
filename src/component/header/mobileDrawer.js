@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FiChevronDown } from "react-icons/fi";
 import { InputWrapper } from "../inputs";
 import { BsSearch, BsSuitHeart } from "react-icons/bs";
+import { FaRegHeart } from "react-icons/fa";
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { ModalConstant } from "src/redux/constants";
@@ -82,7 +83,7 @@ const MobileDrawer = (props) => {
               borderLeft: "1px solid #ececec",
             }}
           >
-            <BsSuitHeart style={{ fontSize: 17 }} />
+            <FaRegHeart style={{ fontSize: 17 }} />
             <div>Wishlist</div>
           </div>
 

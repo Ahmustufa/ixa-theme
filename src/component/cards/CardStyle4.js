@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { Rate } from "antd";
 import {
   AiOutlineShoppingCart,
@@ -54,7 +54,7 @@ const CardStyle4 = (props) => {
                 dispatch(removeWishlistItem(productDetails));
               }}
             >
-              <BsSuitHeartFill title="Remove from wishlist" />
+              <FaHeart title="Remove from wishlist" />
             </div>
           ) : (
             <div
@@ -63,7 +63,7 @@ const CardStyle4 = (props) => {
                 dispatch(addItemToWishlist(productDetails));
               }}
             >
-              <BsSuitHeart title="Add to wishlist" />
+              <FaRegHeart title="Add to wishlist" />
             </div>
           )}
         </div>

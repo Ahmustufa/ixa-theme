@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { image1 } from "../../../images";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
@@ -45,7 +45,7 @@ const CardStyle7 = (props) => {
                     dispatch(removeWishlistItem(productDetails));
                   }}
                 >
-                  <BsSuitHeartFill className="icon" title="Remove from wishlist" />
+                  <FaHeart className="icon" title="Remove from wishlist" />
                 </div>
               ) : (
                 <div
@@ -54,7 +54,7 @@ const CardStyle7 = (props) => {
                     dispatch(addItemToWishlist(productDetails));
                   }}
                 >
-                  <BsSuitHeart className="icon" title="Add to wishlist" />
+                  <FaRegHeart className="icon" title="Add to wishlist" />
                 </div>
               )}
             </div>

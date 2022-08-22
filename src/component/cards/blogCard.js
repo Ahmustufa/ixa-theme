@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import moment from "moment";
 import { image1 } from "../../../images";
 import { useDispatch, useSelector } from "react-redux";
