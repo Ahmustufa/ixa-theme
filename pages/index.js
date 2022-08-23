@@ -190,8 +190,8 @@ const Home = () => {
             </h1>
 
             <Row gutter={[0, 32]} justify="space-around">
-              {features.map(({ image, heading, description }) => (
-                <Col xs={24} sm={24} md={12} lg={8} l={8}>
+              {features.map(({ image, heading, description }, index) => (
+                <Col key={index} xs={24} sm={24} md={12} lg={8} l={8}>
                   <div className="feature-card">
                     <img src={image} />
                     <h3 className="heading">{heading}</h3>

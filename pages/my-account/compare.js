@@ -5,6 +5,7 @@ import Link from "next/link";
 import AccountSidebar from "src/component/sidebar/accountSidebar";
 import { MdOutlineCompare } from "react-icons/md";
 import { PrimaryButton } from "src/component/buttons";
+import CardStyle6 from "src/component/cards/CardStyle6";
 
 const Compare2 = (props) => {
   const { title, colors, reviews } = props;
