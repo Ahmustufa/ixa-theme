@@ -103,7 +103,7 @@ const SideCart = (props) => {
                           </div>
                         </Col>
                         <Col xs={14} lg={14}>
-                          <div className="price">
+                          <div className="price ml-2">
                             PKR {(item.price * item.quantity).toLocaleString()}
                           </div>
                         </Col>
