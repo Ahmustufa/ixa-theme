@@ -76,12 +76,12 @@ const SideCart = (props) => {
                       <div className="product-name" title={item.title}>
                         {item.title}
                       </div>
-                      <p style={{ color: "gray", fontSize: 12 }}>
+                      <p style={{ color: "red", fontSize: 12 }}>
                         PKR {item.price?.toLocaleString()}
                       </p>
 
                       <Row align="middle" gutter={[24, 0]}>
-                        <Col xs={10} lg={10}>
+                        <Col xs={11} lg={11}>
                           <div className="quantity-container">
                             <div
                               onClick={() => {
@@ -102,8 +102,11 @@ const SideCart = (props) => {
                             </div>
                           </div>
                         </Col>
-                        <Col xs={14} lg={14}>
-                          <div className="price">
+                        <Col xs={13} lg={13}>
+                          <div
+                            style={{ marginLeft: 10, fontSize: 13, color: "gray" }}
+                            className="price"
+                          >
                             PKR {(item.price * item.quantity).toLocaleString()}
                           </div>
                         </Col>
@@ -160,7 +163,9 @@ const SideCart = (props) => {
         </div>
         <Divider style={{ margin: "12px 0" }} />
         <Link href="/cart/checkout">
-          <PrimaryButton className="mt-2 w-100">Checkout</PrimaryButton>
+          <PrimaryButton onClick={() => dispatch(closeCart())} className="mt-2 w-100">
+            Checkout
+          </PrimaryButton>
         </Link>
       </section>
     </StyledDrawer>

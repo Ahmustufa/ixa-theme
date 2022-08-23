@@ -2,7 +2,7 @@ import { Row, Col, Collapse, Divider, message } from "antd";
 import ShopCard from "../../src/component/cards/shopCard";
 import ProductCarousel from "../../src/component/productListing/carousel";
 import { PrimaryButton } from "../../src/component/buttons";
-import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { LoadingOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import ReviewListing from "../../src/component/reviews/reviewListing";
@@ -109,7 +109,11 @@ const Order = (props) => {
                   src={productDetails.images[0]}
                   className="product-image"
                 /> */}
-                <ImageCarousel direction="right" images={productDetails.images} />
+                <ImageCarousel
+                  direction="right"
+                  id={productDetails._id}
+                  images={productDetails.images}
+                />
               </Col>
             </Row>
           </div>
@@ -129,7 +133,7 @@ const Order = (props) => {
             <div style={{ fontSize: 12, margin: "16px 0" }}>
               {productDetails.brandName}
             </div>
-            <div style={{ fontSize: 20, fontWeight: 600 }}>
+            <div style={{ fontSize: 18, fontWeight: 600, marginBottom: 24 }}>
               {formatedPrice.format(productDetails.price)}
             </div>
             <div style={{ fontWeight: 300 }}>{productDetails.description}</div>
@@ -176,24 +180,24 @@ const Order = (props) => {
               <Col>
                 {wishlistItem.includes(productDetails._id) ? (
                   <div
-                    className="wish-button"
+                    className="wish-buttons"
                     onClick={() => {
                       // removeItemFromWishlistFunc();
                       dispatch(removeWishlistItem(productDetails));
                     }}
                   >
-                    <BsSuitHeartFill className="icon" />
+                    <FaHeart className="icon" />
                     <div className="text">REMOVE FROM WISHLIST</div>
                   </div>
                 ) : (
                   <div
-                    className="wish-button"
+                    className="wish-buttons"
                     onClick={() => {
                       // addItemToWishlistFunc(productDetails);
                       dispatch(addItemToWishlist(productDetails));
                     }}
                   >
-                    <BsSuitHeart className="icon" />
+                    <FaRegHeart className="icon" />
                     <div className="text">ADD TO WISHLIST</div>
                   </div>
                 )}
@@ -326,7 +330,7 @@ const Order = (props) => {
         </Collapse>
       </section>
 
-      <section className="shop-card-section">
+      {/* <section className="shop-card-section">
         <Row justify="space-between" gutter={[0, 40]}>
           <Col xs={24} sm={24} md={24} lg={24} xl={11}>
             <ShopCard />
@@ -336,7 +340,7 @@ const Order = (props) => {
             <ShopCard />
           </Col>
         </Row>
-      </section>
+      </section> */}
 
       <section className="my-5">
         <ProductCarousel CardStyle={CardStyle6} data={shoesProducts} padding={"0px"} />
@@ -397,7 +401,7 @@ const StyledPage = styled.div`
     }
   }
 
-  .wish-button {
+  .wish-buttons {
     display: flex;
     align-items: center;
     color: #212529;

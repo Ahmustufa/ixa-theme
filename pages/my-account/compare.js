@@ -5,11 +5,46 @@ import Link from "next/link";
 import AccountSidebar from "src/component/sidebar/accountSidebar";
 import { MdOutlineCompare } from "react-icons/md";
 import { PrimaryButton } from "src/component/buttons";
+import CardStyle6 from "src/component/cards/CardStyle6";
+import Slider from "react-slick";
+import CompareCard from "src/component/cards/compareCard";
 
 const Compare2 = (props) => {
   const { title, colors, reviews } = props;
   const dispatch = useDispatch();
   const { items: compareList } = useSelector((state) => state.compareList);
+
+  const carouselSettings = {
+    // dots: true,
+    // speed: 500,
+    // autoplay: true,
+    infinite: false,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <StyledPage style={{ padding: 80 }}>
@@ -45,11 +80,15 @@ const Compare2 = (props) => {
             </Row>
           ) : (
             <Row gutter={[24, 24]}>
-              {compareList.map((item, index) => (
-                <Col key={index} xs={24} sm={24} lg={6}>
-                  <CardStyle6 {...item} productDetails={item} />
-                </Col>
-              ))}
+              <Col lg={24} sm={24} xs={24}>
+                <Slider {...carouselSettings}>
+                  {compareList.map((item, index) => (
+                    <div key={index}>
+                      <CompareCard productDetails={item} {...item} />
+                    </div>
+                  ))}
+                </Slider>
+              </Col>
             </Row>
           )}
         </Col>

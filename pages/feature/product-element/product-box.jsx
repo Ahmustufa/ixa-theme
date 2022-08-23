@@ -14,6 +14,8 @@ import CardStyle7 from "src/component/cards/CardStyle7";
 import CardStyle8 from "src/component/cards/CardStyle8";
 import CardStyle9 from "src/component/cards/CardStyle9";
 import ProductCardWithIcons from "src/component/cards/productCardWithIcons";
+import QuickviewModal from "src/component/modals/quickviewModal";
+
 import {
   productStyle1,
   productStyle2,
@@ -41,6 +43,7 @@ const ProductBox = (props) => {
 
   return (
     <StyledPage>
+      <QuickviewModal />
       <div className="pagination-sec mt-5">
         <Row className="d-flex justify-content-end align-items-center">
           <Col lg={6} sm={24} xs={24}>
@@ -72,7 +75,7 @@ const ProductBox = (props) => {
             {productStyle1.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle1 {...item} />
+                  <CardStyle1 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -92,7 +95,7 @@ const ProductBox = (props) => {
             {productStyle2.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle2 {...item} />
+                  <CardStyle2 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -109,7 +112,7 @@ const ProductBox = (props) => {
             {productStyle3.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle3 {...item} />
+                  <CardStyle3 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -129,7 +132,7 @@ const ProductBox = (props) => {
             {productStyle4.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle4 {...item} />
+                  <CardStyle4 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -146,7 +149,7 @@ const ProductBox = (props) => {
             {productStyle5.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle5 {...item} />
+                  <CardStyle5 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -166,7 +169,7 @@ const ProductBox = (props) => {
             {productStyle6.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle6 {...item} />
+                  <CardStyle6 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -183,7 +186,7 @@ const ProductBox = (props) => {
             {productStyle7.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle7 {...item} />
+                  <CardStyle7 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -203,7 +206,7 @@ const ProductBox = (props) => {
             {productStyle8.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle8 {...item} />
+                  <CardStyle8 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -220,7 +223,7 @@ const ProductBox = (props) => {
             {productStyle9.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <CardStyle9 {...item} />
+                  <CardStyle9 productDetails={item} {...item} />
                 </Col>
               );
             })}
@@ -237,7 +240,7 @@ const ProductBox = (props) => {
             {productStyle10.map((item, index) => {
               return (
                 <Col key={index} lg={6} sm={24} xs={24} className="">
-                  <ProductCardWithIcons {...item} />
+                  <ProductCardWithIcons productDetails={item} {...item} />
                 </Col>
               );
             })}

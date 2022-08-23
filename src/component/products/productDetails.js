@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Row, Col, Collapse, Divider } from "antd";
-import { LoadingOutlined } from "@ant-design/icons";
-import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { PrimaryButton } from "../buttons";
 import styled from "styled-components";
 import { removeWishlistItem, addItemToWishlist } from "../../redux/actions";
@@ -81,11 +80,7 @@ const ProductDetails = (props) => {
               }
             }}
           >
-            {inWishlist ? (
-              <BsSuitHeartFill className="icon" />
-            ) : (
-              <BsSuitHeart className="icon" />
-            )}
+            {inWishlist ? <FaHeart className="icon" /> : <FaRegHeart className="icon" />}
             <div className="text">{inWishlist ? "REMOVE" : "ADD"} FROM WISHLIST</div>
           </div>
         </Col>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToWishlist, removeWishlistItem } from "../../redux/actions";
 
@@ -38,7 +38,7 @@ const ProductCard = (props) => {
               className="d-flex align-items-center"
               onClick={() => dispatch(removeWishlistItem(_id))}
             >
-              <BsSuitHeartFill className="mr-1" />
+              <FaHeart className="mr-1" />
               <div className="text hoverable dark">REMOVE FROM WISHLIST</div>
             </div>
           ) : (
@@ -47,7 +47,7 @@ const ProductCard = (props) => {
               className="d-flex align-items-center"
               onClick={() => dispatch(addItemToWishlist(_id))}
             >
-              <BsSuitHeart className="mr-1" />
+              <FaRegHeart className="mr-1" />
               <div className="text hoverable dark">ADD TO WISHLIST</div>
             </div>
           )}
@@ -69,7 +69,7 @@ const StyledCard = styled.div`
     border-radius: 4px;
     cursor: pointer;
     position: relative;
-    z-index: 99;
+    z-index: 1;
   }
 
   .item-details {

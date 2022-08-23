@@ -5,7 +5,7 @@ const comparelistReducer = (state = { items: [] }, action) => {
   switch (action.type) {
     case CompareList.ADD_ITEM_TO_COMPARE_LIST: {
       const { payload } = action;
-      message.success("Item add successfully");
+      message.success("Product added to compare list");
       return { ...state, items: [...state.items, payload] };
     }
 
@@ -14,6 +14,7 @@ const comparelistReducer = (state = { items: [] }, action) => {
       console.log("payload", payload);
       const index = state.items.findIndex((item) => item._id === payload._id);
       state.items.splice(index, 1);
+      message.success("Product removed from compare list");
       return { ...state };
     }
 

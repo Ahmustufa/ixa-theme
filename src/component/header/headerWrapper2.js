@@ -8,7 +8,6 @@ import MobileDrawer from "./mobileDrawer";
  * Icons
  */
 import { SearchOutlined } from "@ant-design/icons";
-import { BiHeadphone } from "react-icons/bi";
 import { AiOutlineShoppingCart, AiOutlineUser, AiFillHome } from "react-icons/ai";
 import { BsTelephoneFill, BsSuitHeartFill, BsSearch } from "react-icons/bs";
 import { GoChevronDown } from "react-icons/go";
@@ -19,6 +18,7 @@ import {
   FaPinterestP,
   FaYoutube,
   FaInstagram,
+  FaRegHeart,
 } from "react-icons/fa";
 import { IoMenuOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,13 +28,15 @@ import { ModalConstant } from "src/redux/constants";
 const HeaderWrapper2 = () => {
   const dispatch = useDispatch();
   const [sidebar, toggleSidebar] = useState(false);
-  const { visible, items } = useSelector((state) => state.cart);
+  const { visible, items: cartItems } = useSelector((state) => state.cart);
+  const { items: wishListItems } = useSelector((state) => state.wishlist);
 
   const menu = useSelector((state) => state.menu);
   const menuItems = menu.template || [];
 
   return (
     <>
+      {console.log("asdad", wishListItems)}
       <MobileDrawer visible={sidebar} onClose={() => toggleSidebar(false)} />
       <Row className="top-bar">
         <Col xs={0} sm={0} md={12}>
@@ -50,7 +52,7 @@ const HeaderWrapper2 = () => {
 
         {/* <div className="d-flex align-items-center" style={{ color: "#727272" }}>
           <div className="d-flex align-items-center" role="button">
-            <BsSuitHeartFill style={{ color: "#6859a6", marginRight: 6 }} /> Wishlist
+            <FaHeart style={{ color: "#6859a6", marginRight: 6 }} /> Wishlist
           </div>
           <div className="d-flex align-items-center ml-4" role="button">
             <RiUser3Fill style={{ color: "#6859a6", marginRight: 6 }} /> My account
@@ -94,17 +96,6 @@ const HeaderWrapper2 = () => {
           </Col>
 
           <Col xs={0} sm={0} md={2}>
-            <div className="icon-box">
-              <BiHeadphone className="icon" />
-
-              <div>
-                <p className="title">Help</p>
-                <p className="sub-title">123 456 789</p>
-              </div>
-            </div>
-          </Col>
-
-          <Col xs={0} sm={0} md={2}>
             <div
               className="icon-box"
               role="button"
@@ -122,6 +113,19 @@ const HeaderWrapper2 = () => {
           </Col>
 
           <Col xs={0} sm={0} md={2}>
+            <Link href="/my-account/wishlist">
+              <a style={{ textDecoration: "none" }}>
+                <div className="icon-box">
+                  <Badge size="small" offset={[-10, 2]} count={wishListItems?.length}>
+                    <FaRegHeart size={24} className="icon" />
+                  </Badge>
+                  <p className="title">Wishlist</p>
+                </div>
+              </a>
+            </Link>
+          </Col>
+
+          <Col xs={0} sm={0} md={2}>
             <div
               className="icon-box"
               role="button"
@@ -129,7 +133,7 @@ const HeaderWrapper2 = () => {
                 dispatch(openCart());
               }}
             >
-              <Badge size="small" offset={[-10, 5]} count={items.length}>
+              <Badge size="small" offset={[-15, 5]} count={cartItems?.length}>
                 <AiOutlineShoppingCart className="icon" />
               </Badge>
               <p className="title">Cart</p>

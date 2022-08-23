@@ -31,10 +31,12 @@ export const addAllItemToWishlist = (payload) => {
 };
 
 export const addItemToWishlist = (payload) => {
+  message.success("Added to wishlist successfully");
   return { type: Wishlist.ADD_ITEM, payload };
 };
 
 export const removeWishlistItem = (payload) => {
+  message.success("Removed from wishlist successfully");
   return { type: Wishlist.REMOVE_ITEM, payload };
 };
 

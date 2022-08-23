@@ -1,6 +1,8 @@
 import { Wishlist } from "../constants";
 
-const wishlistReducer = (state = { items: [] }, action) => {
+const initialState = { items: [] };
+
+const wishlistReducer = (state = initialState, action) => {
   switch (action.type) {
     case Wishlist.ADD_ALL_ITEM: {
       const { payload } = action;
