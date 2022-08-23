@@ -98,6 +98,36 @@ const MultiSlider = (props) => {
               ]}
               price={400}
               title="Product 4"
+              _id="b5e65e22-316c-4254-aab6-6fd2e1cb7bd0"
+              productDetails={{
+                _id: "b5e65e22-316c-4254-aab6-6fd2e1cb7bd0",
+                title: "Mini Neon Lime Clear Trolley Design Box Bag",
+                quantity: 1,
+                para: (
+                  <>
+                    Best Leather Quality
+                    <br />
+                    Comfortable Bag
+                    <br />
+                    Trending Fashion
+                    <br />
+                    Affordable
+                  </>
+                ),
+                price: 39.99,
+                description: "",
+                category: "travel",
+                images: [
+                  "/images/Bags/MiniNeon/MIniBag-1.webp",
+                  "/images/Bags/MiniNeon/MIniBag-2.webp",
+                  "/images/Bags/MiniNeon/MIniBag-3.webp",
+                  "/images/Bags/MiniNeon/MIniBag-4.webp",
+                  "/images/Bags/MiniNeon/MIniBag-5.webp",
+                  "/images/Bags/MiniNeon/MIniBag-6.webp",
+                  "/images/Bags/MiniNeon/MIniBag-7.webp",
+                ],
+                rating: { rate: 3.8, count: 679 },
+              }}
             />
           </Col>
           <Col lg={8} sm={24} xs={24} className="">
