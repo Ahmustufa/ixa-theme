@@ -20,13 +20,20 @@ const ProductListin = (props) => {
 
   console.log(products);
   const categoryBanners = [
-    { category: "fridge", image: "/images/clothing/banner/Small-banner-1.jpg" },
-    { category: "fan", image: "/images/clothing/banner/Small-banner-2.jpg" },
-    { category: "sweater", image: "/images/clothing/banner/Small-banner-3.jpg" },
+    { category: "fridge", image: "/images/Electronics/banner/fridge-banner.webp" },
+    { category: "fan", image: "/images/Electronics/banner/fan-banner.webp" },
+    {
+      category: "health-and-beauty",
+      image: "/images/Electronics/banner/health-and-beauty-banner.webp",
+    },
   ];
   return (
     <>
-      <Breadcrumb title="SHOP" link="HOME / SHOP" className="my-5" />
+      <Breadcrumb
+        title="SHOP"
+        link={`HOME / ${router.query.category.toUpperCase()}`}
+        className="my-5"
+      />
 
       <div className="col-11 mx-auto mb-5">
         <Row gutter={[32, 0]}>

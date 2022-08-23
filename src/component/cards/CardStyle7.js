@@ -71,7 +71,7 @@ const CardStyle7 = (props) => {
             <div
               className="compare"
               onClick={() => {
-                dispatch(addItemToCompareList(productDetails));
+                // dispatch(addItemToCompareList(productDetails));
               }}
             >
               <AiOutlineEye size={20} title={"Quick View"} />

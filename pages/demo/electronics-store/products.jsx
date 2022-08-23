@@ -16,21 +16,25 @@ const ShopLeftSidebar = (props) => {
 
   return (
     <>
-      <Breadcrumb title="SHOP" link="HOME / SHOP" className="my-5" />
+      <Breadcrumb title="SHOP" link="ELECTRONICS STORE / PRODUCTS" className="my-5" />
 
       <div className="col-11 mx-auto mb-5">
         <Row gutter={[32, 0]}>
-          <Col xs={0} sm={0} md={0} lg={6}>
-            <ShopSidebar />
-          </Col>
-
-          <Col xs={24} sm={24} md={24} lg={18}>
+          <Col xs={24} sm={24} md={24} lg={24}>
             <img
-              src="/images/clothing/banner/Small-banner-1.jpg"
+              src="/images/Electronics/banner/all-products-banner.jpg"
               width="100%"
               className="mb-3"
             />
+          </Col>
 
+          <Col xs={0} sm={0} md={0} lg={6}>
+            <div style={{ position: "sticky", top: 75, marginTop: 48 }}>
+              <ShopSidebar />
+            </div>
+          </Col>
+
+          <Col xs={24} sm={24} md={24} lg={18}>
             <SortBar className="my-5" setGridColumn={setGridColumn} />
 
             <ProductListing
