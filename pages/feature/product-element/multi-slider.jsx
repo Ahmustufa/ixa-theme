@@ -123,8 +123,8 @@ const MultiSlider = (props) => {
                 description: "",
                 category: "travel",
                 images: [
-                  "/images/Bags/MiniNeon/MIniBag-1.webp",
                   "/images/Bags/MiniNeon/MIniBag-2.webp",
+                  "/images/Bags/MiniNeon/MIniBag-1.webp",
                   "/images/Bags/MiniNeon/MIniBag-3.webp",
                   "/images/Bags/MiniNeon/MIniBag-4.webp",
                   "/images/Bags/MiniNeon/MIniBag-5.webp",
