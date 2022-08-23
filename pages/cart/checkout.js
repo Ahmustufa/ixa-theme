@@ -48,10 +48,7 @@ const Checkout = () => {
   };
 
   const calculateTotal = (cart) => {
-    const subTotal = cart.reduce(
-      (accu, item) => (accu += item.quantity * item.price),
-      0
-    );
+    const subTotal = cart.reduce((accu, item) => (accu += item.quantity * item.price), 0);
     // console.log("Sub total", subTotal);
     return subTotal.toLocaleString();
   };
@@ -248,10 +245,7 @@ const Checkout = () => {
                     <Col span={16}>
                       <div className="box d-flex">
                         <div>
-                          <img
-                            src={item.images[0]}
-                            style={{ width: 50 }}
-                          />
+                          <img src={item.images[0]} style={{ width: 50 }} />
                         </div>
 
                         <div className="ml-3">

@@ -163,7 +163,9 @@ const SideCart = (props) => {
         </div>
         <Divider style={{ margin: "12px 0" }} />
         <Link href="/cart/checkout">
-          <PrimaryButton className="mt-2 w-100">Checkout</PrimaryButton>
+          <PrimaryButton onClick={() => dispatch(closeCart())} className="mt-2 w-100">
+            Checkout
+          </PrimaryButton>
         </Link>
       </section>
     </StyledDrawer>
