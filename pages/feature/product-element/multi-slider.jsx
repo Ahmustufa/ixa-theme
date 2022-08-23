@@ -93,8 +93,13 @@ const MultiSlider = (props) => {
             </div>
             <CardStyle7
               images={[
-                "https://multikart-react.vercel.app/assets/images/pro2/4.jpg",
-                "https://multikart-react.vercel.app/assets/images/pro2/4.jpg",
+                "/images/Bags/MiniNeon/MIniBag-1.webp",
+                "/images/Bags/MiniNeon/MIniBag-2.webp",
+                "/images/Bags/MiniNeon/MIniBag-3.webp",
+                "/images/Bags/MiniNeon/MIniBag-4.webp",
+                "/images/Bags/MiniNeon/MIniBag-5.webp",
+                "/images/Bags/MiniNeon/MIniBag-6.webp",
+                "/images/Bags/MiniNeon/MIniBag-7.webp",
               ]}
               price={400}
               title="Product 4"
