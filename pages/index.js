@@ -58,7 +58,7 @@ const Home = () => {
         ]}
       />
       <StyledPage>
-        <section className="section-wrapper">
+        {/* <section className="section-wrapper">
           <Row justify="space-between" gutter={[0, 40]}>
             <Col xs={24} sm={24} md={24} lg={24} xl={11}>
               <ShopCard
@@ -76,6 +76,33 @@ const Home = () => {
               />
             </Col>
           </Row>
+        </section> */}
+
+        <section
+          style={{
+            backgroundImage:
+              "url(https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/bg-demos.png)",
+            backgroundColor: "#eff1f2",
+          }}
+        >
+          <div className="col-11 mx-auto py-5">
+            <Row justify="space-between" gutter={[0, 40]}>
+              {themes.map((item, index) => (
+                <Col key={index} xs={24} sm={24} md={12} lg={7} xl={7}>
+                  <h3>{item.heading}</h3>
+                  <p>{item.description}</p>
+
+                  {item.images.map((image, i) => (
+                    <img
+                      key={i}
+                      src={image}
+                      style={{ width: "100%", marginBottom: 12 }}
+                    />
+                  ))}
+                </Col>
+              ))}
+            </Row>
+          </div>
         </section>
 
         <FullBgImageSection
@@ -286,5 +313,28 @@ const features = [
       "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/svg-images.svg",
     heading: "Built-in SVG support",
     description: "Insert those lovely crisp and colored vector images.",
+  },
+];
+
+const themes = [
+  {
+    heading: "Karachi",
+    description: "Classy, urban clothing, fashion.",
+    images: ["/images/crop-image-4.png"],
+  },
+  {
+    heading: "Multan",
+    description: "Urban, backpacks, travel, camping.",
+    images: ["/images/crop-image-2.png"],
+  },
+  {
+    heading: "Sialkot",
+    description: "Stylish, urban, sports, fashion, shoes.",
+    images: ["/images/crop-image-1.png"],
+  },
+  {
+    heading: "Islamabad",
+    description: "Minimal, classy, electronics, interiors.",
+    images: ["/images/crop-image-3.png"],
   },
 ];
