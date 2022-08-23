@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { image1 } from "../../../images";
 import { useDispatch, useSelector } from "react-redux";
-import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineEye, AiOutlineShoppingCart } from "react-icons/ai";
 import { Rate, Row, Col } from "antd";
 import {
   addItemToCompareList,
@@ -65,7 +65,7 @@ const CardStyle7 = (props) => {
               }}
               style={{ opacity: 1 }}
             >
-              Add to cart
+              <AiOutlineShoppingCart />
             </div>
 
             <div
@@ -156,7 +156,7 @@ const StyledCard = styled.div`
       display: flex;
       justify-content: center;
       background-color: #dddddd;
-      padding: 8px;
+      padding: 2% 5%;
       transform: translateY(0px);
       transition: all 0.3s ease;
       border-radius: 6px;
@@ -169,9 +169,10 @@ const StyledCard = styled.div`
     }
     .add_to_cart {
       background-color: #dddddd;
-      padding: 8px 12px;
+      padding: 2% 5%;
       border-radius: 6px;
-      width: 185px;
+      margin: 0 10px;
+      /* width: 185px; */
       cursor: pointer;
       :hover {
         background-color: #f54c3b;
@@ -184,7 +185,7 @@ const StyledCard = styled.div`
   .cart-actions {
     opacity: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     position: absolute;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
