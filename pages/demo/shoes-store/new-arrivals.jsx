@@ -15,7 +15,7 @@ const NewArrivals = (props) => {
 
   return (
     <>
-      <Breadcrumb title="SHOP" link="HOME / SHOES STORE / WOMEN" className="my-5" />
+      <Breadcrumb title="SHOP" link="HOME / SHOES STORE / NEW ARRIVAL" className="my-5" />
 
       <div className="col-11 mx-auto mb-5">
         <Row gutter={[32, 0]}>
@@ -26,7 +26,7 @@ const NewArrivals = (props) => {
           <Col xs={24} sm={24} md={24} lg={24}>
             <img
               //   src="/images/Shoes/banner/Women-banner.jpg"
-              src="https://www.berleigh.com/wp-content/uploads/2019/09/banner-new-arrivals.jpg"
+              src="/images/Shoes/banner/new-arrival-banner.webp"
               width="100%"
               className="mb-3"
             />

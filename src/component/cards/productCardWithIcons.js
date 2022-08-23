@@ -55,6 +55,7 @@ const ProductCardWithIcons = (props) => {
                 title={"Add to cart"}
               />
             </div>
+
             {wishlistItem.includes(_id) ? (
               <div
                 className="icon icon-2"
@@ -62,7 +63,7 @@ const ProductCardWithIcons = (props) => {
                   dispatch(removeWishlistItem(productDetails));
                 }}
               >
-                <FaHeart className="icon" />
+                <FaHeart size={18} />
               </div>
             ) : (
               <div
@@ -71,7 +72,7 @@ const ProductCardWithIcons = (props) => {
                   dispatch(addItemToWishlist(productDetails));
                 }}
               >
-                <FaRegHeart className="icon" />
+                <FaRegHeart size={18} />
               </div>
             )}
             <div className="icon icon-3">
@@ -150,7 +151,7 @@ const StyledCard = styled.div`
 
   .icon-section {
     position: absolute;
-    z-index: 100;
+    z-index: 1;
     top: 0;
     left: 8px;
   }
@@ -237,6 +238,10 @@ const StyledCard = styled.div`
     text-align: center;
     font-size: 10px;
     cursor: context-menu;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
   }
 
   .description {
