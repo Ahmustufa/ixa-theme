@@ -128,7 +128,7 @@ const StyledCard = styled.div`
 
   .icon-section {
     position: relative;
-    z-index: 100;
+    z-index: 1;
     bottom: 8px;
     left: 8px;
   }

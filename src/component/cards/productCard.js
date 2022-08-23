@@ -69,7 +69,7 @@ const StyledCard = styled.div`
     border-radius: 4px;
     cursor: pointer;
     position: relative;
-    z-index: 99;
+    z-index: 1;
   }
 
   .item-details {

@@ -109,7 +109,11 @@ const Order = (props) => {
                   src={productDetails.images[0]}
                   className="product-image"
                 /> */}
-                <ImageCarousel direction="right" images={productDetails.images} />
+                <ImageCarousel
+                  direction="right"
+                  id={productDetails._id}
+                  images={productDetails.images}
+                />
               </Col>
             </Row>
           </div>
@@ -176,7 +180,7 @@ const Order = (props) => {
               <Col>
                 {wishlistItem.includes(productDetails._id) ? (
                   <div
-                    className="wish-button"
+                    className="wish-buttons"
                     onClick={() => {
                       // removeItemFromWishlistFunc();
                       dispatch(removeWishlistItem(productDetails));
@@ -187,7 +191,7 @@ const Order = (props) => {
                   </div>
                 ) : (
                   <div
-                    className="wish-button"
+                    className="wish-buttons"
                     onClick={() => {
                       // addItemToWishlistFunc(productDetails);
                       dispatch(addItemToWishlist(productDetails));
@@ -397,7 +401,7 @@ const StyledPage = styled.div`
     }
   }
 
-  .wish-button {
+  .wish-buttons {
     display: flex;
     align-items: center;
     color: #212529;

@@ -14,6 +14,8 @@ import CardStyle7 from "src/component/cards/CardStyle7";
 import CardStyle8 from "src/component/cards/CardStyle8";
 import CardStyle9 from "src/component/cards/CardStyle9";
 import ProductCardWithIcons from "src/component/cards/productCardWithIcons";
+import QuickviewModal from "src/component/modals/quickviewModal";
+
 import {
   productStyle1,
   productStyle2,
@@ -41,6 +43,7 @@ const ProductBox = (props) => {
 
   return (
     <StyledPage>
+      <QuickviewModal />
       <div className="pagination-sec mt-5">
         <Row className="d-flex justify-content-end align-items-center">
           <Col lg={6} sm={24} xs={24}>

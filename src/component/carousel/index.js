@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useRef, useState } from "react";
 
 const ImageCarousel = (props) => {
-  const { direction, images } = props;
+  const { direction, images, id } = props;
   const [state, setState] = useState({ image: images[0] });
 
   return (
@@ -14,8 +14,10 @@ const ImageCarousel = (props) => {
           order={direction === "right" ? 2 : 1}
         >
           <img
+            id={id}
+            key={id}
             src={state.image}
-            alt="preview_image"
+            alt={`preview_image_${id}`}
             className="preview-image img-fluid"
           />
         </Col>

@@ -129,7 +129,7 @@ const StyledCard = styled.div`
 
   .icon-section {
     position: relative;
-    z-index: 100;
+    z-index: 1;
     bottom: 10px;
     left: 8px;
   }
@@ -193,7 +193,7 @@ const StyledCard = styled.div`
     overflow: hidden;
     position: relative;
     background: #fff;
-    z-index: 999;
+    z-index: 1;
   }
 
   .company {
