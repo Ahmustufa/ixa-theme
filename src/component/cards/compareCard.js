@@ -42,7 +42,7 @@ const CompareCard = (props) => {
         <div className="title-detail">
           <h5>description</h5>
         </div>
-        <div className="inner-detail" style={{ height: 80 }}>
+        <div className="inner-detail" style={{ height: 100 }}>
           <p>{description?.slice(0, 120)}...</p>
         </div>
       </div>
@@ -104,6 +104,7 @@ export default CompareCard;
 
 const StyledCard = styled.div`
   border: 1px solid #ddd;
+  margin: 0 8px;
   /* border-right: none; */
   position: relative;
   .close-btn {
@@ -117,8 +118,9 @@ const StyledCard = styled.div`
   }
   .img-section {
     padding: 0 15px 15px;
+    /* height: 250px; */
     img {
-      width: 50%;
+      width: 70%;
       margin: 0 auto;
       padding-top: 25px;
     }

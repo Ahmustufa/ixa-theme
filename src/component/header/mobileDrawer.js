@@ -83,8 +83,12 @@ const MobileDrawer = (props) => {
               borderLeft: "1px solid #ececec",
             }}
           >
-            <FaRegHeart style={{ fontSize: 17 }} />
-            <div>Wishlist</div>
+            <Link href="/my-account/wishlist">
+              <a style={{ textDecoration: "none", color: "#727272" }}>
+                <FaRegHeart style={{ fontSize: 17 }} />
+                <div>Wishlist</div>
+              </a>
+            </Link>
           </div>
 
           <div
