@@ -24,7 +24,7 @@ const CardStyle9 = (props) => {
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
-    currency: "PKR",
+    currency: "USD",
   });
 
   const { items: wishlist } = useSelector((state) => state.wishlist);
@@ -90,7 +90,7 @@ const CardStyle9 = (props) => {
         <div className="price">
           {formatedPrice.format(price)}{" "}
           <small style={{ color: "#858585", textDecoration: "line-through" }}>
-            PKR {price + 100}
+            ${price + 100}
           </small>
         </div>
       </div>
