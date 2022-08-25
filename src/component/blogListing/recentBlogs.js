@@ -12,7 +12,7 @@ const RecentBlogs = (props) => {
       </div>
 
       <div>
-        {props.data?.slice(0, 6)?.map((item, index) => (
+        {props.data?.slice(0, 4)?.map((item, index) => (
           <div
             key={index}
             className="d-flex justify-content-start align-items-center mt-4 w-100"
@@ -57,7 +57,8 @@ RecentBlogs.defaultProps = {
 export default RecentBlogs;
 
 const StyledContent = styled.div`
-  /* border: 1px solid #ddd; */
+  border: 1px solid #ddd;
+  border-radius: 10px;
   padding: 25px;
   .title-header h4 {
     color: #333;

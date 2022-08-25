@@ -14,6 +14,9 @@ import {
   BsHandThumbsUp,
   BsHandThumbsUpFill,
 } from "react-icons/bs";
+import { blogBanner, image2, image3 } from "../../images";
+import UserProfileDetailCard from "src/component/cards/userProfileDetailCard";
+import CommentSection from "src/component/commentSection";
 
 const BlogDetail = (props) => {
   const { title, colors, reviews } = props;
@@ -65,10 +68,10 @@ const BlogDetail = (props) => {
     <StyledPage>
       <Breadcrumb title="BLOG" link="BLOG / WITH RIGHT SIDEBAR" className="my-5" />
 
-      <div style={{ padding: "50px 80px" }} className="detail-section">
-        <Row gutter={[30, 30]} className="border">
-          <Col lg={18} sm={24} xs={24}>
-            <Row gutter={[30, 30]} className="m-4">
+      <div style={{ padding: "30px 80px" }} className="detail-section">
+        <Row gutter={[30, 30]}>
+          <Col lg={18} sm={24} xs={24} style={{ padding: "0 80px" }}>
+            <Row gutter={[30, 30]} className="">
               <Col lg={12} sm={24} xs={24} className="d-flex">
                 <Avatar
                   className="border"
@@ -89,30 +92,144 @@ const BlogDetail = (props) => {
                 {like ? (
                   <BsHandThumbsUpFill
                     className="likeBtn"
-                    onClick={() => {
-                      setLike(false);
-                    }}
+                    onClick={() => setLike(false)}
                     size={40}
                   />
                 ) : (
                   <BsHandThumbsUp
                     className="likeBtn"
-                    onClick={() => {
-                      setLike(true);
-                    }}
+                    onClick={() => setLike(true)}
                     size={40}
                   />
                 )}
                 {disLike ? (
-                  <BsHandThumbsDownFill className="dislikeBtn"  onClick={() => setDisLike(false)} size={40} />
+                  <BsHandThumbsDownFill
+                    className="dislikeBtn"
+                    onClick={() => setDisLike(false)}
+                    size={40}
+                  />
                 ) : (
-                  <BsHandThumbsDown className="dislikeBtn" onClick={() => setDisLike(true)} size={40} />
+                  <BsHandThumbsDown
+                    className="dislikeBtn"
+                    onClick={() => setDisLike(true)}
+                    size={40}
+                  />
                 )}
               </Col>
             </Row>
+            <Divider style={{ background: "#f3f3f3", marginTop: 10, marginBottom: 15 }} />
+            <div className="detail-section">
+              <h4 className="my-3">
+                ALSO THE LEAP INTO ELECTRONIC TYPESETTING, REMAINING ESSENTIALLY
+                UNCHANGED.
+              </h4>
+              <img src={blogBanner} width="100%" />
+
+              <Divider
+                style={{ background: "#dddddd", marginTop: 0, marginBottom: 15 }}
+              />
+              <p>
+                Fusce scelerisque augue a viverra semper. Etiam nisi nibh, vestibulum quis
+                augue id, imperdiet fringilla dolor. Nulla sed nisl vel nisi cursus
+                finibus. Vivamus ut augue nec justo viverra laoreet. Nunc efficitur, arcu
+                ac cursus gravida, lorem elit commodo urna, id viverra libero tellus non
+                ipsum. Fusce molestie ultrices nibh feugiat pretium. Donec pulvinar arcu
+                metus, et dapibus odio condimentum id. Quisque malesuada mauris sit amet
+                dui feugiat, ut pretium mauris luctus. Ut aliquam, tellus nec molestie
+                condimentum, tellus arcu dignissim quam, a gravida nunc nulla vel magna.
+                Sed pulvinar tortor et euismod blandit. Proin accumsan orci ac nunc
+                fermentum vehicula.
+              </p>
+              <p>
+                Fusce scelerisque augue a viverra semper. Etiam nisi nibh, vestibulum quis
+                augue id, imperdiet fringilla dolor. Nulla sed nisl vel nisi cursus
+                finibus. Vivamus ut augue nec justo viverra laoreet. Nunc efficitur, arcu
+                ac cursus gravida.
+              </p>
+              <p>
+                Fusce scelerisque augue a viverra semper. Etiam nisi nibh, vestibulum quis
+                augue id, imperdiet fringilla dolor. Nulla sed nisl vel nisi cursus
+                finibus. Vivamus ut augue nec justo viverra laoreet. Nunc efficitur, arcu
+                ac cursus gravida, lorem elit commodo urna, id viverra libero tellus non
+                ipsum. Fusce molestie ultrices nibh feugiat pretium. Donec pulvinar arcu
+                metus, et dapibus odio condimentum id. Quisque malesuada mauris sit amet
+                dui feugiat, ut pretium mauris luctus. Ut aliquam, tellus nec molestie
+                condimentum, tellus arcu dignissim quam, a gravida nunc nulla vel magna.
+                Sed pulvinar tortor et euismod blandit. Proin accumsan orci ac nunc
+                fermentum vehicula.
+              </p>
+              <p>
+                Fusce scelerisque augue a viverra semper. Etiam nisi nibh, vestibulum quis
+                augue id, imperdiet fringilla dolor. Nulla sed nisl vel nisi cursus
+                finibus. Vivamus ut augue nec justo viverra laoreet. Nunc efficitur, arcu
+                ac cursus gravida.
+              </p>
+              <p>
+                Fusce scelerisque augue a viverra semper. Etiam nisi nibh, vestibulum quis
+                augue id, imperdiet fringilla dolor. Nulla sed nisl vel nisi cursus
+                finibus. Vivamus ut augue nec justo viverra laoreet. Nunc efficitur, arcu
+                ac cursus gravida, lorem elit commodo urna, id viverra libero tellus non
+                ipsum. Fusce molestie ultrices nibh feugiat pretium. Donec pulvinar arcu
+                metus, et dapibus odio condimentum id. Quisque malesuada mauris sit amet
+                dui feugiat, ut pretium mauris luctus. Ut aliquam, tellus nec molestie
+                condimentum, tellus arcu dignissim quam, a gravida nunc nulla vel magna.
+                Sed pulvinar tortor et euismod blandit. Proin accumsan orci ac nunc
+                fermentum vehicula.
+              </p>
+              <p>
+                Fusce scelerisque augue a viverra semper. Etiam nisi nibh, vestibulum quis
+                augue id, imperdiet fringilla dolor. Nulla sed nisl vel nisi cursus
+                finibus. Vivamus ut augue nec justo viverra laoreet. Nunc efficitur, arcu
+                ac cursus gravida.
+              </p>
+              <p>
+                Fusce scelerisque augue a viverra semper. Etiam nisi nibh, vestibulum quis
+                augue id, imperdiet fringilla dolor. Nulla sed nisl vel nisi cursus
+                finibus. Vivamus ut augue nec justo viverra laoreet. Nunc efficitur, arcu
+                ac cursus gravida, lorem elit commodo urna, id viverra libero tellus non
+                ipsum. Fusce molestie ultrices nibh feugiat pretium. Donec pulvinar arcu
+                metus, et dapibus odio condimentum id. Quisque malesuada mauris sit amet
+                dui feugiat, ut pretium mauris luctus. Ut aliquam, tellus nec molestie
+                condimentum, tellus arcu dignissim quam, a gravida nunc nulla vel magna.
+                Sed pulvinar tortor et euismod blandit. Proin accumsan orci ac nunc
+                fermentum vehicula.
+              </p>
+              <p>
+                Fusce scelerisque augue a viverra semper. Etiam nisi nibh, vestibulum quis
+                augue id, imperdiet fringilla dolor. Nulla sed nisl vel nisi cursus
+                finibus. Vivamus ut augue nec justo viverra laoreet. Nunc efficitur, arcu
+                ac cursus gravida.
+              </p>
+              <p>
+                Fusce scelerisque augue a viverra semper. Etiam nisi nibh, vestibulum quis
+                augue id, imperdiet fringilla dolor. Nulla sed nisl vel nisi cursus
+                finibus. Vivamus ut augue nec justo viverra laoreet. Nunc efficitur, arcu
+                ac cursus gravida, lorem elit commodo urna, id viverra libero tellus non
+                ipsum. Fusce molestie ultrices nibh feugiat pretium. Donec pulvinar arcu
+                metus, et dapibus odio condimentum id. Quisque malesuada mauris sit amet
+                dui feugiat, ut pretium mauris luctus. Ut aliquam, tellus nec molestie
+                condimentum, tellus arcu dignissim quam, a gravida nunc nulla vel magna.
+                Sed pulvinar tortor et euismod blandit. Proin accumsan orci ac nunc
+                fermentum vehicula.
+              </p>
+              <p>
+                Fusce scelerisque augue a viverra semper. Etiam nisi nibh, vestibulum quis
+                augue id, imperdiet fringilla dolor. Nulla sed nisl vel nisi cursus
+                finibus. Vivamus ut augue nec justo viverra laoreet. Nunc efficitur, arcu
+                ac cursus gravida.
+              </p>
+            </div>
+            <Divider style={{ background: "#f3f3f3", marginTop: 10, marginBottom: 15 }} />
+            <div className="mt-5">
+              <h3>Discussion </h3>
+              <CommentSection />
+            </div>
           </Col>
           <Col lg={6} sm={24} xs={24}>
-            <RecentBlogs />
+            <div style={{ position: "sticky", backgroundColor: "#fff", top: 100 }}>
+              <UserProfileDetailCard />
+              <RecentBlogs />
+            </div>
           </Col>
         </Row>
       </div>
@@ -139,19 +256,25 @@ const StyledPage = styled.div`
     }
   }
 
-  .likeBtn, .dislikeBtn{
-    border: 1px solid gray;
+  .detail-section {
+    p {
+      font-size: 20px;
+    }
+  }
+  .likeBtn,
+  .dislikeBtn {
+    border: 1px solid #ddd;
     border-radius: 100px;
     padding: 7px;
     margin: 0 10px;
   }
-  .likeBtn:hover{
+  .likeBtn:hover {
     border: 1px solid #147814;
-    background: #9eff9e;
+    background: #d2fbd2;
   }
-  .dislikeBtn:hover{
-    border: 1px solid #147814;
-    background: #9eff9e;
+  .dislikeBtn:hover {
+    border: 1px solid #fd0000;
+    background: #ffc1c1;
   }
 
   @media (max-width: 1024px) {
