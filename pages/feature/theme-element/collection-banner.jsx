@@ -14,16 +14,14 @@ const CollectionBanner = () => {
         colSize={12}
         insideData={[
           {
-            image:
-              "https://multikart-react.vercel.app/_next/static/images/sub-banner1-d89099e9c448c84a71f131fd01d931ec.jpg",
-            title1: "SAVE 30%",
-            title2: "MEN",
+            image: "/images/Small-banner-1.jpg",
+            // title1: "SAVE 30%",
+            // title2: "MEN",
           },
           {
-            image:
-              "https://multikart-react.vercel.app/_next/static/images/sub-banner2-8eaf597c5af59e6bda754e95b855d860.jpg",
-            title1: "SAVE 60%",
-            title2: "WOMEN",
+            image: "/images/Small-banner-2.jpg",
+            // title1: "SAVE 60%",
+            // title2: "WOMEN",
           },
         ]}
         cardHeight={315}
@@ -68,8 +66,7 @@ const CollectionBanner = () => {
             title2: "NEW WATCH",
           },
           {
-            image:
-              "https://multikart-react.vercel.app/_next/static/images/banner2-6270a4161a1b6425cd2bb2a6e8b1813d.jpg",
+            image: "/images/sale_banner.jpg",
             title1: "",
             title2: "",
           },
