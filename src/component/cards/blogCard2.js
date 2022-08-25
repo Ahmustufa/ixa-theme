@@ -92,7 +92,7 @@ const StyledCard = styled.div`
     border-radius: 10px;
     cursor: pointer;
     position: relative;
-    z-index: 999;
+    z-index: 1;
     overflow: hidden;
     :hover {
       transition: 0.5s ease;

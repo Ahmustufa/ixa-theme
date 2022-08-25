@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Row, Col, Collapse } from "antd";
+import { Row, Col, Collapse, Pagination } from "antd";
 import styled from "styled-components";
 import Breadcrumb from "src/component/breadcrumb";
 import { useDispatch, useSelector } from "react-redux";
@@ -61,7 +61,7 @@ const NoSidebar = (props) => {
       <Breadcrumb title="BLOG" link="BLOG / WITHOUT SIDEBAR" className="my-5" />
 
       <div style={{ padding: 80 }} className="detail-section">
-        <Row gutter={[30, 30]} className="">
+        <Row gutter={[0, 40]} className="">
           {bagsBlogs.map((item, index) => {
             return (
               <Col lg={6} sm={24} xs={24}>
@@ -70,6 +70,7 @@ const NoSidebar = (props) => {
             );
           })}
         </Row>
+        <Pagination className="mt-5" defaultCurrent={1} total={50} />
       </div>
     </StyledPage>
   );
@@ -94,6 +95,12 @@ const StyledPage = styled.div`
     }
   }
 
+  .detail-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   @media (max-width: 1024px) {
     .detail-section {
       padding: 20px !important;
