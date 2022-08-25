@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Breadcrumb from "src/component/breadcrumb";
 import { useDispatch, useSelector } from "react-redux";
 import BlogListingCard from "../../src/component/blogListing/blogListingCard";
+import BlogCard2 from "src/component/cards/blogCard2";
+import { bagsBlogs } from "src/mock/bagsProducts";
 
 const NoSidebar = (props) => {
   const { title, colors, reviews } = props;
@@ -60,11 +62,13 @@ const NoSidebar = (props) => {
 
       <div style={{ padding: 80 }} className="detail-section">
         <Row gutter={[30, 30]} className="">
-          <Col lg={24} sm={24} xs={24}>
-            {blogData.map((item, index) => {
-              return <BlogListingCard key={index} {...item} />;
-            })}
-          </Col>
+          {bagsBlogs.map((item, index) => {
+            return (
+              <Col lg={6} sm={24} xs={24}>
+                <BlogCard2 key={index} {...item} />
+              </Col>
+            );
+          })}
         </Row>
       </div>
     </StyledPage>
