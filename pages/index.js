@@ -318,22 +318,22 @@ const features = [
 
 const themes = [
   {
-    heading: "Karachi",
+    heading: "Apparels",
     description: "Classy, urban clothing, fashion.",
     images: ["/images/crop-image-4.png"],
   },
   {
-    heading: "Multan",
+    heading: "Bags",
     description: "Urban, backpacks, travel, camping.",
     images: ["/images/crop-image-2.png"],
   },
   {
-    heading: "Sialkot",
+    heading: "Shoes",
     description: "Stylish, urban, sports, fashion, shoes.",
     images: ["/images/crop-image-1.png"],
   },
   {
-    heading: "Islamabad",
+    heading: "Electronics",
     description: "Minimal, classy, electronics, interiors.",
     images: ["/images/crop-image-3.png"],
   },
