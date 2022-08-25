@@ -17,6 +17,9 @@ import {
 import { blogBanner, image2, image3 } from "../../images";
 import UserProfileDetailCard from "src/component/cards/userProfileDetailCard";
 import CommentSection from "src/component/commentSection";
+import SocialIcons from "src/component/socialIcons";
+import { bagsBlogs } from "src/mock/bagsProducts";
+import BlogCard2 from "src/component/cards/blogCard2";
 
 const BlogDetail = (props) => {
   const { title, colors, reviews } = props;
@@ -24,50 +27,10 @@ const BlogDetail = (props) => {
   const [like, setLike] = useState(false);
   const [disLike, setDisLike] = useState(false);
 
-  const blogData = [
-    {
-      images: ["https://multikart-react.vercel.app/assets/images/portfolio/metro/2.jpg"],
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      images: ["https://multikart-react.vercel.app/assets/images/portfolio/metro/6.jpg"],
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      images: ["https://multikart-react.vercel.app/assets/images/portfolio/metro/10.jpg"],
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      images: ["https://multikart-react.vercel.app/assets/images/portfolio/metro/14.jpg"],
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      images: ["https://multikart-react.vercel.app/assets/images/portfolio/metro/18.jpg"],
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-
-    {
-      images: ["https://multikart-react.vercel.app/assets/images/portfolio/metro/3.jpg"],
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-  ];
-
   return (
     <StyledPage>
       <Breadcrumb title="BLOG" link="BLOG / WITH RIGHT SIDEBAR" className="my-5" />
-
+      <SocialIcons />
       <div style={{ padding: "30px 80px" }} className="detail-section">
         <Row gutter={[30, 30]}>
           <Col lg={18} sm={24} xs={24} style={{ padding: "0 80px" }}>
@@ -232,6 +195,17 @@ const BlogDetail = (props) => {
             </div>
           </Col>
         </Row>
+        <div style={{ padding: 80 }} className="detail-section">
+          <Row gutter={[30, 30]} className="">
+            {bagsBlogs.map((item, index) => {
+              return (
+                <Col lg={6} sm={24} xs={24}>
+                  <BlogCard2 key={index} {...item} />
+                </Col>
+              );
+            })}
+          </Row>
+        </div>
       </div>
     </StyledPage>
   );

@@ -238,6 +238,7 @@ export const mainMenu = [
       { title: "With left sidebar", link: "/blog/blog-left-sidebar" },
       { title: "With right sidebar", link: "/blog/blog-right-sidebar" },
       { title: "Without sidebar", link: "/blog/no-sidebar" },
+      { title: "Blog detail page", link: "/blog/blog-detail" },
     ],
   },
 ];
