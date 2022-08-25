@@ -153,13 +153,13 @@ const StyledCard = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(${(props) => props.images[0]});
+    background-image: ${(props) => `url(${props.images[0]})`};
     transition: 0.2s ease;
     /* min-height: 320px; */
 
     &:hover {
-      background-image: url(${(props) =>
-        props.images.length > 1 ? props.images[1] : props.images[0]});
+      background-image: ${(props) =>
+        props.images.length > 1 ? `url(${props.images[1]})` : `url(${props.images[0]})`};
     }
   }
 
