@@ -85,7 +85,7 @@ const ProductVerticalCarousel = (props) => {
       </div>
       <Divider />
 
-      <Slider ref={sliderRef} {...carouselSettings}>
+      <Slider ref={sliderRef} {...carouselSettings} className="verticalCarousel">
         {props.data?.map((item, index) => (
           <div
             key={index}

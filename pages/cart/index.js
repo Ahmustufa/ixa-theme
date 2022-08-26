@@ -133,7 +133,7 @@ const ShoppingBag = () => {
                         >
                           <div className="">Subtotal: </div>
                           <div className="font-weight-light ml-2">
-                            Rs. {(item.price * item.quantity).toLocaleString()}
+                            $. {(item.price * item.quantity).toLocaleString()}
                           </div>
                         </div>
                       </div>

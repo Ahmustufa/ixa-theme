@@ -7,14 +7,20 @@ const CartSteps = (props) => {
   const stepsData = [
     { id: 1, title: "SHOPPING BAG", description: "VIEW YOUR ITEMS", link: "/cart" },
     {
+      id: 3,
+      title: "BILLING ADDRESS",
+      description: "REVIEW AND ORDER!",
+      link: "/cart/billingAddress",
+    },
+    {
       id: 2,
       title: "SHIPPING AND CHECKOUT",
       description: "ENTER YOUR DETAILS",
-      link: "cart/checkout",
+      link: "/cart/checkout",
     },
-    // { id: 3, title: "CONFIRMATION", description: "REVIEW AND ORDER!" },
   ];
 
+  console.log("props", props.step);
   return (
     <StyledPage>
       <Row className="step-container" gutter={[24, 24]}>
