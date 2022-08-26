@@ -19,6 +19,7 @@ import { productStyle5, productStyle8 } from "src/mock/mockupData";
 import Heading from "../src/component/headings";
 import DragToScroll from "src/component/scroll/dragToScroll";
 import Link from "next/link";
+import { ButtonWrapper } from "src/component/buttons";
 
 const Home = () => {
   return (
@@ -26,58 +27,25 @@ const Home = () => {
       <Head>
         <title>E-commerce Store | Home</title>
       </Head>
-
       <SubscriptionModal image="/images/subscriptionModalBg.png" />
-      <HomeCarousel
-        btnDisplay={true}
-        carouselData={[
-          {
-            title: "Women's week",
-            subtitle: "Take advantage of promotions upto 60%",
-            backgroundImage: ["/images/slide_1.jpg", "/images/slide_1.jpg"],
-          },
-          {
-            text: "NEW TREND",
-            title: "THE BASICS",
-            subtitle: "An exclusive selction of season's trends.",
-            backgroundImage: ["/images/slide_2.jpg", "/images/slide_2.jpg"],
-          },
-          {
-            text: "NEW COLLECTION",
-            title: "Bellemount '20",
-            subtitle: (
-              <div>
-                Rapidiously redifine dynamic niche markets before
-                <br />
-                plug-and-play collaboration and idea-sharing Continually
-                <br />
-                utlilize focused convergence via top-line outsourcing
-              </div>
-            ),
-            backgroundImage: ["/images/slide_3.jpg", "/images/slide_3.jpg"],
-          },
-        ]}
-      />
-      <StyledPage>
-        {/* <section className="section-wrapper">
-          <Row justify="space-between" gutter={[0, 40]}>
-            <Col xs={24} sm={24} md={24} lg={24} xl={11}>
-              <ShopCard
-                title="London"
-                description="Classy, urban clothing, fashion."
-                link="/demo/clothing"
-              />
-            </Col>
 
-            <Col xs={24} sm={24} md={24} lg={24} xl={11}>
-              <ShopCard
-                title="Melbourne"
-                description="Urban, backpacks, travel, camping."
-                link="/demo/bag-store"
-              />
-            </Col>
-          </Row>
-        </section> */}
+      <StyledPage>
+        <div className="banner">
+          <div className="content">
+            <h1 style={{ fontWeight: 500 }}>
+              Creative multi-purpose <br />
+              <span style={{ color: "#E94C89", fontWeight: 800 }}>e-Commerce</span> theme
+            </h1>
+            <p className="mb-5 mt-4" style={{ fontSize: 20 }}>
+              The complete template for your ecommerce store build on Next.js to create
+              different structures and satisfy any specific requirements.
+            </p>
+            <div className="d-flex col-10">
+              <button className="button-1 mr-4">Buy Now</button>
+              <button className="button-1 outline">See Demo</button>
+            </div>
+          </div>
+        </div>
 
         <section
           style={{
@@ -102,10 +70,10 @@ const Home = () => {
         </section>
 
         <FullBgImageSection
-          h1="Trending"
-          h3="Men | Women"
-          h5="Fashion"
-          bgImage={brownHair}
+          // h1="Trending"
+          // h3="Men | Women"
+          // h5="Fashion"
+          bgImage={"/images/mian-fixed.png"}
         />
 
         <section
@@ -233,6 +201,46 @@ const Home = () => {
 export default Home;
 
 const StyledPage = styled.div`
+  .banner {
+    background-image: url("/images/slide_1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+
+    .content {
+      width: 500px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: 100px;
+    }
+  }
+
+  .button-1 {
+    border: 1px solid #000;
+    border-radius: 26px;
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #070707;
+    color: #fff;
+    transition: 0.3s;
+    :hover {
+      background-color: #fff;
+      color: #070707;
+    }
+
+    &.outline {
+      background-color: #fff;
+      color: #070707;
+      :hover {
+        background-color: #070707;
+        color: #fff;
+      }
+    }
+  }
+
   .section-wrapper {
     padding: 80px;
   }
