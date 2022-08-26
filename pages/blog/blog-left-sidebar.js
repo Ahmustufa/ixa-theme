@@ -74,8 +74,8 @@ const BlogLeftSidebar = (props) => {
             <Row gutter={[0, 30]}>
               {bagsBlogs.map((item, index) => {
                 return (
-                  <Col lg={8} sm={24} xs={24}>
-                    <BlogCard2 key={index} {...item} />
+                  <Col key={index} lg={8} sm={24} xs={24}>
+                    <BlogCard2 {...item} />
                   </Col>
                 );
               })}

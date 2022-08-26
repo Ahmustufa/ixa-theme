@@ -14,26 +14,26 @@ const SocialIcons = (props) => {
     <StyledCard>
       <div id="fixed-social">
         <div>
-          <a href="#" class="fixed-facebook" target="_blank">
-            <FaFacebook color="#3d9ae7" size={30} class="fa fa-facebook" />{" "}
+          <a href="#" className="fixed-facebook" target="_blank">
+            <FaFacebook color="#3d9ae7" size={30} className="fa fa-facebook" />{" "}
             <span>Facebook</span>
           </a>
         </div>
         <div>
-          <a href="#" class="fixed-twitter" target="_blank">
-            <FaTwitter color="#42aaf5" size={30} class="fa fa-twitter" />{" "}
+          <a href="#" className="fixed-twitter" target="_blank">
+            <FaTwitter color="#42aaf5" size={30} className="fa fa-twitter" />{" "}
             <span>Twitter</span>
           </a>
         </div>
         <div>
-          <a href="#" class="fixed-linkedin" target="_blank">
-            <FaLinkedinIn color="#3688d2" size={30} class="fa fa-linkedin" />{" "}
+          <a href="#" className="fixed-linkedin" target="_blank">
+            <FaLinkedinIn color="#3688d2" size={30} className="fa fa-linkedin" />{" "}
             <span>LinkedIn</span>
           </a>
         </div>
         <div>
-          <a href="#" class="fixed-instagrem" target="_blank">
-            <FaInstagram color="#f56f01" size={30} class="fa fa-instagram" />{" "}
+          <a href="#" className="fixed-instagrem" target="_blank">
+            <FaInstagram color="#f56f01" size={30} className="fa fa-instagram" />{" "}
             <span>Instagram</span>
           </a>
         </div>

@@ -71,8 +71,8 @@ const Aboutus = (props) => {
 
       <h1 className="page-heading">How we help small businesses</h1>
       <Row justify="space-between" gutter={[0, 24]}>
-        {cardData.map((item) => (
-          <Col xs={24} sm={24} md={11} lg={7} xl={7}>
+        {cardData.map((item, index) => (
+          <Col key={index} xs={24} sm={24} md={11} lg={7} xl={7}>
             <div className="mb-5 mb-md-0">
               <img src={item.image} className="img-fluid" />
               <h2 className="card-heading">{item.heading}</h2>
