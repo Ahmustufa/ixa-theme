@@ -1,25 +1,25 @@
 import Head from "next/head";
 import { Row, Col } from "antd";
-import ShopCard from "../src/component/cards/shopCard";
-import HomeCarousel from "../src/component/heroSection";
 import styled from "styled-components";
 import FullBgImageSection from "../src/component/heroSection/FullBgImageSection";
-import { brownHair } from "../images";
 import SubscriptionModal from "../src/component/modals/subscriptionModal1";
-import BlogCarousel from "../src/component/productListing/blogCarousel";
-import SortItems from "../src/component/sortItems";
-import DressCategories from "../src/component/categories/derssCategories";
-import ProductCarousel from "../src/component/productListing/carousel";
-import CardStyle5 from "src/component/cards/CardStyle5";
-import { shoesProducts } from "src/mock/shoesProducts";
-import ProductListing from "../src/component/productListing";
-import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
-import ProductVerticalCarousel from "../src/component/productListing/productVerticalCarousel";
-import { productStyle5, productStyle8 } from "src/mock/mockupData";
-import Heading from "../src/component/headings";
 import DragToScroll from "src/component/scroll/dragToScroll";
 import Link from "next/link";
-import { ButtonWrapper } from "src/component/buttons";
+// import ShopCard from "../src/component/cards/shopCard";
+// import HomeCarousel from "../src/component/heroSection";
+// import { brownHair } from "../images";
+// import BlogCarousel from "../src/component/productListing/blogCarousel";
+// import SortItems from "../src/component/sortItems";
+// import DressCategories from "../src/component/categories/derssCategories";
+// import ProductCarousel from "../src/component/productListing/carousel";
+// import CardStyle5 from "src/component/cards/CardStyle5";
+// import { shoesProducts } from "src/mock/shoesProducts";
+// import ProductListing from "../src/component/productListing";
+// import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
+// import ProductVerticalCarousel from "../src/component/productListing/productVerticalCarousel";
+// import { productStyle5, productStyle8 } from "src/mock/mockupData";
+// import Heading from "../src/component/headings";
+// import { ButtonWrapper } from "src/component/buttons";
 
 const Home = () => {
   return (
@@ -30,7 +30,7 @@ const Home = () => {
       <SubscriptionModal image="/images/subscriptionModalBg.png" />
 
       <StyledPage>
-        <div className="banner">
+        <section className="banner">
           <div className="content">
             <h1 style={{ fontWeight: 500 }}>
               Creative multi-purpose <br />
@@ -45,7 +45,45 @@ const Home = () => {
               <button className="button-1 outline">See Demo</button>
             </div>
           </div>
-        </div>
+        </section>
+
+        <section className="my-5">
+          <div className="col-10 m-auto">
+            <div className="text-center">
+              <p style={{ color: "#E94C89", fontWeight: 600, fontSize: 24 }}>
+                WHY CHOOSE US
+              </p>
+              <p
+                style={{
+                  color: "#1D8ECE",
+                  fontWeight: 600,
+                  maxWidth: 600,
+                  fontSize: 32,
+                  margin: "auto",
+                }}
+              >
+                A complete website building toolkit save your time by using Kalles
+              </p>
+            </div>
+
+            <Row gutter={[40, 40]}>
+              {whyChooseUs.map((item, index) => (
+                <Col key={index} xs={24} sm={24} md={12} lg={8} xl={8}>
+                  <div className="text-center">
+                    <img
+                      src={item.image}
+                      alt={`image-${index}`}
+                      className="img-fluid"
+                      style={{ height: 300, objectFit: "contain" }}
+                    />
+                    <h4>{item.heading}</h4>
+                    <p>{item.text}</p>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          </div>
+        </section>
 
         <section
           style={{
@@ -69,12 +107,7 @@ const Home = () => {
           </div>
         </section>
 
-        <FullBgImageSection
-          // h1="Trending"
-          // h3="Men | Women"
-          // h5="Fashion"
-          bgImage={"/images/mian-fixed.png"}
-        />
+        <FullBgImageSection bgImage={"/images/mian-fixed.png"} />
 
         <section
           style={{
@@ -354,5 +387,38 @@ const themes = [
     description: "Minimal, classy, electronics, interiors.",
     images: ["/images/crop-image-3.png"],
     link: "/demo/electronics-store/",
+  },
+];
+
+const whyChooseUs = [
+  {
+    image: "/images/why_choose_us_1.png",
+    heading: "Online Store",
+    text: "Polkadots fully supports  allowing you to use sections anywhere. Experience the latest technology from e-commerce to the fullest.",
+  },
+  {
+    image: "/images/why_choose_us_2.png",
+    heading: "Stunning Design",
+    text: "Want to increase your sales just in the first visit. Come to us & you will see how miracle our flagship e-commerce themes are.",
+  },
+  {
+    image: "/images/why_choose_us_3.png",
+    heading: "Demos Design",
+    text: "We have assembled a huge collection of theme demo. Now you can choose different templates to create stunning layouts.",
+  },
+  {
+    image: "/images/why_choose_us_4.png",
+    heading: "Easy to Implement and Use",
+    text: "We analyze, then support you the best methods for any necessary processes or features make your website operate stably and smoothly.",
+  },
+  {
+    image: "/images/why_choose_us_5.png",
+    heading: "e-Commerce Optimization",
+    text: "With our experience in e-commerce, we are confident to bring the theme with the highest conversion rate.",
+  },
+  {
+    image: "/images/why_choose_us_6.png",
+    heading: "Search Engine Optimization",
+    text: "Combination of SEO and our web development team make a powerful weapon to get super high conversion rate websites.",
   },
 ];
