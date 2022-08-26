@@ -50,12 +50,19 @@ const Home = () => {
         <section className="my-5">
           <div className="col-10 m-auto">
             <div className="text-center">
-              <p style={{ color: "#E94C89", fontWeight: 600, fontSize: 24 }}>
+              <p
+                style={{
+                  color: "#1D8ECE",
+                  fontWeight: 600,
+                  fontSize: 20,
+                  marginBottom: 0,
+                }}
+              >
                 WHY CHOOSE US
               </p>
               <p
                 style={{
-                  color: "#1D8ECE",
+                  color: "#2a2a2a",
                   fontWeight: 600,
                   maxWidth: 600,
                   fontSize: 32,
