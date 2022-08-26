@@ -256,7 +256,7 @@ const Checkout = () => {
                     </Col>
                     <Col className="p-3 d-flex" span={8}>
                       <p className="font-weight-light title">
-                        PKR {item.price?.toLocaleString()}
+                        ${item.price?.toLocaleString()}
                       </p>
                       {loadingState == item._id ? (
                         <Spin
@@ -290,9 +290,7 @@ const Checkout = () => {
                   <p className="title">TOTAL</p>
                 </Col>
                 <Col className="p-3" span={8}>
-                  <p className="font-weight-bold title">
-                    PKR {calculateTotal(cartItems)}
-                  </p>
+                  <p className="font-weight-bold title">${calculateTotal(cartItems)}</p>
                 </Col>
               </Row>
             </div>

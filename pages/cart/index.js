@@ -154,7 +154,7 @@ const ShoppingBag = () => {
                 </tr> */}
                 <tr>
                   <td style={{ background: "#f9fafb" }}>TOTAL</td>
-                  <td className="font-weight-bold">PKR {calculateTotal(items)}</td>
+                  <td className="font-weight-bold">${calculateTotal(items)}</td>
                 </tr>
               </table>
               <Link href="/cart/checkout">

@@ -30,7 +30,7 @@ const Order = (props) => {
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
-    currency: "PKR",
+    currency: "USD",
   });
 
   const [addToCart, addToCartLoading] = useFetch(Mutations.addToCart);

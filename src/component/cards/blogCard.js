@@ -13,7 +13,7 @@ const BlogCard = (props) => {
   const { items: wishlist } = useSelector((state) => state.wishlist);
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
-    currency: "PKR",
+    currency: "USD",
   });
   console.log("props blog card", props);
   return (

@@ -17,7 +17,7 @@ const CollectionCard = (props) => {
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
-    currency: "PKR",
+    currency: "USD",
   });
 
   return (
@@ -43,7 +43,7 @@ const CollectionCard = (props) => {
         <h4>
           {formatedPrice.format(price)}{" "}
           <small style={{ color: "#858585", textDecoration: "line-through" }}>
-            PKR {price + 100}
+            ${price + 100}
           </small>
         </h4>
       </div>

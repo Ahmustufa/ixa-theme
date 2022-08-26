@@ -23,7 +23,7 @@ const CardStyle6 = (props) => {
   const dispatch = useDispatch();
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
-    currency: "PKR",
+    currency: "USD",
   });
 
   const { items: wishlist } = useSelector((state) => state.wishlist);
@@ -110,7 +110,7 @@ const CardStyle6 = (props) => {
             <div className="price">
               {formatedPrice.format(price)}{" "}
               <small style={{ color: "#858585", textDecoration: "line-through" }}>
-                PKR {price * 1.5}
+                ${price * 1.5}
               </small>
             </div>
 
@@ -153,13 +153,13 @@ const StyledCard = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(${(props) => props.images[0]});
+    background-image: ${(props) => `url(${props.images[0]})`};
     transition: 0.2s ease;
     /* min-height: 320px; */
 
     &:hover {
-      background-image: url(${(props) =>
-        props.images.length > 1 ? props.images[1] : props.images[0]});
+      background-image: ${(props) =>
+        props.images.length > 1 ? `url(${props.images[1]})` : `url(${props.images[0]})`};
     }
   }
 
