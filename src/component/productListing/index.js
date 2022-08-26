@@ -11,7 +11,11 @@ const ProductListing = (props) => {
       {products.map((item, index) => {
         return (
           <Col key={index} xs={24} sm={24} md={12} lg={11} xl={span} xxl={span}>
-            <CardStyle productDetails={item} listView={grid == 1 ? true : false} {...item} />
+            <CardStyle
+              productDetails={item}
+              listView={grid == 1 ? true : false}
+              {...item}
+            />
           </Col>
         );
       })}

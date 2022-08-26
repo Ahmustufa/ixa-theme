@@ -7,10 +7,12 @@ import BlogListingCard from "../../src/component/blogListing/blogListingCard";
 import BlogCard2 from "src/component/cards/blogCard2";
 import { bagsBlogs } from "src/mock/bagsProducts";
 import { clothBlogs, clothProducts } from "src/mock/clothProducts";
+import FilterBar from "src/component/sortItems/FilterBar";
 
 let pageSize = 8;
 
 const NoSidebar = (props) => {
+  const [data, setData] = useState([...clothProducts, ...bagsBlogs]);
   const [page, setPage] = useState({
     current: 1,
     minIndex: 0,
@@ -38,9 +40,10 @@ const NoSidebar = (props) => {
     <StyledPage>
       <Breadcrumb title="BLOG" link="BLOG / WITHOUT SIDEBAR" className="my-5" />
 
-      <div style={{ padding: 80 }} className="detail-section">
+      <div style={{ padding: " 30px 80px" }} className="detail-section">
+        <FilterBar className="w-100 mb-5" data={data} setData={setData} />
         <Row gutter={[0, 40]} className="">
-          {[...clothProducts, ...bagsBlogs].map(
+          {data.map(
             (item, index) =>
               index >= page.minIndex &&
               index < page.maxIndex && (

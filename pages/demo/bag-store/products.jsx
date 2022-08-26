@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Row, Col } from "antd";
+import { useEffect, useState } from "react";
+import { Row, Col, Pagination } from "antd";
 import { useSelector } from "react-redux";
 import Breadcrumb from "src/component/breadcrumb";
 import ProductListing from "src/component/productListing";
