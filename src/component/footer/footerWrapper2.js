@@ -181,8 +181,16 @@ const FooterContent = () => {
         <Col xs={24} sm={24} md={4} lg={4} xl={4} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">Our company</div>
-            <div className="footer-item">About us</div>
-            <div className="footer-item">Careers</div>
+            <div className="footer-item">
+              <Link href="/about-us">
+                <a className="link">About us</a>
+              </Link>
+            </div>
+            <div className="footer-item">
+              <Link href="/faqs">
+                <a className="link">FAQs</a>
+              </Link>
+            </div>
           </div>
         </Col>
 
