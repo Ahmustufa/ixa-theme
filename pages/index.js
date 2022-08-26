@@ -35,21 +35,29 @@ const Home = () => {
           <div className="content">
             <h1 style={{ fontWeight: 500 }}>
               Creative multi-purpose
-              <span
-                style={{ color: "#E94C89", fontWeight: 800, display: "flex", width: 300 }}
-              >
+              <span style={{ color: "#E94C89", fontWeight: 800, display: "flex" }}>
                 <Typewriter
                   options={{
-                    strings: [
-                      "Furniture",
-                      "Electronics",
-                      "Clothing",
-                      "Bags",
-                      "e-Commerce",
-                    ],
                     autoStart: true,
                     loop: true,
-                    wrapperClassName: "tw-wrap",
+                  }}
+                  onInit={(typewriter) => {
+                    typewriter
+                      .typeString("Furniture")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("Electronics")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("Bags")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("Clothing")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("e-Commerce")
+                      .pauseFor(2500)
+                      .start();
                   }}
                 />
                 <span style={{ fontWeight: 500, color: "#2a2a2a" }}>theme</span>
