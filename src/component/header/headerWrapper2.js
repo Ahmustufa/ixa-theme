@@ -36,7 +36,6 @@ const HeaderWrapper2 = () => {
 
   return (
     <>
-      {console.log("asdad", wishListItems)}
       <MobileDrawer visible={sidebar} onClose={() => toggleSidebar(false)} />
       <Row className="top-bar">
         <Col xs={0} sm={0} md={12}>
@@ -68,9 +67,9 @@ const HeaderWrapper2 = () => {
         </Col>
       </Row>
 
-      <div className="col-12 col-sm-11 m-auto header-wrapper-2" style={{ zIndex: 1 }}>
+      <div className="col-12 col-lg-11 m-auto header-wrapper-2" style={{ zIndex: 1 }}>
         <Row justify="space-evenly" align="middle">
-          <Col xs={3} sm={3} md={1} lg={1} xl={1}>
+          <Col xs={3} sm={3} md={1} lg={0} xl={0}>
             <IoMenuOutline
               style={{ fontSize: 32, cursor: "pointer" }}
               onClick={() => toggleSidebar(true)}
@@ -95,7 +94,7 @@ const HeaderWrapper2 = () => {
             />
           </Col>
 
-          <Col xs={0} sm={0} md={2}>
+          <Col xs={0} sm={0} md={0} lg={2}>
             <div
               className="icon-box"
               role="button"
@@ -112,7 +111,7 @@ const HeaderWrapper2 = () => {
             </div>
           </Col>
 
-          <Col xs={0} sm={0} md={2}>
+          <Col xs={0} sm={0} md={0} lg={2}>
             <Link href="/my-account/wishlist">
               <a style={{ textDecoration: "none" }}>
                 <div className="icon-box">
@@ -125,7 +124,7 @@ const HeaderWrapper2 = () => {
             </Link>
           </Col>
 
-          <Col xs={0} sm={0} md={2}>
+          <Col xs={0} sm={0} md={0} lg={2}>
             <div
               className="icon-box"
               role="button"
