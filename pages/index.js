@@ -5,6 +5,7 @@ import FullBgImageSection from "../src/component/heroSection/FullBgImageSection"
 import SubscriptionModal from "../src/component/modals/subscriptionModal1";
 import DragToScroll from "src/component/scroll/dragToScroll";
 import Link from "next/link";
+import Typewriter from "typewriter-effect";
 // import ShopCard from "../src/component/cards/shopCard";
 // import HomeCarousel from "../src/component/heroSection";
 // import { brownHair } from "../images";
@@ -33,9 +34,28 @@ const Home = () => {
         <section className="banner">
           <div className="content">
             <h1 style={{ fontWeight: 500 }}>
-              Creative multi-purpose <br />
-              <span style={{ color: "#E94C89", fontWeight: 800 }}>e-Commerce</span> theme
+              Creative multi-purpose
+              <span
+                style={{ color: "#E94C89", fontWeight: 800, display: "flex", width: 300 }}
+              >
+                <Typewriter
+                  options={{
+                    strings: [
+                      "Furniture",
+                      "Electronics",
+                      "Clothing",
+                      "Bags",
+                      "e-Commerce",
+                    ],
+                    autoStart: true,
+                    loop: true,
+                    wrapperClassName: "tw-wrap",
+                  }}
+                />
+                <span style={{ fontWeight: 500, color: "#2a2a2a" }}>theme</span>
+              </span>
             </h1>
+
             <p className="mb-5 mt-4" style={{ fontSize: 20 }}>
               The complete template for your ecommerce store build on Next.js to create
               different structures and satisfy any specific requirements.
