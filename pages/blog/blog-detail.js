@@ -20,6 +20,9 @@ import CommentSection from "src/component/commentSection";
 import SocialIcons from "src/component/socialIcons";
 import { bagsBlogs } from "src/mock/bagsProducts";
 import BlogCard2 from "src/component/cards/blogCard2";
+import BlogCarousel from "src/component/productListing/blogCarousel";
+import { clothProducts } from "src/mock/clothProducts";
+import Title3 from "src/component/titles/title3";
 
 const BlogDetail = (props) => {
   const { title, colors, reviews } = props;
@@ -31,7 +34,7 @@ const BlogDetail = (props) => {
     <StyledPage>
       <Breadcrumb title="BLOG" link="BLOG / WITH RIGHT SIDEBAR" className="my-5" />
       <SocialIcons />
-      <div style={{ padding: "30px 80px" }} className="detail-section">
+      <div style={{ padding: "0px 80px" }} className="detail-section">
         <Row gutter={[30, 30]}>
           <Col lg={18} sm={24} xs={24} style={{ padding: "0 80px" }}>
             <Row gutter={[30, 30]} className="">
@@ -195,17 +198,8 @@ const BlogDetail = (props) => {
             </div>
           </Col>
         </Row>
-        <div style={{ padding: 80 }} className="detail-section">
-          <Row gutter={[30, 30]} className="">
-            {bagsBlogs.map((item, index) => {
-              return (
-                <Col lg={6} sm={24} xs={24}>
-                  <BlogCard2 key={index} {...item} />
-                </Col>
-              );
-            })}
-          </Row>
-        </div>
+        <Title3 subtitle="Recent Story" maintitle="RELATED BLOGS" />
+        <BlogCarousel data={clothProducts} />
       </div>
     </StyledPage>
   );
