@@ -18,6 +18,7 @@ import ProductVerticalCarousel from "../src/component/productListing/productVert
 import { productStyle5, productStyle8 } from "src/mock/mockupData";
 import Heading from "../src/component/headings";
 import DragToScroll from "src/component/scroll/dragToScroll";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -91,14 +92,9 @@ const Home = () => {
                 <Col key={index} xs={24} sm={24} md={12} lg={7} xl={7}>
                   <h3>{item.heading}</h3>
                   <p>{item.description}</p>
-
-                  {item.images.map((image, i) => (
-                    <img
-                      key={i}
-                      src={image}
-                      style={{ width: "100%", marginBottom: 12 }}
-                    />
-                  ))}
+                  <Link href={item.link}>
+                    <img src={item.images[0]} alt="image" className="demo-image" />
+                  </Link>
                 </Col>
               ))}
             </Row>
@@ -267,6 +263,16 @@ const StyledPage = styled.div`
     }
   }
 
+  .demo-image {
+    cursor: pointer !important;
+    width: 100%;
+    transition: 0.3s;
+    :hover {
+      transform: scale(1.5);
+      border: 1px solid red;
+    }
+  }
+
   @media only screen and (max-width: 576px) {
     .section-wrapper {
       padding: 24px;
@@ -321,20 +327,24 @@ const themes = [
     heading: "Apparels",
     description: "Classy, urban clothing, fashion.",
     images: ["/images/crop-image-4.png"],
+    link: "/demo/clothing-store/",
   },
   {
     heading: "Bags",
     description: "Urban, backpacks, travel, camping.",
     images: ["/images/crop-image-2.png"],
+    link: "/demo/bag-store/",
   },
   {
     heading: "Shoes",
     description: "Stylish, urban, sports, fashion, shoes.",
     images: ["/images/crop-image-1.png"],
+    link: "/demo/shoes-store/",
   },
   {
     heading: "Electronics",
     description: "Minimal, classy, electronics, interiors.",
     images: ["/images/crop-image-3.png"],
+    link: "/demo/electronics-store/",
   },
 ];
