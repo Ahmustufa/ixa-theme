@@ -60,8 +60,7 @@ const CollectionBanner = () => {
         colSize={8}
         insideData={[
           {
-            image:
-              "https://multikart-react.vercel.app/_next/static/images/banner1-62b0db6674a8f5ec6258c6d325b99543.jpg",
+            image: "/images/watch-1.png",
             title1: "10% OFF",
             title2: "NEW WATCH",
           },
@@ -71,14 +70,13 @@ const CollectionBanner = () => {
             title2: "",
           },
           {
-            image:
-              "https://multikart-react.vercel.app/_next/static/images/banner-c8a3b404055b43880ccda054576441e2.jpg",
+            image: "/images/watch-2.png",
             title1: "50% OFF",
             title2: "GOLD WATCH",
           },
         ]}
         cardHeight={200}
-        textAlign="start"
+        textAlign="end"
         title2Color="#fff"
       />
 
@@ -86,32 +84,28 @@ const CollectionBanner = () => {
         colSize={6}
         insideData={[
           {
-            image:
-              "https://multikart-react.vercel.app/_next/static/images/5-c73dd261c1c941b269fbcfb9fc765c65.jpg",
+            image: "/images/collection-2.png",
             title1: "SAVE 30%",
             title2: "SHIRTS",
           },
           {
-            image:
-              "https://multikart-react.vercel.app/_next/static/images/10-d8ca5f380ceb0e3d2755fed37801d6b2.jpg",
-            title1: "SAVE 50%",
-            title2: "HEADSETS",
+            image: "/images/collection-1.png",
+            // title1: "SAVE 50%",
+            // title2: "HEADSETS",
           },
           {
-            image:
-              "https://multikart-react.vercel.app/_next/static/images/8-3e04defea974ff2f2bfd983b6999d378.jpg",
+            image: "/images/collection-3.png",
             title1: "SAVE 60%",
             title2: "SHOES",
           },
           {
-            image:
-              "https://multikart-react.vercel.app/_next/static/images/9-799c3d822bf4312a36fa1ab9573ef232.jpg",
+            image: "/images/collection-4.png",
             title1: "SAVE 70%",
             title2: "JEWELLERY",
           },
         ]}
         cardHeight={180}
-        textAlign="end"
+        textAlign="start"
         title2Color="#fff"
       />
     </>
