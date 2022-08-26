@@ -41,12 +41,12 @@ const FilterBar = (props) => {
         </Col>
 
         <Col xs={24} sm={12} md={12} lg={8} className="d-flex justify-content-end">
-          <div className="select-wrapper">
+          {/* <div className="select-wrapper">
             <Select size="large" defaultValue="lucy" style={{ width: 120 }}>
               <Option value="jack">Jack</Option>
               <Option value="lucy">Lucy</Option>
             </Select>
-          </div>
+          </div> */}
         </Col>
 
         <Col xs={24} sm={12} md={12} lg={8}>
