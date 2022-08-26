@@ -30,11 +30,9 @@ const Aboutus = (props) => {
     <StyledPage>
       <img
         src="https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,w_auto:50:1284/about-us-desktop"
-        className="my-5"
+        className="mt-4 mt-md-5 img-fluid"
       />
-      <h1 style={{ fontWeight: 600, margin: "32px 0 48px 0" }}>
-        Where small businesses get big ideas.
-      </h1>
+      <h1 className="page-heading">Where small businesses get big ideas.</h1>
 
       <Row gutter={[32, 32]}>
         <Col xs={24} sm={24} md={12} lg={12}>
@@ -71,15 +69,15 @@ const Aboutus = (props) => {
         </Col>
       </Row>
 
-      <h1 style={{ fontWeight: 600, margin: "32px 0 48px 0" }}>
-        How we help small businesses
-      </h1>
-      <Row justify="space-between">
+      <h1 className="page-heading">How we help small businesses</h1>
+      <Row justify="space-between" gutter={[0, 24]}>
         {cardData.map((item) => (
-          <Col xs={24} sm={24} md={8} lg={7} xl={7}>
-            <img src={item.image} className="img-fluid" />
-            <h2 className="mt-2 font-weight-bold">{item.heading}</h2>
-            <p>{item.description}</p>
+          <Col xs={24} sm={24} md={11} lg={7} xl={7}>
+            <div className="mb-5 mb-md-0">
+              <img src={item.image} className="img-fluid" />
+              <h2 className="card-heading">{item.heading}</h2>
+              <p>{item.description}</p>
+            </div>
           </Col>
         ))}
       </Row>
@@ -87,14 +85,14 @@ const Aboutus = (props) => {
       <div className="text-center" style={{ margin: "64px 0" }}>
         <img src="/images/app-logo-dark.svg" alt="logo" height={40} className="mb-4" />
         <h3 style={{ fontWeight: 600 }}>ABSOLUTELY GUARANTEED</h3>
-        <h5>Not satisfied? We’ll make it right.</h5>
+        <h5>{`Not satisfied? We’ll make it right.`}</h5>
         <br />
         <p>
-          We stand by everything we sell. So if you open your order and you’re not happy,
-          we’ll reprint or give you an account credit.
+          {`We stand by everything we sell. So if you open your order and you’re not happy,
+          we’ll reprint or give you an account credit.`}
         </p>
-        <p>If that doesn’t help, we’ll refund you in full.</p>
-        <p>Contact us and our Customer Care Specialists will get right on it.</p>
+        <p>{`If that doesn’t help, we’ll refund you in full.`}</p>
+        <p>{`Contact us and our Customer Care Specialists will get right on it.`}</p>
       </div>
     </StyledPage>
   );
@@ -105,4 +103,35 @@ export default Aboutus;
 const StyledPage = styled.div`
   width: 80%;
   margin: auto;
+
+  .page-heading {
+    font-weight: 600;
+    margin: 48px 0;
+  }
+
+  .card-heading {
+    margin-top: 16px;
+    font-weight: 600;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 90%;
+
+    .card-heading {
+      font-size: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    .page-heading {
+      font-size: 24px;
+      margin: 24px 0;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .card-heading {
+      font-size: 20px;
+    }
+  }
 `;
