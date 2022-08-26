@@ -35,6 +35,14 @@ const StyledFooter = styled.footer`
     margin-bottom: 24px;
   }
 
+  .link {
+    color: #545d6e;
+    text-decoration: none;
+    :hover {
+      color: #979797;
+    }
+  }
+
   .footer-item {
     color: rgba(0, 0, 0, 0.8);
     font-weight: 400;
@@ -165,9 +173,7 @@ const FooterContent = () => {
         <Col xs={24} sm={24} md={4} lg={4} xl={4} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">What we offer</div>
-            <div className="footer-item">
-              <Link href="/order">Order Now</Link>
-            </div>
+            <div className="footer-item">Order Now</div>
             <div className="footer-item">Upload your designs</div>
           </div>
         </Col>
@@ -183,8 +189,17 @@ const FooterContent = () => {
         <Col xs={24} sm={24} md={4} lg={4} xl={4} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">Our policies</div>
-            <div className="footer-item">Term of user</div>
-            <div className="footer-item">Copyright matters</div>
+            <div className="footer-item">
+              <Link href="/terms-of-use">
+                <a className="link">Term of use</a>
+              </Link>
+            </div>
+            <div className="footer-item">
+              <Link href="/privacy-policy">
+                <a className="link">Privacy policy</a>
+              </Link>
+            </div>
+            {/* <div className="footer-item">Copyright matters</div> */}
           </div>
         </Col>
       </Row>
