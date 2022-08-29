@@ -232,10 +232,10 @@ const Home = () => {
 
         <section className="text-center">
           <div style={{ fontSize: "2rem", color: "#001719" }}>Email Template</div>
-          <div style={{ color: "#979797", width: 500, margin: "auto" }}>
+          <p style={{ color: "#979797", maxWidth: 500, width: "90%", margin: "auto" }}>
             Polkadotsretail comes with tons of email template which include order success,
             promotion and give away tamplates
-          </div>
+          </p>
 
           <img src="/images/email_templates.png" className="w-100" />
         </section>
