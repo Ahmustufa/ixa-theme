@@ -23,9 +23,13 @@ const UserProfileDetailCard = (props) => {
         Follow
       </ButtonWrapper>
       <div className="ml-3 mt-3 d-flex flex-column justify-content-between">
-          <p className="mb-2"><span className="font-weight-bold">Location:</span> Colorado</p>
-          <p className=""><span className="font-weight-bold">Joined:</span> Apr 8, 2018</p>
-        </div>
+        <p className="mb-2">
+          <span className="font-weight-bold">Location:</span> Colorado
+        </p>
+        <p className="">
+          <span className="font-weight-bold">Joined:</span> Apr 8, 2018
+        </p>
+      </div>
     </StyledCard>
   );
 };
@@ -38,7 +42,7 @@ const StyledCard = styled.div`
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
-  p{
+  p {
     font-size: 16px !important;
   }
   @media only screen and (max-width: 1200px) {
@@ -48,6 +52,6 @@ const StyledCard = styled.div`
   }
 
   @media only screen and (max-width: 576px) {
-    margin: 0 12px;
+    /* margin: 0 12px; */
   }
 `;

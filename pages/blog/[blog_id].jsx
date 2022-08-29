@@ -36,7 +36,13 @@ const BlogDetail = (props) => {
       <SocialIcons />
       <div style={{ padding: "0px 80px" }} className="detail-section">
         <Row gutter={[30, 30]}>
-          <Col lg={18} sm={24} xs={24} style={{ padding: "0 80px" }}>
+          <Col
+            lg={18}
+            sm={24}
+            xs={24}
+            style={{ padding: "0 80px" }}
+            className="detail-section2"
+          >
             <Row gutter={[30, 30]} className="">
               <Col lg={12} sm={24} xs={24} className="d-flex">
                 <Avatar
@@ -187,7 +193,6 @@ const BlogDetail = (props) => {
             </div>
             <Divider style={{ background: "#f3f3f3", marginTop: 10, marginBottom: 15 }} />
             <div className="mt-5">
-              <h3>Discussion </h3>
               <CommentSection />
             </div>
           </Col>
@@ -248,6 +253,9 @@ const StyledPage = styled.div`
   @media (max-width: 1024px) {
     .detail-section {
       padding: 20px !important;
+    }
+    .detail-section2 {
+      padding: 0px !important;
     }
     .pagination-sec {
       padding: 20px !important;

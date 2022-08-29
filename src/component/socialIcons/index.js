@@ -51,6 +51,7 @@ const StyledCard = styled.div`
     margin: 0px;
   }
   #fixed-social {
+    z-index: 9999;
     position: fixed;
     top: 35%;
   }
