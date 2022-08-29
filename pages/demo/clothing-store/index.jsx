@@ -24,6 +24,8 @@ import Head from "next/head";
 import Title5 from "src/component/titles/title5";
 import { clothProducts } from "src/mock/clothProducts";
 import Title3 from "src/component/titles/title3";
+import { useState } from "react";
+import ProductListing from "src/component/productListing";
 
 let data = [
   {
@@ -52,6 +54,8 @@ let data = [
 ];
 
 const Clothing = () => {
+  const [gridColumn, setGridColumn] = useState(4);
+
   return (
     <>
       <Head>
@@ -67,7 +71,7 @@ const Clothing = () => {
           style={{
             position: "relative",
             bottom: 100,
-            zIndex: 100,
+            zIndex: 1,
             backgroundColor: "#fff",
             boxShadow: "0px 0px 15px -10px #000",
             margin: "0px 2%",
@@ -110,11 +114,11 @@ const Clothing = () => {
             </Col>
             <Col lg={18} sm={24} xs={24}>
               <Row gutter={[32, 32]}>
-                {clothProducts.slice(0, 8).map((item, index) => (
-                  <Col key={index} lg={6} sm={24} xs={24} className="">
-                    <CardStyle2 productDetails={item} {...item} />
-                  </Col>
-                ))}
+                <ProductListing
+                  CardStyle={CardStyle7}
+                  products={clothProducts.slice(0, 8)}
+                  grid={gridColumn}
+                />
               </Row>
             </Col>
           </Row>
@@ -125,11 +129,11 @@ const Clothing = () => {
 
       <div className="col-11 m-auto">
         <Row gutter={[32, 32]}>
-          {clothProducts.slice(0, 8).map((item, index) => (
-            <Col key={index} lg={6} sm={24} xs={24} className="">
-              <CardStyle7 productDetails={item} {...item} />
-            </Col>
-          ))}
+          <ProductListing
+            CardStyle={CardStyle7}
+            products={clothProducts.slice(0, 8)}
+            grid={gridColumn}
+          />
         </Row>
       </div>
 

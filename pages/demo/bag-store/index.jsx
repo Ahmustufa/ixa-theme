@@ -85,7 +85,6 @@ const Bags = () => {
 
         <Title5 subtitle="Recent Story" maintitle="TRENDING PRODUCTS" />
         <Category4 insideData={bagsProducts} />
-
         {/* <div className="col-11 m-auto">
           <Row gutter={[32, 32]}>
             {bagsProducts.slice(0, 4).map((item, index) => (
