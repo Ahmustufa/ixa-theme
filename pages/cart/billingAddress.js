@@ -314,5 +314,8 @@ const StyledPage = styled.div`
 
   @media (max-width: 1024px) {
     padding: 20px !important;
+    .billingCard {
+      width: 100%;
+    }
   }
 `;
