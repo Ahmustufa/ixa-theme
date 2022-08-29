@@ -64,7 +64,7 @@ const Home = () => {
               </span>
             </h1>
 
-            <p className="mb-5 mt-4" style={{ fontSize: 20 }}>
+            <p className="mb-5 mt-4 description">
               The complete template for your ecommerce store build on Next.js to create
               different structures and satisfy any specific requirements.
             </p>
@@ -232,10 +232,10 @@ const Home = () => {
 
         <section className="text-center">
           <div style={{ fontSize: "2rem", color: "#001719" }}>Email Template</div>
-          <div style={{ color: "#979797", width: 500, margin: "auto" }}>
+          <p style={{ color: "#979797", maxWidth: 500, width: "90%", margin: "auto" }}>
             Polkadotsretail comes with tons of email template which include order success,
             promotion and give away tamplates
-          </div>
+          </p>
 
           <img src="/images/email_templates.png" className="w-100" />
         </section>
@@ -277,34 +277,15 @@ const StyledPage = styled.div`
     height: 80vh;
 
     .content {
-      width: 500px;
+      width: 90%;
+      max-width: 500px;
       position: relative;
       top: 50%;
       transform: translateY(-50%);
       margin-left: 100px;
-    }
-  }
 
-  .button-1 {
-    border: 1px solid #000;
-    border-radius: 26px;
-    display: block;
-    width: 100%;
-    padding: 12px 0;
-    background-color: #070707;
-    color: #fff;
-    transition: 0.3s;
-    :hover {
-      background-color: #fff;
-      color: #070707;
-    }
-
-    &.outline {
-      background-color: #fff;
-      color: #070707;
-      :hover {
-        background-color: #070707;
-        color: #fff;
+      p {
+        font-size: 20px;
       }
     }
   }
@@ -352,6 +333,18 @@ const StyledPage = styled.div`
   @media only screen and (max-width: 576px) {
     .section-wrapper {
       padding: 24px;
+    }
+
+    .banner {
+      .content {
+        margin: auto;
+        h1 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
     }
   }
 `;
