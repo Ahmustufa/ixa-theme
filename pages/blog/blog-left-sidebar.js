@@ -12,53 +12,7 @@ import BlogCard2 from "src/component/cards/blogCard2";
 import { bagsBlogs } from "src/mock/bagsProducts";
 
 const BlogLeftSidebar = (props) => {
-  const { title, colors, reviews } = props;
   const dispatch = useDispatch();
-  const { items: wishlist } = useSelector((state) => state.wishlist);
-  const { isLoggedIn, data: userData } = useSelector((state) => state.user);
-  const { visible, items } = useSelector((state) => state.cart);
-
-  const [state, setState] = useState({ color: "", size: "" });
-
-  const blogData = [
-    {
-      images: ["https://multikart-react.vercel.app/assets/images/blog/2.jpg"],
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      images: ["https://multikart-react.vercel.app/assets/images/blog/2.jpg"],
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      images: ["https://multikart-react.vercel.app/assets/images/blog/2.jpg"],
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      images: ["https://multikart-react.vercel.app/assets/images/blog/2.jpg"],
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      images: ["https://multikart-react.vercel.app/assets/images/blog/2.jpg"],
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-
-    {
-      images: ["https://multikart-react.vercel.app/assets/images/blog/2.jpg"],
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-  ];
 
   return (
     <StyledPage>

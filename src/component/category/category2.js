@@ -11,22 +11,19 @@ const Category2 = (props) => {
         colSize={8}
         insideData={[
           {
-            image:
-              "https://multikart-react.vercel.app/_next/static/images/cat1-947e31f2645fbb4eb9817bb272606f67.jpg",
-            title1: "SAVE 30%",
-            title2: "MEN",
+            image: "/images/electronics-1.png",
+            title1: "10% OFF",
+            title2: "SPEAKER",
           },
           {
-            image:
-              "https://multikart-react.vercel.app/_next/static/images/cat2-1228cf0bba01bae4640e0abff8ce6c75.jpg",
-            title1: "SAVE 60%",
-            title2: "WOMEN",
+            image: "/images/electronics-2.png",
+            title1: "10% OFF",
+            title2: "EARPLUG",
           },
           {
-            image:
-              "https://multikart-react.vercel.app/_next/static/images/cat3-02f58218a31d0d2024577b3f86a47f33.jpg",
-            title1: "SAVE 60%",
-            title2: "KIDS",
+            image: "/images/electronics-3.png",
+            title1: "60% OFF",
+            title2: "BEST DEAL",
           },
         ]}
         cardHeight={250}
