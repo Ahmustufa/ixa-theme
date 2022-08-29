@@ -125,7 +125,7 @@ const ElectronicStore = () => {
             tabBarData={[
               { title: "Refrigerators", id: 1, category: "fridge" },
               { title: "Fans", id: 2, category: "fan" },
-              { title: "Health & Beauty", id: 3, category: "health-and-beauty" },
+              { title: "Beauty", id: 3, category: "health-and-beauty" },
               { title: "Others", id: 4, category: "other" },
             ]}
           />

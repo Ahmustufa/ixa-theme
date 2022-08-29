@@ -44,7 +44,7 @@ const BlogDetail = (props) => {
             className="detail-section2"
           >
             <Row gutter={[30, 30]} className="">
-              <Col lg={12} sm={24} xs={24} className="d-flex">
+              <Col lg={12} sm={16} xs={16} className="d-flex">
                 <Avatar
                   className="border"
                   size={60}
@@ -57,8 +57,8 @@ const BlogDetail = (props) => {
               </Col>
               <Col
                 lg={12}
-                sm={24}
-                xs={24}
+                sm={8}
+                xs={8}
                 className="d-flex justify-content-end align-items-center"
               >
                 {like ? (

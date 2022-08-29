@@ -71,7 +71,7 @@ const Clothing = () => {
           style={{
             position: "relative",
             bottom: 100,
-            zIndex: 1,
+            // zIndex: 1,
             backgroundColor: "#fff",
             boxShadow: "0px 0px 15px -10px #000",
             margin: "0px 2%",

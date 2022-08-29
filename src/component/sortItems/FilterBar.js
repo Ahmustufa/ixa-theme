@@ -23,7 +23,7 @@ const FilterBar = (props) => {
   const [showTotalProducts, setShowTotalProducts] = useState(24);
 
   useEffect(() => {
-    const filteredData = [...bagsBlogs, ...clothProducts].filter((item) => {
+    const filteredData = [...clothProducts, ...bagsBlogs].filter((item) => {
       if (item.title.toLowerCase().includes(searchText.toLocaleLowerCase())) {
         return item;
       }

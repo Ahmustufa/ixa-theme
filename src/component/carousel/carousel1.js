@@ -93,7 +93,7 @@ export default Carousel1;
 const StyledCarousel = styled.div`
   overflow: hidden;
   position: relative;
-
+  z-index: -999;
   height: 600px;
   width: 100%;
 

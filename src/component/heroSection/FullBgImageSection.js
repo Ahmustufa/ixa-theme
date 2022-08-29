@@ -54,14 +54,15 @@ const StyledSection = styled.div`
     }
   }
   @media (max-width: 1024px) {
+    background-size: cover;
     .content-section {
       margin-left: 0%;
       padding: 30px;
       h1 {
-        font-size: 70px;
+        font-size: 50px;
       }
       h3 {
-        font-size: 50px;
+        font-size: 30px;
       }
       h5 {
         font-size: 24px;
@@ -70,6 +71,6 @@ const StyledSection = styled.div`
   }
 
   @media (max-width: 551px) {
-    display: none;
+    /* display: none; */
   }
 `;

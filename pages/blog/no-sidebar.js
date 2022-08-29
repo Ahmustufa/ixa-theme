@@ -13,7 +13,7 @@ import { FiHeart } from "react-icons/fi";
 let pageSize = 8;
 
 const NoSidebar = (props) => {
-  const [data, setData] = useState([...clothProducts, ...bagsBlogs]);
+  const [data, setData] = useState([]);
   const [page, setPage] = useState({
     current: 1,
     minIndex: 0,
@@ -35,6 +35,7 @@ const NoSidebar = (props) => {
       minIndex: (1 - 1) * pageSize,
       maxIndex: 1 * pageSize,
     });
+    setData([...clothProducts, ...bagsBlogs]);
   }, []);
 
   return (
@@ -44,7 +45,7 @@ const NoSidebar = (props) => {
       <div style={{ padding: " 30px 80px" }} className="detail-section">
         <FilterBar className="w-100 mb-5" data={data} setData={setData} />
         <Row gutter={[0, 40]} className="">
-          {data.length < 1 ? (
+          {data?.length < 1 ? (
             <Row className="mt-3">
               <Col span={24} className="p-4">
                 <div className="d-flex justify-content-start align-items-center">
