@@ -300,7 +300,7 @@ const Order = (props) => {
                       className="d-flex justify-content-sm-center justify-content-lg-start align-items-sm-end  align-items-lg-start"
                     >
                       <img
-                        src="https://angular.pixelstrap.com/multikart/assets/images/review/2.jpg"
+                        src="/images/clothing/Dresses/dress-3.jpg"
                         width={"60%"}
                         className="rounded-circle"
                       />

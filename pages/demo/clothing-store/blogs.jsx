@@ -13,53 +13,7 @@ import Breadcrumb from "src/component/breadcrumb";
 const { Panel } = Collapse;
 
 const BagBlogs = (props) => {
-  const { title, colors, reviews } = props;
   const dispatch = useDispatch();
-  const { items: wishlist } = useSelector((state) => state.wishlist);
-  const { isLoggedIn, data: userData } = useSelector((state) => state.user);
-  const { visible, items } = useSelector((state) => state.cart);
-
-  const [state, setState] = useState({ color: "", size: "" });
-
-  const blogData = [
-    {
-      image: "https://multikart-react.vercel.app/assets/images/blog/2.jpg",
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      image: "https://multikart-react.vercel.app/assets/images/blog/2.jpg",
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      image: "https://multikart-react.vercel.app/assets/images/blog/2.jpg",
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      image: "https://multikart-react.vercel.app/assets/images/blog/2.jpg",
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-    {
-      image: "https://multikart-react.vercel.app/assets/images/blog/2.jpg",
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-
-    {
-      image: "https://multikart-react.vercel.app/assets/images/blog/2.jpg",
-      price: "$40",
-      title:
-        "you how all this mistaken idea of denouncing pleasure and praising pain was born",
-    },
-  ];
 
   return (
     <StyledPage>

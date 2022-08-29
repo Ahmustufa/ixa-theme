@@ -24,7 +24,7 @@ const FilterBar = (props) => {
 
   useEffect(() => {
     const filteredData = [...bagsBlogs, ...clothProducts].filter((item) => {
-      if (item.title.toLowerCase().includes(searchText)) {
+      if (item.title.toLowerCase().includes(searchText.toLocaleLowerCase())) {
         return item;
       }
     });
@@ -123,7 +123,6 @@ const StyledDiv = styled.div`
       -webkit-appearance: none;
       -moz-appearance: none;
       cursor: pointer;
-      background: url(https://themes.pixelstrap.com/multikart/assets/images/dropdown.png)
         no-repeat 91%;
     } */
   }

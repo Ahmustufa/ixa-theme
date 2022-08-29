@@ -171,8 +171,7 @@ const StyledDiv = styled.div`
       -webkit-appearance: none;
       -moz-appearance: none;
       cursor: pointer;
-      background: url(https://themes.pixelstrap.com/multikart/assets/images/dropdown.png)
-        no-repeat 91%;
+      background: url("/dropdown.png") no-repeat 91%;
     }
   }
 

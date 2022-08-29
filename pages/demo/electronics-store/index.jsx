@@ -62,22 +62,19 @@ const ElectronicStore = () => {
           colSize={8}
           insideData={[
             {
-              image:
-                "https://multikart-react.vercel.app/_next/static/images/5-10b7de6113f434b468e642b0aefdd75c.jpg",
+              image: "/images/watch-1.png",
               title1: "10% OFF",
-              title2: "SPEAKER",
+              title2: "NEW WATCH",
             },
             {
-              image:
-                "https://multikart-react.vercel.app/_next/static/images/6-beb254897edd39e33d5c23dee7ecec7b.jpg",
-              title1: "10% OFF",
-              title2: "EARPLUG",
+              image: "/images/sale_banner.jpg",
+              title1: "",
+              title2: "",
             },
             {
-              image:
-                "https://multikart-react.vercel.app/_next/static/images/7-b16b82e48bde03cafa1e3d8421633125.jpg",
-              title1: "60% OFF",
-              title2: "BEST DEAL",
+              image: "/images/watch-2.png",
+              title1: "50% OFF",
+              title2: "GOLD WATCH",
             },
           ]}
           cardHeight={218}
@@ -89,22 +86,19 @@ const ElectronicStore = () => {
           colSize={8}
           insideData={[
             {
-              image:
-                "https://multikart-react.vercel.app/_next/static/images/banner1-62b0db6674a8f5ec6258c6d325b99543.jpg",
+              image: "/images/electronics-1.png",
               title1: "10% OFF",
-              title2: "SMART WATCH",
+              title2: "SPEAKER",
             },
             {
-              image:
-                "https://multikart-react.vercel.app/_next/static/images/banner2-6270a4161a1b6425cd2bb2a6e8b1813d.jpg",
-              title1: "",
-              title2: "",
+              image: "/images/electronics-2.png",
+              title1: "10% OFF",
+              title2: "EARPLUG",
             },
             {
-              image:
-                "https://multikart-react.vercel.app/_next/static/images/banner-c8a3b404055b43880ccda054576441e2.jpg",
-              title1: "50% OFF",
-              title2: "SMART WATCH",
+              image: "/images/electronics-3.png",
+              title1: "60% OFF",
+              title2: "BEST DEAL",
             },
           ]}
           cardHeight={200}
