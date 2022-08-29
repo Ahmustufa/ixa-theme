@@ -114,6 +114,30 @@ a {
   font-size: 35px !important;
 }
 
-.verticalCarousel .slick-arrow{
+.verticalCarousel .slick-arrow {
   display: none !important;
+}
+
+.button-1 {
+  border: 1px solid #000;
+  border-radius: 26px;
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #070707;
+  color: #fff;
+  transition: 0.3s;
+  &:hover {
+    background-color: #fff;
+    color: #070707;
+  }
+
+  &.outline {
+    background-color: #fff;
+    color: #070707;
+    &:hover {
+      background-color: #070707;
+      color: #fff;
+    }
+  }
 }
