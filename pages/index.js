@@ -27,6 +27,36 @@ const Home = () => {
     <>
       <Head>
         <title>E-commerce Store | Home</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1"
+        />
+        <meta name="referrer" content="no-referrer-when-downgrade" />
+        <meta charset="utf-8" />
+        <meta name="keywords" content="e-commerce, theme, store, shop" />
+        <meta name="title" content="Creative multi-purpose e-Commerce store" />
+        <meta
+          name="description"
+          content="The complete template for your ecommerce store build on Next.js to create different structures and satisfy any specific requirements."
+        />
+        <meta name="page-topic" content="e-commerce store" />
+        <meta name="page-type" content="ecommerce" />
+        <meta name="audience" content="Everyone" />
+        <meta name="robots" content="index, follow" />
+
+        {/* <link rel="canonical" href="https://www.godaddy.com/en-pk/offers/godaddy" /> */}
+        {/* <meta
+          property="og:image"
+          content="https://img1.wsimg.com/cdn/Image/All/Website/1/en-US/2c3024ae-6eae-4a81-9732-c30e954a775f/ols-og-img.jpg"
+        /> */}
+        <meta property="og:title" content="Creative multi-purpose e-Commerce store" />
+        <meta
+          property="og:description"
+          content="The complete template for your ecommerce store build on Next.js to create different structures and satisfy any specific requirements."
+        />
+        <meta property="og:type" content="" />
+        <meta property="og:url" content="https://www.polkadotsretail.com/" />
+        <meta property="og:site_name" content="Polkadotsretail" />
       </Head>
       <SubscriptionModal image="/images/subscriptionModalBg.png" />
 
