@@ -45,10 +45,10 @@ const Home = () => {
         <meta name="robots" content="index, follow" />
 
         {/* <link rel="canonical" href="https://www.godaddy.com/en-pk/offers/godaddy" /> */}
-        {/* <meta
+        <meta
           property="og:image"
-          content="https://img1.wsimg.com/cdn/Image/All/Website/1/en-US/2c3024ae-6eae-4a81-9732-c30e954a775f/ols-og-img.jpg"
-        /> */}
+          content={`${window.location.origin}/images/preload_image.jpg`}
+        />
         <meta property="og:title" content="Creative multi-purpose e-Commerce store" />
         <meta
           property="og:description"
@@ -100,7 +100,12 @@ const Home = () => {
             </p>
             <div className="d-flex col-10">
               <button className="button-1 mr-4">Buy Now</button>
-              <button className="button-1 outline">See Demo</button>
+              <a
+                href="#demos"
+                className="button-1 outline text-center text-decoration-none"
+              >
+                See Demo
+              </a>
             </div>
           </div>
         </section>
@@ -139,9 +144,9 @@ const Home = () => {
                       src={item.image}
                       alt={`image-${index}`}
                       className="img-fluid"
-                      style={{ height: 300, objectFit: "contain" }}
+                      style={{ height: 200, objectFit: "contain" }}
                     />
-                    <h4>{item.heading}</h4>
+                    <h4 className="my-4">{item.heading}</h4>
                     <p>{item.text}</p>
                   </div>
                 </Col>
@@ -151,6 +156,7 @@ const Home = () => {
         </section>
 
         <section
+          id="demos"
           style={{
             backgroundImage:
               "url(https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/bg-demos.png)",
@@ -164,7 +170,9 @@ const Home = () => {
                   <h3>{item.heading}</h3>
                   <p>{item.description}</p>
                   <Link href={item.link}>
-                    <img src={item.images[0]} alt="image" className="demo-image" />
+                    <div className="demo-image">
+                      <img src={item.images[0]} alt="image" width={"100%"} />
+                    </div>
                   </Link>
                 </Col>
               ))}
@@ -351,12 +359,41 @@ const StyledPage = styled.div`
   }
 
   .demo-image {
-    cursor: pointer !important;
     width: 100%;
-    transition: 0.3s;
+    position: relative;
+    transition: all 0.3s;
+
+    :before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 0;
+      bottom: 0;
+      transition: all 0.3s;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
     :hover {
-      transform: scale(1.5);
-      border: 1px solid red;
+      transform: scale(1.02);
+
+      &:after {
+        content: "Preview";
+        cursor: pointer;
+        color: #fff;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 3px;
+        transition: all 0.3s;
+        border: 2px solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      :before {
+        width: 100%;
+      }
     }
   }
 
