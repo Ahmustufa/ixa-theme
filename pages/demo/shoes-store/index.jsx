@@ -23,7 +23,7 @@ const BagStore = () => {
         <SubscriptionModal />
         <Title4 subtitle="" maintitle="Shop by Categories" />
         <Category1
-          padding="0px 0px 5% 0px"
+          padding="0px 30px 5% 30px"
           insideData={[
             {
               image: "/images/Shoes/category/women-shoes.png",

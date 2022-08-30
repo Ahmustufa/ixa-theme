@@ -165,7 +165,11 @@ const SideCart = (props) => {
         </div>
         <Divider style={{ margin: "12px 0" }} />
         <Link href="/cart/checkout">
-          <PrimaryButton onClick={() => dispatch(closeCart())} className="mt-2 w-100">
+          <PrimaryButton
+            disabled={items.length > 0 ? false : true}
+            onClick={() => dispatch(closeCart())}
+            className="mt-2 w-100"
+          >
             Checkout
           </PrimaryButton>
         </Link>
