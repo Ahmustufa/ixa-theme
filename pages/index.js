@@ -100,7 +100,12 @@ const Home = () => {
             </p>
             <div className="d-flex col-10">
               <button className="button-1 mr-4">Buy Now</button>
-              <button className="button-1 outline">See Demo</button>
+              <a
+                href="#demos"
+                className="button-1 outline text-center text-decoration-none"
+              >
+                See Demo
+              </a>
             </div>
           </div>
         </section>
@@ -151,6 +156,7 @@ const Home = () => {
         </section>
 
         <section
+          id="demos"
           style={{
             backgroundImage:
               "url(https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/bg-demos.png)",
