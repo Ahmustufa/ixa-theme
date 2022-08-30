@@ -106,7 +106,7 @@ const Collection = (props) => {
             xs={24}
             className="d-flex justify-content-sm-start justify-content-lg-end"
           >
-            <Link href="">
+            <Link href="/">
               <p className="m-0 mx-1"> HOME / </p>
             </Link>{" "}
             <span> COLLECTION</span>
