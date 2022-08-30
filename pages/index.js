@@ -45,10 +45,10 @@ const Home = () => {
         <meta name="robots" content="index, follow" />
 
         {/* <link rel="canonical" href="https://www.godaddy.com/en-pk/offers/godaddy" /> */}
-        {/* <meta
+        <meta
           property="og:image"
-          content="https://img1.wsimg.com/cdn/Image/All/Website/1/en-US/2c3024ae-6eae-4a81-9732-c30e954a775f/ols-og-img.jpg"
-        /> */}
+          content={`${window.location.origin}/images/preload_image.jpg`}
+        />
         <meta property="og:title" content="Creative multi-purpose e-Commerce store" />
         <meta
           property="og:description"
