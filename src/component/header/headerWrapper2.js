@@ -67,7 +67,7 @@ const HeaderWrapper2 = () => {
         </Col>
       </Row>
 
-      <div className="col-12 col-lg-11 m-auto header-wrapper-2" style={{ zIndex: 1 }}>
+      <div className="col-12 col-lg-11 m-auto header-wrapper-2" style={{ zIndex: 2 }}>
         <Row justify="space-evenly" align="middle">
           <Col xs={3} sm={3} md={1} lg={0} xl={0}>
             <IoMenuOutline

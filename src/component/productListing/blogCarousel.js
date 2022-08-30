@@ -45,7 +45,7 @@ const BlogCarousel = (props) => {
   const { items } = useSelector((state) => state.products);
 
   return (
-    <StyledContent style={{ padding: props.padding ? props.padding : "5%" }}>
+    <StyledContent style={{ padding: props.padding ? props.padding : "5% 8%" }}>
       <Slider {...carouselSettings}>
         {data.map((item, index) => (
           <div key={index}>

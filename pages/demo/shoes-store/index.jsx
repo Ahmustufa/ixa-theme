@@ -95,7 +95,7 @@ const BagStore = () => {
         <FullBgImageSection h1="" h3="" h5="" bgImage="/images/Shoes/banner/banner.png" />
 
         <Title4 subtitle="Recent Story" maintitle="From the Blog" />
-        <BlogCarousel data={shoesBlogs} padding="0px 5% 5% 5%" />
+        <BlogCarousel data={shoesBlogs} />
 
         {/* <section>
           <div style={{ fontSize: "3rem", color: "#54595f", textAlign: "center" }}>
