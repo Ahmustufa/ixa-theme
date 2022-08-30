@@ -108,7 +108,7 @@ const Category1 = (props) => {
   };
   return (
     <StyledDiv
-      style={{ padding: props.padding ? props.padding : "5% 0px" }}
+      style={{ padding: props.padding ? props.padding : "5% 8%" }}
       className="col-11 m-auto"
     >
       <Slider {...settings}>

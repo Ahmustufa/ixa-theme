@@ -63,6 +63,9 @@ const StyledFooter = styled.footer`
     .footer-item-container {
       text-align: center;
     }
+    .footerLogo {
+      margin-left: -1rem !important;
+    }
   }
 `;
 
@@ -138,7 +141,7 @@ const FooterContent = () => {
             <img
               src="/images/app-logo-dark.svg"
               alt="app_logo"
-              className="mb-3"
+              className="mb-3 footerLogo"
               height={32}
             />
 

@@ -70,4 +70,9 @@ const StyledDiv = styled.div`
   .selected {
     color: orange;
   }
+  @media (max-width: 1024px) {
+    .tab-title {
+      margin-right: 1rem !important;
+    }
+  }
 `;

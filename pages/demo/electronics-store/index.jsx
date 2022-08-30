@@ -139,7 +139,7 @@ const ElectronicStore = () => {
         />
 
         <Title2 subtitle="Recent Story" maintitle="From the Blog" />
-        <BlogCarousel data={electronicBlogs} padding="0px 5% 5% 5%" />
+        <BlogCarousel data={electronicBlogs} />
       </StyledPage>
     </>
   );

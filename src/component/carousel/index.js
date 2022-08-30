@@ -9,10 +9,7 @@ const ImageCarousel = (props) => {
   return (
     <StyledCarousel>
       <Row gutter={[24, 24]}>
-        <Col
-          span={direction === "bottom" ? 24 : 18}
-          order={direction === "right" ? 2 : 1}
-        >
+        <Col xs={direction === "bottom" ? 24 : 18} order={direction === "right" ? 2 : 1}>
           <img
             id={id}
             key={id}
@@ -24,7 +21,7 @@ const ImageCarousel = (props) => {
 
         <Col
           className={direction === "bottom" ? "d-flex" : ""}
-          span={direction === "bottom" ? 24 : 6}
+          xs={direction === "bottom" ? 24 : 6}
           order={direction === "right" ? 1 : 2}
         >
           {images.map((image, index) => (
@@ -34,8 +31,14 @@ const ImageCarousel = (props) => {
                 setState({ image });
               }}
               role="button"
+              className="w-100"
             >
-              <img src={image} alt={`image-${index}`} className="carousel-image" />
+              <img
+                width={"100%"}
+                src={image}
+                alt={`image-${index}`}
+                className="carousel-image"
+              />
             </div>
           ))}
         </Col>
@@ -52,7 +55,7 @@ export default ImageCarousel;
 
 const StyledCarousel = styled.div`
   .carousel-image {
-    width: 100px;
+    /* width: 100px; */
     height: auto;
     object-size: cover;
     border: 1px solid #727272;
