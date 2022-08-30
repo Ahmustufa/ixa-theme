@@ -127,7 +127,7 @@ const Home = () => {
                   margin: "auto",
                 }}
               >
-                A complete website building toolkit save your time by using Kalles
+                A complete website building toolkit save your time by using Polkadots
               </p>
             </div>
 
