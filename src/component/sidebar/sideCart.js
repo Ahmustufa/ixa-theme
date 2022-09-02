@@ -104,7 +104,7 @@ const SideCart = (props) => {
                         </Col>
                         <Col xs={13} lg={13}>
                           <div
-                            style={{ marginLeft: 10, fontSize: 13, color: "gray" }}
+                            style={{ marginLeft: 10, fontSize: 14, color: "gray" }}
                             className="price"
                           >
                             PKR {(item.price * item.quantity).toLocaleString()}
@@ -198,10 +198,11 @@ const StyledDrawer = styled(Drawer)`
   }
 
   .increase-button,
-  .decrease-button {
+  .decrease-button,
+  .quantity {
     height: 100%;
     width: 28px;
-    font-size: 18px;
+    font-size: 15px;
     text-align: center;
     cursor: pointer;
     user-select: none;
