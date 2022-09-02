@@ -77,7 +77,7 @@ const SideCart = (props) => {
                         {item.title}
                       </div>
                       <p style={{ color: "red", fontSize: 12 }}>
-                        PKR {item.price?.toLocaleString()}
+                        ${item.price?.toLocaleString()}
                       </p>
 
                       <Row align="middle" gutter={[24, 0]}>
@@ -107,7 +107,7 @@ const SideCart = (props) => {
                             style={{ marginLeft: 10, fontSize: 14, color: "gray" }}
                             className="price"
                           >
-                            PKR {(item.price * item.quantity).toLocaleString()}
+                            ${(item.price * item.quantity).toLocaleString()}
                           </div>
                         </Col>
                       </Row>
@@ -144,13 +144,15 @@ const SideCart = (props) => {
               <TiShoppingCart style={{ fontSize: 64, marginBottom: 24 }} />
               <h5>Your cart is currently empty.</h5>
 
-              <PrimaryButton
-                style={{ borderRadius: 100 }}
-                className="mt-2 w-100"
-                onClick={() => dispatch(closeCart())}
-              >
-                Continue Shopping
-              </PrimaryButton>
+              <Link href="/">
+                <PrimaryButton
+                  style={{ borderRadius: 100 }}
+                  className="mt-2 w-100"
+                  onClick={() => dispatch(closeCart())}
+                >
+                  Continue Shopping
+                </PrimaryButton>
+              </Link>
             </div>
           </div>
         )}
@@ -159,11 +161,15 @@ const SideCart = (props) => {
         <Divider style={{ margin: "16px 0" }} />
         <div className="d-flex justify-content-between">
           <b style={{ color: "#54595f" }}>SUBTOTAL</b>
-          <div>PKR {calculateTotal(items)}</div>
+          <div>${calculateTotal(items)}</div>
         </div>
         <Divider style={{ margin: "12px 0" }} />
         <Link href="/cart/checkout">
-          <PrimaryButton onClick={() => dispatch(closeCart())} className="mt-2 w-100">
+          <PrimaryButton
+            disabled={items.length > 0 ? false : true}
+            onClick={() => dispatch(closeCart())}
+            className="mt-2 w-100"
+          >
             Checkout
           </PrimaryButton>
         </Link>

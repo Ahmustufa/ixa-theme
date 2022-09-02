@@ -42,7 +42,7 @@ const carouselSettings = {
 const ProductCarousel = (props) => {
   const { CardStyle } = props;
   return (
-    <StyledContent style={{ padding: props.padding ? props.padding : "5%" }}>
+    <StyledContent style={{ padding: props.padding ? props.padding : "5% 8%" }}>
       <div className="text-center">
         <div className="heading">Featured Collection</div>
         <br />
@@ -69,7 +69,7 @@ const ProductCarousel = (props) => {
       <Slider {...carouselSettings}>
         {props.data.map((item, index) => (
           <div key={index}>
-            <CardStyle {...item} productDetails={item}/>
+            <CardStyle {...item} productDetails={item} />
           </div>
         ))}
       </Slider>

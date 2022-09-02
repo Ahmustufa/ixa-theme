@@ -124,7 +124,7 @@ const QuickviewModal = (props) => {
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
-    currency: "PKR",
+    currency: "USD",
   });
 
   return (

@@ -13,7 +13,7 @@ const carouselSettings = {
   speed: 500,
   // autoplay: true,
   infinite: true,
-  slidesToShow: 3,
+  slidesToShow: 4,
   slidesToScroll: 3,
   responsive: [
     {
@@ -45,7 +45,7 @@ const BlogCarousel = (props) => {
   const { items } = useSelector((state) => state.products);
 
   return (
-    <StyledContent style={{ padding: props.padding ? props.padding : "5%" }}>
+    <StyledContent style={{ padding: props.padding ? props.padding : "5% 8%" }}>
       <Slider {...carouselSettings}>
         {data.map((item, index) => (
           <div key={index}>

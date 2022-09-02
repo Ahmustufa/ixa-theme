@@ -22,7 +22,7 @@ const ProductCardWithIcons = (props) => {
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
-    currency: "PKR",
+    currency: "USD",
   });
 
   const { items: wishlist } = useSelector((state) => state.wishlist);
@@ -105,7 +105,7 @@ const ProductCardWithIcons = (props) => {
             <div className="price">
               {formatedPrice.format(price)}{" "}
               <small style={{ color: "#858585", textDecoration: "line-through" }}>
-                PKR {price * 1.5}
+                ${price * 1.5}
               </small>
             </div>
 

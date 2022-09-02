@@ -174,10 +174,6 @@ export const mainMenu = [
       { title: "Multi slider", link: "/feature/product-element/multi-slider" },
       { title: "Tab", link: "/feature/product-element/tab" },
       {
-        title: "Email Template",
-        submenu: [{ title: "Template 1", link: "/email-template/1" }],
-      },
-      {
         title: "Theme Element",
         submenu: [
           { title: "Category", link: "/feature/theme-element/category" },
@@ -228,6 +224,9 @@ export const mainMenu = [
           { title: "Template 3", link: "/email_template_3.html" },
           { title: "Template 4", link: "/email_template_4.html" },
           { title: "Template 5", link: "/email_template_5.html" },
+          { title: "Template 6", link: "/email_template_6.html" },
+          { title: "Template 7", link: "/email_template_7.html" },
+          { title: "Template 8", link: "/email_template_8.html" },
         ],
       },
     ],
@@ -239,6 +238,7 @@ export const mainMenu = [
       { title: "With left sidebar", link: "/blog/blog-left-sidebar" },
       { title: "With right sidebar", link: "/blog/blog-right-sidebar" },
       { title: "Without sidebar", link: "/blog/no-sidebar" },
+      { title: "Blog detail page", link: "/blog/1" },
     ],
   },
 ];

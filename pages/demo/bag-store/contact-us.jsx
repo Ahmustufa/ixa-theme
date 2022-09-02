@@ -13,7 +13,7 @@ const StyledSection = styled.div`
   label {
     position: relative;
     top: 10px;
-    z-index: 2;
+    z-index: 1;
     font-size: 12px;
     background-color: rgb(255, 255, 255);
     left: 11px;

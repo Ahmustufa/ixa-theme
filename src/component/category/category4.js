@@ -12,8 +12,8 @@ const StyledDiv = styled.div`
     .inside-main {
       border: 1px solid #dddada;
       text-align: center;
-      margin-left: 24px;
-      margin-right: 24px;
+      margin-left: 10px;
+      margin-right: 10px;
       /* padding: 24px 24px; */
       img {
         width: 100%;
@@ -38,6 +38,10 @@ const StyledDiv = styled.div`
     }
   }
 
+  @media (max-width: 1024px) {
+    padding: 30px !important;
+  }
+
   .slick-slide img {
     display: initial;
   }
@@ -51,7 +55,7 @@ const Category4 = (props) => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: true,
+    // arrows: true,
     responsive: [
       {
         breakpoint: 576,
@@ -77,7 +81,7 @@ const Category4 = (props) => {
     ],
   };
   return (
-    <StyledDiv style={{ width: "100%", padding: "4% 2%" }}>
+    <StyledDiv style={{ padding: "0 80px" }}>
       <Slider {...settings}>
         {props.insideData.map((data, index) => (
           <div key={index} className="main-div">

@@ -55,10 +55,10 @@ const ProductBox = (props) => {
             xs={24}
             className="d-flex justify-content-sm-start justify-content-lg-end"
           >
-            <Link href="">
+            <Link href="/">
               <p className="m-0 mx-1"> HOME / </p>
             </Link>{" "}
-            <Link href="">
+            <Link href="/">
               <p className="m-0 mx-1"> ELEMENTS / </p>
             </Link>{" "}
             <span> PRODUCT-BOX</span>

@@ -1,89 +1,186 @@
 import Head from "next/head";
 import { Row, Col } from "antd";
-import ShopCard from "../src/component/cards/shopCard";
-import HomeCarousel from "../src/component/heroSection";
 import styled from "styled-components";
 import FullBgImageSection from "../src/component/heroSection/FullBgImageSection";
-import { brownHair } from "../images";
 import SubscriptionModal from "../src/component/modals/subscriptionModal1";
-import BlogCarousel from "../src/component/productListing/blogCarousel";
-import SortItems from "../src/component/sortItems";
-import DressCategories from "../src/component/categories/derssCategories";
-import ProductCarousel from "../src/component/productListing/carousel";
-import CardStyle5 from "src/component/cards/CardStyle5";
-import { shoesProducts } from "src/mock/shoesProducts";
-import ProductListing from "../src/component/productListing";
-import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
-import ProductVerticalCarousel from "../src/component/productListing/productVerticalCarousel";
-import { productStyle5, productStyle8 } from "src/mock/mockupData";
-import Heading from "../src/component/headings";
 import DragToScroll from "src/component/scroll/dragToScroll";
+import Link from "next/link";
+import Typewriter from "typewriter-effect";
+// import ShopCard from "../src/component/cards/shopCard";
+// import HomeCarousel from "../src/component/heroSection";
+// import { brownHair } from "../images";
+// import BlogCarousel from "../src/component/productListing/blogCarousel";
+// import SortItems from "../src/component/sortItems";
+// import DressCategories from "../src/component/categories/derssCategories";
+// import ProductCarousel from "../src/component/productListing/carousel";
+// import CardStyle5 from "src/component/cards/CardStyle5";
+// import { shoesProducts } from "src/mock/shoesProducts";
+// import ProductListing from "../src/component/productListing";
+// import SidebarFiltration from "../src/component/sidebar/sidebarFiltration";
+// import ProductVerticalCarousel from "../src/component/productListing/productVerticalCarousel";
+// import { productStyle5, productStyle8 } from "src/mock/mockupData";
+// import Heading from "../src/component/headings";
+// import { ButtonWrapper } from "src/component/buttons";
 
 const Home = () => {
   return (
     <>
       <Head>
         <title>E-commerce Store | Home</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1"
+        />
+        <meta name="referrer" content="no-referrer-when-downgrade" />
+        <meta charset="utf-8" />
+        <meta name="keywords" content="e-commerce, theme, store, shop" />
+        <meta name="title" content="Creative multi-purpose e-Commerce store" />
+        <meta
+          name="description"
+          content="The complete template for your ecommerce store build on Next.js to create different structures and satisfy any specific requirements."
+        />
+        <meta name="page-topic" content="e-commerce store" />
+        <meta name="page-type" content="ecommerce" />
+        <meta name="audience" content="Everyone" />
+        <meta name="robots" content="index, follow" />
+
+        {/* <link rel="canonical" href="https://www.godaddy.com/en-pk/offers/godaddy" /> */}
+        <meta
+          property="og:image"
+          content={`${window.location.origin}/images/preload_image.jpg`}
+        />
+        <meta property="og:title" content="Creative multi-purpose e-Commerce store" />
+        <meta
+          property="og:description"
+          content="The complete template for your ecommerce store build on Next.js to create different structures and satisfy any specific requirements."
+        />
+        <meta property="og:type" content="" />
+        <meta property="og:url" content="https://www.polkadotsretail.com/" />
+        <meta property="og:site_name" content="Polkadotsretail" />
       </Head>
-
       <SubscriptionModal image="/images/subscriptionModalBg.png" />
-      <HomeCarousel
-        btnDisplay={true}
-        carouselData={[
-          {
-            title: "Women's week",
-            subtitle: "Take advantage of promotions upto 60%",
-            backgroundImage: ["/images/slide_1.jpg", "/images/slide_1.jpg"],
-          },
-          {
-            text: "NEW TREND",
-            title: "THE BASICS",
-            subtitle: "An exclusive selction of season's trends.",
-            backgroundImage: ["/images/slide_2.jpg", "/images/slide_2.jpg"],
-          },
-          {
-            text: "NEW COLLECTION",
-            title: "Bellemount '20",
-            subtitle: (
-              <div>
-                Rapidiously redifine dynamic niche markets before
-                <br />
-                plug-and-play collaboration and idea-sharing Continually
-                <br />
-                utlilize focused convergence via top-line outsourcing
-              </div>
-            ),
-            backgroundImage: ["/images/slide_3.jpg", "/images/slide_3.jpg"],
-          },
-        ]}
-      />
-      <StyledPage>
-        <section className="section-wrapper">
-          <Row justify="space-between" gutter={[0, 40]}>
-            <Col xs={24} sm={24} md={24} lg={24} xl={11}>
-              <ShopCard
-                title="London"
-                description="Classy, urban clothing, fashion."
-                link="/demo/clothing"
-              />
-            </Col>
 
-            <Col xs={24} sm={24} md={24} lg={24} xl={11}>
-              <ShopCard
-                title="Melbourne"
-                description="Urban, backpacks, travel, camping."
-                link="/demo/bag-store"
-              />
-            </Col>
-          </Row>
+      <StyledPage>
+        <section className="banner">
+          <div className="content">
+            <h1 style={{ fontWeight: 500 }}>
+              Creative multi-purpose
+              <span style={{ color: "#E94C89", fontWeight: 800, display: "flex" }}>
+                <Typewriter
+                  options={{
+                    autoStart: true,
+                    loop: true,
+                  }}
+                  onInit={(typewriter) => {
+                    typewriter
+                      .typeString("Furniture")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("Electronics")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("Bags")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("Clothing")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("e-Commerce")
+                      .pauseFor(2500)
+                      .start();
+                  }}
+                />
+                <span style={{ fontWeight: 500, color: "#2a2a2a" }}>theme</span>
+              </span>
+            </h1>
+
+            <p className="mb-5 mt-4 description">
+              The complete template for your ecommerce store build on Next.js to create
+              different structures and satisfy any specific requirements.
+            </p>
+            <div className="d-flex col-10">
+              <button className="button-1 mr-4">Buy Now</button>
+              <a
+                href="#demos"
+                className="button-1 outline text-center text-decoration-none"
+              >
+                See Demo
+              </a>
+            </div>
+          </div>
         </section>
 
-        <FullBgImageSection
-          h1="Trending"
-          h3="Men | Women"
-          h5="Fashion"
-          bgImage={brownHair}
-        />
+        <section className="my-5">
+          <div className="col-10 m-auto">
+            <div className="text-center">
+              <p
+                style={{
+                  color: "#1D8ECE",
+                  fontWeight: 600,
+                  fontSize: 20,
+                  marginBottom: 0,
+                }}
+              >
+                WHY CHOOSE US
+              </p>
+              <p
+                style={{
+                  color: "#2a2a2a",
+                  fontWeight: 600,
+                  maxWidth: 600,
+                  fontSize: 32,
+                  margin: "auto",
+                }}
+              >
+                A complete website building toolkit save your time by using Polkadots
+              </p>
+            </div>
+
+            <Row gutter={[40, 40]}>
+              {whyChooseUs.map((item, index) => (
+                <Col key={index} xs={24} sm={24} md={12} lg={8} xl={8}>
+                  <div className="text-center">
+                    <img
+                      src={item.image}
+                      alt={`image-${index}`}
+                      className="img-fluid"
+                      style={{ height: 200, objectFit: "contain" }}
+                    />
+                    <h4 className="my-4">{item.heading}</h4>
+                    <p>{item.text}</p>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          </div>
+        </section>
+
+        <section
+          id="demos"
+          style={{
+            backgroundImage:
+              "url(https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/bg-demos.png)",
+            backgroundColor: "#eff1f2",
+          }}
+        >
+          <div className="col-11 mx-auto py-5">
+            <Row justify="space-between" gutter={[0, 40]}>
+              {themes.map((item, index) => (
+                <Col key={index} xs={24} sm={24} md={12} lg={7} xl={7}>
+                  <h3>{item.heading}</h3>
+                  <p>{item.description}</p>
+                  <Link href={item.link}>
+                    <div className="demo-image">
+                      <img src={item.images[0]} alt="image" width={"100%"} />
+                    </div>
+                  </Link>
+                </Col>
+              ))}
+            </Row>
+          </div>
+        </section>
+
+        <FullBgImageSection bgImage={"/images/mian-fixed.png"} />
 
         <section
           style={{
@@ -173,10 +270,10 @@ const Home = () => {
 
         <section className="text-center">
           <div style={{ fontSize: "2rem", color: "#001719" }}>Email Template</div>
-          <div style={{ color: "#979797", width: 500, margin: "auto" }}>
+          <p style={{ color: "#979797", maxWidth: 500, width: "90%", margin: "auto" }}>
             Polkadotsretail comes with tons of email template which include order success,
             promotion and give away tamplates
-          </div>
+          </p>
 
           <img src="/images/email_templates.png" className="w-100" />
         </section>
@@ -210,6 +307,27 @@ const Home = () => {
 export default Home;
 
 const StyledPage = styled.div`
+  .banner {
+    background-image: url("/images/slide_1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+
+    .content {
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: 100px;
+
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+
   .section-wrapper {
     padding: 80px;
   }
@@ -240,9 +358,60 @@ const StyledPage = styled.div`
     }
   }
 
+  .demo-image {
+    width: 100%;
+    position: relative;
+    transition: all 0.3s;
+
+    :before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 0;
+      bottom: 0;
+      transition: all 0.3s;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    :hover {
+      transform: scale(1.02);
+
+      &:after {
+        content: "Preview";
+        cursor: pointer;
+        color: #fff;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 3px;
+        transition: all 0.3s;
+        border: 2px solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      :before {
+        width: 100%;
+      }
+    }
+  }
+
   @media only screen and (max-width: 576px) {
     .section-wrapper {
       padding: 24px;
+    }
+
+    .banner {
+      .content {
+        margin: auto;
+        h1 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
     }
   }
 `;
@@ -286,5 +455,65 @@ const features = [
       "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/svg-images.svg",
     heading: "Built-in SVG support",
     description: "Insert those lovely crisp and colored vector images.",
+  },
+];
+
+const themes = [
+  {
+    heading: "Apparels",
+    description: "Classy, urban clothing, fashion.",
+    images: ["/images/crop-image-4.png"],
+    link: "/demo/clothing-store/",
+  },
+  {
+    heading: "Bags",
+    description: "Urban, backpacks, travel, camping.",
+    images: ["/images/crop-image-2.png"],
+    link: "/demo/bag-store/",
+  },
+  {
+    heading: "Shoes",
+    description: "Stylish, urban, sports, fashion, shoes.",
+    images: ["/images/crop-image-1.png"],
+    link: "/demo/shoes-store/",
+  },
+  {
+    heading: "Electronics",
+    description: "Minimal, classy, electronics, interiors.",
+    images: ["/images/crop-image-3.png"],
+    link: "/demo/electronics-store/",
+  },
+];
+
+const whyChooseUs = [
+  {
+    image: "/images/why_choose_us_1.png",
+    heading: "Online Store",
+    text: "Polkadots fully supports  allowing you to use sections anywhere. Experience the latest technology from e-commerce to the fullest.",
+  },
+  {
+    image: "/images/why_choose_us_2.png",
+    heading: "Stunning Design",
+    text: "Want to increase your sales just in the first visit. Come to us & you will see how miracle our flagship e-commerce themes are.",
+  },
+  {
+    image: "/images/why_choose_us_3.png",
+    heading: "Demos Design",
+    text: "We have assembled a huge collection of theme demo. Now you can choose different templates to create stunning layouts.",
+  },
+  {
+    image: "/images/why_choose_us_4.png",
+    heading: "Easy to Implement and Use",
+    text: "We analyze, then support you the best methods for any necessary processes or features make your website operate stably and smoothly.",
+  },
+  {
+    image: "/images/why_choose_us_5.png",
+    heading: "e-Commerce Optimization",
+    text: "With our experience in e-commerce, we are confident to bring the theme with the highest conversion rate.",
+  },
+  {
+    image: "/images/why_choose_us_6.png",
+    heading: "Search Engine Optimization",
+    text: "Combination of SEO and our web development team make a powerful weapon to get super high conversion rate websites.",
   },
 ];

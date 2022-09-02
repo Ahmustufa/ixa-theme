@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { MailOutlined } from "@ant-design/icons";
+import { MdPhoneAndroid, MdLocationPin } from "react-icons/md";
 
 const StyledFooter = styled.footer`
   display: block;
@@ -34,6 +35,14 @@ const StyledFooter = styled.footer`
     margin-bottom: 24px;
   }
 
+  .link {
+    color: #545d6e;
+    text-decoration: none;
+    :hover {
+      color: #979797;
+    }
+  }
+
   .footer-item {
     color: rgba(0, 0, 0, 0.8);
     font-weight: 400;
@@ -53,6 +62,9 @@ const StyledFooter = styled.footer`
   @media only screen and (max-width: 576px) {
     .footer-item-container {
       text-align: center;
+    }
+    .footerLogo {
+      margin-left: -1rem !important;
     }
   }
 `;
@@ -123,8 +135,36 @@ const FooterContent = () => {
         <Divider />
       </div>
 
-      <Row className="col-7 col-md-11 col-lg-9 col-xl-7 m-auto" justify="center">
+      <Row className="col-7 col-md-11 col-lg-11 col-xl-10 m-auto" justify="space-between">
         <Col xs={24} sm={24} md={6} lg={6} xl={6} className="footer-item-wrapper">
+          <div className="footer-item-container">
+            <img
+              src="/images/app-logo-dark.svg"
+              alt="app_logo"
+              className="mb-3 footerLogo"
+              height={32}
+            />
+
+            <address className="d-flex align-items-center">
+              <MdPhoneAndroid
+                style={{ fontSize: 16, color: "#9DA4B1", marginRight: 8 }}
+              />
+
+              <div style={{ fontSize: 14 }}>
+                +123456789 <br />
+                <small>(9:00 am to 6:00 pm Pacific Time)</small>
+              </div>
+            </address>
+
+            <address className="d-flex align-items-center">
+              <MdLocationPin style={{ fontSize: 20, color: "#9DA4B1", marginRight: 8 }} />
+
+              <div style={{ fontSize: 14 }}>329 Mandolin Dr, San Jose, CA 95134, USA</div>
+            </address>
+          </div>
+        </Col>
+
+        <Col xs={24} sm={24} md={4} lg={4} xl={4} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">Let us help</div>
             <div className="footer-item">My Account</div>
@@ -133,29 +173,44 @@ const FooterContent = () => {
           </div>
         </Col>
 
-        <Col xs={24} sm={24} md={6} lg={6} xl={6} className="footer-item-wrapper">
+        <Col xs={24} sm={24} md={4} lg={4} xl={4} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">What we offer</div>
-            <div className="footer-item">
-              <Link href="/order">Order Now</Link>
-            </div>
+            <div className="footer-item">Order Now</div>
             <div className="footer-item">Upload your designs</div>
           </div>
         </Col>
 
-        <Col xs={24} sm={24} md={6} lg={6} xl={6} className="footer-item-wrapper">
+        <Col xs={24} sm={24} md={4} lg={4} xl={4} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">Our company</div>
-            <div className="footer-item">About us</div>
-            <div className="footer-item">Careers</div>
+            <div className="footer-item">
+              <Link href="/about-us">
+                <a className="link">About us</a>
+              </Link>
+            </div>
+            <div className="footer-item">
+              <Link href="/faqs">
+                <a className="link">FAQs</a>
+              </Link>
+            </div>
           </div>
         </Col>
 
-        <Col xs={24} sm={24} md={6} lg={6} xl={6} className="footer-item-wrapper">
+        <Col xs={24} sm={24} md={4} lg={4} xl={4} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">Our policies</div>
-            <div className="footer-item">Term of user</div>
-            <div className="footer-item">Copyright matters</div>
+            <div className="footer-item">
+              <Link href="/terms-of-use">
+                <a className="link">Term of use</a>
+              </Link>
+            </div>
+            <div className="footer-item">
+              <Link href="/privacy-policy">
+                <a className="link">Privacy policy</a>
+              </Link>
+            </div>
+            {/* <div className="footer-item">Copyright matters</div> */}
           </div>
         </Col>
       </Row>

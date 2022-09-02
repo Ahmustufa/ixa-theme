@@ -28,7 +28,8 @@ const StyledBanner = styled.div`
       transition: all 0.4s ease;
     }
     .text-div {
-      z-index: 1;
+      /* z-index: 1; */
+      position: relative;
       width: 100%;
       padding: 50px;
 

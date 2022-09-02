@@ -69,7 +69,7 @@ const Orders = () => {
                           >
                             <div className="">Price: </div>
                             <div className="font-weight-light ml-2">
-                              PKR {item.product?.price?.toLocaleString()}
+                              ${item.product?.price?.toLocaleString()}
                             </div>
                           </div>
                           <div
@@ -108,7 +108,7 @@ const Orders = () => {
                           >
                             <div className="">Subtotal: </div>
                             <div className="font-weight-light ml-2">
-                              PKR {(item.product?.price * item.quantity).toLocaleString()}
+                              ${(item.product?.price * item.quantity).toLocaleString()}
                             </div>
                           </div>
                         </div>

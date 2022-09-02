@@ -63,7 +63,7 @@ const OrderSuccess = (props) => {
 
                   <Col xs={24} sm={24} lg={3} xl={3} className="d-flex d-md-block">
                     <p className="title">Price</p>
-                    <div className="value">PKR {product.price}</div>
+                    <div className="value">${product.price}</div>
                   </Col>
                 </Row>
               ))}
@@ -88,24 +88,24 @@ const OrderSuccess = (props) => {
                     <p style={{ fontWeight: 600 }}>Total Summary</p>
                     <div className="d-flex justify-content-between">
                       <div>Subtotal</div>
-                      <div>PKR 3000</div>
+                      <div>$3000</div>
                     </div>
 
                     <div className="d-flex justify-content-between">
                       <div>Shipping Fee</div>
-                      <div>PKR 280</div>
+                      <div>$280</div>
                     </div>
 
                     <div className="d-flex justify-content-between">
                       <div>Shipping Fee Promotion</div>
-                      <div>PKR -80</div>
+                      <div>-$80</div>
                     </div>
 
                     <Divider />
 
                     <div className="d-flex justify-content-between">
                       <div>Total</div>
-                      <div>PKR 3200</div>
+                      <div>$3200</div>
                     </div>
                   </div>
                 </Col>

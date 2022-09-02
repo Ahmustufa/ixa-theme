@@ -10,11 +10,17 @@ const CartSteps = (props) => {
       id: 2,
       title: "SHIPPING AND CHECKOUT",
       description: "ENTER YOUR DETAILS",
-      link: "cart/checkout",
+      link: "/cart/checkout",
     },
-    // { id: 3, title: "CONFIRMATION", description: "REVIEW AND ORDER!" },
+    {
+      id: 3,
+      title: "BILLING ADDRESS",
+      description: "REVIEW AND ORDER!",
+      link: "/cart/billingAddress",
+    },
   ];
 
+  console.log("props", props.step);
   return (
     <StyledPage>
       <Row className="step-container" gutter={[24, 24]}>

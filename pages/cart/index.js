@@ -22,14 +22,10 @@ const ShoppingBag = () => {
   const { items } = useSelector((state) => state.cart);
   const [loadingState, setLoadingState] = useState("");
   const calculateTotal = (cart) => {
-    const subTotal = cart.reduce(
-      (accu, item) => (accu += item.quantity * item.price),
-      0
-    );
+    const subTotal = cart.reduce((accu, item) => (accu += item.quantity * item.price), 0);
     // console.log("Sub total", subTotal);
     return subTotal.toLocaleString();
   };
-
 
   const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
@@ -48,7 +44,9 @@ const ShoppingBag = () => {
               </p>
             </div>
           </Col>
-          <PrimaryButton className="mt-5">RETURN TO SHOP</PrimaryButton>
+          <Link href="/demo/bsg-store/products">
+            <PrimaryButton className="mt-5">RETURN TO SHOP</PrimaryButton>
+          </Link>
         </Row>
       ) : (
         <>
@@ -59,12 +57,7 @@ const ShoppingBag = () => {
                 <Col key={index} xl={8} xs={24} sm={24}>
                   <div className="box d-flex align-items-center border">
                     <div>
-                      <img
-                        src={
-                          item.images[0]
-                        }
-                        style={{ width: 180 }}
-                      />
+                      <img src={item.images[0]} style={{ width: 180 }} />
                     </div>
 
                     <div className="ml-3 ">
@@ -140,7 +133,7 @@ const ShoppingBag = () => {
                         >
                           <div className="">Subtotal: </div>
                           <div className="font-weight-light ml-2">
-                            Rs. {(item.price * item.quantity).toLocaleString()}
+                            $. {(item.price * item.quantity).toLocaleString()}
                           </div>
                         </div>
                       </div>
@@ -161,10 +154,12 @@ const ShoppingBag = () => {
                 </tr> */}
                 <tr>
                   <td style={{ background: "#f9fafb" }}>TOTAL</td>
-                  <td className="font-weight-bold">PKR {calculateTotal(items)}</td>
+                  <td className="font-weight-bold">${calculateTotal(items)}</td>
                 </tr>
               </table>
-              <PrimaryButton className="w-100 mt-4">Proceed to checkout</PrimaryButton>
+              <Link href="/cart/checkout">
+                <PrimaryButton className="w-100 mt-4">Proceed to checkout</PrimaryButton>
+              </Link>
             </Col>
           </Row>
         </>

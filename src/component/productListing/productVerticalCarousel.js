@@ -71,7 +71,7 @@ const ProductVerticalCarousel = (props) => {
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
-    currency: "PKR",
+    currency: "USD",
   });
 
   return (
@@ -85,7 +85,7 @@ const ProductVerticalCarousel = (props) => {
       </div>
       <Divider />
 
-      <Slider ref={sliderRef} {...carouselSettings}>
+      <Slider ref={sliderRef} {...carouselSettings} className="verticalCarousel">
         {props.data?.map((item, index) => (
           <div
             key={index}
@@ -101,7 +101,7 @@ const ProductVerticalCarousel = (props) => {
               <h4>
                 {formatedPrice.format(item.price)}{" "}
                 <small style={{ color: "#858585", textDecoration: "line-through" }}>
-                  PKR {item.price + 100}
+                  ${item.price + 100}
                 </small>
               </h4>
             </div>

@@ -29,68 +29,68 @@ const Collection = (props) => {
 
   const gridData = [
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/2.jpg",
+      image: "/images/clothing/Jackets/RelaxedBlazer-3.jpg",
       price: "$40",
       title: "Women sunglasses",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/6.jpg",
+      image: "/images/Shoes/featured/1.webp",
       price: "$40",
       title: "maroon women bag",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/10.jpg",
+      image: "/images/Shoes/featured/4.webp",
       price: "$40",
       title: "man black t-shirt",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/14.jpg",
+      image: "/images/Shoes/Women/2/5.webp",
       price: "$40",
       title: "gray sneaker",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/18.jpg",
+      image: "/images/Shoes/Women/2/1.webp",
       price: "$40",
       title: "trending watch",
     },
 
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/3.jpg",
+      image: "/images/Shoes/featured/2.webp",
       price: "$40",
       title: "Women sunglasses",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/7.jpg",
+      image: "/images/Shoes/featured/3.webp",
       price: "$40",
       title: "Women sunglasses",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/11.jpg",
+      image: "/images/Shoes/featured/2.webp",
       price: "$40",
       title: "Women sunglasses",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/15.jpg",
+      image: "/images/Shoes/featured/4.webp",
       price: "$40",
       title: "Women sunglasses",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/19.jpg",
+      image: "/images/Bags/ArgyleQuilted/Purse-1.webp",
       price: "$40",
       title: "Women sunglasses",
     },
 
-    { image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/4.jpg" },
-    { image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/8.jpg" },
-    { image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/12.jpg" },
-    { image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/16.jpg" },
-    { image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/20.jpg" },
+    { image: "/images/Bags/ButterflyPrintPatch/Case-2.webp" },
+    { image: "/images/Bags/LetterGraphicShoulder/Charm-4.webp" },
+    { image: "/images/Electronics/fans/6/1.webp" },
+    { image: "/images/Shoes/Women/4/2.webp" },
+    { image: "/images/Shoes/Women/5/3.webp" },
 
-    { image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/5.jpg" },
-    { image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/9.jpg" },
-    { image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/13.jpg" },
-    { image: "https://multikart-react.vercel.app/assets/images/portfolio/metro/17.jpg" },
-    { image: "https://multikart-react.vercel.app/assets/images/fashion/lookbook/7.jpg" },
+    { image: "/images/Electronics/health-and-beauty/1/1.webp" },
+    { image: "/images/clothing/Sweaters/CashmerePolo-1.jpg" },
+    { image: "/images/clothing/Sweaters/UltimateCardigan-1.jpg" },
+    { image: "/images/clothing/Jackets/EditorBlazer.jpg" },
+    { image: "/images/Electronics/fans/5/1.webp" },
   ];
 
   return (
@@ -106,7 +106,7 @@ const Collection = (props) => {
             xs={24}
             className="d-flex justify-content-sm-start justify-content-lg-end"
           >
-            <Link href="">
+            <Link href="/">
               <p className="m-0 mx-1"> HOME / </p>
             </Link>{" "}
             <span> COLLECTION</span>
@@ -114,12 +114,7 @@ const Collection = (props) => {
         </Row>
       </div>
       <div style={{ padding: 80 }} className="detail-section">
-        <img
-          src={
-            "https://multikart-react.vercel.app/_next/static/images/2-beb8795ec9decb581e91c6b47f6882ec.jpg"
-          }
-          width="100%"
-        />
+        <img src={"images/Bags/banner/Others-banner.jpg"} width="100%" />
         <h5 className="my-3">FASHION</h5>
         <h5 className="my-3">
           ALSO THE LEAP INTO ELECTRONIC TYPESETTING, REMAINING ESSENTIALLY UNCHANGED.

@@ -28,7 +28,7 @@ const ProductDetails = (props) => {
     >
       <div style={{ fontSize: 40 }}>{productDetails.title}</div>
       <div style={{ fontSize: 12, margin: "16px 0" }}>{productDetails.brandName}</div>
-      <div style={{ fontSize: 20, fontWeight: 600 }}>PKR {productDetails.price}</div>
+      <div style={{ fontSize: 20, fontWeight: 600 }}>${productDetails.price}</div>
       <div style={{ fontWeight: 300 }}>{productDetails.description}</div>
 
       <div className="d-flex align-items-center my-4">

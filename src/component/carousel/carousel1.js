@@ -63,33 +63,27 @@ const Carousel1 = (props) => {
 Carousel1.defaultProps = {
   data: [
     {
-      image: "https://multikart-react.vercel.app/assets/images/home-banner/6.jpg",
-      subHeading: "Welcome To Fashion",
-      heading: "Leather Bags",
+      image: "/images/clothing/banner/Main-banner.jpg",
+      subHeading: "",
+      heading: "",
       link: "#",
-      placement: "center",
+      placement: "start",
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/home-banner/7.jpg",
-      subHeading: "Welcome To Fashion",
-      heading: "Women Bags",
+      image: "/images/clothing/banner/Main-banner-2.jpg",
+      subHeading: "",
+      heading: "",
       link: "#",
-      placement: "center",
+      placement: "start",
+      buttonShow: false,
     },
     {
-      image: "https://multikart-react.vercel.app/assets/images/home-banner/8.jpg",
-      subHeading: "Welcome To Fashion",
-      heading: "Men Bags",
+      image: "/images/clothing/banner/Main-banner-3.jpg",
+      subHeading: "",
+      heading: "",
       link: "#",
-      placement: "center",
-    },
-    {
-      image:
-        "https://cdn.shopify.com/s/files/1/0555/1000/7999/files/rtw-creation-14-august-azadi-sale-desktop.jpg",
-      subHeading: "Get FREE shipping when you buy any two!",
-      heading: "AZADI SALE",
-      link: "#",
-      placement: "end",
+      placement: "start",
+      buttonShow: false,
     },
   ],
 };
@@ -99,7 +93,7 @@ export default Carousel1;
 const StyledCarousel = styled.div`
   overflow: hidden;
   position: relative;
-
+  z-index: -999;
   height: 600px;
   width: 100%;
 
@@ -128,7 +122,7 @@ const StyledCarousel = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 100;
+    z-index: 1;
   }
 
   .btn {

@@ -4,8 +4,8 @@ const productStyle1 = [
   {
     _id: uuidv4(),
     images: [
-      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "/images/clothing/Dresses/ContrastDress-1.jpg",
+      "/images/clothing/Dresses/ContrastDress-2.jpg",
     ],
     price: 40,
     title: "Waist dress",
@@ -14,8 +14,8 @@ const productStyle1 = [
   {
     _id: uuidv4(),
     images: [
-      "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
-      "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+      "/images/clothing/Dresses/dress-1.jpg",
+      "/images/clothing/Dresses/dress-2.jpg",
     ],
     price: 40,
     title: "Belted dress",
@@ -24,8 +24,8 @@ const productStyle1 = [
   {
     _id: uuidv4(),
     images: [
-      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
-      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+      "/images/clothing/Dresses/FloralDress-1.jpg",
+      "/images/clothing/Dresses/FloralDress-2.jpg",
     ],
     price: 40,
     title: "Rain Jacket",
@@ -34,8 +34,8 @@ const productStyle1 = [
   {
     _id: uuidv4(),
     images: [
-      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
-      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+      "/images/clothing/Dresses/TweedDress-1.jpg",
+      "/images/clothing/Dresses/TweedDress-2.jpg",
     ],
     price: 40,
     title: "DANVOUY Womens ",
@@ -47,8 +47,10 @@ const productStyle2 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/pro1/16.jpg",
-      "https://multikart-react.vercel.app/assets/images/pro1/16.jpg",
+      "/images/Bags/AlloverLetterGraphicZipBackpack/AlloverLetterGraphicZipBackpack-1.webp",
+      "/images/Bags/AlloverLetterGraphicZipBackpack/AlloverLetterGraphicZipBackpack-2.webp",
+      "/images/Bags/AlloverLetterGraphicZipBackpack/AlloverLetterGraphicZipBackpack-3.webp",
+      "/images/Bags/AlloverLetterGraphicZipBackpack/AlloverLetterGraphicZipBackpack-4.webp",
     ],
     price: 250,
     title: "Product 1",
@@ -57,8 +59,10 @@ const productStyle2 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/pro1/1.jpg",
-      "https://multikart-react.vercel.app/assets/images/pro1/1.jpg",
+      "/images/Bags/ArgyleQuilted/Purse-1.webp",
+      "/images/Bags/ArgyleQuilted/Purse-2.webp",
+      "/images/Bags/ArgyleQuilted/Purse-3.webp",
+      "/images/Bags/ArgyleQuilted/Purse-4.webp",
     ],
     price: 450,
     title: "Product 2",
@@ -67,8 +71,9 @@ const productStyle2 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/pro1/12.jpg",
-      "https://multikart-react.vercel.app/assets/images/pro1/12.jpg",
+      "/images/Bags/ButterflyPrintPatch/Case-1.webp",
+      "/images/Bags/ButterflyPrintPatch/Case-2.webp",
+      "/images/Bags/ButterflyPrintPatch/Case-3.webp",
     ],
     price: 710,
     title: "Product 3",
@@ -77,8 +82,10 @@ const productStyle2 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/pro1/10.jpg",
-      "https://multikart-react.vercel.app/assets/images/pro1/10.jpg",
+      "/images/Bags/LetterGraphicShoulder/Charm-1.webp",
+      "/images/Bags/LetterGraphicShoulder/Charm-2.webp",
+      "/images/Bags/LetterGraphicShoulder/Charm-3.webp",
+      "/images/Bags/LetterGraphicShoulder/Charm-4.webp",
     ],
     price: 400,
     title: "Product 4",
@@ -89,40 +96,32 @@ const productStyle2 = [
 const productStyle3 = [
   {
     _id: uuidv4(),
-    images: [
-      "https://multikart-react.vercel.app/assets/images/pro/6.jpg",
-      "https://multikart-react.vercel.app/assets/images/pro/6.jpg",
-    ],
+    images: ["/images/Shoes/featured/1.webp", "/images/Shoes/featured/1.webp"],
+
     price: 250,
     title: "Product 1",
     category: "shoes",
   },
   {
     _id: uuidv4(),
-    images: [
-      "https://multikart-react.vercel.app/assets/images/pro/33.jpg",
-      "https://multikart-react.vercel.app/assets/images/pro/33.jpg",
-    ],
+    images: ["/images/Shoes/featured/2.webp", "/images/Shoes/featured/2.webp"],
+
     price: 450,
     title: "Product 2",
     category: "shoes",
   },
   {
     _id: uuidv4(),
-    images: [
-      "https://multikart-react.vercel.app/assets/images/pro/13.jpg",
-      "https://multikart-react.vercel.app/assets/images/pro/13.jpg",
-    ],
+    images: ["/images/Shoes/featured/3.webp", "/images/Shoes/featured/3.webp"],
+
     price: 710,
     title: "Product 3",
     category: "shoes",
   },
   {
     _id: uuidv4(),
-    images: [
-      "https://multikart-react.vercel.app/assets/images/pro/23.jpg",
-      "https://multikart-react.vercel.app/assets/images/pro/23.jpg",
-    ],
+    images: ["/images/Shoes/featured/4.webp", "/images/Shoes/featured/4.webp"],
+
     price: 400,
     title: "Product 4",
     category: "shoes",
@@ -133,8 +132,10 @@ const productStyle4 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/electronics/pro/7.jpg",
-      "https://multikart-react.vercel.app/assets/images/electronics/pro/7.jpg",
+      "/images/Electronics/fridge/1/1.webp",
+      "/images/Electronics/fridge/1/2.webp",
+      "/images/Electronics/fridge/1/3.webp",
+      "/images/Electronics/fridge/1/4.webp",
     ],
     price: 250,
     title: "Product 1",
@@ -143,8 +144,8 @@ const productStyle4 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/electronics/pro/3.jpg",
-      "https://multikart-react.vercel.app/assets/images/electronics/pro/3.jpg",
+      "/images/Electronics/fridge/2/1.webp",
+      "/images/Electronics/fridge/2/2.webp",
     ],
     price: 450,
     title: "Product 2",
@@ -153,8 +154,10 @@ const productStyle4 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/electronics/pro/4.jpg",
-      "https://multikart-react.vercel.app/assets/images/electronics/pro/4.jpg",
+      "/images/Electronics/fridge/3/1.webp",
+      "/images/Electronics/fridge/3/2.webp",
+      "/images/Electronics/fridge/3/3.webp",
+      "/images/Electronics/fridge/3/4.webp",
     ],
     price: 710,
     title: "Product 3",
@@ -163,8 +166,10 @@ const productStyle4 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/electronics/pro/8.jpg",
-      "https://multikart-react.vercel.app/assets/images/electronics/pro/8.jpg",
+      "/images/Electronics/fridge/4/1.webp",
+      "/images/Electronics/fridge/4/2.webp",
+      "/images/Electronics/fridge/4/3.webp",
+      "/images/Electronics/fridge/4/4.webp",
     ],
     price: 400,
     title: "Product 4",
@@ -176,8 +181,10 @@ const productStyle5 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/jewellery/pro/10.jpg",
-      "https://multikart-react.vercel.app/assets/images/jewellery/pro/10.jpg",
+      "/images/Electronics/fans/4/1.webp",
+      "/images/Electronics/fans/4/2.webp",
+      "/images/Electronics/fans/4/3.webp",
+      "/images/Electronics/fans/4/3.webp",
     ],
     price: 250,
     title: "Product 1",
@@ -185,26 +192,25 @@ const productStyle5 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/jewellery/pro/6.jpg",
-      "https://multikart-react.vercel.app/assets/images/jewellery/pro/6.jpg",
+      "/images/Electronics/fans/5/1.webp",
+      "/images/Electronics/fans/5/2.webp",
+      "/images/Electronics/fans/5/3.webp",
     ],
     price: 450,
     title: "Product 2",
   },
   {
     _id: uuidv4(),
-    images: [
-      "https://multikart-react.vercel.app/assets/images/jewellery/pro/8.jpg",
-      "https://multikart-react.vercel.app/assets/images/jewellery/pro/8.jpg",
-    ],
+    images: ["/images/Electronics/fans/6/1.webp", "/images/Electronics/fans/6/2.webp"],
+
     price: 710,
     title: "Product 3",
   },
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/jewellery/pro/1.jpg",
-      "https://multikart-react.vercel.app/assets/images/jewellery/pro/1.jpg",
+      "/images/Electronics/health-and-beauty/1/1.webp",
+      "/images/Electronics/health-and-beauty/1/2.webp",
     ],
     price: 400,
     title: "Product 4",
@@ -215,8 +221,10 @@ const productStyle6 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/nursery/pro/5.jpg",
-      "https://multikart-react.vercel.app/assets/images/nursery/pro/5.jpg",
+      "/images/clothing/Sweaters/BraidedTank-1.jpg",
+      "/images/clothing/Sweaters/BraidedTank-2.jpg",
+      "/images/clothing/Sweaters/BraidedTank-3.jpg",
+      "/images/clothing/Sweaters/BraidedTank-4.jpg",
     ],
     price: 250,
     title: "Product 1",
@@ -225,8 +233,9 @@ const productStyle6 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/nursery/pro/7.jpg",
-      "https://multikart-react.vercel.app/assets/images/nursery/pro/7.jpg",
+      "/images/clothing/Sweaters/CashmerePolo-1.jpg",
+      "/images/clothing/Sweaters/CashmerePolo-2.jpg",
+      "/images/clothing/Sweaters/CashmerePolo-3.jpg",
     ],
     price: 450,
     title: "Product 2",
@@ -235,8 +244,9 @@ const productStyle6 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/nursery/pro/3.jpg",
-      "https://multikart-react.vercel.app/assets/images/nursery/pro/3.jpg",
+      "/images/clothing/Sweaters/UltimateCardigan-1.jpg",
+      "/images/clothing/Sweaters/UltimateCardigan-2.jpg",
+      "/images/clothing/Sweaters/UltimateCardigan-3.jpg",
     ],
     price: 710,
     title: "Product 3",
@@ -245,8 +255,8 @@ const productStyle6 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/nursery/pro/2.jpg",
-      "https://multikart-react.vercel.app/assets/images/nursery/pro/2.jpg",
+      "/images/clothing/Jackets/EditorBlazer.jpg",
+      "/images/clothing/Jackets/EditorBlazer.jpg",
     ],
     price: 400,
     title: "Product 4",
@@ -258,8 +268,11 @@ const productStyle7 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/pro2/2.jpg",
-      "https://multikart-react.vercel.app/assets/images/pro2/2.jpg",
+      "/images/Shoes/Women/2/1.webp",
+      "/images/Shoes/Women/2/2.webp",
+      "/images/Shoes/Women/2/3.webp",
+      "/images/Shoes/Women/2/4.webp",
+      "/images/Shoes/Women/2/5.webp",
     ],
     price: 250,
     title: "Product 1",
@@ -267,8 +280,10 @@ const productStyle7 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/pro2/6.jpg",
-      "https://multikart-react.vercel.app/assets/images/pro2/6.jpg",
+      "/images/Shoes/Women/3/1.webp",
+      "/images/Shoes/Women/3/2.webp",
+      "/images/Shoes/Women/3/3.webp",
+      "/images/Shoes/Women/3/4.webp",
     ],
     price: 450,
     title: "Product 2",
@@ -276,8 +291,12 @@ const productStyle7 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/pro2/8.jpg",
-      "https://multikart-react.vercel.app/assets/images/pro2/8.jpg",
+      "/images/Shoes/Women/4/1.webp",
+      "/images/Shoes/Women/4/2.webp",
+      "/images/Shoes/Women/4/3.webp",
+      "/images/Shoes/Women/4/4.webp",
+      "/images/Shoes/Women/4/5.webp",
+      "/images/Shoes/Women/4/6.webp",
     ],
     price: 710,
     title: "Product 3",
@@ -285,8 +304,11 @@ const productStyle7 = [
   {
     _id: uuidv4(),
     images: [
-      "https://multikart-react.vercel.app/assets/images/pro2/4.jpg",
-      "https://multikart-react.vercel.app/assets/images/pro2/4.jpg",
+      "/images/Shoes/Women/5/1.webp",
+      "/images/Shoes/Women/5/2.webp",
+      "/images/Shoes/Women/5/3.webp",
+      "/images/Shoes/Women/5/4.webp",
+      "/images/Shoes/Women/5/5.webp",
     ],
     price: 400,
     title: "Product 4",
@@ -296,25 +318,37 @@ const productStyle7 = [
 const productStyle8 = [
   {
     _id: uuidv4(),
-    images: ["https://multikart-react.vercel.app/assets/images/game/pro/1.jpg"],
+    images: ["/images/Electronics/fans/7/1.webp", "/images/Electronics/fans/7/2.webp"],
+
     price: 250,
     title: "Product 1",
   },
   {
     _id: uuidv4(),
-    images: ["https://multikart-react.vercel.app/assets/images/game/pro/4.jpg"],
+    images: [
+      "/images/Electronics/health-and-beauty/1/1.webp",
+      "/images/Electronics/health-and-beauty/1/2.webp",
+    ],
     price: 450,
     title: "Product 2",
   },
   {
     _id: uuidv4(),
-    images: ["https://multikart-react.vercel.app/assets/images/game/pro/5.jpg"],
+    images: [
+      "/images/Electronics/health-and-beauty/2/1.webp",
+      "/images/Electronics/health-and-beauty/2/2.webp",
+    ],
     price: 710,
     title: "Product 3",
   },
   {
     _id: uuidv4(),
-    images: ["https://multikart-react.vercel.app/assets/images/game/pro/2.jpg"],
+    images: [
+      "/images/Electronics/health-and-beauty/3/1.webp",
+      "/images/Electronics/health-and-beauty/3/2.webp",
+      "/images/Electronics/health-and-beauty/3/3.webp",
+      "/images/Electronics/health-and-beauty/3/4.webp",
+    ],
     price: 400,
     title: "Product 4",
   },
@@ -323,25 +357,42 @@ const productStyle8 = [
 const productStyle9 = [
   {
     _id: uuidv4(),
-    images: ["https://multikart-react.vercel.app/assets/images/pets/pro/9.jpg"],
+    images: [
+      "/images/clothing/Sweaters/UltimateCardigan-1.jpg",
+      "/images/clothing/Sweaters/UltimateCardigan-2.jpg",
+      "/images/clothing/Sweaters/UltimateCardigan-3.jpg",
+    ],
     price: 250,
     title: "Product 1",
   },
   {
     _id: uuidv4(),
-    images: ["https://multikart-react.vercel.app/assets/images/pets/pro/11.jpg"],
+    images: [
+      "/images/clothing/Sweaters/CashmerePolo-1.jpg",
+      "/images/clothing/Sweaters/CashmerePolo-2.jpg",
+      "/images/clothing/Sweaters/CashmerePolo-3.jpg",
+    ],
     price: 450,
     title: "Product 2",
   },
   {
     _id: uuidv4(),
-    images: ["https://multikart-react.vercel.app/assets/images/pets/pro/8.jpg"],
+    images: [
+      "/images/clothing/Sweaters/BraidedTank-1.jpg",
+      "/images/clothing/Sweaters/BraidedTank-2.jpg",
+      "/images/clothing/Sweaters/BraidedTank-3.jpg",
+      "/images/clothing/Sweaters/BraidedTank-4.jpg",
+    ],
     price: 710,
     title: "Product 3",
   },
   {
     _id: uuidv4(),
-    images: ["https://multikart-react.vercel.app/assets/images/pets/pro/12.jpg"],
+    images: [
+      "/images/clothing/Jackets/RelaxedBlazer-1.jpg",
+      "/images/clothing/Jackets/RelaxedBlazer-2.jpg",
+      "/images/clothing/Jackets/RelaxedBlazer-3.jpg",
+    ],
     price: 400,
     title: "Product 4",
   },
