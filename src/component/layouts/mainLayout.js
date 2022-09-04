@@ -7,7 +7,6 @@ const Layout = ({ children }) => {
     <div>
       <div
         style={{
-          // height: Router.pathname === "/" ? 0 : 88,
           display: Router.pathname.includes("/email-template") ? "none" : "initial",
         }}
       >

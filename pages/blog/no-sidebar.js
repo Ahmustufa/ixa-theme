@@ -32,7 +32,7 @@ const NoSidebar = (props) => {
   useEffect(() => {
     setPage({
       current: 1,
-      minIndex: (1 - 1) * pageSize,
+      minIndex: 0 * pageSize,
       maxIndex: 1 * pageSize,
     });
     setData([...clothProducts, ...bagsBlogs]);
