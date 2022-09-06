@@ -225,7 +225,7 @@ const Order = (props) => {
                 <div className="title">Assistance</div>
                 <div className="description">
                   Contact us on (+44) 555 88 65, or email us at
-                  support@ iXiaThemes.com.
+                  support@ixiathemes.com
                 </div>
               </Panel>
 

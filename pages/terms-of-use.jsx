@@ -96,7 +96,7 @@ const TermOfUse = () => {
 
           <h3>Refund Policy</h3>
           <p>
-            <span style={{ fontWeight: 700 }}> iXiaThemes.com</span> ensures 100%
+            <span style={{ fontWeight: 700 }}>  ixiathemes</span> ensures 100%
             customer satisfaction with our unlimited free Revision Policy which enables
             you to improve on your initial design brief free of charge through your
             account area. <br />
@@ -105,7 +105,7 @@ const TermOfUse = () => {
             order amount will be refunded. <br />
             <br />
             In case of any dissatisfaction from any design services provided by
-             iXiaThemes.com, you can submit a refund request within 48 hours of your
+              ixiathemes, you can submit a refund request within 48 hours of your
             initial designs completion. However, it shall be assumed between both parties
             that you are satisfied with your initial designs if a refund request is not
             received within 48 hours of initial designs delivery. For any Special / Combo
@@ -130,7 +130,7 @@ const TermOfUse = () => {
           </ul>
           <p>
             All refund requests will be subject to approval or disapproval.
-             iXiaThemes.com has the right to disapprove or approve any refund request
+              ixiathemes has the right to disapprove or approve any refund request
             based on any policy violations made by the customer. This would differ from
             project to project.
           </p>
@@ -160,7 +160,7 @@ const TermOfUse = () => {
               <Link href="/contact_us">
                 <a>Click here</a>
               </Link>{" "}
-              to contact us for a prompt response OR email us support@ iXiaThemes.com
+              to contact us for a prompt response OR email us support@ixiathemes.com
             </li>
           </ul>
 
@@ -170,7 +170,7 @@ const TermOfUse = () => {
             department.
           </p>
           <p>
-            After the refund, your design rights would be obtained by  iXiaThemes.com
+            After the refund, your design rights would be obtained by ixiathemes
             and you would not be able to display any version of the design sent by
             company. Let us also specify that:
           </p>
@@ -184,7 +184,7 @@ const TermOfUse = () => {
             </li>
             <li>
               Working in collaboration with the Government Copyright Agencies
-              <span style={{ fontWeight: 700 }}>  iXiaThemes.com </span>would share
+              <span style={{ fontWeight: 700 }}>   ixiathemes </span>would share
               Copyright Acquisition information for the refunded designs that would
               restrict the re-use of the designs as original designs in the future.
             </li>
@@ -218,7 +218,7 @@ const TermOfUse = () => {
             us to do better. Thus, whatever we do is targeted in the direction of your
             satisfaction. Our designers, while working on your job, ensure that the design
             they create for you should comply with the specifications you have provided in
-            your order form.  iXiaThemes.com aims at providing its clients with
+            your order form.   ixiathemes aims at providing its clients with
             error-free ready-to-download designs. At every step, we ensure maintaining
             quality.
           </p>
@@ -268,7 +268,7 @@ const TermOfUse = () => {
 
           <h3>Copyrights of Logo</h3>
           <p>
-            {` iXiaThemes.com retains all rights of all logo concepts that you view in 'My
+            {`  ixiathemes retains all rights of all logo concepts that you view in 'My
             Account Area' before the request of final files. Once you have requested the
             final files of your logo, you reserve the right to coordinate with the
             copyright agencies to transfer the copyrights of logo to your business name
@@ -278,7 +278,7 @@ const TermOfUse = () => {
           <h3>Photos, Images & Digital Content Policy</h3>
           <ul>
             <li>
-               iXiaThemes.com only uses non-exclusive, royalty free photos or images
+                ixiathemes only uses non-exclusive, royalty free photos or images
               in its design services and does not claim any right of ownership for the
               same.
             </li>
@@ -292,14 +292,14 @@ const TermOfUse = () => {
               wants to print these images or photos, a separate subscription fee applies.
             </li>
             <li>
-               iXiaThemes.com is not liable for any claim of ownership of the image,
+                ixiathemes is not liable for any claim of ownership of the image,
               photo or digital content used in production by the third party.
             </li>
           </ul>
 
           <h3>Customer Support</h3>
           <p>
-            Customer support at  iXiaThemes.com is available 24/7. You can speak to
+            Customer support at   ixiathemes is available 24/7. You can speak to
             our Sales Professionals about your queries and concerns. Our 24-Hour Customer
             Support center will assist you through the process and give prompt response to
             your queries and concerns.

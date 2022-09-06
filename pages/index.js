@@ -55,7 +55,7 @@ const Home = () => {
           content="The complete template for your ecommerce store build on Next.js to create different structures and satisfy any specific requirements."
         />
         <meta property="og:type" content="" />
-        <meta property="og:url" content="https://ixiathemes.com//" />
+        <meta property="og:url" content="https://ixiathemes.com" />
         <meta property="og:site_name" content="ixiathemes" />
       </Head>
       <SubscriptionModal image="/images/subscriptionModalBg.png" />
