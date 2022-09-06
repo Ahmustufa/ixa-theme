@@ -55,8 +55,8 @@ const Home = () => {
           content="The complete template for your ecommerce store build on Next.js to create different structures and satisfy any specific requirements."
         />
         <meta property="og:type" content="" />
-        <meta property="og:url" content="https://www.polkadotsretail.com/" />
-        <meta property="og:site_name" content="Polkadotsretail" />
+        <meta property="og:url" content="https://ixiathemes.com//" />
+        <meta property="og:site_name" content="ixiathemes" />
       </Head>
       <SubscriptionModal image="/images/subscriptionModalBg.png" />
 
@@ -132,7 +132,7 @@ const Home = () => {
                   margin: "auto",
                 }}
               >
-                A complete website building toolkit save your time by using Polkadots
+                A complete website building toolkit save your time by using iXiaThemes
               </p>
             </div>
 
@@ -271,7 +271,7 @@ const Home = () => {
         <section className="text-center">
           <div style={{ fontSize: "2rem", color: "#001719" }}>Email Template</div>
           <p style={{ color: "#979797", maxWidth: 500, width: "90%", margin: "auto" }}>
-            Polkadotsretail comes with tons of email template which include order success,
+            iXiaThemes comes with tons of email template which include order success,
             promotion and give away tamplates
           </p>
 
@@ -489,7 +489,7 @@ const whyChooseUs = [
   {
     image: "/images/why_choose_us_1.png",
     heading: "Online Store",
-    text: "Polkadots fully supports  allowing you to use sections anywhere. Experience the latest technology from e-commerce to the fullest.",
+    text: "iXiaThemes fully supports  allowing you to use sections anywhere. Experience the latest technology from e-commerce to the fullest.",
   },
   {
     image: "/images/why_choose_us_2.png",

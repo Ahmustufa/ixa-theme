@@ -83,7 +83,7 @@ const Aboutus = (props) => {
       </Row>
 
       <div className="text-center" style={{ margin: "64px 0" }}>
-        <img src="/images/app-logo-dark.svg" alt="logo" height={40} className="mb-4" />
+        <img src="/images/iXiaThemes.svg" alt="logo" height={40} className="mb-4" />
         <h3 style={{ fontWeight: 600 }}>ABSOLUTELY GUARANTEED</h3>
         <h5>{`Not satisfied? We’ll make it right.`}</h5>
         <br />

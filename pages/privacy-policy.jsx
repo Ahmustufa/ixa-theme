@@ -65,7 +65,7 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Head>
-        <title>Privacy Policy | Polkadotsretail</title>
+        <title>Privacy Policy |  iXiaThemes</title>
       </Head>
 
       <StyledDiv>
@@ -117,7 +117,7 @@ const PrivacyPolicy = () => {
               comments, queries etc.
             </li>
             <li>
-              {`Polkadotsretail maintains records of the items, which have interested our clients
+              {` iXiaThemes maintains records of the items, which have interested our clients
               in the past, as well as the client's purchases online.`}
             </li>
           </ul>
@@ -144,7 +144,7 @@ const PrivacyPolicy = () => {
               clients to the third parties.
             </li>
             <li>
-              Polkadotsretail utilizes services of credit card processing companies to
+               iXiaThemes utilizes services of credit card processing companies to
               bill you for services. These companies never share, store, save or use
               exclusive information for any other purposes.
             </li>
@@ -153,12 +153,12 @@ const PrivacyPolicy = () => {
           <h3>Personal Information</h3>
           <ul>
             <li>
-              Information of clients at Polkadotsretail is kept extremely secure during
+              Information of clients at  iXiaThemes is kept extremely secure during
               transmission by the use of the Secure Sockets Layer (SSL) Software which
               encrypts information that client puts in.
             </li>
             <li>
-              Polkadotsretail follows generally accepted industry standards to protect the
+               iXiaThemes follows generally accepted industry standards to protect the
               personal information that is being submitted by the client during
               transmission and once we receive it. However, since no method of
               transmission over the Internet, or method of electronic storage, is 100%
@@ -210,7 +210,7 @@ const PrivacyPolicy = () => {
               clients leave cookies to be accepted.
             </li>
             <li>
-              Polkadotsretail keeps track of your IP address to help diagnose problems
+               iXiaThemes keeps track of your IP address to help diagnose problems
               with our server and to administer our Web site. Your IP address is also used
               to gather broad demographic information about you, such as your location and
               your Internet service provider.
@@ -237,7 +237,7 @@ const PrivacyPolicy = () => {
               circumstances, if any, we disclose it.
             </li>
             <li>
-              Polkadotsretail reserves the right to modify this privacy statement at any
+               iXiaThemes reserves the right to modify this privacy statement at any
               point of time, without prior notice. Thus it is advised to review the
               privacy policy frequently. If we make material changes to this policy, we
               will notify you here, by email, or by means of a notice on our homepage.

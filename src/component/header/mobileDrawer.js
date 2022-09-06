@@ -46,8 +46,8 @@ const MobileDrawer = (props) => {
           <Link href="/">
             <a onClick={closeSidebar} style={{ textDecoration: "none" }}>
               <img
-                alt="Polkadotsretail"
-                src="/images/app-logo-dark.svg"
+                alt="iXiaThemes"
+                src="/images/iXiaThemes.svg"
                 style={{ height: 32 }}
                 className="app-logo"
               />

@@ -79,7 +79,7 @@ const HeaderWrapper2 = () => {
           <Col xs={14} sm={14} md={10} lg={3} xl={3}>
             <Link href="/">
               <a style={{ textDecoration: "none" }}>
-                <img src="/images/app-logo-dark.svg" className="img-fluid site-logo" />
+                <img src="/images/iXiaThemes.svg" className="img-fluid site-logo" />
               </a>
             </Link>
           </Col>

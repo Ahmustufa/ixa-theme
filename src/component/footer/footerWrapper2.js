@@ -139,7 +139,7 @@ const FooterContent = () => {
         <Col xs={24} sm={24} md={6} lg={6} xl={6} className="footer-item-wrapper">
           <div className="footer-item-container">
             <img
-              src="/images/app-logo-dark.svg"
+              src="/images/iXiaThemes.svg"
               alt="app_logo"
               className="mb-3 footerLogo"
               height={32}
@@ -219,7 +219,7 @@ const FooterContent = () => {
         <Row align="middle" justify="space-around">
           <Col>
             <div className="text-white py-2">
-              © Polkadotsretail 2016 - {new Date().getFullYear()}. All rights reserved.
+              ©  iXiaThemes 2016 - {new Date().getFullYear()}. All rights reserved.
             </div>
           </Col>
 

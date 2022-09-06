@@ -32,7 +32,7 @@ const MenShoesListing = (props) => {
                 textAlign: "center",
               }}
             >
-              {`Shop a wide range of women shoes, women heels, women court shoes, women peep toes, women boots, women sport shoes and many more online. Polkadots provides high quality shoes for women at your door step.`}
+              {`Shop a wide range of women shoes, women heels, women court shoes, women peep toes, women boots, women sport shoes and many more online. iXiaThemes provides high quality shoes for women at your door step.`}
             </p> */}
             <img
               src="/images/Shoes/banner/Men-banner.jpg"

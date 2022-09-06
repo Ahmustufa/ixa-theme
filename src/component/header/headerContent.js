@@ -111,7 +111,7 @@ const HeaderContent = (props) => {
             <Col xs={12} sm={12} md={6} lg={5} xl={4}>
               <div className="d-flex align-items-center">
                 <img
-                  alt="Polkadotsretail"
+                  alt="iXiaThemes"
                   src="/images/LogiLogos-light.svg"
                   className="app-logo"
                 />
