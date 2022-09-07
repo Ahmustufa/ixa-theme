@@ -147,7 +147,7 @@ const Order = (props) => {
         </Collapse>
       </section> */}
 
-      <section className="shop-card-section">
+      {/* <section className="shop-card-section">
         <Row justify="space-between" gutter={[0, 40]}>
           <Col xs={24} sm={24} md={24} lg={24} xl={11}>
             <ShopCard />
@@ -157,7 +157,7 @@ const Order = (props) => {
             <ShopCard />
           </Col>
         </Row>
-      </section>
+      </section> */}
 
       <section className="my-5">
         <ProductCarousel CardStyle={CardStyle5} data={shoesProducts} padding={"0px"} />

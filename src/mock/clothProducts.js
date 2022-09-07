@@ -96,7 +96,8 @@ export const clothProducts = [
     title: "Tweed Sheath Dress-1",
     quantit: 1,
     price: 39.99,
-    description: "",
+    description:
+      "Ribbed on sleeves and neckline / Double stitching on bottom hem, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort.",
     category: "dress",
     images: [
       "/images/clothing/Dresses/TweedDress-1.jpg",

@@ -14,6 +14,7 @@ const StyledDiv = styled.div`
         position: relative;
         margin: auto;
         overflow: hidden;
+        max-height: 320px;
         img {
           transition: 0.5s ease;
           transform: scale(1);

@@ -19,11 +19,11 @@ const ShopLeftSidebar = (props) => {
 
       <div className="col-11 mx-auto mb-5">
         <Row gutter={[32, 0]}>
-          <Col xs={0} sm={0} md={0} lg={6}>
+          {/* <Col xs={0} sm={0} md={0} lg={6}>
             <ShopSidebar />
-          </Col>
+          </Col> */}
 
-          <Col xs={24} sm={24} md={24} lg={18}>
+          <Col xs={24} sm={24} md={24} lg={24}>
             <img
               src="/images/clothing/banner/Small-banner-1.jpg"
               width="100%"

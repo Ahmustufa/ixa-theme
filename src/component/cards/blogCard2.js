@@ -71,8 +71,8 @@ export default BlogCard2;
 
 const StyledCard = styled.div`
   margin: 0 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px 0px #a6a6a6;
+  // border-radius: 4px;
+  // box-shadow: 0px 0px 5px 0px #a6a6a6;
   .para {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -89,7 +89,8 @@ const StyledCard = styled.div`
     background-position: center;
     height: 250px;
     width: 100%;
-    border-radius: 10px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     cursor: pointer;
     position: relative;
     /* z-index: 1; */

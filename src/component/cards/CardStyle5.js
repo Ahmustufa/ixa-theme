@@ -50,21 +50,21 @@ const CardStyle5 = (props) => {
         <div className="add_to_wishlist">
           {wishlistItem.includes(_id) ? (
             <div
-              className="wish-button"
+              // className="wish-button"
               onClick={() => {
                 dispatch(removeWishlistItem(productDetails));
               }}
             >
-              <FaHeart className="icon" title="Remove from wishlist" />
+              <FaHeart title="Remove from wishlist" />
             </div>
           ) : (
             <div
-              className="wish-button"
+              // className="wish-button"
               onClick={() => {
                 dispatch(addItemToWishlist(productDetails));
               }}
             >
-              <FaRegHeart className="icon" title="Add to wishlist" />
+              <FaRegHeart title="Add to wishlist" />
             </div>
           )}
         </div>
@@ -119,7 +119,7 @@ const StyledCard = styled.div`
   }
 
   .image-container {
-    border: 1px solid #f2f2f2;
+    // border: 1px solid #f2f2f2;
     border-radius: 4px;
     text-align: center;
     width: 100%;
@@ -165,6 +165,9 @@ const StyledCard = styled.div`
       transform: translateY(0px);
       transition: all 0.1s ease;
       box-shadow: 0px 0px 5px 0px #929292;
+      height: 38px;
+      width: 38px;
+      cursor: pointer;
       :hover {
         color: #f5513c;
       }

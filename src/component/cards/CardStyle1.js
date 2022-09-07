@@ -48,7 +48,6 @@ const CardStyle1 = (props) => {
         <div className="icon icon-2">
           {wishlistItem.includes(_id) ? (
             <div
-              className="wish-button"
               onClick={() => {
                 dispatch(removeWishlistItem(productDetails));
               }}
@@ -57,7 +56,6 @@ const CardStyle1 = (props) => {
             </div>
           ) : (
             <div
-              className="wish-button"
               onClick={() => {
                 dispatch(addItemToWishlist(productDetails));
               }}
@@ -105,6 +103,7 @@ export default CardStyle1;
 const StyledCard = styled.div`
   position: relative;
   overflow: hidden;
+  margin: 0px 10px;
 
   .image-container {
     border: 1px solid #f2f2f2;
@@ -143,7 +142,7 @@ const StyledCard = styled.div`
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 1px solid #f2f2f2;
+    // border: 1px solid #f2f2f2;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.09);
     transition: all 0.6s;
     :hover {

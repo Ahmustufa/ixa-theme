@@ -9,7 +9,7 @@ import Link from "next/link";
 const carouselSettings = {
   dots: false,
   speed: 500,
-  autoplay: true,
+  autoplay: false,
   infinite: true,
   easing: true,
   slidesToShow: 5,

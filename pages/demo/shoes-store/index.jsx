@@ -87,6 +87,7 @@ const BagStore = () => {
         />
 
         <ProductCarousel
+         padding={"5% 0%"}
           link="/demo/shoes-store/new-arrivals"
           CardStyle={CardStyle6}
           data={shoesProducts}

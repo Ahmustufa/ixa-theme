@@ -37,8 +37,8 @@ const Order = (props) => {
         </p>
       </section>
 
-      <section className="my-5">
-        <ProductCarousel CardStyle={CardStyle1} data={shoesProducts} />
+      <section>
+        <ProductCarousel padding={"5% 0%"} CardStyle={CardStyle1} data={shoesProducts} />
       </section>
     </StyledPage>
   );

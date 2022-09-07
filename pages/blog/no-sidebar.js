@@ -27,6 +27,7 @@ const NoSidebar = (props) => {
       minIndex: (page - 1) * pageSize,
       maxIndex: page * pageSize,
     });
+    window.scrollTo(0, 120);
   };
 
   useEffect(() => {
@@ -49,7 +50,11 @@ const NoSidebar = (props) => {
             <Row className="mt-3">
               <Col span={24} className="p-4">
                 <div className="d-flex justify-content-start align-items-center">
-                  <Empty description="No have any item." color={"#ced4da"} size={50} />
+                  <Empty
+                    description="Do not have any item."
+                    color={"#ced4da"}
+                    size={50}
+                  />
                 </div>
               </Col>
             </Row>

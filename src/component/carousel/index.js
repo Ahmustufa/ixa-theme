@@ -30,8 +30,10 @@ const ImageCarousel = (props) => {
               onClick={() => {
                 setState({ image });
               }}
+              onMouseEnter={() => setState({ image })}
               role="button"
               className="w-100"
+              style={{ padding: "0 8px" }}
             >
               <img
                 width={"100%"}
@@ -58,7 +60,8 @@ const StyledCarousel = styled.div`
     /* width: 100px; */
     height: auto;
     object-size: cover;
-    border: 1px solid #727272;
+    transition: 0.3s ease;
+    // border: 1px solid #727272;
     border-radius: 2px;
     margin: 8px;
     cursor: pointer;

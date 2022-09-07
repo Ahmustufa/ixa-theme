@@ -204,9 +204,18 @@ const Home = () => {
           </div> */}
 
           <div className="col-11 m-auto">
-            <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
+            <h3
+              className="heading-5"
+              style={{
+                fontWeight: 600,
+                margin: "16px 0 44px 0",
+                color: "#e94c89",
+                textAlign: "center",
+              }}
+            >
               HOME PAGES
             </h3>
+
             <DragToScroll>
               {[1, 2, 3, 4].map((item) => (
                 <img
@@ -220,7 +229,15 @@ const Home = () => {
           </div>
 
           <div className="col-11 m-auto pt-5">
-            <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
+            <h3
+              className="heading-5"
+              style={{
+                fontWeight: 600,
+                margin: "16px 0 44px 0",
+                color: "#e94c89",
+                textAlign: "center",
+              }}
+            >
               PRODUCT PAGES
             </h3>
             <DragToScroll>
@@ -236,7 +253,15 @@ const Home = () => {
           </div>
 
           <div className="col-11 m-auto pt-5">
-            <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
+            <h3
+              className="heading-5"
+              style={{
+                fontWeight: 600,
+                margin: "16px 0 44px 0",
+                color: "#e94c89",
+                textAlign: "center",
+              }}
+            >
               SHOP PAGES
             </h3>
             <DragToScroll>
@@ -252,11 +277,19 @@ const Home = () => {
           </div>
 
           <div className="col-11 m-auto pt-5">
-            <h3 className="heading-5" style={{ fontWeight: 600, margin: "16px 0" }}>
+            <h3
+              className="heading-5"
+              style={{
+                fontWeight: 600,
+                margin: "16px 0 44px 0",
+                color: "#e94c89",
+                textAlign: "center",
+              }}
+            >
               GENERAL PAGES
             </h3>
             <DragToScroll>
-              {[1, 2, 3, 5].map((item) => (
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
                 <img
                   key={item}
                   src={`/images/general_pages/image-${item}.png`}
