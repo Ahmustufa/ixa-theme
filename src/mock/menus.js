@@ -170,9 +170,6 @@ export const mainMenu = [
     title: "feature",
     link: "#",
     submenu: [
-      { title: "Product Box", link: "/feature/product-element/product-box" },
-      { title: "Multi slider", link: "/feature/product-element/multi-slider" },
-      { title: "Tab", link: "/feature/product-element/tab" },
       {
         title: "Theme Element",
         submenu: [
@@ -186,6 +183,9 @@ export const mainMenu = [
           { title: "Title", link: "/feature/theme-element/title" },
         ],
       },
+      { title: "Product Box", link: "/feature/product-element/product-box" },
+      { title: "Multi slider", link: "/feature/product-element/multi-slider" },
+      { title: "Tab", link: "/feature/product-element/tab" },
       {
         title: "Shop",
         submenu: [

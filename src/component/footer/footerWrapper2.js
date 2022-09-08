@@ -39,12 +39,12 @@ const StyledFooter = styled.footer`
     color: #545d6e;
     text-decoration: none;
     :hover {
-      color: #979797;
+      color: #000;
     }
   }
 
   .footer-item {
-    color: rgba(0, 0, 0, 0.8);
+    color: #545d6e;
     font-weight: 400;
   }
 
@@ -122,12 +122,12 @@ const FooterContent = () => {
           lg={{ span: 6, order: 3 }}
           xl={6}
         >
-          <div className="text-center text-lg-left">
+          {/* <div className="text-center text-lg-left">
             <p className="section-title">Absolutely guaranteed</p>
             <p className="footer-item m-0">
               Every time. Any reason. Or we’ll make it right.
             </p>
-          </div>
+          </div> */}
         </Col>
       </Row>
 
@@ -215,11 +215,15 @@ const FooterContent = () => {
         </Col>
       </Row>
 
-      <section style={{ padding: "8px 0", backgroundColor: "#263238" }}>
-        <Row align="middle" justify="space-around">
+      <section style={{ padding: "8px 2%", backgroundColor: "#263238" }}>
+        <Row
+          className="col-7 col-md-11 col-lg-11 col-xl-10 m-auto"
+          align="middle"
+          justify="space-between"
+        >
           <Col>
             <div className="text-white py-2">
-              ©  iXiaThemes 2016 - {new Date().getFullYear()}. All rights reserved.
+              © iXiaThemes {new Date().getFullYear()}. All rights reserved.
             </div>
           </Col>
 
