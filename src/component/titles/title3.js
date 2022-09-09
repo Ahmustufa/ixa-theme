@@ -5,7 +5,7 @@ import { Row, Col } from "antd";
 const StyledDiv = styled.div`
   padding: 30px 0px;
   h4 {
-    color: #ff1500;
+    color: #e84c88;
     text-align: center;
     font-size: 18px;
     margin: 0px;
@@ -24,7 +24,7 @@ const StyledDiv = styled.div`
     position: relative;
     height: 5px;
     width: 45px;
-    background-color: #ff1500;
+    background-color: #e84c88;
     content: "";
     left: 0;
     right: 0;
@@ -35,7 +35,7 @@ const StyledDiv = styled.div`
       height: 5px;
       width: 10px;
       content: "";
-      background-color: #ff1500;
+      background-color: #e84c88;
       left: 50px;
     }
     ::after {
@@ -43,7 +43,7 @@ const StyledDiv = styled.div`
       height: 5px;
       width: 10px;
       content: "";
-      background-color: #ff1500;
+      background-color: #e84c88;
       right: 50px;
     }
   }

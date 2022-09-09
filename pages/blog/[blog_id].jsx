@@ -204,7 +204,7 @@ const BlogDetail = (props) => {
           </Col>
         </Row>
         <Title3 subtitle="Recent Story" maintitle="RELATED BLOGS" />
-        <BlogCarousel data={clothProducts} />
+        <BlogCarousel padding="0% 0% 5% 0%" data={clothProducts} />
       </div>
     </StyledPage>
   );

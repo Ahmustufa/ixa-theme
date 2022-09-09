@@ -79,7 +79,7 @@ const Bags = () => {
           ]}
           cardHeight={280}
           textAlign="end"
-          title1Color="red"
+          title1Color="#E84C88"
           title2Color="#222"
         />
 

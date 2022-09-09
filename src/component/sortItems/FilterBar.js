@@ -99,7 +99,7 @@ const StyledDiv = styled.div`
   .grid-count {
     height: 18px;
     width: 4px;
-    background-color: red;
+    background-color: #e84c88;
     margin: 0 2px;
   }
 

@@ -94,17 +94,20 @@ const StyledPage = styled.div`
 `;
 
 const productDetails = {
-  _id: "123",
-  title: "TRIM DRESS",
+  _id: "eef55462-8c33-432e-a85f-1a940451e524",
+  title: "Denim Peplum Motorcycle Jacket-1",
+  quantit: 1,
+  price: 9.85,
+  brandName: "Roadiez",
   description:
-    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-  price: 5000,
+    "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+  category: "jacket",
   images: [
-    "/images/sout_image_1.jpg",
-    "/images/sout_image_4.jpg",
-    "/images/sout_image_2.jpg",
-    "/images/sout_image_3.jpg",
+    "/images/clothing/Jackets/DenimJacket-1.jpg",
+    "/images/clothing/Jackets/DenimJacket-2.jpg",
+    "/images/clothing/Jackets/DenimJacket-3.jpg",
   ],
+  rating: { rate: 4.7, count: 130 },
 };
 
 export async function getServerSideProps(context) {

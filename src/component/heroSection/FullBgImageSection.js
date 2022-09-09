@@ -34,7 +34,7 @@ const StyledSection = styled.div`
     h1 {
       font-size: 100px;
       font-weight: 700;
-      color: ${(props) => (props.color ? props.color : "#ff4c3b")};
+      color: ${(props) => (props.color ? props.color : "#e84c88")};
     }
     h3 {
       font-size: 60px;

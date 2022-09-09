@@ -138,17 +138,21 @@ const StyledPage = styled.div`
 `;
 
 const productDetails = {
-  _id: "123",
-  title: "TRIM DRESS",
+  _id: "fa0a561a-a40c-4249-94db-0f98128c0b7d",
+  title: "Comfort Stretch Sheath",
+  brandName: "Vutton",
+  quantit: 1,
+  price: 109.95,
   description:
-    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-  price: 5000,
+    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+  category: "dress",
   images: [
-    "/images/sout_image_1.jpg",
-    "/images/sout_image_4.jpg",
-    "/images/sout_image_2.jpg",
-    "/images/sout_image_3.jpg",
+    "/images/clothing/Dresses/ContrastDress-1.jpg",
+    "/images/clothing/Dresses/ContrastDress-2.jpg",
+    "/images/clothing/Dresses/ContrastDress-3.jpg",
+    "/images/clothing/Dresses/ContrastDress-4.jpg",
   ],
+  rating: { rate: 3.9, count: 120 },
 };
 
 export async function getServerSideProps(context) {

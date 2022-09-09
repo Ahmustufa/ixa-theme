@@ -32,7 +32,7 @@ const StyledSider = styled(Sider)`
   }
 
   .ant-menu-item ant-menu-item-selected {
-    background-color: red !important;
+    background-color: #e84c88 !important;
   }
   .active-class-menu {
     background-color: #1890ff !important;

@@ -79,7 +79,7 @@ const StyledContent = styled.div`
       transition: 0.1s ease;
       cursor: pointer;
       &:hover {
-        color: red;
+        color: #e84c88;
       }
     }
     p {

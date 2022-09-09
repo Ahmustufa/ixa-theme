@@ -162,7 +162,7 @@ const StyledCard = styled.div`
       border-radius: 6px;
       cursor: pointer;
       :hover {
-        background-color: #f54c3b;
+        background-color: #e84c88;
         color: white;
         transition: all 0.3s ease;
       }
@@ -175,7 +175,7 @@ const StyledCard = styled.div`
       /* width: 185px; */
       cursor: pointer;
       :hover {
-        background-color: #f54c3b;
+        background-color: #e84c88;
         color: white;
         transition: all 0.3s ease;
       }

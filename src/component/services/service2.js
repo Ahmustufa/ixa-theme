@@ -17,7 +17,7 @@ const StyledDiv = styled.div`
       text-align: center;
       .icons {
         font-size: 50px;
-        color: #6859a6;
+        color: #1d8ece;
         margin-bottom: 16px;
         transition: all 0.3s ease;
       }
@@ -38,7 +38,7 @@ const StyledDiv = styled.div`
       &:hover {
         .text {
           h5 {
-            color: #6859a6;
+            color: #1d8ece;
             transition: 0.2s ease;
           }
         }

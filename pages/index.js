@@ -115,7 +115,7 @@ const Home = () => {
             <div className="text-center">
               <p
                 style={{
-                  color: "#1D8ECE",
+                  color: "#1d8ece",
                   fontWeight: 600,
                   fontSize: 20,
                   marginBottom: 0,
@@ -170,9 +170,11 @@ const Home = () => {
                   <h3>{item.heading}</h3>
                   <p>{item.description}</p>
                   <Link href={item.link}>
-                    <div className="demo-image">
-                      <img src={item.images[0]} alt="image" width={"100%"} />
-                    </div>
+                    <a target="_blank">
+                      <div className="demo-image">
+                        <img src={item.images[0]} alt="image" width={"100%"} />
+                      </div>
+                    </a>
                   </Link>
                 </Col>
               ))}

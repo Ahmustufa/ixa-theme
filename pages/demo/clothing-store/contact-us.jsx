@@ -108,7 +108,7 @@ const StyledSection = styled.div`
     font-size: 36px;
   }
   .highlight {
-    color: #6859a6;
+    color: #1d8ece;
   }
 
   @media (max-width: 991px) {

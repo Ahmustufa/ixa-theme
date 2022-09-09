@@ -69,6 +69,7 @@ const NoSidebar = (props) => {
                 )
             )
           )}
+          {console.log("data------------->", data.minIndex)}
         </Row>
         <Pagination
           pageSize={pageSize}
@@ -76,7 +77,7 @@ const NoSidebar = (props) => {
           defaultCurrent={1}
           current={page.current}
           onChange={(e) => handleChange(e)}
-          total={[...clothProducts, ...bagsBlogs].length}
+          total={data.length}
         />
       </div>
     </StyledPage>

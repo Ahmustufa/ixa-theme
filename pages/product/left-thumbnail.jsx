@@ -94,17 +94,20 @@ const StyledPage = styled.div`
 `;
 
 const productDetails = {
-  _id: "123",
-  title: "TRIM DRESS",
+  _id: "7c21ae54-cb28-4bbf-9aa1-2fc5abc29fa1",
+  title: "Studio Blazer-1",
+  brandName: "Vutton",
+  quantit: 1,
+  price: 12.99,
   description:
-    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-  price: 5000,
+    "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+  category: "jacket",
   images: [
-    "/images/sout_image_1.jpg",
-    "/images/sout_image_4.jpg",
-    "/images/sout_image_2.jpg",
-    "/images/sout_image_3.jpg",
+    "/images/clothing/Jackets/StudioBlazer-1.jpg",
+    "/images/clothing/Jackets/StudioBlazer-2.jpg",
+    "/images/clothing/Jackets/StudioBlazer-3.jpg",
   ],
+  rating: { rate: 3.6, count: 145 },
 };
 
 export async function getServerSideProps(context) {

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { MailOutlined } from "@ant-design/icons";
 import { MdPhoneAndroid, MdLocationPin } from "react-icons/md";
+import { ModalConstant } from "src/redux/constants";
+import { useDispatch, useSelector } from "react-redux";
 
 const StyledFooter = styled.footer`
   display: block;
@@ -70,6 +72,8 @@ const StyledFooter = styled.footer`
 `;
 
 const FooterContent = () => {
+  const dispatch = useDispatch();
+
   return (
     <StyledFooter>
       <Row
@@ -167,17 +171,45 @@ const FooterContent = () => {
         <Col xs={24} sm={24} md={4} lg={4} xl={4} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">Let us help</div>
-            <div className="footer-item">My Account</div>
-            <div className="footer-item">Help center</div>
-            <div className="footer-item">Contact us</div>
+            <div
+              style={{ cursor: "pointer", width: "max-content" }}
+              onClick={() => {
+                dispatch({ type: ModalConstant.OPEN_LOGIN_MODAL });
+              }}
+              className="footer-item"
+            >
+              Sign in
+            </div>
+
+            <Link href="/contact-us">
+              <a className="link">Contact us</a>
+            </Link>
           </div>
         </Col>
 
         <Col xs={24} sm={24} md={4} lg={4} xl={4} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">What we offer</div>
-            <div className="footer-item">Order Now</div>
-            <div className="footer-item">Upload your designs</div>
+            <div className="footer-item">
+              <Link href="/demo/clothing-store">
+                <a className="link">Apparels</a>
+              </Link>
+            </div>
+            <div className="footer-item">
+              <Link href="/demo/bag-store">
+                <a className="link">Bags</a>
+              </Link>
+            </div>
+            <div className="footer-item">
+              <Link href="/demo/shoes-store">
+                <a className="link">Shoes</a>
+              </Link>
+            </div>
+            <div className="footer-item">
+              <Link href="/demo/electronics-store">
+                <a className="link">Electronics</a>
+              </Link>
+            </div>
           </div>
         </Col>
 

@@ -59,7 +59,7 @@ const BlogCard = (props) => {
             marginTop: 8,
             height: 3,
             width: "20%",
-            backgroundColor: "#ff4c3b",
+            backgroundColor: "#e84c88",
             borderRadius: 50,
           }}
         ></div>
@@ -102,7 +102,7 @@ const StyledCard = styled.div`
     }
 
     ::before {
-      background: #ff4c3b;
+      background: #e84c88;
       width: 25%;
       position: absolute;
       content: "";
@@ -113,7 +113,7 @@ const StyledCard = styled.div`
       top: 0;
     }
     ::after {
-      background: #ff4c3b;
+      background: #e84c88;
       width: 25%;
       position: absolute;
       content: "";
@@ -125,7 +125,7 @@ const StyledCard = styled.div`
     }
 
     span::before {
-      background: #ff4c3b;
+      background: #e84c88;
       width: 25%;
       position: absolute;
       content: "";
@@ -136,7 +136,7 @@ const StyledCard = styled.div`
       top: 0;
     }
     span::after {
-      background: #ff4c3b;
+      background: #e84c88;
       width: 25%;
       position: absolute;
       content: "";
@@ -182,7 +182,7 @@ const StyledCard = styled.div`
     }
   }
   .createdAt {
-    color: #ff4c3b;
+    color: #e84c88;
     font-size: 12px;
   }
 
@@ -197,7 +197,7 @@ const StyledCard = styled.div`
     margin-bottom: 0;
     transition: all 0.5s ease;
     :hover {
-      color: #ff4c3b;
+      color: #e84c88;
       transition: all 0.5s ease;
       text-decoration: none;
     }
@@ -226,7 +226,7 @@ const StyledCard = styled.div`
   .new_item_tag {
     width: 40px;
     height: 40px;
-    background: #f54c3b;
+    background: #e84c88;
     p {
       font-size: 10px;
       margin-bottom: 0;

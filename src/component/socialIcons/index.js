@@ -15,25 +15,25 @@ const SocialIcons = (props) => {
       <div id="fixed-social">
         <div>
           <a href="#" className="fixed-facebook" target="_blank">
-            <FaFacebook color="#3d9ae7" size={30} className="fa fa-facebook" />{" "}
+            <FaFacebook color="gray" size={30} className="fa fa-facebook" />{" "}
             <span>Facebook</span>
           </a>
         </div>
         <div>
           <a href="#" className="fixed-twitter" target="_blank">
-            <FaTwitter color="#42aaf5" size={30} className="fa fa-twitter" />{" "}
+            <FaTwitter color="gray" size={30} className="fa fa-twitter" />{" "}
             <span>Twitter</span>
           </a>
         </div>
         <div>
           <a href="#" className="fixed-linkedin" target="_blank">
-            <FaLinkedinIn color="#3688d2" size={30} className="fa fa-linkedin" />{" "}
+            <FaLinkedinIn color="gray" size={30} className="fa fa-linkedin" />{" "}
             <span>LinkedIn</span>
           </a>
         </div>
         <div>
           <a href="#" className="fixed-instagrem" target="_blank">
-            <FaInstagram color="#f56f01" size={30} className="fa fa-instagram" />{" "}
+            <FaInstagram color="gray" size={30} className="fa fa-instagram" />{" "}
             <span>Instagram</span>
           </a>
         </div>
@@ -77,24 +77,25 @@ const StyledCard = styled.div`
     left: 60px;
     position: absolute;
     text-align: center;
-    width: 80px;
+    // width: 80px;
     visibility: hidden;
     transition-duration: 0.5s;
-    z-index: 999;
+    z-index: 5;
     opacity: 0;
+    padding: 0px 8px;
   }
 
   .fixed-facebook span {
-    background-color: #3d9ae7;
+    background-color: gray;
   }
   .fixed-twitter span {
-    background-color: #42aaf5;
+    background-color: gray;
   }
   .fixed-linkedin span {
-    background-color: #3688d2;
+    background-color: gray;
   }
   .fixed-instagrem span {
-    background-color: #f56f01;
+    background-color: gray;
   }
   /*end fixed social*/
 `;

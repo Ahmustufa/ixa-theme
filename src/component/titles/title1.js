@@ -5,7 +5,7 @@ import { Row, Col } from "antd";
 const StyledDiv = styled.div`
   padding: 30px 0px;
   h4 {
-    color: #ff1500;
+    color: #e84c88;
     text-align: center;
     font-size: 18px;
     margin: 0px;
@@ -23,7 +23,7 @@ const StyledDiv = styled.div`
       position: absolute;
       height: 5px;
       width: 70px;
-      background-color: #ff1500;
+      background-color: #e84c88;
       content: "";
       left: 0;
       right: 0;

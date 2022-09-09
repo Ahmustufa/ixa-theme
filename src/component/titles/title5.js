@@ -5,7 +5,7 @@ import { Row, Col } from "antd";
 const StyledDiv = styled.div`
   padding: 30px 0px;
   h4 {
-    color: #ff1500;
+    color: #e84c88;
     text-align: center;
     font-size: 18px;
     margin: 0px;
@@ -23,14 +23,14 @@ const StyledDiv = styled.div`
   .line {
     border: 0 solid;
     height: 1px;
-    background-image: linear-gradient(to right, transparent, #ff1500, transparent);
+    background-image: linear-gradient(to right, transparent, #e84c88, transparent);
     display: block;
     width: 80%;
     margin: 15px auto 14px;
 
     ::before {
       position: absolute;
-      border: 1px solid #ff1500;
+      border: 1px solid #e84c88;
       background-color: #fff;
       padding: 5px;
       -webkit-transform: rotate(45deg);

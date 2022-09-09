@@ -182,7 +182,7 @@ const StyledCard = styled.div`
   .add_to_cart {
     opacity: 0;
     position: absolute;
-    background-color: #f54c3b;
+    background-color: #e84c88;
     padding: 10px;
     -webkit-transition: all 0.5s ease;
     box-shadow: 0px 0px 5px 0px #929292;

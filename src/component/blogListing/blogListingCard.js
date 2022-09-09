@@ -103,7 +103,7 @@ const StyledCard = styled.div`
   }
 
   .createdAt {
-    color: #ff4c3b;
+    color: #e84c88;
     line-height: 1;
     margin-bottom: 10px;
     font-weight: 400;
@@ -129,7 +129,7 @@ const StyledCard = styled.div`
     transition: all 0.5s ease;
 
     :hover {
-      color: #ff4c3b;
+      color: #e84c88;
       transition: all 0.5s ease;
       text-decoration: none;
     }

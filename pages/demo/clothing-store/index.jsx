@@ -101,7 +101,7 @@ const Clothing = () => {
           ]}
           cardHeight={200}
           textAlign="end"
-          title1Color="red"
+          title1Color="#E84C88"
           title2Color="#222"
         />
 

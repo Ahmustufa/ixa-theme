@@ -66,7 +66,7 @@ const Web3Page = () => {
           {data?._isSigner ? (
             <AiFillCheckCircle color="green" />
           ) : (
-            <AiFillExclamationCircle color="red" />
+            <AiFillExclamationCircle color="#E84C88" />
           )}{" "}
         </h5>
         <h5>Account: {data ? data?.provider?._network.ensAddress : "No Account"} </h5>

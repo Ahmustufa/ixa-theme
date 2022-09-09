@@ -44,17 +44,17 @@ const HeaderWrapper2 = () => {
             style={{ color: "#727272", fontSize: 13 }}
           >
             <div>Welcome to our store</div>
-            <BsTelephoneFill style={{ color: "#6859a6" }} className="ml-4 mr-2" />
+            <BsTelephoneFill style={{ color: "#1d8ece" }} className="ml-4 mr-2" />
             <div>Call Us: 123 - 456 - 7890</div>
           </div>
         </Col>
 
         {/* <div className="d-flex align-items-center" style={{ color: "#727272" }}>
           <div className="d-flex align-items-center" role="button">
-            <FaHeart style={{ color: "#6859a6", marginRight: 6 }} /> Wishlist
+            <FaHeart style={{ color: "#1d8ece", marginRight: 6 }} /> Wishlist
           </div>
           <div className="d-flex align-items-center ml-4" role="button">
-            <RiUser3Fill style={{ color: "#6859a6", marginRight: 6 }} /> My account
+            <RiUser3Fill style={{ color: "#1d8ece", marginRight: 6 }} /> My account
           </div>
         </div> */}
         <Col className="top-bar-icons">

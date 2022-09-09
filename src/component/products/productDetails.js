@@ -13,9 +13,10 @@ const ProductDetails = (props) => {
   const { productDetails } = props;
   const dispatch = useDispatch();
   const [state, setState] = useState({ color: "", size: "" });
-  const { items: wishlistItem } = useSelector((state) => state.wishlist);
+  const { items: wishlist } = useSelector((state) => state.wishlist);
 
-  const inWishlist = wishlistItem.includes(productDetails._id);
+  let wishlistItem = wishlist?.map((item) => item._id);
+
   return (
     <StyledWrapper
       className="order"
@@ -70,19 +71,29 @@ const ProductDetails = (props) => {
         </Col>
 
         <Col>
-          <div
-            className="wish-button"
-            onClick={() => {
-              if (inWishlist) {
-                dispatch(removeWishlistItem(productDetails._id));
-              } else {
-                dispatch(addItemToWishlist(productDetails._id));
-              }
-            }}
-          >
-            {inWishlist ? <FaHeart className="icon" /> : <FaRegHeart className="icon" />}
-            <div className="text">{inWishlist ? "REMOVE" : "ADD"} FROM WISHLIST</div>
-          </div>
+          {wishlistItem.includes(productDetails._id) ? (
+            <div
+              className="wish-buttons"
+              onClick={() => {
+                // removeItemFromWishlistFunc();
+                dispatch(removeWishlistItem(productDetails));
+              }}
+            >
+              <FaHeart className="icon" />
+              <div className="text">REMOVE FROM WISHLIST</div>
+            </div>
+          ) : (
+            <div
+              className="wish-buttons"
+              onClick={() => {
+                // addItemToWishlistFunc(productDetails);
+                dispatch(addItemToWishlist(productDetails));
+              }}
+            >
+              <FaRegHeart className="icon" />
+              <div className="text">ADD TO WISHLIST</div>
+            </div>
+          )}
         </Col>
       </Row>
 
@@ -139,6 +150,36 @@ const StyledWrapper = styled.div`
     font-weight: 600;
     font-size: 16px;
     letter-spacing: 1px;
+  }
+
+  .wish-buttons {
+    display: flex;
+    align-items: center;
+    color: #212529;
+    font-weight: 600;
+    cursor: pointer;
+
+    .icon {
+      font-size: 24px;
+      margin-right: 8px;
+    }
+    .text {
+      position: relative;
+      :after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background-color: #212529;
+        transition: 0.3s;
+      }
+
+      :hover:after {
+        width: 100%;
+      }
+    }
   }
 
   .description {

@@ -94,17 +94,20 @@ const StyledPage = styled.div`
 `;
 
 const productDetails = {
-  _id: "123",
-  title: "TRIM DRESS",
+  _id: "2899669d-6987-5e2f-8812-7f6780938e58",
+  images: [
+    "/images/Shoes/Women/3/1.webp",
+    "/images/Shoes/Women/3/2.webp",
+    "/images/Shoes/Women/3/3.webp",
+    "/images/Shoes/Women/3/4.webp",
+  ],
+  title: "Metal Decor Combat Boots",
   description:
     "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-  price: 5000,
-  images: [
-    "/images/sout_image_1.jpg",
-    "/images/sout_image_4.jpg",
-    "/images/sout_image_2.jpg",
-    "/images/sout_image_3.jpg",
-  ],
+  brandName: "Metal",
+  price: 899,
+  link: "#",
+  quantity: 1,
 };
 
 export async function getServerSideProps(context) {

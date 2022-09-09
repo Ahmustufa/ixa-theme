@@ -75,8 +75,17 @@ const Faq = () => {
   const { Panel } = Collapse;
   return (
     <StyledDiv>
-      {/* <Heading title="FAQ's - Frequently asked questions"></Heading> */}
-
+      <p
+        style={{
+          color: "#1d8ece",
+          fontWeight: 600,
+          fontSize: 36,
+          marginBottom: 44,
+          textAlign: "center",
+        }}
+      >
+        FAQ's - Frequently asked questions
+      </p>
       <Row gutter={[40, 10]}>
         <Col xxl={12} xl={12} lg={12} md={24} sm={24} xs={24}>
           {faqs1.map((faq, index) => (

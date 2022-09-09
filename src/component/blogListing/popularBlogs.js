@@ -67,7 +67,7 @@ const StyledContent = styled.div`
   }
 
   .blog-date {
-    background-color: #ff4c3b;
+    background-color: #e84c88;
     height: 70px;
     width: 70px;
     margin: 0 15px 0 0;

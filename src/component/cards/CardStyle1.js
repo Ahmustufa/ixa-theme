@@ -207,7 +207,7 @@ const StyledCard = styled.div`
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background-color: #f54c3b;
+    background-color: #e84c88;
     color: #fff;
     line-height: 36px;
     text-align: center;

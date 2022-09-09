@@ -117,8 +117,8 @@ const SidebarFiltration = (props) => {
           <div className="category-section d-flex justify-content-center">
             <Slider
               style={{ width: "90%" }}
-              trackStyle={{ background: "#f54c3b" }}
-              handleStyle={{ borderColor: "#f54c3b" }}
+              trackStyle={{ background: "#e84c88" }}
+              handleStyle={{ borderColor: "#e84c88" }}
               range
               min={500}
               max={10000}
@@ -152,7 +152,7 @@ const StyledSidebar = styled.div`
       border-radius: 5px;
     }
     ::-webkit-scrollbar-thumb {
-      background-color: #f54c3b;
+      background-color: #e84c88;
       border-radius: 5px;
     }
   }

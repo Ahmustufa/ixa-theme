@@ -19,7 +19,7 @@ const UserProfileDetailCard = (props) => {
           <p className="mb-0 ">Followers: 5k</p>
         </div>
       </div>
-      <ButtonWrapper className="mt-3" backgroundColor="#6859a6">
+      <ButtonWrapper className="mt-3" backgroundColor="#1d8ece">
         Follow
       </ButtonWrapper>
       <div className="ml-3 mt-3 d-flex flex-column justify-content-between">

@@ -143,9 +143,9 @@ export const mainMenu = [
   {
     title: "demo",
     submenu: [
-      { title: "Shoes", link: "/demo/shoes-store" },
+      { title: "Apparels", link: "/demo/clothing-store" },
       { title: "Bags", link: "/demo/bag-store" },
-      { title: "Clothing", link: "/demo/clothing-store" },
+      { title: "Shoes", link: "/demo/shoes-store" },
       { title: "Electronics", link: "/demo/electronics-store" },
     ],
     link: "",

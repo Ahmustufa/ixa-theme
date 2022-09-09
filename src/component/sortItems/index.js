@@ -140,14 +140,14 @@ const StyledDiv = styled.div`
   }
   .bars {
     padding: 1px;
-    border: 1px solid red;
+    border: 1px solid #e84c88;
     border-radius: 2px;
   }
 
   .grid-count {
     height: 18px;
     width: 4px;
-    background-color: red;
+    background-color: #e84c88;
     margin: 0 2px;
   }
 
