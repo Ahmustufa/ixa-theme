@@ -17,7 +17,13 @@ import {
 } from "../../src/redux/actions/cartActions";
 import { BiTrash } from "react-icons/bi";
 import { Spin } from "antd";
-import router from "next/router";
+import Router, { useRouter } from "next/router";
+import {
+  BsFillCreditCardFill,
+  BsPaypal,
+  BsCashCoin,
+  BsFillCheckCircleFill,
+} from "react-icons/bs";
 
 const initialState = {
   firstName: "",
@@ -34,6 +40,7 @@ const getRandomPassword = () => {
   return randomPassword;
 };
 const Checkout = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const [form] = Form.useForm();
   const [loadingState, setLoadingState] = useState("");
@@ -49,7 +56,6 @@ const Checkout = () => {
 
   const calculateTotal = (cart) => {
     const subTotal = cart.reduce((accu, item) => (accu += item.quantity * item.price), 0);
-    // console.log("Sub total", subTotal);
     return subTotal.toLocaleString();
   };
 
@@ -289,7 +295,14 @@ const Checkout = () => {
                         />
                       ) : (
                         <BiTrash
-                          onClick={() => removeCartItem(item)}
+                          onClick={() => {
+                            if (cartItems.length <= 1) {
+                              dispatch(removeCartItem(item));
+                              router.push("/cart");
+                            } else {
+                              dispatch(removeCartItem(item));
+                            }
+                          }}
                           style={{
                             cursor: "pointer",
                             color: "#54595f",
@@ -320,12 +333,18 @@ const Checkout = () => {
                 className="d-flex justify-content-start align-items-center"
                 style={{ color: "#808080" }}
               >
-                <AiOutlineShopping color={"#9d9d9d"} size={100} />
+                <BsCashCoin color={"#9d9d9d"} size={50} />
                 <div>
                   <div className="title p-0">Payment method</div>
                   <div className="p-0" style={{ fontWeight: 600, fontSize: 24 }}>
                     Cash on delivery
                   </div>
+
+                  <Link href="/cart/billingAddress">
+                    <a>
+                      <div className="title p-0">Click here to change payment method</div>
+                    </a>
+                  </Link>
                 </div>
               </div>
               <PrimaryButton htmlType="submit" className="w-100 mt-5">

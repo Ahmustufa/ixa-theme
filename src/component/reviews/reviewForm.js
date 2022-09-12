@@ -33,7 +33,6 @@ const ReviewForm = (props) => {
       setState({ ...state });
       message.success("Your review has been posted.");
     } catch (err) {
-      console.log(err);
       message.error(errorHandler(err));
     }
   };

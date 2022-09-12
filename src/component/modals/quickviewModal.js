@@ -92,10 +92,6 @@ const { Panel } = Collapse;
 const QuickviewModal = (props) => {
   const dispatch = useDispatch();
   const { visible, data } = useSelector((state) => state.quickviewModal.quickViewModal);
-
-  console.log("quickviewModal visible", visible);
-  console.log("quickviewModal data", data);
-  console.log("modal data", props);
   const handleCancel = () => {
     dispatch({
       type: QuickviewModalConstant.CLOSE_QUICKVIEW_MODAL,

@@ -15,7 +15,6 @@ const BlogCard = (props) => {
     style: "currency",
     currency: "USD",
   });
-  console.log("props blog card", props);
   return (
     <StyledCard>
       <Link href={`/blog/${_id}`}>

@@ -18,7 +18,6 @@ const ProductListin = (props) => {
   const { products } = props;
   const [gridColumn, setGridColumn] = useState(4);
 
-  console.log(products);
   const categoryBanners = [
     { category: "fridge", image: "/images/Electronics/banner/fridge-banner.webp" },
     { category: "fan", image: "/images/Electronics/banner/fan-banner.webp" },

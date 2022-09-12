@@ -51,7 +51,6 @@ const SidebarFiltration = (props) => {
   const [priceValue, setPriceValue] = useState([500, 5000]);
 
   const onChange = (value) => {
-    console.log("onChange", value);
     setPriceValue([value[0], value[1]]);
   };
 

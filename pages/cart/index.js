@@ -23,7 +23,6 @@ const ShoppingBag = () => {
   const [loadingState, setLoadingState] = useState("");
   const calculateTotal = (cart) => {
     const subTotal = cart.reduce((accu, item) => (accu += item.quantity * item.price), 0);
-    // console.log("Sub total", subTotal);
     return subTotal.toLocaleString();
   };
 

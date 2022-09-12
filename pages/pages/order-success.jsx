@@ -74,12 +74,15 @@ const OrderSuccess = (props) => {
                 <Col span={24}>
                   <div className="box-1">
                     <p style={{ fontWeight: 600 }}>Shipping Address</p>
-                    <p>Ubaid Hussain</p>
+                    <p>
+                      <strong>Name: </strong>John Doe
+                    </p>
                     <address>
-                      Sindh, Karachi - Clifton, Block 2, Suite M34-35, Cornish Building,
-                      Commercial Lane 3, Clifton Block 2
+                      <strong>Address: </strong>329 Mandolin Dr, San Jose, CA 95134, USA
                     </address>
-                    <div>3421873948</div>
+                    <div>
+                      <strong>Contact: </strong>+1234567890
+                    </div>
                   </div>
                 </Col>
 

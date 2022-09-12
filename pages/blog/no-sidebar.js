@@ -69,7 +69,6 @@ const NoSidebar = (props) => {
                 )
             )
           )}
-          {console.log("data------------->", data.minIndex)}
         </Row>
         <Pagination
           pageSize={pageSize}

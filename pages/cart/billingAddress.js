@@ -26,9 +26,9 @@ import { Spin } from "antd";
 import { InputWrapper } from "src/component/inputs";
 
 const paymentMethods = [
-  { method: "creditCard", name: "CREDIT CARD", id: 1, icon: BsFillCreditCardFill },
-  { method: "paypal", name: "PAY PAL", id: 2, icon: BsPaypal },
-  { method: "paycash", name: "PAY CASH", id: 3, icon: BsCashCoin },
+  { method: "paycash", name: "PAY CASH", id: 1, icon: BsCashCoin },
+  { method: "creditCard", name: "CREDIT CARD", id: 2, icon: BsFillCreditCardFill },
+  { method: "paypal", name: "PAY PAL", id: 3, icon: BsPaypal },
 ];
 const initialState = {
   cardNumber: "",
@@ -46,12 +46,10 @@ const BillingAddress = () => {
   const { items } = useSelector((state) => state.cart);
   const calculateTotal = (cart) => {
     const subTotal = cart.reduce((accu, item) => (accu += item.quantity * item.price), 0);
-    // console.log("Sub total", subTotal);
     return subTotal.toLocaleString();
   };
 
   const handleChange = (e) => {
-    console.log("e", e.target);
     const { name, value } = e.target;
     setState((prev) => ({ ...prev, [name]: value }));
   };
@@ -97,9 +95,10 @@ const BillingAddress = () => {
                           key={index}
                           className={`icon-wrap`}
                           style={{
+                            cursor: "pointer",
                             border:
                               selectPaymentMethod == item.id
-                                ? "1px solid #3ca2d8"
+                                ? "1px solid #1d8ece"
                                 : "1px solid #dddddd",
                           }}
                           onClick={() => setSelectPaymentMethod(item.id)}
@@ -107,13 +106,14 @@ const BillingAddress = () => {
                           {selectPaymentMethod == item.id ? (
                             <BsFillCheckCircleFill
                               size={30}
-                              color="#3ca2d8"
+                              color="#1d8ece"
                               style={{
                                 position: "absolute",
                                 right: -10,
                                 top: -10,
-                                background: "#fff",
-                                border: "3px solid #fff",
+                                backgroundColor: "#fff",
+                                border: "2px solid #fff",
+                                borderRadius: 100,
                               }}
                             />
                           ) : null}
@@ -123,126 +123,122 @@ const BillingAddress = () => {
                       );
                     })}
                   </div>
-                  <Form form={form} validateTrigger="onFinish">
-                    <Row className="mt-4" gutter={[24, 24]}>
-                      <Col xs={12} sm={12} xl={12}>
-                        <p className="label">CARD NUMBER *</p>
-                        <Form.Item
-                          name="cardnumber"
-                          rules={[
-                            {
-                              required: true,
-                              type: "string",
-                              pattern: new RegExp(
-                                /^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/
-                              ),
-                              message: "Invalid Card Number",
-                            },
-                          ]}
-                        >
-                          <InputWrapper
-                            name="cardnumber"
-                            value={state.cardNumber}
-                            onChange={(e) => setState({ ...state, cardNumber: e })}
-                            placeholder="Card Number"
-                          />
-                        </Form.Item>
-                      </Col>
-
-                      <Col xs={12} sm={12} xl={12}>
-                        <p className="label">EXPIRATION DATE *</p>
-                        <Form.Item
-                          name="expiredate"
-                          rules={[
-                            {
-                              required: true,
-                              // type: "string",
-                              message: "Invalid Expiration Date",
-                            },
-                          ]}
-                        >
-                          <DatePicker
-                            className="w-100"
-                            size="large"
-                            name="expiredate"
-                            value={state.expireDate}
-                            onChange={(e) => setState({ expireDate: e })}
-                          />
-                        </Form.Item>
-                      </Col>
-                    </Row>
-
-                    <Row className="mt-4" gutter={[24, 24]}>
-                      <Col xs={12} sm={12} xl={12}>
-                        <p className="label">CARD HOLDER NAME *</p>
-                        <Form.Item
-                          name="cardHolderName"
-                          rules={[
-                            {
-                              required: true,
-                              type: "string",
-                              message: "Invalid Card Holder Name",
-                            },
-                          ]}
-                        >
-                          <InputWrapper
-                            name="cardHolderName"
-                            value={state.cardHolderName}
-                            onChange={(e) => setState({ ...state, cardHolderName: e })}
-                          />
-                        </Form.Item>
-                      </Col>
-
-                      <Col xs={12} sm={12} xl={12}>
-                        <p className="label">CVV *</p>
-                        <Form.Item
-                          name="cvv"
-                          rules={[
-                            {
-                              required: true,
-                              type: "number",
-                              pattern: new RegExp(/\d+/g),
-                              message: "Invalid cvv",
-                            },
-                          ]}
-                        >
-                          <InputNumber
-                            name="cvv"
-                            className="w-100"
-                            maxLength={3}
-                            size={"large"}
-                            value={state.cvv}
-                            onChange={(e) => setState({ ...state, cvv: e })}
-                          />
-                        </Form.Item>
-                      </Col>
-                    </Row>
+                  {selectPaymentMethod == 1 ? (
                     <PrimaryButton
                       htmlType="submit"
                       className="d-flex justify-content-center w-100 mt-4"
                     >
                       PLACE ORDER
                     </PrimaryButton>
-                  </Form>
+                  ) : (
+                    <Form form={form} validateTrigger="onFinish">
+                      <Row className="mt-4" gutter={[24, 24]}>
+                        <Col xs={12} sm={12} xl={12}>
+                          <p className="label">CARD NUMBER *</p>
+                          <Form.Item
+                            name="cardnumber"
+                            rules={[
+                              {
+                                required: true,
+                                type: "string",
+                                pattern: new RegExp(
+                                  /^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/
+                                ),
+                                message: "Invalid Card Number",
+                              },
+                            ]}
+                          >
+                            <InputWrapper
+                              name="cardnumber"
+                              value={state.cardNumber}
+                              onChange={(e) => setState({ ...state, cardNumber: e })}
+                              placeholder="Card Number"
+                            />
+                          </Form.Item>
+                        </Col>
+
+                        <Col xs={12} sm={12} xl={12}>
+                          <p className="label">EXPIRATION DATE *</p>
+                          <Form.Item
+                            name="expiredate"
+                            rules={[
+                              {
+                                required: true,
+                                // type: "string",
+                                message: "Invalid Expiration Date",
+                              },
+                            ]}
+                          >
+                            <DatePicker
+                              className="w-100"
+                              size="large"
+                              name="expiredate"
+                              value={state.expireDate}
+                              onChange={(e) => setState({ expireDate: e })}
+                            />
+                          </Form.Item>
+                        </Col>
+                      </Row>
+
+                      <Row className="mt-4" gutter={[24, 24]}>
+                        <Col xs={12} sm={12} xl={12}>
+                          <p className="label">CARD HOLDER NAME *</p>
+                          <Form.Item
+                            name="cardHolderName"
+                            rules={[
+                              {
+                                required: true,
+                                type: "string",
+                                message: "Invalid Card Holder Name",
+                              },
+                            ]}
+                          >
+                            <InputWrapper
+                              placeholder="CardHolder Name"
+                              name="cardHolderName"
+                              value={state.cardHolderName}
+                              onChange={(e) => setState({ ...state, cardHolderName: e })}
+                            />
+                          </Form.Item>
+                        </Col>
+
+                        <Col xs={12} sm={12} xl={12}>
+                          <p className="label">CVV *</p>
+                          <Form.Item
+                            name="cvv"
+                            rules={[
+                              {
+                                required: true,
+                                type: "number",
+                                pattern: new RegExp(/\d+/g),
+                                message: "Invalid cvv",
+                              },
+                            ]}
+                          >
+                            <InputNumber
+                              name="cvv"
+                              placeholder="CVV"
+                              className="w-100"
+                              maxLength={3}
+                              size={"large"}
+                              value={state.cvv}
+                              onChange={(e) => setState({ ...state, cvv: e })}
+                            />
+                          </Form.Item>
+                        </Col>
+                      </Row>
+                      <PrimaryButton
+                        htmlType="submit"
+                        className="d-flex justify-content-center w-100 mt-4"
+                      >
+                        PLACE ORDER
+                      </PrimaryButton>
+                    </Form>
+                  )}
                 </div>
               </Col>
             </Row>
           </div>
-          <div className="dropdown-divider my-5"></div>
-          <Row className="d-flex justify-content-end align-items-end">
-            <Col xs={24} sm={24} xl={12}>
-              <h6 className="heading">CART TOTALS</h6>
-              <table className="table table-bordered">
-                <tr>
-                  <td style={{ background: "#f9fafb" }}>TOTAL</td>
-                  <td className="font-weight-bold">${calculateTotal(items)}</td>
-                </tr>
-              </table>
-              <Link href="/cart/checkout">
-                <PrimaryButton className="w-100 mt-4">Proceed to checkout</PrimaryButton>
-              </Link>
-            </Col>
-          </Row>
         </>
       )}
     </StyledPage>

@@ -115,6 +115,7 @@ const Clothing = () => {
             <Col lg={18} sm={24} xs={24}>
               <Row gutter={[32, 32]}>
                 <ProductListing
+                  showPagination={false}
                   CardStyle={CardStyle7}
                   products={clothProducts.slice(0, 8)}
                   grid={gridColumn}
@@ -130,6 +131,7 @@ const Clothing = () => {
       <div className="col-11 m-auto">
         <Row gutter={[32, 32]}>
           <ProductListing
+            showPagination={false}
             CardStyle={CardStyle7}
             products={clothProducts.slice(0, 8)}
             grid={gridColumn}

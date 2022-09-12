@@ -9,8 +9,6 @@ const ProductListing = (props) => {
   const { columns, products, grid, CardStyle } = props;
   const span = 24 / grid;
 
-  console.log("grid", grid);
-
   if (grid == 2) {
     pageSize = 8;
   } else if (grid == 3) {
@@ -64,16 +62,20 @@ const ProductListing = (props) => {
         )}
       </Row>
 
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <Pagination
-          pageSize={pageSize}
-          className="mt-5"
-          defaultCurrent={1}
-          current={page.current}
-          onChange={(e) => handleChange(e)}
-          total={[...products].length}
-        />
-      </div>
+      {props.showPagination == false ? (
+        <></>
+      ) : (
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <Pagination
+            pageSize={pageSize}
+            className="mt-5"
+            defaultCurrent={1}
+            current={page.current}
+            onChange={(e) => handleChange(e)}
+            total={[...products].length}
+          />
+        </div>
+      )}
     </>
   );
 };

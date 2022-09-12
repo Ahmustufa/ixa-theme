@@ -20,7 +20,6 @@ const CartSteps = (props) => {
     },
   ];
 
-  console.log("props", props.step);
   return (
     <StyledPage>
       <Row className="step-container" gutter={[24, 24]}>
