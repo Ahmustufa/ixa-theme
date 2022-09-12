@@ -224,12 +224,6 @@ const HeaderWrapper2 = () => {
             );
           }
         })}
-
-        {/* <div className={`menu-item ${router.pathname === "discover" ? "active" : ""}`}>
-          <Dropdown overlay={discoverOverlay}>
-            <a>DISCOVER</a>
-          </Dropdown>
-        </div> */}
       </menu>
     </>
   );
