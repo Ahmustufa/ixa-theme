@@ -24,6 +24,7 @@ import { errorHandler, Mutations } from "../../src/api/config";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 import { InputWrapper } from "src/component/inputs";
+import { useRouter } from "next/router";
 
 const paymentMethods = [
   { method: "paycash", name: "PAY CASH", id: 1, icon: BsCashCoin },
@@ -39,6 +40,7 @@ const initialState = {
 
 const BillingAddress = () => {
   const [form] = Form.useForm();
+  const router = useRouter();
   const dispatch = useDispatch();
   const [selectPaymentMethod, setSelectPaymentMethod] = useState(1);
   const [state, setState] = useState({ ...initialState });
@@ -52,6 +54,10 @@ const BillingAddress = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const onFinish = (values) => {
+    router.push("/pages/order-success");
   };
 
   const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
@@ -126,12 +132,13 @@ const BillingAddress = () => {
                   {selectPaymentMethod == 1 ? (
                     <PrimaryButton
                       htmlType="submit"
+                      onClick={onFinish}
                       className="d-flex justify-content-center w-100 mt-4"
                     >
                       PLACE ORDER
                     </PrimaryButton>
                   ) : (
-                    <Form form={form} validateTrigger="onFinish">
+                    <Form form={form} validateTrigger="onFinish" onFinish={onFinish}>
                       <Row className="mt-4" gutter={[24, 24]}>
                         <Col xs={12} sm={12} xl={12}>
                           <p className="label">CARD NUMBER *</p>
