@@ -86,7 +86,17 @@ const Checkout = () => {
             <Row gutter={[24, 24]}>
               <Col xs={12} sm={12} xl={12}>
                 <p className="label">FIRST NAME *</p>
-                <Form.Item name="First Name" rules={[{ required: true, type: "string" }]}>
+                <Form.Item
+                  name="First Name"
+                  rules={[
+                    {
+                      required: true,
+                      type: "string",
+                      pattern: /^([A-Za-z]{3,12})+$/,
+                      message: "Please enter valid First Name",
+                    },
+                  ]}
+                >
                   <InputWrapper
                     name="firstName"
                     value={state.firstName}
@@ -99,7 +109,17 @@ const Checkout = () => {
 
               <Col xs={12} sm={12} xl={12}>
                 <p className="label">LAST NAME *</p>
-                <Form.Item name="Last Name" rules={[{ required: true, type: "string" }]}>
+                <Form.Item
+                  name="Last Name"
+                  rules={[
+                    {
+                      required: true,
+                      type: "string",
+                      pattern: /^([A-Za-z]{3,12})+$/,
+                      message: "Please enter valid Last Name",
+                    },
+                  ]}
+                >
                   <InputWrapper
                     name="lastName"
                     value={state.lastName}

@@ -33,7 +33,7 @@ const Dashboard = () => {
                 <a className="link">recent orders</a>
               </Link>{" "}
               and{" "}
-              <Link href="/my-account/#">
+              <Link href="/my-account/settings">
                 <a className="link">edit your password and account details.</a>
               </Link>
             </div>

@@ -26,6 +26,7 @@ const MyAccount = () => {
         "First Name": userData.firstName,
         "Last Name": userData.lastName,
         "Phone number": userData.phoneNumber,
+        Password: userData.password,
         Email: userData.email,
         Address: userData.address,
         City: userData.city,
@@ -69,7 +70,17 @@ const MyAccount = () => {
             <Row gutter={[40, 40]}>
               <Col xs={24} sm={24} md={12} lg={12}>
                 <label>First Name *</label>
-                <Form.Item name="First Name" rules={[{ required: true }]}>
+                <Form.Item
+                  name="First Name"
+                  rules={[
+                    {
+                      required: true,
+                      type: "string",
+                      pattern: /^([A-Za-z]{3,12})+$/,
+                      message: "Please enter valid First Name",
+                    },
+                  ]}
+                >
                   <input
                     name="firstName"
                     placeholder="First Name"
@@ -82,7 +93,17 @@ const MyAccount = () => {
 
               <Col xs={24} sm={24} md={12} lg={12}>
                 <label>Last Name *</label>
-                <Form.Item name="Last Name" rules={[{ required: true }]}>
+                <Form.Item
+                  name="Last Name"
+                  rules={[
+                    {
+                      required: true,
+                      type: "string",
+                      pattern: /^([A-Za-z]{3,12})+$/,
+                      message: "Please enter valid Last Name",
+                    },
+                  ]}
+                >
                   <input
                     name="lastName"
                     placeholder="Last Name"
@@ -93,7 +114,7 @@ const MyAccount = () => {
                 </Form.Item>
               </Col>
 
-              <Col xs={24} sm={24} md={24} lg={24}>
+              <Col xs={24} sm={24} md={12} lg={12}>
                 <label>Email *</label>
                 <Form.Item name="Email" rules={[{ required: true, type: "email" }]}>
                   <input
@@ -102,6 +123,19 @@ const MyAccount = () => {
                     className="input-wrapper"
                     onChange={handleChange}
                     value={state.email}
+                  />
+                </Form.Item>
+              </Col>
+
+              <Col xs={24} sm={24} md={12} lg={12}>
+                <label>Password *</label>
+                <Form.Item name="Password" rules={[{ required: true, type: "string" }]}>
+                  <input
+                    name="password"
+                    placeholder="password"
+                    className="input-wrapper"
+                    onChange={handleChange}
+                    value={state.password}
                   />
                 </Form.Item>
               </Col>

@@ -44,7 +44,7 @@ const ShoppingBag = () => {
               </p>
             </div>
           </Col>
-          <Link href="/demo/bsg-store/products">
+          <Link href="/demo/bag-store/products">
             <PrimaryButton className="mt-5">RETURN TO SHOP</PrimaryButton>
           </Link>
         </Row>
