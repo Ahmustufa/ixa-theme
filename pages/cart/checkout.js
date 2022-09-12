@@ -61,6 +61,10 @@ const Checkout = () => {
 
   const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
+  const onFinish = (values) => {
+    router.push("/pages/order-success");
+  };
+
   return (
     <StyledPage style={{ padding: 80 }}>
       <div className="cart-header">
@@ -85,7 +89,7 @@ const Checkout = () => {
         </Row>
       ) : null}
 
-      <Form form={form} validateTrigger="onFinish">
+      <Form form={form} validateTrigger="onFinish" onFinish={onFinish}>
         <Row className="mt-5">
           <Col style={{ padding: "0px 2% 4% 0px" }} xs={24} xl={12}>
             <h6 className="heading">SHIPPING DETAILS</h6>
