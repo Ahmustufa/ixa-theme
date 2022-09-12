@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import wishlistReducer from "./wishlistReducer";
 import userReducer from "./userReducer";
 import orderReducer from "./orderReducer";
-import modalReducer from "./modalReducer";
+import { modalReducer, quickviewModalReducer } from "./modalReducer";
 import cartReducer from "./cartReducer";
 import productReducer from "./productReducer";
 import menuReducer from "./menuReducer";
@@ -17,6 +17,7 @@ const rootReducer = combineReducers({
   compareList: comparelistReducer,
   modal: modalReducer,
   menu: menuReducer,
+  quickviewModal: quickviewModalReducer,
 });
 
 export default rootReducer;

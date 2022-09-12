@@ -31,6 +31,14 @@ export const ModalConstant = {
   CLOSE_SIGN_UP_MODAL: "CLOSE_SIGN_UP_MODAL",
 };
 
+/**
+ * Quick view modal constants
+ */
+export const QuickviewModalConstant = {
+  OPEN_QUICKVIEW_MODAL: "OPEN_QUICKVIEW_MODAL",
+  CLOSE_QUICKVIEW_MODAL: "CLOSE_QUICKVIEW_MODAL",
+};
+
 export const Cart = {
   OPEN: "OPEN_CART",
   CLOSE: "CLOSE_CART",

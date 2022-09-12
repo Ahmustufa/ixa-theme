@@ -11,6 +11,7 @@ import {
   removeWishlistItem,
 } from "src/redux/actions";
 import { addItemToCart } from "src/redux/actions/cartActions";
+import { QuickviewModalConstant } from "src/redux/constants";
 
 const CardStyle7 = (props) => {
   const { productDetails, _id, images, title, price, listView } = props;
@@ -74,7 +75,16 @@ const CardStyle7 = (props) => {
                 // dispatch(addItemToCompareList(productDetails));
               }}
             >
-              <AiOutlineEye size={20} title={"Quick View"} />
+              <AiOutlineEye
+                onClick={() => {
+                  dispatch({
+                    type: QuickviewModalConstant.OPEN_QUICKVIEW_MODAL,
+                    payload: productDetails,
+                  });
+                }}
+                size={20}
+                title={"Quick View"}
+              />
             </div>
           </div>
         </Col>

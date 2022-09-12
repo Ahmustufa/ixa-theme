@@ -14,6 +14,7 @@ import {
 import { PrimaryButton } from "../buttons";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, openCart } from "src/redux/actions/cartActions";
+import { QuickviewModalConstant } from "src/redux/constants";
 
 const StyledModal = styled(Modal)`
   .ant-modal-close-x {
@@ -44,6 +45,11 @@ const StyledModal = styled(Modal)`
       letter-spacing: 1px;
       margin-top: 12px;
     }
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    display: none;
   }
 
   .ant-btn > span {
@@ -85,21 +91,17 @@ const StyledModal = styled(Modal)`
 const { Panel } = Collapse;
 const QuickviewModal = (props) => {
   const dispatch = useDispatch();
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const { visible, data } = useSelector((state) => state.quickviewModal.quickViewModal);
 
+  console.log("quickviewModal visible", visible);
+  console.log("quickviewModal data", data);
+  console.log("modal data", props);
   const handleCancel = () => {
-    setIsModalVisible(false);
+    dispatch({
+      type: QuickviewModalConstant.CLOSE_QUICKVIEW_MODAL,
+      payload: {},
+    });
   };
-
-  useEffect(() => {
-    // let checkCookie = Cookies.get("subscriptionModal");
-    // if (checkCookie == "false" || checkCookie == undefined || checkCookie == null) {
-    //   setTimeout(() => {
-    //     setIsModalVisible(true);
-    //   }, 5000);
-    // }
-    setIsModalVisible(true);
-  }, []);
 
   const settings = {
     autoplay: false,
@@ -110,15 +112,15 @@ const QuickviewModal = (props) => {
     slidesToScroll: 1,
   };
 
-  const shoesProducts = [
+  const modalData = [
     {
-      _id: "4da1741d-7ee8-410a-b27d-c5a9964119ac",
-      images: ["/images/Shoes/featured/1.webp", "/images/Shoes/featured/2.webp"],
-      title: "Metal Decor Combat Boots",
-      brandName: "Caperion",
-      price: 599,
-      link: "#",
-      quantity: 1,
+      _id: data?._id,
+      images: data?.images,
+      title: data?.title,
+      brandName: data?.brandName,
+      price: data?.price,
+      link: data?.link,
+      quantity: data?.quantity,
     },
   ];
 
@@ -129,30 +131,31 @@ const QuickviewModal = (props) => {
 
   return (
     <StyledModal
-      visible={isModalVisible}
+      visible={visible}
       onCancel={handleCancel}
       centered
       footer={null}
       width={900}
     >
       <Row>
-        {shoesProducts.map((data, index) => (
+        {modalData.map((data, index) => (
           <>
             <Col xxl={11} xl={11} lg={11} md={11} sm={0}>
               <Slider {...settings}>
-                {data.images.map((data2, index2) => (
-                  <div
-                    key={index2}
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      textAlign: "center",
-                    }}
-                  >
-                    <img src={data2} width="100%" />
-                  </div>
-                ))}
+                {visible &&
+                  data.images.map((data2, index2) => (
+                    <div
+                      key={index2}
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        textAlign: "center",
+                      }}
+                    >
+                      <img src={data2} width="100%" />
+                    </div>
+                  ))}
               </Slider>
             </Col>
             <Col xxl={13} xl={13} lg={13} md={13} sm={24}>
@@ -191,7 +194,17 @@ const QuickviewModal = (props) => {
                     <div style={{ width: "30%", marginLeft: 10 }}>
                       <Link href={`/product/${data._id}`}>
                         <a>
-                          <PrimaryButton style={{ width: "100%" }}>Details</PrimaryButton>
+                          <PrimaryButton
+                            onClick={() => {
+                              dispatch({
+                                type: QuickviewModalConstant.CLOSE_QUICKVIEW_MODAL,
+                                payload: {},
+                              });
+                            }}
+                            style={{ width: "100%" }}
+                          >
+                            Details
+                          </PrimaryButton>
                         </a>
                       </Link>
                     </div>
@@ -206,7 +219,7 @@ const QuickviewModal = (props) => {
                         <div className="title">Shipping</div>
                         <div className="description">
                           We currently offer free shipping worldwide on all orders over
-                          Rs. 1000.
+                          $599.
                         </div>
 
                         <div className="title">Sizing</div>
@@ -238,7 +251,7 @@ const QuickviewModal = (props) => {
                         </Col>
                         <Col span={12}>
                           <div className="description text-right m-0">
-                            {data.brandName}
+                            {data.brandName ? data.brandName : "-"}
                           </div>
                         </Col>
                         <Col span={24}>
@@ -260,7 +273,7 @@ const QuickviewModal = (props) => {
                         </Col>
                         <Col span={12}>
                           <div className="description text-right m-0">
-                            L, M, S, XS, XL, XXL
+                            {data.size ? data.size : "L, M, S, XS, XL, XXL"}
                           </div>
                         </Col>
                       </Row>

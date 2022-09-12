@@ -17,6 +17,7 @@ import {
   addItemToWishlist,
   removeWishlistItem,
 } from "src/redux/actions";
+import { QuickviewModalConstant } from "src/redux/constants";
 
 const CardStyle9 = (props) => {
   const { productDetails, _id, images, title, price } = props;
@@ -70,7 +71,16 @@ const CardStyle9 = (props) => {
           )}
         </div>
         <div className="quick_view">
-          <AiOutlineEye size={20} title={"Quick view"} />
+          <AiOutlineEye
+            onClick={() => {
+              dispatch({
+                type: QuickviewModalConstant.OPEN_QUICKVIEW_MODAL,
+                payload: productDetails,
+              });
+            }}
+            size={20}
+            title={"Quick view"}
+          />
         </div>
         <div className="compare">
           <AiOutlineSync
@@ -128,7 +138,7 @@ const StyledCard = styled.div`
     width: 100%;
     padding-top: 105%;
     background-color: #fff;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transition: 0.5s ease;
@@ -172,7 +182,7 @@ const StyledCard = styled.div`
     overflow: hidden;
     position: relative;
     background: #fff;
-    padding: 0 10px;
+    padding: 12px 12px;
   }
 
   .cart-actions {
@@ -197,6 +207,6 @@ const StyledCard = styled.div`
     opacity: 1;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    bottom: 80px;
+    bottom: 100px;
   }
 `;

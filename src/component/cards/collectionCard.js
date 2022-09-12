@@ -10,6 +10,7 @@ import {
   AiOutlineEye,
   AiOutlineSync,
 } from "react-icons/ai";
+import { QuickviewModalConstant } from "src/redux/constants";
 
 const CollectionCard = (props) => {
   const { image, title, price } = props;
@@ -31,7 +32,16 @@ const CollectionCard = (props) => {
           <AiOutlineHeart size={20} title={"Add to wishlist"} />
         </div>
         <div className="quick_view">
-          <AiOutlineEye size={20} title={"Quick view"} />
+          <AiOutlineEye
+            onClick={() => {
+              dispatch({
+                type: QuickviewModalConstant.OPEN_QUICKVIEW_MODAL,
+                payload: productDetails,
+              });
+            }}
+            size={20}
+            title={"Quick view"}
+          />
         </div>
         <div className="compare">
           <AiOutlineSync size={20} title={"Compare"} />

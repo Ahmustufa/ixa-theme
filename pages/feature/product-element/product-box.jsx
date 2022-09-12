@@ -29,21 +29,9 @@ import {
   productStyle10,
 } from "src/mock/mockupData";
 
-const { Panel } = Collapse;
-
 const ProductBox = (props) => {
-  const { title, colors, reviews } = props;
-  const dispatch = useDispatch();
-  const { items: wishlist } = useSelector((state) => state.wishlist);
-  const { isLoggedIn, data: userData } = useSelector((state) => state.user);
-  const { items } = useSelector((state) => state.products);
-
-  console.log("items", items);
-  const [state, setState] = useState({ color: "", size: "" });
-
   return (
     <StyledPage>
-      <QuickviewModal />
       <div className="pagination-sec mt-5">
         <Row className="d-flex justify-content-end align-items-center">
           <Col lg={6} sm={24} xs={24}>

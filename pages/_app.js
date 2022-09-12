@@ -19,6 +19,7 @@ import { store, persistor } from "../src/redux/ConfigStore";
 import AuthModal from "../src/component/modals/authModal";
 import SideCart from "../src/component/sidebar/sideCart";
 import PageLoad2 from "../src/component/loader/pageLoad2";
+import QuickviewModal from "src/component/modals/quickviewModal";
 import {
   shoesMenu,
   bagsMenu,
@@ -89,6 +90,7 @@ function MyApp({ Component, pageProps }) {
         <Layout>
           {/* <CookieBanner /> */}
           <AuthModal />
+          <QuickviewModal />
           <SideCart />
           <Component {...pageProps} />
         </Layout>

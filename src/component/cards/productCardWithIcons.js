@@ -15,6 +15,7 @@ import {
   addItemToWishlist,
   removeWishlistItem,
 } from "src/redux/actions";
+import { QuickviewModalConstant } from "src/redux/constants";
 
 const ProductCardWithIcons = (props) => {
   const { productDetails, _id, title, brandName, price, images, listView } = props;
@@ -76,7 +77,16 @@ const ProductCardWithIcons = (props) => {
               </div>
             )}
             <div className="icon icon-3">
-              <AiOutlineEye size={20} title={"Quick view"} />
+              <AiOutlineEye
+                onClick={() => {
+                  dispatch({
+                    type: QuickviewModalConstant.OPEN_QUICKVIEW_MODAL,
+                    payload: productDetails,
+                  });
+                }}
+                size={20}
+                title={"Quick view"}
+              />
             </div>
             <div className="icon icon-4">
               <AiOutlineSync
