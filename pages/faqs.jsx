@@ -84,7 +84,7 @@ const Faq = () => {
           textAlign: "center",
         }}
       >
-        FAQ's - Frequently asked questions
+        {`FAQ's - Frequently asked questions`}
       </p>
       <Row gutter={[40, 10]}>
         <Col xxl={12} xl={12} lg={12} md={24} sm={24} xs={24}>
