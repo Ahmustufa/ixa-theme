@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Row, Col, Dropdown, message, Menu, Popover } from "antd";
-import Hamburger from "../hamburger";
+import { Row, Col, Dropdown, Menu } from "antd";
+import Hamburger from "src/component/hamburger";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,16 +8,10 @@ import { BiUser } from "react-icons/bi";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { BiSearch } from "react-icons/bi";
 import styled from "styled-components";
-import MobileDrawer from "./mobileDrawer";
-import { ModalConstant } from "../../redux/constants";
-import { addItemToCart, openCart } from "../../redux/actions/cartActions";
-import {
-  addAllItemToWishlist,
-  addItemToWishlist,
-  logoutAction,
-} from "../../redux/actions";
-import { errorHandler, Queries, useFetch } from "../../api/config";
-import { BsChevronRight } from "react-icons/bs";
+import MobileDrawer from "src/component/mobileDrawer";
+import { ModalConstant } from "src/redux/constants";
+import { openCart } from "src/redux/actions/cartActions";
+import { logoutAction } from "src/redux/actions";
 
 const HeaderContent = (props) => {
   const dispatch = useDispatch();

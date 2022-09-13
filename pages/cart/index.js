@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Row, Col, Form, message } from "antd";
 import styled from "styled-components";
-import CartSteps from "../../src/component/cartSteps";
-import { ButtonWrapper, PrimaryButton } from "../../src/component/buttons";
+import CartSteps from "src/component/cartSteps";
+import { ButtonWrapper, PrimaryButton } from "src/component/buttons";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineShopping } from "react-icons/ai";
 import Link from "next/link";
@@ -10,10 +10,8 @@ import {
   decreaseCartItemQuantity,
   increaseCartItemQuantity,
   removeCartItem,
-} from "../../src/redux/actions/cartActions";
+} from "src/redux/actions/cartActions";
 import { BiTrash } from "react-icons/bi";
-import { useFetch } from "../../src/hooks/useFetch";
-import { errorHandler, Mutations } from "../../src/api/config";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 

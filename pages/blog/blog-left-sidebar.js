@@ -1,13 +1,8 @@
 import { Row, Col, Collapse, Divider, message } from "antd";
 import styled from "styled-components";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Link from "next/link";
+import { useDispatch } from "react-redux";
 import Breadcrumb from "src/component/breadcrumb";
-import RecentBlogs from "../../src/component/blogListing/recentBlogs";
-import PopularBlogs from "../../src/component/blogListing/popularBlogs";
-import BlogListingCard from "../../src/component/blogListing/blogListingCard";
-import BlogCard from "src/component/cards/blogCard";
+import RecentBlogs from "src/component/blogListing/recentBlogs";
 import BlogCard2 from "src/component/cards/blogCard2";
 import { bagsBlogs } from "src/mock/bagsProducts";
 

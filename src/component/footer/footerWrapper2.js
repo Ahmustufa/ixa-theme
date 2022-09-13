@@ -90,7 +90,7 @@ const FooterContent = () => {
         >
           <div className="text-center text-lg-left">
             <p className="section-title">Connect with us</p>
-            <FaFacebookF /> <FaInstagram /> <FaTwitter />
+            <FaFacebookF /> <FaInstagram /> <FaTwitter className="ml-1" />
           </div>
         </Col>
 
@@ -178,7 +178,7 @@ const FooterContent = () => {
               }}
               className="footer-item"
             >
-              Sign in
+              <a className="link">Sign in</a>
             </div>
 
             <Link href="/contact-us">

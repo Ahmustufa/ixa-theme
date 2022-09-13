@@ -47,48 +47,10 @@ const AuthModal = () => {
    */
   const [signUpAPI, signUpLoading] = useFetch(Mutations.createAccount);
 
-  const handleSignUp = async () => {
-    const [username] = state.email.split("@");
-    const password = getRandomPassword();
-    try {
-      const { data } = await signUpAPI({
-        firstName: state.firstName,
-        lastName: state.lastName,
-        email: state.email,
-        phoneNumber: state.phoneNumber,
-        address: state.address,
-        city: state.city,
-        postalCode: state.postalCode,
-        username,
-        password,
-        dcryptedPass: password,
-      });
-      dispatch(loginUserAction(data));
-      setState({ ...initialState }); // set state to initial state
-      form.resetFields(); // Reset from fields
-      closeModal(); // close modal
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
-
   /**
    * Login Mutation and handler
    */
   const [mutate, loading] = useFetch(Mutations.login);
-
-  const handleLogin = async () => {
-    try {
-      const { data } = await mutate({
-        identifier: state.email,
-        password: state.password,
-      });
-      dispatch(loginUserAction(data));
-      closeModal(); // close modal
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
 
   /**
    * Forgot Password Mutation and handler
@@ -96,22 +58,6 @@ const AuthModal = () => {
   // const [forgotPasswordMutation, { loading: forgotPasswordLoading }] = useMutation(
   //   Mutation.FORGOT_PASSWORD
   // );
-
-  const handleForgotPassword = async () => {
-    try {
-      // const { data } = await forgotPasswordMutation({
-      //   variables: {
-      //     email: state.email,
-      //   },
-      // });
-      setAuthStatus(3);
-      updatePasswordForm.setFieldsValue({
-        Email: state.email,
-      });
-    } catch (err) {
-      message.error(errorHandler(err));
-    }
-  };
 
   return (
     <Modal
@@ -157,7 +103,7 @@ const AuthModal = () => {
             <h2 style={{ color: "#0025ff", fontWeight: 700, marginBottom: 24 }}>
               Create account
             </h2>
-            <Form onFinish={handleSignUp} form={form} validateTrigger="onFinish">
+            <Form form={form} validateTrigger="onFinish">
               <Row gutter={[24, 0]}>
                 <Col xs={24} sm={24} md={12} lg={12}>
                   <label>First Name *</label>
@@ -282,7 +228,7 @@ const AuthModal = () => {
               Sign In
             </h2>
 
-            <Form onFinish={handleLogin} validateTrigger="onFinish">
+            <Form validateTrigger="onFinish">
               <Row gutter={[0, 0]}>
                 <Col span={24}>
                   <label>Email</label>
@@ -332,7 +278,7 @@ const AuthModal = () => {
 
               <div className="d-flex justify-content-center align-items-center">
                 <PrimaryButton htmlType="submit" style={{ width: "80%" }}>
-                  {loading && <LoadingOutlined style={{ marginRight: 16 }} />} Sign in
+                  Sign in
                 </PrimaryButton>
               </div>
             </Form>
@@ -353,7 +299,7 @@ const AuthModal = () => {
               Forgot Password
             </h2>
 
-            <Form onFinish={handleForgotPassword} validateTrigger="onFinish">
+            <Form validateTrigger="onFinish">
               <Row gutter={[0, 0]}>
                 <Col span={24}>
                   <label>Email</label>

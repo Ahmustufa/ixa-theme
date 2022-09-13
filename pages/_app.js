@@ -1,9 +1,9 @@
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/mie.scss";
-import "../styles/globals.scss";
-import "../src/component/header/header.style.scss";
-import "../src/component/header/header2.style.scss";
+import "styles/mie.scss";
+import "styles/globals.scss";
+import "src/component/header/header.style.scss";
+import "src/component/header/header2.style.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -14,11 +14,11 @@ import Router from "next/router";
 import ReactDOM from "react-dom";
 import * as ga from "react-ga";
 import { useRouter } from "next/router";
-import Layout from "../src/component/layouts/mainLayout";
-import { store, persistor } from "../src/redux/ConfigStore";
-import AuthModal from "../src/component/modals/authModal";
-import SideCart from "../src/component/sidebar/sideCart";
-import PageLoad2 from "../src/component/loader/pageLoad2";
+import Layout from "src/component/layouts/mainLayout";
+import { store, persistor } from "src/redux/ConfigStore";
+import AuthModal from "src/component/modals/authModal";
+import SideCart from "src/component/sidebar/sideCart";
+import PageLoad2 from "src/component/loader/pageLoad2";
 import QuickviewModal from "src/component/modals/quickviewModal";
 import {
   shoesMenu,
@@ -28,6 +28,7 @@ import {
   electronicsMenu,
 } from "src/mock/menus";
 import { Menu } from "src/redux/constants";
+import Head from "next/head";
 
 Router.events.on("routeChangeStart", (url) => {
   document.body.classList.add("body-page-transition");
@@ -85,17 +86,22 @@ function MyApp({ Component, pageProps }) {
   }, [router.pathname]);
 
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <Layout>
-          {/* <CookieBanner /> */}
-          <AuthModal />
-          <QuickviewModal />
-          <SideCart />
-          <Component {...pageProps} />
-        </Layout>
-      </PersistGate>
-    </Provider>
+    <>
+      <Head>
+        <link rel="icon" href="/iXiafavicon.png" />
+      </Head>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Layout>
+            {/* <CookieBanner /> */}
+            <AuthModal />
+            <QuickviewModal />
+            <SideCart />
+            <Component {...pageProps} />
+          </Layout>
+        </PersistGate>
+      </Provider>
+    </>
   );
 }
 

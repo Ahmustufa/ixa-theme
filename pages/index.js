@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { Row, Col } from "antd";
 import styled from "styled-components";
-import FullBgImageSection from "../src/component/heroSection/FullBgImageSection";
-import SubscriptionModal from "../src/component/modals/subscriptionModal1";
+import FullBgImageSection from "src/component/heroSection/FullBgImageSection";
+import SubscriptionModal from "src/component/modals/subscriptionModal1";
 import DragToScroll from "src/component/scroll/dragToScroll";
 import Link from "next/link";
 import Typewriter from "typewriter-effect";
@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>E-commerce Store | Home</title>
+        <title>iXiaThemes | Home</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1"
@@ -44,7 +44,6 @@ const Home = () => {
         <meta name="audience" content="Everyone" />
         <meta name="robots" content="index, follow" />
 
-        {/* <link rel="canonical" href="https://www.godaddy.com/en-pk/offers/godaddy" /> */}
         <meta
           property="og:image"
           content={`${window.location.origin}/images/preload_image.jpg`}
@@ -57,6 +56,7 @@ const Home = () => {
         <meta property="og:type" content="" />
         <meta property="og:url" content="https://ixiathemes.com" />
         <meta property="og:site_name" content="ixiathemes" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <SubscriptionModal image="/images/subscriptionModalBg.png" />
 
@@ -158,8 +158,7 @@ const Home = () => {
         <section
           id="demos"
           style={{
-            backgroundImage:
-              "url(https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/bg-demos.png)",
+            backgroundImage: 'url("/images/bg-demos.png")',
             backgroundColor: "#eff1f2",
           }}
         >
@@ -453,41 +452,35 @@ const StyledPage = styled.div`
 
 const features = [
   {
-    image:
-      "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/font-preloader.svg",
+    image: "/images/features/fontpreloader.svg",
     heading: "Font Preloader",
     description:
       "A single source of truth for your Google and Adobe fonts, avoiding performance hiccups.",
   },
   {
-    image:
-      "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/modularity.svg",
+    image: "/images/features/modularity.svg",
     heading: "Modularity",
     description:
       "Load and unload various built-in functionalities with ease. The general principle - only load what’s in use.",
   },
   {
-    image:
-      "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/dev-friendly.svg",
+    image: "/images/features/dev-friendly.svg",
     heading: "Developer friendly",
     description:
       "Love coding? Awesome, so do i! Easily extend functionalities with hooks and built-in features.",
   },
   {
-    image:
-      "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/future.svg",
+    image: "/images/features/future.svg",
     heading: "Built for the future",
     description: "Because we need to work and think ahead.",
   },
   {
-    image:
-      "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/seo-friendly.svg",
+    image: "/images/features/seo-friendly.svg",
     heading: "SEO friendly",
     description: "Clean markup following web standards.",
   },
   {
-    image:
-      "https://reythemecom.b-cdn.net/wp-content/themes/rey-child/rey-site/images/features/svg-images.svg",
+    image: "/images/features/svg-image.svg",
     heading: "Built-in SVG support",
     description: "Insert those lovely crisp and colored vector images.",
   },

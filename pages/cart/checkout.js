@@ -2,28 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Row, Col, Form, message, Checkbox } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import styled from "styled-components";
-import CartSteps from "../../src/component/cartSteps";
-import { PrimaryButton } from "../../src/component/buttons";
-import { InputWrapper } from "../../src/component/inputs";
+import CartSteps from "src/component/cartSteps";
+import { PrimaryButton } from "src/component/buttons";
+import { InputWrapper } from "src/component/inputs";
 import { AiOutlineShopping } from "react-icons/ai";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { Mutations, errorHandler, useFetch } from "../../src/api/config";
-import { loginUserAction } from "../../src/redux/actions";
-import {
-  decreaseCartItemQuantity,
-  increaseCartItemQuantity,
-  removeCartItem,
-} from "../../src/redux/actions/cartActions";
+import { removeCartItem } from "src/redux/actions/cartActions";
 import { BiTrash } from "react-icons/bi";
 import { Spin } from "antd";
 import Router, { useRouter } from "next/router";
-import {
-  BsFillCreditCardFill,
-  BsPaypal,
-  BsCashCoin,
-  BsFillCheckCircleFill,
-} from "react-icons/bs";
+import { BsCashCoin } from "react-icons/bs";
 
 const initialState = {
   firstName: "",
@@ -62,6 +51,7 @@ const Checkout = () => {
   const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
   const onFinish = (values) => {
+    dispatch(removeCartItem([]));
     router.push("/pages/order-success");
   };
 

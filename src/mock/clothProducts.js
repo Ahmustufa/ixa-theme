@@ -111,7 +111,7 @@ export const clothProducts = [
     _id: "eef55462-8c33-432e-a16f-1a940451e103",
     title: "Denim Peplum Motorcycle Jacket-1",
     quantit: 1,
-    price: 9.85,
+    price: 2.85,
     description:
       "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
     category: "jacket",

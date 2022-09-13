@@ -2,13 +2,11 @@ import { useEffect, useState } from "react";
 import { Row, Col, Collapse, Pagination, Empty } from "antd";
 import styled from "styled-components";
 import Breadcrumb from "src/component/breadcrumb";
-import { useDispatch, useSelector } from "react-redux";
-import BlogListingCard from "../../src/component/blogListing/blogListingCard";
+import { useDispatch } from "react-redux";
 import BlogCard2 from "src/component/cards/blogCard2";
 import { bagsBlogs } from "src/mock/bagsProducts";
 import { clothBlogs, clothProducts } from "src/mock/clothProducts";
 import FilterBar from "src/component/sortItems/FilterBar";
-import { FiHeart } from "react-icons/fi";
 
 let pageSize = 8;
 

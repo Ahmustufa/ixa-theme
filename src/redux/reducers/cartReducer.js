@@ -17,9 +17,16 @@ const cartReducer = (state = initialState, action) => {
 
     case Cart.REMOVE_ITEM: {
       const { payload } = action;
-      const index = state.items.findIndex((item) => item._id === payload._id);
-      state.items.splice(index, 1);
-      return { ...state };
+      if (payload.length < 1) {
+        return {
+          ...state,
+          items: [],
+        };
+      } else {
+        const index = state.items.findIndex((item) => item._id === payload._id);
+        state.items.splice(index, 1);
+        return { ...state };
+      }
     }
 
     case Cart.INCREASE_QUANTITY: {

@@ -101,7 +101,7 @@ const ProductDetails = (props) => {
         <Panel header={<div style={{ fontWeight: 600 }}>Information</div>}>
           <div className="title">Shipping</div>
           <div className="description">
-            We currently offer free shipping worldwide on all orders over Rs. 1000.
+            We currently offer free shipping worldwide on all orders over $1000.
           </div>
 
           <div className="title">Sizing</div>

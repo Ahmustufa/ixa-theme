@@ -1,8 +1,6 @@
-import { Row, Col, Collapse, Divider, message } from "antd";
+import { Row, Col } from "antd";
 import styled from "styled-components";
-import Link from "next/link";
 import RecentBlogs from "src/component/blogListing/recentBlogs";
-import PopularBlogs from "src/component/blogListing/popularBlogs";
 import BlogListingCard from "src/component/blogListing/blogListingCard";
 import Breadcrumb from "src/component/breadcrumb";
 import { bagsBlogs } from "src/mock/bagsProducts";

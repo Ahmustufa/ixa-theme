@@ -4,22 +4,19 @@ import styled from "styled-components";
 const Aboutus = (props) => {
   const cardData = [
     {
-      image:
-        "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,w_auto:20:412/about-us-tile1",
+      image: "about-us-tile1.webp",
       heading: "A “just-right” selection",
       description:
         "We give small business owners the right assortment of products and options. We don’t overwhelm, but we don’t come up short. And it’s all at the right price.",
     },
     {
-      image:
-        "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,w_auto:20:412/about-us-tile2",
+      image: "/about-us-tile2.webp",
       heading: "Easy experience",
       description:
         "We help small business owners quickly and effectively create the products they need to get the job done – with tips, inspiration and experts readily available.",
     },
     {
-      image:
-        "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,w_auto:20:412/about-us-tile3",
+      image: "/about-us-tile3.webp",
       heading: "Design for everyone",
       description:
         "We offer on-trend designs, intuitive tools, and the support options that enable any small business owner to create expertly designed marketing – even if they’re not a design expert.",
@@ -28,10 +25,7 @@ const Aboutus = (props) => {
 
   return (
     <StyledPage>
-      <img
-        src="https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,w_auto:50:1284/about-us-desktop"
-        className="mt-4 mt-md-5 img-fluid"
-      />
+      <img src="/about-us-desktop.webp" className="mt-4 mt-md-5 img-fluid" />
       <h1 className="page-heading">Where small businesses get big ideas.</h1>
 
       <Row gutter={[32, 32]}>

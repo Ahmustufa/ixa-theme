@@ -1,12 +1,9 @@
 import { Row, Col, Collapse, Divider, message, Avatar } from "antd";
 import styled from "styled-components";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Breadcrumb from "src/component/breadcrumb";
-import RecentBlogs from "../../src/component/blogListing/recentBlogs";
-import PopularBlogs from "../../src/component/blogListing/popularBlogs";
-import BlogListingCard from "../../src/component/blogListing/blogListingCard";
-import { AiOutlineHeart } from "react-icons/ai";
+import RecentBlogs from "src/component/blogListing/recentBlogs";
 import {
   BsHandIndexThumb,
   BsHandThumbsDown,
@@ -14,12 +11,10 @@ import {
   BsHandThumbsUp,
   BsHandThumbsUpFill,
 } from "react-icons/bs";
-import { blogBanner, image2, image3 } from "../../images";
+import { blogBanner } from "/images";
 import UserProfileDetailCard from "src/component/cards/userProfileDetailCard";
 import CommentSection from "src/component/commentSection";
 import SocialIcons from "src/component/socialIcons";
-import { bagsBlogs } from "src/mock/bagsProducts";
-import BlogCard2 from "src/component/cards/blogCard2";
 import BlogCarousel from "src/component/productListing/blogCarousel";
 import { clothProducts } from "src/mock/clothProducts";
 import Title3 from "src/component/titles/title3";

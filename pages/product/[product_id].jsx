@@ -208,7 +208,7 @@ const Order = (props) => {
               <Panel header={<div style={{ fontWeight: 600 }}>Information</div>}>
                 <div className="title">Shipping</div>
                 <div className="description">
-                  We currently offer free shipping worldwide on all orders over Rs. 1000.
+                  We currently offer free shipping worldwide on all orders over $1000.
                 </div>
 
                 <div className="title">Sizing</div>
@@ -224,8 +224,7 @@ const Order = (props) => {
 
                 <div className="title">Assistance</div>
                 <div className="description">
-                  Contact us on (+44) 555 88 65, or email us at
-                  support@ixiathemes.com
+                  Contact us on (+44) 555 88 65, or email us at support@ixiathemes.com
                 </div>
               </Panel>
 
@@ -343,7 +342,7 @@ const Order = (props) => {
       </section> */}
 
       <section className="my-5">
-        <ProductCarousel  padding={"5% 0%"} CardStyle={CardStyle6} data={shoesProducts} />
+        <ProductCarousel padding={"5% 0%"} CardStyle={CardStyle6} data={shoesProducts} />
       </section>
     </StyledPage>
   );

@@ -102,7 +102,7 @@ export const products = [
   {
     _id: "62fcfde40d62507bd80c30a8",
     title: "MBJ Women's Solid Short Sleeve Boat Neck V ",
-    price: 9.85,
+    price: 6.85,
     description:
       "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
     category: "women's clothing",

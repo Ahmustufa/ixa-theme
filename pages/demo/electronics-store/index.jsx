@@ -111,7 +111,7 @@ const ElectronicStore = () => {
           h1=""
           h3=""
           h5=""
-          bgImage="https://www.paklap.pk/pub/media/easyslide/Best_Gaming_Laptops_in_Pakistan.jpg"
+          bgImage="/images/Electronics/banner/Best_Gaming_Laptops_in_Pakistan.jpg"
           bgSize="contain"
           height="70vh"
         />

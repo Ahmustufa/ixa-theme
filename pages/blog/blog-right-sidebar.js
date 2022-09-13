@@ -1,11 +1,10 @@
-import { Row, Col, Collapse, Divider, message } from "antd";
+import { Row, Col } from "antd";
 import styled from "styled-components";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Breadcrumb from "src/component/breadcrumb";
-import RecentBlogs from "../../src/component/blogListing/recentBlogs";
-import PopularBlogs from "../../src/component/blogListing/popularBlogs";
-import BlogListingCard from "../../src/component/blogListing/blogListingCard";
+import RecentBlogs from "src/component/blogListing/recentBlogs";
+import PopularBlogs from "src/component/blogListing/popularBlogs";
+import BlogListingCard from "src/component/blogListing/blogListingCard";
 import { clothBlogs } from "src/mock/clothProducts";
 
 const BlogRightSidebar = (props) => {

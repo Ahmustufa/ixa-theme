@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Row, Col, Form, message } from "antd";
+import React from "react";
+import { Row, Col } from "antd";
 import styled from "styled-components";
-import CartSteps from "../../src/component/cartSteps";
-import { ButtonWrapper, PrimaryButton } from "../../src/component/buttons";
-import { InputWrapper } from "../../src/component/inputs";
+import CartSteps from "src/component/cartSteps";
+import { ButtonWrapper, PrimaryButton } from "src/component/buttons";
+import { InputWrapper } from "src/component/inputs";
 import { AiOutlineShopping } from "react-icons/ai";
 
 const ConfrimationOrder = () => {

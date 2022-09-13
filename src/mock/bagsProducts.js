@@ -208,7 +208,7 @@ export const bagsProducts = [
         Affordable
       </>
     ),
-    price: 9.85,
+    price: 3.85,
     description:
       "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
     category: "travel",

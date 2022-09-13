@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Row, Col, Form, DatePicker, Divider, InputNumber } from "antd";
 import styled from "styled-components";
-import CartSteps from "../../src/component/cartSteps";
-import { ButtonWrapper, PrimaryButton } from "../../src/component/buttons";
+import CartSteps from "src/component/cartSteps";
+import { ButtonWrapper, PrimaryButton } from "src/component/buttons";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineShopping } from "react-icons/ai";
 import {
@@ -13,18 +13,10 @@ import {
 } from "react-icons/bs";
 
 import Link from "next/link";
-import {
-  decreaseCartItemQuantity,
-  increaseCartItemQuantity,
-  removeCartItem,
-} from "../../src/redux/actions/cartActions";
-import { BiTrash } from "react-icons/bi";
-import { useFetch } from "../../src/hooks/useFetch";
-import { errorHandler, Mutations } from "../../src/api/config";
 import { LoadingOutlined } from "@ant-design/icons";
-import { Spin } from "antd";
 import { InputWrapper } from "src/component/inputs";
 import { useRouter } from "next/router";
+import { removeCartItem } from "src/redux/actions/cartActions";
 
 const paymentMethods = [
   { method: "paycash", name: "PAY CASH", id: 1, icon: BsCashCoin },
@@ -57,6 +49,7 @@ const BillingAddress = () => {
   };
 
   const onFinish = (values) => {
+    dispatch(removeCartItem({}));
     router.push("/pages/order-success");
   };
 

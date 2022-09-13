@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Row, Col, Form, message } from "antd";
 import { InputWrapper, TextAreaWrapper } from "src/component/inputs";
 import { ButtonWrapper, PrimaryButton } from "src/component/buttons";
-import SelectWrapper from "src/component/inputs/selectWrapper";
 
 const StyledSection = styled.div`
   .map-section {

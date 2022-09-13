@@ -2,26 +2,13 @@ import { Row, Col } from "antd";
 import Carousel1 from "src/component/carousel/carousel1";
 import styled from "styled-components";
 import Banner from "src/component/collectionBanner/banner";
-import Title2 from "src/component/titles/title2";
-import CardStyle1 from "src/component/cards/CardStyle1";
 import CardStyle7 from "src/component/cards/CardStyle7";
-import CardStyle6 from "src/component/cards/CardStyle6";
-import CardStyle2 from "src/component/cards/CardStyle2";
-
-import {
-  productStyle1,
-  productStyle2,
-  productStyle3,
-  productStyle4,
-} from "src/mock/mockupData";
 import FullBgImageSection from "src/component/heroSection/FullBgImageSection";
 import ProductVerticalCarousel from "src/component/productListing/productVerticalCarousel";
 import BlogCarousel from "src/component/productListing/blogCarousel";
-import { bagsBlogs, bagsProducts } from "src/mock/bagsProducts";
 import Service1 from "src/component/services/service1";
 import SubscriptionModal from "src/component/modals/subscriptionModal1";
 import Head from "next/head";
-import Title5 from "src/component/titles/title5";
 import { clothProducts } from "src/mock/clothProducts";
 import Title3 from "src/component/titles/title3";
 import { useState } from "react";
