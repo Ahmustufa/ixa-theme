@@ -198,7 +198,7 @@ const AuthModal = () => {
                   style={{ color: "#0c0c0c", fontWeight: 700, cursor: "pointer" }}
                   onClick={() => setAuthStatus(1)}
                 >
-                  Login
+                  Already have an account?
                 </p>
               </Col>
               <Col>
