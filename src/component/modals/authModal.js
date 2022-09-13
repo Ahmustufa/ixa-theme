@@ -207,7 +207,7 @@ const AuthModal = () => {
                   style={{ color: "#0c0c0c", fontWeight: 700, cursor: "pointer" }}
                   onClick={() => setAuthStatus(2)}
                 >
-                  Forgot Password
+                  Forgot Password?
                 </p>
               </Col>
             </Row>
@@ -271,7 +271,7 @@ const AuthModal = () => {
                     style={{ color: "#0c0c0c", fontWeight: 700, cursor: "pointer" }}
                     onClick={() => setAuthStatus(2)}
                   >
-                    Forgot Password
+                    Forgot Password?
                   </p>
                 </Col>
               </Row>
@@ -296,7 +296,7 @@ const AuthModal = () => {
             style={{ padding: 24, height: "100%" }}
           >
             <h2 style={{ color: "#0025ff", fontWeight: 700, marginBottom: 24 }}>
-              Forgot Password
+              Forgot Password?
             </h2>
 
             <Form validateTrigger="onFinish">
