@@ -82,6 +82,9 @@ const MobileDrawer = (props) => {
               borderRight: "1px solid #ececec",
               borderLeft: "1px solid #ececec",
             }}
+            onClick={() => {
+              closeSidebar();
+            }}
           >
             <Link href="/my-account/wishlist">
               <a style={{ textDecoration: "none", color: "#727272" }}>

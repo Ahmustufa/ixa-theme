@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 const Dashboard = () => {
   const { username } = useSelector((state) => state.user.data);
   return (
-    <StyledPage style={{ padding: 80 }}>
+    <StyledPage style={{ padding: "5%" }}>
       <Row>
         <Col xs={0} sm={0} md={6} lg={6}>
           <AccountSidebar />

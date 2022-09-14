@@ -14,7 +14,7 @@ const Wishlist = (props) => {
   const { items: wishlist } = useSelector((state) => state.wishlist);
 
   return (
-    <StyledPage style={{ padding: 80 }}>
+    <StyledPage style={{ padding: "5%" }}>
       <Row>
         <Col xs={0} sm={0} md={4} lg={4}>
           <AccountSidebar />
