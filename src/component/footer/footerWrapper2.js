@@ -172,7 +172,6 @@ const FooterContent = () => {
           <div className="footer-item-container">
             <div className="link-header">Let us help</div>
             <div
-              style={{ cursor: "pointer", width: "max-content" }}
               onClick={() => {
                 dispatch({ type: ModalConstant.OPEN_LOGIN_MODAL });
               }}
