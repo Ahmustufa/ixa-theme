@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Drawer, Collapse } from "antd";
+import { Drawer, Collapse, Badge } from "antd";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import Link from "next/link";
 import { FiChevronDown } from "react-icons/fi";
@@ -20,6 +20,9 @@ const MobileDrawer = (props) => {
 
   const menu = useSelector((state) => state.menu);
   const menuItems = menu.template || [];
+
+  const { items: wishListItems } = useSelector((state) => state.wishlist);
+  const { items: cartItems } = useSelector((state) => state.cart);
 
   const closeSidebar = () => {
     setTimeout(() => {
@@ -88,8 +91,12 @@ const MobileDrawer = (props) => {
           >
             <Link href="/my-account/wishlist">
               <a style={{ textDecoration: "none", color: "#727272" }}>
-                <FaRegHeart style={{ fontSize: 17 }} />
-                <div>Wishlist</div>
+                <div className="icon-box">
+                  <Badge size="small" offset={[5, 2]} count={wishListItems?.length}>
+                    <FaRegHeart style={{ fontSize: 17 }} />
+                  </Badge>
+                  <div>Wishlist</div>
+                </div>
               </a>
             </Link>
           </div>
@@ -128,7 +135,9 @@ const MobileDrawer = (props) => {
               closeSidebar();
             }}
           >
-            <AiOutlineShoppingCart style={{ fontSize: 20 }} />
+            <Badge size="small" offset={[5, 5]} count={cartItems?.length}>
+              <AiOutlineShoppingCart style={{ fontSize: 20 }} />
+            </Badge>
             <div>Cart</div>
           </div>
         </div>
