@@ -4,15 +4,6 @@ import ReviewListing from "../../../src/component/reviews/reviewListing";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
-import CardStyle1 from "../../../src/component/cards/CardStyle1";
-import CardStyle2 from "../../../src/component/cards/CardStyle2";
-import CardStyle3 from "../../../src/component/cards/CardStyle3";
-import CardStyle4 from "../../../src/component/cards/CardStyle4";
-import CardStyle5 from "../../../src/component/cards/CardStyle5";
-import CardStyle6 from "../../../src/component/cards/CardStyle6";
-import CardStyle7 from "../../../src/component/cards/CardStyle7";
-import CardStyle8 from "../../../src/component/cards/CardStyle8";
-import CardStyle9 from "../../../src/component/cards/CardStyle9";
 import {
   productStyle1,
   productStyle2,
@@ -27,7 +18,7 @@ import {
 import ProductVerticalCarousel from "src/component/productListing/productVerticalCarousel";
 import FilterByTab from "src/component/sortItems/filterByTab";
 import { useEffect } from "react";
-
+import allProducts from "src/mock/products";
 const { Panel } = Collapse;
 
 const Tab = (props) => {
@@ -70,11 +61,11 @@ const Tab = (props) => {
         <FilterByTab
           headerTitle="SPECIAL PRODUCTS"
           // setItemCategory={setItemCategory}
-          data={data}
+          data={allProducts}
           tabBarData={[
-            { title: "New Arrival", id: 1, category: "new_arrival" },
-            { title: "Featured", id: 2, category: "plants" },
-            { title: "Special", id: 3, category: "shoes" },
+            { title: "New Arrival", id: 1, category: "fridge" },
+            { title: "Featured", id: 2, category: "women" },
+            { title: "Special", id: 3, category: "dress" },
           ]}
         />
       </div>
@@ -82,13 +73,12 @@ const Tab = (props) => {
         <FilterByTab
           headerTitle="TRENDING PRODUCTS"
           // setItemCategory={setItemCategory}
-          data={data}
+          data={allProducts}
           tabBarData={[
-            { title: "New Arrival", id: 1, category: "new_arrival" },
             { title: "Women", id: 2, category: "women" },
-            { title: "Shoes", id: 3, category: "shoes" },
-            { title: "Plants", id: 4, category: "plants" },
-            { title: "School bag", id: 5, category: "school_bag" },
+            { title: "Beauty", id: 3, category: "health-and-beauty" },
+            { title: "Fans", id: 4, category: "fan" },
+            { title: "School bag", id: 5, category: "travel" },
           ]}
         />
       </div>

@@ -6,6 +6,7 @@ import {
 } from "./shoesProducts";
 import { bagsProducts } from "./bagsProducts";
 import { clothProducts } from "./clothProducts";
+import { electronicItems } from "./electronicProducts";
 
 export const products = [
   {
@@ -150,6 +151,8 @@ const allProducts = [
   ...bagsProducts,
   // Clothes
   ...clothProducts,
+  //Electronics
+  ...electronicItems,
   // ajsdlashd
   ...products,
 ];
