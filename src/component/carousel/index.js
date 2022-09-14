@@ -6,6 +6,10 @@ const ImageCarousel = (props) => {
   const { direction, images, id } = props;
   const [state, setState] = useState({ image: images[0] });
 
+  useEffect(() => {
+    setState({ image: images[0] });
+  }, [props]);
+
   return (
     <StyledCarousel>
       <Row gutter={[24, 24]}>
