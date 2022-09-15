@@ -141,3 +141,9 @@ a {
     }
   }
 }
+
+.ant-btn > .ant-btn-loading-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

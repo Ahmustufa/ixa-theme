@@ -34,6 +34,36 @@ export const ButtonWrapper = styled.div`
   }
 `;
 
+export const AntBtnLoading = styled(Button)`
+  &.ant-btn > .ant-btn-loading-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  transition: all 0.4s ease 0s;
+  padding: 20px !important;
+  /* height: 80; */
+  color: #fff;
+  border: 1px solid #212529;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  box-shadow: none;
+  background-color: #212529;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  :hover {
+    color: #212529;
+    background-color: transparent;
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.7;
+  }
+`;
+
 export const PrimaryButton = styled.button`
   transition: all 0.4s ease 0s;
   padding: 8px 20px;
