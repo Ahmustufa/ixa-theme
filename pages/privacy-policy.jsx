@@ -104,8 +104,8 @@ const PrivacyPolicy = () => {
               parts of our Service.
             </p>
             <p>
-              Company (referred to as either "the Company", "We", "Us" or "Our" in this
-              Agreement) refers to IxiaThemes.
+              {`Company (referred to as either "the Company", "We", "Us" or "Our" in this
+              Agreement) refers to IxiaThemes.`}
             </p>
             <p>
               Cookies are small files that are placed on Your computer, mobile device or

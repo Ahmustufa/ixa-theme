@@ -86,11 +86,12 @@ const TermOfUse = () => {
 
           <p className="mt-5">
             At
-            <span style={{ fontWeight: "bold" }}> iXiaThemes</span>, we have rendered our
+            <span style={{ fontWeight: "bold" }}> iXiaThemes</span>
+            {`, we have rendered our
             terms and conditions in such a manner that you won't find it difficult to
             understand. Agreeing to our terms and conditions will help us in providing
             with the security that we have pledged for. It is advised to read terms and
-            conditions properly carefully as to avoid perplexity in future.
+            conditions properly carefully as to avoid perplexity in future.`}
           </p>
 
           <h3>Interpretation</h3>
@@ -105,19 +106,21 @@ const TermOfUse = () => {
 
           <div className="ml-5">
             <p>
-              <span style={{ fontWeight: 700 }}>Affiliate</span> means an entity that
+              <span style={{ fontWeight: 700 }}>Affiliate</span>{" "}
+              {`means an entity that
               controls, is controlled by or is under common control with a party, where
               "control" means ownership of 50% or more of the shares, equity interest or
               other securities entitled to vote for election of directors or other
-              managing authority.
+              managing authority.`}
             </p>
             <p>
               <span style={{ fontWeight: 700 }}>Country</span> refers to: New York, United
               States
             </p>
             <p>
-              <span style={{ fontWeight: 700 }}>Company</span> (referred to as either "the
-              Company", "We", "Us" or "Our" in this Agreement) refers to Ixia Themes.
+              <span style={{ fontWeight: 700 }}>Company</span>{" "}
+              {`(referred to as either "the
+              Company", "We", "Us" or "Our" in this Agreement) refers to Ixia Themes.`}
             </p>
             <p>
               <span style={{ fontWeight: 700 }}>Device</span> means any device that can
@@ -127,11 +130,12 @@ const TermOfUse = () => {
               <span style={{ fontWeight: 700 }}>Service</span> refers to the Website.
             </p>
             <p>
-              <span style={{ fontWeight: 700 }}>Terms and Conditions </span> (also
+              <span style={{ fontWeight: 700 }}>Terms and Conditions </span>{" "}
+              {`(also
               referred as "Terms") mean these Terms and Conditions that form the entire
               agreement between You and the Company regarding the use of the Service. This
               Terms and Conditions agreement has been created with the help of the
-              TermsFeed Terms and Conditions Generator.
+              TermsFeed Terms and Conditions Generator.`}
             </p>
             <p>
               <span style={{ fontWeight: 700 }}>Third-party Social Media Service</span>{" "}
@@ -217,7 +221,7 @@ const TermOfUse = () => {
             anything through the Service.
           </p>
           <p>
-            To the maximum extent permitted by applicable law, in no event shall the
+            {` To the maximum extent permitted by applicable law, in no event shall the
             Company or its suppliers be liable for any special, incidental, indirect, or
             consequential damages whatsoever (including, but not limited to, damages for
             loss of profits, loss of data or other information, for business interruption,
@@ -226,7 +230,7 @@ const TermOfUse = () => {
             third-party hardware used with the Service, or otherwise in connection with
             any provision of this Terms), even if the Company or any supplier has been
             advised of the possibility of such damages and even if the remedy fails of its
-            essential purpose.
+            essential purpose.`}
           </p>
           <p>
             Some states do not allow the exclusion of implied warranties or limitation of
@@ -253,7 +257,7 @@ const TermOfUse = () => {
             be error free or that any errors or defects can or will be corrected.
           </p>
           <p>
-            Without limiting the foregoing, neither the Company nor any of the company's
+            {`Without limiting the foregoing, neither the Company nor any of the company's
             provider makes any representation or warranty of any kind, express or implied:
             (i) as to the operation or availability of the Service, or the information,
             content, and materials or products included thereon; (ii) that the Service
@@ -261,7 +265,7 @@ const TermOfUse = () => {
             currency of any information or content provided through the Service; or (iv)
             that the Service, its servers, the content, or e-mails sent from or on behalf
             of the Company are free of viruses, scripts, trojan horses, worms, malware,
-            timebombs or other harmful components.
+            timebombs or other harmful components.`}
           </p>
           <p>
             Some jurisdictions do not allow the exclusion of certain types of warranties
@@ -292,11 +296,11 @@ const TermOfUse = () => {
 
           <h3 className="mt-4">United States Legal Compliance</h3>
           <p>
-            You represent and warrant that (i) You are not located in a country that is
+            {`You represent and warrant that (i) You are not located in a country that is
             subject to the United States government embargo, or that has been designated
             by the United States government as a "terrorist supporting" country, and (ii)
             You are not listed on any United States government list of prohibited or
-            restricted parties.
+            restricted parties.`}
           </p>
 
           <h3 className="mt-4">Severability and Waiver</h3>
