@@ -136,8 +136,8 @@ export default function (req, res) {
       {
         from: process.env.NEXT_PUBLIC_FORWARDING_EMAIL, // sender address
         to: process.env.NEXT_PUBLIC_ADMIN_EMAIL, // list of receivers
-        subject: "Request for contact from Ejaz Patient Care", // Subject line
-        // text: "From Ejaz Patient Care", // plain text body
+        subject: "Request for contact from iXia Themes", // Subject line
+        // text: "From iXia Themes", // plain text body
         html: htmlSendToAdmin, // html body
       },
 
@@ -150,8 +150,8 @@ export default function (req, res) {
               {
                 from: process.env.NEXT_PUBLIC_ADMIN_EMAIL, // sender address
                 to: req.body.email, // list of receivers
-                subject: "Thankyou for your interest in Ejaz Patient Care", // Subject line
-                // text: "From Ejaz Patient Care", // plain text body
+                subject: "Thankyou for your interest in iXia Themes", // Subject line
+                // text: "From iXia Themes", // plain text body
                 html: htmlSendToUser, // html body
               },
               (err, data) => {

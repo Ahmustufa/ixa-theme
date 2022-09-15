@@ -107,7 +107,16 @@ const AuthModal = () => {
               <Row gutter={[24, 0]}>
                 <Col xs={24} sm={24} md={12} lg={12}>
                   <label>First Name *</label>
-                  <Form.Item name="First Name" rules={[{ required: true }]}>
+                  <Form.Item
+                    name="First Name"
+                    rules={[
+                      {
+                        required: true,
+                        pattern: /^([A-Za-z]{3,12})+$/,
+                        message: "Please enter valid first name",
+                      },
+                    ]}
+                  >
                     <InputWrapper
                       name="firstName"
                       onChange={handleChange}
@@ -118,7 +127,11 @@ const AuthModal = () => {
 
                 <Col xs={24} sm={24} md={12} lg={12}>
                   <label>Last Name *</label>
-                  <Form.Item name="Last Name" rules={[{ required: true }]}>
+                  <Form.Item
+                    name="Last Name"
+                    rules={[{ required: true, pattern: /^([A-Za-z]{3,12})+$/, pattern: /^([A-Za-z]{3,12})+$/,
+                    message: "Please enter valid last name", }]}
+                  >
                     <InputWrapper
                       name="lastName"
                       onChange={handleChange}
