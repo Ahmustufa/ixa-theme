@@ -76,7 +76,7 @@ const FooterContent = () => {
 
   return (
     <StyledFooter>
-      <Row
+      {/* <Row
         className="narrow-footer col-11 col-md-9 m-auto"
         justify="center"
         gutter={[32, 32]}
@@ -126,14 +126,14 @@ const FooterContent = () => {
           lg={{ span: 6, order: 3 }}
           xl={6}
         >
-          {/* <div className="text-center text-lg-left">
+          <div className="text-center text-lg-left">
             <p className="section-title">Absolutely guaranteed</p>
             <p className="footer-item m-0">
               Every time. Any reason. Or we’ll make it right.
             </p>
-          </div> */}
+          </div>
         </Col>
-      </Row>
+      </Row> */}
 
       <div className="container">
         <Divider />
