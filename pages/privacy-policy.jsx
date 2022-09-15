@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
     p {
       font-size: 16px;
       color: rgb(69, 80, 98);
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
     h3 {
       color: rgb(69, 80, 98);
@@ -65,19 +65,64 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Head>
-        <title>Privacy Policy |  iXiaThemes</title>
+        <title>Privacy Policy | iXiaThemes</title>
       </Head>
 
       <StyledDiv>
         <div className="gray-portion-div">
           <h1 style={{ textAlign: "center", marginBottom: 40 }}>Privacy Policy</h1>
+
+          <p className="mb-0">Privacy Policy</p>
+          <p className="mb-0">Last updated: September 14, 2022</p>
+
+          <p className="mt-4">
+            This Privacy Policy describes Our policies and procedures on the collection,
+            use and disclosure of Your information when You use the Service and tells You
+            about Your privacy rights and how the law protects You.
+          </p>
           <p>
-            Privacy policy helps you and us both in keeping your information confidential.
-            Our privacy policy will help in understanding the process we follow to
-            maintain your privacy during and after the design process.
+            We use Your Personal data to provide and improve the Service. By using the
+            Service, You agree to the collection and use of information in accordance with
+            this Privacy Policy. This Privacy Policy has been created with the help of the
+            TermsFeed Privacy Policy Generator.
           </p>
 
-          <h3>About the Privacy Policy</h3>
+          <h3>Interpretation and Definitions</h3>
+          <div className="ml-5">
+            <p>
+              <span style={{ fontWeight: 700 }}>Interpretation</span> The words of which
+              the initial letter is capitalized have meanings defined under the following
+              conditions. The following definitions shall have the same meaning regardless
+              of whether they appear in singular or in plural.
+            </p>
+            <p>
+              <span style={{ fontWeight: 700 }}>Definitions</span> For the purposes of
+              this Privacy Policy:
+            </p>
+            <p>
+              Account means a unique account created for You to access our Service or
+              parts of our Service.
+            </p>
+            <p>
+              Company (referred to as either "the Company", "We", "Us" or "Our" in this
+              Agreement) refers to IxiaThemes.
+            </p>
+            <p>
+              Cookies are small files that are placed on Your computer, mobile device or
+              any other device by a website, containing the details of Your browsing
+              history on that website among its many uses.
+            </p>
+            <p>Country refers to: New York, United States</p>
+            <p>
+              Device means any device that can access the Service such as a computer, a
+              cellphone or a digital tablet.
+            </p>
+            <p>
+              Personal Data is any information that relates to an identified or
+              identifiable individual.
+            </p>
+          </div>
+
           <ul>
             <li>We maintain utmost secrecy of our clients.</li>
             <li>
@@ -144,21 +189,21 @@ const PrivacyPolicy = () => {
               clients to the third parties.
             </li>
             <li>
-               iXiaThemes utilizes services of credit card processing companies to
-              bill you for services. These companies never share, store, save or use
-              exclusive information for any other purposes.
+              iXiaThemes utilizes services of credit card processing companies to bill you
+              for services. These companies never share, store, save or use exclusive
+              information for any other purposes.
             </li>
           </ul>
 
           <h3>Personal Information</h3>
           <ul>
             <li>
-              Information of clients at  iXiaThemes is kept extremely secure during
+              Information of clients at iXiaThemes is kept extremely secure during
               transmission by the use of the Secure Sockets Layer (SSL) Software which
               encrypts information that client puts in.
             </li>
             <li>
-               iXiaThemes follows generally accepted industry standards to protect the
+              iXiaThemes follows generally accepted industry standards to protect the
               personal information that is being submitted by the client during
               transmission and once we receive it. However, since no method of
               transmission over the Internet, or method of electronic storage, is 100%
@@ -210,9 +255,9 @@ const PrivacyPolicy = () => {
               clients leave cookies to be accepted.
             </li>
             <li>
-               iXiaThemes keeps track of your IP address to help diagnose problems
-              with our server and to administer our Web site. Your IP address is also used
-              to gather broad demographic information about you, such as your location and
+              iXiaThemes keeps track of your IP address to help diagnose problems with our
+              server and to administer our Web site. Your IP address is also used to
+              gather broad demographic information about you, such as your location and
               your Internet service provider.
             </li>
             <li>
@@ -237,10 +282,10 @@ const PrivacyPolicy = () => {
               circumstances, if any, we disclose it.
             </li>
             <li>
-               iXiaThemes reserves the right to modify this privacy statement at any
-              point of time, without prior notice. Thus it is advised to review the
-              privacy policy frequently. If we make material changes to this policy, we
-              will notify you here, by email, or by means of a notice on our homepage.
+              iXiaThemes reserves the right to modify this privacy statement at any point
+              of time, without prior notice. Thus it is advised to review the privacy
+              policy frequently. If we make material changes to this policy, we will
+              notify you here, by email, or by means of a notice on our homepage.
             </li>
           </ul>
 
