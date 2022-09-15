@@ -347,7 +347,7 @@ const TermOfUse = () => {
           </p>
           <ul>
             <li>
-              By visiting this page on our website: https://ixiathemes.com/terms-of-use
+              By visiting this page on our website: https://ixiathemes.com/contact-us
             </li>
           </ul>
         </div>

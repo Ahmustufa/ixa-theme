@@ -212,7 +212,7 @@ const FooterContent = () => {
           </div>
         </Col>
 
-        <Col xs={24} sm={24} md={4} lg={4} xl={4} className="footer-item-wrapper">
+        {/* <Col xs={24} sm={24} md={4} lg={4} xl={4} className="footer-item-wrapper">
           <div className="footer-item-container">
             <div className="link-header">Our company</div>
             <div className="footer-item">
@@ -226,7 +226,7 @@ const FooterContent = () => {
               </Link>
             </div>
           </div>
-        </Col>
+        </Col> */}
 
         <Col xs={24} sm={24} md={4} lg={4} xl={4} className="footer-item-wrapper">
           <div className="footer-item-container">

@@ -68,7 +68,7 @@ const StyledDiv = styled.div`
     text-transform: uppercase;
   }
   .selected {
-    color: orange;
+    color: #e84c88;
   }
   @media (max-width: 1024px) {
     .tab-title {
