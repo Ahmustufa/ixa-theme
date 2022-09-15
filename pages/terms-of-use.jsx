@@ -214,11 +214,11 @@ const TermOfUse = () => {
 
           <h3 className="mt-4">Limitation of Liability</h3>
           <p>
-            Notwithstanding any damages that You might incur, the entire liability of the
+            {` Notwithstanding any damages that You might incur, the entire liability of the
             Company and any of its suppliers under any provision of this Terms and Your
             exclusive remedy for all of the foregoing shall be limited to the amount
             actually paid by You through the Service or 100 USD if You haven't purchased
-            anything through the Service.
+            anything through the Service.`}
           </p>
           <p>
             {` To the maximum extent permitted by applicable law, in no event shall the
@@ -233,15 +233,15 @@ const TermOfUse = () => {
             essential purpose.`}
           </p>
           <p>
-            Some states do not allow the exclusion of implied warranties or limitation of
+            {`Some states do not allow the exclusion of implied warranties or limitation of
             liability for incidental or consequential damages, which means that some of
             the above limitations may not apply. In these states, each party's liability
-            will be limited to the greatest extent permitted by law.
+            will be limited to the greatest extent permitted by law.`}
           </p>
 
-          <h3 className="mt-4">"AS IS" and "AS AVAILABLE" Disclaimer</h3>
+          <h3 className="mt-4">{`"AS IS" and "AS AVAILABLE" Disclaimer`}</h3>
           <p>
-            The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults
+            {`The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults
             and defects without warranty of any kind. To the maximum extent permitted
             under applicable law, the Company, on its own behalf and on behalf of its
             Affiliates and its and their respective licensors and service providers,
@@ -254,7 +254,7 @@ const TermOfUse = () => {
             that the Service will meet Your requirements, achieve any intended results, be
             compatible or work with any other software, applications, systems or services,
             operate without interruption, meet any performance or reliability standards or
-            be error free or that any errors or defects can or will be corrected.
+            be error free or that any errors or defects can or will be corrected.`}
           </p>
           <p>
             {`Without limiting the foregoing, neither the Company nor any of the company's
@@ -314,11 +314,11 @@ const TermOfUse = () => {
 
           <p>
             <h6 className="mb-0">Waiver</h6>
-            Except as provided herein, the failure to exercise a right or to require
+            {`Except as provided herein, the failure to exercise a right or to require
             performance of an obligation under these Terms shall not effect a party's
             ability to exercise such right or require such performance at any time
             thereafter nor shall the waiver of a breach constitute a waiver of any
-            subsequent breach.
+            subsequent breach.`}
           </p>
 
           <h3 className="mt-4">Translation Interpretation</h3>
@@ -330,14 +330,14 @@ const TermOfUse = () => {
 
           <h3 className="mt-4">Changes to These Terms and Conditions</h3>
           <p>
-            We reserve the right, at Our sole discretion, to modify or replace these Terms
+            {` We reserve the right, at Our sole discretion, to modify or replace these Terms
             at any time. If a revision is material We will make reasonable efforts to
             provide at least 30 days' notice prior to any new terms taking effect. What
             constitutes a material change will be determined at Our sole discretion. By
             continuing to access or use Our Service after those revisions become
             effective, You agree to be bound by the revised terms. If You do not agree to
             the new terms, in whole or in part, please stop using the website and the
-            Service.
+            Service.`}
           </p>
 
           <h3 className="mt-4">Contact Us</h3>
