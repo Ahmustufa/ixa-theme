@@ -1,6 +1,6 @@
 import { Row, Col } from "antd";
 import styled from "styled-components";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const ImageCarousel = (props) => {
   const { direction, images, id } = props;
