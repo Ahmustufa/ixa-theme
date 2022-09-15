@@ -129,8 +129,13 @@ const AuthModal = () => {
                   <label>Last Name *</label>
                   <Form.Item
                     name="Last Name"
-                    rules={[{ required: true, pattern: /^([A-Za-z]{3,12})+$/, pattern: /^([A-Za-z]{3,12})+$/,
-                    message: "Please enter valid last name", }]}
+                    rules={[
+                      {
+                        required: true,
+                        pattern: /^([A-Za-z]{3,12})+$/,
+                        message: "Please enter valid last name",
+                      },
+                    ]}
                   >
                     <InputWrapper
                       name="lastName"
