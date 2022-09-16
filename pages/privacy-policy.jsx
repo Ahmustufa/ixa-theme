@@ -114,7 +114,7 @@ const PrivacyPolicy = () => {
                   <span style={{ fontWeight: 700 }}>Company</span>{" "}
                   {`(referred to as either
                   "the Company", "We", "Us" or "Our" in this Agreement) refers to
-                  IxiaThemes.`}
+                  iXiaThemes.`}
                 </p>
               </li>
               <li>

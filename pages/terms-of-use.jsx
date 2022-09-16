@@ -114,13 +114,13 @@ const TermOfUse = () => {
               managing authority.`}
             </p>
             <p>
-              <span style={{ fontWeight: 700 }}>Country</span> refers to: New York, United
-              States
+              <span style={{ fontWeight: 700 }}>Country</span> refers to: California,
+              United States
             </p>
             <p>
               <span style={{ fontWeight: 700 }}>Company</span>{" "}
               {`(referred to as either "the
-              Company", "We", "Us" or "Our" in this Agreement) refers to Ixia Themes.`}
+              Company", "We", "Us" or "Our" in this Agreement) refers to IxiaThemes.`}
             </p>
             <p>
               <span style={{ fontWeight: 700 }}>Device</span> means any device that can
@@ -144,7 +144,7 @@ const TermOfUse = () => {
               available by the Service.
             </p>
             <p>
-              <span style={{ fontWeight: 700 }}>Website</span> refers to Ixia Themes,
+              <span style={{ fontWeight: 700 }}>Website</span> refers to IxiaThemes,
               accessible from{" "}
               <a href="https://ixiathemes.com/">https://ixiathemes.com/</a>
             </p>

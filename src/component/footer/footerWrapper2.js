@@ -233,7 +233,7 @@ const FooterContent = () => {
             <div className="link-header">Our policies</div>
             <div className="footer-item">
               <Link href="/terms-of-use">
-                <a className="link">Term of use</a>
+                <a className="link">Terms of use</a>
               </Link>
             </div>
             <div className="footer-item">
