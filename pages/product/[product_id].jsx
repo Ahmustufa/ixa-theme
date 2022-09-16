@@ -285,7 +285,7 @@ const Order = (props) => {
                 Reviews
               </div>
             }
-            showArrow={false}
+            // showArrow={false}
           >
             {/* <ReviewListing productId={productDetails._id} reviews={reviews} /> */}
             <div className="review-section">
