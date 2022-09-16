@@ -8,7 +8,7 @@ export default function (req, res) {
       
             <tr>
               <td style="font-family: Arial, Helvetica, sans-serif; padding: 20px 0 0 0;">
-                <p style="margin: 0;">A request has been received from iXia Themes. See below for more information:</p>
+                <p style="margin: 0;">A request has been received from iXiaThemes. See below for more information:</p>
               </td>
             </tr>
             <tr>
@@ -71,9 +71,9 @@ export default function (req, res) {
   
         <tr>
           <td style="font-family: Arial, Helvetica, sans-serif; padding: 20px 0 0 0;">
-            <p style="margin: 0;">Thankyou for your interest in iXia Themes</p>
+            <p style="margin: 0;">Thankyou for your interest in iXiaThemes</p>
             <p style="margin-top: 15px;">Our team will be in coordination with you shortly</p>
-            <p style="margin-top: 30px;">To learn more about iXia Themes, please visit our website at <a class="fa" href="https://ixiathemes.com/" target="blank" style="color:#1d8ece; text-decoration: underline;">www.ixiathemes.com</a></p>
+            <p style="margin-top: 30px;">To learn more about iXiaThemes, please visit our website at <a class="fa" href="https://ixiathemes.com/" target="blank" style="color:#1d8ece; text-decoration: underline;">www.ixiathemes.com</a></p>
           </td>
         </tr>
       </table>
@@ -136,8 +136,8 @@ export default function (req, res) {
       {
         from: process.env.NEXT_PUBLIC_FORWARDING_EMAIL, // sender address
         to: process.env.NEXT_PUBLIC_ADMIN_EMAIL, // list of receivers
-        subject: "Request for contact from iXia Themes", // Subject line
-        // text: "From iXia Themes", // plain text body
+        subject: "Request for contact from iXiaThemes", // Subject line
+        // text: "From iXiaThemes", // plain text body
         html: htmlSendToAdmin, // html body
       },
 
@@ -150,8 +150,8 @@ export default function (req, res) {
               {
                 from: process.env.NEXT_PUBLIC_ADMIN_EMAIL, // sender address
                 to: req.body.email, // list of receivers
-                subject: "Thankyou for your interest in iXia Themes", // Subject line
-                // text: "From iXia Themes", // plain text body
+                subject: "Thankyou for your interest in iXiaThemes", // Subject line
+                // text: "From iXiaThemes", // plain text body
                 html: htmlSendToUser, // html body
               },
               (err, data) => {

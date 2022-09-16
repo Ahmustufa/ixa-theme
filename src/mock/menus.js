@@ -143,10 +143,10 @@ export const mainMenu = [
   {
     title: "demo",
     submenu: [
-      { title: "Apparels", link: "/demo/clothing-store" },
-      { title: "Bags", link: "/demo/bag-store" },
-      { title: "Shoes", link: "/demo/shoes-store" },
-      { title: "Electronics", link: "/demo/electronics-store" },
+      { title: "Apparels", link: "/demo/clothing-store", target: "_blank" },
+      { title: "Bags", link: "/demo/bag-store", target: "_blank" },
+      { title: "Shoes", link: "/demo/shoes-store", target: "_blank" },
+      { title: "Electronics", link: "/demo/electronics-store", target: "_blank" },
     ],
     link: "",
   },

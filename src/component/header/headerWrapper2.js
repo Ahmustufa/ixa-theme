@@ -194,8 +194,13 @@ const HeaderWrapper2 = () => {
                       } else {
                         return (
                           <Menu.Item key={index}>
-                            <Link href={subMenuItem.link || ""}>
-                              <a className="navigation-link">{subMenuItem.title}</a>
+                            <Link
+                              target={subMenuItem.target}
+                              href={subMenuItem.link || ""}
+                            >
+                              <a target={subMenuItem.target} className="navigation-link">
+                                {subMenuItem.title}
+                              </a>
                             </Link>
                           </Menu.Item>
                         );

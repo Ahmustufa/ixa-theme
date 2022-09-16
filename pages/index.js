@@ -305,8 +305,8 @@ const Home = () => {
         <section className="text-center">
           <div style={{ fontSize: "2rem", color: "#001719" }}>Email Template</div>
           <p style={{ color: "#979797", maxWidth: 500, width: "90%", margin: "auto" }}>
-            iXiaThemes comes with tons of email template which include order success,
-            promotion and give away tamplates
+            iXiaThemes comes with email template which include order success, promotion
+            and give away tamplates
           </p>
 
           <img src="/images/email_templates.png" className="w-100" />

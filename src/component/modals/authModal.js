@@ -209,7 +209,7 @@ const AuthModal = () => {
               </Row>
             </Form>
 
-            <Row justify="space-between" className="mt-4">
+            <Row justify="center" className="mt-4">
               <Col>
                 <p
                   className="hoverable dark"
@@ -219,7 +219,7 @@ const AuthModal = () => {
                   Already have an account?
                 </p>
               </Col>
-              <Col>
+              {/* <Col>
                 <p
                   className="hoverable dark"
                   style={{ color: "#0c0c0c", fontWeight: 700, cursor: "pointer" }}
@@ -227,7 +227,7 @@ const AuthModal = () => {
                 >
                   Forgot Password?
                 </p>
-              </Col>
+              </Col> */}
             </Row>
           </Col>
         )}
