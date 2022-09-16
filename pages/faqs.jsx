@@ -137,62 +137,56 @@ export default Faq;
 
 const faqs1 = [
   {
-    question: "How can I access my website and see the progress?",
+    question: "What is Lorem Ipsum?",
     answer:
-      "We appreciate it when our clients want to see the updates and progress themselves. You’ll be provided with login credentials to access secure Client portal and watch the progress. We would love getting your feedback and suggestions.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   },
   {
-    question: "Can you Revamp my existing website?",
+    question: "Where can I get some?",
     answer:
-      "We certainly can do that! Proceeding towards websites redesigns sensitively is very important to understand your reasons for revamping it. We make sure we understand you well and play our role in modifying it according to your requirements.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   },
   {
-    question: "How effective is my website for my business growth?",
+    question: "What is Lorem Ipsum?",
     answer:
-      "In this digital age, websites give you the credibility and strengthen your existence globally as well as locally. Having a website establishes your brand and provides you with the opportunity to build long-term online relationships with your clients. At LogiLogos we make sure that your website, logo or App stands at par with the global standards and represent you in the best way.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   },
-  {
-    question: "How can I get revisions in my website during the development stage?",
-    answer:
-      "Your input during the development phase is the most crucial factor for us. We would love getting your input during your website development process. For that your dedicated Account Manager will keep in touch with you and make sure that the website design and content is according to your needs and wants. We strive for this communication to be swift to provide you just the right look and functionality in the shortest possible time.",
-  },
-  {
-    question: "When do I get complete ownership for my website?",
-    answer:
-      "When your website is completely developed and accepted by you. You will be given the credentials to access it and a Project delivery sign off document will ensure the full ownership transferred to you.",
-  },
+  // {
+  //   question: "How can I get revisions in my website during the development stage?",
+  //   answer:
+  //     "Your input during the development phase is the most crucial factor for us. We would love getting your input during your website development process. For that your dedicated Account Manager will keep in touch with you and make sure that the website design and content is according to your needs and wants. We strive for this communication to be swift to provide you just the right look and functionality in the shortest possible time.",
+  // },
+  // {
+  //   question: "When do I get complete ownership for my website?",
+  //   answer:
+  //     "When your website is completely developed and accepted by you. You will be given the credentials to access it and a Project delivery sign off document will ensure the full ownership transferred to you.",
+  // },
 ];
 
 const faqs2 = [
   {
-    question: "How long will you take to design & develop a website?",
+    question: "Why do we use it?",
     answer:
-      "The duration of the project completely depends on the needs of our clients. Two of the most important factors that decide the pace of the project are your availability of giving timely feedback and your business requirements i.e. features in the website.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   },
   {
-    question: "Do you provide professional content writing services as well?",
+    question: "Why do we use it?",
     answer:
-      "Yes we do! At an additional cost, our professional and innovative content writing team will compose the befitting content that will define and strengthen your business’ online presence.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   },
   {
-    question: "How Costly is the entire website project?",
-    answer: (
-      <p>
-        {`LogiLogos’ pricing plan is simple and transparent. The total expense depends upon the complexity of the project based on your business requirements and the services you choose. You can view our`}{" "}
-        <Link href="/pricing">
-          <a>pricing plan here.</a>
-        </Link>
-      </p>
-    ),
-  },
-  {
-    question: "How would I use my website as an Owner / Admin?",
+    question: "Where does it come from?",
     answer:
-      "You will be given full access to the Admin area of your website and will be given enough training to become familiarized and use it effectively.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   },
-  {
-    question: "What is a domain and Web Hosting?",
-    answer:
-      "A domain is a name you want users to enter in the internet browser to access your website like name of a building. Web hosting is an online service allowing to produce your website files onto the internet like the actual building. With that being said, everyone who has access to the internet would be having an access to your website through the hosting server. Each website plan that we offer comes with free domain and hosting for 1 year.",
-  },
+  // {
+  //   question: "How would I use my website as an Owner / Admin?",
+  //   answer:
+  //     "You will be given full access to the Admin area of your website and will be given enough training to become familiarized and use it effectively.",
+  // },
+  // {
+  //   question: "What is a domain and Web Hosting?",
+  //   answer:
+  //     "A domain is a name you want users to enter in the internet browser to access your website like name of a building. Web hosting is an online service allowing to produce your website files onto the internet like the actual building. With that being said, everyone who has access to the internet would be having an access to your website through the hosting server. Each website plan that we offer comes with free domain and hosting for 1 year.",
+  // },
 ];

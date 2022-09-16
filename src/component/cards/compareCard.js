@@ -28,7 +28,7 @@ const CompareCard = (props) => {
       <div className="img-section">
         <img className="img-fluid" src={images[0]} />
         <Link href={"#"}>
-          <h5>{title}</h5>
+          <h5 className="elipsText">{title}</h5>
         </Link>
         <h5>
           {" "}
@@ -164,5 +164,12 @@ const StyledCard = styled.div`
     border-top: 1px solid #ddd;
     display: flex;
     justify-content: center;
+  }
+  .elipsText {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 `;

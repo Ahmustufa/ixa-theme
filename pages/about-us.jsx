@@ -7,19 +7,19 @@ const Aboutus = (props) => {
       image: "about-us-tile1.webp",
       heading: "A “just-right” selection",
       description:
-        "We give small business owners the right assortment of products and options. We don’t overwhelm, but we don’t come up short. And it’s all at the right price.",
+        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
     },
     {
       image: "/about-us-tile2.webp",
       heading: "Easy experience",
       description:
-        "We help small business owners quickly and effectively create the products they need to get the job done – with tips, inspiration and experts readily available.",
+        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
     },
     {
       image: "/about-us-tile3.webp",
       heading: "Design for everyone",
       description:
-        "We offer on-trend designs, intuitive tools, and the support options that enable any small business owner to create expertly designed marketing – even if they’re not a design expert.",
+        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
     },
   ];
 
@@ -31,34 +31,37 @@ const Aboutus = (props) => {
       <Row gutter={[32, 32]}>
         <Col xs={24} sm={24} md={12} lg={12}>
           <p className="mb-3">
-            {`VistaPrint, a Cimpress company, helps small business owners create expertly
-            designed, up-to-date custom marketing – the assortment of products they need
-            to look and feel professional, prepared and plugged in.`}
+            {`Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type
+            specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged.`}
           </p>
           <p className="mb-3">
-            {`Yes, we said assortment. It’s true that we’re best known for our business
-            cards – and we’ve printed billions of them since Robert Keane founded
-            VistaPrint in 1995.`}
+            {`Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type
+            specimen book.`}
           </p>
           <p>
-            {`But today, VistaPrint offers so much more: a wide range of customisable small
-            business marketing products; real-time access to expert ideas and assistance
-            for people who need a hand; and a simple, straightforward experience for those
-            who know exactly what they want.`}
+            {`Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type
+            specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged.`}
           </p>
         </Col>
 
         <Col xs={24} sm={24} md={12} lg={12}>
           <p>
-            {`When we put it all together, our customers can easily design a consistent,
-            cohesive look that carries across their entire business, whether they operate
-            in-store, online, on-site or on the go. With that, they can walk through a
-            door with confidence, know they can keep up with the competition and make
-            things happen right now.`}
+            {`Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type
+            specimen book. `}
           </p>
           <p>
-            {`Because now isn’t just a challenge. It’s an opportunity. And VistaPrint is
-            here to help small business owners OWN THE NOW.`}
+            {` It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged.`}
           </p>
         </Col>
       </Row>
@@ -76,18 +79,17 @@ const Aboutus = (props) => {
         ))}
       </Row>
 
-      <div className="text-center" style={{ margin: "64px 0" }}>
+      {/* <div className="text-center" style={{ margin: "64px 0" }}>
         <img src="/images/iXiaThemes.svg" alt="logo" height={40} className="mb-4" />
         <h3 style={{ fontWeight: 600 }}>ABSOLUTELY GUARANTEED</h3>
         <h5>{`Not satisfied? We’ll make it right.`}</h5>
         <br />
         <p>
-          {`We stand by everything we sell. So if you open your order and you’re not happy,
-          we’ll reprint or give you an account credit.`}
+          {`It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. `}
         </p>
         <p>{`If that doesn’t help, we’ll refund you in full.`}</p>
-        <p>{`Contact us and our Customer Care Specialists will get right on it.`}</p>
-      </div>
+        <p>{`It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. `}</p>
+      </div> */}
     </StyledPage>
   );
 };
@@ -96,7 +98,9 @@ export default Aboutus;
 
 const StyledPage = styled.div`
   width: 80%;
-  margin: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
 
   .page-heading {
     font-weight: 600;
