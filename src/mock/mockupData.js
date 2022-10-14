@@ -10,6 +10,7 @@ const productStyle1 = [
     price: 40,
     title: "Waist dress",
     category: "women",
+    rating: 3.9,
   },
   {
     _id: uuidv4(),
@@ -20,6 +21,7 @@ const productStyle1 = [
     price: 40,
     title: "Belted dress",
     category: "women",
+    rating: 4.4,
   },
   {
     _id: uuidv4(),
@@ -30,6 +32,7 @@ const productStyle1 = [
     price: 40,
     title: "Rain Jacket",
     category: "women",
+    rating: 4.8,
   },
   {
     _id: uuidv4(),
@@ -40,6 +43,7 @@ const productStyle1 = [
     price: 40,
     title: "DANVOUY Womens ",
     category: "women",
+    rating: 4.2,
   },
 ];
 
@@ -55,6 +59,7 @@ const productStyle2 = [
     price: 250,
     title: "Product 1",
     category: "school_bag",
+    rating: 4.4,
   },
   {
     _id: uuidv4(),
@@ -67,6 +72,7 @@ const productStyle2 = [
     price: 450,
     title: "Product 2",
     category: "school_bag",
+    rating: 4.8,
   },
   {
     _id: uuidv4(),
@@ -78,6 +84,7 @@ const productStyle2 = [
     price: 710,
     title: "Product 3",
     category: "school_bag",
+    rating: 4.2,
   },
   {
     _id: uuidv4(),
@@ -90,6 +97,7 @@ const productStyle2 = [
     price: 400,
     title: "Product 4",
     category: "school_bag",
+    rating: 4.4,
   },
 ];
 
@@ -101,6 +109,7 @@ const productStyle3 = [
     price: 250,
     title: "Product 1",
     category: "shoes",
+    rating: 4.9,
   },
   {
     _id: uuidv4(),
@@ -109,6 +118,7 @@ const productStyle3 = [
     price: 450,
     title: "Product 2",
     category: "shoes",
+    rating: 4.4,
   },
   {
     _id: uuidv4(),
@@ -117,6 +127,7 @@ const productStyle3 = [
     price: 710,
     title: "Product 3",
     category: "shoes",
+    rating: 4.4,
   },
   {
     _id: uuidv4(),
@@ -125,6 +136,7 @@ const productStyle3 = [
     price: 400,
     title: "Product 4",
     category: "shoes",
+    rating: 4.8,
   },
 ];
 
@@ -140,6 +152,7 @@ const productStyle4 = [
     price: 250,
     title: "Product 1",
     category: "new_arrival",
+    rating: 5,
   },
   {
     _id: uuidv4(),
@@ -150,6 +163,7 @@ const productStyle4 = [
     price: 450,
     title: "Product 2",
     category: "new_arrival",
+    rating: 3.6,
   },
   {
     _id: uuidv4(),
@@ -162,6 +176,7 @@ const productStyle4 = [
     price: 710,
     title: "Product 3",
     category: "new_arrival",
+    rating: 3.7,
   },
   {
     _id: uuidv4(),
@@ -174,6 +189,7 @@ const productStyle4 = [
     price: 400,
     title: "Product 4",
     category: "new_arrival",
+    rating: 3.6,
   },
 ];
 
@@ -188,6 +204,7 @@ const productStyle5 = [
     ],
     price: 250,
     title: "Product 1",
+    rating: 3.9,
   },
   {
     _id: uuidv4(),
@@ -198,6 +215,7 @@ const productStyle5 = [
     ],
     price: 450,
     title: "Product 2",
+    rating: 4.2,
   },
   {
     _id: uuidv4(),
@@ -205,6 +223,7 @@ const productStyle5 = [
 
     price: 710,
     title: "Product 3",
+    rating: 4.9
   },
   {
     _id: uuidv4(),
@@ -214,6 +233,7 @@ const productStyle5 = [
     ],
     price: 400,
     title: "Product 4",
+    rating: 4.9,
   },
 ];
 
@@ -229,6 +249,7 @@ const productStyle6 = [
     price: 250,
     title: "Product 1",
     category: "plants",
+    rating: 4.9,
   },
   {
     _id: uuidv4(),
@@ -240,6 +261,7 @@ const productStyle6 = [
     price: 450,
     title: "Product 2",
     category: "plants",
+    rating: 4.6,
   },
   {
     _id: uuidv4(),
@@ -251,6 +273,7 @@ const productStyle6 = [
     price: 710,
     title: "Product 3",
     category: "plants",
+    rating: 4.4,
   },
   {
     _id: uuidv4(),
@@ -261,6 +284,7 @@ const productStyle6 = [
     price: 400,
     title: "Product 4",
     category: "plants",
+    rating: 4.2,
   },
 ];
 
@@ -276,6 +300,7 @@ const productStyle7 = [
     ],
     price: 250,
     title: "Product 1",
+    rating: 4.4,
   },
   {
     _id: uuidv4(),
@@ -287,6 +312,7 @@ const productStyle7 = [
     ],
     price: 450,
     title: "Product 2",
+    rating: 4.8,
   },
   {
     _id: uuidv4(),
@@ -300,6 +326,7 @@ const productStyle7 = [
     ],
     price: 710,
     title: "Product 3",
+    rating: 5,
   },
   {
     _id: uuidv4(),
@@ -312,6 +339,7 @@ const productStyle7 = [
     ],
     price: 400,
     title: "Product 4",
+    rating: 2.9,
   },
 ];
 
@@ -322,6 +350,7 @@ const productStyle8 = [
 
     price: 250,
     title: "Product 1",
+    rating: 2.9,
   },
   {
     _id: uuidv4(),
@@ -331,6 +360,7 @@ const productStyle8 = [
     ],
     price: 450,
     title: "Product 2",
+    rating: 3.7,
   },
   {
     _id: uuidv4(),
@@ -340,6 +370,7 @@ const productStyle8 = [
     ],
     price: 710,
     title: "Product 3",
+    rating: 4.6,
   },
   {
     _id: uuidv4(),
@@ -351,6 +382,7 @@ const productStyle8 = [
     ],
     price: 400,
     title: "Product 4",
+    rating: 4.5,
   },
 ];
 
@@ -364,6 +396,7 @@ const productStyle9 = [
     ],
     price: 250,
     title: "Product 1",
+    rating: 4.5
   },
   {
     _id: uuidv4(),
@@ -374,6 +407,7 @@ const productStyle9 = [
     ],
     price: 450,
     title: "Product 2",
+    rating: 2
   },
   {
     _id: uuidv4(),
@@ -385,6 +419,7 @@ const productStyle9 = [
     ],
     price: 710,
     title: "Product 3",
+    rating: 3.5
   },
   {
     _id: uuidv4(),
@@ -395,6 +430,7 @@ const productStyle9 = [
     ],
     price: 400,
     title: "Product 4",
+    rating: 5
   },
 ];
 
@@ -406,6 +442,7 @@ const productStyle10 = [
     brandName: "Caperion",
     price: 599,
     link: "#",
+    rating: 2
   },
   {
     _id: uuidv4(),
@@ -414,6 +451,7 @@ const productStyle10 = [
     brandName: "CUCCOO",
     price: 1199,
     link: "#",
+    rating: 2.5
   },
   {
     _id: uuidv4(),
@@ -422,6 +460,7 @@ const productStyle10 = [
     brandName: "Vutte wixo",
     price: 1099,
     link: "#",
+    rating: 3.5
   },
   {
     _id: uuidv4(),
@@ -430,6 +469,7 @@ const productStyle10 = [
     brandName: "Caperion",
     price: 599,
     link: "#",
+    rating: 5
   },
 ];
 

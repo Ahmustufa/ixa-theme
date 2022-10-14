@@ -13,6 +13,7 @@ export const electronicItems = [
     title: "Gree Refrigerator GR-E8768G",
     category: "fridge",
     brandName: "Gree",
+    rating: 4.0,
   },
   {
     _id: "3ce59eb0-c37e-45de-b059-4b4fff716c02",
@@ -24,6 +25,7 @@ export const electronicItems = [
     title: "Gree Refrigerator GR-E9978G",
     category: "fridge",
     brandName: "Gree",
+    rating: 3.6,
   },
 
   {
@@ -38,6 +40,7 @@ export const electronicItems = [
     title: "Haier Refrigerator HRF-186",
     category: "fridge",
     brandName: "Haier",
+    rating: 3.0,
   },
 
   {
@@ -52,6 +55,7 @@ export const electronicItems = [
     title: "Haier Refrigerator HRF-398",
     category: "fridge",
     brandName: "Haier",
+    rating: 5.0,
   },
 
   {
@@ -66,6 +70,7 @@ export const electronicItems = [
     title: "Haier Refrigerator HRF-438",
     category: "fridge",
     brandName: "Haier",
+    rating: 3.6,
   },
 
   {
@@ -79,6 +84,7 @@ export const electronicItems = [
     title: "Haier Refrigerator HRF-522",
     category: "fridge",
     brandName: "Haier",
+    rating: 3.6,
   },
 
   {
@@ -92,6 +98,7 @@ export const electronicItems = [
     title: "Orient Marvel 200 Liters",
     category: "fridge",
     brandName: "Orient",
+    rating: 3.6,
   },
 
   {
@@ -105,6 +112,7 @@ export const electronicItems = [
     title: "Orient Refrigerator Grand",
     category: "fridge",
     brandName: "Orient",
+    rating: 4.6,
   },
 
   {
@@ -122,6 +130,7 @@ export const electronicItems = [
     title: "Samsung Refrigerator RS50N3C13S8PK",
     category: "fridge",
     brandName: "Samsung",
+    rating: 3.7,
   },
 
   {
@@ -134,6 +143,7 @@ export const electronicItems = [
     title: "Toyo Refrigerator TR-340-G",
     category: "fridge",
     brandName: "Toyo",
+    rating: 4.8,
   },
 
   {
@@ -143,6 +153,7 @@ export const electronicItems = [
     title: "E-Lite Velocity Fan EVF-08",
     category: "fan",
     brandName: "Velocity",
+    rating: 4.8,
   },
 
   {
@@ -156,6 +167,7 @@ export const electronicItems = [
     title: "Pak Fan Ceiling Fan 56 Deluxe",
     category: "fan",
     brandName: "Pak Fan",
+    rating: 4.8,
   },
 
   {
@@ -169,6 +181,7 @@ export const electronicItems = [
     title: "Sogo Rechargeable Floor Fan",
     category: "fan",
     brandName: "Sogo",
+    rating: 3.8,
   },
 
   {
@@ -183,6 +196,7 @@ export const electronicItems = [
     title: "Sogo Rechargeable TableDesk Fan",
     category: "fan",
     brandName: "Sogo",
+    rating: 2.9,
   },
 
   {
@@ -196,6 +210,7 @@ export const electronicItems = [
     title: "Super Asia ECM 4600 Plus",
     category: "fan",
     brandName: "Super Asia",
+    rating: 2.8,
   },
 
   {
@@ -205,6 +220,7 @@ export const electronicItems = [
     title: "Super Asia ECM 5000 Plus",
     category: "fan",
     brandName: "Super Asia",
+    rating: 3.4,
   },
 
   {
@@ -214,6 +230,7 @@ export const electronicItems = [
     title: "Wearable Hanging Neck Fan",
     category: "fan",
     brandName: "Toyo",
+    rating: 3.4,
   },
 
   {
@@ -226,6 +243,7 @@ export const electronicItems = [
     title: "Blueidea Massage Gun BLD-8890",
     category: "health-and-beauty",
     brandName: "Blueidea",
+    rating: 3.4,
   },
 
   {
@@ -238,6 +256,7 @@ export const electronicItems = [
     title: "Flawless Eyebrow Trimmer / Hair Remover",
     category: "health-and-beauty",
     brandName: "Dingling",
+    rating: 3.4,
   },
 
   {
@@ -252,6 +271,7 @@ export const electronicItems = [
     title: "Flexible Styling Hair Styler",
     category: "health-and-beauty",
     brandName: "Panasonic",
+    rating: 3.4,
   },
 
   {
@@ -266,6 +286,7 @@ export const electronicItems = [
     title: "Flexible Styling Hair Styler",
     category: "health-and-beauty",
     brandName: "Panasonic",
+    rating: 3.5,
   },
 
   {
@@ -278,6 +299,7 @@ export const electronicItems = [
     title: "Hair & Beard Trimmer ER217s",
     category: "health-and-beauty",
     brandName: "Panasonic",
+    rating: 4.4,
   },
 
   {
@@ -291,6 +313,7 @@ export const electronicItems = [
     title: "Keratin Therapy Pro Straightener",
     category: "health-and-beauty",
     brandName: "Remington",
+    rating: 4.4,
   },
 
   {
@@ -303,6 +326,7 @@ export const electronicItems = [
     title: "S5525 Pro Ceramic Straightener",
     category: "health-and-beauty",
     brandName: "Remington",
+    rating: 4.4,
   },
 
   {
@@ -316,6 +340,7 @@ export const electronicItems = [
     title: "Rechargeable Insect Killer Racket",
     category: "health-and-beauty",
     brandName: "Sogo",
+    rating: 5.0,
   },
 
   {
@@ -328,6 +353,7 @@ export const electronicItems = [
     title: "Westpoint WF-6270 Hair Dryer",
     category: "health-and-beauty",
     brandName: "Westpoint",
+    rating: 4.7,
   },
 
   {
@@ -340,6 +366,7 @@ export const electronicItems = [
     title: "Westpoint WF-7006 Deluxe Bath Scale",
     category: "health-and-beauty",
     brandName: "Westpoint",
+    rating: 4.2,
   },
 
   {
@@ -352,6 +379,7 @@ export const electronicItems = [
     title: "Zero healthcare Slim & Shape",
     category: "health-and-beauty",
     brandName: "Zero",
+    rating: 4.1,
   },
 
   {
@@ -364,6 +392,7 @@ export const electronicItems = [
     title: "Zero Healthcare X Mega Bike",
     category: "health-and-beauty",
     brandName: "Zero",
+    rating: 4.2,
   },
 
   {
@@ -376,6 +405,7 @@ export const electronicItems = [
     title: "Zero Healthcare ZT Sprint Treadmill",
     category: "health-and-beauty",
     brandName: "Zero",
+    rating: 4.8,
   },
 
   {
@@ -389,6 +419,7 @@ export const electronicItems = [
     title: "Black & Decker 2 Slice Sandwich Maker",
     category: "other",
     brandName: "Black & Decker",
+    rating: 4.7,
   },
 
   {
@@ -403,6 +434,7 @@ export const electronicItems = [
     title: "Black & Decker Drum Vacuum Cleaner",
     category: "other",
     brandName: "Black & Decker",
+    rating: 4.6,
   },
 
   {
@@ -416,6 +448,7 @@ export const electronicItems = [
     title: "Haier WM + National Deluxe Automatic Iron",
     category: "other",
     brandName: "Haier / National",
+    rating: 4.2,
   },
 
   {
@@ -429,6 +462,7 @@ export const electronicItems = [
     title: "Blender Chopper + Deluxe Automatic Iron",
     category: "other",
     brandName: "National",
+    rating: 4.2,
   },
 
   {
@@ -442,6 +476,7 @@ export const electronicItems = [
     title: "Smart Watch + MI Mini Bluetooth Speaker",
     category: "other",
     brandName: "Xiaomi",
+    rating: 4.4,
   },
 
   {
@@ -456,6 +491,7 @@ export const electronicItems = [
     title: `42" Samsung LED display`,
     category: "other",
     brandName: "Samsung",
+    rating: 4.6,
   },
 
   {
@@ -470,6 +506,7 @@ export const electronicItems = [
     title: `Auto Vacuum + EDR Wireless Headphones`,
     category: "other",
     brandName: "Toyo",
+    rating: 4.8,
   },
 ];
 
@@ -481,13 +518,8 @@ export const electronicBlogs = [
     description:
       "Robam is famous for making high-quality, budget-friendly appliances, including air fryers, toaster ovens, steam ovens, dishwashers, and even freestanding ranges. That's why Appliances Connection is proud to offer the newest entry into Robam's cooking suite. This combi oven uses both steam and air frying technology to revolutionize the world of countertop cooking appliances",
     category: "Electronics",
-    images: [
-      "https://static.appliancesconnection.com/www/800x600x92/product-info/images/static-pages/content-images/1168-Robam_Color_Combi_Oven_082022_FEATURED.jpg",
-    ],
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
+    images: ["/images/Electronics/blog-electronic/eBlog1.png"],
+    rating: 3.9,
   },
   {
     _id: uuidv4(),
@@ -496,13 +528,8 @@ export const electronicBlogs = [
     description:
       "Most refrigerator models are quite bulky, so when it comes time to move one, you may wonder if it is safe to move a fridge on its side. So, here we'll explore this topic in more detail, so you can plan your appliance move.",
     category: "Electronics",
-    images: [
-      "https://uakc.net/blog/wp-content/uploads/2022/01/Should-You-Move-a-Fridge-On-Its-Side-630x420.jpg",
-    ],
-    rating: {
-      rate: 4.1,
-      count: 259,
-    },
+    images: ["/images/Electronics/blog-electronic/eBlog2.png"],
+    rating: 4.1,
   },
   {
     _id: uuidv4(),
@@ -511,13 +538,8 @@ export const electronicBlogs = [
     description:
       "The earliest type of dishwasher was developed approximately 160 years ago. This created a revolution that has led to the new, sleek dishwasher models we use today. So, if you're interested in the history of the modern dishwasher, read on as we delve into the history of dishwashers and how this home appliance has changed our world.",
     category: "Electronics",
-    images: [
-      "https://uakc.net/blog/wp-content/uploads/2021/06/How-the-Dishwasher-Has-Changed-Our-World-630x354.jpg",
-    ],
-    rating: {
-      rate: 4.7,
-      count: 500,
-    },
+    images: ["/images/Electronics/blog-electronic/eBlog3.png"],
+    rating: 4.7,
   },
   {
     _id: uuidv4(),
@@ -526,13 +548,8 @@ export const electronicBlogs = [
     description:
       "When you're designing or upgrading your kitchen, it can be tricky to integrate your microwave oven. We have come to rely on our microwave ovens because they fulfill a unique role in our kitchens. But, they can be bulky, they take up a lot of countertop real estate, and they can be tricky to store and move around easily. So, is it possible to integrate the microwave oven in some way and take back that valuable space for other purposes? The short answer is yes, and we will show you three clever ways to integrate your microwave oven in your new kitchen design.",
     category: "Electronics",
-    images: [
-      "https://uakc.net/blog/wp-content/uploads/2020/10/3-Ways-to-Integrate-a-Microwave-in-Your-Kitchen-630x445.jpg",
-    ],
-    rating: {
-      rate: 2.1,
-      count: 430,
-    },
+    images: ["/images/Electronics/blog-electronic/eBlog4.png"],
+    rating: 2.1,
   },
 
   {
@@ -542,13 +559,8 @@ export const electronicBlogs = [
     description:
       "Most of us enjoy the feeling of clean, fresh laundry, but in the light of the COVID-19 pandemic, cleaning and disinfecting have become a high priority in many households. While it is straightforward to disinfect most of the surfaces in your home, one area that remains a concern is laundry.  This is where the Miele W1 washing machine can help. This world-class family of machines has sanitizing wash cycles and options to remove both soiling and bacteria that we will explore in more detail here.",
     category: "Electronics",
-    images: [
-      "https://uakc.net/blog/wp-content/uploads/2020/04/HOW-TO-SANITIZE-LAUNDRY-DURING-THE-COVID-19-PANDEMIC-630x355.jpg",
-    ],
-    rating: {
-      rate: 2.1,
-      count: 430,
-    },
+    images: ["/images/Electronics/blog-electronic/eBlog5.png"],
+    rating: 2.1,
   },
 
   {
@@ -558,12 +570,7 @@ export const electronicBlogs = [
     description:
       "Over the last few years, smart TVs have become all the style, with features that older TVs could only think. However, if you're unfamiliar with such devices, you can end up with a TV that falls short of your objectives. The revolution in technology has brought a change in the Gree inverter Ac prices in Pakistan. You can accommodate yourself with much lower prices. They are with high-quality products. There are three types of flat-screen televisions: LCD, LED, and Plasma. It's worth looking into the many flat-screen TVs and selecting which one is ideal for you, whether you're upgrading an old, worn-out TV or simply deciding it's time to update.",
     category: "Electronics",
-    images: [
-      "https://electromart.com.pk/wp-content/uploads/2022/04/What-To-Consider-When-Buying-LED-Tvs.jpg",
-    ],
-    rating: {
-      rate: 2.1,
-      count: 430,
-    },
+    images: ["/images/Electronics/blog-electronic/eBlog6.png"],
+    rating: 2.1,
   },
 ];

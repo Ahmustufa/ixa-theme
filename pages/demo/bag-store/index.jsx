@@ -28,7 +28,7 @@ let data = [
     placement: "start",
   },
   {
-    image: "/images/Bags/banner/headBanner3.png",
+    image: "/images/Bags/banner/headBanner3.jpg",
     subHeading: "Welcome To Fashion",
     heading: "WOMEN CLUTCH BAGS",
     link: "#",
@@ -57,12 +57,12 @@ const Bags = () => {
           colSize={12}
           insideData={[
             {
-              image: "/images/Bags/banner/samllBanner1.png",
+              image: "/images/Bags/banner/samllBanner1.jpg",
               title1: "SAVE 30%",
               title2: "MEN",
             },
             {
-              image: "/images/Bags/banner/samllBanner2.png",
+              image: "/images/Bags/banner/samllBanner2.jpg",
               title1: "SAVE 60%",
               title2: "WOMEN",
             },
@@ -100,7 +100,7 @@ const Bags = () => {
 
       <FullBgImageSection
         color="#fff"
-        bgImage="/images/Bags/banner/stickyBanner.png"
+        bgImage="/images/Bags/banner/stickyBanner.jpg"
         h1="Trending"
         h3="Men | Women"
         h5="Fashion"

@@ -7,7 +7,7 @@ import MobileDrawer from "./mobileDrawer";
 /**
  * Icons
  */
-import { SearchOutlined } from "@ant-design/icons";
+import { SearchOutlined, ShoppingCardOutlined } from "@ant-design/icons";
 import { AiOutlineShoppingCart, AiOutlineUser, AiFillHome } from "react-icons/ai";
 import { BsTelephoneFill, BsSuitHeartFill, BsSearch } from "react-icons/bs";
 import { GoChevronDown } from "react-icons/go";
@@ -26,6 +26,7 @@ import { openCart } from "src/redux/actions/cartActions";
 import { ModalConstant } from "src/redux/constants";
 
 const HeaderWrapper2 = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const dispatch = useDispatch();
   const [sidebar, toggleSidebar] = useState(false);
   const { visible, items: cartItems } = useSelector((state) => state.cart);
@@ -33,6 +34,23 @@ const HeaderWrapper2 = () => {
 
   const menu = useSelector((state) => state.menu);
   const menuItems = menu.template || [];
+
+  const listenToScroll = () => {
+    let heightToHideFrom = 100;
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+
+    if (winScroll > heightToHideFrom) {
+      // to limit setting state only the first time
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+    return () => window.removeEventListener("scroll", listenToScroll);
+  }, []);
 
   return (
     <>
@@ -193,16 +211,21 @@ const HeaderWrapper2 = () => {
                         );
                       } else {
                         return (
-                          <Menu.Item key={index}>
-                            <Link
-                              target={subMenuItem.target}
-                              href={subMenuItem.link || ""}
-                            >
-                              <a target={subMenuItem.target} className="navigation-link">
-                                {subMenuItem.title}
-                              </a>
-                            </Link>
-                          </Menu.Item>
+                          <>
+                            <Menu.Item key={index}>
+                              <Link
+                                target={subMenuItem.target}
+                                href={subMenuItem.link || ""}
+                              >
+                                <a
+                                  target={subMenuItem.target}
+                                  className="navigation-link"
+                                >
+                                  {subMenuItem.title}
+                                </a>
+                              </Link>
+                            </Menu.Item>
+                          </>
                         );
                       }
                     })}
@@ -229,6 +252,35 @@ const HeaderWrapper2 = () => {
             );
           }
         })}
+        {isVisible ? (
+          <div
+            className="d-lg-block d-sm-none"
+            role="button"
+            onClick={() => {
+              dispatch(openCart());
+            }}
+            style={{
+              display: "flex",
+              // width: "100px",
+              alignItems: "center",
+              justifyContent: "center",
+
+              position: "absolute",
+              right: "50px",
+              top: "-4px",
+              marginBottom: "0px",
+            }}
+          >
+            <p style={{ fontWeight: "inherit", paddingRight: "20px" }}>
+              <Badge size="small" offset={[-5, 5]} count={cartItems?.length}>
+                <AiOutlineShoppingCart size="30px" />
+              </Badge>
+              Cart
+            </p>
+          </div>
+        ) : (
+          ""
+        )}
       </menu>
     </>
   );

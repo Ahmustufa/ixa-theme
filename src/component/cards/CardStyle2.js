@@ -18,7 +18,7 @@ import {
 import { QuickviewModalConstant } from "src/redux/constants";
 
 const CardStyle2 = (props) => {
-  const { productDetails, _id, title, brandName, price, images } = props;
+  const { productDetails, _id, title, brandName, price, images, rating } = props;
   const dispatch = useDispatch();
 
   const formatedPrice = new Intl.NumberFormat("en-us", {
@@ -95,7 +95,12 @@ const CardStyle2 = (props) => {
       <div className="item-details">
         <div className="product mt-2">{title}</div>
         {/* <div className="company mt-2">{brandName}</div> */}
-        <Rate defaultValue={4} disabled style={{ color: "#ffa200", fontSize: 13 }} />
+        <Rate
+          // defaultValue={4}
+          disabled
+          value={rating}
+          style={{ color: "#ffa200", fontSize: 13 }}
+        />
 
         <div className="price">
           {formatedPrice.format(price)}{" "}

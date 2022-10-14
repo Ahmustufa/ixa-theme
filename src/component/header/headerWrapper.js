@@ -29,6 +29,7 @@ const HeaderWrapper = (props) => {
   };
 
   return (
+    
     <HeaderContent
       user={user}
       isLoggedIn={false}

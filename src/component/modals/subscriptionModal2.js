@@ -142,7 +142,7 @@ const SubscriptionModal = () => {
     >
       <div
         style={{
-          backgroundImage: `url(https://reydemos.b-cdn.net/melbourne/wp-content/uploads/sites/10/2019/07/img-1-res-707x1024.jpg.webp)`,
+          backgroundImage: `url(/images/bagsubscriptionModalBg.png)`,
           minHeight: 450,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",

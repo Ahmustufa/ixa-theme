@@ -15,6 +15,6 @@ const Breadcrumb = (props) => {
 export default Breadcrumb;
 
 const StyledCrumb = styled.div`
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
   padding: 32px 10%;
 `;

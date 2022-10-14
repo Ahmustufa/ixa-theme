@@ -8,7 +8,8 @@ export const shoesProducts = [
     brandName: "Caperion",
     price: 599,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.2,
   },
   {
     _id: "e629f53a-f9f1-4bf1-823f-63c444af3995",
@@ -17,7 +18,8 @@ export const shoesProducts = [
     brandName: "CUCCOO",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.8,
   },
   {
     _id: "3742914c-50c2-4a53-af98-e4e425bbae9b",
@@ -26,7 +28,8 @@ export const shoesProducts = [
     brandName: "Vutte wixo",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.5,
   },
   {
     _id: "dd58e3bc-f9c4-49f7-a632-94acf13e8603",
@@ -35,7 +38,8 @@ export const shoesProducts = [
     brandName: "Caperion",
     price: 599,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.7,
   },
   {
     _id: "600ea36b-25c6-4e03-b6b4-e820a4c55fd4",
@@ -44,7 +48,8 @@ export const shoesProducts = [
     brandName: "Caperion",
     price: 599,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.6,
   },
   {
     _id: "6d744d99-0bb1-4a25-8a78-e06cd51259fa",
@@ -53,7 +58,8 @@ export const shoesProducts = [
     brandName: "CUCCOO",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.9,
   },
 ];
 
@@ -78,7 +84,8 @@ export const womenShoesListing = [
     brandName: "Caperion",
     price: 599,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.7,
   },
   {
     _id: "a8603747-aeaf-4894-9504-086a54283622",
@@ -95,7 +102,8 @@ export const womenShoesListing = [
     brandName: "Lace",
     price: 899,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.6,
   },
   {
     _id: "2899669d-3064-4e1f-8812-7f6780938e93",
@@ -111,7 +119,8 @@ export const womenShoesListing = [
     brandName: "Metal",
     price: 899,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.4,
   },
   {
     _id: "7ed4f2b8-adae-4897-be50-22b3a85fcce0",
@@ -129,7 +138,8 @@ export const womenShoesListing = [
     brandName: "Minimalist ",
     price: 799,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.2,
   },
   {
     _id: "52c6fc38-ab38-4090-9aed-eb9fdf117b35",
@@ -146,7 +156,8 @@ export const womenShoesListing = [
     brandName: "Minimalist",
     price: 799,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.9,
   },
   {
     _id: "1038167f-6d9f-4625-aa58-3d8c1a3dd490",
@@ -164,7 +175,8 @@ export const womenShoesListing = [
     brandName: "ROMWE",
     price: 499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.2,
   },
   {
     _id: "22b1d636-cc4e-42c9-8a4c-fcfade522b52",
@@ -181,7 +193,8 @@ export const womenShoesListing = [
     brandName: "Kinnie",
     price: 499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.1,
   },
   {
     _id: "de57724e-19a4-4115-91c7-7e9f52223cf1",
@@ -199,7 +212,8 @@ export const womenShoesListing = [
     brandName: "NEIT",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.6,
   },
   {
     _id: "ea3c620b-80f8-4b2c-9562-c2f126a016f7",
@@ -217,7 +231,8 @@ export const womenShoesListing = [
     brandName: "Onix",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.9,
   },
   {
     _id: "bd9d181b-f50c-4f33-9bfd-0726cc825150",
@@ -233,7 +248,8 @@ export const womenShoesListing = [
     brandName: "Buckle",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.5,
   },
   {
     _id: "423062e3-72d1-4292-89a9-d4d05d16e60b",
@@ -251,7 +267,8 @@ export const womenShoesListing = [
     brandName: "Suede",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.9,
   },
   {
     _id: "4152cb71-0e05-4520-a3cb-9c1d44577ac9",
@@ -269,7 +286,8 @@ export const womenShoesListing = [
     brandName: "CUCCOO",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.4,
   },
   {
     _id: "3431cee5-8634-44dc-be32-b6be7e5f7b6e",
@@ -286,7 +304,8 @@ export const womenShoesListing = [
     brandName: "CUCCOO",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 5.0,
   },
   {
     _id: "51d146dc-1168-4edc-a9dc-25cd516655b5",
@@ -303,7 +322,8 @@ export const womenShoesListing = [
     brandName: "Mule",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 5.0,
   },
   {
     _id: "9f1f6f24-a962-4bd9-8aa1-ec1a3eda78b3",
@@ -318,7 +338,8 @@ export const womenShoesListing = [
     brandName: "Oxford",
     price: 1599,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.8,
   },
   {
     _id: "aeb71d17-6a02-493c-87da-ff85a9da5c56",
@@ -333,7 +354,8 @@ export const womenShoesListing = [
     brandName: "Oxford",
     price: 1599,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.8,
   },
   {
     _id: "b76b2c93-b980-4a43-8535-fa34e6c38774",
@@ -350,7 +372,8 @@ export const womenShoesListing = [
     brandName: "Metallic",
     price: 999,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.9,
   },
   {
     _id: "606dd1ed-70e3-4588-acdf-0b14009ca9e8",
@@ -367,7 +390,8 @@ export const womenShoesListing = [
     brandName: "Minimalist",
     price: 999,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.7,
   },
   {
     _id: "61391694-c104-4bb9-a57f-32433959cb38",
@@ -384,7 +408,8 @@ export const womenShoesListing = [
     brandName: "Minimalist",
     price: 999,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.7,
   },
   {
     _id: "9521ae5a-0a27-4a1a-9695-cd9396cdb485",
@@ -400,7 +425,8 @@ export const womenShoesListing = [
     brandName: "Minimalist",
     price: 999,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.7,
   },
   {
     _id: "c237b47a-7fca-427f-959f-14b34927191c",
@@ -417,7 +443,8 @@ export const womenShoesListing = [
     brandName: "Rhinestone",
     price: 1399,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.7,
   },
   {
     _id: "6777395e-21a3-401a-b7d7-a06497df84dc",
@@ -437,7 +464,8 @@ export const womenShoesListing = [
     brandName: "Rhinestone",
     price: 1399,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.7,
   },
   {
     _id: "ae2e6379-e7d5-4963-bd35-e1db5fa151e6",
@@ -452,7 +480,8 @@ export const womenShoesListing = [
     brandName: "Colorblock",
     price: 2499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.7,
   },
   {
     _id: "1bd0c1b1-b289-443b-93e6-8845cc66452f",
@@ -469,7 +498,8 @@ export const womenShoesListing = [
     brandName: "Colorblock",
     price: 1799,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.3,
   },
   {
     _id: "31ede59b-feae-48f0-80c6-1c6d2cb8f8b2",
@@ -485,7 +515,8 @@ export const womenShoesListing = [
     brandName: "Wedge",
     price: 1799,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.2,
   },
   {
     _id: "516c239e-7fd9-47b7-b22f-9dca56fd00de",
@@ -502,7 +533,8 @@ export const womenShoesListing = [
     brandName: "Wedge",
     price: 1799,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.3,
   },
   {
     _id: "1c1014db-8196-4ad7-bcaf-871ca5e91997",
@@ -519,7 +551,8 @@ export const womenShoesListing = [
     brandName: "Wedge",
     price: 1499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.1,
   },
   {
     _id: "c95decab-0bb7-4bfb-8fb6-ca74fdcd543f",
@@ -534,7 +567,8 @@ export const womenShoesListing = [
     brandName: "Trainers",
     price: 1299,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.4,
   },
   {
     _id: "063acb71-34d0-4432-930c-1b306201d431",
@@ -550,7 +584,8 @@ export const womenShoesListing = [
     brandName: "Trainers",
     price: 1299,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 5.0,
   },
 ];
 
@@ -569,7 +604,8 @@ export const menShoesListing = [
     brandName: "Caperion",
     price: 599,
     link: "1",
-    quantity: 1
+    quantity: 1,
+    rating: 3.7,
   },
   {
     _id: "eb0acfc4-1eaa-4de1-acb6-e514580426f8",
@@ -585,7 +621,8 @@ export const menShoesListing = [
     brandName: "Lace",
     price: 899,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.5,
   },
   {
     _id: "71ac423a-b9d1-4e72-88f4-3fd0f5b8a1f3",
@@ -601,7 +638,8 @@ export const menShoesListing = [
     brandName: "Metal",
     price: 899,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.9,
   },
   {
     _id: "a3fa1acd-c48c-4310-83e7-1430c7173eec",
@@ -618,7 +656,8 @@ export const menShoesListing = [
     brandName: "Minimalist ",
     price: 799,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.2,
   },
   {
     _id: "2fb49a3b-efea-40fd-8618-3fe848d9642a",
@@ -635,7 +674,8 @@ export const menShoesListing = [
     brandName: "Minimalist",
     price: 799,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.5,
   },
   {
     _id: "ba07873e-321d-40d1-9651-42f2fee45a01",
@@ -651,7 +691,8 @@ export const menShoesListing = [
     brandName: "ROMWE",
     price: 499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.2,
   },
   {
     _id: "592ff41c-0c2b-40d9-8ddb-c68d61761bf9",
@@ -668,7 +709,8 @@ export const menShoesListing = [
     brandName: "Kinnie",
     price: 499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.5,
   },
   {
     _id: "df867b87-d978-450d-b4a3-fbbba28ed20d",
@@ -684,7 +726,8 @@ export const menShoesListing = [
     brandName: "NEIT",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.8,
   },
   {
     _id: "b8e952fc-796b-4fe3-afde-202287236332",
@@ -700,7 +743,8 @@ export const menShoesListing = [
     brandName: "Onix",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.6,
   },
   {
     _id: "827a803b-0948-4db0-bb88-9a40dcfcd0f6",
@@ -716,7 +760,8 @@ export const menShoesListing = [
     brandName: "Buckle",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.4,
   },
   {
     _id: "d58515ad-1baf-4db1-b173-f4800b48fbaa",
@@ -732,7 +777,8 @@ export const menShoesListing = [
     brandName: "Suede",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.2,
   },
   {
     _id: "483fcf83-fe8d-4c97-9f95-456c759d23f1",
@@ -748,7 +794,8 @@ export const menShoesListing = [
     brandName: "CUCCOO",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.8,
   },
   {
     _id: "a1ad0fd6-991a-4aea-84c1-2e64db15099e",
@@ -763,7 +810,8 @@ export const menShoesListing = [
     brandName: "CUCCOO",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.4,
   },
   {
     _id: "bb5f5492-b2ac-4110-a50d-eaf7ead01659",
@@ -778,7 +826,8 @@ export const menShoesListing = [
     brandName: "Mule",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.2,
   },
   {
     _id: "2366a59e-a243-4ae3-ba58-f7aa8616f84e",
@@ -793,7 +842,8 @@ export const menShoesListing = [
     brandName: "Oxford",
     price: 1599,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.6,
   },
   {
     _id: "255b5d00-28b9-4008-959f-c5b7bfb42d00",
@@ -809,7 +859,8 @@ export const menShoesListing = [
     brandName: "Oxford",
     price: 1599,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.7,
   },
   {
     _id: "89194201-9aec-4d7b-bcf2-43880af6ee4c",
@@ -825,7 +876,8 @@ export const menShoesListing = [
     brandName: "Metallic",
     price: 2699,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.6,
   },
   {
     _id: "3b5da851-ba0c-473d-8849-fac950e46fa3",
@@ -842,7 +894,8 @@ export const menShoesListing = [
     brandName: "Minimalist",
     price: 2499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.6,
   },
   {
     _id: "5dba334e-797b-4bdc-9ab9-8d56bf7ff332",
@@ -857,7 +910,8 @@ export const menShoesListing = [
     brandName: "Minimalist",
     price: 1499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.6,
   },
   {
     _id: "6512e77b-4b41-4d61-95ba-59f61303469d",
@@ -874,7 +928,8 @@ export const menShoesListing = [
     brandName: "Minimalist",
     price: 1599,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.4,
   },
 ];
 
@@ -893,7 +948,8 @@ export const newArrivalShoes = [
     brandName: "Caperion",
     price: 599,
     link: "1",
-    quantity: 1
+    quantity: 1,
+    rating: 2.0,
   },
   {
     _id: "3fcd1f73-6d19-4b69-9faf-24fe4bc22d88",
@@ -910,7 +966,8 @@ export const newArrivalShoes = [
     brandName: "Wedge",
     price: 1499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 2.9,
   },
   {
     _id: "470213e6-308b-44e3-88e7-915b35df7f86",
@@ -926,7 +983,8 @@ export const newArrivalShoes = [
     brandName: "Lace",
     price: 899,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 2.8,
   },
   {
     _id: "8e229218-1e4e-4833-8c1f-b5f0c5b04676",
@@ -942,7 +1000,8 @@ export const newArrivalShoes = [
     brandName: "Metal",
     price: 899,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 3.7,
   },
   {
     _id: "977bd2b0-1932-4dcf-894d-19a18a404de8",
@@ -957,7 +1016,8 @@ export const newArrivalShoes = [
     brandName: "Colorblock",
     price: 2499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.6,
   },
   {
     _id: "88b5d3b6-21ae-4d89-8c73-951ba3975bce",
@@ -974,7 +1034,8 @@ export const newArrivalShoes = [
     brandName: "Minimalist ",
     price: 799,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.6,
   },
   {
     _id: "43a43d92-1a63-4bc4-a4f7-d1e60d7d40f1",
@@ -991,7 +1052,8 @@ export const newArrivalShoes = [
     brandName: "Minimalist",
     price: 799,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.6,
   },
   {
     _id: "b4be0d71-5b2f-4b95-ac15-c8b4fe5e9e67",
@@ -1008,7 +1070,8 @@ export const newArrivalShoes = [
     brandName: "Kinnie",
     price: 499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.3,
   },
   {
     _id: "fbed841e-0b01-4b6c-b15d-ee86976f5c43",
@@ -1026,7 +1089,8 @@ export const newArrivalShoes = [
     brandName: "NEIT",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.4,
   },
   {
     _id: "24fc2fa7-8c4a-48e1-a479-91377918dcec",
@@ -1044,7 +1108,8 @@ export const newArrivalShoes = [
     brandName: "Onix",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.9,
   },
   {
     _id: "f8765c9d-8e3e-422b-a699-9fd9c84d00fa",
@@ -1060,7 +1125,8 @@ export const newArrivalShoes = [
     brandName: "Buckle",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.8,
   },
   {
     _id: "78c7496c-db57-4045-8931-25c5346a0aa9",
@@ -1076,7 +1142,8 @@ export const newArrivalShoes = [
     brandName: "ROMWE",
     price: 499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.6,
   },
   {
     _id: "9e1d7611-6053-420e-9f9f-0738e9485656",
@@ -1093,7 +1160,8 @@ export const newArrivalShoes = [
     brandName: "Kinnie",
     price: 499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.5,
   },
   {
     _id: "5a3c6d8f-81d6-4ebf-95bb-fd24fbfb7ac2",
@@ -1109,7 +1177,8 @@ export const newArrivalShoes = [
     brandName: "NEIT",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.2,
   },
   {
     _id: "10af1fc7-9f4f-4a59-b20a-e18af58a71b5",
@@ -1125,7 +1194,8 @@ export const newArrivalShoes = [
     brandName: "Onix",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.1,
   },
   {
     _id: "f372b0de-266f-4d3b-8cac-b143c7d379d3",
@@ -1141,7 +1211,8 @@ export const newArrivalShoes = [
     brandName: "Buckle",
     price: 1099,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.8,
   },
   {
     _id: "3dda13a4-b672-4b97-b855-c82f71099b73",
@@ -1157,7 +1228,8 @@ export const newArrivalShoes = [
     brandName: "Suede",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.6,
   },
   {
     _id: "a2357fec-7cc5-42eb-9a90-ce784988cae6",
@@ -1173,7 +1245,8 @@ export const newArrivalShoes = [
     brandName: "CUCCOO",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.7,
   },
   {
     _id: "1e8a0e4e-9266-4020-8113-56b41f6ee619",
@@ -1188,7 +1261,8 @@ export const newArrivalShoes = [
     brandName: "CUCCOO",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.3,
   },
   {
     _id: "f29e528b-bd1a-4b46-a6af-50c0d59c514f",
@@ -1203,7 +1277,8 @@ export const newArrivalShoes = [
     brandName: "Mule",
     price: 1199,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.7,
   },
   {
     _id: "44297d53-ad53-4b77-ba40-751070b81eaa",
@@ -1218,7 +1293,8 @@ export const newArrivalShoes = [
     brandName: "Oxford",
     price: 1599,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.4,
   },
   {
     _id: "4f0520c9-5a24-44b9-b107-f13560bcb61d",
@@ -1234,7 +1310,8 @@ export const newArrivalShoes = [
     brandName: "Oxford",
     price: 1599,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.6,
   },
   {
     _id: "93447f0b-304e-43df-8420-d6fef12a21e5",
@@ -1250,7 +1327,8 @@ export const newArrivalShoes = [
     brandName: "Metallic",
     price: 2699,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.5,
   },
   {
     _id: "7a755a35-8a0a-465d-bc85-c2c3cb931b5a",
@@ -1267,7 +1345,8 @@ export const newArrivalShoes = [
     brandName: "Minimalist",
     price: 2499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.6,
   },
   {
     _id: "f0613964-5bb1-495e-9797-c7f4c4685c1b",
@@ -1282,7 +1361,8 @@ export const newArrivalShoes = [
     brandName: "Minimalist",
     price: 1499,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.5,
   },
   {
     _id: "bfccd56e-7773-4cc7-a93d-25d4836e6b97",
@@ -1299,7 +1379,8 @@ export const newArrivalShoes = [
     brandName: "Minimalist",
     price: 1599,
     link: "#",
-    quantity: 1
+    quantity: 1,
+    rating: 4.6,
   },
 ];
 
@@ -1311,13 +1392,8 @@ export const shoesBlogs = [
     description:
       "Ever wondered what thing in men gives a great impact at first glance? Yes, that's the shoes. Shoes play a vital role in creating a graceful image for men. All the judgments of the society for men are created base on the shoes that he’s wearing. Just the way women put up the makeup, jewelry and pretty dresses to add the grace in entire look, similarly men level up their fashion game with classy shoes. If you are planning to add new pair to a man’s closet or even your own closet, we have got some options to consider in this case. We will surely mention the variety of the amazing men shoes that every male should have at home, but only one article type of the shoe will be discussed.",
     category: "Men's Shoes",
-    images: [
-      "https://cdn.shopify.com/s/files/1/0490/2443/4341/articles/main_copy_5ae8a48e-a504-4ba5-9757-8d27e5d2f690_x370.jpg",
-    ],
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
+    images: ["/images/Shoes/blog-shoes/sBlog1.png"],
+    rating: 3.9,
   },
   {
     _id: uuidv4(),
@@ -1326,13 +1402,8 @@ export const shoesBlogs = [
     description:
       "It's pretty normal that whenever people shop they look for the things that are currently in fashion or at least that could make them look fashionistas. But when particularly talking about the shoes, the perception of people is beyond the fashion, they want to go one step ahead than current trends, also one major and significant reason to go beyond fashion is their foot comfort. Your entire event can get ruined if you are walking over an uncomfortable heel/tight shoes which consequently can cause bending fingers issues, ingrown nails or even blood circulation disorders. People tend to purchase the shoes by only flattering over the appearance, which after getting an irritated or tight shoe can cause big troubles. Therefore it is important to go for fashionable and attractive shoes in looks but it is equally important to consider the foot health related factors including the shoe material, heel stability, shoe size and breathable elements.",
     category: "Women's Shoes",
-    images: [
-      "https://cdn.shopify.com/s/files/1/0490/2443/4341/articles/main_copy_30f58166-e854-4187-bf26-40c98457e5cb_x370.jpg",
-    ],
-    rating: {
-      rate: 4.1,
-      count: 259,
-    },
+    images: ["/images/Shoes/blog-shoes/sBlog2.png"],
+    rating: 4.1,
   },
   {
     _id: uuidv4(),
@@ -1341,13 +1412,8 @@ export const shoesBlogs = [
     description:
       "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
     category: "Women's Shoes",
-    images: [
-      "https://cdn.shopify.com/s/files/1/0490/2443/4341/articles/main_copy_9dc1bd00-0099-4fa1-b617-0a581aa66c8b_x370.jpg",
-    ],
-    rating: {
-      rate: 4.7,
-      count: 500,
-    },
+    images: ["/images/Shoes/blog-shoes/sBlog3.png"],
+    rating: 4.7,
   },
   {
     _id: uuidv4(),
@@ -1356,13 +1422,8 @@ export const shoesBlogs = [
     description:
       "When you are done with your old shoes and feel entirely enthusiastic about the idea of getting new shoe then never step back. That’s the real happiness, you have to believe that happy feet make life happiest. But it could turn the other way as well if you are not cautious about few things before getting your hand on the shoe.",
     category: "Women's Shoes",
-    images: [
-      "https://cdn.shopify.com/s/files/1/0490/2443/4341/articles/maiin_a9f9c856-339f-4ab0-8d81-5b49d028f4d8_x370.jpg",
-    ],
-    rating: {
-      rate: 2.1,
-      count: 430,
-    },
+    images: ["/images/Shoes/blog-shoes/sBlog4.png"],
+    rating: 2.1,
   },
 
   {
@@ -1372,13 +1433,8 @@ export const shoesBlogs = [
     description:
       "After surviving the long hectic day of your work routine, you finally get in to your easiest clothes, turn off the lights and take a smooth flight to your bed, and you are about to get indulge into the peaceful dark. Then suddenly your peace shatters in different pieces by the loud knock, you are still unable to comprehend from where did it come? You move towards the cupboard, all confused, open its door and all of a sudden pile of shoes jumps over your feet.",
     category: "Women's Shoes",
-    images: [
-      "https://cdn.shopify.com/s/files/1/0490/2443/4341/articles/main_copy_ff6db403-f91b-4a09-bf8e-b15fb345cb33_x370.jpg",
-    ],
-    rating: {
-      rate: 2.1,
-      count: 430,
-    },
+    images: ["/images/Shoes/blog-shoes/sBlog5.png"],
+    rating: 2.1,
   },
 
   {
@@ -1388,10 +1444,7 @@ export const shoesBlogs = [
     description:
       "This could be a big question that whether this denim style is currently in fashion or not and also are these classy enough to carry? A straight away answer to this question is big Yes! The denim outfits are quite classy, particularly the shirts and this kind of stuff perfectly goes with high end-fashion shoes by Insignia. Stay up to date with latest fashion by following Insignia Blogs and the style guide to make the statement every season.",
     category: "Women's Shoes",
-    images: ["https://cdn.shopify.com/s/files/1/0490/2443/4341/files/maiin_copy.jpg"],
-    rating: {
-      rate: 2.1,
-      count: 430,
-    },
+    images: ["/images/Shoes/blog-shoes/sBlog6.png"],
+    rating: 2.1,
   },
 ];

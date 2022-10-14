@@ -37,20 +37,7 @@ const FilterBar = (props) => {
         <Col xs={24} sm={12} md={12} lg={8}>
           <div className="search-count">
             <h3>Filter By</h3>
-          </div>
-        </Col>
-
-        <Col xs={24} sm={12} md={12} lg={8} className="d-flex justify-content-end">
-          {/* <div className="select-wrapper">
-            <Select size="large" defaultValue="lucy" style={{ width: 120 }}>
-              <Option value="jack">Jack</Option>
-              <Option value="lucy">Lucy</Option>
-            </Select>
-          </div> */}
-        </Col>
-
-        <Col xs={24} sm={12} md={12} lg={8}>
-          <div className="filter-div">
+            <div className="filter-div">
             <InputWrapper
               onChange={(e) => setSearchText(e.target.value)}
               placeholder="Enter keywords to search..."
@@ -59,8 +46,22 @@ const FilterBar = (props) => {
               className="search-box"
               style={{ outline: "none" }}
             />
+            </div>
           </div>
         </Col>
+
+        {/* <Col xs={24} sm={12} md={12} lg={8} className="d-flex justify-content-end"> */}
+        {/* <div className="select-wrapper">
+            <Select size="large" defaultValue="lucy" style={{ width: 120 }}>
+              <Option value="jack">Jack</Option>
+              <Option value="lucy">Lucy</Option>
+            </Select>
+          </div> */}
+        {/* </Col> */}
+
+        {/* <Col xs={24} sm={12} md={12} lg={8}>
+          
+        </Col> */}
       </Row>
     </StyledDiv>
   );
@@ -76,11 +77,12 @@ const StyledDiv = styled.div`
   .main-div {
     /* border-top: 1px solid #ddd; */
     /* border-bottom: 1px solid #ddd; */
+    // display: flex;
   }
 
   .search-count {
     /* border-right: 1px solid #ddd; */
-    padding: 20px;
+    // padding: 20px;
     h5 {
       font-size: 16px;
       font-weight: 400;
@@ -89,6 +91,8 @@ const StyledDiv = styled.div`
       letter-spacing: 0.05em;
       margin: 0px;
     }
+    display: flex;
+    align-items: center;
   }
   .bars {
     padding: 1px;

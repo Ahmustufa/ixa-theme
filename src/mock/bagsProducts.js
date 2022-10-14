@@ -27,7 +27,7 @@ export const bagsProducts = [
       "/images/Bags/AlloverLetterGraphicZipBackpack/AlloverLetterGraphicZipBackpack-3.webp",
       "/images/Bags/AlloverLetterGraphicZipBackpack/AlloverLetterGraphicZipBackpack-4.webp",
     ],
-    rating: { rate: 3.9, count: 120 },
+    rating:  3.9,
   },
   {
     _id: "a0437f77-a40e-4fef-b76c-40e514058564",
@@ -54,7 +54,7 @@ export const bagsProducts = [
       "/images/Bags/ArgyleQuilted/Purse-3.webp",
       "/images/Bags/ArgyleQuilted/Purse-4.webp",
     ],
-    rating: { rate: 4.1, count: 259 },
+    rating: 4.1
   },
   {
     _id: "a0718a29-7f0c-44d7-a7c1-e6a1156e7514",
@@ -80,7 +80,7 @@ export const bagsProducts = [
       "/images/Bags/ButterflyPrintPatch/Case-2.webp",
       "/images/Bags/ButterflyPrintPatch/Case-3.webp",
     ],
-    rating: { rate: 4.7, count: 500 },
+    rating: 4.7
   },
   {
     _id: "0638178a-0b16-4faa-b061-2b930c68a5a4",
@@ -107,7 +107,7 @@ export const bagsProducts = [
       "/images/Bags/LetterGraphicShoulder/Charm-3.webp",
       "/images/Bags/LetterGraphicShoulder/Charm-4.webp",
     ],
-    rating: { rate: 2.1, count: 430 },
+    rating: 2.1
   },
   {
     _id: "1a3b5c7f-d245-4c88-bc95-a6401133c98a",
@@ -134,7 +134,7 @@ export const bagsProducts = [
       "/images/Bags/MiniLetterGraphic/Bag-3.webp",
       "/images/Bags/MiniLetterGraphic/Bag-4.webp",
     ],
-    rating: { rate: 2.6, count: 235 },
+    rating: 2.6
   },
   {
     _id: "fd3b475c-fc88-4d12-a443-59d33f08915c",
@@ -162,7 +162,7 @@ export const bagsProducts = [
       "/images/Bags/ToteBag/ToteBag-4.webp",
       "/images/Bags/ToteBag/ToteBag-5.webp",
     ],
-    rating: { rate: 2.9, count: 340 },
+    rating: 2.9
   },
   {
     _id: "b5e65e22-316c-4254-aab6-6fd2e1cb7bd0",
@@ -191,7 +191,7 @@ export const bagsProducts = [
       "/images/Bags/MiniNeon/MIniBag-6.webp",
       "/images/Bags/MiniNeon/MIniBag-7.webp",
     ],
-    rating: { rate: 3.8, count: 679 },
+    rating: 3.8
   },
   {
     _id: "02e31cb7-c57d-4142-8607-020862968677",
@@ -221,7 +221,7 @@ export const bagsProducts = [
       "/images/Bags/NoveltyBag/NoveltyBag-6.webp",
       "/images/Bags/NoveltyBag/NoveltyBag-7.webp",
     ],
-    rating: { rate: 4.7, count: 130 },
+    rating: 4.7
   },
   {
     _id: "f956fc32-18df-482a-a8e6-149abadc95b1",
@@ -252,7 +252,7 @@ export const bagsProducts = [
       "/images/Bags/DuffelBag/DuffelBag-7.webp",
       "/images/Bags/DuffelBag/DuffelBag-8.webp",
     ],
-    rating: { rate: 4.5, count: 146 },
+    rating: 4.5
   },
   {
     _id: "ce88bbe5-f074-4806-a38c-770ee58f6de3",
@@ -279,7 +279,7 @@ export const bagsProducts = [
       "/images/Bags/ShoulderToteBag/ToteBag-3.webp",
       "/images/Bags/ShoulderToteBag/ToteBag-4.webp",
     ],
-    rating: { rate: 3.6, count: 145 },
+    rating: 3.6
   },
   {
     _id: "5ca05669-4355-49fa-b665-5dde8d67c443",
@@ -310,7 +310,7 @@ export const bagsProducts = [
       "/images/Bags/printPurse/Purse-7.webp",
       "/images/Bags/printPurse/Purse-8.webp",
     ],
-    rating: { rate: 3.6, count: 145 },
+    rating: 3.6
   },
   {
     _id: "927d3117-24cf-4488-be0c-03d2ef502cc2",
@@ -341,7 +341,7 @@ export const bagsProducts = [
       "/images/Bags/ShopperBag/Bag-7.webp",
       "/images/Bags/ShopperBag/Bag-8.webp",
     ],
-    rating: { rate: 3.6, count: 145 },
+    rating: 3.6
   },
   {
     _id: "768de678-39c1-41bf-b667-e788a997e648",
@@ -372,7 +372,7 @@ export const bagsProducts = [
       "/images/Bags/Backpack/Backpack-7.webp",
       "/images/Bags/Backpack/Backpack-8.webp",
     ],
-    rating: { rate: 3.6, count: 145 },
+    rating: 3.6
   },
 ];
 
@@ -384,11 +384,9 @@ export const bagsBlogs = [
     description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     category: "women",
-    images: ["/images/Bags/bagblog/bagblog1.avif"],
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
+    images: ["/images/Bags/bagblog/bagblog1.webp"],
+    rating: 3.9,
+    
   },
   {
     _id: uuidv4(),
@@ -397,11 +395,9 @@ export const bagsBlogs = [
     description:
       "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
     category: "women",
-    images: ["/images/Bags/bagblog/bagblog2.avif"],
-    rating: {
-      rate: 4.1,
-      count: 259,
-    },
+    images: ["/images/Bags/bagblog/bagblog2.webp"],
+    rating: 4.1,
+    
   },
   {
     _id: uuidv4(),
@@ -411,10 +407,8 @@ export const bagsBlogs = [
       "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
     category: "women",
     images: ["/images/Bags/bagblog/bagblog3.webp"],
-    rating: {
-      rate: 4.7,
-      count: 500,
-    },
+    rating: 4.7,
+   
   },
   {
     _id: uuidv4(),
@@ -424,10 +418,8 @@ export const bagsBlogs = [
       "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
     category: "women",
     images: ["/images/Bags/bagblog/bagblog4.webp"],
-    rating: {
-      rate: 2.1,
-      count: 430,
-    },
+    rating: 2.1,
+    
   },
   {
     _id: uuidv4(),
@@ -437,10 +429,8 @@ export const bagsBlogs = [
       "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
     category: "women",
     images: ["/images/Bags/bagblog/bagblog5.webp"],
-    rating: {
-      rate: 2.6,
-      count: 235,
-    },
+    rating: 2.6,
+    
   },
   {
     _id: uuidv4(),
@@ -450,9 +440,7 @@ export const bagsBlogs = [
       "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
     category: "women",
     images: ["/images/Bags/bagblog/bagblog6.webp"],
-    rating: {
-      rate: 2.9,
-      count: 340,
-    },
+    rating: 2.9,
+      
   },
 ];

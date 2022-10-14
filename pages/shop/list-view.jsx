@@ -10,7 +10,7 @@ const ListView = (props) => {
 
   return (
     <>
-      <Breadcrumb title="SHOP" link="HOME / SHOP" className="my-5" />
+      <Breadcrumb title="SHOP" link="HOME / SHOP / LIST-VIEW" className="my-5" />
 
       <div className="col-11 mx-auto mb-5">
         <Row gutter={[32, 0]}>

@@ -7,6 +7,7 @@ import BlogCard2 from "src/component/cards/blogCard2";
 import { bagsBlogs } from "src/mock/bagsProducts";
 import { clothBlogs, clothProducts } from "src/mock/clothProducts";
 import FilterBar from "src/component/sortItems/FilterBar";
+import Link from "next/link";
 
 let pageSize = 8;
 
@@ -39,8 +40,28 @@ const NoSidebar = (props) => {
 
   return (
     <StyledPage>
-      <Breadcrumb title="BLOG" link="BLOG / WITHOUT SIDEBAR" className="my-5" />
-
+      {/* <h3>BLOG</h3> */}
+      {/* <Breadcrumb title="BLOG" link="BLOG / WITHOUT SIDEBAR" className="my-5" /> */}
+      <div className="pagination-sec mt-5 mb-5">
+        <Row className="d-flex justify-content-end align-items-center">
+          <Col lg={6} sm={24} xs={24}>
+            <h5 className="m-0 text-dark">BLOG</h5>
+          </Col>
+          <Col
+            lg={18}
+            sm={24}
+            xs={24}
+            className="d-flex justify-content-sm-start justify-content-lg-end"
+          >
+            <Link href="/">
+              <p className="m-0 mx-1"> BLOG / </p>
+            </Link>
+            <Link href="/">
+              <p className="m-0 mx-1"> WITHOUT SIDEBAR </p>
+            </Link>
+          </Col>
+        </Row>
+      </div>
       <div style={{ padding: " 30px 80px" }} className="detail-section">
         <FilterBar className="w-100 mb-5" data={data} setData={setData} />
         <Row gutter={[0, 40]} className="">
@@ -85,7 +106,7 @@ export default NoSidebar;
 
 const StyledPage = styled.div`
   .pagination-sec {
-    background: #f8f8f8;
+    // background: #f8f8f8;
     padding: 30px 80px;
     p {
       color: #555555;

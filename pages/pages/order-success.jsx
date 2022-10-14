@@ -15,7 +15,7 @@ const OrderSuccess = (props) => {
         <title>Thankyou for shopping</title>
       </Head>
 
-      <Breadcrumb title="ORDER SUCCESS" link="HOME / ORDER SUCCESS" />
+      <Breadcrumb title="ORDER SUCCESS" link="PAGES / ORDER SUCCESS" />
       <StyledDiv>
         <div className="thankyou-banner text-center">
           <BsCheckCircleFill

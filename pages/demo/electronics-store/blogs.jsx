@@ -7,6 +7,7 @@ import RecentBlogs from "src/component/blogListing/recentBlogs";
 import BlogListingCard from "src/component/blogListing/blogListingCard";
 import { electronicBlogs } from "src/mock/electronicProducts";
 import Breadcrumb from "src/component/breadcrumb";
+import Link from "next/link";
 const { Panel } = Collapse;
 
 const BagBlogs = (props) => {
@@ -20,8 +21,28 @@ const BagBlogs = (props) => {
 
   return (
     <StyledPage>
-      <Breadcrumb title="BLOG" link="HOME / ELECTRONICS STORE / BLOGS" className="mt-5" />
-
+      {/* <Breadcrumb title="BLOG" link="HOME / ELECTRONICS STORE / BLOGS" className="mt-5" /> */}
+      <div className="pagination-sec mt-5">
+        <Row className="d-flex justify-content-end align-items-center">
+          <Col lg={6} sm={24} xs={24}>
+            <h5 className="m-0 text-dark">BLOG</h5>
+          </Col>
+          <Col
+            lg={18}
+            sm={24}
+            xs={24}
+            className="d-flex justify-content-sm-start justify-content-lg-end"
+          >
+            <Link href="/">
+              <p className="m-0 mx-1"> ELECTRONICS-STORE /</p>
+            </Link>
+            <Link href="/">
+              <p className="m-0 mx-1"> BLOG</p>
+            </Link>
+          </Col>
+        </Row>
+      </div>
+    
       <div style={{ padding: 80 }} className="detail-section">
         <Row gutter={[30, 30]} className="flex-column-reverse flex-lg-row">
           <Col lg={6} sm={24} xs={24}>
