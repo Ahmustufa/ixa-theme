@@ -88,7 +88,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-      <title/>
+      <title></title>
         <link rel="icon" href="/iXiafavicon.png" />
       </Head>
       <Provider store={store}>
