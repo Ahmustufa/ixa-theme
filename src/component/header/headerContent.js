@@ -109,7 +109,6 @@ const HeaderContent = (props) => {
                   src="/images/LogiLogos-light.svg"
                   className="app-logo"
                 />
-
                 <menu className="menu-list d-none d-lg-flex align-items-center p-0">
                   {header.map((menu) => {
                     if (menu.submenu) {

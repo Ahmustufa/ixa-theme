@@ -40,6 +40,8 @@ let data = [
   },
 ];
 
+
+
 const Clothing = () => {
   const [gridColumn, setGridColumn] = useState(4);
 
@@ -48,7 +50,7 @@ const Clothing = () => {
       <Head>
         <title>Clothing Store</title>
       </Head>
-      <SubscriptionModal image="/images/clothingSubscriptionModal.png" />
+      <SubscriptionModal image="/images/clothingSubscriptionModal.png"/>
 
       <div className="my-4">
         <div>

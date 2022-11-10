@@ -9,7 +9,7 @@ const ShopNoSidebar = (props) => {
 
   return (
     <>
-      <Breadcrumb title="SHOP" link="HOME / SHOP" className="my-5" />
+      <Breadcrumb title="SHOP" link="HOME / SHOP / NO-SIDEBAR" className="my-5" />
       <div className="col-11 mx-auto mb-5">
         <img src="/images/shop_card_1.png" width="100%" className="mb-3" />
         <div style={{ fontSize: 20 }}>Fashion</div>

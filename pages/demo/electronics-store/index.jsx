@@ -67,7 +67,7 @@ const ElectronicStore = () => {
               title2: "NEW WATCH",
             },
             {
-              image: "/images/sale_banner.jpg",
+              image: "/images/sale_banner.png",
               title1: "",
               title2: "",
             },

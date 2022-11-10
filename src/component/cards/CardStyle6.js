@@ -20,7 +20,8 @@ import { addItemToCart } from "src/redux/actions/cartActions";
 import { QuickviewModalConstant } from "src/redux/constants";
 
 const CardStyle6 = (props) => {
-  const { productDetails, _id, images, title, price, brandName, listView } = props;
+  const { productDetails, _id, images, title, price, brandName, listView, rating } =
+    props;
   const dispatch = useDispatch();
   const formatedPrice = new Intl.NumberFormat("en-us", {
     style: "currency",
@@ -106,11 +107,17 @@ const CardStyle6 = (props) => {
           xl={listView ? 19 : 24}
         >
           <div className="item-details">
-            <Rate
-              defaultValue={5}
-              disabled
-              style={{ color: "#ffa200", fontSize: 14, marginTop: 8 }}
-            />
+            <div style={{ display: "flex", alignItems: "center" }}>
+              {" "}
+              <Rate
+                // defaultValue={3}
+                disabled
+                allowHalf
+                value={rating}
+                style={{ color: "#ffa200", fontSize: 13 }}
+              />
+              <p style={{ paddingLeft: "20px", paddingTop: "16px" }}>{rating}</p>
+            </div>
             <div title={title} className="product mt-2">
               {title}
             </div>

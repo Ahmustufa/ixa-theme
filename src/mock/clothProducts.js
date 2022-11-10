@@ -15,7 +15,7 @@ export const clothProducts = [
       "/images/clothing/Dresses/ContrastDress-3.jpg",
       "/images/clothing/Dresses/ContrastDress-4.jpg",
     ],
-    rating: { rate: 3.9, count: 120 },
+    rating: 3.5,
   },
   {
     _id: "0c340813-8380-46ea-a078-d9beca3bb757",
@@ -30,7 +30,7 @@ export const clothProducts = [
       "/images/clothing/Dresses/dress-2.jpg",
       "/images/clothing/Dresses/dress-3.jpg",
     ],
-    rating: { rate: 4.1, count: 259 },
+    rating: 4.1,
   },
   {
     _id: "d6838061-37fa-46bf-b97e-a3eb6e441fe6",
@@ -46,7 +46,7 @@ export const clothProducts = [
       "/images/clothing/Dresses/FloralDress-3.jpg",
       "/images/clothing/Dresses/FloralDress-4.jpg",
     ],
-    rating: { rate: 4.7, count: 500 },
+    rating: 4.7,
   },
   {
     _id: "8abe07dd-9afc-48a2-b31c-612e6673e6ca",
@@ -61,7 +61,7 @@ export const clothProducts = [
       "/images/clothing/Dresses/ScubaDress-2.jpg",
       "/images/clothing/Dresses/ScubaDress-3.jpg",
     ],
-    rating: { rate: 2.1, count: 430 },
+    rating: 2.1,
   },
   {
     _id: "dd4ebaca-f1db-4fce-bc40-59d39da4b965",
@@ -75,7 +75,7 @@ export const clothProducts = [
       "/images/clothing/Dresses/SmockedWhite.jpg",
       "/images/clothing/Dresses/SmockedWhite.jpg",
     ],
-    rating: { rate: 2.6, count: 235 },
+    rating: 2.6,
   },
   {
     _id: "f63f3248-8279-4e13-a4d2-eeb9e3d71a51",
@@ -89,7 +89,7 @@ export const clothProducts = [
       "/images/clothing/Dresses/Smockedblue.jpg",
       "/images/clothing/Dresses/Smockedblue.jpg",
     ],
-    rating: { rate: 2.9, count: 340 },
+    rating: 2.9,
   },
   {
     _id: "0da5cabf-c9da-491f-9be1-540c772f0b57",
@@ -105,7 +105,7 @@ export const clothProducts = [
       "/images/clothing/Dresses/TweedDress-3.jpg",
       "/images/clothing/Dresses/TweedDress-4.jpg",
     ],
-    rating: { rate: 3.8, count: 679 },
+    rating: 3.8,
   },
   {
     _id: "eef55462-8c33-432e-a16f-1a940451e103",
@@ -120,7 +120,7 @@ export const clothProducts = [
       "/images/clothing/Jackets/DenimJacket-2.jpg",
       "/images/clothing/Jackets/DenimJacket-3.jpg",
     ],
-    rating: { rate: 4.7, count: 130 },
+    rating: 4.7,
   },
   {
     _id: "b1df705f-9605-4ea3-bb6b-52da56640709",
@@ -134,7 +134,7 @@ export const clothProducts = [
       "/images/clothing/Jackets/EditorBlazer.jpg",
       "/images/clothing/Jackets/EditorBlazer.jpg",
     ],
-    rating: { rate: 4.5, count: 146 },
+    rating: 4.5,
   },
   {
     _id: "7c01ae74-cb20-4bbf-9aa1-2fc5abc29fa1",
@@ -149,7 +149,7 @@ export const clothProducts = [
       "/images/clothing/Jackets/StudioBlazer-2.jpg",
       "/images/clothing/Jackets/StudioBlazer-3.jpg",
     ],
-    rating: { rate: 3.6, count: 145 },
+    rating: 3.6,
   },
   {
     _id: "bcffd9f9-8b46-4166-ac27-84750391c04b",
@@ -164,7 +164,7 @@ export const clothProducts = [
       "/images/clothing/Jackets/RelaxedBlazer-2.jpg",
       "/images/clothing/Jackets/RelaxedBlazer-3.jpg",
     ],
-    rating: { rate: 3.6, count: 145 },
+    rating: 3.6,
   },
   {
     _id: "a35bdfed-f486-4ba3-b352-3e001c3ab6b1",
@@ -180,7 +180,7 @@ export const clothProducts = [
       "/images/clothing/Sweaters/BraidedTank-3.jpg",
       "/images/clothing/Sweaters/BraidedTank-4.jpg",
     ],
-    rating: { rate: 3.6, count: 145 },
+    rating: 3.6,
   },
   {
     _id: "3ce59eb0-c37e-45de-b059-4b4fff716b62",
@@ -195,7 +195,7 @@ export const clothProducts = [
       "/images/clothing/Sweaters/CashmerePolo-2.jpg",
       "/images/clothing/Sweaters/CashmerePolo-3.jpg",
     ],
-    rating: { rate: 3.6, count: 145 },
+    rating: 3.6,
   },
   {
     _id: "e4044ec8-9f24-42a5-a97c-b43b23ddfe59",
@@ -210,7 +210,7 @@ export const clothProducts = [
       "/images/clothing/Sweaters/UltimateCardigan-2.jpg",
       "/images/clothing/Sweaters/UltimateCardigan-3.jpg",
     ],
-    rating: { rate: 3.6, count: 145 },
+    rating: 3.6,
   },
 ];
 
@@ -222,13 +222,8 @@ export const clothBlogs = [
     description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     category: "women",
-    images: [
-      "https://cdn.shopify.com/s/files/1/0251/0520/3255/articles/12_370X260_crop_center.jpg?v=1605865064",
-    ],
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
+    images: ["/images/blog-with-right-sidebar/Blog1.png"],
+    rating: 3.9,
   },
   {
     _id: uuidv4(),
@@ -237,13 +232,8 @@ export const clothBlogs = [
     description:
       "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
     category: "women",
-    images: [
-      "https://cdn.shopify.com/s/files/1/0251/0520/3255/articles/11_370X260_crop_center.jpg?v=1605865025",
-    ],
-    rating: {
-      rate: 4.1,
-      count: 259,
-    },
+    images: ["/images/blog-with-right-sidebar/Blog2.png"],
+    rating: 4.1,
   },
   {
     _id: uuidv4(),
@@ -252,13 +242,8 @@ export const clothBlogs = [
     description:
       "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
     category: "women",
-    images: [
-      "https://cdn.shopify.com/s/files/1/0251/0520/3255/articles/10_370X260_crop_center.jpg?v=1605864984",
-    ],
-    rating: {
-      rate: 4.7,
-      count: 500,
-    },
+    images: ["/images/blog-with-right-sidebar/Blog3.png"],
+    rating: 4.7,
   },
   {
     _id: uuidv4(),
@@ -267,13 +252,8 @@ export const clothBlogs = [
     description:
       "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
     category: "women",
-    images: [
-      "https://cdn.shopify.com/s/files/1/0251/0520/3255/articles/9_800X500_crop_center.jpg?v=1605864944",
-    ],
-    rating: {
-      rate: 2.1,
-      count: 430,
-    },
+    images: ["/images/blog-with-right-sidebar/Blog4.png"],
+    rating: 2.1,
   },
   {
     _id: uuidv4(),
@@ -282,13 +262,8 @@ export const clothBlogs = [
     description:
       "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
     category: "women",
-    images: [
-      "https://cdn.shopify.com/s/files/1/0251/0520/3255/articles/8_800X500_crop_center.jpg?v=1605864871",
-    ],
-    rating: {
-      rate: 2.6,
-      count: 235,
-    },
+    images: ["/images/blog-with-right-sidebar/Blog5.png"],
+    rating: 2.6,
   },
   {
     _id: uuidv4(),
@@ -297,12 +272,7 @@ export const clothBlogs = [
     description:
       "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
     category: "women",
-    images: [
-      "https://cdn.shopify.com/s/files/1/0251/0520/3255/articles/7_800X500_crop_center.jpg?v=1605864825",
-    ],
-    rating: {
-      rate: 2.9,
-      count: 340,
-    },
+    images: ["/images/blog-with-right-sidebar/Blog6.png"],
+    rating: 2.9,
   },
 ];

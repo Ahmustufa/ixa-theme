@@ -6,7 +6,7 @@ import CardStyle6 from "../cards/CardStyle6";
 let pageSize = 9;
 
 const ProductListing = (props) => {
-  const { columns, products, grid, CardStyle } = props;
+  const { columns, products, grid, CardStyle, rating } = props;
   const span = 24 / grid;
 
   if (grid == 2) {

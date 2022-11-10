@@ -141,7 +141,7 @@ const SubscriptionModal = (props) => {
             style={{
               backgroundImage: props.backgroundImage
                 ? props.backgroundImage
-                : `url(https://cdn.shopify.com/s/files/1/0083/8405/3305/files/new-letter_1_4837f8ec-b88c-47f4-9426-393ace3a8ce0_540x.jpg?v=1657863744)`,
+                : `url(/images/shoessubscriptionModalBg.png)`,
               minHeight: 480,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
