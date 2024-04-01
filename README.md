@@ -1,4 +1,4 @@
-## Logi Logos
+## IXIA THEMES
 
 ### Want to get the perfect logo for your business? Experts designers at Logilogos can help you unravel the true eminence of your brand. Hire us now!.
 
