@@ -183,7 +183,7 @@ const HeaderWrapper2 = () => {
           zIndex: 2,
         }}
       >
-        {menuItems.map((menu) => {
+        {menuItems.map((menu, index) => {
           if (menu.submenu) {
             return (
               <Dropdown

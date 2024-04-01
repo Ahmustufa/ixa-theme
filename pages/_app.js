@@ -7,7 +7,7 @@ import "src/component/header/header2.style.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import Router from "next/router";
@@ -32,21 +32,22 @@ import Head from "next/head";
 
 Router.events.on("routeChangeStart", (url) => {
   document.body.classList.add("body-page-transition");
-  ReactDOM.render(<PageLoad2 path={url} />, document.getElementById("page-transition"));
+  // ReactDOM.render(<PageLoad2 path={url} />, document.getElementById("page-transition"));
 });
 
 Router.events.on("routeChangeComplete", () => {
-  ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
+  // ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
   document.body.classList.remove("body-page-transition");
 });
 
 Router.events.on("routeChangeError", () => {
-  ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
+  // ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
   document.body.classList.remove("body-page-transition");
 });
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
+  const [isPageTransitioning, setIsPageTransitioning] = useState(false);
 
   /**
    * Addng a div element with id page transition to show loading screen when switching between pages
@@ -67,6 +68,22 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, []);
+
+  // useEffect(() => {
+  //   const handleRouteChangeStart = () => setIsPageTransitioning(true);
+  //   const handleRouteChangeComplete = () => setIsPageTransitioning(false);
+  //   const handleRouteChangeError = () => setIsPageTransitioning(false);
+
+  //   router.events.on("routeChangeStart", handleRouteChangeStart);
+  //   router.events.on("routeChangeComplete", handleRouteChangeComplete);
+  //   router.events.on("routeChangeError", handleRouteChangeError);
+
+  //   return () => {
+  //     router.events.off("routeChangeStart", handleRouteChangeStart);
+  //     router.events.off("routeChangeComplete", handleRouteChangeComplete);
+  //     router.events.off("routeChangeError", handleRouteChangeError);
+  //   };
+  // }, [router.events]);
 
   /**
    * Updating menus for different demos
