@@ -114,6 +114,7 @@ const HeaderContent = (props) => {
                     if (menu.submenu) {
                       return (
                         <Dropdown
+                          key={menu.title}
                           overlay={
                             <Menu style={{ minWidth: 200, marginTop: 14 }}>
                               {menu.submenu.map((subMenuItem, index) => {
@@ -171,6 +172,7 @@ const HeaderContent = (props) => {
                     } else {
                       return (
                         <div
+                          key={menu.title}
                           className={`menu-item ${
                             router.pathname === menu.link ? "active" : ""
                           }`}

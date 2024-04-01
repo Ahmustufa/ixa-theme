@@ -32,7 +32,7 @@ const ProductListin = (props) => {
         className="my-5"
       /> */}
 
-<StyledPage>
+      <StyledPage>
         <div className="pagination-sec mt-5 mb-5">
           <Row className="d-flex justify-content-end align-items-center">
             <Col lg={6} sm={24} xs={24}>
@@ -45,11 +45,11 @@ const ProductListin = (props) => {
               className="d-flex justify-content-sm-start justify-content-lg-end"
             >
               <Link href="/">
-              <p className="m-0 mx-1"> CATEGORY / </p>
-            </Link>{" "}
-            <Link href="/">
-              <p className="m-0 mx-1">{router.query.category.toUpperCase()}</p>
-            </Link>
+                <p className="m-0 mx-1"> CATEGORY / </p>
+              </Link>{" "}
+              <Link href="/">
+                <p className="m-0 mx-1">{router.query.category.toUpperCase()}</p>
+              </Link>
             </Col>
           </Row>
         </div>
@@ -61,9 +61,9 @@ const ProductListin = (props) => {
           </Col> */}
 
           <Col xs={24} sm={24} md={24} lg={24}>
-            {categoryBanners.map((item) => {
+            {categoryBanners.map((item, index) => {
               if (item.category == router.query.category) {
-                return <img src={item.image} width="100%" className="mb-3" />;
+                return <img src={item.image} width="100%" className="mb-3" key={index} />;
               }
             })}
 

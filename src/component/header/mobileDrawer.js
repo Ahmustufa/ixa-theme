@@ -162,7 +162,7 @@ const MobileDrawer = (props) => {
                       {menu.submenu.map((subMenuItem, index) => {
                         if (subMenuItem.submenu) {
                           return (
-                            <Collapse ghost>
+                            <Collapse ghost key={index}>
                               <Panel
                                 key={index}
                                 showArrow={false}

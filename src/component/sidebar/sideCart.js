@@ -15,6 +15,7 @@ import {
 } from "../../redux/actions/cartActions";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
+import Image from "next/image";
 
 const SideCart = (props) => {
   const dispatch = useDispatch();
@@ -59,10 +60,10 @@ const SideCart = (props) => {
           <>
             {items.map((item, index) => (
               <>
-                <div ksy={index} className="my-3">
+                <div key={index} className="my-3">
                   <Row gutter={[16, 0]}>
                     <Col span={7}>
-                      <img src={item.images[0]} className="w-100" />
+                      <Image src={item.images[0]} className="w-100" />
                     </Col>
 
                     <Col

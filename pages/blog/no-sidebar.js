@@ -82,7 +82,7 @@ const NoSidebar = (props) => {
               (item, index) =>
                 index >= page.minIndex &&
                 index < page.maxIndex && (
-                  <Col lg={6} sm={24} xs={24}>
+                  <Col lg={6} sm={24} xs={24} key={index}>
                     <BlogCard2 key={index} {...item} />
                   </Col>
                 )

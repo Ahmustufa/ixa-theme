@@ -187,6 +187,7 @@ const HeaderWrapper2 = () => {
           if (menu.submenu) {
             return (
               <Dropdown
+                key={menu.title}
                 overlay={
                   <Menu style={{ minWidth: 200, marginTop: -4 }}>
                     {menu.submenu.map((subMenuItem, index) => {
@@ -233,6 +234,7 @@ const HeaderWrapper2 = () => {
                 }
               >
                 <div
+                  key={menu.title}
                   className={`menu-item ${router.pathname === menu.link ? "active" : ""}`}
                 >
                   <a style={{ textTransform: "uppercase" }}>{menu.title}</a>
@@ -243,6 +245,7 @@ const HeaderWrapper2 = () => {
           } else {
             return (
               <div
+                key={index}
                 className={`menu-item ${router.pathname === menu.link ? "active" : ""}`}
               >
                 <Link href={menu.link}>

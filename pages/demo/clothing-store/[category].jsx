@@ -36,14 +36,12 @@ const ProductListin = (props) => {
               className="d-flex justify-content-sm-start justify-content-lg-end"
             >
               <Link href="/">
-              <p className="m-0 mx-1"> SHOP / </p>
-            </Link>{" "}
-            <Link href="/">
-              <p className="m-0 mx-1"> WOMEN FASHION /</p>
-            </Link>
-            
-            <span>DRESSES</span>
-            
+                <p className="m-0 mx-1"> SHOP / </p>
+              </Link>{" "}
+              <Link href="/">
+                <p className="m-0 mx-1"> WOMEN FASHION /</p>
+              </Link>
+              <span>DRESSES</span>
             </Col>
           </Row>
         </div>
@@ -55,9 +53,9 @@ const ProductListin = (props) => {
           </Col> */}
 
           <Col xs={24} sm={24} md={24} lg={24}>
-            {categoryBanners.map((item) => {
+            {categoryBanners.map((item, index) => {
               if (item.category == router.query.category) {
-                return <img src={item.image} width="100%" className="mb-3" />;
+                return <img src={item.image} width="100%" className="mb-3" key={index} />;
               }
             })}
 
